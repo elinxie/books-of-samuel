@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Books of Samuel</title>
+<style>
+  :root {
+    --bg: #faf8f3;
+    --header-bg: #f3efe4;
+    --nav-bg: #f6f3ea;
+    --fg: #201d17;
+    --muted: #5f5847;
+    --border: #ddd4c0;
+    --accent: #7a3324;
+    --accent-fg: #fff8f0;
+    --verse-num: #8f8266;
+    --mark-bg: #ffe08a;
+    --hover-bg: #efe8d8;
+    --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-scripture: Georgia, "Times New Roman", Times, serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1815;
+      --header-bg: #201d18;
+      --nav-bg: #1e1b17;
+      --fg: #ece6d8;
+      --muted: #b8ae95;
+      --border: #3a352c;
+      --accent: #e0a17e;
+      --accent-fg: #241a12;
+      --verse-num: #a89a78;
+      --mark-bg: #6b4a1e;
+      --hover-bg: #2a251d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1a1815;
+    --header-bg: #201d18;
+    --nav-bg: #1e1b17;
+    --fg: #ece6d8;
+    --muted: #b8ae95;
+    --border: #3a352c;
+    --accent: #e0a17e;
+    --accent-fg: #241a12;
+    --verse-num: #a89a78;
+    --mark-bg: #6b4a1e;
+    --hover-bg: #2a251d;
+  }
+  :root[data-theme="light"] {
+    --bg: #faf8f3;
+    --header-bg: #f3efe4;
+    --nav-bg: #f6f3ea;
+    --fg: #201d17;
+    --muted: #5f5847;
+    --border: #ddd4c0;
+    --accent: #7a3324;
+    --accent-fg: #fff8f0;
+    --verse-num: #8f8266;
+    --mark-bg: #ffe08a;
+    --hover-bg: #efe8d8;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-ui);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .site-header .titles { display: flex; flex-direction: column; gap: 0.1rem; }
+  .site-header h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: var(--font-scripture);
+    letter-spacing: 0.02em;
+  }
+  #translation-name { font-size: 0.75rem; color: var(--muted); margin: 0; }
+  .header-controls { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 7px; overflow: hidden; }
+  .seg button {
+    border: 0; background: var(--bg); color: var(--fg);
+    padding: 0.4rem 0.8rem; cursor: pointer; font: inherit; font-size: 0.85rem;
+  }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
+
+  .icon-btn {
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    border-radius: 7px; padding: 0.4rem 0.65rem; cursor: pointer; font-size: 1rem; line-height: 1;
+  }
+  .icon-btn:hover, .seg button:hover, .nav-btn:hover { background: var(--hover-bg); }
+
+  nav.reader-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding: 0.6rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--nav-bg);
+    position: sticky;
+    top: 52px;
+    z-index: 20;
+  }
+  select.control {
+    padding: 0.4rem 0.5rem;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    font: inherit;
+    font-size: 0.9rem;
+  }
+  .nav-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    padding: 0.4rem 0.75rem;
+    border-radius: 7px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+  }
+  .nav-btn:disabled { opacity: 0.4; cursor: default; }
+  .nav-btn:disabled:hover { background: var(--bg); }
+
+  .search-wrap { position: relative; margin-left: auto; flex: 1 1 240px; max-width: 340px; }
+  #search-input {
+    width: 100%;
+    padding: 0.45rem 0.7rem;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    font: inherit;
+    font-size: 0.9rem;
+  }
+  .search-results {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    max-height: 65vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 25;
+  }
+  .search-results ol { list-style: none; margin: 0; padding: 0.3rem; }
+  .search-results button.result {
+    display: block; width: 100%; text-align: left; background: none; border: 0;
+    padding: 0.5rem 0.6rem; border-radius: 6px; cursor: pointer; color: inherit; font: inherit;
+  }
+  .search-results button.result:hover,
+  .search-results button.result:focus { background: var(--hover-bg); outline: none; }
+  .search-results .ref { display: block; font-weight: 600; font-size: 0.78rem; color: var(--accent); }
+  .search-results .snippet {
+    display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem;
+    font-family: var(--font-scripture);
+  }
+  .search-meta { padding: 0.5rem 0.6rem 0.2rem; font-size: 0.75rem; color: var(--muted); }
+  .search-empty { padding: 0.6rem; color: var(--muted); font-size: 0.85rem; margin: 0; }
+  mark { background: var(--mark-bg); color: inherit; border-radius: 2px; padding: 0 0.1em; }
+
+  main.reader {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 1.75rem 1.25rem 4rem;
+    font-family: var(--font-scripture);
+    font-size: 1.15rem;
+  }
+  .formal-title { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.3rem; font-style: italic; }
+  #chapter-heading { margin: 0 0 1.4rem; font-size: 1.6rem; }
+
+  .verses p { margin: 0 0 1em; text-align: left; }
+  .verse { transition: background-color 0.6s ease; border-radius: 3px; }
+  .verse.highlight { background: var(--mark-bg); }
+  .verse .vnum {
+    font-size: 0.68em;
+    font-weight: 700;
+    color: var(--verse-num);
+    margin-right: 0.2em;
+    font-family: var(--font-ui);
+  }
+  .verse em { font-style: italic; }
+  .note-mark {
+    border: 0; background: none; color: var(--accent); cursor: pointer;
+    font-size: 0.75em; padding: 0 0.15em; line-height: 1;
+  }
+
+  .notes {
+    margin-top: 2.75rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .notes h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.6rem;
+    color: var(--muted);
+  }
+  .notes ol { margin: 0; padding-left: 1.3rem; }
+  .notes li { margin-bottom: 0.4rem; }
+  .note-back {
+    border: 0; background: none; padding: 0; color: var(--accent);
+    text-decoration: underline; cursor: pointer; font: inherit; font-weight: 600;
+  }
+
+  footer.site-footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 1.5rem 1rem 2.75rem;
+    font-family: var(--font-ui);
+  }
+  footer.site-footer p { margin: 0.2rem 0; }
+
+  @media (max-width: 640px) {
+    header.site-header { padding: 0.6rem 0.8rem; }
+    nav.reader-nav { padding: 0.5rem 0.8rem; top: 48px; }
+    .search-wrap { flex-basis: 100%; max-width: none; order: 10; margin-left: 0; }
+    main.reader { padding: 1.25rem 1rem 3rem; font-size: 1.05rem; }
+    #chapter-heading { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="titles">
+      <h1>The Books of Samuel</h1>
+      <p id="translation-name"></p>
+    </div>
+    <div class="header-controls">
+      <div class="seg" id="translation-toggle" role="group" aria-label="Translation">
+        <button type="button" data-translation="kjv">KJV</button>
+        <button type="button" data-translation="web">WEB</button>
+      </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">&#9680;</button>
+    </div>
+  </header>
+
+  <nav class="reader-nav" aria-label="Chapter navigation">
+    <label class="sr-only" for="book-select">Book</label>
+    <select class="control" id="book-select"></select>
+
+    <label class="sr-only" for="chapter-select">Chapter</label>
+    <select class="control" id="chapter-select"></select>
+
+    <button type="button" class="nav-btn" id="prev-chapter" aria-label="Previous chapter">&larr; Prev</button>
+    <button type="button" class="nav-btn" id="next-chapter" aria-label="Next chapter">Next &rarr;</button>
+
+    <div class="search-wrap">
+      <label class="sr-only" for="search-input">Search scripture text</label>
+      <input type="search" id="search-input" placeholder="Search this translation&hellip;" autocomplete="off">
+      <div class="search-results" id="search-results" hidden></div>
+    </div>
+  </nav>
+
+  <main class="reader">
+    <p class="formal-title" id="formal-title"></p>
+    <h2 id="chapter-heading"></h2>
+    <div class="verses" id="verses"></div>
+    <section class="notes" id="notes" hidden>
+      <h3>Notes</h3>
+      <ol id="notes-list"></ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Public-domain scripture text &mdash; King James Version (1611) and World English Bible.</p>
+    <p>See the project README for full data provenance and licensing.</p>
+  </footer>
+
+  <noscript><p style="text-align:center">This reader requires JavaScript to display scripture text.</p></noscript>
+
+  <script>
+/*__DATA__*/
+
+(function () {
+  'use strict';
+
+  var BOOK_BY_SLUG = {};
+  DATA.books.forEach(function (b) { BOOK_BY_SLUG[b.slug] = b; });
+  var DEFAULT_SLUG = DATA.books[0].slug;
+  var TRANSLATIONS = DATA.translations.map(function (t) { return t.abbrev; });
+  var TRANSLATION_META = {};
+  DATA.translations.forEach(function (t) { TRANSLATION_META[t.abbrev] = t; });
+
+  var els = {
+    root: document.documentElement,
+    themeToggle: document.getElementById('theme-toggle'),
+    translationToggle: document.getElementById('translation-toggle'),
+    translationButtons: Array.prototype.slice.call(document.querySelectorAll('#translation-toggle button')),
+    translationName: document.getElementById('translation-name'),
+    bookSelect: document.getElementById('book-select'),
+    chapterSelect: document.getElementById('chapter-select'),
+    prevBtn: document.getElementById('prev-chapter'),
+    nextBtn: document.getElementById('next-chapter'),
+    searchInput: document.getElementById('search-input'),
+    searchResults: document.getElementById('search-results'),
+    formalTitle: document.getElementById('formal-title'),
+    chapterHeading: document.getElementById('chapter-heading'),
+    verses: document.getElementById('verses'),
+    notesSection: document.getElementById('notes'),
+    notesList: document.getElementById('notes-list')
+  };
+
+  var pendingHighlight = null;
+
+  // ---------------------------------------------------------------- theme --
+
+  function applyTheme(theme) {
+    if (theme === 'light' || theme === 'dark') {
+      els.root.setAttribute('data-theme', theme);
+    } else {
+      els.root.removeAttribute('data-theme');
+    }
+  }
+
+  function currentEffectiveTheme() {
+    var explicit = els.root.getAttribute('data-theme');
+    if (explicit) return explicit;
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+  }
+
+  (function initTheme() {
+    var stored = null;
+    try { stored = localStorage.getItem('samuel-theme'); } catch (e) { /* ignore */ }
+    if (stored === 'light' || stored === 'dark') applyTheme(stored);
+  })();
+
+  els.themeToggle.addEventListener('click', function () {
+    var next = currentEffectiveTheme() === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('samuel-theme', next); } catch (e) { /* ignore */ }
+  });
+
+  // ------------------------------------------------------------- routing --
+
+  function parseHash() {
+    var raw = (location.hash || '').replace(/^#\/?/, '');
+    var parts = raw.split('/').filter(Boolean);
+    var translation = (parts[0] || '').toUpperCase();
+    var slug = parts[1] || '';
+    var chapter = parseInt(parts[2], 10);
+
+    if (TRANSLATIONS.indexOf(translation) === -1) translation = 'KJV';
+    if (!BOOK_BY_SLUG[slug]) slug = DEFAULT_SLUG;
+    var book = BOOK_BY_SLUG[slug];
+    if (!chapter || chapter < 1 || chapter > book.chapterCount) chapter = 1;
+
+    return { translation: translation, slug: slug, chapter: chapter };
+  }
+
+  function hashFor(translation, slug, chapter) {
+    return '#/' + translation.toLowerCase() + '/' + slug + '/' + chapter;
+  }
+
+  function navigate(translation, slug, chapter) {
+    var target = hashFor(translation, slug, chapter);
+    if (location.hash === target) {
+      render();
+      return;
+    }
+    location.hash = target;
+  }
+
+  // ------------------------------------------------------------ helpers --
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  function renderBrackets(escaped) {
+    return escaped.replace(/\[([^\]]+)\]/g, '<em>$1</em>');
+  }
+
+  function plainOf(display) {
+    return display.replace(/[[\]]/g, '');
+  }
+
+  function decodeVerse(tuple) {
+    var v = tuple[0];
+    var display = tuple[1];
+    var notes = null;
+    var para = false;
+    for (var i = 2; i < tuple.length; i++) {
+      var el = tuple[i];
+      if (Array.isArray(el)) notes = el;
+      else if (el === true) para = true;
+    }
+    return { v: v, display: display, notes: notes, para: para };
+  }
+
+  function flashHighlight(el) {
+    if (!el) return;
+    el.classList.add('highlight');
+    setTimeout(function () { el.classList.remove('highlight'); }, 2200);
+  }
+
+  // ------------------------------------------------------------ render --
+
+  function populateBookSelect() {
+    DATA.books.forEach(function (b) {
+      var opt = document.createElement('option');
+      opt.value = b.slug;
+      opt.textContent = b.name;
+      els.bookSelect.appendChild(opt);
+    });
+  }
+
+  function renderControls(state) {
+    var meta = TRANSLATION_META[state.translation];
+    els.translationName.textContent = meta.name + (meta.year ? ' (' + meta.year + ')' : '');
+
+    els.translationButtons.forEach(function (btn) {
+      var pressed = btn.getAttribute('data-translation').toUpperCase() === state.translation;
+      btn.setAttribute('aria-pressed', String(pressed));
+    });
+
+    if (els.bookSelect.value !== state.slug) els.bookSelect.value = state.slug;
+
+    var book = BOOK_BY_SLUG[state.slug];
+    if (els.chapterSelect.childElementCount !== book.chapterCount) {
+      els.chapterSelect.innerHTML = '';
+      for (var i = 1; i <= book.chapterCount; i++) {
+        var opt = document.createElement('option');
+        opt.value = String(i);
+        opt.textContent = 'Chapter ' + i;
+        els.chapterSelect.appendChild(opt);
+      }
+    }
+    els.chapterSelect.value = String(state.chapter);
+
+    els.prevBtn.disabled = state.chapter <= 1;
+    els.nextBtn.disabled = state.chapter >= book.chapterCount;
+  }
+
+  function verseHtml(tuple) {
+    var d = decodeVerse(tuple);
+    var escaped = renderBrackets(escapeHtml(d.display));
+    var noteMark = '';
+    if (d.notes && d.notes.length) {
+      noteMark = ' <sup><button type="button" class="note-mark" data-note-target="note-' +
+        d.v + '" aria-label="Note on verse ' + d.v + '">&dagger;</button></sup>';
+    }
+    return '<span class="verse" id="v' + d.v + '" data-v="' + d.v + '"><sup class="vnum">' +
+      d.v + '</sup>' + escaped + noteMark + '</span>';
+  }
+
+  function noteHtml(d) {
+    var body = d.notes.map(escapeHtml).join(' &mdash; ');
+    return '<li id="note-' + d.v + '"><button type="button" class="note-back" data-verse-target="' +
+      d.v + '">' + d.v + '</button>. ' + body + '</li>';
+  }
+
+  function renderChapter(state) {
+    var book = BOOK_BY_SLUG[state.slug];
+    var tuples = book.chapters[state.translation][state.chapter - 1];
+
+    document.title = book.name + ' ' + state.chapter + ' (' + state.translation + ') – The Books of Samuel';
+    els.formalTitle.textContent = book.titles[state.translation];
+    els.chapterHeading.textContent = book.name + ' ' + state.chapter;
+
+    var versesHtml = '';
+    var notesHtml = '';
+    var hasNotes = false;
+    var buf = [];
+
+    function flushPara() {
+      if (buf.length) {
+        versesHtml += '<p>' + buf.join(' ') + '</p>';
+        buf = [];
+      }
+    }
+
+    tuples.forEach(function (t) {
+      var d = decodeVerse(t);
+      buf.push(verseHtml(t));
+      if (d.notes && d.notes.length) {
+        hasNotes = true;
+        notesHtml += noteHtml(d);
+      }
+      if (d.para) flushPara();
+    });
+    flushPara();
+
+    els.verses.innerHTML = versesHtml;
+    els.notesList.innerHTML = notesHtml;
+    els.notesSection.hidden = !hasNotes;
+
+    if (pendingHighlight != null) {
+      var target = document.getElementById('v' + pendingHighlight);
+      if (target) {
+        target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        flashHighlight(target);
+      }
+      pendingHighlight = null;
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }
+
+  function normalizeUrl(state) {
+    var canonical = hashFor(state.translation, state.slug, state.chapter);
+    if (location.hash !== canonical) {
+      history.replaceState(null, '', canonical);
+    }
+  }
+
+  function render() {
+    var state = parseHash();
+    normalizeUrl(state);
+    renderControls(state);
+    renderChapter(state);
+  }
+
+  // ------------------------------------------------------------- search --
+
+  function runSearch(query) {
+    query = query.trim();
+    if (query.length < 2) {
+      els.searchResults.hidden = true;
+      els.searchResults.innerHTML = '';
+      return;
+    }
+    var state = parseHash();
+    var needle = query.toLowerCase();
+    var results = [];
+    var MAX = 60;
+
+    for (var bi = 0; bi < DATA.books.length && results.length < MAX; bi++) {
+      var book = DATA.books[bi];
+      var chapters = book.chapters[state.translation];
+      for (var ci = 0; ci < chapters.length && results.length < MAX; ci++) {
+        var tuples = chapters[ci];
+        for (var vi = 0; vi < tuples.length && results.length < MAX; vi++) {
+          var d = decodeVerse(tuples[vi]);
+          var plain = plainOf(d.display);
+          var idx = plain.toLowerCase().indexOf(needle);
+          if (idx !== -1) {
+            results.push({
+              slug: book.slug,
+              name: book.name,
+              chapter: ci + 1,
+              verse: d.v,
+              plain: plain,
+              idx: idx,
+              len: needle.length
+            });
+          }
+        }
+      }
+    }
+
+    renderSearchResults(results, query, state.translation);
+  }
+
+  function renderSearchResults(results, query, translation) {
+    if (!results.length) {
+      els.searchResults.innerHTML = '<p class="search-empty">No matches for &ldquo;' +
+        escapeHtml(query) + '&rdquo; in ' + translation + '.</p>';
+      els.searchResults.hidden = false;
+      return;
+    }
+    var html = '<p class="search-meta">' + results.length + (results.length >= 60 ? '+' : '') +
+      ' match' + (results.length === 1 ? '' : 'es') + ' in ' + translation + '</p><ol>';
+    results.forEach(function (r) {
+      var start = Math.max(0, r.idx - 40);
+      var end = Math.min(r.plain.length, r.idx + r.len + 40);
+      var snippet = (start > 0 ? '…' : '') +
+        escapeHtml(r.plain.slice(start, r.idx)) +
+        '<mark>' + escapeHtml(r.plain.slice(r.idx, r.idx + r.len)) + '</mark>' +
+        escapeHtml(r.plain.slice(r.idx + r.len, end)) +
+        (end < r.plain.length ? '…' : '');
+      html += '<li><button type="button" class="result" data-slug="' + r.slug +
+        '" data-chapter="' + r.chapter + '" data-verse="' + r.verse + '">' +
+        '<span class="ref">' + r.name + ' ' + r.chapter + ':' + r.verse + '</span>' +
+        '<span class="snippet">' + snippet + '</span>' +
+        '</button></li>';
+    });
+    html += '</ol>';
+    els.searchResults.innerHTML = html;
+    els.searchResults.hidden = false;
+  }
+
+  function refreshSearchIfOpen() {
+    if (!els.searchResults.hidden && els.searchInput.value.trim().length >= 2) {
+      runSearch(els.searchInput.value);
+    }
+  }
+
+  var searchDebounce = null;
+  els.searchInput.addEventListener('input', function () {
+    clearTimeout(searchDebounce);
+    var q = els.searchInput.value;
+    searchDebounce = setTimeout(function () { runSearch(q); }, 120);
+  });
+  els.searchInput.addEventListener('focus', function () {
+    if (els.searchInput.value.trim().length >= 2) runSearch(els.searchInput.value);
+  });
+  els.searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      els.searchResults.hidden = true;
+      els.searchInput.blur();
+    }
+  });
+  els.searchResults.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('button.result') : null;
+    if (!btn) return;
+    var state = parseHash();
+    pendingHighlight = parseInt(btn.getAttribute('data-verse'), 10);
+    els.searchResults.hidden = true;
+    navigate(state.translation, btn.getAttribute('data-slug'), parseInt(btn.getAttribute('data-chapter'), 10));
+  });
+  document.addEventListener('click', function (e) {
+    if (e.target !== els.searchInput && !els.searchResults.contains(e.target)) {
+      els.searchResults.hidden = true;
+    }
+  });
+
+  // -------------------------------------------------------------- events --
+
+  els.translationButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var state = parseHash();
+      navigate(btn.getAttribute('data-translation'), state.slug, state.chapter);
+      refreshSearchIfOpen();
+    });
+  });
+
+  els.bookSelect.addEventListener('change', function () {
+    var state = parseHash();
+    navigate(state.translation, els.bookSelect.value, 1);
+  });
+
+  els.chapterSelect.addEventListener('change', function () {
+    var state = parseHash();
+    navigate(state.translation, state.slug, parseInt(els.chapterSelect.value, 10));
+  });
+
+  els.prevBtn.addEventListener('click', function () {
+    var state = parseHash();
+    if (state.chapter > 1) navigate(state.translation, state.slug, state.chapter - 1);
+  });
+  els.nextBtn.addEventListener('click', function () {
+    var state = parseHash();
+    var book = BOOK_BY_SLUG[state.slug];
+    if (state.chapter < book.chapterCount) navigate(state.translation, state.slug, state.chapter + 1);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    var tag = ((document.activeElement && document.activeElement.tagName) || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    if (e.key === 'ArrowLeft') els.prevBtn.click();
+    else if (e.key === 'ArrowRight') els.nextBtn.click();
+  });
+
+  els.verses.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.note-mark') : null;
+    if (!btn) return;
+    var target = document.getElementById(btn.getAttribute('data-note-target'));
+    if (target) {
+      els.notesSection.hidden = false;
+      target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      flashHighlight(target);
+    }
+  });
+
+  els.notesList.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.note-back') : null;
+    if (!btn) return;
+    var target = document.getElementById('v' + btn.getAttribute('data-verse-target'));
+    if (target) {
+      target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      flashHighlight(target);
+    }
+  });
+
+  window.addEventListener('hashchange', render);
+
+  // --------------------------------------------------------------- init --
+
+  populateBookSelect();
+  render();
+})();
+  </script>
+</body>
+</html>
