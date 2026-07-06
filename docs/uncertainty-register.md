@@ -1,0 +1,29 @@
+# Uncertainty register
+
+Living register of open historical/scholarly questions the project has taken a
+position on for rendering purposes. Each entry is provisional — the render always
+reflects the "current default," never a claim of settled fact. Cross-reference:
+`src/data/claims.ts` (`scholarlyViews`) is the machine-readable form of most of these.
+
+| #   | Question                                                                                                                      | Current default                                                                                                           | Confidence                          | Status                                                                            |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------- |
+| 1   | Where was Ziklag?                                                                                                             | Generic composite Negev/Shephelah frontier town; not a portrait of Tel Sera', Tel Halif, or Khirbet al-Ra'i               | low                                 | Open — see `claim-ziklag-location`                                                |
+| 2   | Route/distance from Ziklag to the brook Besor                                                                                 | 15–25 km, depends entirely on #1                                                                                          | low                                 | Open — blocks precise Milestone 2 route geometry                                  |
+| 3   | Was Ziklag's plan an "enclosed settlement" ring (Beersheba VII type)?                                                         | Yes, applied as a generic period-appropriate layout                                                                       | speculative                         | Design decision, flagged for Fable review (`fable-review-queue.md` #1)            |
+| 4   | Scale of Saul's kingdom / David's early state                                                                                 | Not resolved; both "substantial early state" and "modest highland chiefdom" views are surfaced (`claim-david-historical`) | moderate (that the debate exists)   | Stable — UI already presents both views                                           |
+| 5   | Absolute dating of early-monarchy strata (high vs. low chronology)                                                            | Not resolved; period labels carry a range and a note, no single date is asserted                                          | high (that the debate matters)      | Stable                                                                            |
+| 6   | Camel domestication timing vs. Amalekite raiders' camels (1 Sam 30:17)                                                        | Not yet rendered (Milestone 2). Sapir-Hen & Ben-Yosef date large-scale domestic use later than the narrative window       | moderate                            | Open — needs a Milestone 2 creative-direction call (`fable-review-queue.md` #5)   |
+| 7   | How literally to render "six hundred men" / army numbers generally                                                            | Rendered at ~1:10 of narrated counts for performance, disclosed via label, not asserted as the "true" number              | n/a (design choice)                 | Stable, revisit if figure fidelity work changes the ratio                         |
+| 8   | Jabesh-gilead site                                                                                                            | Two candidates noted (Tell el-Maqlub, Tell Abu al-Kharaz), neither adopted yet                                            | low                                 | Open — deferred to Milestone 3                                                    |
+| 9   | Violence-rendering intensity for Gilboa (Milestone 3)                                                                         | Not yet built. Policy requires honest-but-non-sensational default with an available reduced-intensity mode                | n/a (policy, not historical)        | Open — needs Fable sign-off before Milestone 3 build (`fable-review-queue.md` #6) |
+| 10  | Citation completeness: Khirbet al-Ra'i Ziklag proposal (`garfinkel-ganor-2019`) and Tel Sera' priority (`oren-tel-sera-1993`) | Summaries seeded from team knowledge, hedged with "e.g." attributions                                                     | n/a (bibliographic, not historical) | Open — page-level citation verification pass not yet done                         |
+
+## How to update this register
+
+- Add a row when a new claim carries genuine scholarly disagreement or an unresolved
+  identification question — not for routine "we haven't modeled this yet" gaps
+  (those belong in `docs/asset-roadmap.md` instead).
+- Close/update a row when the underlying `claims.ts` entry is resolved, re-scoped, or
+  superseded, and note the resolution in `docs/run-log.md`.
+- This register is a companion to, not a replacement for, the in-app "Certain vs.
+  reconstructed" panel — keep the two consistent.

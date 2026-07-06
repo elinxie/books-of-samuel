@@ -1,0 +1,15 @@
+{
+  "id": "king-stager-2001",
+  "title": "Life in Biblical Israel",
+  "author": "Philip J. King; Lawrence E. Stager",
+  "publisher": "Westminster John Knox Press",
+  "datePublished": "2001",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "material-culture",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
+  "summary": "Synthesis of Israelite daily life and material culture: houses and construction, dress and textiles, food production, water systems, tools, and household organization. Primary anchor for material-culture claims (mudbrick construction, dress, wells, household scale).",
+  "relevantPassages": ["1 Samuel 30"],
+  "extractedClaims": ["claim-mudbrick", "claim-dress", "claim-well", "claim-agriculture"],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+}

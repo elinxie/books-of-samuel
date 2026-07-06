@@ -1,0 +1,15 @@
+{
+  "id": "rainey-notley-2006",
+  "title": "The Sacred Bridge: Carta's Atlas of the Biblical World",
+  "author": "Anson F. Rainey; R. Steven Notley",
+  "publisher": "Carta, Jerusalem",
+  "datePublished": "2006",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "historical-geography",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted reference atlas. Project stores its own summaries of identifications and routes only; no map reproductions.",
+  "summary": "Standard scholarly atlas of biblical historical geography. Used here for site identifications (Besor, Gilboa, Beth-shan, Hebron, Jabesh-gilead candidates, Ziklag candidates) and for regional route reasoning.",
+  "relevantPassages": ["1 Samuel 30", "1 Samuel 31", "2 Samuel 2"],
+  "extractedClaims": ["claim-besor", "claim-ziklag-location", "claim-negev-terrain"],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+}

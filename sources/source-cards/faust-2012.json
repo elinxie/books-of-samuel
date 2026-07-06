@@ -1,0 +1,15 @@
+{
+  "id": "faust-2012",
+  "title": "The Archaeology of Israelite Society in Iron Age II",
+  "author": "Avraham Faust",
+  "publisher": "Eisenbrauns",
+  "datePublished": "2012",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "archaeology",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
+  "summary": "Society-scale archaeology of Iron Age Israel: settlement hierarchy, village and town sizes, population estimation methods, the four-room house and its social reading. Anchor for settlement-scale and house-form claims.",
+  "relevantPassages": ["1 Samuel 30"],
+  "extractedClaims": ["claim-ziklag-scale", "claim-four-room", "claim-oval-plan"],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+}

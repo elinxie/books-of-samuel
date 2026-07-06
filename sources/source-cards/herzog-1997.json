@@ -1,0 +1,15 @@
+{
+  "id": "herzog-1997",
+  "title": "Archaeology of the City: Urban Planning in Ancient Israel and Its Social Implications",
+  "author": "Ze'ev Herzog",
+  "publisher": "Tel Aviv University, Institute of Archaeology",
+  "datePublished": "1997",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "archaeology",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
+  "summary": "Urban-form study covering, among much else, the early Iron Age 'enclosed settlement' plan (dwellings ringing an open center, e.g. Beersheba VII) used as the comparative model for the Ziklag placeholder layout.",
+  "relevantPassages": ["1 Samuel 30"],
+  "extractedClaims": ["claim-oval-plan", "claim-ziklag-scale", "claim-wall-gate"],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+}
