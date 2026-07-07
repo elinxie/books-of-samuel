@@ -1,0 +1,181 @@
+{
+ "translations": [
+  {
+   "abbrev": "KJV",
+   "name": "King James Version",
+   "year": 1611,
+   "rights": "Public domain",
+   "source": {
+    "package": "bible-kjv",
+    "version": "1.1.3",
+    "registry": "https://www.npmjs.com/package/bible-kjv",
+    "license": "MIT"
+   }
+  },
+  {
+   "abbrev": "WEB",
+   "name": "World English Bible",
+   "rights": "Public domain",
+   "source": {
+    "package": "world-english-bible",
+    "version": "1.0.1",
+    "registry": "https://www.npmjs.com/package/world-english-bible",
+    "license": "UNLICENSED"
+   }
+  }
+ ],
+ "books": [
+  {
+   "slug": "1-samuel",
+   "name": "1 Samuel",
+   "osisId": "1Sam",
+   "canonOrder": 9,
+   "chapters": 31,
+   "verses": {
+    "kjv": 810,
+    "web": 810
+   },
+   "chapterVerses": {
+    "kjv": [
+     28,
+     36,
+     21,
+     22,
+     12,
+     21,
+     17,
+     22,
+     27,
+     27,
+     15,
+     25,
+     23,
+     52,
+     35,
+     23,
+     58,
+     30,
+     24,
+     42,
+     15,
+     23,
+     29,
+     22,
+     44,
+     25,
+     12,
+     25,
+     11,
+     31,
+     13
+    ],
+    "web": [
+     28,
+     36,
+     21,
+     22,
+     12,
+     21,
+     17,
+     22,
+     27,
+     27,
+     15,
+     25,
+     23,
+     52,
+     35,
+     23,
+     58,
+     30,
+     24,
+     42,
+     15,
+     23,
+     29,
+     22,
+     44,
+     25,
+     12,
+     25,
+     11,
+     31,
+     13
+    ]
+   },
+   "files": {
+    "kjv": "kjv/1-samuel.json",
+    "web": "web/1-samuel.json"
+   }
+  },
+  {
+   "slug": "2-samuel",
+   "name": "2 Samuel",
+   "osisId": "2Sam",
+   "canonOrder": 10,
+   "chapters": 24,
+   "verses": {
+    "kjv": 695,
+    "web": 695
+   },
+   "chapterVerses": {
+    "kjv": [
+     27,
+     32,
+     39,
+     12,
+     25,
+     23,
+     29,
+     18,
+     13,
+     19,
+     27,
+     31,
+     39,
+     33,
+     37,
+     23,
+     29,
+     33,
+     43,
+     26,
+     22,
+     51,
+     39,
+     25
+    ],
+    "web": [
+     27,
+     32,
+     39,
+     12,
+     25,
+     23,
+     29,
+     18,
+     13,
+     19,
+     27,
+     31,
+     39,
+     33,
+     37,
+     23,
+     29,
+     33,
+     43,
+     26,
+     22,
+     51,
+     39,
+     25
+    ]
+   },
+   "files": {
+    "kjv": "kjv/2-samuel.json",
+    "web": "web/2-samuel.json"
+   }
+  }
+ ]
+}

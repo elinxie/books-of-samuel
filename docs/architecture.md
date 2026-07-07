@@ -13,6 +13,25 @@
 
 Any change to this stack is an architectural decision — see `/docs/model-handoff.md` for who may make that call.
 
+## The `reader/` companion (separate subproject, different stack)
+
+`reader/` is a self-contained full-text KJV/WEB Bible reader for 1–2 Samuel,
+originally built in a separate session and merged into this repo (see
+`docs/run-log.md` for the reconciliation history). It intentionally does **not**
+share this project's stack: it's vanilla HTML/CSS/JS built by stdlib-only Python
+scripts, with its own README (`reader/README.md`), its own data format, and its
+own validation (`reader/scripts/validate_data.py`). It exists because this
+project's ESV policy (ADR-003) deliberately excludes full chapter text — the
+reader is where a user goes to read the complete text in a public-domain
+translation.
+
+Integration is a single seam: `npm run build` runs `scripts/copy-reader.mjs`
+after `vite build`, which copies `reader/index.html` (a committed build
+artifact, regenerated via `reader/README.md`'s instructions) into
+`dist/reader/index.html`, so it deploys at `/reader/` alongside the visualizer.
+`reader/**` is excluded from this project's ESLint/Prettier config — it has its
+own conventions and its own Python-side validation instead.
+
 ## Directory layout
 
 ```

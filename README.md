@@ -19,6 +19,15 @@ Milestone 1: **1 Samuel 30** — Ziklag after the Amalekite raid, and the script
 return of David and his six hundred. See `/progress` in the app, or
 `docs/progress.md`, for full status.
 
+## Companion: full-text reader
+
+This project deliberately never stores full ESV chapters (see Scripture and
+permissions, below). For reading the complete text of 1–2 Samuel, this repo also
+hosts [`/reader/`](reader/README.md) — a self-contained, single-file web reader
+with the full King James Version and World English Bible (both public domain),
+deployed alongside the visualizer at `/reader/`. It has its own toolchain
+(Python, no shared dependencies with the visualizer) and its own docs.
+
 ## Running locally
 
 ```bash
@@ -58,6 +67,8 @@ See `docs/architecture.md` for the full layout and stack rationale. Short versio
 - `src/scenes/<name>/` — per-scene 3D composition.
 - `src/ui/`, `src/pages/` — HUD and study pages.
 - `docs/` — architecture, reconstruction method, progress, and continuation docs.
+- `reader/` — the companion full-text KJV/WEB reader, a separate self-contained
+  subproject (its own README, own Python toolchain); deployed at `/reader/`.
 
 ## Continuing this project across sessions
 
@@ -99,6 +110,7 @@ Sources page (`/sources`) or `docs/bibliography.md`.
 
 ## License
 
-Project code is not currently under a published open-source license; historical
-research content follows the sourcing and copyright rules in
-`docs/source-ingestion-policy.md`. Contact the repository owner before reuse.
+Code in this repository is MIT-licensed — see [`LICENSE`](LICENSE). Historical
+research content (claims, source cards, summaries) follows the sourcing and
+copyright rules in `docs/source-ingestion-policy.md`; ESV excerpts follow the
+terms in that same policy, separate from the code license.

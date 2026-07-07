@@ -6,7 +6,7 @@
   "description": "A historically serious, first-person, neutral-observer 3D visualizer for the world of 1-2 Samuel.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "build": "tsc --noEmit -p tsconfig.json && vite build && node scripts/copy-reader.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",

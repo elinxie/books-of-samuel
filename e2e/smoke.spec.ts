@@ -7,6 +7,14 @@ import { expect, test } from '@playwright/test';
  * basic route.
  */
 
+test('companion reader deploys and loads at /reader/', async ({ page }) => {
+  const response = await page.goto('reader/');
+  expect(response?.ok()).toBe(true);
+  // The reader is a separate hand-built subproject (see reader/README.md) —
+  // just confirm it actually shipped and renders, not its internal behavior.
+  await expect(page.locator('body')).not.toBeEmpty();
+});
+
 test('landing page loads and lists entry points', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {

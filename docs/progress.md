@@ -41,11 +41,21 @@ Remaining for a clean M1 close-out:
 
 ## Milestone 2–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
+## Repo note: companion reader at `/reader/`
+
+A separate Claude Code session had independently built and merged (into `main`,
+before this branch's PR) an unrelated static KJV/WEB full-text reader under the
+same repo. Reconciled per user direction: it now lives at `/reader/` as a
+companion full-text tool (its own README, own Python toolchain, not part of this
+project's stack) — see `docs/architecture.md` § "The `reader/` companion" and
+`docs/run-log.md` for the full story. Root `LICENSE` (MIT) came from that merge
+and now covers the whole repo's code.
+
 ## Build/test status as of last run
 
 - `npm run format:check` — pass
 - `npm run lint` — pass
 - `npm run test` (vitest) — 31/31 pass
-- `npm run build` — pass
-- `npm run e2e` (playwright) — 6/6 pass (sandboxed env needs
+- `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
+- `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`; unnecessary in normal CI)

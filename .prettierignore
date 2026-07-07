@@ -6,3 +6,7 @@ test-results
 package-lock.json
 *.tsbuildinfo
 sources/source-index.json
+
+# reader/ is a separate self-contained subproject with its own conventions
+# (hand-authored HTML, generated JSON data, Python) — not this repo's TS/React style.
+reader

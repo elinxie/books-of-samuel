@@ -2,6 +2,15 @@
 
 **Read `docs/sonnet-continuation.md` first if you haven't.**
 
+## Since the last version of this note
+
+Reconciled a repo-level conflict: a separate session's KJV/WEB text reader
+(merged into `main` independently) now lives at `/reader/` as a companion
+tool, not in conflict with the visualizer. See `docs/run-log.md` (session 2)
+and `docs/architecture.md` for details. If you're touching `README.md`,
+`LICENSE`, or anything build-related, be aware `reader/` and
+`scripts/copy-reader.mjs` now exist — don't remove them without reason.
+
 ## Immediate next task
 
 Milestone 1 is functionally complete and passing all gates. Pick ONE of these,
