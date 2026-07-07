@@ -25,7 +25,6 @@ const cards = files.map((file) => {
 });
 
 const index = {
-  generatedAt: new Date().toISOString().slice(0, 10),
   count: cards.length,
   cards,
 };
