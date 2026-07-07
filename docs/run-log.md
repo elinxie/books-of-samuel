@@ -102,3 +102,5 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
 - Q2 figure ratio/abstraction: confirmed — ~1:10 is now the standard ratio for
   narrated crowds; capsules-without-gear stays until M3 modeled figures.
   Register #7 updated.
+- Q3 late-afternoon lighting: confirmed — hour unstated in text, disclosed
+  placeholder; low light earns its keep for legibility + honest mood.
