@@ -1,15 +1,15 @@
 {
   "id": "oren-tel-sera-1993",
-  "title": "Sera', Tel (entry in: The New Encyclopedia of Archaeological Excavations in the Holy Land)",
+  "title": "Sera', Tel (entry in: The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 4)",
   "author": "Eliezer D. Oren",
   "publisher": "Israel Exploration Society / Carta",
   "datePublished": "1993",
-  "dateAccessed": "2026-07-06",
+  "dateAccessed": "2026-07-07",
   "sourceType": "archaeology",
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted encyclopedia entry. Summaries in project's own words only.",
-  "summary": "Report on Tel Sera' (Tell esh-Shari'a) in the western Negev, excavated by Oren 1972–1979, long discussed as a leading candidate for biblical Ziklag on geographic and stratigraphic grounds.",
+  "summary": "Report on Tel Sera' (Tell esh-Shari'a) in the western Negev, excavated by Oren across six seasons 1972–1979, revealing remains from the Chalcolithic through early Islamic periods including Iron Age I–II strata. The identification of this site with biblical Ziklag predates Oren's excavations by decades: it is attributed in the secondary literature to Isaac (Yitzhak) Press's Hebrew topographical encyclopedia (I. Press, A Topographical-Historical Encyclopaedia of Palestine, vol. 4, Jerusalem, 1955, pp. 806–807), and was subsequently supported by Benjamin Mazar (1957) and Yohanan Aharoni (The Land of the Bible: A Historical Geography, 1967, p. 259), among others, well before Oren began digging. Oren's 1993 NEAEHL entry (reported elsewhere as pp. 1329–1335) is a later excavation report and synthesis, not the origin of the Ziklag identification for this site. The identification remains one of at least three candidates treated here as disputed.",
   "relevantPassages": ["1 Samuel 27:6", "1 Samuel 30"],
   "extractedClaims": ["claim-ziklag-location"],
-  "confidenceNotes": "TO VERIFY (M1): entry pagination and the history of who first proposed the Ziklag identification for this site."
+  "confidenceNotes": "The priority claim (Press 1955, predating Oren) and the supporting names (Mazar 1957, Aharoni 1967) were found via secondary bibliographic search, not by inspecting Press's or Aharoni's original volumes directly; TO VERIFY against the primary Hebrew/English texts if this history needs to bear more weight than 'the identification predates Oren's excavations.' The page range given for Oren's own NEAEHL entry (1329–1335) is likewise from secondary citation, not confirmed against a physical/PDF copy of the encyclopedia volume — noted here as the best available figure rather than a fabricated placeholder."
 }

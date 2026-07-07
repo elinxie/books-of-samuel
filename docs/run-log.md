@@ -156,3 +156,57 @@ wiring"):
   `besor-crossing` groundwork).
 
 Next: see `docs/next-run.md`.
+
+**2026-07-07 — Sonnet 5 — citation close-out + visual-fidelity roadmap start**
+Ran `docs/next-run.md` item 1 (queue #4) via the `researcher` subagent, then
+started the user's requested visual-fidelity track:
+
+- Queue #4 resolved: `garfinkel-ganor-2019` now cites the real identification
+  article (Garfinkel & Ganor, _Strata_ 37 [2019]: 51–59) plus a peer-reviewed
+  rebuttal (Thomas & McKinny, _IEJ_ 72/1 [2022]: 66–88) and reply (Keimer,
+  _PEQ_ 155/2 [2023]: 115–134); `oren-tel-sera-1993` now documents that the
+  Tel Sera' identification predates Oren, tracing to Press (1955)/Mazar
+  (1957)/Aharoni (1967). Both cards keep a narrow, honest `TO VERIFY` for
+  details found only via secondary citation (exact print pagination; Tel
+  Halif's proponent list, out of scope this pass). Updated `claims.ts`,
+  `locations.ts`, `fable-review-queue.md` (Open table now empty),
+  `uncertainty-register.md` #10, `bibliography.md`. Did not touch the
+  substantive 3-candidate Ziklag-location dispute.
+- Wrote `docs/visual-fidelity-roadmap.md` (sections A–F per the user's brief,
+  grounded in actual files: `QualityProfile`, `TerrainSpec`/`ColorZone`,
+  existing instancing patterns).
+- Checked in `.claude/skills/threejs-r3f-performance/SKILL.md`: the user has
+  two relevant account-wide skills enabled (`threejs-best-practices`,
+  `react-three-fiber-best-practices`), but no tool in this session exposes an
+  account skill's raw content for copying — `Skill` only invokes the fixed
+  project/built-in skill list. Wrote an original equivalent grounded in this
+  repo's real patterns instead, so any session/agent working this repo (with
+  or without those account skills enabled) gets the same guidance.
+- Landed visual-fidelity slice 1 (`docs/visual-fidelity-roadmap.md` §A):
+  `src/scenes/ziklag/terrain.ts`'s single flat ash-colored zone replaced with
+  zones keyed to real layout data — a softer general interior tone, dark
+  scorch patches at each `SMOKE_ORIGINS` point (severity-scaled by `major`),
+  and a lighter worn-dust halo at the gate midpoint (from `GATE_TOWERS`).
+  Coverage: 2 new tests in `src/scenes/ziklag/terrain.test.ts` comparing the
+  real spec against a same-hills/features variant with zones stripped, so the
+  assertions isolate the zone effect from procedural noise rather than
+  comparing across unrelated locations. The old coarse vertex-color regression
+  pins didn't need updating (sampled points fall outside the changed zones).
+  Verified visually via a Playwright screenshot of the live dev server (scene
+  renders, no console errors) in addition to the unit tests.
+- Full gate green: format/lint/typecheck/40 vitest/build/7 playwright e2e.
+- Mid-session user feedback: deprioritize deep bibliographic research and
+  heavy test-writing going forward when token-costly; prioritize visible
+  scene-realism work instead. Recorded in `docs/next-run.md`'s "User priority
+  note" for future sessions to see without chat memory.
+- Responded by landing visual-fidelity slice 2 same session (§C): house
+  walls/socles and perimeter-wall segments in `Settlement.tsx` get per-mesh
+  seeded hue/roughness jitter (deterministic `mulberry32` seed) instead of
+  two flat repeated tones — houses aren't instanced, so this is a small
+  per-mesh material array, not `instanceColor`. No new tests added for this
+  one per the user's steer (visual-only JSX change, no new pure logic beyond
+  the same jitter pattern the roadmap doc already documents). Verified via
+  typecheck/lint/test/build all green and a Playwright screenshot of the
+  live scene (no console errors; bundle size unchanged).
+
+Next: see `docs/next-run.md`.

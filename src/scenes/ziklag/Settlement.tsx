@@ -1,20 +1,49 @@
 import { useMemo } from 'react';
 import * as THREE from 'three';
 import { useAppStore } from '../../state/store';
+import { mulberry32 } from '../../engine/noise';
 import { GATE_TOWERS, HOUSES, SMOKE_ORIGINS, WALLS, WELL_POS } from './layout';
 
 /**
  * Burned settlement massing. Every structure is a labeled placeholder
  * (see asset-house-block, asset-perimeter-wall, asset-gate-simple).
  * The whole town is shown burned per 1 Samuel 30:1 — "…and burned it with fire."
+ *
+ * Wall and socle materials are jittered per structure (deterministic seed) so
+ * mudbrick/stone read as individually weathered surfaces rather than two flat
+ * repeated tones — same "vary color/roughness per instance" technique used for
+ * vegetation, applied here per-mesh since houses aren't instanced.
  */
+const tmpHsl = { h: 0, s: 0, l: 0 };
+
+function jitteredMaterial(
+  rng: () => number,
+  baseHex: string,
+  hueJitter: number,
+  lightJitter: number,
+  baseRoughness = 0.88,
+  roughnessJitter = 0.12,
+): THREE.MeshStandardMaterial {
+  const color = new THREE.Color(baseHex);
+  color.getHSL(tmpHsl);
+  color.setHSL(
+    tmpHsl.h + (rng() - 0.5) * hueJitter,
+    tmpHsl.s,
+    Math.max(0, Math.min(1, tmpHsl.l + (rng() - 0.5) * lightJitter)),
+  );
+  return new THREE.MeshStandardMaterial({
+    color,
+    roughness: Math.max(0, Math.min(1, baseRoughness + (rng() - 0.5) * roughnessJitter)),
+  });
+}
+
 export function Settlement({ shadows }: { shadows: boolean }) {
   const terrain = useAppStore((s) => s.terrain);
-  const materials = useMemo(
-    () => ({
+  const materials = useMemo(() => {
+    const rng = mulberry32(90210);
+    return {
       charred: new THREE.MeshStandardMaterial({ color: '#4a423a', roughness: 1 }),
       charredDark: new THREE.MeshStandardMaterial({ color: '#3a332d', roughness: 1 }),
-      mudScorched: new THREE.MeshStandardMaterial({ color: '#6f5f4b', roughness: 1 }),
       stone: new THREE.MeshStandardMaterial({ color: '#9a8d76', roughness: 1 }),
       ash: new THREE.MeshStandardMaterial({ color: '#2e2a26', roughness: 1 }),
       scorch: new THREE.MeshBasicMaterial({
@@ -23,9 +52,16 @@ export function Settlement({ shadows }: { shadows: boolean }) {
         opacity: 0.55,
         depthWrite: false,
       }),
-    }),
-    [],
-  );
+      // One jittered wall + socle material per house — soot-black char and
+      // scorched mudbrick are the two burned tones, stone socles vary by
+      // weathering rather than fire.
+      houseWalls: HOUSES.map((_, i) =>
+        jitteredMaterial(rng, i % 3 === 0 ? '#6f5f4b' : '#4a423a', 0.03, 0.09),
+      ),
+      houseSocles: HOUSES.map(() => jitteredMaterial(rng, '#9a8d76', 0.02, 0.12, 0.92, 0.1)),
+      wallSegments: WALLS.map(() => jitteredMaterial(rng, '#6f5f4b', 0.025, 0.08)),
+    };
+  }, []);
 
   return (
     <group>
@@ -35,14 +71,14 @@ export function Settlement({ shadows }: { shadows: boolean }) {
         return (
           <group key={`house-${i}`} position={[h.x, y, h.z]} rotation={[0, h.rot, 0]}>
             {/* Stone socle */}
-            <mesh position={[0, 0.2, 0]} material={materials.stone} castShadow={shadows}>
+            <mesh position={[0, 0.2, 0]} material={materials.houseSocles[i]} castShadow={shadows}>
               <boxGeometry args={[h.w + 0.3, 0.5, h.d + 0.3]} />
             </mesh>
             {/* Mudbrick walls, charred */}
             <mesh
               position={[0, 0.4 + height / 2, 0]}
               rotation={[h.collapsed ? 0.05 : 0, 0, h.collapsed ? 0.06 : 0]}
-              material={i % 3 === 0 ? materials.mudScorched : materials.charred}
+              material={materials.houseWalls[i]}
               castShadow={shadows}
             >
               <boxGeometry args={[h.w, height, h.d]} />
@@ -75,7 +111,7 @@ export function Settlement({ shadows }: { shadows: boolean }) {
             key={`wall-${i}`}
             position={[w.x, y + w.h / 2, w.z]}
             rotation={[0, w.rot, 0]}
-            material={materials.mudScorched}
+            material={materials.wallSegments[i]}
             castShadow={shadows}
           >
             <boxGeometry args={[w.len, w.h, 1.1]} />

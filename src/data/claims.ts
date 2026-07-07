@@ -27,16 +27,24 @@ export const CLAIMS: ReconstructionClaim[] = [
       {
         id: 'view-ziklag-tel-sera',
         label: 'Tel Sera’ (Tell esh-Shari’a)',
-        proponents: ['e.g., scholars following Eliezer Oren’s excavations'],
+        proponents: [
+          'Isaac (Yitzhak) Press (1955, first proposed)',
+          'Benjamin Mazar (1957)',
+          'Yohanan Aharoni (1967)',
+          'Eliezer D. Oren (1972–1979 excavator; 1993 site synthesis)',
+          'Zachary Thomas and Chris McKinny (2022, arguing against Khirbet al-Ra’i in favor of this site)',
+        ],
         summary:
-          'A long-favored candidate in the western Negev on Nahal Gerar, excavated 1972–1979 with relevant Iron Age remains.',
+          'A long-favored candidate in the western Negev on Nahal Gerar. The identification predates Oren’s 1972–1979 excavations, having first been proposed by Press (1955) and supported by Mazar (1957) and Aharoni (1967); Oren’s later work is the primary excavation report and synthesis, not the original proposal.',
         confidence: 'low',
         sourceIds: ['oren-tel-sera-1993', 'rainey-notley-2006'],
       },
       {
         id: 'view-ziklag-tel-halif',
         label: 'Tel Halif (Tell Khuweilifeh)',
-        proponents: ['e.g., proponents cited in historical-geography surveys'],
+        proponents: [
+          'e.g., proponents cited in historical-geography surveys (attribution not yet page-verified)',
+        ],
         summary:
           'A site on the Judean hill–Negev boundary near modern Lahav, defended by some historical geographers as fitting the town lists of Joshua 15 and 19.',
         confidence: 'low',
@@ -45,15 +53,18 @@ export const CLAIMS: ReconstructionClaim[] = [
       {
         id: 'view-ziklag-khirbet-al-rai',
         label: 'Khirbet al-Ra’i',
-        proponents: ['Yosef Garfinkel', 'Saar Ganor'],
+        proponents: [
+          'Yosef Garfinkel and Saar Ganor (2019 identification proposal, Strata 37: 51–59)',
+          'Kyle H. Keimer (2023, defending the identification in Palestine Exploration Quarterly)',
+        ],
         summary:
-          'Proposed in 2019 on the basis of excavations near Lachish showing Philistine-affiliated material followed by early 10th-century occupation; the identification is contested by other scholars.',
+          'Proposed in 2019 on the basis of excavations near Lachish showing Philistine-affiliated material followed by a burnt early Iron IIA layer. Contested: Aren Maeir rejected it in press coverage (2019), and Zachary Thomas and Chris McKinny published a peer-reviewed rebuttal (Israel Exploration Journal 72/1 [2022]: 66–88) favoring Tel Sera’ instead; Keimer defended the identification in reply (2023).',
         confidence: 'low',
         sourceIds: ['garfinkel-ganor-2019'],
       },
     ],
     notes:
-      'The in-app settlement is therefore a generic composite of a small early Iron Age Negev/Shephelah frontier town, not a portrait of any one candidate site. Proponent attributions still need verification (see /docs/fable-review-queue.md).',
+      'The in-app settlement is therefore a generic composite of a small early Iron Age Negev/Shephelah frontier town, not a portrait of any one candidate site. Proponent names for Tel Sera’ and Khirbet al-Ra’i were verified against secondary bibliographic sources 2026-07-07 (see source cards); the Tel Halif proponent list remains a hedged "e.g." pending its own verification pass.',
   },
   {
     id: 'claim-ziklag-scale',

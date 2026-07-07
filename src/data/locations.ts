@@ -13,15 +13,23 @@ export const LOCATIONS: LocationEntry[] = [
         {
           id: 'loc-view-ziklag-tel-sera',
           label: 'Tel Sera’ (Tell esh-Shari’a)',
-          proponents: ['e.g., scholars following Eliezer Oren’s excavations'],
-          summary: 'Western Negev site on Nahal Gerar with substantial Iron Age I remains.',
+          proponents: [
+            'Isaac (Yitzhak) Press (1955, first proposed)',
+            'Benjamin Mazar (1957)',
+            'Yohanan Aharoni (1967)',
+            'Eliezer D. Oren (1972–1979 excavator)',
+          ],
+          summary:
+            'Western Negev site on Nahal Gerar with substantial Iron Age remains; identification predates Oren’s excavations, first proposed by Press (1955).',
           confidence: 'low',
           sourceIds: ['oren-tel-sera-1993', 'rainey-notley-2006'],
         },
         {
           id: 'loc-view-ziklag-tel-halif',
           label: 'Tel Halif (Tell Khuweilifeh)',
-          proponents: ['e.g., proponents cited in historical-geography surveys'],
+          proponents: [
+            'e.g., proponents cited in historical-geography surveys (attribution not yet page-verified)',
+          ],
           summary: 'Site at the hill–Negev boundary near Lahav, fitting Simeonite town lists.',
           confidence: 'low',
           sourceIds: ['rainey-notley-2006'],
@@ -29,9 +37,12 @@ export const LOCATIONS: LocationEntry[] = [
         {
           id: 'loc-view-ziklag-khirbet-al-rai',
           label: 'Khirbet al-Ra’i',
-          proponents: ['Yosef Garfinkel', 'Saar Ganor'],
+          proponents: [
+            'Yosef Garfinkel and Saar Ganor (2019 proposal)',
+            'Kyle H. Keimer (2023, defending it)',
+          ],
           summary:
-            '2019 proposal based on Philistine-affiliated then early 10th-century occupation near Lachish; contested.',
+            '2019 proposal based on Philistine-affiliated then early Iron IIA occupation near Lachish; contested by Aren Maeir and by Thomas & McKinny (2022, Israel Exploration Journal), who favor Tel Sera’.',
           confidence: 'low',
           sourceIds: ['garfinkel-ganor-2019'],
         },
