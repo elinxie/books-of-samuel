@@ -34,8 +34,10 @@ file locations, and the licensing policy live in
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** real elevation data investigation (`f-dem-terrain`);
-  Besor wadi geometry; Egyptian-servant and Amalekite-camp figures; camel
-  representation pending the anachronism call (`fable-review-queue.md` #5).
+  Besor wadi geometry (ADR-005 `channel` feature); Egyptian-servant and
+  Amalekite-camp figures; camel placeholder mounts per the resolved queue #5
+  call — flight beat only, minimal early tack, dispute surfaced in-scene
+  (`asset-camel-placeholder`, modeled replacement at M3).
 - **M3 (Gilboa):** period-dressed modeled figures (`f-period-figures`) replacing
   capsules; battlefield terrain; Beth-shan city/wall; Jabesh-gilead route assets;
   reduced-intensity violence rendering path.

@@ -104,3 +104,9 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   Register #7 updated.
 - Q3 late-afternoon lighting: confirmed — hour unstated in text, disclosed
   placeholder; low light earns its keep for legibility + honest mood.
+- Q5 camels: RENDER (not omit) — narratively load-bearing in the flight beat
+  (30:17); omission would misstate the narrated world. Constraints: flight beat
+  only, no ambient herds, ~1:10, rope-halter/pad tack only, dispute chip on
+  label. claim-amalekite-raiders notes now carry the depiction decision;
+  register #6 decided; roadmap M2 line updated. Build artifacts at M2:
+  claim-camel-depiction + asset-camel-placeholder (modeled at M3).
