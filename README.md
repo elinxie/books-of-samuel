@@ -1,188 +1,116 @@
-# The Books of Samuel
+# Books of Samuel
 
-Structured, public-domain text of 1 & 2 Samuel in two English translations —
-the **King James Version** (1611) and the **World English Bible** — plus a
-single-file web reader for browsing, comparing, and searching them.
+A historically serious, first-person, neutral-observer 3D visualizer for the world
+of 1–2 Samuel — the world around David, Saul, Israel, Judah, Philistia, Amalekite
+raiding, frontier settlements, and the early monarchy's political geography.
 
-## About the books
+This is **not** a game. There is no combat, inventory, leveling, or win/loss state.
+You enter as an invisible observer, walk or orbit a reconstructed scene, replay
+scripted reenactments, and study — with every visual element traceable to biblical
+text, archaeology, comparative ancient Near Eastern evidence, a named scholarly
+reconstruction, or a clearly labeled placeholder.
 
-1 and 2 Samuel narrate Israel's transition from the tribal confederacy of
-the judges to a centralized monarchy, following the intertwined lives of
-Samuel (the last judge and a prophet), Saul (the first king), and David
-(the second king). They are a single book, *Samuel*, in the Hebrew Bible;
-the Greek Septuagint's division of Samuel and Kings into a four-part history
-is what gives us the two books used here, and the reason the King James
-Version's traditional title also calls them "the First/Second Book of the
-Kings." See [`notes/overview.md`](notes/overview.md) for a fuller
-encyclopedic overview: outline, key figures, and famous passages.
+**Live site:** https://elinxie.github.io/books-of-samuel/ (once GitHub Pages is
+enabled for this repo — see Deploying, below).
 
-## The reader
+## Current scope
 
-`index.html`, at the repo root, is a single self-contained HTML file — all
-CSS and JavaScript inline, no external requests, no build step to view it.
-Open it directly from disk (`file://`) or serve the repo with GitHub Pages
-and it works identically either way.
+Milestone 1: **1 Samuel 30** — Ziklag after the Amalekite raid, and the scripted
+return of David and his six hundred. See `/progress` in the app, or
+`docs/progress.md`, for full status.
 
-Features:
+## Companion: full-text reader
 
-- Switch between the KJV and WEB translations.
-- Light/dark theme, defaulting to the system preference and remembering
-  your choice.
-- Browse by book and chapter, with previous/next buttons and ←/→ keyboard
-  navigation.
-- Case-insensitive search across both books in the current translation,
-  with highlighted snippets that jump to the matching verse.
-- Shareable, bookmarkable URLs via hash routing, e.g.
-  `index.html#/kjv/1-samuel/17`.
-- KJV translator-supplied words rendered in *italics*, and KJV marginal
-  notes surfaced as a small † marker with a "Notes" section per chapter.
+This project deliberately never stores full ESV chapters (see Scripture and
+permissions, below). For reading the complete text of 1–2 Samuel, this repo also
+hosts [`/reader/`](reader/README.md) — a self-contained, single-file web reader
+with the full King James Version and World English Bible (both public domain),
+deployed alongside the visualizer at `/reader/`. It has its own toolchain
+(Python, no shared dependencies with the visualizer) and its own docs.
 
-## Repo layout
-
-```
-data/
-  books.json          cross-translation index (see schema below)
-  kjv/1-samuel.json   kjv/2-samuel.json
-  web/1-samuel.json   web/2-samuel.json
-scripts/
-  build_data.py       parses the source npm packages into data/
-  validate_data.py    hard-asserts the data in data/ is well-formed
-  build_site.py       embeds data/ into web/template.html -> index.html
-web/
-  template.html       reader source (with a /*__DATA__*/ placeholder)
-notes/
-  overview.md         encyclopedic overview of 1 & 2 Samuel
-index.html            generated reader (build output, also committed)
-LICENSE
-```
-
-## Data format
-
-Each of `data/kjv/1-samuel.json`, `data/kjv/2-samuel.json`,
-`data/web/1-samuel.json`, and `data/web/2-samuel.json` has the shape:
-
-```jsonc
-{
-  "book": "1 Samuel",
-  "slug": "1-samuel",
-  "title": "The First Book of Samuel, otherwise called The First Book of the Kings",
-  "osisId": "1Sam",
-  "canonOrder": 9,
-  "translation": "KJV",
-  "chapters": [
-    {
-      "chapter": 1,
-      "verses": [
-        { "v": 1, "text": "...", "fmt": "...", "notes": ["..."], "para": true }
-      ]
-    }
-  ]
-}
-```
-
-Verse object fields:
-
-- **`text`** (always present, non-empty): clean plain text, markup
-  stripped, whitespace collapsed to single spaces and trimmed.
-- **`fmt`** (KJV only, present only when the verse contains
-  translator-supplied words): the same text with those words wrapped in
-  `[brackets]` — the traditional plain-text stand-in for KJV italics.
-- **`notes`** (present only when non-empty): an array of marginal-note
-  strings (from the KJV's `<RF>...<Rf>` cross-references/alternate
-  renderings). The WEB source text has no equivalent footnote markup for
-  these two books (see "Rebuild" below), so WEB verses never carry `notes`.
-- **`para`** (present only when `true`): this verse ends a paragraph, i.e.
-  a reader should start a new `<p>` after it.
-
-`data/books.json` indexes both translations and both books:
-
-```jsonc
-{
-  "translations": [
-    { "abbrev": "KJV", "name": "King James Version", "year": 1611, "rights": "Public domain", "source": { "package": "bible-kjv", "version": "1.1.3", "registry": "...", "license": "MIT" } },
-    { "abbrev": "WEB", "name": "World English Bible", "rights": "Public domain", "source": { "package": "world-english-bible", "version": "1.0.1", "registry": "...", "license": "UNLICENSED" } }
-  ],
-  "books": [
-    {
-      "slug": "1-samuel", "name": "1 Samuel", "osisId": "1Sam", "canonOrder": 9, "chapters": 31,
-      "verses": { "kjv": 810, "web": 810 },
-      "chapterVerses": { "kjv": [28, 36, ...], "web": [28, 36, ...] },
-      "files": { "kjv": "kjv/1-samuel.json", "web": "web/1-samuel.json" }
-    }
-  ]
-}
-```
-
-The web reader (`web/template.html`, built into `index.html`) doesn't embed
-these files verbatim; `build_site.py` re-encodes each verse into a compact
-tuple `[v, displayText, notes?, para?]` (`displayText` is `fmt` when present,
-otherwise `text`) to keep the payload small. See the comments at the top of
-`build_site.py` for the exact encoding.
-
-## Rebuild
-
-The data and reader are build output, generated with the Python standard
-library only (no pip installs). To regenerate from scratch:
+## Running locally
 
 ```bash
-# 1. Fetch and extract the two source packages.
-curl -sSO https://registry.npmjs.org/bible-kjv/-/bible-kjv-1.1.3.tgz
-tar xzf bible-kjv-1.1.3.tgz                       # -> package/dist/resources/...
-
-curl -sSO https://registry.npmjs.org/world-english-bible/-/world-english-bible-1.0.1.tgz
-mkdir -p web-pkg && tar xzf world-english-bible-1.0.1.tgz -C web-pkg   # -> web-pkg/package/json/...
-
-# 2. Build data/ from both sources.
-python3 scripts/build_data.py --kjv package/dist/resources --web web-pkg/package/json
-
-# 3. Validate the result (exits non-zero on any hard failure).
-python3 scripts/validate_data.py
-
-# 4. Build the single-file reader (index.html) from web/template.html + data/.
-python3 scripts/build_site.py
+npm install
+npm run dev
 ```
 
-## Provenance & licensing
+## Scripts
 
-The code in this repository (scripts and the reader) is MIT-licensed — see
-[`LICENSE`](LICENSE). The scripture texts themselves are in the public
-domain:
+```bash
+npm run dev            # local dev server
+npm run build           # typecheck + production build to dist/
+npm run preview         # preview the production build
+npm run lint             # eslint
+npm run format:check     # prettier check (npm run format to fix)
+npm run typecheck        # tsc --noEmit
+npm test                 # vitest (unit/data/state tests)
+npm run e2e               # playwright smoke tests
+npm run verify            # the full gate: format:check + lint + test + build + e2e
+npm run build:sources     # regenerate sources/source-index.json after editing source cards
+```
 
-| Translation | Text rights | Source package | Package license |
-| --- | --- | --- | --- |
-| King James Version (1611) | Public domain | [`bible-kjv@1.1.3`](https://www.npmjs.com/package/bible-kjv) | MIT |
-| World English Bible | Public domain (dedicated by its publisher, Rainbow Missions, Inc.) | [`world-english-bible@1.0.1`](https://www.npmjs.com/package/world-english-bible) | UNLICENSED |
+## Deploying
 
-The `world-english-bible` package's own `package.json` declares its license
-as `UNLICENSED` — that describes the npm package's code/build tooling, not
-the Bible text it bundles. The World English Bible translation itself is
-explicitly public domain per its publisher; this project uses only the
-extracted scripture text, not any of that package's code.
+GitHub Actions (`.github/workflows/deploy.yml`) builds and publishes `dist/` to
+GitHub Pages on every push to `main`. One manual, one-time step is required in the
+repo: **Settings → Pages → Source: GitHub Actions** (this can't be set from a
+workflow file). Once set, pushes to `main` deploy automatically.
 
-### Source markup this project parses
+## Project structure
 
-- **KJV** (`bible-kjv`): each chapter is a JSON array of verse strings with
-  three inline tags: `<FI>...<Fi>` (translator-supplied words), `<RF>...<Rf>`
-  (a marginal note), and `<CM>` (a paragraph break after the verse).
-- **WEB** (`world-english-bible`): each book is a JSON array of ordered
-  "event" objects (`paragraph start/end`, `paragraph text`, `stanza
-  start/end`, `line text`, `line break`); text events carry a chapter and
-  verse number and a text fragment, which `build_data.py` reassembles into
-  full verses and uses to detect paragraph/stanza boundaries. No leftover
-  markup or footnote-style content was found in the WEB text for 1 or 2
-  Samuel — every verse has only `text` (see `scripts/build_data.py`'s
-  module docstring for the full parsing notes).
+See `docs/architecture.md` for the full layout and stack rationale. Short version:
 
-### Data validation
+- `src/data/` — the historical data model (claims, passages, scenes, locations,
+  sources) and its schema.
+- `sources/source-cards/` — bibliography, one JSON file per source.
+- `src/scenes/<name>/` — per-scene 3D composition.
+- `src/ui/`, `src/pages/` — HUD and study pages.
+- `docs/` — architecture, reconstruction method, progress, and continuation docs.
+- `reader/` — the companion full-text KJV/WEB reader, a separate self-contained
+  subproject (its own README, own Python toolchain); deployed at `/reader/`.
 
-`scripts/validate_data.py` hard-asserts, among other things: exact chapter
-counts (31 & 24) and KJV verse counts (810 & 695) for both books; verse
-numbers contiguous from 1 in every chapter; no leftover markup characters in
-any text/fmt/note field; `fmt` differing from `text` only by bracket
-characters; and a handful of known-text spot checks. It also prints a
-chapter-by-chapter WEB-vs-KJV verse count comparison — for 1 & 2 Samuel,
-WEB and KJV happen to have identical per-chapter verse counts throughout
-both books, so this diff table is empty in practice, though the script does
-not require that (a difference of up to 2 verses in a chapter is tolerated
-as normal versification variation; anything larger fails validation as a
-likely parsing bug).
+## Continuing this project across sessions
+
+This project is designed to be picked up cold, by a different model, in a
+different chat, with no memory of prior conversations — everything needed is
+version-controlled.
+
+```bash
+# Baseline architecture / major review (use sparingly — see docs/model-handoff.md)
+claude --model claude-fable-5
+# then: use the /continue-samuel command
+
+# Normal day-to-day development
+claude --model claude-sonnet-5
+# then: use the /continue-samuel-sonnet command
+
+# Inside a running session
+/model
+/status
+```
+
+Model switches do not persist automatically across sessions — set explicitly each
+time. If neither Fable nor Sonnet is available, any competent coding-capable model
+can follow `docs/sonnet-continuation.md` directly.
+
+**Start with `docs/model-handoff.md`** for what's fixed vs. changeable, and a
+concrete policy for what to spend Fable's more limited availability on versus what
+routine coding-model work (Sonnet or otherwise) can handle. `docs/next-run.md`
+always names the next concrete task.
+
+## Scripture and permissions
+
+Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard
+Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used
+by permission. All rights reserved. This project stores canonical references,
+original summaries, and short excerpts only — never full chapters. Full policy:
+`docs/source-ingestion-policy.md`. Full attribution and bibliography: the in-app
+Sources page (`/sources`) or `docs/bibliography.md`.
+
+## License
+
+Code in this repository is MIT-licensed — see [`LICENSE`](LICENSE). Historical
+research content (claims, source cards, summaries) follows the sourcing and
+copyright rules in `docs/source-ingestion-policy.md`; ESV excerpts follow the
+terms in that same policy, separate from the code license.

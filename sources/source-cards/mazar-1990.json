@@ -1,0 +1,15 @@
+{
+  "id": "mazar-1990",
+  "title": "Archaeology of the Land of the Bible, 10,000–586 B.C.E.",
+  "author": "Amihai Mazar",
+  "publisher": "Doubleday (Anchor Bible Reference Library)",
+  "datePublished": "1990",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "archaeology",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted handbook. Summaries in project's own words only.",
+  "summary": "Standard archaeological handbook for the region and periods covered by this project; baseline for construction techniques, settlement forms, and period definitions.",
+  "relevantPassages": ["1 Samuel 30", "1 Samuel 31"],
+  "extractedClaims": ["claim-mudbrick", "claim-david-historical"],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+}

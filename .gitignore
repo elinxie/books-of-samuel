@@ -1,0 +1,19 @@
+node_modules
+dist
+dist-ssr
+coverage
+playwright-report
+test-results
+blob-report
+.vite
+*.local
+*.tsbuildinfo
+.DS_Store
+
+# reader/ (companion Python subproject) build inputs/artifacts
+reader/__pycache__/
+reader/**/__pycache__/
+*.pyc
+reader/*.tgz
+reader/web-pkg/
+reader/package/

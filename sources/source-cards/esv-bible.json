@@ -1,0 +1,15 @@
+{
+  "id": "esv-bible",
+  "title": "The Holy Bible, English Standard Version (ESV)",
+  "url": "https://www.esv.org/",
+  "publisher": "Crossway, a publishing ministry of Good News Publishers",
+  "datePublished": "2001",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "biblical-text",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "ESV text is copyrighted by Crossway. This project stores canonical references, its own summaries, and short excerpts only (excerpt budget enforced by tests), with the standard ESV attribution notice on the Sources page. Full-chapter display must go through Crossway's ESV API or an equivalent permission path and is deferred (see feature f-esv-api).",
+  "summary": "Translation used for passage anchoring and references throughout the project (1 Samuel 30, 1 Samuel 31, then 2 Samuel chapter by chapter).",
+  "relevantPassages": ["1 Samuel 27", "1 Samuel 30", "1 Samuel 31", "2 Samuel 1", "2 Samuel 2"],
+  "extractedClaims": ["claim-ziklag-raided", "claim-600-men", "claim-amalekite-raiders"],
+  "confidenceNotes": "Textual anchor; historical corroboration of narrated events is assessed claim by claim, not assumed."
+}

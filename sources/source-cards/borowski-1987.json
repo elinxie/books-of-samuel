@@ -1,0 +1,15 @@
+{
+  "id": "borowski-1987",
+  "title": "Agriculture in Iron Age Israel",
+  "author": "Oded Borowski",
+  "publisher": "Eisenbrauns",
+  "datePublished": "1987",
+  "dateAccessed": "2026-07-06",
+  "sourceType": "material-culture",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
+  "summary": "Standard study of Iron Age agricultural practice: field crops (wheat, barley), terracing, threshing floors, storage, and the agricultural calendar. Anchor for field plots, threshing floor, and subsistence claims.",
+  "relevantPassages": ["1 Samuel 30"],
+  "extractedClaims": ["claim-agriculture", "claim-negev-terrain"],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+}
