@@ -67,6 +67,20 @@ npm run verify        # format:check + lint + test + build + e2e — run before 
 npm run build:sources # regenerate sources/source-index.json after editing source cards
 ```
 
+## Git & PR workflow
+
+- `main` is the default base and merge target for all work. Branch off `main`,
+  open the PR against `main`, and merge into `main` when it's green — don't stack
+  PRs on top of other unmerged feature branches. Stacking hides completed work
+  behind an unmerged base and makes squash-merging conflict-prone; if a task
+  genuinely depends on an unmerged change, merge that change into `main` first.
+- Agents are authorized to merge their own PRs directly into `main` once checks
+  pass — no human review gate. `main` is the source of truth for project
+  progress, so merging promptly (rather than leaving PRs open) is what keeps
+  `docs/progress.md`, `docs/run-log.md`, and the milestone history accurate.
+- Prefer squash merge, one commit per PR, so `main`'s history stays a clean,
+  readable log of milestones.
+
 ## Internal communication style
 
 Use compact, information-dense notes for run logs, checkpoints, and subagent
