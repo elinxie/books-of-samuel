@@ -71,7 +71,10 @@ Full type definitions: `src/data/types.ts`. Rationale and stability: `/docs/arch
 - **Terrain** is procedural (deterministic value-noise heightfield + vertex colors),
   not derived from real elevation data — this is a labeled placeholder
   (`asset-terrain-negev`) pending a DEM-based pass once a Ziklag candidate site is
-  adopted for terrain purposes (Milestone 2).
+  adopted for terrain purposes (Milestone 2). Since ADR-005 each scene declares its
+  own `TerrainSpec` (hill layers + mound/flatten/ramp/channel features + color
+  ramp) built via `createTerrain` in `src/engine/terrain.ts`; a DEM heightfield can
+  later slot in as an alternative height source without changing consumers.
 - **Vegetation, rocks, and marching figures** use `InstancedMesh` so density scales
   with quality mode at near-constant draw-call cost.
 - **Smoke** is a custom GPU point-sprite shader (vertex shader displaces particles

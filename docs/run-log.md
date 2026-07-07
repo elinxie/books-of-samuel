@@ -115,3 +115,9 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   choreography, two render treatments; reduced abstracts depiction never facts;
   no dismemberment in any mode; beheading/body-display as aftermath-discovery
   at distance. Method-doc violence section + register #9 updated. Impl at M3.
+- Wrap-up: queue Open reduced to #4 only. next-run.md rewritten (Sonnet: ADR-005
+  consumer migration first, then #4, then M2 groundwork); next-fable-session.md
+  → completed stub (next Fable spends: M1 checklist sign-off after #4, then M2
+  scene direction); model-handoff decision table + progress + architecture
+  updated. Full gate green at exit. Every item committed separately per the
+  checkpoint rule (8 decision commits + this wrap-up).

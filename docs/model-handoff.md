@@ -28,6 +28,17 @@ files so no chat memory is required to reconstruct them:
 | Ziklag vertical-slice scene composition (settlement plan type, figure ratio, timeline beats, camera viewpoints) | `src/scenes/ziklag/*`, `docs/uncertainty-register.md`                                  |
 | Subagent roster                                                                                                 | `.claude/agents/*.md`                                                                  |
 
+Added in the 2026-07-07 Fable review session:
+
+| Decision                                                                         | Where it's recorded                                                   |
+| -------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Per-scene terrain (`TerrainSpec` + `createTerrain`)                              | `docs/architecture-decisions/adr-005-terrain-generalization.md`       |
+| Settlement-layout: defer extraction, conventions standardized                    | `docs/architecture-decisions/adr-006-settlement-layout-pattern.md`    |
+| Pure pose functions as the reenactment standard                                  | `docs/architecture-decisions/adr-007-reenactment-pose-functions.md`   |
+| Asset pipeline (Blender → glTF at M3, sourcing/licensing policy)                 | `docs/architecture-decisions/adr-008-asset-pipeline.md`               |
+| Violence depiction default (standard + first-visit advisory)                     | `docs/architecture-decisions/adr-009-violence-depiction-defaults.md`  |
+| Camel depiction (render, flight beat only); Ziklag plan/ratio/lighting confirmed | `docs/fable-review-queue.md` Resolved, `docs/uncertainty-register.md` |
+
 Why these choices: see the individual ADRs — each states the alternatives
 considered and the consequences, not just the conclusion.
 
