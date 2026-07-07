@@ -36,8 +36,12 @@ Remaining for a clean M1 close-out:
 
 - Citation verification pass on `garfinkel-ganor-2019` and `oren-tel-sera-1993`
   (queue item 4).
-- Fable review pass before flipping `M1` status to `released` in
-  `src/data/milestones.ts` (currently `in-progress` — see `fable-review-queue.md`).
+- One short final checklist pass (`docs/fable-review-checklist.md`) before
+  flipping `M1` to `released` in `src/data/milestones.ts`. The creative-direction
+  review items (plan type, figure ratio, lighting) were all resolved at the
+  2026-07-07 Fable session (`fable-review-queue.md` Resolved), which also landed
+  ADR-005…ADR-009 (terrain generalization, layout conventions, reenactment
+  pattern, asset pipeline, violence default).
 
 ## Milestone 2–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
@@ -55,7 +59,7 @@ and now covers the whole repo's code.
 
 - `npm run format:check` — pass
 - `npm run lint` — pass
-- `npm run test` (vitest) — 31/31 pass
+- `npm run test` (vitest) — 39/39 pass (31 + 8 terrain tests from ADR-005)
 - `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
 - `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`; unnecessary in normal CI)

@@ -196,7 +196,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'Relevant mainly for the Milestone 2 Amalekite camp scene; the uncertainty register tracks how to depict mounts honestly.',
+      'Depiction decision for the Milestone 2 camp scene: camels are rendered only in the narrated flight (1 Samuel 30:17), at the project’s standard reduced crowd ratio, with minimal early tack (rope halter and pad, no later frame saddle) and this dispute shown on the in-scene label. The render asserts the narrative’s mounts, not settled camel pastoralism for the period.',
   },
   {
     id: 'claim-chronology',

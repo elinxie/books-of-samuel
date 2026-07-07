@@ -77,10 +77,15 @@ e.g., current placeholder figures carry no weapons or armor rather than guessing
 
 ## Violence policy
 
-1 Samuel 31 and later battle scenes must render death honestly but not
-sensationally, with a reduced-intensity mode planned (Milestone 3). The study
-purpose stays primary — see `/docs/fable-review-queue.md` for the open design
-question on default intensity.
+1 Samuel 31 and later battle scenes render death honestly but not sensationally.
+Decided policy (ADR-009): two rendering modes over one shared choreography —
+**standard** (honest, restrained by design: documentary distance, no gore
+geometry, no dismemberment ever) and **reduced** (no blood indication, elided
+death moments, facts carried by text). **Standard is the default**, gated by a
+one-time, plain-language advisory offering an immediate switch to reduced; the
+choice persists. Reduction abstracts depiction, never facts — what is _said_
+about events is identical in both modes. Details and rationale:
+`docs/architecture-decisions/adr-009-violence-depiction-defaults.md`.
 
 ## Commentary policy
 
@@ -97,6 +102,9 @@ a hidden feature.
 4. Claims exist and are cited.
 5. `SceneDef` added to `scenes.ts` (`status: 'planned'` until built).
 6. Scene folder under `src/scenes/<id>/` with layout + composition + entities.
+   Layout modules follow the conventions in
+   `docs/architecture-decisions/adr-006-settlement-layout-pattern.md` (seeded,
+   spec-arrays-not-meshes, claims-traceable constants).
 7. Register the component in `SCENE_COMPONENTS` (`src/pages/ObservePage.tsx`).
 8. Add/extend Playwright coverage if the scene introduces new interactive surface.
 9. Update `docs/progress.md`, `docs/asset-roadmap.md`, `docs/uncertainty-register.md`.

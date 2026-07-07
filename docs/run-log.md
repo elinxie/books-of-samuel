@@ -72,3 +72,52 @@ PR #2 CI failed: "source cards in sync" step diffed a freshly-regenerated
 (committed 07-06, regenerated 07-07) — guaranteed to fail on any day after the
 commit, unrelated to real card drift. Nothing read that field. Removed it from
 `scripts/build-source-index.mjs` and regenerated. Re-verified full gate green.
+
+**2026-07-07 — Fable 5 — generalization + creative-direction review session**
+Working `docs/next-fable-session.md`, per-item checkpoint commits.
+
+- Q7 terrain: parameterize now (Sonnet's read confirmed). ADR-005; `terrain.ts`
+  rebuilt as `TerrainSpec` + `createTerrain` (mound/flatten/ramp/channel features,
+  per-scene color ramps), Ziklag output regression-pinned identical
+  (`terrain.test.ts`: 8 height + 3 vertex/color pins); legacy `terrainHeight`/
+  `buildTerrainGeometry` deprecated; consumer migration (store-held active
+  `Terrain`, scene registry, `SceneEntityDef` decoupling) specced in ADR → Sonnet.
+- Q8 settlement layout: defer extraction (confirmed) — scene-local, no second
+  ring-type consumer coming (Beth-shan = tell city). ADR-006 standardizes the
+  conventions (seeded PRNG per concern, spec arrays not meshes, arc-gap gates,
+  curve paths, rejection-sampled slots, claims-traceable constants); extraction
+  triggers on a second enclosed-ring scene. Method-doc checklist now points at it.
+- Q10 (new, added+resolved): pure pose functions = standard reenactment pattern.
+  ADR-007: pure (t, params) → pose, scrub-safe by construction, gesture channels
+  normalized, beat-invariant unit test required per scene, named figures get pose
+  functions too from M2 (Ziklag's inline David/Abiathar grandfathered).
+- Q9 asset pipeline: ADR-008 — Blender→glTF(.glb)→drei useGLTF (no new deps);
+  project-authored/CC0-only, no marketplaces; provenance fields (modelPath/
+  modelLicense/modelProvenance) pre-authorized for AssetRecord; tri/texture
+  budgets set; modeling starts M3 via one pilot figure (instanced-skinned-mesh
+  risk settled there); M2 stays procedural. Roadmap intro points at the ADR.
+- Q1 plan type: confirmed as shipped (real period type, speculative label,
+  generic-composite framing). Rider: no template reuse without a fresh
+  per-scene appropriateness claim. Register #3 updated.
+- Q2 figure ratio/abstraction: confirmed — ~1:10 is now the standard ratio for
+  narrated crowds; capsules-without-gear stays until M3 modeled figures.
+  Register #7 updated.
+- Q3 late-afternoon lighting: confirmed — hour unstated in text, disclosed
+  placeholder; low light earns its keep for legibility + honest mood.
+- Q5 camels: RENDER (not omit) — narratively load-bearing in the flight beat
+  (30:17); omission would misstate the narrated world. Constraints: flight beat
+  only, no ambient herds, ~1:10, rope-halter/pad tack only, dispute chip on
+  label. claim-amalekite-raiders notes now carry the depiction decision;
+  register #6 decided; roadmap M2 line updated. Build artifacts at M2:
+  claim-camel-depiction + asset-camel-placeholder (modeled at M3).
+- Q6 Gilboa violence default: STANDARD as default (ADR-009), behind a one-time
+  advisory w/ one-click reduced; persisted violenceMode setting; one shared
+  choreography, two render treatments; reduced abstracts depiction never facts;
+  no dismemberment in any mode; beheading/body-display as aftermath-discovery
+  at distance. Method-doc violence section + register #9 updated. Impl at M3.
+- Wrap-up: queue Open reduced to #4 only. next-run.md rewritten (Sonnet: ADR-005
+  consumer migration first, then #4, then M2 groundwork); next-fable-session.md
+  → completed stub (next Fable spends: M1 checklist sign-off after #4, then M2
+  scene direction); model-handoff decision table + progress + architecture
+  updated. Full gate green at exit. Every item committed separately per the
+  checkpoint rule (8 decision commits + this wrap-up).

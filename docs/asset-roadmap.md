@@ -5,6 +5,14 @@ record there requires `whyTemporary`, `historicalRequirements`, and a
 `replacementMilestoneId`, enforced by `integrity.test.ts`. This doc is the
 human-readable narrative companion; keep it in sync when assets.ts changes.
 
+**Pipeline decision (ADR-008):** modeled assets are authored in Blender and
+exported as glTF (.glb), loaded with drei's `useGLTF` — no new dependencies.
+Sourcing is project-authored or CC0-adapted only, with provenance recorded in
+`assets.ts`. Modeling starts at **Milestone 3** with a single pilot figure
+walking the whole path first; Milestone 2 replacements stay procedural. Budgets,
+file locations, and the licensing policy live in
+`docs/architecture-decisions/adr-008-asset-pipeline.md`.
+
 ## Current placeholders (Ziklag scene, Milestone 1)
 
 | Asset                    | Represents                             | Why temporary                                        | Replace at            |
@@ -26,8 +34,10 @@ human-readable narrative companion; keep it in sync when assets.ts changes.
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** real elevation data investigation (`f-dem-terrain`);
-  Besor wadi geometry; Egyptian-servant and Amalekite-camp figures; camel
-  representation pending the anachronism call (`fable-review-queue.md` #5).
+  Besor wadi geometry (ADR-005 `channel` feature); Egyptian-servant and
+  Amalekite-camp figures; camel placeholder mounts per the resolved queue #5
+  call — flight beat only, minimal early tack, dispute surfaced in-scene
+  (`asset-camel-placeholder`, modeled replacement at M3).
 - **M3 (Gilboa):** period-dressed modeled figures (`f-period-figures`) replacing
   capsules; battlefield terrain; Beth-shan city/wall; Jabesh-gilead route assets;
   reduced-intensity violence rendering path.
