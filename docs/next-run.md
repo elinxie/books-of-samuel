@@ -6,11 +6,15 @@
 ## Since the last version of this note
 
 The 2026-07-07 Fable session (run-log entry of that date) resolved every open
-generalization and creative-direction item except queue #4:
+generalization and creative-direction item except queue #4. A same-day Sonnet 5
+session then landed the ADR-005 consumer migration (item 1 below, now done):
 
 - **ADR-005** — terrain is per-scene (`TerrainSpec` + `createTerrain`); engine
-  core landed, output regression-pinned identical; consumer migration is item 1
-  below.
+  core and consumer migration are both landed. Ziklag's spec lives in
+  `src/scenes/ziklag/terrain.ts`; the Zustand store holds the active scene's
+  `Terrain` (`setTerrain`); `ObservePage`'s `SCENE_REGISTRY` maps scene id →
+  `{ component, terrain }`; the deprecated `terrainHeight`/`buildTerrainGeometry`
+  globals are deleted. `SceneEntityDef` now lives in `src/scenes/types.ts`.
 - **ADR-006** — settlement-layout extraction deferred; layout-module conventions
   standardized.
 - **ADR-007** — pure pose functions confirmed as the reenactment standard.
@@ -26,34 +30,21 @@ verification — a Sonnet task).
 
 ## Next Sonnet session: pick in this order
 
-1. **ADR-005 consumer migration** (routine, fully specified, unblocks M2
-   terrain work):
-   - Move `ZIKLAG_TERRAIN_SPEC` / `ZIKLAG_TERRAIN` from `src/engine/terrain.ts`
-     into a new `src/scenes/ziklag/terrain.ts`.
-   - Add `terrain: Terrain` to the Zustand store (initial value: Ziklag's);
-     set it where the active scene is selected — the `SCENE_COMPONENTS` registry
-     in `ObservePage` becomes a module record (component + terrain).
-   - Migrate the six Ziklag components plus `engine/ObserverControls.tsx` and
-     `ui/scene/EntityLabel.tsx` off the deprecated `terrainHeight` /
-     `buildTerrainGeometry`, then delete those exports.
-   - Move `SceneEntityDef` out of `scenes/ziklag/entities.ts` into a shared
-     module (suggest `src/scenes/types.ts`) so `ui/` stops importing from a
-     specific scene.
-   - `src/engine/terrain.test.ts` pin values must NOT change — update imports
-     only. Full details: ADR-005 "Runtime wiring."
-2. **Citation verification pass** (queue #4): verify exact venue for
+1. **Citation verification pass** (queue #4): verify exact venue for
    `garfinkel-ganor-2019` and first-proposer history for `oren-tel-sera-1993`;
    update `confidenceNotes`, clear `TO VERIFY`, narrow hedges. Research/doc
    only. This is also the last queue blocker for M1's close-out review.
-3. **Milestone 2 groundwork**: flesh out the `besor-crossing` `SceneDef`
+2. **Milestone 2 groundwork**: flesh out the `besor-crossing` `SceneDef`
    (beats/viewpoints) and its claims. Terrain-wise this is now unblocked —
-   compose against `createTerrain` with a `channel` feature (ADR-005). Route
+   compose against `createTerrain` with a `channel` feature (ADR-005; put the
+   spec in a new `src/scenes/besor-crossing/terrain.ts` and add its entry to
+   `SCENE_REGISTRY` in `ObservePage`, following Ziklag's pattern). Route
    _distances_ still depend on the Ziklag-candidate question
    (`uncertainty-register.md` #1–2), so keep the crossing "representative," the
    same composite framing Ziklag uses, rather than asserting a measured route.
    Camel-depiction constraints for the Amalekite camp are already decided
    (register #6).
-4. **Repo hygiene**: confirm GitHub Pages is actually live (README
+3. **Repo hygiene**: confirm GitHub Pages is actually live (README
    "Deploying" — one manual repo-settings step). If not live, that jumps to
    top priority: it's a Milestone 0 acceptance criterion.
 
@@ -63,16 +54,20 @@ world-director brief first.
 
 ## Known state
 
-- Full gate green as of this commit (format / lint / typecheck / 39 vitest /
-  build / 7 playwright e2e).
+- Full gate green as of this commit (format / lint / typecheck / 38 vitest /
+  build / 7 playwright e2e). Vitest count is 39 minus the deprecated
+  `terrainHeight` delegate test, which was deleted along with the function it
+  tested.
 - No open bugs.
 - `M1` stays `in-progress`: remaining close-out = queue #4 plus one short final
   checklist pass (`docs/fable-review-checklist.md`) — the creative-direction
-  review items were all resolved 2026-07-07.
+  review items were all resolved 2026-07-07, and ADR-005's migration is done.
 
 ## Files most recently changed
 
-`src/engine/terrain.ts` (+ new `terrain.test.ts`), `src/data/claims.ts` (camel
-depiction note), `docs/architecture-decisions/adr-005…adr-009`, and the
-queue / register / roadmap / method / run-log / progress / model-handoff /
-architecture docs.
+`src/engine/terrain.ts` (deprecated exports removed), new
+`src/scenes/ziklag/terrain.ts` + `terrain.test.ts`, new `src/scenes/types.ts`,
+`src/state/store.ts` (`terrain`/`setTerrain`), `src/pages/ObservePage.tsx`
+(`SCENE_REGISTRY`), the five Ziklag scene components, `engine/ObserverControls.tsx`,
+`ui/scene/EntityLabel.tsx`, and `docs/architecture-decisions/adr-005-terrain-generalization.md` /
+`docs/progress.md` / `docs/run-log.md`.

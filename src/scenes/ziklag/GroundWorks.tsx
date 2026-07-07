@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
-import { buildTerrainGeometry, terrainHeight } from '../../engine/terrain';
+import { useAppStore } from '../../state/store';
 import { APPROACH_CURVE, EXIT_CURVE, FIELDS, THRESHING_FLOOR, samplePath } from './layout';
 
 /** Terrain, worn paths, field plots, and threshing floor (all placeholder-tier). */
 export function GroundWorks() {
-  const terrainGeo = useMemo(() => buildTerrainGeometry(), []);
+  const terrain = useAppStore((s) => s.terrain);
+  const terrainGeo = useMemo(() => terrain.buildGeometry(), [terrain]);
   const pathPoints = useMemo(() => [...samplePath(APPROACH_CURVE), ...samplePath(EXIT_CURVE)], []);
 
   return (
@@ -17,7 +18,7 @@ export function GroundWorks() {
       {pathPoints.map((p, i) => (
         <mesh
           key={`path-${i}`}
-          position={[p.pos.x, terrainHeight(p.pos.x, p.pos.z) + 0.04, p.pos.z]}
+          position={[p.pos.x, terrain.heightAt(p.pos.x, p.pos.z) + 0.04, p.pos.z]}
           rotation={[0, p.yaw, 0]}
         >
           <boxGeometry args={[2.4, 0.05, 7.6]} />
@@ -29,7 +30,7 @@ export function GroundWorks() {
       {FIELDS.map((f, i) => (
         <mesh
           key={`field-${i}`}
-          position={[f.x, terrainHeight(f.x, f.z) + 0.06, f.z]}
+          position={[f.x, terrain.heightAt(f.x, f.z) + 0.06, f.z]}
           rotation={[0, f.rot, 0]}
         >
           <boxGeometry args={[f.w, 0.08, f.d]} />
@@ -41,7 +42,7 @@ export function GroundWorks() {
       <mesh
         position={[
           THRESHING_FLOOR.x,
-          terrainHeight(THRESHING_FLOOR.x, THRESHING_FLOOR.z) + 0.05,
+          terrain.heightAt(THRESHING_FLOOR.x, THRESHING_FLOOR.z) + 0.05,
           THRESHING_FLOOR.z,
         ]}
       >

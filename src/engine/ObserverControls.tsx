@@ -4,7 +4,6 @@ import { OrbitControls, PointerLockControls } from '@react-three/drei';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import * as THREE from 'three';
 import { useAppStore } from '../state/store';
-import { terrainHeight } from './terrain';
 import { useKeys } from './useKeys';
 
 const EYE_HEIGHT = 1.7;
@@ -20,6 +19,7 @@ const WORLD_LIMIT = 620;
  */
 export function ObserverControls() {
   const navMode = useAppStore((s) => s.navMode);
+  const terrain = useAppStore((s) => s.terrain);
   const camera = useThree((s) => s.camera);
   const orbitRef = useRef<OrbitControlsImpl | null>(null);
   const keys = useKeys();
@@ -32,10 +32,10 @@ export function ObserverControls() {
   useEffect(() => {
     if (!pendingTeleport) return;
     const [x, yOffset, z] = pendingTeleport.position;
-    const y = terrainHeight(x, z) + EYE_HEIGHT + yOffset;
+    const y = terrain.heightAt(x, z) + EYE_HEIGHT + yOffset;
     camera.position.set(x, y, z);
     const [lx, lyOffset, lz] = pendingTeleport.lookAt;
-    const ly = terrainHeight(lx, lz) + lyOffset;
+    const ly = terrain.heightAt(lx, lz) + lyOffset;
     if (orbitRef.current) {
       orbitRef.current.target.set(lx, ly, lz);
       orbitRef.current.update();
@@ -43,7 +43,7 @@ export function ObserverControls() {
       camera.lookAt(lx, ly, lz);
     }
     clearTeleport();
-  }, [pendingTeleport, camera, clearTeleport]);
+  }, [pendingTeleport, camera, clearTeleport, terrain]);
 
   // Walk-mode movement.
   useFrame((_, rawDt) => {
@@ -68,7 +68,7 @@ export function ObserverControls() {
       camera.position.z = THREE.MathUtils.clamp(camera.position.z, -WORLD_LIMIT, WORLD_LIMIT);
     }
     // Follow the ground smoothly even when standing still (post-teleport).
-    const groundY = terrainHeight(camera.position.x, camera.position.z) + EYE_HEIGHT;
+    const groundY = terrain.heightAt(camera.position.x, camera.position.z) + EYE_HEIGHT;
     camera.position.y = THREE.MathUtils.lerp(camera.position.y, groundY, 0.25);
   });
 

@@ -1,8 +1,9 @@
 # ADR-005: Per-scene terrain via `TerrainSpec` + `createTerrain()`
 
-**Status:** Accepted (2026-07-07, Fable review — resolves `fable-review-queue.md` #7).
-Engine core implemented in `src/engine/terrain.ts` with regression-pinned identical
-Ziklag output; consumer migration is routine work assigned via `docs/next-run.md`.
+**Status:** Accepted and fully implemented (2026-07-07, Fable review — resolves
+`fable-review-queue.md` #7). Engine core landed in `src/engine/terrain.ts` with
+regression-pinned identical Ziklag output; the consumer migration below (assigned
+via `docs/next-run.md`) landed the same day (Sonnet 5).
 
 ## Context
 
@@ -41,21 +42,24 @@ Terrain becomes a per-scene value, not a global function:
   `buildGeometry(size?, segments?)`, and the originating `spec`. The `Terrain`
   object — not any module-level function — is the boundary every consumer sees.
 
-### Runtime wiring (migration spec)
+### Runtime wiring (migration spec — implemented)
 
 1. Each scene folder owns its spec: `src/scenes/<id>/terrain.ts` exporting a
-   `Terrain` built with `createTerrain`. (Ziklag's spec lives temporarily in
-   `engine/terrain.ts` as `ZIKLAG_TERRAIN_SPEC` only until this migration runs —
-   engine code must not permanently carry scene constants.)
-2. The scene registry in `ObservePage` grows from component-only to a module
-   record (component + terrain); activating a scene sets `terrain` in the Zustand
-   store, mirroring how quality profiles are already distributed (ADR-004).
-3. `ObserverControls` (walk-mode ground clamp, teleports) and `EntityLabel`
-   (label anchoring) read `terrain` from the store instead of importing engine
-   globals. `EntityLabel` also stops importing `SceneEntityDef` from
-   `scenes/ziklag/entities` — that type moves to a shared module.
-4. The deprecated `terrainHeight`/`buildTerrainGeometry` re-exports are then
-   deleted.
+   `Terrain` built with `createTerrain`. Ziklag's spec now lives in
+   `src/scenes/ziklag/terrain.ts`; `engine/terrain.ts` carries no scene constants.
+2. The scene registry in `ObservePage` (`SCENE_REGISTRY`) is a module record of
+   `{ component, terrain }`; activating a scene sets `terrain` in the Zustand
+   store (`setTerrain`), mirroring how quality profiles are already distributed
+   (ADR-004).
+3. `ObserverControls` (walk-mode ground clamp, teleports), `EntityLabel` (label
+   anchoring), and the five Ziklag-scene components read `terrain` from the
+   store instead of importing engine globals. `EntityLabel` imports
+   `SceneEntityDef` from the shared `src/scenes/types.ts`, not
+   `scenes/ziklag/entities`.
+4. The deprecated `terrainHeight`/`buildTerrainGeometry` re-exports are deleted;
+   `ZIKLAG_TERRAIN`'s regression-pin tests moved to `src/scenes/ziklag/terrain.test.ts`
+   alongside the spec they pin (`src/engine/terrain.test.ts` keeps only the
+   scene-agnostic `createTerrain` feature-primitive tests).
 
 ## Alternatives considered
 
@@ -81,5 +85,5 @@ Terrain becomes a per-scene value, not a global function:
   heightfield source can be added to `TerrainSpec` as an alternative to `hills`
   (features and colors still apply) without changing the `Terrain` interface —
   consumers are already insulated.
-- Until the consumer migration lands, the deprecated globals still resolve to
-  Ziklag's terrain, so nothing breaks mid-transition.
+- The consumer migration is done: no engine module holds a scene-specific
+  global any more, so the second scene (Besor crossing, M2) is unblocked.

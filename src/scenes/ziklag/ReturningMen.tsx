@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { useAppStore } from '../../state/store';
-import { terrainHeight } from '../../engine/terrain';
 import { mulberry32 } from '../../engine/noise';
 import { APPROACH_CURVE, EXIT_CURVE, PLAZA_SLOTS } from './layout';
 
@@ -159,7 +158,7 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
   }, [figureCount]);
 
   useFrame(() => {
-    const t = useAppStore.getState().timeSec;
+    const { timeSec: t, terrain } = useAppStore.getState();
     const mesh = meshRef.current;
     if (mesh) {
       for (let i = 0; i < figures.length; i++) {
@@ -169,7 +168,7 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
           dummy.position.set(0, -50, 0);
           dummy.scale.setScalar(0.001);
         } else {
-          const y = terrainHeight(pose.x, pose.z);
+          const y = terrain.heightAt(pose.x, pose.z);
           const bob = pose.moving ? Math.abs(Math.sin(t * 4.5 + fig.bobPhase)) * 0.07 : 0;
           dummy.position.set(pose.x, y + bob, pose.z);
           const kneelScale = fig.kneeler ? 1 - pose.kneel * 0.45 : 1 - pose.kneel * 0.12;
@@ -220,7 +219,7 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
       }
       const moving = t < arrivalT || t >= DEPART_T - 1.5 || (t >= 105 && t < 110);
       const bob = moving ? Math.abs(Math.sin(t * 4.5)) * 0.07 : 0;
-      david.position.set(x, terrainHeight(x, z) + bob, z);
+      david.position.set(x, terrain.heightAt(x, z) + bob, z);
       david.rotation.set(0, yaw, 0);
     }
 
@@ -243,7 +242,7 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
         x = 12.4 + (tmpVec.x - 12.4) * b;
         z = 0.6 + (tmpVec.z - 0.6) * b;
       }
-      abiathar.position.set(x, terrainHeight(x, z), z);
+      abiathar.position.set(x, terrain.heightAt(x, z), z);
       abiathar.scale.setScalar(appear * 0.95 + 0.001);
       abiathar.rotation.set(0, Math.atan2(14 - x, -1 - z), 0);
     }

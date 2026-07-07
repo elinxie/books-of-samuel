@@ -5,12 +5,19 @@ import { SCENES_BY_ID } from '../data/scenes';
 import type { SceneDef } from '../data/types';
 import { useAppStore } from '../state/store';
 import { QUALITY_PROFILES } from '../engine/quality';
+import type { Terrain } from '../engine/terrain';
 import { ZiklagScene } from '../scenes/ziklag/ZiklagScene';
+import { ZIKLAG_TERRAIN } from '../scenes/ziklag/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 
-const SCENE_COMPONENTS: Record<string, React.ComponentType> = {
-  'ziklag-aftermath': ZiklagScene,
+interface SceneRegistryEntry {
+  component: React.ComponentType;
+  terrain: Terrain;
+}
+
+const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
+  'ziklag-aftermath': { component: ZiklagScene, terrain: ZIKLAG_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {
@@ -58,20 +65,24 @@ export default function ObservePage() {
   const quality = useAppStore((s) => s.quality);
   const navMode = useAppStore((s) => s.navMode);
   const setScene = useAppStore((s) => s.setScene);
+  const setTerrain = useAppStore((s) => s.setTerrain);
   const requestTeleport = useAppStore((s) => s.requestTeleport);
 
-  // Reset playback and move the observer to the scene's default viewpoint.
+  // Reset playback, activate the scene's terrain, and move the observer to
+  // its default viewpoint.
   useEffect(() => {
     if (!scene || scene.status === 'planned') return;
     setScene(scene.id);
+    const entry = SCENE_REGISTRY[scene.id];
+    if (entry) setTerrain(entry.terrain);
     const vp = scene.viewpoints[0];
     if (vp) requestTeleport({ position: vp.position, lookAt: vp.lookAt });
-  }, [scene, setScene, requestTeleport]);
+  }, [scene, setScene, setTerrain, requestTeleport]);
 
   if (!scene) return <Navigate to="/" replace />;
   if (scene.status === 'planned') return <PlannedScene scene={scene} />;
 
-  const SceneComponent = SCENE_COMPONENTS[scene.id];
+  const SceneComponent = SCENE_REGISTRY[scene.id]?.component;
   const profile = QUALITY_PROFILES[quality];
 
   return (

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import * as THREE from 'three';
-import { terrainHeight } from '../../engine/terrain';
+import { useAppStore } from '../../state/store';
 import { GATE_TOWERS, HOUSES, SMOKE_ORIGINS, WALLS, WELL_POS } from './layout';
 
 /**
@@ -9,6 +9,7 @@ import { GATE_TOWERS, HOUSES, SMOKE_ORIGINS, WALLS, WELL_POS } from './layout';
  * The whole town is shown burned per 1 Samuel 30:1 — "…and burned it with fire."
  */
 export function Settlement({ shadows }: { shadows: boolean }) {
+  const terrain = useAppStore((s) => s.terrain);
   const materials = useMemo(
     () => ({
       charred: new THREE.MeshStandardMaterial({ color: '#4a423a', roughness: 1 }),
@@ -29,7 +30,7 @@ export function Settlement({ shadows }: { shadows: boolean }) {
   return (
     <group>
       {HOUSES.map((h, i) => {
-        const y = terrainHeight(h.x, h.z);
+        const y = terrain.heightAt(h.x, h.z);
         const height = h.collapsed ? h.h * 0.55 : h.h;
         return (
           <group key={`house-${i}`} position={[h.x, y, h.z]} rotation={[0, h.rot, 0]}>
@@ -68,7 +69,7 @@ export function Settlement({ shadows }: { shadows: boolean }) {
 
       {/* Perimeter wall belt (speculative — claim-wall-gate) */}
       {WALLS.map((w, i) => {
-        const y = terrainHeight(w.x, w.z);
+        const y = terrain.heightAt(w.x, w.z);
         return (
           <mesh
             key={`wall-${i}`}
@@ -84,7 +85,7 @@ export function Settlement({ shadows }: { shadows: boolean }) {
 
       {/* Gate towers */}
       {GATE_TOWERS.map(([x, z], i) => {
-        const y = terrainHeight(x, z);
+        const y = terrain.heightAt(x, z);
         return (
           <mesh
             key={`tower-${i}`}
@@ -99,7 +100,7 @@ export function Settlement({ shadows }: { shadows: boolean }) {
 
       {/* Scorch marks and ash where smoke rises */}
       {SMOKE_ORIGINS.map((s, i) => {
-        const y = terrainHeight(s.x, s.z);
+        const y = terrain.heightAt(s.x, s.z);
         return (
           <group key={`scorch-${i}`}>
             <mesh
@@ -117,7 +118,7 @@ export function Settlement({ shadows }: { shadows: boolean }) {
       })}
 
       {/* Well head near the gate (illustrative — claim-well) */}
-      <group position={[WELL_POS[0], terrainHeight(WELL_POS[0], WELL_POS[1]), WELL_POS[1]]}>
+      <group position={[WELL_POS[0], terrain.heightAt(WELL_POS[0], WELL_POS[1]), WELL_POS[1]]}>
         <mesh position={[0, 0.45, 0]} material={materials.stone} castShadow={shadows}>
           <cylinderGeometry args={[1.0, 1.1, 0.9, 10]} />
         </mesh>

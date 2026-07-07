@@ -121,3 +121,38 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   scene direction); model-handoff decision table + progress + architecture
   updated. Full gate green at exit. Every item committed separately per the
   checkpoint rule (8 decision commits + this wrap-up).
+
+**2026-07-07 — Sonnet 5 — ADR-005 consumer migration**
+Ran `docs/next-run.md` item 1 (routine, fully specified in ADR-005 "Runtime
+wiring"):
+
+- Moved `ZIKLAG_TERRAIN_SPEC`/`ZIKLAG_TERRAIN` out of `src/engine/terrain.ts`
+  into a new `src/scenes/ziklag/terrain.ts`; the engine module now carries only
+  the scene-agnostic `TerrainSpec`/`Terrain`/`createTerrain`.
+- Added `terrain: Terrain` + `setTerrain` to the Zustand store (initial value:
+  Ziklag's). `ObservePage`'s scene lookup grew from a component-only
+  `SCENE_COMPONENTS` map to a `SCENE_REGISTRY` of `{ component, terrain }`;
+  entering a scene now calls `setTerrain` alongside `setScene`.
+- Migrated all eight direct consumers (`GroundWorks`, `Settlement`,
+  `SmokeColumns`, `Vegetation`, `ReturningMen`, `ObserverControls`,
+  `EntityLabel`, plus the `ObservePage` registry) off `terrainHeight`/
+  `buildTerrainGeometry` onto `useAppStore((s) => s.terrain)` (or
+  `useAppStore.getState().terrain` inside `useFrame` loops), then deleted the
+  deprecated re-exports.
+- Moved `SceneEntityDef` out of `scenes/ziklag/entities.ts` into a new shared
+  `src/scenes/types.ts`; `EntityLabel` and `entities.ts` both import from there.
+- Split `terrain.test.ts`: the scene-agnostic `createTerrain` feature-primitive
+  tests stayed in `src/engine/terrain.test.ts`; the Ziklag regression pins moved
+  to `src/scenes/ziklag/terrain.test.ts` next to the spec they pin. Pin values
+  unchanged — only imports moved. Dropped the "deprecated `terrainHeight`
+  delegates" test since the function it exercised no longer exists (38/38 vitest,
+  down from 39 for that one deletion, not a coverage loss).
+- Full gate re-verified green: format/lint/typecheck/38 vitest/build/7 playwright
+  e2e (`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+  in this sandboxed env).
+- Updated ADR-005 ("Runtime wiring" section marked implemented, stale
+  "until the consumer migration lands" consequence removed), `docs/progress.md`,
+  `docs/next-run.md` (next up: queue #4 citation verification, then M2
+  `besor-crossing` groundwork).
+
+Next: see `docs/next-run.md`.

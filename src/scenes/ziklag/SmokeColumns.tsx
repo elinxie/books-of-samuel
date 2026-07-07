@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
-import { terrainHeight } from '../../engine/terrain';
+import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
 import { SMOKE_ORIGINS } from './layout';
 
@@ -43,6 +43,7 @@ const fragmentShader = /* glsl */ `
 /** GPU particle smoke rising from the ruined structures. */
 export function SmokeColumns({ particlesPerColumn }: { particlesPerColumn: number }) {
   const dpr = useThree((s) => s.viewport.dpr);
+  const terrain = useAppStore((s) => s.terrain);
   const matRef = useRef<THREE.ShaderMaterial>(null);
 
   const geometry = useMemo(() => {
@@ -54,7 +55,7 @@ export function SmokeColumns({ particlesPerColumn }: { particlesPerColumn: numbe
     const heights = new Float32Array(total);
     let i = 0;
     for (const origin of SMOKE_ORIGINS) {
-      const baseY = terrainHeight(origin.x, origin.z) + 2.4;
+      const baseY = terrain.heightAt(origin.x, origin.z) + 2.4;
       for (let p = 0; p < particlesPerColumn; p++) {
         positions[i * 3] = origin.x + (rng() - 0.5) * 1.6;
         positions[i * 3 + 1] = baseY;
@@ -71,7 +72,7 @@ export function SmokeColumns({ particlesPerColumn }: { particlesPerColumn: numbe
     geo.setAttribute('aRate', new THREE.BufferAttribute(rates, 1));
     geo.setAttribute('aHeight', new THREE.BufferAttribute(heights, 1));
     return geo;
-  }, [particlesPerColumn]);
+  }, [particlesPerColumn, terrain]);
 
   const uniforms = useMemo(
     () => ({
