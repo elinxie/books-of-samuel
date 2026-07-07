@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
-import { terrainHeight } from '../../engine/terrain';
+import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
 import { FIELDS } from './layout';
 
@@ -37,6 +37,7 @@ export function Vegetation({
   rockCount: number;
   treeCount: number;
 }) {
+  const terrain = useAppStore((s) => s.terrain);
   const shrubRef = useRef<THREE.InstancedMesh>(null);
   const rockRef = useRef<THREE.InstancedMesh>(null);
   const trunkRef = useRef<THREE.InstancedMesh>(null);
@@ -92,7 +93,7 @@ export function Vegetation({
       for (let i = 0; i < shrubCount; i++) {
         const [x, z] = placements.shrubs[i % placements.shrubs.length];
         const s = 0.5 + rng() * 0.8;
-        dummy.position.set(x, terrainHeight(x, z) + s * 0.28, z);
+        dummy.position.set(x, terrain.heightAt(x, z) + s * 0.28, z);
         dummy.scale.set(s, s * 0.55, s);
         dummy.rotation.set(0, rng() * Math.PI, 0);
         dummy.updateMatrix();
@@ -109,7 +110,7 @@ export function Vegetation({
       for (let i = 0; i < rockCount; i++) {
         const [x, z] = placements.rocks[i % placements.rocks.length];
         const s = 0.3 + rng() * 1.0;
-        dummy.position.set(x, terrainHeight(x, z) + s * 0.15, z);
+        dummy.position.set(x, terrain.heightAt(x, z) + s * 0.15, z);
         dummy.scale.set(s, s * 0.6, s);
         dummy.rotation.set(rng() * 0.4, rng() * Math.PI, rng() * 0.4);
         dummy.updateMatrix();
@@ -126,7 +127,7 @@ export function Vegetation({
     if (trunks && canopies) {
       for (let i = 0; i < treeCount; i++) {
         const [x, z] = placements.trees[i % placements.trees.length];
-        const y = terrainHeight(x, z);
+        const y = terrain.heightAt(x, z);
         const s = 0.8 + rng() * 0.5;
         dummy.position.set(x, y + 0.9 * s, z);
         dummy.scale.set(s, s, s);
@@ -144,7 +145,7 @@ export function Vegetation({
       canopies.instanceMatrix.needsUpdate = true;
       if (canopies.instanceColor) canopies.instanceColor.needsUpdate = true;
     }
-  }, [shrubCount, rockCount, treeCount, placements]);
+  }, [shrubCount, rockCount, treeCount, placements, terrain]);
 
   return (
     <group>

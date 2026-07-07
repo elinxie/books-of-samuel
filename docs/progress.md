@@ -41,7 +41,9 @@ Remaining for a clean M1 close-out:
   review items (plan type, figure ratio, lighting) were all resolved at the
   2026-07-07 Fable session (`fable-review-queue.md` Resolved), which also landed
   ADR-005…ADR-009 (terrain generalization, layout conventions, reenactment
-  pattern, asset pipeline, violence default).
+  pattern, asset pipeline, violence default). ADR-005's consumer migration
+  (store-held active `Terrain`, scene registry, `SceneEntityDef` decoupling) is
+  now done too — see `docs/architecture-decisions/adr-005-terrain-generalization.md`.
 
 ## Milestone 2–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
@@ -59,7 +61,9 @@ and now covers the whole repo's code.
 
 - `npm run format:check` — pass
 - `npm run lint` — pass
-- `npm run test` (vitest) — 39/39 pass (31 + 8 terrain tests from ADR-005)
+- `npm run test` (vitest) — 38/38 pass (31 + 7 terrain tests: ADR-005's 8 minus
+  the deprecated-delegate test removed when `terrainHeight`/`buildTerrainGeometry`
+  were deleted in the consumer migration)
 - `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
 - `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`; unnecessary in normal CI)

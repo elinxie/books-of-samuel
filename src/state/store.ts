@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { DEFAULT_SCENE_ID } from '../data/scenes';
+import type { Terrain } from '../engine/terrain';
+import { ZIKLAG_TERRAIN } from '../scenes/ziklag/terrain';
 
 export type QualityMode = 'study' | 'balanced' | 'high';
 export type NavMode = 'inspect' | 'walk';
@@ -26,6 +28,8 @@ interface AppState {
 
   // Scene playback
   sceneId: string;
+  /** Active scene's terrain sampler/geometry; set when a scene is entered (ADR-005). */
+  terrain: Terrain;
   timeSec: number;
   playing: boolean;
   speed: number;
@@ -41,6 +45,7 @@ interface AppState {
   setActivePanel: (p: PanelId) => void;
 
   setScene: (id: string) => void;
+  setTerrain: (terrain: Terrain) => void;
   setTime: (t: number, max?: number) => void;
   advanceTime: (dt: number, max: number) => void;
   setPlaying: (p: boolean) => void;
@@ -67,6 +72,7 @@ export const useAppStore = create<AppState>()(
       activePanel: 'none',
 
       sceneId: DEFAULT_SCENE_ID,
+      terrain: ZIKLAG_TERRAIN,
       timeSec: 0,
       playing: true,
       speed: 1,
@@ -83,6 +89,7 @@ export const useAppStore = create<AppState>()(
 
       setScene: (sceneId) =>
         set({ sceneId, timeSec: 0, playing: true, selectedEntityId: null, pendingTeleport: null }),
+      setTerrain: (terrain) => set({ terrain }),
       setTime: (t, max = Number.POSITIVE_INFINITY) => set({ timeSec: clamp(t, 0, max) }),
       advanceTime: (dt, max) =>
         set((s) => {

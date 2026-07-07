@@ -2,8 +2,7 @@ import { Html } from '@react-three/drei';
 import { CLAIMS_BY_ID } from '../../data/claims';
 import { BASIS_LABELS } from '../basisMeta';
 import { useAppStore } from '../../state/store';
-import { terrainHeight } from '../../engine/terrain';
-import type { SceneEntityDef } from '../../scenes/ziklag/entities';
+import type { SceneEntityDef } from '../../scenes/types';
 
 /**
  * In-scene label pill. Kept deliberately quiet: title plus (when sources are
@@ -14,10 +13,11 @@ export function EntityLabel({ entity }: { entity: SceneEntityDef }) {
   const showSources = useAppStore((s) => s.showSources);
   const selectEntity = useAppStore((s) => s.selectEntity);
   const selected = useAppStore((s) => s.selectedEntityId === entity.id);
+  const terrain = useAppStore((s) => s.terrain);
 
   const dominantClaim = entity.claimIds.length ? CLAIMS_BY_ID.get(entity.claimIds[0]) : undefined;
   const [x, yOffset, z] = entity.position;
-  const y = terrainHeight(x, z) + yOffset;
+  const y = terrain.heightAt(x, z) + yOffset;
 
   return (
     <Html position={[x, y, z]} center distanceFactor={110} zIndexRange={[40, 0]}>
