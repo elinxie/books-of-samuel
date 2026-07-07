@@ -96,3 +96,6 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   modelLicense/modelProvenance) pre-authorized for AssetRecord; tri/texture
   budgets set; modeling starts M3 via one pilot figure (instanced-skinned-mesh
   risk settled there); M2 stays procedural. Roadmap intro points at the ADR.
+- Q1 plan type: confirmed as shipped (real period type, speculative label,
+  generic-composite framing). Rider: no template reuse without a fresh
+  per-scene appropriateness claim. Register #3 updated.
