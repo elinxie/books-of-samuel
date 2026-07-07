@@ -87,3 +87,7 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   conventions (seeded PRNG per concern, spec arrays not meshes, arc-gap gates,
   curve paths, rejection-sampled slots, claims-traceable constants); extraction
   triggers on a second enclosed-ring scene. Method-doc checklist now points at it.
+- Q10 (new, added+resolved): pure pose functions = standard reenactment pattern.
+  ADR-007: pure (t, params) → pose, scrub-safe by construction, gesture channels
+  normalized, beat-invariant unit test required per scene, named figures get pose
+  functions too from M2 (Ziklag's inline David/Abiathar grandfathered).
