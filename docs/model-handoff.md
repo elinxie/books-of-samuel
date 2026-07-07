@@ -92,14 +92,30 @@ them during Sonnet sessions, rather than context-switching to Fable per question
 Clear the queue in one Fable session per milestone (or when it has 3–5 items and a
 milestone is close to done).
 
-## How to continue if Fable is unavailable
+## How to continue if Fable usage runs out
 
-Proceed under `docs/sonnet-continuation.md`. For anything that would normally need
-Fable: implement the most defensible option, mark it clearly as **provisional** in
-code comments/claim `notes` and in `fable-review-queue.md`, and keep moving — don't
-block the whole project on Fable availability. Milestone `status` should stay
-`in-progress` (not `released`) until a flagged provisional decision gets reviewed,
-if the decision materially affects what's rendered.
+**If it happens mid-session, in a chat that's still open:** switch models in
+that same chat — `/model claude-sonnet-5` (or whatever model is available).
+Claude Code preserves the full conversation across a model switch; the new
+model sees everything decided so far, which is strictly better than a cold
+restart from docs. This is the smoothest path and should be tried first.
+
+**If the session itself isn't usable** (closed, expired, or starting fresh
+later in a new chat): proceed under `docs/sonnet-continuation.md`. For
+anything that would normally need Fable: implement the most defensible
+option, mark it clearly as **provisional** in code comments/claim `notes` and
+in `fable-review-queue.md`, and keep moving — don't block the whole project
+on Fable availability. Milestone `status` should stay `in-progress` (not
+`released`) until a flagged provisional decision gets reviewed, if the
+decision materially affects what's rendered.
+
+**Either way, checkpoint discipline is what makes both paths safe.** Fable
+sessions with multiple independent decisions to make (see
+`docs/next-fable-session.md` for the current example) should commit each
+decision as it's made — write it to the real file, clear it from
+`fable-review-queue.md`, log it, commit — rather than batching everything
+into one uncommitted working session. A mid-decision cutoff then loses at
+most the one in-progress item, not the whole session.
 
 ## Model commands
 
