@@ -199,6 +199,14 @@ started the user's requested visual-fidelity track:
   heavy test-writing going forward when token-costly; prioritize visible
   scene-realism work instead. Recorded in `docs/next-run.md`'s "User priority
   note" for future sessions to see without chat memory.
+- Responded by landing visual-fidelity slice 2 same session (§C): house
+  walls/socles and perimeter-wall segments in `Settlement.tsx` get per-mesh
+  seeded hue/roughness jitter (deterministic `mulberry32` seed) instead of
+  two flat repeated tones — houses aren't instanced, so this is a small
+  per-mesh material array, not `instanceColor`. No new tests added for this
+  one per the user's steer (visual-only JSX change, no new pure logic beyond
+  the same jitter pattern the roadmap doc already documents). Verified via
+  typecheck/lint/test/build all green and a Playwright screenshot of the
+  live scene (no console errors; bundle size unchanged).
 
-Next: see `docs/next-run.md` (settlement material variation, §C, is queued
-next per the roadmap's suggested order).
+Next: see `docs/next-run.md`.

@@ -51,12 +51,17 @@ Remaining for a clean M1 close-out:
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
-See `docs/visual-fidelity-roadmap.md`. First slice landed 2026-07-07: Ziklag
-ground-color zones now key off real layout data (`SMOKE_ORIGINS`,
-`GATE_TOWERS`) instead of one uniform ash disk — darker scorch patches under
-individually-burned houses (severity-scaled), a lighter worn-dust halo at the
-gate approach. Covered by two new isolated-comparison tests in
-`src/scenes/ziklag/terrain.test.ts`.
+See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:
+
+- Ziklag ground-color zones key off real layout data (`SMOKE_ORIGINS`,
+  `GATE_TOWERS`) instead of one uniform ash disk — darker scorch patches
+  under individually-burned houses (severity-scaled), a lighter worn-dust
+  halo at the gate approach. Covered by isolated-comparison tests in
+  `src/scenes/ziklag/terrain.test.ts`.
+- Settlement material variation: house walls/socles and perimeter-wall
+  segments in `Settlement.tsx` get per-mesh seeded hue/roughness jitter
+  instead of two flat repeated tones (houses aren't instanced, so this is a
+  material array, not `instanceColor`).
 
 ## Repo note: companion reader at `/reader/`
 

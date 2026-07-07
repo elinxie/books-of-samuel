@@ -35,14 +35,14 @@ an original write-up grounded in this repo's actual patterns).
 
 ## Next Sonnet session: pick in this order
 
-1. **Visual-fidelity roadmap, next slice(s)** — `docs/visual-fidelity-roadmap.md`
-   section C is next in the suggested order: settlement material variation
-   (mudbrick/timber/ash/stone jitter on `Settlement.tsx` houses and perimeter
-   walls, same per-instance-jitter technique already used in
-   `Vegetation.tsx`). Keep picking small slices from that doc each session;
-   re-order freely by what's smallest/safest for the remaining budget. Ask
-   `performance-reviewer` after any slice that adds real instance/draw-call
-   volume.
+1. **Visual-fidelity roadmap, next slice(s)** — slices 1–2
+   (`docs/visual-fidelity-roadmap.md` §A terrain zones, §C settlement
+   material jitter) are done. Slice 3 is next in the suggested order:
+   instanced burned-debris + expanded rock/scrub variety (§A), using the
+   same `Vegetation.tsx` instancing pattern. Keep picking small slices from
+   that doc each session; re-order freely by what's smallest/safest for the
+   remaining budget. Ask `performance-reviewer` after any slice that adds
+   real instance/draw-call volume.
 2. **Milestone 2 groundwork** (lower priority than visual work per the user's
    note above, but still open): flesh out the `besor-crossing` `SceneDef`
    (beats/viewpoints) and its claims. Terrain-wise this is unblocked — compose

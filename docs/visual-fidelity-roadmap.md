@@ -31,6 +31,9 @@ one run. Check off items as they land and note the commit/PR.
 
 ## A. Environment richness
 
+- [x] Terrain color-ramp: Ziklag ground-color zones now key off real
+      layout data (smoke-origin scorch patches, gate-approach dust halo)
+      instead of one flat disk (2026-07-07).
 - [ ] Terrain color-ramp improvements: more zones/moisture variation in
       `TerrainColors` (`src/engine/terrain.ts`) for Ziklag beyond the current
       base/scrub/rocky blend — e.g. a dedicated "charred settlement floor"
@@ -64,11 +67,16 @@ one run. Check off items as they land and note the commit/PR.
 
 ## C. Settlement material detail
 
-- [ ] Mudbrick/timber/ash/stone variation on `Settlement.tsx` structures via
-      per-instance color/roughness jitter (`instanceColor`, parameter
-      randomization) — same technique already used in `Vegetation.tsx`.
-- [ ] Gate/wall material distinction from house walls (currently likely
-      uniform placeholder tone — confirm and vary).
+- [x] Mudbrick/stone variation on `Settlement.tsx` houses and perimeter
+      walls via per-mesh seeded hue/roughness jitter (2026-07-07) — houses
+      aren't instanced, so this uses a per-mesh material array rather than
+      `instanceColor`, same underlying technique.
+- [ ] Timber/ash further variation (roof slabs, collapse debris still share
+      two flat tones — lower priority, less visually dominant than walls).
+- [ ] Gate/wall material distinction from house walls: walls now vary
+      separately from houses (different base-hue mix); gate towers still
+      share one flat tone — revisit if they read as too uniform once other
+      slices land.
 - [ ] Field-plot and threshing-floor surface distinction from surrounding
       terrain (color zones or a dedicated ground patch mesh).
 - [ ] Keep every material change inside the "procedural/vertex-color before
@@ -112,8 +120,9 @@ one run. Check off items as they land and note the commit/PR.
 
 Small, mostly-independent, roughly in this order:
 
-1. Ziklag terrain color-ramp / burned-floor zone (A).
-2. Settlement material variation via instance color jitter (C).
+1. ~~Ziklag terrain color-ramp / burned-floor zone (A).~~ Done 2026-07-07.
+2. ~~Settlement material variation via per-mesh color jitter (C).~~ Done
+   2026-07-07.
 3. Instanced burned-debris + expanded rock/scrub variety (A).
 4. Lighting/fog tuning pass with a before/after screenshot in the PR (B).
 5. Figure/pose readability pass (D).
