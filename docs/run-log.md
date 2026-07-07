@@ -82,3 +82,8 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   (`terrain.test.ts`: 8 height + 3 vertex/color pins); legacy `terrainHeight`/
   `buildTerrainGeometry` deprecated; consumer migration (store-held active
   `Terrain`, scene registry, `SceneEntityDef` decoupling) specced in ADR → Sonnet.
+- Q8 settlement layout: defer extraction (confirmed) — scene-local, no second
+  ring-type consumer coming (Beth-shan = tell city). ADR-006 standardizes the
+  conventions (seeded PRNG per concern, spec arrays not meshes, arc-gap gates,
+  curve paths, rejection-sampled slots, claims-traceable constants); extraction
+  triggers on a second enclosed-ring scene. Method-doc checklist now points at it.

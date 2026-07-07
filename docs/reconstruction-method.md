@@ -97,6 +97,9 @@ a hidden feature.
 4. Claims exist and are cited.
 5. `SceneDef` added to `scenes.ts` (`status: 'planned'` until built).
 6. Scene folder under `src/scenes/<id>/` with layout + composition + entities.
+   Layout modules follow the conventions in
+   `docs/architecture-decisions/adr-006-settlement-layout-pattern.md` (seeded,
+   spec-arrays-not-meshes, claims-traceable constants).
 7. Register the component in `SCENE_COMPONENTS` (`src/pages/ObservePage.tsx`).
 8. Add/extend Playwright coverage if the scene introduces new interactive surface.
 9. Update `docs/progress.md`, `docs/asset-roadmap.md`, `docs/uncertainty-register.md`.
