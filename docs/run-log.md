@@ -65,3 +65,10 @@ with a leading slash drops the `/books-of-samuel/` base per standard URL-joining
 rules and 404s — fixed to `page.goto('reader/')`). Full gate re-verified green
 (format/lint/typecheck/31 vitest/build/7 playwright e2e, `dist/reader/index.html`
 byte-identical to main's original compiled reader). Next: see `docs/next-run.md`.
+
+**2026-07-07 — Sonnet 5 — CI fix**
+PR #2 CI failed: "source cards in sync" step diffed a freshly-regenerated
+`sources/source-index.json` against committed, found `generatedAt` differed
+(committed 07-06, regenerated 07-07) — guaranteed to fail on any day after the
+commit, unrelated to real card drift. Nothing read that field. Removed it from
+`scripts/build-source-index.mjs` and regenerated. Re-verified full gate green.
