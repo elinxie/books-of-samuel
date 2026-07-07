@@ -110,3 +110,8 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   label. claim-amalekite-raiders notes now carry the depiction decision;
   register #6 decided; roadmap M2 line updated. Build artifacts at M2:
   claim-camel-depiction + asset-camel-placeholder (modeled at M3).
+- Q6 Gilboa violence default: STANDARD as default (ADR-009), behind a one-time
+  advisory w/ one-click reduced; persisted violenceMode setting; one shared
+  choreography, two render treatments; reduced abstracts depiction never facts;
+  no dismemberment in any mode; beheading/body-display as aftermath-discovery
+  at distance. Method-doc violence section + register #9 updated. Impl at M3.
