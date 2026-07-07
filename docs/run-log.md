@@ -99,3 +99,6 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
 - Q1 plan type: confirmed as shipped (real period type, speculative label,
   generic-composite framing). Rider: no template reuse without a fresh
   per-scene appropriateness claim. Register #3 updated.
+- Q2 figure ratio/abstraction: confirmed — ~1:10 is now the standard ratio for
+  narrated crowds; capsules-without-gear stays until M3 modeled figures.
+  Register #7 updated.
