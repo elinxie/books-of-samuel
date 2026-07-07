@@ -91,3 +91,8 @@ Working `docs/next-fable-session.md`, per-item checkpoint commits.
   ADR-007: pure (t, params) → pose, scrub-safe by construction, gesture channels
   normalized, beat-invariant unit test required per scene, named figures get pose
   functions too from M2 (Ziklag's inline David/Abiathar grandfathered).
+- Q9 asset pipeline: ADR-008 — Blender→glTF(.glb)→drei useGLTF (no new deps);
+  project-authored/CC0-only, no marketplaces; provenance fields (modelPath/
+  modelLicense/modelProvenance) pre-authorized for AssetRecord; tri/texture
+  budgets set; modeling starts M3 via one pilot figure (instanced-skinned-mesh
+  risk settled there); M2 stays procedural. Roadmap intro points at the ADR.

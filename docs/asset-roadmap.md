@@ -5,6 +5,14 @@ record there requires `whyTemporary`, `historicalRequirements`, and a
 `replacementMilestoneId`, enforced by `integrity.test.ts`. This doc is the
 human-readable narrative companion; keep it in sync when assets.ts changes.
 
+**Pipeline decision (ADR-008):** modeled assets are authored in Blender and
+exported as glTF (.glb), loaded with drei's `useGLTF` — no new dependencies.
+Sourcing is project-authored or CC0-adapted only, with provenance recorded in
+`assets.ts`. Modeling starts at **Milestone 3** with a single pilot figure
+walking the whole path first; Milestone 2 replacements stay procedural. Budgets,
+file locations, and the licensing policy live in
+`docs/architecture-decisions/adr-008-asset-pipeline.md`.
+
 ## Current placeholders (Ziklag scene, Milestone 1)
 
 | Asset                    | Represents                             | Why temporary                                        | Replace at            |
