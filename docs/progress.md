@@ -34,18 +34,29 @@ Done:
 
 Remaining for a clean M1 close-out:
 
-- Citation verification pass on `garfinkel-ganor-2019` and `oren-tel-sera-1993`
-  (queue item 4).
 - One short final checklist pass (`docs/fable-review-checklist.md`) before
-  flipping `M1` to `released` in `src/data/milestones.ts`. The creative-direction
-  review items (plan type, figure ratio, lighting) were all resolved at the
-  2026-07-07 Fable session (`fable-review-queue.md` Resolved), which also landed
-  ADR-005…ADR-009 (terrain generalization, layout conventions, reenactment
-  pattern, asset pipeline, violence default). ADR-005's consumer migration
-  (store-held active `Terrain`, scene registry, `SceneEntityDef` decoupling) is
-  now done too — see `docs/architecture-decisions/adr-005-terrain-generalization.md`.
+  flipping `M1` to `released` in `src/data/milestones.ts` — this is a Fable
+  milestone-sign-off task (`docs/model-handoff.md` priority 1), not Sonnet's to
+  self-certify. The creative-direction review items (plan type, figure ratio,
+  lighting) were all resolved at the 2026-07-07 Fable session
+  (`fable-review-queue.md` Resolved), which also landed ADR-005…ADR-009 (terrain
+  generalization, layout conventions, reenactment pattern, asset pipeline,
+  violence default). ADR-005's consumer migration (store-held active `Terrain`,
+  scene registry, `SceneEntityDef` decoupling) is done too — see
+  `docs/architecture-decisions/adr-005-terrain-generalization.md`. Citation
+  verification (queue item 4) closed 2026-07-07 (Sonnet) — see
+  `docs/fable-review-queue.md` Resolved and the source cards.
 
 ## Milestone 2–4: **planned**, not started. See `src/data/milestones.ts` for goals.
+
+## Visual-fidelity roadmap (parallel track, not milestone-gated)
+
+See `docs/visual-fidelity-roadmap.md`. First slice landed 2026-07-07: Ziklag
+ground-color zones now key off real layout data (`SMOKE_ORIGINS`,
+`GATE_TOWERS`) instead of one uniform ash disk — darker scorch patches under
+individually-burned houses (severity-scaled), a lighter worn-dust halo at the
+gate approach. Covered by two new isolated-comparison tests in
+`src/scenes/ziklag/terrain.test.ts`.
 
 ## Repo note: companion reader at `/reader/`
 

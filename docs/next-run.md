@@ -3,71 +3,73 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
+## User priority note (2026-07-07, carries forward)
+
+The user explicitly asked to **deprioritize deep bibliographic
+research/cross-checking and heavy test-writing** when it costs significant
+token budget, and to **prioritize making the scene look more realistic**
+(the visual-fidelity roadmap) instead. Citation-verification-style tasks
+(queue #4, now resolved) should not be repeated speculatively — treat
+`docs/visual-fidelity-roadmap.md` as the default work source over research
+tasks unless a real blocker forces otherwise. Keep new tests focused and
+proportionate (a couple of targeted assertions, not exhaustive coverage) —
+don't over-invest tokens in test depth for routine visual tweaks.
+
 ## Since the last version of this note
 
-The 2026-07-07 Fable session (run-log entry of that date) resolved every open
-generalization and creative-direction item except queue #4. A same-day Sonnet 5
-session then landed the ADR-005 consumer migration (item 1 below, now done):
+`docs/fable-review-queue.md`'s Open table is now **empty** — queue #4
+(citation completeness for `garfinkel-ganor-2019`/`oren-tel-sera-1993`) was
+resolved 2026-07-07 (Sonnet, via the `researcher` subagent): real venues,
+named proponents/critics now in the source cards, `claims.ts`, and
+`locations.ts`. The substantive 3-candidate Ziklag-location dispute is
+untouched — only citation accuracy improved. See `docs/run-log.md`.
 
-- **ADR-005** — terrain is per-scene (`TerrainSpec` + `createTerrain`); engine
-  core and consumer migration are both landed. Ziklag's spec lives in
-  `src/scenes/ziklag/terrain.ts`; the Zustand store holds the active scene's
-  `Terrain` (`setTerrain`); `ObservePage`'s `SCENE_REGISTRY` maps scene id →
-  `{ component, terrain }`; the deprecated `terrainHeight`/`buildTerrainGeometry`
-  globals are deleted. `SceneEntityDef` now lives in `src/scenes/types.ts`.
-- **ADR-006** — settlement-layout extraction deferred; layout-module conventions
-  standardized.
-- **ADR-007** — pure pose functions confirmed as the reenactment standard.
-- **ADR-008** — asset pipeline: Blender → glTF at Milestone 3, pilot first;
-  M2 stays procedural.
-- **ADR-009** — violence depiction: standard mode default behind a first-visit
-  advisory; reduced mode abstracts depiction, never facts.
-- Camels: **render** in the narrated flight beat only (queue Resolved #5,
-  register #6). Ziklag's plan type, figure ratio, and lighting: confirmed.
-
-`docs/fable-review-queue.md`'s Open table now holds only **#4** (citation
-verification — a Sonnet task).
+The same session started the visual-fidelity roadmap
+(`docs/visual-fidelity-roadmap.md`, new): landed slice 1 (Ziklag ground-color
+zones keyed to real smoke-origin/gate positions instead of one flat disk —
+`src/scenes/ziklag/terrain.ts`). Also checked in a project skill,
+`.claude/skills/threejs-r3f-performance/SKILL.md`, mirroring the user's
+account-wide Three.js/R3F performance skills (couldn't export their exact
+content — no tool exposes raw account-skill text to this session — so it's
+an original write-up grounded in this repo's actual patterns).
 
 ## Next Sonnet session: pick in this order
 
-1. **Citation verification pass** (queue #4): verify exact venue for
-   `garfinkel-ganor-2019` and first-proposer history for `oren-tel-sera-1993`;
-   update `confidenceNotes`, clear `TO VERIFY`, narrow hedges. Research/doc
-   only. This is also the last queue blocker for M1's close-out review.
-2. **Milestone 2 groundwork**: flesh out the `besor-crossing` `SceneDef`
-   (beats/viewpoints) and its claims. Terrain-wise this is now unblocked —
-   compose against `createTerrain` with a `channel` feature (ADR-005; put the
-   spec in a new `src/scenes/besor-crossing/terrain.ts` and add its entry to
-   `SCENE_REGISTRY` in `ObservePage`, following Ziklag's pattern). Route
-   _distances_ still depend on the Ziklag-candidate question
-   (`uncertainty-register.md` #1–2), so keep the crossing "representative," the
-   same composite framing Ziklag uses, rather than asserting a measured route.
-   Camel-depiction constraints for the Amalekite camp are already decided
-   (register #6).
+1. **Visual-fidelity roadmap, next slice(s)** — `docs/visual-fidelity-roadmap.md`
+   section C is next in the suggested order: settlement material variation
+   (mudbrick/timber/ash/stone jitter on `Settlement.tsx` houses and perimeter
+   walls, same per-instance-jitter technique already used in
+   `Vegetation.tsx`). Keep picking small slices from that doc each session;
+   re-order freely by what's smallest/safest for the remaining budget. Ask
+   `performance-reviewer` after any slice that adds real instance/draw-call
+   volume.
+2. **Milestone 2 groundwork** (lower priority than visual work per the user's
+   note above, but still open): flesh out the `besor-crossing` `SceneDef`
+   (beats/viewpoints) and its claims. Terrain-wise this is unblocked — compose
+   against `createTerrain` with a `channel` feature (ADR-005; new
+   `src/scenes/besor-crossing/terrain.ts`, add to `SCENE_REGISTRY` in
+   `ObservePage`, following Ziklag's pattern). Route _distances_ still depend
+   on the Ziklag-candidate question (`uncertainty-register.md` #1–2) — keep
+   the crossing "representative," not a measured route.
 3. **Repo hygiene**: confirm GitHub Pages is actually live (README
-   "Deploying" — one manual repo-settings step). If not live, that jumps to
-   top priority: it's a Milestone 0 acceptance criterion.
+   "Deploying" — one manual repo-settings step). If not live, that's a
+   Milestone 0 acceptance criterion and jumps to top priority.
 
-Milestone 3 (Gilboa) is no longer policy-blocked (ADR-009 decided) but stays
-after M2 in milestone order; when it starts, build to ADR-009 and get a
-world-director brief first.
+Milestone 1 sign-off (`docs/fable-review-checklist.md` pass, flip `M1` to
+`released`) is a **Fable** task now that queue #4 is clear — not Sonnet's to
+self-certify; don't block on it (`docs/next-fable-session.md`).
 
 ## Known state
 
-- Full gate green as of this commit (format / lint / typecheck / 38 vitest /
-  build / 7 playwright e2e). Vitest count is 39 minus the deprecated
-  `terrainHeight` delegate test, which was deleted along with the function it
-  tested.
-- No open bugs.
-- `M1` stays `in-progress`: remaining close-out = queue #4 plus one short final
-  checklist pass (`docs/fable-review-checklist.md`) — the creative-direction
-  review items were all resolved 2026-07-07, and ADR-005's migration is done.
+- Full gate green as of this commit (format / lint / typecheck / 40 vitest /
+  build / 7 playwright e2e).
+- No open bugs. No open Fable-review-queue items.
+- `M1` stays `in-progress` pending the Fable sign-off pass noted above.
 
 ## Files most recently changed
 
-`src/engine/terrain.ts` (deprecated exports removed), new
-`src/scenes/ziklag/terrain.ts` + `terrain.test.ts`, new `src/scenes/types.ts`,
-`src/state/store.ts` (`terrain`/`setTerrain`), `src/pages/ObservePage.tsx`
-(`SCENE_REGISTRY`), the five Ziklag scene components, `engine/ObserverControls.tsx`,
-`ui/scene/EntityLabel.tsx`, and `docs/architecture-decisions/adr-005-terrain-generalization.md` /
-`docs/progress.md` / `docs/run-log.md`.
+`src/scenes/ziklag/terrain.ts` (ground-color zones), `src/scenes/ziklag/terrain.test.ts`
+(new zone-effect tests), `sources/source-cards/{garfinkel-ganor-2019,oren-tel-sera-1993}.json`,
+`src/data/claims.ts`, `src/data/locations.ts`, `docs/fable-review-queue.md`,
+`docs/uncertainty-register.md`, `docs/bibliography.md`, new
+`docs/visual-fidelity-roadmap.md`, new `.claude/skills/threejs-r3f-performance/SKILL.md`.

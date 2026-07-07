@@ -1,15 +1,15 @@
 {
   "id": "garfinkel-ganor-2019",
-  "title": "Khirbet al-Ra'i in the Judean Shephelah — proposed identification with Ziklag (excavation publications and announcements, 2019–)",
-  "author": "Yosef Garfinkel; Saar Ganor; et al.",
-  "publisher": "Hebrew University of Jerusalem / Israel Antiquities Authority",
+  "title": "Was Khirbet al-Ra'i Ancient Ziklag? (identification proposal), with companion excavation report and subsequent published debate",
+  "author": "Yosef Garfinkel; Saar Ganor (identification article, Strata 37: 51–59); companion excavation-seasons report co-authored with Kyle H. Keimer, Christopher Rollston, and David Ben-Shlomo (Strata 37: 13–48)",
+  "publisher": "Strata: Bulletin of the Anglo-Israel Archaeological Society, vol. 37",
   "datePublished": "2019",
-  "dateAccessed": "2026-07-06",
+  "dateAccessed": "2026-07-07",
   "sourceType": "archaeology",
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted publications. Summaries in project's own words only.",
-  "summary": "Excavations at Khirbet al-Ra'i near Lachish revealed Philistine-affiliated material followed by early 10th-century occupation, on which basis the excavators proposed the site as Ziklag. The identification has been publicly contested by other scholars and is treated here as one candidate among three.",
+  "summary": "Garfinkel and Ganor, 'Was Khirbet al-Ra'i Ancient Ziklag?' (Strata 37 [2019]: 51–59), argue that excavations at Khirbet al-Ra'i near Lachish — Philistine-affiliated Iron I material followed by a burnt early Iron IIA layer — satisfy the name, historical, and geographical criteria they set out for identifying biblical Ziklag better than roughly a dozen previously proposed sites. A companion article in the same volume (Garfinkel, Keimer, Ganor, Rollston, and Ben-Shlomo, Strata 37: 13–48) reports the 2015–2019 excavation seasons. The identification was publicly rejected by Bar-Ilan University archaeologist Aren Maeir in press coverage at the time (Times of Israel, July 2019); a peer-reviewed rebuttal followed in Zachary Thomas and Chris McKinny, 'Historical Geography Gone Awry at Khirbet er-Ra'i — The Identifications of Biblical Ziklag and (non-Biblical) Pethor/Phathura' (Israel Exploration Journal 72/1 [2022]: 66–88), which argues the site's occupational phasing and Shephelah location (rather than the northern Negev/Beersheba basin implied by biblical town lists) rule it out, and favors Tell esh-Shari'a (Tel Sera') instead. Kyle Keimer subsequently defended the Khirbet al-Ra'i identification in 'Biblical Ziklag: the Case for Khirbet er-Ra'i' (Palestine Exploration Quarterly 155/2 [2023]: 115–134). The identification is therefore actively contested in the peer-reviewed literature, not only in press commentary, and is treated here as one candidate among three.",
   "relevantPassages": ["1 Samuel 27:6", "1 Samuel 30"],
   "extractedClaims": ["claim-ziklag-location"],
-  "confidenceNotes": "TO VERIFY (M1): precise peer-reviewed citation(s), and named critics with their published rebuttals. Until verified, the UI hedges proponents/critics accordingly."
+  "confidenceNotes": "Venue, author, and page-range details (Strata 37: 51–59 and 13–48; Thomas & McKinny, IEJ 72/1: 66–88; Keimer, PEQ 155/2: 115–134) were cross-checked across multiple independent secondary bibliographic sources that agree with each other, but TO VERIFY: none of these page ranges has been confirmed by inspecting a primary print/PDF copy directly, so residual citation risk (e.g., a mistyped page number propagated across secondary sources) cannot be fully excluded. Maeir's rejection is documented only in press reporting, not confirmed here as also appearing in a peer-reviewed piece under his own name."
 }

@@ -30,9 +30,12 @@ hand-maintain a duplicate list here — see "Keeping this in sync" below.
 | `mazar-beth-shean-2006`      | Excavations at Tel Beth-Shean 1989–1996, Vol. I                       | archaeology          |
 | `yadin-1963`                 | The Art of Warfare in Biblical Lands                                  | material-culture     |
 
-Two cards (`garfinkel-ganor-2019`, `oren-tel-sera-1993`) are flagged `TO VERIFY` in
-their `confidenceNotes` — seeded from team knowledge, pending a page-level citation
-check. See `/docs/uncertainty-register.md` item 10.
+Two cards (`garfinkel-ganor-2019`, `oren-tel-sera-1993`) had a citation-completeness
+pass on 2026-07-07 (see `/docs/uncertainty-register.md` item 10, resolved): venues,
+authors, and named proponents/critics are now cited to specific journal
+articles/pages found via secondary bibliographic search. Both cards retain a
+narrower `TO VERIFY` for details not checked against primary print copies (Oren's
+exact NEAEHL pagination; the Tel Halif proponent list).
 
 ## Keeping this in sync
 
