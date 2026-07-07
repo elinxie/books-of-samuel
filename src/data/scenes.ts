@@ -108,7 +108,7 @@ export const SCENES: SceneDef[] = [
       'asset-house-block',
       'asset-perimeter-wall',
       'asset-gate-simple',
-      'asset-figure-capsule',
+      'asset-figure-procedural',
       'asset-david-marker',
       'asset-smoke-particles',
       'asset-vegetation-scrub',

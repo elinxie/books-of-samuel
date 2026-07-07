@@ -48,25 +48,32 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M3',
   },
   {
-    id: 'asset-figure-capsule',
-    name: 'Capsule human figures',
+    id: 'asset-figure-procedural',
+    name: 'Procedural period figures',
     represents: 'David’s men (rendered ~1:10 of the narrated six hundred)',
     placeholder: true,
     whyTemporary:
-      'Abstract capsule bodies with color-varied wool-tone cloaks; no faces, dress detail, or gear.',
+      'Procedurally generated skinned figures with period dress (tunic, belt, mantle, sandals, head wrap, beard) and gait animation (ADR-009). Facial detail is schematic (no portraiture), dress details (colors, weave, fringes) and gear have not yet passed full historical review, and there are no pack animals or gear yet.',
     historicalRequirements:
-      'Low-poly rigged figures with period dress (tunic, cloak, sandals, head covering), pack animals and gear per King & Stager; no anachronistic armor.',
+      'Full King & Stager dress/gear review, plus full review of dress details (colors, weave, fringes) and addition of gear/pack animals.',
     replacementMilestoneId: 'M3',
+    modelLicense: 'project-original',
+    modelProvenance:
+      'Generated in code by src/engine/characters (ring-loop skinned geometry, vertex colors); no external mesh/texture sources. See ADR-009.',
   },
   {
     id: 'asset-david-marker',
     name: 'David / Abiathar marker figures',
     represents: 'Named narrative figures within the crowd',
     placeholder: true,
-    whyTemporary: 'Distinguished only by cloak color and a label.',
+    whyTemporary:
+      'A principal-detail procedural rig (ADR-009), distinguished from the crowd only by pinned dress colors and a label — identity remains label-based by design, not an invented face/portraiture.',
     historicalRequirements:
       'Same as figures; no portraiture pretensions — identity stays label-based.',
     replacementMilestoneId: 'M3',
+    modelLicense: 'project-original',
+    modelProvenance:
+      'Generated in code by src/engine/characters (ring-loop skinned geometry, vertex colors); no external mesh/texture sources. See ADR-009.',
   },
   {
     id: 'asset-smoke-particles',

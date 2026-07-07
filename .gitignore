@@ -17,3 +17,4 @@ reader/**/__pycache__/
 reader/*.tgz
 reader/web-pkg/
 reader/package/
+_shot.mjs

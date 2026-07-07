@@ -156,6 +156,12 @@ export interface AssetRecord {
   whyTemporary?: string;
   historicalRequirements?: string;
   replacementMilestoneId?: string;
+  /** Repo path of the loaded model file (e.g. a `.glb`), if any. See ADR-008. */
+  modelPath?: string;
+  /** Licensing/provenance category for a modeled or generated asset. See ADR-008. */
+  modelLicense?: 'project-original' | 'cc0-adapted';
+  /** How the model was made: authoring method, what (if anything) it adapted, where source files live. See ADR-008/ADR-009. */
+  modelProvenance?: string;
 }
 
 export interface Milestone {
