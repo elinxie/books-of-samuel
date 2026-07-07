@@ -72,3 +72,13 @@ PR #2 CI failed: "source cards in sync" step diffed a freshly-regenerated
 (committed 07-06, regenerated 07-07) — guaranteed to fail on any day after the
 commit, unrelated to real card drift. Nothing read that field. Removed it from
 `scripts/build-source-index.mjs` and regenerated. Re-verified full gate green.
+
+**2026-07-07 — Fable 5 — generalization + creative-direction review session**
+Working `docs/next-fable-session.md`, per-item checkpoint commits.
+
+- Q7 terrain: parameterize now (Sonnet's read confirmed). ADR-005; `terrain.ts`
+  rebuilt as `TerrainSpec` + `createTerrain` (mound/flatten/ramp/channel features,
+  per-scene color ramps), Ziklag output regression-pinned identical
+  (`terrain.test.ts`: 8 height + 3 vertex/color pins); legacy `terrainHeight`/
+  `buildTerrainGeometry` deprecated; consumer migration (store-held active
+  `Terrain`, scene registry, `SceneEntityDef` decoupling) specced in ADR → Sonnet.
