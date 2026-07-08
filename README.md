@@ -53,9 +53,10 @@ npm run build:sources     # regenerate sources/source-index.json after editing s
 ## Deploying
 
 GitHub Actions (`.github/workflows/deploy.yml`) builds and publishes `dist/` to
-GitHub Pages on every push to `main`. One manual, one-time step is required in the
-repo: **Settings → Pages → Source: GitHub Actions** (this can't be set from a
-workflow file). Once set, pushes to `main` deploy automatically.
+GitHub Pages on every push to `main` or the active deployment branch (`work`).
+One manual, one-time step is required in the repo: **Settings → Pages → Source:
+GitHub Actions** (this can't be set from a workflow file). Once set, pushes to
+either deployment branch deploy automatically.
 
 ## Project structure
 
