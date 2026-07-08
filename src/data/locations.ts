@@ -73,7 +73,7 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.25, lon: 34.45, confidence: 'moderate' },
-    sceneIds: ['besor-crossing'],
+    sceneIds: ['besor-crossing', 'amalekite-camp'],
     claimIds: ['claim-besor', 'claim-besor-channel-form'],
     status: 'in-progress',
   },

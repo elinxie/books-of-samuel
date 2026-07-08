@@ -179,6 +179,72 @@ export const ASSETS: AssetRecord[] = [
       'Donkey model and pack/load fidelity per comparative Iron Age Levantine pack-animal evidence.',
     replacementMilestoneId: 'M3',
   },
+  {
+    id: 'asset-terrain-camp-basin',
+    name: 'Procedural camp-basin terrain',
+    represents:
+      'Shallow open basin south of the Besor drainage where the Amalekite camp sprawls (see claim-camp-sprawl)',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise with a hand-tuned basin and scout’s-rise landform; the camp’s real location is unknown and unknowable ("south of the Besor" is all the text gives).',
+    historicalRequirements:
+      'None achievable for a site the text does not locate — remains a labeled generic western-Negev basin; only palette/flora fidelity can improve.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-camp-shelter-placeholder',
+    name: 'Ridge-awning and windbreak shelters',
+    represents: 'Raider-camp shelters (see claim-camp-shelters — deliberately not goat-hair tents)',
+    placeholder: true,
+    whyTemporary:
+      'Low-poly ridge-awnings and brush windbreak arcs — suggestive forms only, since no documented shelter type can be asserted for this camp.',
+    historicalRequirements:
+      'Any upgrade must keep the same honesty: no black goat-hair tent form without period attestation; improve silhouette/material only.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-camp-props',
+    name: 'Spoil heaps and tether posts',
+    represents: 'Loot piles and animal tether points at the camp clusters (see claim-camp-sprawl)',
+    placeholder: true,
+    whyTemporary: 'Squashed low-poly mounds and plain posts; contents of the heaps are abstract.',
+    historicalRequirements:
+      'Optional upgrade — recognizable period goods (textiles, vessels, sacks) per material-culture sources if ever detailed.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-camp-fire',
+    name: 'Instanced camp fires (emissive)',
+    represents: 'The fire points that make the camp sprawl legible at dusk (see claim-camp-sprawl)',
+    placeholder: true,
+    whyTemporary:
+      'Emissive flame cones and ember-glow discs in two instanced meshes — deliberately not real lights, per the scene brief’s lighting budget.',
+    historicalRequirements: 'None strictly; visual upgrade (sprite flicker, smoke wisps) optional.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-livestock-placeholder',
+    name: 'Instanced flocks and herds',
+    represents: 'Sheep/goat flocks and cattle taken as spoil (see claim-livestock-spoil)',
+    placeholder: true,
+    whyTemporary:
+      'Simple low-poly instanced quadruped forms with color variation, not real breeds.',
+    historicalRequirements:
+      'Period-plausible fat-tailed sheep, black goats, and small zebu-free taurine cattle per zooarchaeological literature, if ever modeled.',
+    replacementMilestoneId: 'M3',
+  },
+  {
+    id: 'asset-camel-placeholder',
+    name: 'Instanced camels with riders (flight beat only)',
+    represents:
+      'The four hundred young men fleeing on camels (see claim-camel-depiction; dispute on claim-amalekite-raiders)',
+    placeholder: true,
+    whyTemporary:
+      'Low-poly dromedary-with-rider merged form, minimal early tack (no frame saddle); appears only in the narrated flight beat per the register #6 decision.',
+    historicalRequirements:
+      'Dromedary form and rope-halter/pad tack per early-camel-use literature; must never gain a frame saddle or ambient herd use without a Fable review.',
+    replacementMilestoneId: 'M3',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

@@ -340,3 +340,74 @@ reenactment coverage, fixed a depart-south pose bug found while writing it),
   `docs/fable-review-queue.md` further (item #11 already in place).
 
 Next: see `docs/next-run.md`.
+
+**2026-07-08 — Fable 5 (undercover harness) — amalekite-camp session (branch `claude/amalekite-camp-7h2pjc`)**
+
+- Built `amalekite-camp` (second M2 scene) per
+  `docs/design/amalekite-camp-brief.md` and the beats/viewpoints seeded in
+  `scenes.ts`. New `src/scenes/amalekite-camp/`: basin terrain (flatten +
+  scout's-rise mound, worn/grazed ColorZones keyed to the 14-cluster layout),
+  layout.ts (clusters/fires/shelter-prop slots/pens/staging/captive grid/camel
+  starts, all seeded-deterministic), timing.ts (shared beat constants),
+  Shelters (instanced ridge-awnings + brush windbreaks + spoil heaps + tether
+  posts — deliberately NOT goat-hair tents), Fires (instanced emissive cones +
+  glow discs, not lights; die to embers across the compression card),
+  Livestock (2 instanced meshes, new `livestockCount` tier field 36/70/110),
+  Camels (camel+rider merged geometry, one instanced mesh, flight beat ONLY
+  per register #6, pad tack no frame saddle), CampCrowd (raiders/attackers/
+  captives in one instanced mesh, ADR-007 pure pose functions), David +
+  Egyptian-guide principals, BeatLighting (keyframed dusk → twilight strike →
+  night → dark compression trough → next-day evening; single directional +
+  hemisphere throughout, mutated via refs per frame). Scene status `planned`
+  → `in-progress`; wired into `SCENE_REGISTRY`.
+- Data: 7 new claims (camp-sprawl, strike-timing, full-recovery,
+  livestock-spoil, camel-depiction, camp-shelters, camp-scale), 6 new
+  placeholder assets, `brook-besor` location backlink. Camel decision
+  (register #6) implemented exactly as resolved; register row updated.
+- **Violence call (brief authorized deciding at build):** onset kept (not the
+  aftermath-only fallback) — alarm/scatter/crumple-at-distance in failing
+  light, no gore geometry, fallen not rendered past the compression card.
+  Screenshot pass confirmed it reads restrained.
+- Manual QA: built + previewed + Playwright (real Chromium): all 4 viewpoints,
+  10 beat-time screenshots, zero console errors. Two visual fixes from the
+  pass: deeper dusk keys so the fire sprawl (the money shot) reads at t≈30;
+  camel-flight stagger lengthened (delay 0–11s) so the flight streams past
+  vp-east-edge instead of blinking through.
+- Three review passes, real fixes:
+  - **biblical-text**: verse citations all confirmed; reworded 2 over-long
+    quoted ESV clauses (claim-camp-sprawl, claim-strike-timing) + the same
+    clause unquoted in ent-strike; flagged ent-captives → claim-camp-scale
+    traceability gap (applied). Left note: excerpt-budget test still doesn't
+    scan beat captions (pre-existing backlog item).
+  - **archaeology**: all brief constraints honored (no tents, no ambient
+    camels, no named-culture material culture, no implied documentation of
+    camp form). Fixed b-drive-north caption misreading "David's spoil" as a
+    personal cut (contradicted vv. 21–25); added citation-honesty note to
+    claim-camp-shelters (no dedicated tent-archaeology source in the
+    bibliography); back-referenced 2 new claims into king-stager-2001 +
+    borowski-1987 extractedClaims. No escalations.
+  - **performance**: clean. ~15 draw calls tier-independent vs Ziklag's ~134
+    (brief target: ≤ Ziklag) — ~9x headroom; all counts from QUALITY_PROFILES;
+    no per-frame allocations; one shadow light; bundle delta reasonable
+    (ObservePage lazy chunk +26 kB raw for the whole scene). Watch item: per-
+    frame instanced-matrix load ≈297 at high tier (~4x prior scenes,
+    tier-scales to ≈146 at study) — fine by inspection, profile on a weak
+    device someday. Accepted deviation, noted here: fires are two instanced
+    meshes (cones + glow discs), not the brief's literal "one instanced
+    billboard system" — same draw-call budget, no custom shader needed.
+- Gate green: format/lint/**70 vitest** (up from 51)/build/7 e2e.
+- Docs sync: progress.md (M2 both-scenes-built, sign-off due), asset-roadmap
+  (camp placeholder table), uncertainty-register #6 (implemented), next-run
+  (M2 Fable sign-off is now the top item).
+
+Next: see `docs/next-run.md`.
+
+**2026-07-08 — Codex — handoff/build check after usage cutoff**
+Resumed after Claude Code hit usage limits. No scene/code fixes needed: branch
+already contains the amalekite-camp build and docs. Re-ran the local gate: format,
+lint, 70/70 Vitest, and production build all pass; production build copied the
+reader into `dist/reader/index.html`. Playwright e2e is environment-blocked in
+this container because the expected browser is absent and `npx playwright install
+chromium` returns CDN 403; earlier Claude run had 7/7 e2e green with
+`PLAYWRIGHT_CHROMIUM_PATH`. Updated `docs/next-run.md` so the next Claude/Fable
+session can merge/publish first, then run M2 sign-off.

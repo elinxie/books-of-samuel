@@ -39,7 +39,7 @@ flipped `M1` to `released` in `src/data/milestones.ts`. Rider: run
 `performance-reviewer` over `src/engine/characters` instancing/bake path with
 the next scene-content slice. See `docs/run-log.md`.
 
-## Milestone 2 — 1 Samuel 30 route and recovery: **planned**, 1 of 2 scenes built
+## Milestone 2 — 1 Samuel 30 route and recovery: **planned**, both scenes built — Fable sign-off now due
 
 World-director briefs: `docs/design/besor-crossing-brief.md` and
 `docs/design/amalekite-camp-brief.md`, `SceneDef` beats/viewpoints filled in
@@ -61,8 +61,25 @@ sign-off rider (performance review of `src/engine/characters`). One
 non-blocking creative-direction item queued:
 `docs/fable-review-queue.md` #11 (Egyptian servant dress distinction).
 
-`amalekite-camp` (the second M2 scene) not yet built — see `docs/next-run.md`.
-M2 milestone stays `planned` until both scenes land and Fable signs off.
+`amalekite-camp` built 2026-07-08 (this session): scene status `planned` →
+`in-progress`. Shallow-basin terrain (flatten + scout's-rise mound, worn
+grazed ColorZones keyed to cluster layout), 14-cluster fire sprawl (instanced
+emissive fires — not real lights), ridge-awning/windbreak shelters
+(deliberately not goat-hair tents, `claim-camp-shelters`), spoil heaps/tether
+posts, instanced livestock (new `livestockCount` quality-tier field), crowd
+reenactment (raiders feast→scatter→crumple-at-distance, attackers, captive
+cluster, ADR-007 pure pose functions), camel flight per the resolved register
+#6 call (flight beat only, camel+rider merged instanced geometry, pad tack,
+dispute on the label), beat-driven lighting (dusk → night firelight → dark
+compression trough → next-day evening; single directional + hemisphere rig
+throughout), David + Egyptian-guide principals. 7 new claims, 6 new
+placeholder assets. Violence per the brief: onset only, no gore geometry, the
+fallen not rendered past the compression card. Reviewed by
+archaeology/biblical-text/performance reviewers — see `docs/run-log.md`.
+
+M2 milestone stays `planned` in data until Fable runs
+`docs/fable-review-checklist.md` and signs off — **that sign-off is now due**
+(both scenes built, matching the M1 pattern).
 
 ## Milestone 3–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
@@ -101,15 +118,13 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass
-- `npm run lint` — pass
-- `npm run test` (vitest) — 51/51 pass (up from 40; besor-crossing terrain +
-  reenactment coverage)
-- `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
-- `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
-  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`;
-  unnecessary in normal CI)
-- Full `npm run verify` gate green 2026-07-08 (verified again at doc-sync time).
-- PR #13 (branch `claude/brave-shannon-y5tdqk`, targets `main`) carries this
-  session's 5 commits, still open as a **draft** — needs to be marked ready
-  and merged.
+- `npm run format:check` — pass (Codex handoff check, 2026-07-08)
+- `npm run lint` — pass (Codex handoff check, 2026-07-08)
+- `npm run test` (vitest) — 70/70 pass (Codex handoff check, 2026-07-08)
+- `npm run build` — pass (Codex handoff check, 2026-07-08; also copies
+  `reader/index.html` → `dist/reader/index.html`)
+- `npm run e2e` (playwright) — environment-blocked in the Codex handoff container:
+  expected Chromium is absent and `npx playwright install chromium` returns CDN 403. Earlier full `npm run verify` gate was green 2026-07-08 in Claude's
+  amalekite-camp session with
+  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
+- PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.

@@ -10,6 +10,8 @@ import { ZiklagScene } from '../scenes/ziklag/ZiklagScene';
 import { ZIKLAG_TERRAIN } from '../scenes/ziklag/terrain';
 import { BesorCrossingScene } from '../scenes/besor-crossing/BesorCrossingScene';
 import { BESOR_TERRAIN } from '../scenes/besor-crossing/terrain';
+import { AmalekiteCampScene } from '../scenes/amalekite-camp/AmalekiteCampScene';
+import { AMALEKITE_CAMP_TERRAIN } from '../scenes/amalekite-camp/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 
@@ -21,6 +23,7 @@ interface SceneRegistryEntry {
 const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'ziklag-aftermath': { component: ZiklagScene, terrain: ZIKLAG_TERRAIN },
   'besor-crossing': { component: BesorCrossingScene, terrain: BESOR_TERRAIN },
+  'amalekite-camp': { component: AmalekiteCampScene, terrain: AMALEKITE_CAMP_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {
