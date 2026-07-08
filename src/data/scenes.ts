@@ -128,10 +128,102 @@ export const SCENES: SceneDef[] = [
     milestoneId: 'M2',
     status: 'planned',
     synopsis:
-      'The pursuit reaches the great wadi of the western Negev. Two hundred men too exhausted to cross stay with the baggage; four hundred press on. Nearby, an abandoned Egyptian slave is found and revived.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
+      'The pursuit reaches the great wadi of the western Negev. Two hundred men too exhausted to cross stay with the baggage; four hundred press on. Nearby, an abandoned Egyptian slave is found and revived — and days later, back at the same ford, David rules that all share the spoil alike.',
+    durationSec: 150,
+    beats: [
+      {
+        id: 'b-arrive',
+        timeSec: 0,
+        title: 'The wadi',
+        caption:
+          'The pursuit from Ziklag reaches the brook Besor, the great wadi of the western Negev. Three days of marching lie behind the six hundred; the far bank lies ahead. (1 Samuel 30:9)',
+        passageRef: '1 Samuel 30:9',
+      },
+      {
+        id: 'b-stay',
+        timeSec: 22,
+        title: 'Two hundred stay',
+        caption:
+          'Two hundred men are too exhausted to cross. They remain with the baggage on the near bank — spent, not unwilling. (1 Samuel 30:9–10)',
+        passageRef: '1 Samuel 30:9–10',
+      },
+      {
+        id: 'b-cross',
+        timeSec: 40,
+        title: 'Four hundred cross',
+        caption: 'David and four hundred men ford the wadi and press on south. (1 Samuel 30:10)',
+        passageRef: '1 Samuel 30:10',
+      },
+      {
+        id: 'b-egyptian-found',
+        timeSec: 58,
+        title: 'A man in the open country',
+        caption:
+          'In the open country they find an Egyptian — a slave abandoned by his Amalekite master three days earlier, when he fell sick. (1 Samuel 30:11, 13)',
+        passageRef: '1 Samuel 30:11–13',
+      },
+      {
+        id: 'b-revival',
+        timeSec: 74,
+        title: 'Bread, water, figs, raisins',
+        caption:
+          'They give him bread and water, a cake of figs and two clusters of raisins. After three days without food or drink, his spirit revives. (1 Samuel 30:11–12)',
+        passageRef: '1 Samuel 30:11–12',
+      },
+      {
+        id: 'b-oath',
+        timeSec: 92,
+        title: 'The oath and the intelligence',
+        caption:
+          'The Egyptian tells of the raid, and asks an oath: that David will neither kill him nor return him to his master. Then he agrees to lead them down to the raiders. (1 Samuel 30:13–15)',
+        passageRef: '1 Samuel 30:13–15',
+      },
+      {
+        id: 'b-depart-south',
+        timeSec: 108,
+        title: 'South, guided',
+        caption:
+          'Guided by the Egyptian, the four hundred move south toward the Amalekite camp. (1 Samuel 30:15–16)',
+        passageRef: '1 Samuel 30:15–16',
+      },
+      {
+        id: 'b-return',
+        timeSec: 122,
+        title: 'Days later — the return',
+        caption:
+          'Time passes: the battle is fought far to the south (see the Amalekite camp scene). Days later the column returns north to the Besor, driving flocks and herds, and the two hundred come out to meet them. (1 Samuel 30:21)',
+        passageRef: '1 Samuel 30:21',
+      },
+      {
+        id: 'b-spoil-ruling',
+        timeSec: 136,
+        title: 'Share and share alike',
+        caption:
+          'Some of the fighters would deny the two hundred any spoil beyond their families. David refuses: those who stayed by the baggage share alike with those who went to battle. The narrative marks it as a statute in Israel from that day forward. (1 Samuel 30:22–25)',
+        passageRef: '1 Samuel 30:22–25',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-north-bluff',
+        label: 'North bluff (overlook)',
+        position: [40, 24, -120],
+        lookAt: [0, 0, 0],
+      },
+      { id: 'vp-ford', label: 'The ford', position: [0, 1, -8], lookAt: [10, 0, 40] },
+      {
+        id: 'vp-laager',
+        label: 'Baggage camp (north bank)',
+        position: [-45, 4, -60],
+        lookAt: [0, 0, -20],
+      },
+      {
+        id: 'vp-south-field',
+        label: 'Open country (south bank)',
+        position: [55, 3, 70],
+        lookAt: [25, 0, 45],
+      },
+    ],
     claimIds: ['claim-besor', 'claim-600-men'],
     assetIds: [],
   },
@@ -145,9 +237,91 @@ export const SCENES: SceneDef[] = [
     status: 'planned',
     synopsis:
       'The raiders’ camp spread over the land, eating, drinking, and dancing over the spoil. David’s attack from twilight to evening; the recovery of every captive; four hundred young raiders escape on camels.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
+    durationSec: 170,
+    beats: [
+      {
+        id: 'b-approach',
+        timeSec: 0,
+        title: 'Dusk approach',
+        caption:
+          'Led down by the Egyptian, David’s four hundred reach a rise north of the camp as the light fails. (1 Samuel 30:16)',
+        passageRef: '1 Samuel 30:16',
+      },
+      {
+        id: 'b-sprawl',
+        timeSec: 20,
+        title: 'Spread over all the land',
+        caption:
+          'The raiders lie scattered in loose clusters around their fires — eating, drinking, and dancing over the great spoil taken from Philistine and Judahite country. No ranks, no ramparts: a raider camp, not an army. (1 Samuel 30:16)',
+        passageRef: '1 Samuel 30:16',
+      },
+      {
+        id: 'b-strike',
+        timeSec: 55,
+        title: 'The strike at twilight',
+        caption:
+          'David attacks in the twilight. Alarm runs through the fires; the clusters scatter into the dark. The onset is shown here; the fighting itself ran far longer. (1 Samuel 30:17)',
+        passageRef: '1 Samuel 30:17',
+      },
+      {
+        id: 'b-compression',
+        timeSec: 80,
+        title: 'Until the evening of the next day',
+        caption:
+          'Time compresses: the text spans the fighting “from twilight until the evening of the next day” — roughly a full day, not shown blow by blow. (1 Samuel 30:17)',
+        passageRef: '1 Samuel 30:17',
+      },
+      {
+        id: 'b-camel-flight',
+        timeSec: 100,
+        title: 'Four hundred flee on camels',
+        caption:
+          'Of the raiders, only four hundred young men escape — mounted on camels. Whether camels were in wide use this early is disputed; the label on these mounts carries that dispute. (1 Samuel 30:17)',
+        passageRef: '1 Samuel 30:17',
+      },
+      {
+        id: 'b-recovery',
+        timeSec: 122,
+        title: 'Nothing lacking',
+        caption:
+          'David recovers all that the Amalekites had taken — wives, sons, daughters, spoil; nothing is lacking, small or great. The captives of Ziklag walk free. (1 Samuel 30:18–19)',
+        passageRef: '1 Samuel 30:18–19',
+      },
+      {
+        id: 'b-drive-north',
+        timeSec: 145,
+        title: 'Flocks and herds, north',
+        caption:
+          'The flocks and herds are driven ahead of the column as it turns north toward the Besor — “this is David’s spoil,” the drovers say. (1 Samuel 30:20)',
+        passageRef: '1 Samuel 30:20',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-scout-rise',
+        label: 'Scout’s rise (north, dusk)',
+        position: [0, 18, -140],
+        lookAt: [0, 0, 0],
+      },
+      {
+        id: 'vp-feast-cluster',
+        label: 'Among the fires',
+        position: [-20, 2, 10],
+        lookAt: [10, 1, 30],
+      },
+      {
+        id: 'vp-captives',
+        label: 'The captives',
+        position: [45, 2, 55],
+        lookAt: [30, 1, 40],
+      },
+      {
+        id: 'vp-east-edge',
+        label: 'Eastern edge (camel flight)',
+        position: [110, 6, -20],
+        lookAt: [60, 2, 10],
+      },
+    ],
     claimIds: ['claim-amalekite-raiders'],
     assetIds: [],
   },
