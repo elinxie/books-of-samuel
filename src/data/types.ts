@@ -156,6 +156,9 @@ export interface AssetRecord {
   whyTemporary?: string;
   historicalRequirements?: string;
   replacementMilestoneId?: string;
+  modelPath?: string;
+  modelLicense?: string;
+  modelProvenance?: string;
 }
 
 export interface Milestone {
