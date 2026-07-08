@@ -6,15 +6,7 @@ import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
 import { TUNIC_PALETTE } from '../../engine/characters';
 import { ATTACKER_SLOTS, CAPTIVE_POS, CAPTIVE_SLOTS, CLUSTERS } from './layout';
-import {
-  clamp01,
-  DRIVE_T,
-  lerp,
-  RAIDERS_GONE_T,
-  RECOVERY_T,
-  smoothstep,
-  STRIKE_T,
-} from './timing';
+import { clamp01, DRIVE_T, lerp, RAIDERS_GONE_T, RECOVERY_T, smoothstep, STRIKE_T } from './timing';
 
 /**
  * Scripted reenactment of 1 Samuel 30:16–20 for the crowd, in one instanced
