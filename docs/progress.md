@@ -118,13 +118,13 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass
-- `npm run lint` — pass
-- `npm run test` (vitest) — 70/70 pass (up from 51; amalekite-camp terrain +
-  reenactment coverage, entity integrity)
-- `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
-- `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
-  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`;
-  unnecessary in normal CI)
-- Full `npm run verify` gate green 2026-07-08 (amalekite-camp session).
+- `npm run format:check` — pass (Codex handoff check, 2026-07-08)
+- `npm run lint` — pass (Codex handoff check, 2026-07-08)
+- `npm run test` (vitest) — 70/70 pass (Codex handoff check, 2026-07-08)
+- `npm run build` — pass (Codex handoff check, 2026-07-08; also copies
+  `reader/index.html` → `dist/reader/index.html`)
+- `npm run e2e` (playwright) — environment-blocked in the Codex handoff container:
+  expected Chromium is absent and `npx playwright install chromium` returns CDN 403. Earlier full `npm run verify` gate was green 2026-07-08 in Claude's
+  amalekite-camp session with
+  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.
