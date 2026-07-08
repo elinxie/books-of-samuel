@@ -23,7 +23,7 @@ export const PASSAGES: Passage[] = [
     ],
     sceneIds: ['ziklag-aftermath', 'besor-crossing', 'amalekite-camp'],
     milestoneId: 'M1',
-    status: 'in-progress',
+    status: 'released',
   },
   {
     id: '1sam-31',

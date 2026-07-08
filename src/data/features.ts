@@ -138,21 +138,22 @@ export const FEATURES: FeatureEntry[] = [
     id: 'f-besor-scene',
     title: 'Brook Besor scene',
     description: 'Wadi crossing, the exhausted two hundred, the Egyptian servant.',
-    status: 'planned',
+    status: 'done',
     milestoneId: 'M2',
   },
   {
     id: 'f-amalekite-camp',
     title: 'Amalekite camp scene',
     description: 'Raiders’ camp, twilight attack, recovery of the captives.',
-    status: 'planned',
+    status: 'done',
     milestoneId: 'M2',
   },
   {
     id: 'f-spoil-rule',
     title: 'Spoil distribution scene',
-    description: 'The Besor statute: those with the baggage share alike.',
-    status: 'planned',
+    description:
+      'The Besor statute: those with the baggage share alike. Staged as the closing beats of the besor-crossing scene rather than a separate scene.',
+    status: 'done',
     milestoneId: 'M2',
   },
   {
@@ -186,9 +187,10 @@ export const FEATURES: FeatureEntry[] = [
   {
     id: 'f-dem-terrain',
     title: 'Real-elevation terrain',
-    description: 'DEM-derived landscapes for identified sites.',
+    description:
+      'DEM-derived landscapes for identified sites. Re-scoped M2 → M3 at the M2 sign-off: no M2 scene is at an identified site (Ziklag disputed, the camp unlocatable), and the asset records already target M3 for DEM replacements.',
     status: 'planned',
-    milestoneId: 'M2',
+    milestoneId: 'M3',
   },
   {
     id: 'f-period-figures',
