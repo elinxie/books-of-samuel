@@ -10,6 +10,12 @@
   "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
   "summary": "Synthesis of Israelite daily life and material culture: houses and construction, dress and textiles, food production, water systems, tools, and household organization. Primary anchor for material-culture claims (mudbrick construction, dress, wells, household scale).",
   "relevantPassages": ["1 Samuel 30"],
-  "extractedClaims": ["claim-mudbrick", "claim-dress", "claim-well", "claim-agriculture"],
+  "extractedClaims": [
+    "claim-mudbrick",
+    "claim-dress",
+    "claim-well",
+    "claim-agriculture",
+    "claim-pack-donkeys"
+  ],
   "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
 }

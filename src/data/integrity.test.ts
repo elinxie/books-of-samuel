@@ -18,6 +18,7 @@ import {
   SOURCE_CARDS_BY_ID,
 } from './index';
 import { ZIKLAG_ENTITIES } from '../scenes/ziklag/entities';
+import { BESOR_CROSSING_ENTITIES } from '../scenes/besor-crossing/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -40,6 +41,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(ASSETS);
     uniqueIds(FEATURES);
     uniqueIds(ZIKLAG_ENTITIES);
+    uniqueIds(BESOR_CROSSING_ENTITIES);
   });
 });
 
@@ -192,6 +194,14 @@ describe('features and scene entities', () => {
 
   it('Ziklag entity labels resolve to claims', () => {
     for (const e of ZIKLAG_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Besor-crossing entity labels resolve to claims', () => {
+    for (const e of BESOR_CROSSING_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }

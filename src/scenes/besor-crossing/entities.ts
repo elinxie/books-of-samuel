@@ -78,7 +78,7 @@ export const BESOR_CROSSING_ENTITIES: SceneEntityDef[] = [
     kind: 'person',
     position: [EGYPTIAN_POS[0], 3, EGYPTIAN_POS[1]],
     description:
-      'Found abandoned in the open country, sick and left behind by his Amalekite master three days earlier — property discarded when he stopped being useful. Revived with bread, water, a cake of figs, and raisins, he negotiates an oath before agreeing to guide the pursuit.',
+      'Found abandoned in the open country, sick and left behind by his Amalekite master three days earlier — property discarded when he stopped being useful. Revived with bread, water, a pressed fig cake, and raisins, he negotiates an oath before agreeing to guide the pursuit.',
     claimIds: ['claim-egyptian-servant', 'claim-dress'],
   },
   {

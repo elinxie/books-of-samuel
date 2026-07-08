@@ -277,7 +277,7 @@ export const CLAIMS: ReconstructionClaim[] = [
   {
     id: 'claim-egyptian-servant',
     statement:
-      'The narrative states that David’s men found an Egyptian in the open country, gave him bread, water, a cake of figs, and raisins after three days without food or water, and that he was the slave of an Amalekite, abandoned three days earlier when he fell sick (1 Samuel 30:11–15).',
+      'The narrative states that David’s men found an Egyptian in the open country, gave him bread, water, a pressed fig cake, and raisins after three days without food or water, and that he was the slave of an Amalekite, abandoned three days earlier when he fell sick (1 Samuel 30:11–15).',
     basis: 'biblical-text',
     confidence: 'high',
     sourceIds: ['esv-bible'],
