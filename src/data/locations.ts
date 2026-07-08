@@ -74,8 +74,8 @@ export const LOCATIONS: LocationEntry[] = [
     },
     approxCoordinates: { lat: 31.25, lon: 34.45, confidence: 'moderate' },
     sceneIds: ['besor-crossing'],
-    claimIds: ['claim-besor'],
-    status: 'planned',
+    claimIds: ['claim-besor', 'claim-besor-channel-form'],
+    status: 'in-progress',
   },
   {
     id: 'gath',

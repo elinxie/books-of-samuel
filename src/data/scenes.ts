@@ -126,7 +126,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'brook-besor',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M2',
-    status: 'planned',
+    status: 'in-progress',
     synopsis:
       'The pursuit reaches the great wadi of the western Negev. Two hundred men too exhausted to cross stay with the baggage; four hundred press on. Nearby, an abandoned Egyptian slave is found and revived — and days later, back at the same ford, David rules that all share the spoil alike.',
     durationSec: 150,
@@ -144,7 +144,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 22,
         title: 'Two hundred stay',
         caption:
-          'Two hundred men are too exhausted to cross. They remain with the baggage on the near bank — spent, not unwilling. (1 Samuel 30:9–10)',
+          'Two hundred men can go no farther. They remain with the baggage on the near bank — spent, not unwilling. (1 Samuel 30:9–10)',
         passageRef: '1 Samuel 30:9–10',
       },
       {
@@ -159,7 +159,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 58,
         title: 'A man in the open country',
         caption:
-          'In the open country they find an Egyptian — a slave abandoned by his Amalekite master three days earlier, when he fell sick. (1 Samuel 30:11, 13)',
+          'Out on the open ground they come upon an Egyptian — a slave abandoned by his Amalekite master three days earlier, when he fell sick. (1 Samuel 30:11, 13)',
         passageRef: '1 Samuel 30:11–13',
       },
       {
@@ -167,7 +167,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 74,
         title: 'Bread, water, figs, raisins',
         caption:
-          'They give him bread and water, a cake of figs and two clusters of raisins. After three days without food or drink, his spirit revives. (1 Samuel 30:11–12)',
+          'They give him bread and water, dried figs pressed into a cake, and two bunches of raisins. After three days without food or drink, strength returns to him. (1 Samuel 30:11–12)',
         passageRef: '1 Samuel 30:11–12',
       },
       {
@@ -191,8 +191,8 @@ export const SCENES: SceneDef[] = [
         timeSec: 122,
         title: 'Days later — the return',
         caption:
-          'Time passes: the battle is fought far to the south (see the Amalekite camp scene). Days later the column returns north to the Besor, driving flocks and herds, and the two hundred come out to meet them. (1 Samuel 30:21)',
-        passageRef: '1 Samuel 30:21',
+          'Time passes: the battle is fought far to the south (see the Amalekite camp scene). Days later the column returns north to the Besor, driving flocks and herds, and the two hundred come out to meet them. (1 Samuel 30:20–21)',
+        passageRef: '1 Samuel 30:20–21',
       },
       {
         id: 'b-spoil-ruling',
@@ -224,8 +224,28 @@ export const SCENES: SceneDef[] = [
         lookAt: [25, 0, 45],
       },
     ],
-    claimIds: ['claim-besor', 'claim-600-men'],
-    assetIds: [],
+    claimIds: [
+      'claim-besor',
+      'claim-besor-channel-form',
+      'claim-negev-terrain',
+      'claim-600-men',
+      'claim-two-hundred-stay',
+      'claim-egyptian-servant',
+      'claim-spoil-statute',
+      'claim-pack-donkeys',
+      'claim-david-historical',
+      'claim-dress',
+    ],
+    assetIds: [
+      'asset-terrain-besor',
+      'asset-water-pool',
+      'asset-pack-donkeys',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-vegetation-scrub',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
   },
   {
     id: 'amalekite-camp',

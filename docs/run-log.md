@@ -265,3 +265,78 @@ Next: see `docs/next-run.md`.
 
 **2026-07-08 — Codex — Pages source hardening**
 User reported live DevTools request for `/src/main.tsx` from the project page, which means GitHub Pages served the repo's Vite dev `index.html` instead of the built `dist/` artifact. Hardened deploy workflow with `actions/configure-pages@v5`, added `public/.nojekyll` so the generated artifact disables Jekyll processing, and clarified README recovery steps. Verified local build artifact references `/books-of-samuel/assets/...`, not `/src/main.tsx`. Live browser/e2e retest blocked in this container by proxy/Playwright browser download limits; rerun Deploy to GitHub Pages after merge and confirm the network table no longer requests `/src/main.tsx`.
+
+Next: see `docs/next-run.md`.
+
+**2026-07-08 — Sonnet 5 — built `besor-crossing` (M2 scene 1 of 2)**
+Branch `claude/brave-shannon-y5tdqk`, PR #13 (open, draft, targets `main`).
+5 commits: `1d05d65` feat (scene build), `563cf32` test (terrain +
+reenactment coverage, fixed a depart-south pose bug found while writing it),
+`9c2e741`/`79a4e2a`/`aad5128` fix (review follow-ups, see below).
+
+- Built `src/scenes/besor-crossing/`: `terrain.ts` (ADR-005 `channel`
+  feature — braided wadi bed, ~130m wide, 8m deep), `layout.ts`,
+  `GroundWorks.tsx` (terrain mesh + worn ford path + standing pools),
+  `Vegetation.tsx` (bank density gradient keyed to distance-from-channel),
+  `PackDonkeys.tsx` (instanced), `Crossing.tsx` (crowd reenactment, two
+  hundred/four hundred split at ~1:10, ADR-007 pure pose functions),
+  `PrincipalFigures.tsx` (David/Abiathar/Egyptian), `entities.ts`,
+  `BesorCrossingScene.tsx`. Wired into `ObservePage.tsx`'s
+  `SCENE_REGISTRY`. Scene + `brook-besor` location status: `planned` →
+  `in-progress` (Fable M2 sign-off still pending — same pattern M1/Ziklag
+  followed, not `released`). 5 new claims (`claim-besor-channel-form`,
+  `claim-two-hundred-stay`, `claim-egyptian-servant`, `claim-spoil-statute`,
+  `claim-pack-donkeys`), 3 new placeholder assets (`asset-terrain-besor`,
+  `asset-water-pool`, `asset-pack-donkeys`); `asset-david-marker` reworded
+  to cover all three principal figures + disclose the pose-function (not
+  skeletal) limitation; `asset-olive-tree` broadened for wadi-bank reuse.
+- Extended the M1 character system for its first real scene use (satisfies
+  the M1 sign-off rider). `src/engine/characters/bodyGeometry.ts`:
+  principal-detail figures now get a segmented merged silhouette
+  (torso/head/limbs/belt/optional headwrap+beard, ~13 primitives via
+  `mergeGeometries`, vertex-colored) instead of a single capsule.
+  Crowd-detail figures unchanged (still one capsule, cheap instancing).
+  Real scope boundary, explicitly disclosed in `asset-david-marker`: still a
+  **static** silhouette posed as a rigid `THREE.Group` per frame via pure
+  pose functions (same ADR-007 pattern as the crowd) — `applyClipPose` in
+  `bake.ts` remains an unimplemented stub, no bone-driven skeletal animation.
+- Manual QA: built + `vite preview` + Playwright against the real Chromium
+  binary — navigated `/observe/besor-crossing` via HashRouter, checked all
+  4 viewpoints (north bluff/ford/laager/south field) via Teleport, scrubbed
+  the timeline through every beat, zero console errors, screenshots
+  confirmed terrain/crowd/principal figures/donkeys/pools all render.
+- Three review passes ran in parallel, all clean with real fixes (not
+  rubber-stamps):
+  - **archaeology-reviewer**: fixed missing `claim-dress` citation on
+    `ent-egyptian`; removed an uncited comparative-ANE generalization from
+    `claim-egyptian-servant`'s notes; added `BESOR_CROSSING_ENTITIES`
+    coverage to `integrity.test.ts` (uniqueIds + claim-resolution, matching
+    Ziklag — entity list previously had zero test coverage); back-referenced
+    the 2 new claims into 3 source cards' `extractedClaims`
+    (`borowski-1987`, `king-stager-2001`, `rainey-notley-2006`); disclosed
+    `asset-olive-tree` reuse for wadi-bank trees. Added
+    `docs/fable-review-queue.md` item #11 (Egyptian servant dress
+    distinction — creative-direction call, not blocking).
+  - **biblical-text-reviewer**: reworded several near-verbatim ESV phrases
+    unquoted in captions/claims/descriptions (ADR-003 policy issue, not a
+    factual error) — `b-revival` caption, `claim-two-hundred-stay` +
+    `b-stay` caption + `ent-two-hundred` description (all used ESV's exact
+    "too exhausted to cross"), `b-egyptian-found` caption, widened
+    `b-return`'s `passageRef` to 1 Sam 30:20–21. Also reworded "a cake of
+    figs" → "pressed fig cake" (flagged by the reviewer, applied by Sonnet).
+  - **performance-reviewer**: confirmed clean — no per-frame allocations
+    (module-scope scratch objects throughout), terrain `ColorZone` bake is
+    one-time not per-frame, character-system integration doesn't rebuild
+    geometry per frame. **Closes the M1 sign-off rider.** Two low-priority
+    non-blocking notes for awareness only (not fixed/queued): `GroundWorks`'s
+    ~75 non-instanced path/pool meshes match the pre-existing Ziklag
+    pattern; `Crossing.tsx`'s crowd figures still build ad-hoc capsule
+    geometry rather than calling `engine/characters`' crowd-detail builder.
+- Gate green throughout: format/lint/**51 vitest** (up from 40)/build/7 e2e.
+- Docs sync (this entry): `docs/progress.md`, `docs/next-run.md` (next:
+  merge PR #13, then `amalekite-camp` or visual-fidelity slice 3, M2
+  sign-off not due yet), `docs/asset-roadmap.md`. Did not touch
+  `docs/uncertainty-register.md` (nothing newly disputed this session) or
+  `docs/fable-review-queue.md` further (item #11 already in place).
+
+Next: see `docs/next-run.md`.
