@@ -243,6 +243,7 @@ export const SCENES: SceneDef[] = [
       'asset-figure-procedural',
       'asset-david-marker',
       'asset-vegetation-scrub',
+      'asset-olive-tree',
       'asset-rocks',
     ],
   },

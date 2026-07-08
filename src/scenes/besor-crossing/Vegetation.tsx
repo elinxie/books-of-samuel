@@ -8,7 +8,8 @@ import { NORTH_CURVE, POOL_SPOTS, SOUTH_CURVE, distanceToChannel } from './layou
  * Instanced bank vegetation: tamarisk/scrub density keyed to distance from
  * the wadi centerline (thick near the bed, thinning to open steppe on the
  * bluffs above), plus scattered surface rock (placeholder-tier — see
- * asset-vegetation-scrub, asset-rocks).
+ * asset-vegetation-scrub, asset-olive-tree [reused generic blob-tree geometry
+ * for wadi-bank tamarisk here], asset-rocks).
  */
 
 const dummy = new THREE.Object3D();

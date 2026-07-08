@@ -100,10 +100,11 @@ export const ASSETS: AssetRecord[] = [
   },
   {
     id: 'asset-olive-tree',
-    name: 'Blob olive trees',
-    represents: 'Scattered orchard/maquis trees',
+    name: 'Blob trees',
+    represents:
+      'Scattered orchard/maquis trees (Ziklag); reused for wadi-bank tamarisk-type trees near the Besor bed (besor-crossing)',
     placeholder: true,
-    whyTemporary: 'Trunk + canopy blobs.',
+    whyTemporary: 'Trunk + canopy blobs, not species-differentiated.',
     historicalRequirements:
       'Olive/tamarisk/acacia models appropriate to the northwestern Negev fringe; density justified from surveys.',
     replacementMilestoneId: 'M3',
