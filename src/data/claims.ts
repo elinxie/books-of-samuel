@@ -267,7 +267,7 @@ export const CLAIMS: ReconstructionClaim[] = [
   {
     id: 'claim-two-hundred-stay',
     statement:
-      'The narrative states that two hundred of David’s six hundred men were too exhausted to cross the brook Besor and stayed with the baggage, while four hundred pursued (1 Samuel 30:9–10).',
+      'The narrative states that two hundred of David’s six hundred men were too worn out to go on and stayed behind at the brook Besor with the baggage, while four hundred pursued (1 Samuel 30:9–10).',
     basis: 'biblical-text',
     confidence: 'high',
     sourceIds: ['esv-bible'],
@@ -282,7 +282,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Abandonment of a sick or unproductive slave by a master is consistent with the wider ancient Near Eastern treatment of enslaved persons as disposable property; the scene stages this as a quiet, human-scale incident rather than melodrama, per the world-director brief.',
+      'The narrative frames the abandonment as ordinary treatment of an unproductive slave by his master; this project has not sourced a specific comparative-ANE citation for slave-abandonment practice beyond what the text itself states, so that broader generalization is not asserted here. The scene stages the episode as a quiet, human-scale incident rather than melodrama, per the world-director brief.',
   },
   {
     id: 'claim-spoil-statute',

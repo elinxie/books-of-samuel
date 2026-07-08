@@ -33,7 +33,7 @@ export const BESOR_CROSSING_ENTITIES: SceneEntityDef[] = [
     kind: 'group',
     position: [LAAGER_CENTER[0] - 14, 4, LAAGER_CENTER[1] - 10],
     description:
-      'Too exhausted to cross, they remain with the baggage on the near bank — spent, not unwilling. The narrative’s own resolution (vv. 21–25) turns on this distinction.',
+      'Unable to go farther, they remain with the baggage on the near bank — spent, not unwilling. The narrative’s own resolution (vv. 21–25) turns on this distinction.',
     claimIds: ['claim-two-hundred-stay', 'claim-600-men'],
   },
   {
@@ -79,7 +79,7 @@ export const BESOR_CROSSING_ENTITIES: SceneEntityDef[] = [
     position: [EGYPTIAN_POS[0], 3, EGYPTIAN_POS[1]],
     description:
       'Found abandoned in the open country, sick and left behind by his Amalekite master three days earlier — property discarded when he stopped being useful. Revived with bread, water, a cake of figs, and raisins, he negotiates an oath before agreeing to guide the pursuit.',
-    claimIds: ['claim-egyptian-servant'],
+    claimIds: ['claim-egyptian-servant', 'claim-dress'],
   },
   {
     id: 'ent-spoil-ruling',
