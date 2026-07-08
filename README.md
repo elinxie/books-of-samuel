@@ -53,9 +53,16 @@ npm run build:sources     # regenerate sources/source-index.json after editing s
 ## Deploying
 
 GitHub Actions (`.github/workflows/deploy.yml`) builds and publishes `dist/` to
-GitHub Pages on every push to `main`. One manual, one-time step is required in the
-repo: **Settings → Pages → Source: GitHub Actions** (this can't be set from a
+GitHub Pages on every push to `main`. One manual, one-time step is required in
+the repo: **Settings → Pages → Source: GitHub Actions** (this can't be set from a
 workflow file). Once set, pushes to `main` deploy automatically.
+
+If the live page is blank and DevTools shows a request for `/src/main.tsx`,
+GitHub Pages is serving the repository's Vite development `index.html` directly
+instead of the built `dist/` artifact. Switch the Pages source to **GitHub
+Actions** and rerun the **Deploy to GitHub Pages** workflow; the deployed
+`index.html` should reference `/books-of-samuel/assets/...` files, never
+`/src/main.tsx`.
 
 ## Project structure
 
