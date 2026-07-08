@@ -88,7 +88,7 @@ export const CAMEL_STARTS: CamelStart[] = (() => {
     out.push({
       x: bx + (rng() * 2 - 1) * 14,
       z: bz + (rng() * 2 - 1) * 12,
-      delay: rng() * 6,
+      delay: rng() * 11,
       phase: rng() * Math.PI * 2,
     });
   }
