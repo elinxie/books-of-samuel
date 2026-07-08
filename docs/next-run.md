@@ -3,6 +3,17 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
+## Immediate follow-up from Pages hardening (2026-07-08)
+
+After this PR is merged, rerun/confirm the **Deploy to GitHub Pages** workflow and
+check `https://elinxie.github.io/books-of-samuel/` in DevTools. The root cause of
+the reported blank page was a request for `/src/main.tsx`, meaning Pages served
+the repository's Vite development `index.html` instead of the built `dist/`
+artifact. The workflow now runs `actions/configure-pages@v5`, uploads `dist/`,
+and the artifact includes `.nojekyll`; the network table should request
+`/books-of-samuel/assets/...` instead. If `/src/main.tsx` still appears, verify
+repo Settings → Pages → Source is **GitHub Actions**, not branch/root.
+
 ## User priority note (2026-07-07, carries forward; updated 2026-07-08)
 
 The user explicitly asked to **deprioritize deep bibliographic
