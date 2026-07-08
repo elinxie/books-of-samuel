@@ -263,6 +263,11 @@ Two deliverables, each its own commit.
 
 Next: see `docs/next-run.md`.
 
+**2026-07-08 — Codex — Pages source hardening**
+User reported live DevTools request for `/src/main.tsx` from the project page, which means GitHub Pages served the repo's Vite dev `index.html` instead of the built `dist/` artifact. Hardened deploy workflow with `actions/configure-pages@v5`, added `public/.nojekyll` so the generated artifact disables Jekyll processing, and clarified README recovery steps. Verified local build artifact references `/books-of-samuel/assets/...`, not `/src/main.tsx`. Live browser/e2e retest blocked in this container by proxy/Playwright browser download limits; rerun Deploy to GitHub Pages after merge and confirm the network table no longer requests `/src/main.tsx`.
+
+Next: see `docs/next-run.md`.
+
 **2026-07-08 — Sonnet 5 — built `besor-crossing` (M2 scene 1 of 2)**
 Branch `claude/brave-shannon-y5tdqk`, PR #13 (open, draft, targets `main`).
 5 commits: `1d05d65` feat (scene build), `563cf32` test (terrain +

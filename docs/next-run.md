@@ -3,7 +3,20 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## User priority note (2026-07-07, carries forward)
+## Immediate follow-up from Pages hardening (2026-07-08)
+
+After this branch merges, rerun/confirm the **Deploy to GitHub Pages** workflow and
+check `https://elinxie.github.io/books-of-samuel/` in DevTools. The root cause of
+the reported blank page was a request for `/src/main.tsx`, meaning Pages served
+the repository's Vite development `index.html` instead of the built `dist/`
+artifact. The workflow now runs `actions/configure-pages@v5`, uploads `dist/`,
+and the artifact includes `.nojekyll`; the network table should request
+`/books-of-samuel/assets/...` instead. If `/src/main.tsx` still appears, verify
+repo Settings → Pages → Source is **GitHub Actions**, not branch/root. This
+supersedes item 5 below (the old codex-PR-#10 fix wasn't sufficient; this is
+the actual fix — codex, PR #12, merged into `main` as `833aef6`).
+
+## User priority note (2026-07-07, carries forward; updated 2026-07-08)
 
 The user explicitly asked to **deprioritize deep bibliographic
 research/cross-checking and heavy test-writing** when it costs significant
@@ -66,11 +79,11 @@ still open as a **draft against `main`** — mark ready and merge):
 4. **M2 Fable sign-off**: not due yet — only 1 of 2 M2 scenes is built. Don't
    request it until `amalekite-camp` also lands (per the M1 pattern,
    `docs/fable-review-checklist.md`).
-5. **Quick Pages-live check**: `deploy.yml` was fixed on `main` by codex PR
-   #10 (merged) — confirm the live URL (README's "Live site" link) actually
-   renders. Low effort, do if nothing above fits the remaining budget. (Carried
-   forward unstarted from the prior note — do this first if it's still
-   outstanding and everything else is blocked on PR review/merge.)
+5. **Quick Pages-live check**: `deploy.yml` was hardened further on `main` by
+   codex PR #12 (`833aef6`, merged 2026-07-08) — see "Immediate follow-up
+   from Pages hardening" above for what changed and what to verify. Confirm
+   the live URL (README's "Live site" link) actually renders. Low effort, do
+   if nothing above fits the remaining budget.
 
 ## Known state
 
