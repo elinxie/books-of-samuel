@@ -64,11 +64,12 @@ export const ASSETS: AssetRecord[] = [
   },
   {
     id: 'asset-david-marker',
-    name: 'David / Abiathar marker figures',
-    represents: 'Named narrative figures within the crowd',
+    name: 'Named-figure marker rigs',
+    represents:
+      'Named narrative figures within a crowd (David, Abiathar; from M2, the Egyptian servant)',
     placeholder: true,
     whyTemporary:
-      'A principal-detail procedural rig (ADR-010), distinguished from the crowd only by pinned dress colors and a label — identity remains label-based by design.',
+      'A principal-detail procedural rig (ADR-010) with a segmented (torso/head/limb) silhouette, distinguished from the crowd only by pinned dress colors and a label — identity remains label-based by design. Bone-driven pose animation (`applyClipPose`) is still an unimplemented stub; principal figures are posed as rigid groups via the same pure-pose-function pattern as the crowd (ADR-007), not skeletally animated.',
     historicalRequirements:
       'Same as figures; no portraiture pretensions — identity stays label-based.',
     replacementMilestoneId: 'M3',
@@ -144,6 +145,37 @@ export const ASSETS: AssetRecord[] = [
     historicalRequirements:
       'Field systems, crop mix (wheat/barley), and seasonal state per Borowski; season must match scene dating once decided.',
     replacementMilestoneId: 'M2',
+  },
+  {
+    id: 'asset-terrain-besor',
+    name: 'Procedural Besor wadi terrain',
+    represents: 'Braided wadi bed and loess banks at the brook Besor crossing',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise plus a hand-tuned channel feature, not derived from real elevation data of Nahal Besor.',
+    historicalRequirements:
+      'DEM-derived terrain for the wadi once a specific crossing point is adopted, with braid-channel and pool positions from survey rather than procedural placement.',
+    replacementMilestoneId: 'M3',
+  },
+  {
+    id: 'asset-water-pool',
+    name: 'Standing pool meshes',
+    represents: 'Standing water in low points of the braided wadi bed',
+    placeholder: true,
+    whyTemporary:
+      'Static low-poly mesh with a simple fresnel-ish material, no real-time water simulation; season/water level is unstated in the text and is a design placeholder, not an assertion.',
+    historicalRequirements: 'None strictly — an ephemeral, undated feature; visual upgrade optional.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-pack-donkeys',
+    name: 'Instanced pack donkeys',
+    represents: 'Baggage animals at the north-bank laager (see claim-pack-donkeys)',
+    placeholder: true,
+    whyTemporary: 'Simple low-poly instanced quadruped form, not a detailed animal model.',
+    historicalRequirements:
+      'Donkey model and pack/load fidelity per comparative Iron Age Levantine pack-animal evidence.',
+    replacementMilestoneId: 'M3',
   },
 ];
 

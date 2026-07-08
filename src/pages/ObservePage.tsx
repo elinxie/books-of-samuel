@@ -8,6 +8,8 @@ import { QUALITY_PROFILES } from '../engine/quality';
 import type { Terrain } from '../engine/terrain';
 import { ZiklagScene } from '../scenes/ziklag/ZiklagScene';
 import { ZIKLAG_TERRAIN } from '../scenes/ziklag/terrain';
+import { BesorCrossingScene } from '../scenes/besor-crossing/BesorCrossingScene';
+import { BESOR_TERRAIN } from '../scenes/besor-crossing/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 
@@ -18,6 +20,7 @@ interface SceneRegistryEntry {
 
 const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'ziklag-aftermath': { component: ZiklagScene, terrain: ZIKLAG_TERRAIN },
+  'besor-crossing': { component: BesorCrossingScene, terrain: BESOR_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {
