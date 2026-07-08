@@ -307,7 +307,7 @@ export const CLAIMS: ReconstructionClaim[] = [
   {
     id: 'claim-camp-sprawl',
     statement:
-      'The narrative describes the Amalekite camp as "spread abroad over all the land, eating and drinking and dancing" over the great spoil taken from Philistine and Judahite territory (1 Samuel 30:16) — rendered as a dispersed sprawl of loose clusters around fires, with no ranks, ramparts, or command tent.',
+      'The narrative describes the Amalekite camp as scattered widely over the open ground, feasting, drinking, and dancing over the great spoil taken from Philistine and Judahite territory (1 Samuel 30:16) — rendered as a dispersed sprawl of loose clusters around fires, with no ranks, ramparts, or command tent.',
     basis: 'biblical-text',
     confidence: 'high',
     sourceIds: ['esv-bible'],
@@ -317,7 +317,7 @@ export const CLAIMS: ReconstructionClaim[] = [
   {
     id: 'claim-strike-timing',
     statement:
-      'The narrative states that David struck the camp down "from twilight until the evening of the next day" (1 Samuel 30:17). The scene shows the onset at twilight and the aftermath the following evening; the roughly full day of fighting between them is compressed behind an explicit time-compression beat card, not choreographed.',
+      'The narrative states that David struck the camp down beginning at twilight and continuing until the following evening (1 Samuel 30:17). The scene shows the onset at twilight and the aftermath the following evening; the roughly full day of fighting between them is compressed behind an explicit time-compression beat card, not choreographed.',
     basis: 'biblical-text',
     confidence: 'high',
     sourceIds: ['esv-bible'],
@@ -362,7 +362,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'speculative',
     sourceIds: ['esv-bible', 'king-stager-2001'],
     notes:
-      'The text implies only an open, dispersed encampment (1 Samuel 30:16). Tent-dwelling pastoralists are richly attested textually and ethnographically, but nomad camps leave almost no excavated signature, and projecting the later bedouin goat-hair tent back to Iron I is exactly the anachronism trap the scene brief warns against — hence suggestive placeholder forms, labeled as such.',
+      'The text implies only an open, dispersed encampment (1 Samuel 30:16). Tent-dwelling pastoralists are richly attested textually and ethnographically, but nomad camps leave almost no excavated signature, and projecting the later bedouin goat-hair tent back to Iron I is exactly the anachronism trap the scene brief warns against — hence suggestive placeholder forms, labeled as such. king-stager-2001 is cited here for general Iron Age dwelling/material-culture context, not as a source specifically establishing goat-hair-tent chronology — this project’s bibliography has no source dedicated to nomadic tent archaeology yet, so the non-attestation point rests on the broader, well-known archaeological silence of ephemeral nomadic camps rather than a page-specific citation.',
   },
   {
     id: 'claim-camp-scale',

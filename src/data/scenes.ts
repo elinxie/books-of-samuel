@@ -312,7 +312,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 145,
         title: 'Flocks and herds, north',
         caption:
-          'The flocks and herds are driven ahead of the column as it turns north toward the Besor. The drovers name the herd as David’s own share of the plunder. (1 Samuel 30:20)',
+          'The flocks and herds are driven ahead of the column as it turns north toward the Besor, named "David’s spoil" — the very spoil David will soon rule is shared alike by everyone, not kept apart. (1 Samuel 30:20)',
         passageRef: '1 Samuel 30:20',
       },
     ],

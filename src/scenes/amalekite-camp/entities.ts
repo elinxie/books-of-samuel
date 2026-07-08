@@ -36,7 +36,7 @@ export const AMALEKITE_CAMP_ENTITIES: SceneEntityDef[] = [
     position: [CAPTIVE_POS[0], 3.5, CAPTIVE_POS[1]],
     description:
       'The women, sons, and daughters carried off alive from Ziklag, held as a group among the sprawl. Their recovery — "nothing was missing, small or great" — is the point of the whole pursuit and the resolution of the Ziklag scene’s grief (1 Samuel 30:18–19).',
-    claimIds: ['claim-full-recovery', 'claim-ziklag-raided'],
+    claimIds: ['claim-full-recovery', 'claim-ziklag-raided', 'claim-camp-scale'],
   },
   {
     id: 'ent-livestock',
@@ -71,7 +71,7 @@ export const AMALEKITE_CAMP_ENTITIES: SceneEntityDef[] = [
     kind: 'feature',
     position: [STAGE_CENTER[0], 4, STAGE_CENTER[1] + 25],
     description:
-      'David attacks from twilight until the evening of the next day (1 Samuel 30:17). The scene shows the onset — alarm, scatter, figures crumpling at distance in failing light — and compresses the day of fighting behind an explicit beat card. No blow-by-blow choreography or gore is rendered in any mode.',
+      'David attacks beginning at twilight, with the fighting continuing into the following evening (1 Samuel 30:17). The scene shows the onset — alarm, scatter, figures crumpling at distance in failing light — and compresses the day of fighting behind an explicit beat card. No blow-by-blow choreography or gore is rendered in any mode.',
     claimIds: ['claim-strike-timing'],
   },
   {
