@@ -97,11 +97,42 @@ about historical/creative direction rather than an execution detail.
 - Small UI additions (a new toggle, a new panel section) that don't change scope.
 - Anything `.claude/agents/*.md` already routes to a `sonnet`-model subagent — if a
   focused subagent can do it, it doesn't need the orchestrator's Fable budget either.
+- Running verification gates (`npm run verify`) or interpreting routine test/CI
+  failures — subagent work.
 
 **Batching tip:** accumulate open questions in `fable-review-queue.md` as you hit
 them during Sonnet sessions, rather than context-switching to Fable per question.
 Clear the queue in one Fable session per milestone (or when it has 3–5 items and a
 milestone is close to done).
+
+## Delegation rule: Fable orchestrates, Sonnet executes
+
+A senior dev shouldn't do work a junior dev can do. Fable is the senior tier here:
+its tokens buy judgment — direction, review verdicts, contested calls — never
+routine execution.
+
+Concretely, inside a Fable session: running `npm run verify` and interpreting
+ordinary failures, doc syncing (`docs-maintainer`), test writing
+(`test-engineer`), source-card data entry (`researcher`), scene implementation
+within already-set direction (`threejs-engineer`, `ui-engineer`), and performance
+audits (`performance-reviewer`) must be dispatched to the Sonnet-model subagents
+in `.claude/agents/*.md`, not done inline by the Fable orchestrator. Fable reads
+the subagent's conclusion and rules on it; it does not re-derive the work itself.
+
+The agent roster already encodes this: every file in `.claude/agents/` declares a
+`model:` field, and all of them say `model: sonnet` except `fable-architect` and
+`world-director`, which say `model: fable`. Routing a task to a sonnet-model agent
+spends Sonnet budget, not Fable budget, even when the orchestrating session itself
+is Fable.
+
+The same rule runs the other way in Sonnet sessions: don't escalate upward for
+anything this doc already marks as Sonnet-tier — batch genuine Fable-tier
+questions in `docs/fable-review-queue.md` instead of context-switching per
+question.
+
+The same tiering applies to non-Claude implementation agents (e.g. Codex): see
+`AGENTS.md`'s "Your role tier" section, which places them at the
+implementation/execution tier, not the judgment tier.
 
 ## How to continue if Fable usage runs out
 

@@ -53,14 +53,14 @@ export const ASSETS: AssetRecord[] = [
     represents: 'David’s men (rendered ~1:10 of the narrated six hundred)',
     placeholder: true,
     whyTemporary:
-      'Procedurally generated skinned figures with period dress (tunic, belt, mantle, sandals, head wrap, beard) and gait animation (ADR-009). Dress details and gear have not yet passed full historical review.',
+      'Procedurally generated skinned figures with period dress (tunic, belt, mantle, sandals, head wrap, beard) and gait animation (ADR-010). Dress details and gear have not yet passed full historical review.',
     historicalRequirements:
       'Full King & Stager dress/gear review, plus pack animals and no anachronistic armor.',
     replacementMilestoneId: 'M3',
     modelPath: 'src/engine/characters',
     modelLicense: 'project-original',
     modelProvenance:
-      'Generated in code by src/engine/characters; no external mesh or texture sources. See ADR-009.',
+      'Generated in code by src/engine/characters; no external mesh or texture sources. See ADR-010.',
   },
   {
     id: 'asset-david-marker',
@@ -68,14 +68,14 @@ export const ASSETS: AssetRecord[] = [
     represents: 'Named narrative figures within the crowd',
     placeholder: true,
     whyTemporary:
-      'A principal-detail procedural rig (ADR-009), distinguished from the crowd only by pinned dress colors and a label — identity remains label-based by design.',
+      'A principal-detail procedural rig (ADR-010), distinguished from the crowd only by pinned dress colors and a label — identity remains label-based by design.',
     historicalRequirements:
       'Same as figures; no portraiture pretensions — identity stays label-based.',
     replacementMilestoneId: 'M3',
     modelPath: 'src/engine/characters',
     modelLicense: 'project-original',
     modelProvenance:
-      'Generated in code by src/engine/characters; no external mesh or texture sources. See ADR-009.',
+      'Generated in code by src/engine/characters; no external mesh or texture sources. See ADR-010.',
   },
   {
     id: 'asset-smoke-particles',
