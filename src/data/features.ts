@@ -193,8 +193,9 @@ export const FEATURES: FeatureEntry[] = [
   {
     id: 'f-period-figures',
     title: 'Period-dressed figures',
-    description: 'Low-poly modeled figures replacing capsule placeholders.',
-    status: 'planned',
+    description:
+      'Procedural skinned figures with period dress landed ahead of schedule (ADR-009, src/engine/characters); remaining M3 work is historical-detail review of dress/gear and pack animals.',
+    status: 'in-progress',
     milestoneId: 'M3',
   },
   {
