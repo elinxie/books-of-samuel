@@ -14,7 +14,7 @@ Keep this concise — status, not narrative. Detailed roadmap lives in
 - CI + GitHub Pages deploy workflows.
 - Continuation docs, subagents, slash commands (this pass).
 
-## Milestone 1 — 1 Samuel 30 vertical slice (Ziklag): **in progress, functionally complete**
+## Milestone 1 — 1 Samuel 30 vertical slice (Ziklag): **released** (2026-07-08 Fable sign-off, gate green)
 
 Done:
 
@@ -32,22 +32,21 @@ Done:
 - Entity inspector with claim cards + scholarly views + source citations.
 - 16 source cards seeded; ESV excerpt budget enforced by test.
 
-Remaining for a clean M1 close-out:
+M1 close-out: closed 2026-07-08 — Fable ran `docs/fable-review-checklist.md`
+(full gate green; procedural character system merged via codex PR #8/#9
+reviewed clean — no anachronistic gear, honest placeholder disclosure) and
+flipped `M1` to `released` in `src/data/milestones.ts`. Rider: run
+`performance-reviewer` over `src/engine/characters` instancing/bake path with
+the next scene-content slice. See `docs/run-log.md`.
 
-- One short final checklist pass (`docs/fable-review-checklist.md`) before
-  flipping `M1` to `released` in `src/data/milestones.ts` — this is a Fable
-  milestone-sign-off task (`docs/model-handoff.md` priority 1), not Sonnet's to
-  self-certify. The creative-direction review items (plan type, figure ratio,
-  lighting) were all resolved at the 2026-07-07 Fable session
-  (`fable-review-queue.md` Resolved), which also landed ADR-005…ADR-009 (terrain
-  generalization, layout conventions, reenactment pattern, asset pipeline,
-  violence default). ADR-005's consumer migration (store-held active `Terrain`,
-  scene registry, `SceneEntityDef` decoupling) is done too — see
-  `docs/architecture-decisions/adr-005-terrain-generalization.md`. Citation
-  verification (queue item 4) closed 2026-07-07 (Sonnet) — see
-  `docs/fable-review-queue.md` Resolved and the source cards.
+## Milestone 2 — 1 Samuel 30 route and recovery: **planned**, direction set
 
-## Milestone 2–4: **planned**, not started. See `src/data/milestones.ts` for goals.
+World-director briefs landed 2026-07-08: `docs/design/besor-crossing-brief.md`
+and `docs/design/amalekite-camp-brief.md`, with `SceneDef` beats/viewpoints
+filled in `src/data/scenes.ts` for both. Build (terrain, entities, claims) not
+started — see `docs/next-run.md`.
+
+## Milestone 3–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
@@ -73,13 +72,21 @@ project's stack) — see `docs/architecture.md` § "The `reader/` companion" and
 `docs/run-log.md` for the full story. Root `LICENSE` (MIT) came from that merge
 and now covers the whole repo's code.
 
+## Cross-session infrastructure
+
+- Checkpoint scaffolding (2026-07-08): `scripts/session-usage.mjs` (context
+  %/token/cost tracking read from the Claude Code transcript) wired into
+  `.claude/settings.json` as statusline + Stop/SessionStart/PreCompact hooks;
+  `docs/checkpoint-protocol.md` sets the commit-and-push-per-slice rule.
+  Cross-agent handoff docs (`AGENTS.md`, `docs/web-handoff.md`) let Codex and
+  Claude Code web sessions resume without this session's chat memory.
+
 ## Build/test status as of last run
 
 - `npm run format:check` — pass
 - `npm run lint` — pass
-- `npm run test` (vitest) — 38/38 pass (31 + 7 terrain tests: ADR-005's 8 minus
-  the deprecated-delegate test removed when `terrainHeight`/`buildTerrainGeometry`
-  were deleted in the consumer migration)
+- `npm run test` (vitest) — 40/40 pass
 - `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
 - `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`; unnecessary in normal CI)
+- Full `npm run verify` gate green 2026-07-08.

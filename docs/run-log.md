@@ -210,3 +210,55 @@ started the user's requested visual-fidelity track:
   live scene (no console errors; bundle size unchanged).
 
 Next: see `docs/next-run.md`.
+
+**2026-07-08 — Fable 5 — M1 sign-off + M2 scene direction**
+Two deliverables, each its own commit.
+
+- Checkpoint scaffolding (first, infra for the rest): `scripts/session-usage.mjs`
+  (no-dep transcript reader → context %/cumulative tokens/cost estimate/verdict
+  OK|SOON|NOW|CRITICAL), wired into `.claude/settings.json` as statusline +
+  Stop hook (blocks stop at ≥70% ctx with dirty tree) + SessionStart +
+  PreCompact; `/checkpoint` command; `docs/checkpoint-protocol.md` (the one
+  rule: commit+push after every completed slice). Cross-agent handoff: root
+  `AGENTS.md` (Codex etc. — constraints, implementation-tier role, manual
+  checkpoint form) + `docs/web-handoff.md` (Claude Code web / ChatGPT Codex web
+  resume instructions). Delegation rule appended to `docs/model-handoff.md`
+  (landed via a Sonnet subagent mid-session): Fable orchestrates/judges,
+  Sonnet-model subagents execute routine work — mirrored into `CLAUDE.md`.
+- **M1 sign-off** (`docs/fable-review-checklist.md` full pass): gate green
+  (format/lint/40 vitest/build/7 e2e). Reviewed the procedural character
+  system (`src/engine/characters/`, merged to `main` via codex PR #8 → fixed
+  and merged as PR #9, 2026-07-07 — note: that merge never got a run-log entry
+  until now) — no anachronistic gear, honest placeholder disclosure with
+  provenance in `src/data/assets.ts` (`modelPath`/`modelLicense`/
+  `modelProvenance`, ADR-010), disputed questions still route through
+  `scholarlyViews`, ESV budget intact, no gameplay drift. `M1` → `released` in
+  `src/data/milestones.ts`. Follow-up rider (not blocking sign-off, but
+  flagged): `src/engine/characters` instancing/bake path hasn't had a
+  `performance-reviewer` pass — run one with the next scene-content slice.
+  Fixed an ADR numbering collision found in the process:
+  `adr-009-procedural-characters.md` → `adr-010-procedural-characters.md`
+  (title + renumber note inside; refs updated in `features.ts`/`assets.ts`);
+  `adr-009-violence-depiction-defaults.md` keeps ADR-009.
+- **M2 scene direction** (world-director pass): `docs/design/besor-crossing-brief.md`
+  and `docs/design/amalekite-camp-brief.md` — historical intent, visual
+  composition, ~1:10 scale plan, camera/beat design, performance targets,
+  required source claims, placeholder policy. `SceneDef` beats/viewpoints
+  filled in `src/data/scenes.ts`: besor-crossing (9 beats, incl. the
+  return-leg spoil-statute ruling, 1 Sam 30:21–25, folded in rather than a
+  separate scene); amalekite-camp (7 beats, incl. an explicit
+  time-compression card for 30:17 and camel flight restricted to that one
+  beat per register #6). Both scenes stay `status: 'planned'` — geometry is
+  Sonnet work, tracked in `docs/next-run.md`.
+- Docs sync: `docs/next-run.md` (pick-order: besor-crossing build now
+  co-equal priority with the visual-fidelity roadmap, then roadmap slice 3,
+  then amalekite-camp, then a Pages-live check), `docs/next-fable-session.md`
+  (next spends: M2 sign-off once built, M3 direction near M2 completion),
+  `docs/progress.md` (M1 → released, M2 line added, build/test status
+  refreshed, new "Cross-session infrastructure" note), `CLAUDE.md` (points at
+  `docs/checkpoint-protocol.md`, delegation-rule line).
+- Also carried forward from PR #10 (codex, user-merged before this session):
+  GitHub Pages deploy config fixed on `main`. Live-URL verification still
+  pending — queued as `docs/next-run.md` item 4.
+
+Next: see `docs/next-run.md`.

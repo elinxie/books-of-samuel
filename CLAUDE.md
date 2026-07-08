@@ -18,6 +18,7 @@ a named scholarly reconstruction, or a clearly labeled placeholder.
    vs. Sonnet.
 3. `docs/sonnet-continuation.md` — the actual step-by-step resume checklist.
 4. `docs/next-run.md` — the concrete next task.
+5. `docs/checkpoint-protocol.md` — commit/push discipline against token limits.
 
 Do not skip straight to writing code — `docs/next-run.md` and
 `docs/fable-review-queue.md` may change what's actually next.
@@ -57,6 +58,8 @@ all project documentation in `docs/`.
 - Model switch commands: `claude --model claude-fable-5`,
   `claude --model claude-sonnet-5`, or `/model` inside a session. Switches do not
   persist automatically across sessions.
+- Delegation rule: Fable orchestrates and judges; routine checks/execution go to
+  Sonnet subagents (see `docs/model-handoff.md`).
 
 ## Dev commands
 

@@ -17,7 +17,7 @@ within this direction; deviations that change historical meaning go back through
    card. No blow-by-blow choreography, no gore geometry — this stays within
    the observer scope (no combat mechanics) and previews ADR-009's restraint
    norms before Gilboa formalizes them.
-3. **The captives are recovered alive.** "Nothing was lacking… David brought
+3. **The captives are recovered alive.** "Nothing was missing… David brought
    back all" (vv. 18–19). The reunion beat is the emotional resolution of the
    Ziklag scene's grief — stage it as the point of the whole pursuit.
 4. **The camel dispute is surfaced, not hidden.** Four hundred young men flee

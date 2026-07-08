@@ -266,9 +266,9 @@ export const SCENES: SceneDef[] = [
       {
         id: 'b-compression',
         timeSec: 80,
-        title: 'Until the evening of the next day',
+        title: 'A day of fighting, compressed',
         caption:
-          'Time compresses: the text spans the fighting “from twilight until the evening of the next day” — roughly a full day, not shown blow by blow. (1 Samuel 30:17)',
+          'Time compresses: the fighting runs from dusk to the following evening — roughly a full day, not shown blow by blow. (1 Samuel 30:17)',
         passageRef: '1 Samuel 30:17',
       },
       {
@@ -292,7 +292,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 145,
         title: 'Flocks and herds, north',
         caption:
-          'The flocks and herds are driven ahead of the column as it turns north toward the Besor — “this is David’s spoil,” the drovers say. (1 Samuel 30:20)',
+          'The flocks and herds are driven ahead of the column as it turns north toward the Besor. The drovers name the herd as David’s own share of the plunder. (1 Samuel 30:20)',
         passageRef: '1 Samuel 30:20',
       },
     ],
