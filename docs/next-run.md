@@ -17,18 +17,15 @@ run. Playwright screenshot QA: all 4 viewpoints + 8 beat times, zero console
 errors; violence rendering confirmed restrained (onset kept, no
 aftermath-only fallback needed).
 
-**In flight when this note was written:** three review subagents
-(archaeology / biblical-text / performance) running over the new scene. If
-their fixes are not yet in the branch history, re-run them (or check
-`docs/run-log.md` for their outcomes) before opening/merging the PR.
+All three review passes (archaeology / biblical-text / performance) completed
+with real fixes applied — see `docs/run-log.md` for detail. No escalations;
+one non-blocking perf watch item (per-frame instance load, profile on a weak
+device someday) noted in the run-log.
 
 ## Next session: pick in this order
 
-1. **Finish this branch if not done:** fold in reviewer fixes, re-run
-   `npm run verify` (needs
-   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
-   in sandboxes), push, open PR against `main`, merge when green (agents are
-   authorized to merge their own PRs — see CLAUDE.md).
+1. **Merge this branch's PR if still open** (check CI green first; agents are
+   authorized to merge their own PRs — see CLAUDE.md; squash, into `main`).
 2. **M2 Fable sign-off is now due** — both M2 scenes are built. A
    Fable-level session should run `docs/fable-review-checklist.md` over
    besor-crossing + amalekite-camp, decide `released` status flips

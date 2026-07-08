@@ -41,14 +41,14 @@ file locations, and the licensing policy live in
 
 ## Current placeholders (amalekite-camp scene, Milestone 2, built 2026-07-08)
 
-| Asset                            | Represents                                            | Why temporary                                                                                                    | Replace at        |
-| -------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Asset                            | Represents                                            | Why temporary                                                                                                   | Replace at        |
+| -------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------------- |
 | `asset-terrain-camp-basin`       | Shallow basin south of the Besor drainage             | Procedural; the camp's real location is unknowable ("south of the Besor" is all the text gives) — stays generic | M4 (palette only) |
-| `asset-camp-shelter-placeholder` | Raider-camp shelters (ridge-awnings, windbreaks)      | Suggestive forms only — deliberately NOT goat-hair tents (unattested this early, `claim-camp-shelters`)          | M4                |
-| `asset-camp-props`               | Spoil heaps + tether posts                            | Abstract mounds/posts                                                                                              | M4 (optional)     |
-| `asset-camp-fire`                | Camp fire points (the dusk signature)                 | Emissive cones + glow discs, deliberately not real lights                                                          | M4 (optional)     |
-| `asset-livestock-placeholder`    | Sheep/goat flocks + cattle (spoil, 1 Sam 30:20)       | Low-poly instanced quadrupeds, color-varied, not real breeds                                                       | M3                |
-| `asset-camel-placeholder`        | The four hundred fleeing on camels (flight beat only) | Low-poly dromedary+rider merged form, pad tack only (no frame saddle — register #6)                                | M3                |
+| `asset-camp-shelter-placeholder` | Raider-camp shelters (ridge-awnings, windbreaks)      | Suggestive forms only — deliberately NOT goat-hair tents (unattested this early, `claim-camp-shelters`)         | M4                |
+| `asset-camp-props`               | Spoil heaps + tether posts                            | Abstract mounds/posts                                                                                           | M4 (optional)     |
+| `asset-camp-fire`                | Camp fire points (the dusk signature)                 | Emissive cones + glow discs, deliberately not real lights                                                       | M4 (optional)     |
+| `asset-livestock-placeholder`    | Sheep/goat flocks + cattle (spoil, 1 Sam 30:20)       | Low-poly instanced quadrupeds, color-varied, not real breeds                                                    | M3                |
+| `asset-camel-placeholder`        | The four hundred fleeing on camels (flight beat only) | Low-poly dromedary+rider merged form, pad tack only (no frame saddle — register #6)                             | M3                |
 
 ## Upcoming needs by milestone
 
