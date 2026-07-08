@@ -25,8 +25,8 @@ token budget, and to **prioritize making the scene look more realistic**
 
 ## Since the last version of this note
 
-Sonnet session 2026-07-08 (branch `claude/brave-shannon-y5tdqk`, PR #13,
-still open as a **draft against `main`** — mark ready and merge):
+Sonnet session 2026-07-08 (branch `claude/brave-shannon-y5tdqk`, PR #13 —
+merged into `main` as `5fceb3f`, squash):
 
 1. **Built `besor-crossing`** (M2's first scene) per
    `docs/design/besor-crossing-brief.md` and the beats/viewpoints already
@@ -64,22 +64,22 @@ still open as a **draft against `main`** — mark ready and merge):
 
 ## Next Sonnet session: pick in this order
 
-1. **Mark PR #13 ready for review and merge it into `main`** if not already
-   done — it's the source of truth for M2 progress and this doc assumes it's
-   landed.
-2. **`amalekite-camp`** (the second M2 scene) per
+1. **`amalekite-camp`** (the second M2 scene) per
    `docs/design/amalekite-camp-brief.md` — brief and beats/viewpoints already
    set (same prior Fable pass as besor-crossing). besor-crossing's landing
    establishes the loess/steppe terrain pattern and reuses the same crowd/
    principal-figure machinery this scene needs (camel-flight-only per
-   register #6). This is now the natural next M2 slice.
-3. **Visual-fidelity roadmap slice 3** (`docs/visual-fidelity-roadmap.md` §A:
+   register #6). This is now the natural next M2 slice — same build
+   checklist as besor-crossing (terrain -> layout -> ground/vegetation ->
+   crowd + principal figures -> entities -> scene assembly -> tests ->
+   archaeology/biblical-text/performance review passes -> docs sync).
+2. **Visual-fidelity roadmap slice 3** (`docs/visual-fidelity-roadmap.md` §A:
    instanced burned-debris + expanded rock/scrub variety) — co-equal
-   priority with item 2, pick whichever fits the remaining budget.
-4. **M2 Fable sign-off**: not due yet — only 1 of 2 M2 scenes is built. Don't
+   priority with item 1, pick whichever fits the remaining budget.
+3. **M2 Fable sign-off**: not due yet — only 1 of 2 M2 scenes is built. Don't
    request it until `amalekite-camp` also lands (per the M1 pattern,
    `docs/fable-review-checklist.md`).
-5. **Quick Pages-live check**: `deploy.yml` was hardened further on `main` by
+4. **Quick Pages-live check**: `deploy.yml` was hardened further on `main` by
    codex PR #12 (`833aef6`, merged 2026-07-08) — see "Immediate follow-up
    from Pages hardening" above for what changed and what to verify. Confirm
    the live URL (README's "Live site" link) actually renders. Low effort, do
@@ -87,15 +87,22 @@ still open as a **draft against `main`** — mark ready and merge):
 
 ## Known state
 
-- Full gate green as of this session's HEAD (format/lint/51 vitest/build/7
+- Full gate green as of `main`@`5fceb3f` (format/lint/51 vitest/build/7
   playwright e2e — sandboxed env needs
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
-  unnecessary in real CI).
+  unnecessary in real CI; real CI on PR #13 passed clean in ~90s).
 - No open bugs. Fable-review-queue Open table has exactly one item (#11,
   non-blocking creative-direction call, besor-crossing-only).
 - `M1` is `released`. `M2` is `planned` — `besor-crossing` scene status
   `in-progress`, `amalekite-camp` scene status `planned` (not started).
-- PR #13 still open as a draft — needs to be marked ready + merged.
+- PR #13 merged 2026-07-08. The `claude/brave-shannon-y5tdqk` branch was
+  restarted from `main`@`5fceb3f` per the checkpoint protocol's merged-PR
+  rule — a fresh session should treat it as a clean base, not carrying any
+  of this session's history.
+- This session stopped here at a CRITICAL context checkpoint (~194% of a
+  200k window across the whole conversation) — not because work ran out,
+  but because the session itself had run very long. Nothing was left
+  mid-slice; this is a clean stopping point.
 
 ## Files most recently changed
 
