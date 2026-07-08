@@ -39,12 +39,30 @@ flipped `M1` to `released` in `src/data/milestones.ts`. Rider: run
 `performance-reviewer` over `src/engine/characters` instancing/bake path with
 the next scene-content slice. See `docs/run-log.md`.
 
-## Milestone 2 — 1 Samuel 30 route and recovery: **planned**, direction set
+## Milestone 2 — 1 Samuel 30 route and recovery: **planned**, 1 of 2 scenes built
 
-World-director briefs landed 2026-07-08: `docs/design/besor-crossing-brief.md`
-and `docs/design/amalekite-camp-brief.md`, with `SceneDef` beats/viewpoints
-filled in `src/data/scenes.ts` for both. Build (terrain, entities, claims) not
-started — see `docs/next-run.md`.
+World-director briefs: `docs/design/besor-crossing-brief.md` and
+`docs/design/amalekite-camp-brief.md`, `SceneDef` beats/viewpoints filled in
+`src/data/scenes.ts` for both (2026-07-08 Fable pass).
+
+`besor-crossing` built 2026-07-08 (Sonnet): scene status `in-progress` (not
+`released` — no Fable M2 sign-off yet, matches the M1/Ziklag pattern). ADR-005
+`channel` terrain feature (braided wadi bed, ~130m wide, 8m deep), crowd
+reenactment at the ~1:10 ratio (two hundred/four hundred split, ADR-007 pure
+pose functions), principal figures (David/Abiathar/Egyptian) now get a
+segmented merged-silhouette body (`bodyGeometry.ts`, ~13 primitives via
+`mergeGeometries`, vertex-colored) instead of a single capsule — still a
+**static** silhouette posed as a rigid group per frame, no bone-driven
+animation (`applyClipPose` remains an unimplemented stub). 5 new claims, 3 new
+placeholder assets (see `docs/asset-roadmap.md`). Reviewed clean by
+archaeology-reviewer, biblical-text-reviewer, performance-reviewer (real fixes
+applied, not rubber-stamps — see `docs/run-log.md`); this also closes the M1
+sign-off rider (performance review of `src/engine/characters`). One
+non-blocking creative-direction item queued:
+`docs/fable-review-queue.md` #11 (Egyptian servant dress distinction).
+
+`amalekite-camp` (the second M2 scene) not yet built — see `docs/next-run.md`.
+M2 milestone stays `planned` until both scenes land and Fable signs off.
 
 ## Milestone 3–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
@@ -85,8 +103,13 @@ and now covers the whole repo's code.
 
 - `npm run format:check` — pass
 - `npm run lint` — pass
-- `npm run test` (vitest) — 40/40 pass
+- `npm run test` (vitest) — 51/51 pass (up from 40; besor-crossing terrain +
+  reenactment coverage)
 - `npm run build` — pass (also copies `reader/index.html` → `dist/reader/index.html`)
 - `npm run e2e` (playwright) — 7/7 pass (sandboxed env needs
-  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`; unnecessary in normal CI)
-- Full `npm run verify` gate green 2026-07-08.
+  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`;
+  unnecessary in normal CI)
+- Full `npm run verify` gate green 2026-07-08 (verified again at doc-sync time).
+- PR #13 (branch `claude/brave-shannon-y5tdqk`, targets `main`) carries this
+  session's 5 commits, still open as a **draft** — needs to be marked ready
+  and merged.
