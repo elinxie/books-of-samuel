@@ -194,8 +194,7 @@ export const ASSETS: AssetRecord[] = [
   {
     id: 'asset-camp-shelter-placeholder',
     name: 'Ridge-awning and windbreak shelters',
-    represents:
-      'Raider-camp shelters (see claim-camp-shelters — deliberately not goat-hair tents)',
+    represents: 'Raider-camp shelters (see claim-camp-shelters — deliberately not goat-hair tents)',
     placeholder: true,
     whyTemporary:
       'Low-poly ridge-awnings and brush windbreak arcs — suggestive forms only, since no documented shelter type can be asserted for this camp.',
@@ -228,7 +227,8 @@ export const ASSETS: AssetRecord[] = [
     name: 'Instanced flocks and herds',
     represents: 'Sheep/goat flocks and cattle taken as spoil (see claim-livestock-spoil)',
     placeholder: true,
-    whyTemporary: 'Simple low-poly instanced quadruped forms with color variation, not real breeds.',
+    whyTemporary:
+      'Simple low-poly instanced quadruped forms with color variation, not real breeds.',
     historicalRequirements:
       'Period-plausible fat-tailed sheep, black goats, and small zebu-free taurine cattle per zooarchaeological literature, if ever modeled.',
     replacementMilestoneId: 'M3',
