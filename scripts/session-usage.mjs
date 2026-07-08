@@ -233,17 +233,18 @@ switch (mode) {
   }
   case '--hook-stop': {
     // Never loop: if a previous Stop hook already fired this stoppage, let it stop.
-    if (stdinJson?.stop_hook_active) process.exit(0);
-    const dirty = gitDirtyCount();
-    if ((report.level === 'NOW' || report.level === 'CRITICAL') && dirty > 0) {
-      process.stderr.write(
-        `Context at ${pct}% of window with ${dirty} uncommitted file(s). ` +
-          `Checkpoint before stopping: commit the current slice, push, and update ` +
-          `docs/next-run.md (protocol: docs/checkpoint-protocol.md, command: /checkpoint).`,
-      );
-      process.exit(2);
+    if (!stdinJson?.stop_hook_active) {
+      const dirty = gitDirtyCount();
+      if ((report.level === 'NOW' || report.level === 'CRITICAL') && dirty > 0) {
+        process.stderr.write(
+          `Context at ${pct}% of window with ${dirty} uncommitted file(s). ` +
+            `Checkpoint before stopping: commit the current slice, push, and update ` +
+            `docs/next-run.md (protocol: docs/checkpoint-protocol.md, command: /checkpoint).`,
+        );
+        process.exit(2);
+      }
     }
-    process.exit(0);
+    break;
   }
   case '--hook-session-start': {
     console.log(
