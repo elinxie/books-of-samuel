@@ -61,7 +61,13 @@ export function davidPose(t: number): Pose {
     const b = smoothstep((t - FORD_ARRIVE_T) / (EGYPTIAN_FOUND_T - FORD_ARRIVE_T));
     const x = lerp(FORD_POS[0], nearEgyptian[0], b);
     const z = lerp(FORD_POS[1], nearEgyptian[1], b);
-    return { x, z, yaw: Math.atan2(nearEgyptian[0] - x, nearEgyptian[1] - z), recline: 0, visible: true };
+    return {
+      x,
+      z,
+      yaw: Math.atan2(nearEgyptian[0] - x, nearEgyptian[1] - z),
+      recline: 0,
+      visible: true,
+    };
   }
   if (t < DEPART_SOUTH_T) {
     return {
@@ -85,7 +91,13 @@ export function davidPose(t: number): Pose {
   SOUTH_CURVE.getPointAt(0.2 * (1 - rb), tmpVec);
   const x = lerp(tmpVec.x, REUNION_POS[0] - 3, rb);
   const z = lerp(tmpVec.z, REUNION_POS[1] - 3, rb);
-  return { x, z, yaw: Math.atan2(REUNION_POS[0] - x, REUNION_POS[1] - z), recline: 0, visible: true };
+  return {
+    x,
+    z,
+    yaw: Math.atan2(REUNION_POS[0] - x, REUNION_POS[1] - z),
+    recline: 0,
+    visible: true,
+  };
 }
 
 /** Abiathar: follows David (continuity from Ziklag), a step behind and to the side. */
@@ -140,7 +152,12 @@ const ABIATHAR_PARAMS: CharacterParams = {
   hairColor: '#2b1d14',
   beard: true,
   detail: 'principal',
-  dress: { tunicColor: '#d8d2c0', beltColor: '#5a3722', headwear: 'wrap', headwrapColor: '#cbb98c' },
+  dress: {
+    tunicColor: '#d8d2c0',
+    beltColor: '#5a3722',
+    headwear: 'wrap',
+    headwrapColor: '#cbb98c',
+  },
 };
 
 const EGYPTIAN_PARAMS: CharacterParams = {

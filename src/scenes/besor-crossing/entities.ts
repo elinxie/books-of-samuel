@@ -95,7 +95,8 @@ export const BESOR_CROSSING_ENTITIES: SceneEntityDef[] = [
     title: 'Pack donkeys (illustrative)',
     kind: 'feature',
     position: [DONKEY_SLOTS[0][0], 3, DONKEY_SLOTS[0][1]],
-    description: 'Baggage animals at the laager. Placeholder low-poly forms; see claim-pack-donkeys.',
+    description:
+      'Baggage animals at the laager. Placeholder low-poly forms; see claim-pack-donkeys.',
     claimIds: ['claim-pack-donkeys'],
   },
   {

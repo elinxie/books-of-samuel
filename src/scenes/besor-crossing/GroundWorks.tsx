@@ -37,7 +37,13 @@ export function GroundWorks() {
           rotation={[-Math.PI / 2, 0, 0]}
         >
           <circleGeometry args={[pool.r, 20]} />
-          <meshStandardMaterial color="#3f5c53" roughness={0.15} metalness={0.3} transparent opacity={0.88} />
+          <meshStandardMaterial
+            color="#3f5c53"
+            roughness={0.15}
+            metalness={0.3}
+            transparent
+            opacity={0.88}
+          />
         </mesh>
       ))}
     </group>

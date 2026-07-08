@@ -164,7 +164,8 @@ export const ASSETS: AssetRecord[] = [
     placeholder: true,
     whyTemporary:
       'Static low-poly mesh with a simple fresnel-ish material, no real-time water simulation; season/water level is unstated in the text and is a design placeholder, not an assertion.',
-    historicalRequirements: 'None strictly — an ephemeral, undated feature; visual upgrade optional.',
+    historicalRequirements:
+      'None strictly — an ephemeral, undated feature; visual upgrade optional.',
     replacementMilestoneId: 'M4',
   },
   {

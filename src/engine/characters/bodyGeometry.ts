@@ -33,7 +33,12 @@ function limbGeometry(
 ): THREE.BufferGeometry {
   const dir = new THREE.Vector3().subVectors(b, a);
   const len = dir.length();
-  const geo = new THREE.CapsuleGeometry(radius, Math.max(len - radius * 2, 0.02), 3, radialSegments);
+  const geo = new THREE.CapsuleGeometry(
+    radius,
+    Math.max(len - radius * 2, 0.02),
+    3,
+    radialSegments,
+  );
   const quat = new THREE.Quaternion().setFromUnitVectors(
     new THREE.Vector3(0, 1, 0),
     dir.normalize(),
@@ -118,7 +123,9 @@ function buildPrincipalGeometry(params: CharacterParams): THREE.BufferGeometry {
 export function buildBodyGeometry(
   params: CharacterParams = randomCharacterParams(),
 ): THREE.BufferGeometry {
-  return params.detail === 'principal' ? buildPrincipalGeometry(params) : buildCrowdGeometry(params);
+  return params.detail === 'principal'
+    ? buildPrincipalGeometry(params)
+    : buildCrowdGeometry(params);
 }
 
 export function buildCharacterRig(params: CharacterParams = randomCharacterParams()): CharacterRig {

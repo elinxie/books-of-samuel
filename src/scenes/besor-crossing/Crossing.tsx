@@ -140,7 +140,7 @@ export function crowdFigurePose(
     waiting = uEff >= CLUSTER_U - 0.001;
   } else {
     const resume = CLUSTER_U + ((t - DEPART_SOUTH_T) * DEPART_SPEED) / southLen;
-    uEff = Math.min(Math.max((elapsed * MARCH_SPEED) / southLen, resume), 1);
+    uEff = Math.min(resume, 1);
     waiting = false;
   }
   if (uEff >= EXIT_U) {

@@ -87,7 +87,11 @@ export function Vegetation({
         dummy.rotation.set(0, rng() * Math.PI, 0);
         dummy.updateMatrix();
         shrubs.setMatrixAt(i, dummy.matrix);
-        tmpColor.setHSL(near ? 0.24 + rng() * 0.03 : 0.16 + rng() * 0.05, 0.24 + rng() * 0.1, 0.3 + rng() * 0.1);
+        tmpColor.setHSL(
+          near ? 0.24 + rng() * 0.03 : 0.16 + rng() * 0.05,
+          0.24 + rng() * 0.1,
+          0.3 + rng() * 0.1,
+        );
         shrubs.setColorAt(i, tmpColor);
       }
       shrubs.instanceMatrix.needsUpdate = true;

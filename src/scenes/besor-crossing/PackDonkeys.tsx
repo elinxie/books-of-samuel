@@ -84,7 +84,12 @@ export function PackDonkeys({ shadows }: { shadows: boolean }) {
   });
 
   return (
-    <instancedMesh ref={meshRef} args={[geometry, undefined, count]} frustumCulled={false} castShadow={shadows}>
+    <instancedMesh
+      ref={meshRef}
+      args={[geometry, undefined, count]}
+      frustumCulled={false}
+      castShadow={shadows}
+    >
       <meshStandardMaterial roughness={1} />
     </instancedMesh>
   );
