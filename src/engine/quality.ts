@@ -14,6 +14,8 @@ export interface QualityProfile {
   treeCount: number;
   smokeParticlesPerColumn: number;
   figureCount: number;
+  /** Instanced flock/herd animals in livestock-bearing scenes (amalekite-camp). */
+  livestockCount: number;
   useSkyShader: boolean;
 }
 
@@ -36,6 +38,7 @@ export const QUALITY_PROFILES: Record<QualityMode, QualityProfile> = {
     treeCount: 14,
     smokeParticlesPerColumn: 28,
     figureCount: 40,
+    livestockCount: 36,
     useSkyShader: false,
   },
   balanced: {
@@ -52,6 +55,7 @@ export const QUALITY_PROFILES: Record<QualityMode, QualityProfile> = {
     treeCount: 26,
     smokeParticlesPerColumn: 56,
     figureCount: 60,
+    livestockCount: 70,
     useSkyShader: true,
   },
   high: {
@@ -68,6 +72,7 @@ export const QUALITY_PROFILES: Record<QualityMode, QualityProfile> = {
     treeCount: 40,
     smokeParticlesPerColumn: 90,
     figureCount: 72,
+    livestockCount: 110,
     useSkyShader: true,
   },
 };
