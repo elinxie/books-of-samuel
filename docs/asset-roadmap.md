@@ -15,29 +15,38 @@ file locations, and the licensing policy live in
 
 ## Current placeholders (Ziklag scene, Milestone 1)
 
-| Asset                    | Represents                             | Why temporary                                        | Replace at            |
-| ------------------------ | -------------------------------------- | ---------------------------------------------------- | --------------------- |
-| `asset-terrain-negev`    | Semi-arid Negev/Shephelah hill terrain | Procedural noise, not DEM-derived                    | M2                    |
-| `asset-house-block`      | Mudbrick dwellings (burned state)      | Simple box massing, no interiors/pillared plans      | M2                    |
-| `asset-perimeter-wall`   | Town enclosure                         | Generic ring; real form unknown                      | M3                    |
-| `asset-gate-simple`      | Town gate                              | Generic two-tower gap                                | M3                    |
-| `asset-figure-capsule`   | David's men (~1:10 of narrated 600)    | Abstract capsules, no dress/gear detail              | M3                    |
-| `asset-david-marker`     | David / Abiathar                       | Distinguished only by cloak color + label            | M3                    |
-| `asset-smoke-particles`  | Smoldering aftermath                   | Stylized GPU particles — acceptable long-term        | M4 (optional upgrade) |
-| `asset-vegetation-scrub` | Steppe scrub cover                     | Generic instanced clumps, no species differentiation | M3                    |
-| `asset-olive-tree`       | Orchard/maquis trees                   | Trunk+canopy blobs                                   | M3                    |
-| `asset-rocks`            | Surface stone                          | Generic polyhedra                                    | M4 (optional)         |
-| `asset-well`             | Water point                            | Illustrative form/placement                          | M2                    |
-| `asset-threshing-floor`  | Grain-processing floor                 | Illustrative placement                               | M2                    |
-| `asset-field-plots`      | Subsistence grain plots                | Flat tinted patches                                  | M2                    |
+| Asset                    | Represents                                                                    | Why temporary                                                                                                        | Replace at            |
+| ------------------------ | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| `asset-terrain-negev`    | Semi-arid Negev/Shephelah hill terrain                                        | Procedural noise, not DEM-derived                                                                                    | M2                    |
+| `asset-house-block`      | Mudbrick dwellings (burned state)                                             | Simple box massing, no interiors/pillared plans                                                                      | M2                    |
+| `asset-perimeter-wall`   | Town enclosure                                                                | Generic ring; real form unknown                                                                                      | M3                    |
+| `asset-gate-simple`      | Town gate                                                                     | Generic two-tower gap                                                                                                | M3                    |
+| `asset-figure-capsule`   | David's men (~1:10 of narrated 600)                                           | Abstract capsules, no dress/gear detail                                                                              | M3                    |
+| `asset-david-marker`     | Named-figure marker rigs (David, Abiathar; from M2 also the Egyptian servant) | Segmented merged-silhouette rig, pinned dress colors + label; pose-function-posed, no bone-driven skeletal animation | M3                    |
+| `asset-smoke-particles`  | Smoldering aftermath                                                          | Stylized GPU particles — acceptable long-term                                                                        | M4 (optional upgrade) |
+| `asset-vegetation-scrub` | Steppe scrub cover                                                            | Generic instanced clumps, no species differentiation                                                                 | M3                    |
+| `asset-olive-tree`       | Orchard/maquis trees (Ziklag); reused for wadi-bank trees (besor-crossing)    | Trunk+canopy blobs, not species-differentiated                                                                       | M3                    |
+| `asset-rocks`            | Surface stone                                                                 | Generic polyhedra                                                                                                    | M4 (optional)         |
+| `asset-well`             | Water point                                                                   | Illustrative form/placement                                                                                          | M2                    |
+| `asset-threshing-floor`  | Grain-processing floor                                                        | Illustrative placement                                                                                               | M2                    |
+| `asset-field-plots`      | Subsistence grain plots                                                       | Flat tinted patches                                                                                                  | M2                    |
+
+## Current placeholders (besor-crossing scene, Milestone 2, built 2026-07-08)
+
+| Asset                 | Represents                                           | Why temporary                                                                                   | Replace at |
+| --------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-besor` | Braided wadi bed + loess banks at the Besor crossing | Procedural noise + hand-tuned channel feature, not DEM-derived                                  | M3         |
+| `asset-water-pool`    | Standing water in wadi-bed low points                | Static low-poly mesh, no real-time water sim; water level unstated in text (design placeholder) | M4         |
+| `asset-pack-donkeys`  | Baggage animals at the north-bank laager             | Simple low-poly instanced quadruped form                                                        | M3         |
 
 ## Upcoming needs by milestone
 
-- **M2 (Besor/recovery):** real elevation data investigation (`f-dem-terrain`);
-  Besor wadi geometry (ADR-005 `channel` feature); Egyptian-servant and
-  Amalekite-camp figures; camel placeholder mounts per the resolved queue #5
-  call — flight beat only, minimal early tack, dispute surfaced in-scene
-  (`asset-camel-placeholder`, modeled replacement at M3).
+- **M2 (Besor/recovery):** `besor-crossing` scene built 2026-07-08 (terrain,
+  crowd, principal figures, pack donkeys — see table above); `amalekite-camp`
+  not yet built — needs its own terrain/figures and the resolved camel
+  placeholder call (flight beat only, minimal early tack, dispute surfaced
+  in-scene, `asset-camel-placeholder`, modeled replacement at M3). Real
+  elevation data investigation (`f-dem-terrain`) still outstanding for both.
 - **M3 (Gilboa):** period-dressed modeled figures (`f-period-figures`) replacing
   capsules; battlefield terrain; Beth-shan city/wall; Jabesh-gilead route assets;
   reduced-intensity violence rendering path.
