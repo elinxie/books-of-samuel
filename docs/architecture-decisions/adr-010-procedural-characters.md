@@ -1,6 +1,6 @@
-# ADR-009: Procedural skinned character system
+# ADR-010: Procedural skinned character system
 
-**Status:** Accepted (2026-07-07).
+**Status:** Accepted (2026-07-07). Renumbered from ADR-009 on 2026-07-08 — that number was already taken by adr-009-violence-depiction-defaults.md; this ADR landed later the same day via a separate PR and collided.
 
 ## Context
 

@@ -19,7 +19,7 @@ export const MILESTONES: Milestone[] = [
   {
     id: 'M1',
     label: 'Milestone 1 — 1 Samuel 30 vertical slice (Ziklag)',
-    status: 'in-progress',
+    status: 'released',
     passageRefs: ['1 Samuel 30'],
     goals: [
       'Ziklag burned-settlement scene with smoke and ruin state',
