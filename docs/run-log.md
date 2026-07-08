@@ -401,3 +401,13 @@ Next: see `docs/next-run.md`.
   (M2 Fable sign-off is now the top item).
 
 Next: see `docs/next-run.md`.
+
+**2026-07-08 — Codex — handoff/build check after usage cutoff**
+Resumed after Claude Code hit usage limits. No scene/code fixes needed: branch
+already contains the amalekite-camp build and docs. Re-ran the local gate: format,
+lint, 70/70 Vitest, and production build all pass; production build copied the
+reader into `dist/reader/index.html`. Playwright e2e is environment-blocked in
+this container because the expected browser is absent and `npx playwright install
+chromium` returns CDN 403; earlier Claude run had 7/7 e2e green with
+`PLAYWRIGHT_CHROMIUM_PATH`. Updated `docs/next-run.md` so the next Claude/Fable
+session can merge/publish first, then run M2 sign-off.
