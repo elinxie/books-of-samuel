@@ -113,6 +113,26 @@ export function buildDefenderSlots(count: number, seed = 31006): FigureSlot[] {
 }
 
 /**
+ * The facing rank of Philistine infantry (M3 melee-clash addition):
+ * distinct from `buildInfantrySlots`'s broader pursuing mass, this is the
+ * forward edge that directly meets `buildDefenderSlots`'s Israelite line —
+ * staged just north of the defenders (z in [-70,-55]) rather than scattered
+ * across the whole infantry band, so the clash reads as two facing ranks.
+ */
+export function buildEngagedInfantrySlots(count: number, seed = 31009): FigureSlot[] {
+  const rng = mulberry32(seed);
+  const out: FigureSlot[] = [];
+  for (let i = 0; i < count; i++) {
+    out.push({
+      x: (rng() - 0.5) * 190,
+      z: -55 - rng() * 15, // z in [-70, -55]: the front edge, just short of the general press
+      yaw: Math.PI + (rng() - 0.5) * 0.6, // facing south, toward the defender line
+    });
+  }
+  return out;
+}
+
+/**
  * Routing Israelites streaming down the eastern escape slope. For this
  * slice figures are simply distributed at varied distances down the slope
  * (a range of "how far this figure has gotten"); the rout-reads-by-motion-

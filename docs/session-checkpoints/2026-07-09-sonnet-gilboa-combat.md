@@ -24,7 +24,7 @@ Full `npm run verify` not run this session (mid-slice; see below).
   3. Logged `docs/fable-review-queue.md` #14 (non-blocking): the specific
      assumption ratios (1/3 muster-range, 1/5 fighting-age) weren't
      scholarly-sourced, just Sonnet's own picks: sanity-check later. Also an
-     unverified Yadin *Art of Warfare in Biblical Lands* citation, flagged
+     unverified Yadin _Art of Warfare in Biblical Lands_ citation, flagged
      `TO VERIFY`, not used in the actual claim text.
 - `src/scenes/gilboa-battle/layout.ts`: added `buildDefenderSlots` (new
   Israelite defensive-line placement, z in [-50,-20], facing north).

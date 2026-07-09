@@ -18,6 +18,15 @@ export const GILBOA_BATTLE_ENTITIES: SceneEntityDef[] = [
     claimIds: ['claim-gilboa-topography', 'claim-gilboa-terrain-form'],
   },
   {
+    id: 'ent-line-clash',
+    title: 'The lines meet',
+    kind: 'feature',
+    position: [0, 5, -35],
+    description:
+      'Israel’s defensive line and the Philistine press engage directly, short of the crest — a scripted, non-interactive clash (swing/block/stagger) at a documentary distance. The text moves straight from arrayed lines to flight without narrating this exchange; a rout presupposes one.',
+    claimIds: ['claim-line-defense', 'claim-israelite-muster-kit', 'claim-battle-scale'],
+  },
+  {
     id: 'ent-jezreel-approach',
     title: 'The Jezreel plain (Philistine approach)',
     kind: 'feature',

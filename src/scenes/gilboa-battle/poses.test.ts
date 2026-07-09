@@ -1,12 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import {
   armorBearerPose,
+  defenderClashPose,
+  defenderFallPose,
+  infantryEngagedPose,
   retinueFallPose,
   saulPose,
   sonFallPose,
   T_ARCHERS,
   T_ARMORBEARER_FOLLOWS,
   T_ARMORBEARER_REFUSES,
+  T_LINE_CLASH,
+  T_ROUT,
   T_SAUL_DEATH,
   T_SILENCE,
   T_SONS,
@@ -132,6 +137,65 @@ describe('armorBearerPose (b-armorbearer-refuses, b-armorbearer-follows)', () =>
   it('both modes are fully fallen by the silence beat', () => {
     expect(armorBearerPose(T_SILENCE, 'standard').fallen).toBeCloseTo(1, 1);
     expect(armorBearerPose(T_SILENCE, 'reduced').fallen).toBeCloseTo(1, 1);
+  });
+});
+
+describe('defenderClashPose / infantryEngagedPose (b-line-clash)', () => {
+  it('is unengaged before the clash beat', () => {
+    expect(defenderClashPose(T_LINE_CLASH - 3, 0).engaged).toBe(0);
+    expect(infantryEngagedPose(T_LINE_CLASH - 3, 0).engaged).toBe(0);
+  });
+
+  it('is fully engaged mid-clash, both paired figures', () => {
+    const t = T_LINE_CLASH + (T_ROUT - T_LINE_CLASH) / 2;
+    expect(defenderClashPose(t, 0).engaged).toBeCloseTo(1, 1);
+    expect(infantryEngagedPose(t, 0).engaged).toBeCloseTo(1, 1);
+  });
+
+  it('swing cycles between wind-up and strike extension while engaged', () => {
+    const samples = Array.from(
+      { length: 20 },
+      (_, i) => defenderClashPose(T_LINE_CLASH + 2 + i * 0.2, 0.3).swing,
+    );
+    expect(Math.max(...samples)).toBeGreaterThan(0.5);
+    expect(Math.min(...samples)).toBeLessThan(-0.5);
+  });
+
+  it("a paired infantry figure's cycle is offset from its defender, not identical", () => {
+    const t = T_LINE_CLASH + 4;
+    const defenderSwing = defenderClashPose(t, 0.1).swing;
+    const infantrySwing = infantryEngagedPose(t, 0.1).swing;
+    expect(infantrySwing).not.toBeCloseTo(defenderSwing, 3);
+  });
+
+  it('disengages again once the line breaks into the rout', () => {
+    expect(defenderClashPose(T_ROUT + 10, 0).engaged).toBeLessThan(0.2);
+  });
+
+  it('phase offset changes the swing beat without changing engagement timing', () => {
+    const t = T_LINE_CLASH + 5;
+    expect(defenderClashPose(t, 0).engaged).toBeCloseTo(defenderClashPose(t, 0.5).engaged, 6);
+  });
+});
+
+describe('defenderFallPose (b-line-clash breaking into b-rout)', () => {
+  it('figures not flagged to fall never collapse', () => {
+    expect(defenderFallPose(T_ROUT + 20, 'standard', false, 0).fallen).toBe(0);
+    expect(defenderFallPose(T_ROUT + 20, 'reduced', false, 0).fallen).toBe(0);
+  });
+
+  it('flagged figures fall after the line breaks, standard mode gradual', () => {
+    const delay = 1;
+    expect(defenderFallPose(T_ROUT + delay - 0.1, 'standard', true, delay).fallen).toBe(0);
+    expect(defenderFallPose(T_ROUT + delay + 8, 'standard', true, delay).fallen).toBeCloseTo(1, 1);
+  });
+
+  it('reduced mode reaches the same fallen state faster', () => {
+    const delay = 1;
+    const t = T_ROUT + delay + 1;
+    expect(defenderFallPose(t, 'reduced', true, delay).fallen).toBeGreaterThan(
+      defenderFallPose(t, 'standard', true, delay).fallen,
+    );
   });
 });
 

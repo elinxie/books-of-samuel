@@ -405,6 +405,16 @@ export const CLAIMS: ReconstructionClaim[] = [
       "No scholar has published a combatant-count estimate for the Battle of Gilboa specifically (checked: Finkelstein & Silberman's settlement-density regional figures, Mendenhall's \"eleph as military sub-unit, not literally 'thousand'\" reading of biblical census numerals, and standard Levantine-archaeology literature — Yadin's *The Art of Warfare in Biblical Lands* is the right genre but a specific figure was not page-verified; flagged TO VERIFY in fable-review-queue if pursued further). This claim's count is the project's own labeled order-of-magnitude extrapolation, built transparently as: Finkelstein & Silberman's ~45,000 estimated highland population for the entire hill country in the 10th century BCE (settlement-density method) → roughly a third assumed to live within plausible muster range of the Jezreel/Gilboa front (~15,000) → roughly a fifth assumed to be adult males of fighting age (a standard preindustrial demographic rule of thumb, not a period-specific source) → on the order of ~3,000 Israelite combatants. The Philistine pentapolis force is staged as comparable-to-somewhat-larger given its city-state military organization, without a specific sourced figure for that step either. Every step of this chain beyond Finkelstein & Silberman's base population figure is the project's own assumption, not attributed to them or any other scholar — it exists to make the battle read as a real clash rather than a skirmish, while staying fully disclosed as extrapolated, per the project's \"label design-placeholder rather than invent\" rule (CLAUDE.md). Confidence stays speculative; this number should not be read or cited as historically established. Saul's kingdom scale is itself separately contested (see claim-david-historical); nothing here resolves that debate.",
   },
   {
+    id: 'claim-line-defense',
+    statement:
+      'Before "the men of Israel fled before the Philistines" (1 Samuel 31:1), the two forces necessarily met and fought directly — a rout presupposes a prior engagement, even though the text moves straight from arrayed lines to flight without narrating the clash itself.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible'],
+    notes:
+      'User-directed addition, revising the scene brief\'s original choice to read the defeat "in the drift downhill and the dust — not in blow-by-blow fighting" (see docs/fable-review-queue.md #15). Rendered as a scripted (non-interactive) melee-clash cycle between an Israelite defensive line and the facing rank of the Philistine press — swing, block, and stagger gesture/orientation transforms only, never wound, blood, or dismemberment geometry in either violenceMode, per ADR-009. The clash choreography itself is identical in both modes; only the post-clash fall a fraction of the line takes is subject to the standard/reduced duration split.',
+  },
+  {
     id: 'claim-gilboa-rout',
     statement:
       'The narrative states that the men of Israel fled before the Philistines and fell down slain on Mount Gilboa (1 Samuel 31:1).',
@@ -412,7 +422,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Rendered as a rout draining down the eastern slope, read by motion and dust rather than by headcount (see claim-battle-scale); a seeded fraction of routing figures fall at distance in standard mode, per ADR-009.',
+      'Rendered as a rout draining down the eastern slope, read by motion and dust rather than by headcount (see claim-battle-scale); a seeded fraction of routing figures fall at distance in standard mode, per ADR-009. The line-clash beat (claim-line-defense) precedes this beat; the rout begins once that line gives way.',
   },
   {
     id: 'claim-sons-killed',
