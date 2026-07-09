@@ -65,6 +65,48 @@ export const CHARACTERS: CharacterOrGroup[] = [
     claimIds: [],
   },
   {
+    id: 'jonathan',
+    name: 'Jonathan',
+    kind: 'person',
+    summary:
+      'Saul’s eldest son, David’s covenant friend earlier in the narrative; killed with his brothers by the Philistines on Mount Gilboa (1 Samuel 31:2).',
+    passageRefs: ['1 Samuel 31:2'],
+    // TODO: cite claim-sons-killed once the death-sequence beat/pose choreography
+    // (a later Gilboa step) lands; that claim is not yet created.
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+  },
+  {
+    id: 'abinadab-son-of-saul',
+    name: 'Abinadab',
+    kind: 'person',
+    summary: 'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
+    passageRefs: ['1 Samuel 31:2'],
+    // TODO: cite claim-sons-killed once the death-sequence beat/pose choreography
+    // (a later Gilboa step) lands; that claim is not yet created.
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+  },
+  {
+    id: 'malchi-shua',
+    name: 'Malchi-shua',
+    kind: 'person',
+    summary: 'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
+    passageRefs: ['1 Samuel 31:2'],
+    // TODO: cite claim-sons-killed once the death-sequence beat/pose choreography
+    // (a later Gilboa step) lands; that claim is not yet created.
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+  },
+  {
+    id: 'sauls-armor-bearer',
+    name: 'Saul’s armor-bearer',
+    kind: 'person',
+    summary:
+      'Unnamed in the narrative. Asked by the badly wounded Saul to run him through rather than let the Philistines take him; he will not, "for he feared greatly" — the death sequence’s emotional pivot — then follows Saul in death (1 Samuel 31:4–5).',
+    passageRefs: ['1 Samuel 31:4–5'],
+    // TODO: cite claim-armor-bearer-refusal once the death-sequence beat/pose
+    // choreography (a later Gilboa step) lands; that claim is not yet created.
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+  },
+  {
     id: 'people-of-ziklag',
     name: 'The people of Ziklag',
     kind: 'group',

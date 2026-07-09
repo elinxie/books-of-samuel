@@ -7,15 +7,21 @@ import { ObserverControls } from '../../engine/ObserverControls';
 import { SCENES_BY_ID } from '../../data/scenes';
 import { GroundWorks } from './GroundWorks';
 import { Vegetation } from './Vegetation';
+import { PrincipalFigures } from './PrincipalFigures';
+import { CrestRetinue } from './CrestRetinue';
+import { PhilistinePress } from './PhilistinePress';
+import { RoutingIsraelites } from './RoutingIsraelites';
 import { GILBOA_BATTLE_ENTITIES } from './entities';
 import { EntityLabel } from '../../ui/scene/EntityLabel';
 
 const SCENE = SCENES_BY_ID.get('gilboa-battle')!;
 
 /**
- * M3 terrain shell (Step 1 of 5). This is deliberately terrain + vegetation +
- * entity labels only — no battlefield figures, no rout dust, no military
- * kit. Those land in later steps of the Gilboa build; see
+ * M3 terrain + figures (Step 2 of 5). Terrain, vegetation, and entity labels
+ * are Step 1; this step populates the ridge with figures — count, grouping,
+ * and positioning only, using the existing ADR-010 procedural rig. No
+ * rout/death-sequence pose choreography and no military-kit attachment
+ * meshes yet; those land in later steps of the Gilboa build. See
  * docs/design/gilboa-battle-brief.md.
  */
 
@@ -84,6 +90,16 @@ export function GilboaBattleScene() {
   const showLabels = useAppStore((s) => s.showLabels);
   const profile = QUALITY_PROFILES[quality];
 
+  // Scene-specific scaling on top of the shared figureCount tier, following
+  // the amalekite-camp pattern (camelCount = figureCount * 0.55), tuned to
+  // land the high-tier total in the brief's ~120-140 combat-figure band
+  // (see "Scale assumptions" — claim-battle-scale).
+  const retinueCount = Math.max(1, Math.round(profile.figureCount * 0.18));
+  const archerCount = Math.max(1, Math.round(profile.figureCount * 0.19));
+  const infantryCount = Math.max(1, Math.round(profile.figureCount * 0.62));
+  const philistinePrincipalCount = Math.max(1, Math.round(profile.figureCount * 0.07));
+  const routCount = Math.max(1, Math.round(profile.figureCount * 0.62));
+
   return (
     <>
       <SceneEnvironment />
@@ -93,6 +109,15 @@ export function GilboaBattleScene() {
         shrubCount={profile.vegetationCount}
         rockCount={profile.rockCount}
       />
+      <PrincipalFigures shadows={profile.shadows} />
+      <CrestRetinue count={retinueCount} shadows={profile.shadows} />
+      <PhilistinePress
+        archerCount={archerCount}
+        infantryCount={infantryCount}
+        principalCount={philistinePrincipalCount}
+        shadows={profile.shadows}
+      />
+      <RoutingIsraelites count={routCount} shadows={profile.shadows} />
       {showLabels && GILBOA_BATTLE_ENTITIES.map((e) => <EntityLabel key={e.id} entity={e} />)}
       <TimelineDriver durationSec={SCENE.durationSec} />
       <ObserverControls />

@@ -473,7 +473,7 @@ export const SCENES: SceneDef[] = [
         lookAt: [70, 0, 30],
       },
     ],
-    claimIds: ['claim-gilboa-topography', 'claim-gilboa-terrain-form'],
+    claimIds: ['claim-gilboa-topography', 'claim-gilboa-terrain-form', 'claim-battle-scale'],
     assetIds: ['asset-terrain-gilboa-ridge'],
   },
   {

@@ -394,6 +394,16 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Nothing in the text or archaeology fixes the camp’s population; the render only needs to communicate "a camp larger than the force that escapes it." Captives are shown as a distinct grouped cluster among the sprawl.',
   },
+  {
+    id: 'claim-battle-scale',
+    statement:
+      'Gilboa is rendered as the ridge-crest engagement of 1 Samuel 31, not a national army. Rendered figure groups follow the project’s disclosed ~1:10 narrated ratio; the rout is read by motion and dust rather than by headcount, and no army size is asserted for either force.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text gives no headcount for either force, and the scale of Saul’s kingdom is itself contested (see claim-david-historical, which this claim is anchored to for that debate). Nothing here fixes a "true" army size; the render only stages the crest death-group, the Philistine press, and the rout draining east as a legible defeat.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(
