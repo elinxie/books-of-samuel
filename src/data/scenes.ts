@@ -490,6 +490,7 @@ export const SCENES: SceneDef[] = [
       'asset-figure-fallen',
       'asset-military-kit-israelite',
       'asset-military-kit-philistine',
+      'asset-dust-motion',
     ],
   },
   {

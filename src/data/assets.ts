@@ -206,6 +206,18 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M4',
   },
   {
+    id: 'asset-dust-motion',
+    name: 'Rout-dust GPU sprite system',
+    represents:
+      'Dust kicked up by the mass movement of the routing Israelites draining down the eastern slope, and (lighter density) the Philistine press climbing the northern slope — the visual device the brief assigns to carry the scale of the defeat in place of a blow-by-blow crowd (illustrates claim-gilboa-rout, claim-battle-scale; not a new claim of its own)',
+    placeholder: true,
+    whyTemporary:
+      'A stylized GPU point-sprite field (one shared shader material, vertex-displaced drift keyed to scene time, in the manner of ziklag/SmokeColumns.tsx — see src/scenes/gilboa-battle/RoutDust.tsx), not a physical dust/particle simulation. Density and drift direction are seeded and hand-tuned to the rout/press footprints, not derived from any period-specific account of visibility or weather.',
+    historicalRequirements:
+      'None achievable beyond stylization — no historical record specifies dust density or drift; any upgrade is a visual-fidelity improvement only (e.g. a true GPU particle-simulation pass), not a claim-driven replacement.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-water-pool',
     name: 'Standing pool meshes',
     represents: 'Standing water in low points of the braided wadi bed',

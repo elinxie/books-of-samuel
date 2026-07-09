@@ -11,19 +11,22 @@ import { PrincipalFigures } from './PrincipalFigures';
 import { CrestRetinue } from './CrestRetinue';
 import { PhilistinePress } from './PhilistinePress';
 import { RoutingIsraelites } from './RoutingIsraelites';
+import { RoutDust } from './RoutDust';
 import { GILBOA_BATTLE_ENTITIES } from './entities';
 import { EntityLabel } from '../../ui/scene/EntityLabel';
 
 const SCENE = SCENES_BY_ID.get('gilboa-battle')!;
 
 /**
- * M3 terrain + figures + choreography (Step 3 of 5). Terrain, vegetation,
- * and entity labels are Step 1; Step 2 populated the ridge with figures
- * (count, grouping, positioning). This step adds the beat-driven death-
- * sequence/rout pose choreography (`./poses.ts`, `RoutingIsraelites.tsx`,
+ * M3 terrain + figures + choreography (Step 5 of 5, final slice). Terrain,
+ * vegetation, and entity labels are Step 1; Step 2 populated the ridge with
+ * figures (count, grouping, positioning); Step 3 added the beat-driven
+ * death-sequence/rout pose choreography (`./poses.ts`, `RoutingIsraelites.tsx`,
  * `CrestRetinue.tsx`, `PrincipalFigures.tsx`) gated by `violenceMode`
- * (standard/reduced, ADR-009). No military-kit attachment meshes or dust
- * system yet; those land in later steps of the Gilboa build. See
+ * (standard/reduced, ADR-009); Step 4 added military-kit attachment meshes
+ * (`kitMeshes.ts`). This step adds the rout-dust system (`RoutDust.tsx`) per
+ * the brief's "Visual composition" — dust reads the mass movement of the
+ * rout and, lighter, the Philistine press. See
  * docs/design/gilboa-battle-brief.md.
  */
 
@@ -102,6 +105,14 @@ export function GilboaBattleScene() {
   const philistinePrincipalCount = Math.max(1, Math.round(profile.figureCount * 0.07));
   const routCount = Math.max(1, Math.round(profile.figureCount * 0.62));
 
+  // Rout-dust sprite counts (Step 5): no dedicated quality-profile field, so
+  // this scales off the existing figureCount tier per the brief's
+  // performance target, same convention as the counts above. Rout density is
+  // heavier (the primary "mass movement" the brief calls out); press density
+  // is deliberately lighter so it doesn't compete with the crest sightline.
+  const routDustCount = Math.max(1, Math.round(profile.figureCount * 5));
+  const pressDustCount = Math.max(1, Math.round(profile.figureCount * 2.5));
+
   return (
     <>
       <SceneEnvironment />
@@ -120,6 +131,7 @@ export function GilboaBattleScene() {
         shadows={profile.shadows}
       />
       <RoutingIsraelites count={routCount} shadows={profile.shadows} />
+      <RoutDust routCount={routDustCount} pressCount={pressDustCount} />
       {showLabels && GILBOA_BATTLE_ENTITIES.map((e) => <EntityLabel key={e.id} entity={e} />)}
       <TimelineDriver durationSec={SCENE.durationSec} />
       <ObserverControls />
