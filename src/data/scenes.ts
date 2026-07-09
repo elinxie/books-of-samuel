@@ -379,9 +379,100 @@ export const SCENES: SceneDef[] = [
     status: 'planned',
     synopsis:
       'The battle on the ridge above the Jezreel Valley: Israel’s rout, the deaths of Jonathan, Abinadab, and Malchi-shua, and Saul’s end. To be rendered honestly but without sensationalism, with a reduced-intensity mode.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
+    durationSec: 150,
+    beats: [
+      {
+        id: 'b-lines',
+        timeSec: 0,
+        title: 'Arrayed on the ridge',
+        caption:
+          'Israel is drawn up on the high ground of Gilboa; the Philistines press up from the plain below, near Shunem. The line is already giving way. (1 Samuel 28:4; 31:1)',
+        passageRef: '1 Samuel 28:4; 31:1',
+      },
+      {
+        id: 'b-rout',
+        timeSec: 18,
+        title: 'The line breaks',
+        caption:
+          'The men of Israel flee before the Philistines and fall on the slopes of Gilboa. The defeat is read here in the drift downhill and the dust — not in blow-by-blow fighting. (1 Samuel 31:1)',
+        passageRef: '1 Samuel 31:1',
+      },
+      {
+        id: 'b-sons',
+        timeSec: 45,
+        title: 'The king’s sons overtaken',
+        caption:
+          'The Philistines overtake Saul’s sons. Jonathan, Abinadab, and Malchi-shua are killed. The deaths are shown at the distance of the melee, without spectacle. (1 Samuel 31:2)',
+        passageRef: '1 Samuel 31:2',
+      },
+      {
+        id: 'b-archers',
+        timeSec: 72,
+        title: 'The archers find Saul',
+        caption:
+          'The battle presses hard against Saul; the archers find him, and he is badly wounded. (1 Samuel 31:3)',
+        passageRef: '1 Samuel 31:3',
+      },
+      {
+        id: 'b-armorbearer-refuses',
+        timeSec: 95,
+        title: 'The armor-bearer will not',
+        caption:
+          'Saul asks his armor-bearer to draw his sword and run him through, so that the enemy will not. But the armor-bearer will not do it, for he feared greatly. (1 Samuel 31:4)',
+        passageRef: '1 Samuel 31:4',
+      },
+      {
+        id: 'b-saul-death',
+        timeSec: 112,
+        title: 'Saul falls on his sword',
+        caption:
+          'So Saul takes his own sword and falls on it. The act is understood — held at a documentary distance and never shown in detail; in reduced mode it is elided entirely, the fact carried by these words alone. (1 Samuel 31:4)',
+        passageRef: '1 Samuel 31:4',
+      },
+      {
+        id: 'b-armorbearer-follows',
+        timeSec: 126,
+        title: 'His armor-bearer follows',
+        caption:
+          'When the armor-bearer sees that Saul is dead, he too falls on his own sword and dies with him. (1 Samuel 31:5)',
+        passageRef: '1 Samuel 31:5',
+      },
+      {
+        id: 'b-silence',
+        timeSec: 140,
+        title: 'The ridge falls silent',
+        caption:
+          'Saul, his three sons, his armor-bearer, and his men die that day together. The ridge goes quiet at dusk. On the next day the Philistines will come to strip the slain — but that belongs to Beth-shan, and is not shown here. (1 Samuel 31:6)',
+        passageRef: '1 Samuel 31:6',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-facing-spur',
+        label: 'Facing spur (overlook)',
+        position: [0, 24, -150],
+        lookAt: [0, 8, 0],
+      },
+      { id: 'vp-crest-line', label: 'The crest line', position: [-10, 3, 0], lookAt: [10, 2, -40] },
+      {
+        id: 'vp-archers',
+        label: 'Behind the archers',
+        position: [30, 4, -55],
+        lookAt: [0, 6, -5],
+      },
+      {
+        id: 'vp-death-knoll',
+        label: 'The death knoll',
+        position: [12, 5, 12],
+        lookAt: [0, 2, 2],
+      },
+      {
+        id: 'vp-eastern-draw',
+        label: 'The eastern draw (rout)',
+        position: [40, 6, 20],
+        lookAt: [70, 0, 30],
+      },
+    ],
     claimIds: [],
     assetIds: [],
   },

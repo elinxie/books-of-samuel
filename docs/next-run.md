@@ -3,26 +3,53 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-08, post-M2-sign-off)
+## State right now (2026-07-09, post-Gilboa-brief)
 
-**M2 is released.** Both scenes (`besor-crossing`, `amalekite-camp`) built,
-triple-reviewed, merged to `main` (PR #16), and signed off by Fable
-(`docs/run-log.md`, sign-off entry). Fable-review-queue Open table is empty.
-Full gate green: format/lint/70 vitest/build/7 e2e.
+**M2 is released.** M3's first scene has its world-director brief:
+`docs/design/gilboa-battle-brief.md` (Fable, 2026-07-09), `SceneDef`
+beats/viewpoints filled in `src/data/scenes.ts` (`gilboa-battle` stays
+`status: 'planned'` — no build yet). Full gate green: format/lint/70
+vitest/build (e2e not re-run this pass — no interactive surface changed).
+
+Two new fable-review-queue items opened by the brief (both non-blocking for
+starting the build): #12 DEM data-sourcing/licensing ADR (deferred — v1 uses
+procedural `ridge` terrain), #13 Philistine plumed-headdress source
+verification (must clear before the scene ships `released`, not before build
+starts).
 
 ## Next session: pick in this order
 
-1. **M3 world-director pass** (Fable): `gilboa-battle` is the next milestone's
-   first scene and needs its creative/historical brief before any build —
-   same pattern as the M2 briefs (`docs/design/*-brief.md`). ADR-009's
-   violence-advisory + reduced-intensity mode lands with this milestone, so
-   the brief must specify both rendering treatments. Also due within M3:
-   modeled-figure pilot (ADR-008), the dress review (queue #11's revisit),
-   and `f-dem-terrain` (re-scoped from M2) — Gilboa IS an identified site, so
-   DEM terrain finally applies.
+1. **Build `gilboa-battle`** (Sonnet/`threejs-engineer`), following
+   `docs/design/gilboa-battle-brief.md` exactly:
+   - Implement the `ridge` `TerrainSpec` feature in `src/engine/terrain.ts`
+     (ADR-005 anticipated this, not yet built) — do not fake a ridge by
+     stacking `mound`s. Then `src/scenes/gilboa-battle/terrain.ts`.
+   - New claims per the brief's "Required source basis": topography/terrain
+     (`claim-gilboa-topography`, `claim-gilboa-terrain-form`), narrated beats
+     (`claim-gilboa-rout`, `claim-sons-killed`, `claim-saul-wounded-archers`,
+     `claim-armor-bearer-refusal`, `claim-saul-death`), material culture
+     (`claim-philistine-kit` with the headdress `scholarlyViews` dispute,
+     `claim-israelite-muster-kit`), design (`claim-battle-scale`).
+   - New characters (light entries): `jonathan`, `abinadab-son-of-saul`,
+     `malchi-shua`, `sauls-armor-bearer`.
+   - Military-kit attachment meshes on the existing ADR-010 rig (spear/
+     shield/bow/round-shield/straight-sword/headdress) — not new body
+     models. Fallen/prone pose buckets + death-sequence pose functions
+     (ADR-007, pure, beat-invariant test required).
+   - Violence rendering per the brief's beat table — both `violenceMode`
+     paths, ADR-009's first-visit advisory is part of this milestone's build
+     (not yet implemented anywhere in the codebase; this is the first scene
+     that needs it).
+   - Scale: ~120–140 combat figures at high tier per the brief — budget
+     against the Amalekite scene's draw-call count.
+   - Reviewers after the first geometry slice: `archaeology-reviewer`
+     (kit/headdress dispute honesty), `biblical-text-reviewer` (beat
+     captions vs. 31:1–6), `performance-reviewer` (early, not just at the
+     end per the brief).
 2. **Visual-fidelity roadmap slice 3** (`docs/visual-fidelity-roadmap.md` §A:
    instanced burned-debris + expanded rock/scrub variety in Ziklag) — good
-   Sonnet-sized task if no Fable session is available for item 1.
+   filler if Gilboa's data/claims layer needs a Fable-tier pause partway
+   through (e.g., queue #13's headdress citation).
 3. **Quick Pages-live check** (carried forward): confirm
    `https://elinxie.github.io/books-of-samuel/` renders after the latest
    merge (expect `/books-of-samuel/assets/...` requests, not `/src/main.tsx`).
