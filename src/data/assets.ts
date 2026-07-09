@@ -182,6 +182,30 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M4',
   },
   {
+    id: 'asset-military-kit-israelite',
+    name: 'Israelite military-kit attachments (spear, oval shield, bow)',
+    represents:
+      'Simple, non-uniform arms on Israelite combatants at Gilboa — spear, oval shield, and a minority of bows on the retinue; spear + shield on Saul, his sons, and his armor-bearer as marginally-better-equipped principals',
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/sphere primitive geometry (see src/scenes/gilboa-battle/kitMeshes.ts), attached as InstancedMesh instances at a fixed offset from a representative joint position on the existing ADR-010 rig — not modeled weapon/shield assets and not bound to a specific excavated Israelite panoply. No sword is rendered on Israelite figures; the brief specifies swords for Philistines only.',
+    historicalRequirements:
+      'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-military-kit-philistine',
+    name: 'Philistine military-kit attachments (round shield, straight sword, bow, plumed headdress)',
+    represents:
+      'The Philistine force’s distinct kit profile — bow on the forward archer element; round shield + straight sword on infantry and the kit-differentiated principal cluster; a plumed/feathered headdress (Medinet Habu "Sea Peoples" marker) on the principal cluster only',
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/sphere/torus primitive geometry (see src/scenes/gilboa-battle/kitMeshes.ts), attached as InstancedMesh instances, not modeled weapon/shield/headdress assets. The headdress in particular carries a disputed ethnic/temporal attribution (Egyptian Medinet Habu relief, c. 1175 BCE, applied here to Iron I/IIA highland warfare) — see claim-philistine-kit’s scholarlyViews and docs/fable-review-queue.md item #13, which requires source page-verification before this scene ships released. It is rendered on the small kit-differentiated principal cluster only, never on crowd/infantry/archer instances, as the provisional, disclosed default.',
+    historicalRequirements:
+      'Modeled weapon/shield forms from a defensible comparative-ANE/Aegean-influenced assemblage, and a resolved (not provisional) citation for the headdress attribution and its applicability to this context, once fable-review-queue item #13 clears.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-water-pool',
     name: 'Standing pool meshes',
     represents: 'Standing water in low points of the braided wadi bed',

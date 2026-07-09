@@ -482,8 +482,15 @@ export const SCENES: SceneDef[] = [
       'claim-saul-wounded-archers',
       'claim-armor-bearer-refusal',
       'claim-saul-death',
+      'claim-israelite-muster-kit',
+      'claim-philistine-kit',
     ],
-    assetIds: ['asset-terrain-gilboa-ridge', 'asset-figure-fallen'],
+    assetIds: [
+      'asset-terrain-gilboa-ridge',
+      'asset-figure-fallen',
+      'asset-military-kit-israelite',
+      'asset-military-kit-philistine',
+    ],
   },
   {
     id: 'beth-shan-walls',

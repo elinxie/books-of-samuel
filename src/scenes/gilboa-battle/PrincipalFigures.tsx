@@ -4,6 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { useAppStore } from '../../state/store';
 import { buildCharacterRig, type CharacterParams } from '../../engine/characters';
 import { armorBearerPose, lerp, saulPose, sonFallPose } from './poses';
+import { buildShieldGeometry, buildSpearGeometry } from './kitMeshes';
 
 /**
  * Named-figure crest group (M3 Step 3): Saul, Jonathan, Abinadab, Malchi-
@@ -16,6 +17,14 @@ import { armorBearerPose, lerp, saulPose, sonFallPose } from './poses';
  * pose functions in `./poses.ts` (asset-figure-fallen), never a new mesh
  * and never wound geometry. See docs/design/gilboa-battle-brief.md, "Camera
  * / observer experience".
+ *
+ * M3 Step 4 adds military-kit attachment meshes (spear + oval shield) on
+ * all five named figures — "marginally more kit as principals" per the
+ * brief's "Dress review" (`claim-israelite-muster-kit`). Kit instances are
+ * written from the SAME group matrix the body pose uses each frame, so a
+ * spear in a kneeling Saul's hand follows his kneel rather than floating in
+ * the standing position. No Israelite sword — the brief specifies straight
+ * swords for Philistines only.
  */
 
 /** Fixed crest-cluster offsets (x, z) from the ridge crest at the origin. */
@@ -90,18 +99,31 @@ function useRigGeometry(params: CharacterParams): THREE.BufferGeometry {
   return useMemo(() => buildCharacterRig(params).geometry, [params]);
 }
 
+/** A single representative stature for the shared principal-kit geometry
+ * (an InstancedMesh needs one geometry for all five instances; the ~4cm
+ * spread across the five actual statures is negligible at this fidelity). */
+const PRINCIPAL_KIT_STATURE = 1.7;
+const PRINCIPAL_COUNT = 5;
+
 export function PrincipalFigures({ shadows }: { shadows: boolean }) {
   const saulGeo = useRigGeometry(SAUL_PARAMS);
   const jonathanGeo = useRigGeometry(JONATHAN_PARAMS);
   const abinadabGeo = useRigGeometry(ABINADAB_PARAMS);
   const malchiShuaGeo = useRigGeometry(MALCHI_SHUA_PARAMS);
   const armorBearerGeo = useRigGeometry(ARMOR_BEARER_PARAMS);
+  const spearGeo = useMemo(() => buildSpearGeometry(PRINCIPAL_KIT_STATURE, 'handR'), []);
+  const shieldGeo = useMemo(
+    () => buildShieldGeometry(PRINCIPAL_KIT_STATURE, 'oval', 'handL'),
+    [],
+  );
 
   const saulRef = useRef<THREE.Group>(null);
   const jonathanRef = useRef<THREE.Group>(null);
   const abinadabRef = useRef<THREE.Group>(null);
   const malchiShuaRef = useRef<THREE.Group>(null);
   const armorBearerRef = useRef<THREE.Group>(null);
+  const spearMeshRef = useRef<THREE.InstancedMesh>(null);
+  const shieldMeshRef = useRef<THREE.InstancedMesh>(null);
 
   // Facing toward Saul, the group's visual center — fixed baseline yaw for
   // each figure (positions never move; only the pose transform changes).
@@ -133,10 +155,18 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
 
   useFrame(() => {
     const { timeSec: t, terrain, violenceMode } = useAppStore.getState();
+    const spearMesh = spearMeshRef.current;
+    const shieldMesh = shieldMeshRef.current;
 
-    /** Applies a fixed x/z position plus a fallen/kneel collapse transform. */
+    /**
+     * Applies a fixed x/z position plus a fallen/kneel collapse transform,
+     * then writes the SAME resulting matrix into the spear/shield kit
+     * instances at `kitIndex` — the kit rides on top of the body pose
+     * (kneel/fallen) rather than tracking it independently.
+     */
     const apply = (
       ref: React.RefObject<THREE.Group | null>,
+      kitIndex: number,
       [x, z]: [number, number],
       yaw: number,
       fallen: number,
@@ -149,6 +179,9 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
       g.rotation.set(kneel * 0.35 - fallen * 1.35, yaw, 0);
       const squash = 1 - kneel * 0.15 - fallen * 0.55;
       g.scale.set(1, squash, 1);
+      g.updateMatrix();
+      spearMesh?.setMatrixAt(kitIndex, g.matrix);
+      shieldMesh?.setMatrixAt(kitIndex, g.matrix);
     };
 
     const saul = saulPose(t, violenceMode);
@@ -159,20 +192,25 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
 
     apply(
       saulRef,
+      0,
       SAUL_POS,
       lerp(0, saulToArmorBearerYaw, saul.faceArmorBearer),
       saul.fallen,
       saul.kneel,
     );
-    apply(jonathanRef, JONATHAN_POS, jonathanBaseYaw, jonathan.fallen);
-    apply(abinadabRef, ABINADAB_POS, abinadabBaseYaw, abinadab.fallen);
-    apply(malchiShuaRef, MALCHI_SHUA_POS, malchiShuaBaseYaw, malchiShua.fallen);
+    apply(jonathanRef, 1, JONATHAN_POS, jonathanBaseYaw, jonathan.fallen);
+    apply(abinadabRef, 2, ABINADAB_POS, abinadabBaseYaw, abinadab.fallen);
+    apply(malchiShuaRef, 3, MALCHI_SHUA_POS, malchiShuaBaseYaw, malchiShua.fallen);
     apply(
       armorBearerRef,
+      4,
       ARMOR_BEARER_POS,
       armorBearerBaseYaw + armorBearerRefusalYawOffset * armorBearer.refusalTurn,
       armorBearer.fallen,
     );
+
+    if (spearMesh) spearMesh.instanceMatrix.needsUpdate = true;
+    if (shieldMesh) shieldMesh.instanceMatrix.needsUpdate = true;
   });
 
   return (
@@ -202,6 +240,22 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
           <meshStandardMaterial vertexColors roughness={1} />
         </mesh>
       </group>
+      <instancedMesh
+        ref={spearMeshRef}
+        args={[spearGeo, undefined, PRINCIPAL_COUNT]}
+        frustumCulled={false}
+        castShadow={shadows}
+      >
+        <meshStandardMaterial color="#7a5a35" roughness={0.9} />
+      </instancedMesh>
+      <instancedMesh
+        ref={shieldMeshRef}
+        args={[shieldGeo, undefined, PRINCIPAL_COUNT]}
+        frustumCulled={false}
+        castShadow={shadows}
+      >
+        <meshStandardMaterial color="#8a6a3f" roughness={0.85} />
+      </instancedMesh>
     </group>
   );
 }

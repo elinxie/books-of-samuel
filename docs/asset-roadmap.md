@@ -39,12 +39,14 @@ file locations, and the licensing policy live in
 | `asset-water-pool`    | Standing water in wadi-bed low points                | Static low-poly mesh, no real-time water sim; water level unstated in text (design placeholder) | M4         |
 | `asset-pack-donkeys`  | Baggage animals at the north-bank laager             | Simple low-poly instanced quadruped form                                                        | M3         |
 
-## Current placeholders (gilboa-battle scene, Milestone 3, pose-choreography slice added 2026-07-09)
+## Current placeholders (gilboa-battle scene, Milestone 3, military-kit slice added 2026-07-09)
 
-| Asset                        | Represents                                                                                     | Why temporary                                                                                                  | Replace at |
-| ----------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------- |
-| `asset-terrain-gilboa-ridge` | Mount Gilboa ridge, northern approach, eastern rout slope                                      | Procedural ridge + hills, not DEM-derived from Jebel Faqqu’a/Gilboa                                            | M4         |
-| `asset-figure-fallen`        | The death sequence + rout: sons overtaken, Saul wounded/fallen, armor-bearer follows, routers  | Rotation/scale collapse transform on the existing ADR-010 rig, not a modeled fallen-body pose or skeletal clip | M4         |
+| Asset                            | Represents                                                                                     | Why temporary                                                                                                  | Replace at |
+| --------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-gilboa-ridge`     | Mount Gilboa ridge, northern approach, eastern rout slope                                      | Procedural ridge + hills, not DEM-derived from Jebel Faqqu’a/Gilboa                                            | M4         |
+| `asset-figure-fallen`            | The death sequence + rout: sons overtaken, Saul wounded/fallen, armor-bearer follows, routers  | Rotation/scale collapse transform on the existing ADR-010 rig, not a modeled fallen-body pose or skeletal clip | M4         |
+| `asset-military-kit-israelite`   | Israelite spear/oval shield/bow, non-uniform, marginally more kit on Saul/sons/armor-bearer    | Primitive-geometry InstancedMesh attachments, not modeled weapons/shields or a specific excavated panoply       | M4         |
+| `asset-military-kit-philistine`  | Philistine bow (archers)/round shield + straight sword (infantry, principals)/plumed headdress (principals only) | Primitive-geometry InstancedMesh attachments; headdress ethnic/temporal attribution is disputed and provisional (fable-review-queue #13) | M4         |
 
 ## Current placeholders (amalekite-camp scene, Milestone 2, built 2026-07-08)
 

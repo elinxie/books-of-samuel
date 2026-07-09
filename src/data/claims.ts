@@ -454,6 +454,44 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Staged as the scene’s closing beat: the ridge emptied and quiet at dusk, with a forward-pointing (not depicted) card toward the next-day events at Beth-shan (1 Samuel 31:8–10, out of scope for this scene).',
   },
+  {
+    id: 'claim-israelite-muster-kit',
+    statement:
+      'Israelite combatants at Gilboa are equipped with simple, non-uniform arms over the generic tunic/cloak base — spears, oval shields, and a minority of bows — with Saul, his sons, and his armor-bearer carrying marginally more/better kit (spear and shield) than the generic retinue. No standing army, uniform equipment, or fixed unit organization is asserted.',
+    basis: 'biblical-text',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible', 'yadin-1963', 'king-stager-2001'],
+    notes:
+      'The archers who find Saul are named in the text (1 Samuel 31:3), so bows are load-bearing rather than decorative; spear and shield are the baseline comparative-ANE assumption for Iron I–IIA highland combatants (Yadin 1963; King & Stager 2001), not a specific excavated Israelite panoply. Kit is deliberately non-uniform per figure (see `assignRetinueKit` in the scene code) — the render does not claim a documented "Israelite uniform".',
+  },
+  {
+    id: 'claim-philistine-kit',
+    statement:
+      'The Philistine force at Gilboa is rendered with a distinct kit profile — round shields and straight swords for infantry and principals, and a forward archer element carrying bows. A plumed/feathered headdress (the Medinet Habu "Sea Peoples" marker) is rendered on the small kit-differentiated principal cluster only, never on crowd/infantry/archer instances.',
+    basis: 'comparative-ane',
+    confidence: 'low',
+    sourceIds: ['king-stager-2001', 'yadin-1963'],
+    scholarlyViews: [
+      {
+        id: 'view-philistine-headdress-sea-peoples-marker',
+        label: 'Plumed headdress as a genuine Sea Peoples/Philistine material-culture marker',
+        summary:
+          'The feathered/plumed headdress is the best-attested and most widely reproduced Philistine visual signifier, drawn from the Egyptian Medinet Habu reliefs of Ramesses III (c. 1175 BCE) depicting "Sea Peoples" including the Peleset (Philistines); omitting it from a Philistine-force rendering is its own distortion of the best-known iconographic evidence.',
+        confidence: 'moderate',
+        sourceIds: ['yadin-1963'],
+      },
+      {
+        id: 'view-philistine-headdress-attribution-contested',
+        label: 'Ethnic/temporal application to this scene is unverified',
+        summary:
+          'Medinet Habu is Egyptian royal propaganda relief art, not a Philistine self-representation, and it dates to c. 1175 BCE — a century-plus before the Gilboa battle of the traditional Saul narrative and geographically set in Egypt/the Delta frontier, not the Jezreel highlands. Whether the headdress persisted as worn battlefield gear into Iron I/IIA highland warfare at Gilboa specifically is unverified in the excavated record cited here and page-level citation-checking is queued (`docs/fable-review-queue.md` item #13) before this scene ships `released`.',
+        confidence: 'low',
+        sourceIds: ['king-stager-2001'],
+      },
+    ],
+    notes:
+      'Round shield and straight sword are the baseline comparative-ANE/Aegean-influenced assumption for Philistine coastal-plain combatants (Yadin 1963; King & Stager 2001), not a specific excavated Gilboa-context panoply — moderate/low confidence throughout. The headdress dispute is the single most consequential material-culture call in this scene: rendering it only on the small principal cluster, behind this scholarlyViews label, is the provisional default agreed for build; it is not a resolved attribution. No "Philistine uniform" is asserted.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(
