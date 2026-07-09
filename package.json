@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
-    "e2e": "playwright test",
+    "e2e": "node scripts/run-e2e.mjs",
     "build:sources": "node scripts/build-source-index.mjs",
     "verify": "npm run format:check && npm run lint && npm run test && npm run build && npm run e2e"
   },
