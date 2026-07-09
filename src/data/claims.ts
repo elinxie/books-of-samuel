@@ -400,9 +400,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'Gilboa is rendered as the ridge-crest engagement of 1 Samuel 31, not a national army. Rendered figure groups follow the project’s disclosed ~1:10 narrated ratio; the rout is read by motion and dust rather than by headcount, and no army size is asserted for either force.',
     basis: 'design-placeholder',
     confidence: 'speculative',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'finkelstein-silberman-2001'],
     notes:
-      'The text gives no headcount for either force, and the scale of Saul’s kingdom is itself contested (see claim-david-historical, which this claim is anchored to for that debate). Nothing here fixes a "true" army size; the render only stages the crest death-group, the Philistine press, and the rout draining east as a legible defeat.',
+      'The text gives no headcount for either force, and the scale of Saul’s kingdom is itself contested (see claim-david-historical, which this claim is anchored to for that debate). Nothing here fixes a "true" army size; the render only stages the crest death-group, the Philistine press, and the rout draining east as a legible defeat. Regional demographic reconstructions (Finkelstein & Silberman estimate ~45,000 people for the entire highland hill country in the 10th century BCE) make biblically-adjacent "tens of thousands per side" readings of Iron I engagements implausible at the scale of a single regional battle, but no scholar has published a combatant estimate for Gilboa specifically, and converting a whole-region population figure into a single-muster levy size would itself be invented precision — so the render stays a disclosed abstraction rather than asserting a headcount.',
   },
   {
     id: 'claim-gilboa-rout',
