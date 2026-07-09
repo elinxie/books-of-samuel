@@ -17,18 +17,36 @@ InstancedMesh buckets per component selected by phase each frame
 `PhilistinePress` stay single-bucket (static/idle formations, no stride to
 animate). Full detail across 4 commits in `docs/run-log.md`.
 
-**Performance risk is now higher than previously flagged, not resolved.**
-The ~325-figure count (already 2.5x the original brief's 120–140 cap, see
-below) now also renders ~4x the triangles per figure (limbed geometry vs. a
-2-part capsule) and the moving groups carry 6-8x the draw calls each
-(bucket meshes vs. 1). No FPS/frame-time measurement has been taken —
-**a real `performance-reviewer` pass is not optional before this ships
-`released`,** and should probably happen before spending more build effort
-on this scene. If it's bad, the fix is likely: fewer pose buckets (e.g. 4
-instead of 6-8), reduced `defenderCount`/`engagedInfantryCount`/general
-figure-count ratios, or geometry LOD (fall back to capsules below a distance
-threshold) — not necessarily reverting the real-figure/leg-animation work
-itself.
+**Performance: measured, not just estimated — real signal, but incomplete.**
+Frame-time sampled via a headless-Chromium `requestAnimationFrame` harness
+(`performance.now()` deltas, high quality tier), comparing this session's
+final state against a `git worktree` checkout of `2a41aca` (the pre-session
+Gilboa build) at the same scene point (rout window, the one beat that exists
+unchanged in both versions): **avg frame time went from ~222ms to ~333ms, a
+~1.5x regression** — real but milder than the naive worst-case math below
+would suggest (figure count ~2.5x, per-figure triangles ~4x, draw calls
+roughly doubled ~20→~40; costs don't compound linearly here, and a large
+fixed cost — terrain/vegetation/dust, unchanged by this session — dilutes
+the relative impact).
+
+**This sandbox has no GPU** (`WEBGL_debug_renderer_info` reports `SwiftShader
+Device`, a pure CPU software rasterizer) — the absolute numbers (~3-4.5 fps
+either way) are meaningless for real hardware and were not reported as if
+they were. The ~1.5x _relative_ regression is a real, transferable signal,
+but software-rasterizer bottlenecks (fill rate, per-pixel cost) don't
+necessarily scale the same way a real GPU's would (GPUs handle instanced
+draw-call/triangle scaling far more gracefully) — so this is genuine
+evidence the change isn't catastrophic, not proof it's fine on an actual
+device. **Someone should still check the live/deployed scene on real
+hardware before calling this fully safe** — that's the one thing no
+sandboxed session here can substitute for.
+
+If a real-device check does turn up a problem, the fix is likely: fewer pose
+buckets (e.g. 4 instead of 6-8), reduced `defenderCount`/
+`engagedInfantryCount`/general figure-count ratios, or geometry LOD (fall
+back to capsules below a distance threshold) — not necessarily reverting the
+real-figure/leg-animation work itself, since the measured regression is
+modest relative to how large the underlying changes were.
 
 ## State before the rig-conversion slice (2026-07-09, post melee-combat slice)
 
@@ -98,13 +116,18 @@ Philistine plumed-headdress verification (must clear before the scene ships
 The visible-first build brief below is **complete** — do not re-run it. Next
 session's actual work is the follow-up list that fell out of the build pass:
 
-0. **(Top priority, not optional) Performance-reviewer pass**: real
-   FPS/frame-time measurement at high tier, not another self-check. Both the
-   figure-count bump (~325 vs. the brief's 120–140 cap) and the rig
-   conversion (real limbed geometry + pose-bucket draw calls, replacing
-   capsules) compound the same risk — see "State right now" above for exact
-   numbers and likely fixes if it's bad (fewer pose buckets, lower count
-   ratios, or a capsule-fallback LOD at distance).
+0. **(Still open) Real-hardware performance check.** A sandboxed relative
+   measurement is done (see "State right now" above: ~1.5x frame-time
+   regression, milder than the raw figure/triangle/draw-call multipliers
+   alone would suggest) — but it was taken on a GPU-less software renderer
+   (SwiftShader), so it's evidence the change isn't catastrophic, not proof
+   it's fine on a real device. Someone should load the actual deployed scene
+   on real hardware at high quality tier before calling this settled. If it
+   turns out bad: fewer pose buckets (4 instead of 6-8), lower
+   `defenderCount`/`engagedInfantryCount`/figure-count ratios, or a
+   capsule-fallback LOD at distance are the likely fixes — probably not
+   reverting the real-figure/leg-animation work itself, given how modest the
+   measured regression was relative to how large the underlying changes were.
 1. **ADR-009 first-visit violence advisory** (small, self-contained UI slice):
    `gilboa-battle` currently has a plain `violenceMode` toggle in the Settings
    panel (`src/ui/hud/SettingsPanel.tsx`) but no first-visit modal/advisory

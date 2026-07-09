@@ -633,3 +633,24 @@ off Finkelstein & Silberman's regional population figure, logged
 measurement has been taken at the new ~325-figure, real-geometry count — see
 `docs/next-run.md`'s item 0, now the top priority. Manual checks only
 confirmed 0 console errors and correct render, not frame time.
+
+**2026-07-09 — Sonnet 5 — sandboxed relative performance measurement**
+Followed up on the flag above. Built a headless-Chromium `requestAnimationFrame`
+timing harness (`performance.now()` deltas over a fixed window) and compared
+this session's final `gilboa-battle` state against a `git worktree` checkout
+of `2a41aca` (the pre-session build) at the same scene point (the rout beat —
+the one moment that exists unchanged in both versions), both at high quality
+tier. Result: avg frame time ~222ms → ~333ms, a **~1.5x regression** — real,
+but milder than the raw multipliers (figure count ~2.5x, triangles/figure
+~4x, draw calls roughly doubled) alone would predict; a large fixed scene
+cost (terrain/vegetation/dust, unchanged this session) dilutes the relative
+impact of what did grow.
+
+Checked the renderer before trusting the numbers: `WEBGL_debug_renderer_info`
+reports `SwiftShader Device` — this sandbox has **no GPU**, pure software
+rasterization. Absolute fps (~3-4.5 either way) is meaningless for real
+hardware and wasn't reported as if it were; the ~1.5x _relative_ delta is a
+real, likely-transferable signal (evidence this isn't catastrophic), but a
+software rasterizer's bottlenecks don't necessarily scale like a real GPU's
+would. Recorded honestly in `docs/next-run.md`: this is real measurement, not
+a substitute for someone checking the actual deployed scene on real hardware.
