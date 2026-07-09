@@ -45,12 +45,17 @@ per commit.
       `copyrightStatus`/`allowedUseNotes`.
 - [ ] Attribution hedges ("e.g., ...") are used where citations aren't page-verified.
 
-## Serves observation, not gameplay
+## Affordances serve the atlas (ADR-011)
 
-- [ ] Nothing added drifts toward combat mechanics, inventory, quests, leveling,
-      or win/loss states.
-- [ ] The user can still pause, replay, inspect, and toggle layers off to "simply
-      inhabit the scene."
+- [ ] Nothing added drifts toward fantasy systems, loot grind, power-fantasy
+      leveling, win/loss states that distort the biblical/historical material,
+      or player-driven combat mechanics (battle stays scripted reenactment,
+      ADR-009).
+- [ ] Every game-like affordance demonstrably deepens exploration, orientation,
+      learning, embodied understanding, or scene comprehension — and never
+      rewards or requires asserting something the sources don't support.
+- [ ] The user can still ignore any affordance, pause, replay, inspect, and
+      toggle layers off to "simply inhabit the scene."
 
 ## Output of a review
 

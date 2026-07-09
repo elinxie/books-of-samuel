@@ -7,8 +7,9 @@ readable human figures, stronger settlement composition, and cinematic-but-
 study-oriented viewpoints. **Assassin's Creed: Origins** is a broad quality
 _reference_ only ("what high-fidelity ancient-world atmosphere looks like") —
 no assets, maps, UI, mechanics, names, or branding are ever copied from it or
-any commercial game. This project stays an observer, not a game (see
-`CLAUDE.md`).
+any commercial game. This project stays atlas-first — game-like affordances
+only within ADR-011's constraints (see `CLAUDE.md` and
+`docs/architecture-decisions/adr-011-atlas-first-game-affordances.md`).
 
 This doc is the actionable backlog for that goal. Work it in small, single-
 session slices — see the rate-limit protocol in `docs/sonnet-continuation.md`.
@@ -27,7 +28,9 @@ one run. Check off items as they land and note the commit/PR.
   `docs/asset-roadmap.md` before a scene is marked `released`.
 - No modeled/GLB period figures before the Milestone 3 asset-pipeline pilot
   (ADR-008) — figure work here means procedural capsule improvements only.
-- No combat, inventory, quests, or win/loss state, ever.
+- No fantasy systems, loot grind, power-fantasy leveling, or win/loss states
+  that distort the biblical/historical material (ADR-011); game-like
+  affordances only where they serve exploration, orientation, or learning.
 
 ## A. Environment richness
 

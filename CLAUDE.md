@@ -4,12 +4,18 @@ Guidance for any Claude Code session working in this repository.
 
 ## What this project is
 
-A historically serious, first-person, neutral-observer 3D visualizer for the world
-of 1–2 Samuel — not a game. No combat mechanics, inventory, leveling, quests, or
-win/loss states. The user observes, navigates, pauses, and replays scripted
-reenactments in reconstructed historical settings, with every visual element
-traceable to biblical text, archaeology, comparative ancient Near Eastern evidence,
-a named scholarly reconstruction, or a clearly labeled placeholder.
+An **atlas-first historical world** for 1–2 Samuel: historically serious,
+first-person, neutral-observer. It may include game-like affordances when they
+deepen exploration, orientation, learning, embodied understanding, or scene
+comprehension — guided paths, interactable labels, optional study objectives,
+map/route progression, NPC presence, scripted reenactments, replayable scenes,
+environmental discovery, non-combat learning interactions, light
+orientation/learning progression are all allowed (ADR-011). These affordances
+must never override historical traceability, biblical/textual integrity,
+scholarly uncertainty, atlas usability, or the source/claim discipline. Every
+visual element stays traceable to biblical text, archaeology, comparative
+ancient Near Eastern evidence, a named scholarly reconstruction, or a clearly
+labeled placeholder.
 
 ## Start here
 
@@ -27,6 +33,11 @@ Do not skip straight to writing code — `docs/next-run.md` and
 
 - No proprietary game assets, trademarks, mechanics, maps, names, or UI patterns
   copied from any commercial game or franchise.
+- Game-like affordances only within ADR-011's allow-list
+  (`docs/architecture-decisions/adr-011-atlas-first-game-affordances.md`).
+  Fantasy systems, loot grind, leveling as power fantasy, win/loss states that
+  distort the biblical/historical material, and unsourced invented certainty
+  stay out without a separate Fable approval.
 - No full ESV chapter text stored or displayed — references, original summaries,
   and short excerpts only (budget enforced by `src/data/integrity.test.ts`). See
   `docs/architecture-decisions/adr-003-esv-policy.md`.
