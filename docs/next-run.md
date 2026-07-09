@@ -21,11 +21,12 @@ starts).
 
 1. **Build `gilboa-battle`** (Sonnet/`threejs-engineer`), following
    `docs/design/gilboa-battle-brief.md` exactly:
-   - Implement the `ridge` `TerrainSpec` feature in `src/engine/terrain.ts`
-     (ADR-005 anticipated this, not yet built) — do not fake a ridge by
-     stacking `mound`s. Then `src/scenes/gilboa-battle/terrain.ts`.
+   - Continue after the landed terrain slice: `ridge` `TerrainSpec` support exists in
+     `src/engine/terrain.ts`, and `src/scenes/gilboa-battle/terrain.ts` defines the
+     first procedural Gilboa ridge (do not replace it with stacked `mound`s). Next
+     wire the scene build around this terrain.
    - New claims per the brief's "Required source basis": topography/terrain
-     (`claim-gilboa-topography`, `claim-gilboa-terrain-form`), narrated beats
+     (`claim-gilboa-topography`, `claim-gilboa-terrain-form`) are seeded; add the narrated beats
      (`claim-gilboa-rout`, `claim-sons-killed`, `claim-saul-wounded-archers`,
      `claim-armor-bearer-refusal`, `claim-saul-death`), material culture
      (`claim-philistine-kit` with the headdress `scholarlyViews` dispute,

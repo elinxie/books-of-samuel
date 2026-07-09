@@ -475,3 +475,20 @@ Next: see `docs/next-run.md`.
   not the build); annotated #11's resolution with a pointer to this brief.
 
 Next: build `gilboa-battle` — see `docs/next-run.md`.
+
+**2026-07-09 — Codex — Gilboa terrain primitive slice**
+
+- Implemented ADR-005 `ridge` `TerrainSpec` support in `src/engine/terrain.ts`:
+  one elongated gaussian rise between two endpoints, with validation and unit
+  coverage. Added `src/scenes/gilboa-battle/terrain.ts` + terrain tests for the
+  1 Sam 31 ridge: crest near origin, lower northern approach, eastern rout slope.
+- Seeded `claim-gilboa-topography`, `claim-gilboa-terrain-form`, and
+  `asset-terrain-gilboa-ridge`; updated progress/asset roadmap/next-run.
+- Checks: `npm run test -- src/engine/terrain.test.ts src/scenes/gilboa-battle/terrain.test.ts`
+  passed. `npm run verify` passed through format/lint/unit/build, then e2e was
+  blocked by the missing Playwright browser in this container; `npx playwright
+install chromium` also failed with CDN 403.
+
+Next: wire `gilboa-battle` scene composition around the new terrain; then add
+narrated beat claims, light character entries, kit attachments, pose buckets,
+and violence-mode UI per `docs/design/gilboa-battle-brief.md`.

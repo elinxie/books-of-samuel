@@ -90,8 +90,8 @@ revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 `docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
 `src/data/scenes.ts` (status stays `planned` — no build yet). Scope: 1 Sam
 31:1–6 only (rout + death sequence); wall-display/stripping belongs to
-`beth-shan-walls`. Key calls: `ridge` `TerrainSpec` feature required (ADR-005,
-not yet implemented); procedural terrain for v1, DEM deferred (queue #12
+`beth-shan-walls`. Key calls: `ridge` `TerrainSpec` feature required (ADR-005; engine primitive
+and first Gilboa terrain spec landed 2026-07-09); procedural terrain for v1, DEM deferred (queue #12
 opened); Israelite/Philistine dress differentiated conservatively, plumed
 Philistine headdress on principals only behind a dispute label (queue #13
 opened, must clear before `released`); ADR-010's procedural rig already

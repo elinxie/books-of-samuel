@@ -30,6 +30,8 @@ export type TerrainFeature =
   | { kind: 'flatten'; center: [number, number]; radius: number; strength: number }
   /** Directional smoothstep fall: drops `drop` meters between projections start→end. */
   | { kind: 'ramp'; direction: [number, number]; start: number; end: number; drop: number }
+  /** Elongated gaussian rise between two points — ridges, spurs, long hills. */
+  | { kind: 'ridge'; start: [number, number]; end: [number, number]; width: number; height: number }
   /** Carved bed along a polyline — wadis, stream channels. `width` is bank to bank. */
   | { kind: 'channel'; path: [number, number][]; width: number; depth: number };
 
@@ -110,6 +112,12 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     if (f.kind === 'ramp' && f.direction[0] === 0 && f.direction[1] === 0) {
       throw new Error('terrain ramp needs a nonzero direction');
     }
+    if (f.kind === 'ridge') {
+      const len = Math.hypot(f.end[0] - f.start[0], f.end[1] - f.start[1]);
+      if (len === 0 || f.width <= 0) {
+        throw new Error('terrain ridge needs distinct start/end points and a positive width');
+      }
+    }
     if (f.kind === 'channel' && (f.path.length < 2 || f.width <= 0)) {
       throw new Error('terrain channel needs a path of >= 2 points and a positive width');
     }
@@ -123,6 +131,7 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     });
   const flattens = features.filter((f) => f.kind === 'flatten');
   const mounds = features.filter((f) => f.kind === 'mound');
+  const ridges = features.filter((f) => f.kind === 'ridge');
   const channels = features.filter((f) => f.kind === 'channel');
 
   function heightAt(x: number, z: number): number {
@@ -148,6 +157,10 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     }
     for (const f of ramps) {
       h += -f.drop * smoothstepRange(f.start, f.end, x * f.dirX + z * f.dirZ);
+    }
+    for (const f of ridges) {
+      const d = distanceToPolyline(x, z, [f.start, f.end]);
+      h += f.height * Math.exp(-(d * d) / (2 * f.width * f.width));
     }
     for (const f of channels) {
       const d = distanceToPolyline(x, z, f.path);

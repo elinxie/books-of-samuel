@@ -39,6 +39,12 @@ file locations, and the licensing policy live in
 | `asset-water-pool`    | Standing water in wadi-bed low points                | Static low-poly mesh, no real-time water sim; water level unstated in text (design placeholder) | M4         |
 | `asset-pack-donkeys`  | Baggage animals at the north-bank laager             | Simple low-poly instanced quadruped form                                                        | M3         |
 
+## Current placeholders (gilboa-battle scene, Milestone 3, terrain slice started 2026-07-09)
+
+| Asset                        | Represents                                                | Why temporary                                                       | Replace at |
+| ---------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------- | ---------- |
+| `asset-terrain-gilboa-ridge` | Mount Gilboa ridge, northern approach, eastern rout slope | Procedural ridge + hills, not DEM-derived from Jebel Faqqu’a/Gilboa | M4         |
+
 ## Current placeholders (amalekite-camp scene, Milestone 2, built 2026-07-08)
 
 | Asset                            | Represents                                            | Why temporary                                                                                                   | Replace at        |
