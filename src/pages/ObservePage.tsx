@@ -12,6 +12,8 @@ import { BesorCrossingScene } from '../scenes/besor-crossing/BesorCrossingScene'
 import { BESOR_TERRAIN } from '../scenes/besor-crossing/terrain';
 import { AmalekiteCampScene } from '../scenes/amalekite-camp/AmalekiteCampScene';
 import { AMALEKITE_CAMP_TERRAIN } from '../scenes/amalekite-camp/terrain';
+import { GilboaBattleScene } from '../scenes/gilboa-battle/GilboaBattleScene';
+import { GILBOA_TERRAIN } from '../scenes/gilboa-battle/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 
@@ -24,6 +26,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'ziklag-aftermath': { component: ZiklagScene, terrain: ZIKLAG_TERRAIN },
   'besor-crossing': { component: BesorCrossingScene, terrain: BESOR_TERRAIN },
   'amalekite-camp': { component: AmalekiteCampScene, terrain: AMALEKITE_CAMP_TERRAIN },
+  'gilboa-battle': { component: GilboaBattleScene, terrain: GILBOA_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

@@ -376,7 +376,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'mount-gilboa',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'planned',
+    status: 'in-progress',
     synopsis:
       'The battle on the ridge above the Jezreel Valley: Israel’s rout, the deaths of Jonathan, Abinadab, and Malchi-shua, and Saul’s end. To be rendered honestly but without sensationalism, with a reduced-intensity mode.',
     durationSec: 150,
@@ -473,8 +473,8 @@ export const SCENES: SceneDef[] = [
         lookAt: [70, 0, 30],
       },
     ],
-    claimIds: [],
-    assetIds: [],
+    claimIds: ['claim-gilboa-topography', 'claim-gilboa-terrain-form'],
+    assetIds: ['asset-terrain-gilboa-ridge'],
   },
   {
     id: 'beth-shan-walls',
