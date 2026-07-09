@@ -39,6 +39,12 @@ Added in the 2026-07-07 Fable review session:
 | Violence depiction default (standard + first-visit advisory)                     | `docs/architecture-decisions/adr-009-violence-depiction-defaults.md`  |
 | Camel depiction (render, flight beat only); Ziklag plan/ratio/lighting confirmed | `docs/fable-review-queue.md` Resolved, `docs/uncertainty-register.md` |
 
+Added in the 2026-07-09 policy session (user-directed):
+
+| Decision                                                                                     | Where it's recorded                                                   |
+| -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Atlas-first scope with constrained game-like affordances (replaces the blanket "not a game") | `docs/architecture-decisions/adr-011-atlas-first-game-affordances.md` |
+
 Why these choices: see the individual ADRs — each states the alternatives
 considered and the consequences, not just the conclusion.
 
@@ -51,7 +57,10 @@ considered and the consequences, not just the conclusion.
 - The `ReconstructionClaim`/`ClaimBasis`/`Confidence` taxonomy shape.
 - The ESV excerpt budget and no-full-text policy.
 - The milestone order (1 Sam 30 → 31 → 2 Sam 1–2 → onward chapter by chapter).
-- The "observer, not game" scope boundary (no combat/inventory/quests/win-states).
+- The atlas-first scope boundary (ADR-011): game-like affordances only within
+  its allow-list; fantasy systems, loot grind, power-fantasy leveling, win/loss
+  states that distort the material, and unsourced invented certainty stay out
+  without a separate Fable approval.
 
 **Sonnet (or any capable coding model) may change freely:**
 
@@ -73,8 +82,8 @@ about historical/creative direction rather than an execution detail.
 
 1. **Milestone sign-off review** — once a milestone's scenes are built and tested,
    one Fable pass checking historical plausibility, anachronisms, visual coherence,
-   performance risk, source traceability, and "does this serve observation not
-   gameplay" (checklist: `docs/fable-review-checklist.md`). Batch this — don't
+   performance risk, source traceability, and "do the affordances serve the
+   atlas per ADR-011" (checklist: `docs/fable-review-checklist.md`). Batch this — don't
    review scene-by-scene if a milestone has several.
 2. **Data-model or taxonomy changes** — adding a sixth `ClaimBasis`, changing what
    `confidence` means, restructuring `SceneDef`, etc.

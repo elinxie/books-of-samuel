@@ -6,10 +6,15 @@ Code, `CLAUDE.md` governs and this file adds nothing new.
 
 ## What this project is
 
-A historically serious, first-person, neutral-observer 3D visualizer for the
-world of 1–2 Samuel — not a game. No combat mechanics, inventory, leveling,
-quests, or win/loss states. Every visual element must trace to biblical text,
-archaeology, comparative ancient Near Eastern evidence, a named scholarly
+An **atlas-first historical world** for 1–2 Samuel: historically serious,
+first-person, neutral-observer. Game-like affordances are allowed when they
+deepen exploration, orientation, learning, embodied understanding, or scene
+comprehension (allow-list in
+`docs/architecture-decisions/adr-011-atlas-first-game-affordances.md`); fantasy
+systems, loot grind, leveling as power fantasy, win/loss states that distort
+the biblical/historical material, and unsourced invented certainty stay out
+without separate Fable approval. Every visual element must trace to biblical
+text, archaeology, comparative ancient Near Eastern evidence, a named scholarly
 reconstruction, or a clearly labeled placeholder.
 
 ## Read before working

@@ -4,10 +4,15 @@ A historically serious, first-person, neutral-observer 3D visualizer for the wor
 of 1–2 Samuel — the world around David, Saul, Israel, Judah, Philistia, Amalekite
 raiding, frontier settlements, and the early monarchy's political geography.
 
-This is **not** a game. There is no combat, inventory, leveling, or win/loss state.
-You enter as an invisible observer, walk or orbit a reconstructed scene, replay
-scripted reenactments, and study — with every visual element traceable to biblical
-text, archaeology, comparative ancient Near Eastern evidence, a named scholarly
+This is an **atlas-first historical world**, not a conventional game. You enter as
+a first-person observer, walk or orbit a reconstructed scene, follow routes, replay
+scripted reenactments, and study. Game-like affordances — guided paths,
+interactable labels, optional study objectives, environmental discovery — appear
+only where they deepen exploration, orientation, or learning, and never at the
+expense of historical honesty. There are no fantasy systems, no loot, no
+power-fantasy leveling, and no win/loss states that distort the biblical or
+historical material. Every visual element is traceable to biblical text,
+archaeology, comparative ancient Near Eastern evidence, a named scholarly
 reconstruction, or a clearly labeled placeholder.
 
 **Live site:** https://elinxie.github.io/books-of-samuel/ (once GitHub Pages is

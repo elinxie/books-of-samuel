@@ -13,7 +13,7 @@ camera (inspect+walk), quality profiles, full HUD (settings/teleport/inspector/
 certainty panels), all study pages (landing/progress/features/sources/method),
 unit tests (integrity/store/reenactment). Not yet done at handoff: e2e tests,
 CI/deploy workflows, continuation docs (progress/next-run/run-log/model-handoff/
-sonnet-continuation/fable-review-*/ADRs), `.claude/agents`, `.claude/commands`,
+sonnet-continuation/fable-review-\*/ADRs), `.claude/agents`, `.claude/commands`,
 CLAUDE.md, real README. Handed off mid-build to Sonnet due to Fable usage limits.
 
 **2026-07-06 — Sonnet 5 — continuation session 1**
@@ -493,6 +493,31 @@ Next: wire `gilboa-battle` scene composition around the new terrain; then add
 narrated beat claims, light character entries, kit attachments, pose buckets,
 and violence-mode UI per `docs/design/gilboa-battle-brief.md`.
 
+**2026-07-09 — Fable 5 (scheduled web job) — scope policy: atlas-first + game affordances**
+
+- User-directed policy change: blanket "not a game" replaced by **atlas-first
+  historical world with constrained game-like affordances**. Recorded as
+  ADR-011 (`docs/architecture-decisions/adr-011-atlas-first-game-affordances.md`).
+  Allowed: first-person nav, guided paths, interactable labels, optional study
+  objectives, map/route progression, NPC presence, scripted reenactments,
+  replayable scenes, environmental discovery, non-combat learning
+  interactions, light orientation/learning progression. Still out without
+  separate Fable approval: fantasy systems, loot grind, power-fantasy
+  leveling, distorting win/loss states, unsourced invented certainty,
+  player-driven combat. Claims/sources/anachronism/ESV/violence discipline
+  unchanged.
+- Updated: CLAUDE.md, AGENTS.md, README.md, docs/model-handoff.md ("Fixed for
+  now" + decision table), docs/fable-review-checklist.md (§ renamed
+  "Affordances serve the atlas"), docs/visual-fidelity-roadmap.md,
+  .claude/agents/fable-architect.md, docs/next-run.md (Gilboa visible-first
+  build handoff, 5 slices).
+- Deferred to next-run follow-ups: UI copy in LandingPage/SiteChrome/
+  FeaturesPage still says "not a game" (small ui-engineer task).
+- Checks: prettier format:check on changed files only; lint/test/build/e2e
+  intentionally skipped — docs/config-only diff, no runtime surface.
+
+Next: build `gilboa-battle` visible-first — see `docs/next-run.md`.
+
 **2026-07-09 — Sonnet 5 — Gilboa build, Steps 1–5 (scene shell through atmosphere)**
 
 Scheduled job; no Fable policy-change branch existed (checked — CLAUDE.md/AGENTS.md
@@ -548,3 +573,14 @@ not independently re-verified this session beyond the manual console-error
 check above).
 
 Next: see `docs/next-run.md`.
+
+**2026-07-09 — Sonnet 5 — merge reconciliation (policy branch × Gilboa build branch)**
+Fable's scope-policy job (ADR-011, above) and this session's Gilboa build ran on
+diverged branches — the build session's own note above records it checked for
+and didn't find the policy branch. Merged `main` (carrying the completed
+`gilboa-battle` build) into the policy branch; only `docs/next-run.md` and this
+file conflicted (both edited the "state right now" / handoff section same-day).
+No code conflicts — ADR-011 touched docs/config only. Resolved by keeping
+ADR-011's policy files as-is and rewriting `next-run.md`'s state/handoff section
+to reflect that `gilboa-battle` is now built (`in-progress`, not `planned`),
+carrying forward the build session's follow-up list as the actual next steps.
