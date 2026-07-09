@@ -1,5 +1,5 @@
 import { useAppStore } from '../../state/store';
-import type { QualityMode, NavMode } from '../../state/store';
+import type { QualityMode, NavMode, ViolenceMode } from '../../state/store';
 import { QUALITY_PROFILES } from '../../engine/quality';
 
 /** Navigation mode, quality mode, and the study-layer toggles. */
@@ -78,6 +78,35 @@ export function SettingsPanel() {
         'toggle-theological',
         true,
       )}
+
+      <h3>Violence rendering</h3>
+      <p className="panel-sub">
+        Battle and death-sequence scenes (e.g. Mount Gilboa) follow one choreography in two
+        treatments — reduction abstracts how a moment is shown, never the facts. No gore or
+        dismemberment in either mode.
+      </p>
+      <div className="radio-row">
+        {(
+          [
+            ['standard', 'Standard', 'Restrained, documentary-distance transitions.'],
+            ['reduced', 'Reduced', 'Animated transitions elided; cuts to the resulting pose.'],
+          ] as [ViolenceMode, string, string][]
+        ).map(([mode, label, desc]) => (
+          <label key={mode}>
+            <input
+              type="radio"
+              name="violenceMode"
+              checked={s.violenceMode === mode}
+              data-testid={`violence-${mode}`}
+              onChange={() => s.setViolenceMode(mode)}
+            />
+            <span>
+              {label}
+              <span className="radio-desc">{desc}</span>
+            </span>
+          </label>
+        ))}
+      </div>
 
       <h3>Navigation</h3>
       <div className="radio-row">

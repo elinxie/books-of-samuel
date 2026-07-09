@@ -170,6 +170,54 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M4',
   },
   {
+    id: 'asset-figure-fallen',
+    name: 'Fallen/prone pose transform',
+    represents:
+      'The Gilboa death sequence and rout: sons overtaken, Saul wounded/kneeling and fallen, the armor-bearer following, and routing figures who crumple at distance',
+    placeholder: true,
+    whyTemporary:
+      'A body-orientation/collapse transform (rotation + non-uniform scale) applied to the existing ADR-010 procedural rig, not a distinct fallen-body mesh or skeletal animation clip — see the pure pose functions in src/scenes/gilboa-battle/poses.ts. No wound, blood, or dismemberment geometry in either violence-rendering mode (ADR-009).',
+    historicalRequirements:
+      'A modeled prone/collapsed pose bucket on the ADR-010 rig (baked geometry per detail tier), and/or skeletal fall animation, once the character pipeline supports it beyond the current rigid-transform approach.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-military-kit-israelite',
+    name: 'Israelite military-kit attachments (spear, oval shield, bow)',
+    represents:
+      'Simple, non-uniform arms on Israelite combatants at Gilboa — spear, oval shield, and a minority of bows on the retinue; spear + shield on Saul, his sons, and his armor-bearer as marginally-better-equipped principals',
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/sphere primitive geometry (see src/scenes/gilboa-battle/kitMeshes.ts), attached as InstancedMesh instances at a fixed offset from a representative joint position on the existing ADR-010 rig — not modeled weapon/shield assets and not bound to a specific excavated Israelite panoply. No sword is rendered on Israelite figures; the brief specifies swords for Philistines only.',
+    historicalRequirements:
+      'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-military-kit-philistine',
+    name: 'Philistine military-kit attachments (round shield, straight sword, bow, plumed headdress)',
+    represents:
+      'The Philistine force’s distinct kit profile — bow on the forward archer element; round shield + straight sword on infantry and the kit-differentiated principal cluster; a plumed/feathered headdress (Medinet Habu "Sea Peoples" marker) on the principal cluster only',
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/sphere/torus primitive geometry (see src/scenes/gilboa-battle/kitMeshes.ts), attached as InstancedMesh instances, not modeled weapon/shield/headdress assets. The headdress in particular carries a disputed ethnic/temporal attribution (Egyptian Medinet Habu relief, c. 1175 BCE, applied here to Iron I/IIA highland warfare) — see claim-philistine-kit’s scholarlyViews and docs/fable-review-queue.md item #13, which requires source page-verification before this scene ships released. It is rendered on the small kit-differentiated principal cluster only, never on crowd/infantry/archer instances, as the provisional, disclosed default.',
+    historicalRequirements:
+      'Modeled weapon/shield forms from a defensible comparative-ANE/Aegean-influenced assemblage, and a resolved (not provisional) citation for the headdress attribution and its applicability to this context, once fable-review-queue item #13 clears.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-dust-motion',
+    name: 'Rout-dust GPU sprite system',
+    represents:
+      'Dust kicked up by the mass movement of the routing Israelites draining down the eastern slope, and (lighter density) the Philistine press climbing the northern slope — the visual device the brief assigns to carry the scale of the defeat in place of a blow-by-blow crowd (illustrates claim-gilboa-rout, claim-battle-scale; not a new claim of its own)',
+    placeholder: true,
+    whyTemporary:
+      'A stylized GPU point-sprite field (one shared shader material, vertex-displaced drift keyed to scene time, in the manner of ziklag/SmokeColumns.tsx — see src/scenes/gilboa-battle/RoutDust.tsx), not a physical dust/particle simulation. Density and drift direction are seeded and hand-tuned to the rout/press footprints, not derived from any period-specific account of visibility or weather.',
+    historicalRequirements:
+      'None achievable beyond stylization — no historical record specifies dust density or drift; any upgrade is a visual-fidelity improvement only (e.g. a true GPU particle-simulation pass), not a claim-driven replacement.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-water-pool',
     name: 'Standing pool meshes',
     represents: 'Standing water in low points of the braided wadi bed',

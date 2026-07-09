@@ -394,6 +394,104 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Nothing in the text or archaeology fixes the camp’s population; the render only needs to communicate "a camp larger than the force that escapes it." Captives are shown as a distinct grouped cluster among the sprawl.',
   },
+  {
+    id: 'claim-battle-scale',
+    statement:
+      'Gilboa is rendered as the ridge-crest engagement of 1 Samuel 31, not a national army. Rendered figure groups follow the project’s disclosed ~1:10 narrated ratio; the rout is read by motion and dust rather than by headcount, and no army size is asserted for either force.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text gives no headcount for either force, and the scale of Saul’s kingdom is itself contested (see claim-david-historical, which this claim is anchored to for that debate). Nothing here fixes a "true" army size; the render only stages the crest death-group, the Philistine press, and the rout draining east as a legible defeat.',
+  },
+  {
+    id: 'claim-gilboa-rout',
+    statement:
+      'The narrative states that the men of Israel fled before the Philistines and fell down slain on Mount Gilboa (1 Samuel 31:1).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Rendered as a rout draining down the eastern slope, read by motion and dust rather than by headcount (see claim-battle-scale); a seeded fraction of routing figures fall at distance in standard mode, per ADR-009.',
+  },
+  {
+    id: 'claim-sons-killed',
+    statement:
+      'The narrative names three sons of Saul — Jonathan, Abinadab, and Malchi-shua — as killed by the Philistines on Mount Gilboa (1 Samuel 31:2).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Rendered at the distance of the melee, without wound or blood geometry in any mode; the deaths are read by the line collapsing over them, not by a depicted strike (ADR-009).',
+  },
+  {
+    id: 'claim-saul-wounded-archers',
+    statement:
+      'The narrative states that the battle pressed hard against Saul, the archers found him, and he was badly wounded by the archers (1 Samuel 31:3).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Rendered as Saul staggering/going to one knee; no wound or blood geometry in any mode. In reduced mode the hit itself is elided — he is simply down/faltering by the next beat (ADR-009).',
+  },
+  {
+    id: 'claim-armor-bearer-refusal',
+    statement:
+      'The narrative states that the badly wounded Saul asked his armor-bearer to draw his sword and run him through so the uncircumcised Philistines would not abuse him; the armor-bearer would not, for he feared greatly; Saul then took his own sword and fell on it; and when the armor-bearer saw that Saul was dead, he too fell on his own sword and died with him (1 Samuel 31:4–5).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The refusal is the death sequence’s emotional pivot and is staged identically in both violence modes (a gesture/orientation beat, no violence). Saul’s death and the armor-bearer following him are rendered at documentary distance — the act understood, never shown graphically; no blade-entry geometry, no blood, in any mode. Reduced mode elides the animated fall and cuts to the resulting still pose (ADR-009).',
+  },
+  {
+    id: 'claim-saul-death',
+    statement:
+      'The narrative states that Saul, his three sons, his armor-bearer, and all his men died together that same day (1 Samuel 31:6).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Staged as the scene’s closing beat: the ridge emptied and quiet at dusk, with a forward-pointing (not depicted) card toward the next-day events at Beth-shan (1 Samuel 31:8–10, out of scope for this scene).',
+  },
+  {
+    id: 'claim-israelite-muster-kit',
+    statement:
+      'Israelite combatants at Gilboa are equipped with simple, non-uniform arms over the generic tunic/cloak base — spears, oval shields, and a minority of bows — with Saul, his sons, and his armor-bearer carrying marginally more/better kit (spear and shield) than the generic retinue. No standing army, uniform equipment, or fixed unit organization is asserted.',
+    basis: 'biblical-text',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible', 'yadin-1963', 'king-stager-2001'],
+    notes:
+      'The archers who find Saul are named in the text (1 Samuel 31:3), so bows are load-bearing rather than decorative; spear and shield are the baseline comparative-ANE assumption for Iron I–IIA highland combatants (Yadin 1963; King & Stager 2001), not a specific excavated Israelite panoply. Kit is deliberately non-uniform per figure (see `assignRetinueKit` in the scene code) — the render does not claim a documented "Israelite uniform".',
+  },
+  {
+    id: 'claim-philistine-kit',
+    statement:
+      'The Philistine force at Gilboa is rendered with a distinct kit profile — round shields and straight swords for infantry and principals, and a forward archer element carrying bows. A plumed/feathered headdress (the Medinet Habu "Sea Peoples" marker) is rendered on the small kit-differentiated principal cluster only, never on crowd/infantry/archer instances.',
+    basis: 'comparative-ane',
+    confidence: 'low',
+    sourceIds: ['king-stager-2001', 'yadin-1963'],
+    scholarlyViews: [
+      {
+        id: 'view-philistine-headdress-sea-peoples-marker',
+        label: 'Plumed headdress as a genuine Sea Peoples/Philistine material-culture marker',
+        summary:
+          'The feathered/plumed headdress is the best-attested and most widely reproduced Philistine visual signifier, drawn from the Egyptian Medinet Habu reliefs of Ramesses III (c. 1175 BCE) depicting "Sea Peoples" including the Peleset (Philistines); omitting it from a Philistine-force rendering is its own distortion of the best-known iconographic evidence.',
+        confidence: 'moderate',
+        sourceIds: ['yadin-1963'],
+      },
+      {
+        id: 'view-philistine-headdress-attribution-contested',
+        label: 'Ethnic/temporal application to this scene is unverified',
+        summary:
+          'Medinet Habu is Egyptian royal propaganda relief art, not a Philistine self-representation, and it dates to c. 1175 BCE — a century-plus before the Gilboa battle of the traditional Saul narrative and geographically set in Egypt/the Delta frontier, not the Jezreel highlands. Whether the headdress persisted as worn battlefield gear into Iron I/IIA highland warfare at Gilboa specifically is unverified in the excavated record cited here and page-level citation-checking is queued (`docs/fable-review-queue.md` item #13) before this scene ships `released`.',
+        confidence: 'low',
+        sourceIds: ['king-stager-2001'],
+      },
+    ],
+    notes:
+      'Round shield and straight sword are the baseline comparative-ANE/Aegean-influenced assumption for Philistine coastal-plain combatants (Yadin 1963; King & Stager 2001), not a specific excavated Gilboa-context panoply — moderate/low confidence throughout. The headdress dispute is the single most consequential material-culture call in this scene: rendering it only on the small principal cluster, behind this scholarlyViews label, is the provisional default agreed for build; it is not a resolved attribution. No "Philistine uniform" is asserted.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

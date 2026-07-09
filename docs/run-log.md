@@ -517,3 +517,70 @@ and violence-mode UI per `docs/design/gilboa-battle-brief.md`.
   intentionally skipped — docs/config-only diff, no runtime surface.
 
 Next: build `gilboa-battle` visible-first — see `docs/next-run.md`.
+
+**2026-07-09 — Sonnet 5 — Gilboa build, Steps 1–5 (scene shell through atmosphere)**
+
+Scheduled job; no Fable policy-change branch existed (checked — CLAUDE.md/AGENTS.md
+still state the blanket "not a game" scope, `model-handoff.md` still lists it
+"Fixed for now"), so continued the already-planned Gilboa build per `next-run.md`
+instead. Five sequential `threejs-engineer` subagent slices, each reviewed,
+build/lint/vitest-checked, committed, and pushed individually:
+
+1. **Scene shell** (`16ae41e`): wired `GILBOA_TERRAIN` into a rendered scene
+   (`GilboaBattleScene.tsx`, `GroundWorks`, elevation-driven `Vegetation`, entity
+   labels, fixed dawn lighting/fog), registered in `ObservePage`'s
+   `SCENE_REGISTRY`, `status: 'planned' → 'in-progress'`.
+2. **Battlefield population** (`fe9bd5c`): ~127 figures at high tier (crest
+   retinue ~13, Philistine archers ~14 + infantry ~45 + principals ~5, routing
+   Israelites ~45) via pure seeded slot builders (`layout.ts`), reusing the
+   ADR-010 rig. Added `claim-battle-scale` + 4 light character entries
+   (Jonathan, Abinadab, Malchi-shua, Saul's armor-bearer).
+3. **Pose choreography** (`e0bb4ad`): beat-driven death sequence/rout (`poses.ts`,
+   pure functions of scene time) — sons overtaken, retinue collapse ripple, Saul
+   staggering/kneeling/falling, the armor-bearer's refusal (identical in both
+   modes, the emotional pivot) and following, seeded rout falls. Added the 5
+   narrated-beat claims and a `violenceMode` ('standard'/'reduced') store field +
+   Settings-panel toggle per ADR-009 — **no first-visit advisory modal yet**,
+   flagged as a gap.
+4. **Military kit** (`a8bd196`): primitive-geometry spear/shield/bow/round-shield/
+   straight-sword/headdress attachments as `InstancedMesh`, riding the same
+   per-instance transforms as figure poses. Headdress renders on Philistine
+   principal-tier only, behind `claim-philistine-kit`'s two-view `scholarlyViews`
+   dispute (fable-review-queue #13 stays open, untouched, pending citation
+   verification before `released`).
+5. **Atmosphere** (`65fa645`): rout-dust GPU point-sprite system (one shared
+   material, `SmokeColumns.tsx`-style vertex displacement), footprints reused
+   from the same slot builders the figures use, intensity a pure function of
+   scene time tied to the beat timeline.
+
+Checks per slice: `npm run build` + targeted `npx eslint` + full `npx vitest run`
+(fast, ~15 files) after each. Ran the full gate once at the end instead of
+per-slice: `npx vitest run` (117/117 passed), `npm run build` (clean), and
+`npm run e2e` (7/7 passed, `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`)
+— plus a manual `vite preview` + headless-Chromium console-error check of
+`/observe/gilboa-battle` specifically (not covered by the existing e2e specs),
+0 console errors, canvas renders. **Full `npm run verify` (format:check +
+lint + test + build + e2e as one gate) was not run as a single command** —
+its constituent checks were all run individually above; noting this explicitly
+per the run's instructions since `verify` itself wasn't invoked.
+
+Known gaps carried forward (not blockers for this pass, tracked for later):
+ADR-009 first-visit violence advisory modal; fable-review-queue #13 (headdress
+citation page-verification) before `released`; `PhilistinePress.tsx`
+kit/instance-count growth across steps may be worth a `performance-reviewer`
+pass now that all 5 slices run concurrently (flagged by the Step 4/5 agents,
+not independently re-verified this session beyond the manual console-error
+check above).
+
+Next: see `docs/next-run.md`.
+
+**2026-07-09 — Sonnet 5 — merge reconciliation (policy branch × Gilboa build branch)**
+Fable's scope-policy job (ADR-011, above) and this session's Gilboa build ran on
+diverged branches — the build session's own note above records it checked for
+and didn't find the policy branch. Merged `main` (carrying the completed
+`gilboa-battle` build) into the policy branch; only `docs/next-run.md` and this
+file conflicted (both edited the "state right now" / handoff section same-day).
+No code conflicts — ADR-011 touched docs/config only. Resolved by keeping
+ADR-011's policy files as-is and rewriting `next-run.md`'s state/handoff section
+to reflect that `gilboa-battle` is now built (`in-progress`, not `planned`),
+carrying forward the build session's follow-up list as the actual next steps.

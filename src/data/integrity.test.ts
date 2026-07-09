@@ -20,6 +20,7 @@ import {
 import { ZIKLAG_ENTITIES } from '../scenes/ziklag/entities';
 import { BESOR_CROSSING_ENTITIES } from '../scenes/besor-crossing/entities';
 import { AMALEKITE_CAMP_ENTITIES } from '../scenes/amalekite-camp/entities';
+import { GILBOA_BATTLE_ENTITIES } from '../scenes/gilboa-battle/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -44,6 +45,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(ZIKLAG_ENTITIES);
     uniqueIds(BESOR_CROSSING_ENTITIES);
     uniqueIds(AMALEKITE_CAMP_ENTITIES);
+    uniqueIds(GILBOA_BATTLE_ENTITIES);
   });
 });
 
@@ -212,6 +214,14 @@ describe('features and scene entities', () => {
 
   it('Amalekite-camp entity labels resolve to claims', () => {
     for (const e of AMALEKITE_CAMP_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Gilboa-battle entity labels resolve to claims', () => {
+    for (const e of GILBOA_BATTLE_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }
