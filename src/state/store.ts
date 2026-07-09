@@ -7,6 +7,14 @@ import { ZIKLAG_TERRAIN } from '../scenes/ziklag/terrain';
 export type QualityMode = 'study' | 'balanced' | 'high';
 export type NavMode = 'inspect' | 'walk';
 export type PanelId = 'none' | 'settings' | 'teleport' | 'inspector' | 'certainty';
+/**
+ * Violence-rendering treatment (ADR-009): one choreography, two treatments.
+ * `standard` shows restrained, documentary-distance transitions (no gore/
+ * dismemberment in either mode); `reduced` abstracts the depiction further by
+ * eliding animated transitions and cutting to the resulting pose. Standard is
+ * the default (fable-review-queue register #6).
+ */
+export type ViolenceMode = 'standard' | 'reduced';
 
 export interface TeleportTarget {
   position: [number, number, number];
@@ -25,6 +33,7 @@ interface AppState {
   navMode: NavMode;
   hudHidden: boolean;
   activePanel: PanelId;
+  violenceMode: ViolenceMode;
 
   // Scene playback
   sceneId: string;
@@ -43,6 +52,7 @@ interface AppState {
   setNavMode: (m: NavMode) => void;
   toggleHud: () => void;
   setActivePanel: (p: PanelId) => void;
+  setViolenceMode: (m: ViolenceMode) => void;
 
   setScene: (id: string) => void;
   setTerrain: (terrain: Terrain) => void;
@@ -70,6 +80,7 @@ export const useAppStore = create<AppState>()(
       navMode: 'inspect',
       hudHidden: false,
       activePanel: 'none',
+      violenceMode: 'standard',
 
       sceneId: DEFAULT_SCENE_ID,
       terrain: ZIKLAG_TERRAIN,
@@ -86,6 +97,7 @@ export const useAppStore = create<AppState>()(
       setNavMode: (navMode) => set({ navMode }),
       toggleHud: () => set((s) => ({ hudHidden: !s.hudHidden })),
       setActivePanel: (activePanel) => set({ activePanel }),
+      setViolenceMode: (violenceMode) => set({ violenceMode }),
 
       setScene: (sceneId) =>
         set({ sceneId, timeSec: 0, playing: true, selectedEntityId: null, pendingTeleport: null }),
@@ -114,6 +126,7 @@ export const useAppStore = create<AppState>()(
         showScholarlyNotes: s.showScholarlyNotes,
         showLabels: s.showLabels,
         quality: s.quality,
+        violenceMode: s.violenceMode,
       }),
     },
   ),

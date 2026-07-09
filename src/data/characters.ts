@@ -71,9 +71,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'Saul’s eldest son, David’s covenant friend earlier in the narrative; killed with his brothers by the Philistines on Mount Gilboa (1 Samuel 31:2).',
     passageRefs: ['1 Samuel 31:2'],
-    // TODO: cite claim-sons-killed once the death-sequence beat/pose choreography
-    // (a later Gilboa step) lands; that claim is not yet created.
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-sons-killed'],
   },
   {
     id: 'abinadab-son-of-saul',
@@ -81,9 +79,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     kind: 'person',
     summary: 'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
     passageRefs: ['1 Samuel 31:2'],
-    // TODO: cite claim-sons-killed once the death-sequence beat/pose choreography
-    // (a later Gilboa step) lands; that claim is not yet created.
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-sons-killed'],
   },
   {
     id: 'malchi-shua',
@@ -91,9 +87,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     kind: 'person',
     summary: 'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
     passageRefs: ['1 Samuel 31:2'],
-    // TODO: cite claim-sons-killed once the death-sequence beat/pose choreography
-    // (a later Gilboa step) lands; that claim is not yet created.
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-sons-killed'],
   },
   {
     id: 'sauls-armor-bearer',
@@ -102,9 +96,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'Unnamed in the narrative. Asked by the badly wounded Saul to run him through rather than let the Philistines take him; he will not, "for he feared greatly" — the death sequence’s emotional pivot — then follows Saul in death (1 Samuel 31:4–5).',
     passageRefs: ['1 Samuel 31:4–5'],
-    // TODO: cite claim-armor-bearer-refusal once the death-sequence beat/pose
-    // choreography (a later Gilboa step) lands; that claim is not yet created.
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography'],
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-armor-bearer-refusal'],
   },
   {
     id: 'people-of-ziklag',

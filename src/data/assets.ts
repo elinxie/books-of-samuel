@@ -170,6 +170,18 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M4',
   },
   {
+    id: 'asset-figure-fallen',
+    name: 'Fallen/prone pose transform',
+    represents:
+      'The Gilboa death sequence and rout: sons overtaken, Saul wounded/kneeling and fallen, the armor-bearer following, and routing figures who crumple at distance',
+    placeholder: true,
+    whyTemporary:
+      'A body-orientation/collapse transform (rotation + non-uniform scale) applied to the existing ADR-010 procedural rig, not a distinct fallen-body mesh or skeletal animation clip — see the pure pose functions in src/scenes/gilboa-battle/poses.ts. No wound, blood, or dismemberment geometry in either violence-rendering mode (ADR-009).',
+    historicalRequirements:
+      'A modeled prone/collapsed pose bucket on the ADR-010 rig (baked geometry per detail tier), and/or skeletal fall animation, once the character pipeline supports it beyond the current rigid-transform approach.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-water-pool',
     name: 'Standing pool meshes',
     represents: 'Standing water in low points of the braided wadi bed',

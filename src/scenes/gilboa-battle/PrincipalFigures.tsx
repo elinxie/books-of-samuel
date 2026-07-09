@@ -3,17 +3,19 @@ import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { useAppStore } from '../../state/store';
 import { buildCharacterRig, type CharacterParams } from '../../engine/characters';
+import { armorBearerPose, lerp, saulPose, sonFallPose } from './poses';
 
 /**
- * Named-figure crest group (M3 Step 2): Saul, Jonathan, Abinadab, Malchi-
+ * Named-figure crest group (M3 Step 3): Saul, Jonathan, Abinadab, Malchi-
  * shua, and the armor-bearer, held together as the composition's still
  * center at the ridge crest (`terrain.ts` origin) per the brief's "Focal
  * masses" (a). Principal-detail rigs per ADR-010 (asset-david-marker
- * pattern extended to `asset-saul-marker`), posed as rigid, static groups —
- * simple standing poses only. The death-sequence pose functions (rout
- * crumpling, the sons falling, the archers' volley, the armor-bearer's
- * refusal, Saul's death) are a later step; see
- * docs/design/gilboa-battle-brief.md.
+ * pattern extended to `asset-saul-marker`), posed as rigid groups whose
+ * position stays fixed at the crest — pose changes are body-orientation/
+ * collapse transforms (rotation + non-uniform scale) driven by the pure
+ * pose functions in `./poses.ts` (asset-figure-fallen), never a new mesh
+ * and never wound geometry. See docs/design/gilboa-battle-brief.md, "Camera
+ * / observer experience".
  */
 
 /** Fixed crest-cluster offsets (x, z) from the ridge crest at the origin. */
@@ -101,32 +103,75 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
   const malchiShuaRef = useRef<THREE.Group>(null);
   const armorBearerRef = useRef<THREE.Group>(null);
 
+  // Facing toward Saul, the group's visual center — fixed baseline yaw for
+  // each figure (positions never move; only the pose transform changes).
+  const jonathanBaseYaw = Math.atan2(
+    SAUL_POS[0] - JONATHAN_POS[0],
+    SAUL_POS[1] - JONATHAN_POS[1],
+  );
+  const abinadabBaseYaw = Math.atan2(
+    SAUL_POS[0] - ABINADAB_POS[0],
+    SAUL_POS[1] - ABINADAB_POS[1],
+  );
+  const malchiShuaBaseYaw = Math.atan2(
+    SAUL_POS[0] - MALCHI_SHUA_POS[0],
+    SAUL_POS[1] - MALCHI_SHUA_POS[1],
+  );
+  const armorBearerBaseYaw = Math.atan2(
+    SAUL_POS[0] - ARMOR_BEARER_POS[0],
+    SAUL_POS[1] - ARMOR_BEARER_POS[1],
+  );
+  // The refusal beat's orientation change: Saul turns to face the armor-
+  // bearer; the armor-bearer turns into a distinct recoiling stance rather
+  // than his baseline (already-facing-Saul) pose. Both are gesture/
+  // orientation changes only, never a strike.
+  const saulToArmorBearerYaw = Math.atan2(
+    ARMOR_BEARER_POS[0] - SAUL_POS[0],
+    ARMOR_BEARER_POS[1] - SAUL_POS[1],
+  );
+  const armorBearerRefusalYawOffset = -0.9;
+
   useFrame(() => {
-    const { terrain } = useAppStore.getState();
+    const { timeSec: t, terrain, violenceMode } = useAppStore.getState();
+
+    /** Applies a fixed x/z position plus a fallen/kneel collapse transform. */
     const apply = (
       ref: React.RefObject<THREE.Group | null>,
       [x, z]: [number, number],
       yaw: number,
+      fallen: number,
+      kneel = 0,
     ) => {
       const g = ref.current;
       if (!g) return;
-      g.position.set(x, terrain.heightAt(x, z), z);
-      g.rotation.set(0, yaw, 0);
+      const settle = fallen * 0.12; // sinks slightly into the ground as it settles
+      g.position.set(x, terrain.heightAt(x, z) - settle, z);
+      g.rotation.set(kneel * 0.35 - fallen * 1.35, yaw, 0);
+      const squash = 1 - kneel * 0.15 - fallen * 0.55;
+      g.scale.set(1, squash, 1);
     };
-    // Simple standing poses this slice; each faces roughly toward Saul, the
-    // group's visual center.
-    apply(saulRef, SAUL_POS, 0);
-    apply(jonathanRef, JONATHAN_POS, Math.atan2(SAUL_POS[0] - JONATHAN_POS[0], SAUL_POS[1] - JONATHAN_POS[1]));
-    apply(abinadabRef, ABINADAB_POS, Math.atan2(SAUL_POS[0] - ABINADAB_POS[0], SAUL_POS[1] - ABINADAB_POS[1]));
+
+    const saul = saulPose(t, violenceMode);
+    const armorBearer = armorBearerPose(t, violenceMode);
+    const jonathan = sonFallPose(t, violenceMode);
+    const abinadab = sonFallPose(t, violenceMode);
+    const malchiShua = sonFallPose(t, violenceMode);
+
     apply(
-      malchiShuaRef,
-      MALCHI_SHUA_POS,
-      Math.atan2(SAUL_POS[0] - MALCHI_SHUA_POS[0], SAUL_POS[1] - MALCHI_SHUA_POS[1]),
+      saulRef,
+      SAUL_POS,
+      lerp(0, saulToArmorBearerYaw, saul.faceArmorBearer),
+      saul.fallen,
+      saul.kneel,
     );
+    apply(jonathanRef, JONATHAN_POS, jonathanBaseYaw, jonathan.fallen);
+    apply(abinadabRef, ABINADAB_POS, abinadabBaseYaw, abinadab.fallen);
+    apply(malchiShuaRef, MALCHI_SHUA_POS, malchiShuaBaseYaw, malchiShua.fallen);
     apply(
       armorBearerRef,
       ARMOR_BEARER_POS,
-      Math.atan2(SAUL_POS[0] - ARMOR_BEARER_POS[0], SAUL_POS[1] - ARMOR_BEARER_POS[1]),
+      armorBearerBaseYaw + armorBearerRefusalYawOffset * armorBearer.refusalTurn,
+      armorBearer.fallen,
     );
   });
 

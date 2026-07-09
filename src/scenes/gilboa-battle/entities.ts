@@ -1,8 +1,9 @@
 import type { SceneEntityDef } from '../types';
 
 /**
- * Label set for the Gilboa terrain (Step 1) plus the crest death-group's
- * five named principals (Step 2). Rout/press crowd figures are unlabeled
+ * Label set for the Gilboa terrain (Step 1), the crest death-group's five
+ * named principals (Step 2), and the death-sequence pose choreography
+ * (Step 3, see `./poses.ts`). Rout/press crowd figures are unlabeled
  * ambient figures, matching the project's convention of labeling named
  * narrative figures and terrain/route features, not every crowd instance.
  */
@@ -40,8 +41,15 @@ export const GILBOA_BATTLE_ENTITIES: SceneEntityDef[] = [
     kind: 'person',
     position: [0, 3, 0],
     description:
-      'Israel’s first king, at the composition’s still center on the ridge crest with his sons, his armor-bearer, and a thin retinue. A principal-detail procedural rig; identity stays label-based, not a portrait (1 Samuel 31).',
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress'],
+      'Israel’s first king, at the composition’s still center on the ridge crest with his sons, his armor-bearer, and a thin retinue. A principal-detail procedural rig; identity stays label-based, not a portrait. Badly wounded by the archers, he refuses to be taken and falls on his own sword (1 Samuel 31:3–4).',
+    claimIds: [
+      'claim-battle-scale',
+      'claim-gilboa-topography',
+      'claim-dress',
+      'claim-saul-wounded-archers',
+      'claim-armor-bearer-refusal',
+      'claim-saul-death',
+    ],
   },
   {
     id: 'ent-jonathan',
@@ -49,26 +57,24 @@ export const GILBOA_BATTLE_ENTITIES: SceneEntityDef[] = [
     kind: 'person',
     position: [-2.4, 3, 1.8],
     description:
-      'Saul’s eldest son and David’s covenant friend earlier in the narrative, killed with his brothers by the Philistines on Gilboa (1 Samuel 31:2). The death sequence itself is a later step of this build.',
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress'],
+      'Saul’s eldest son and David’s covenant friend earlier in the narrative, killed with his brothers by the Philistines on Gilboa (1 Samuel 31:2).',
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress', 'claim-sons-killed'],
   },
   {
     id: 'ent-abinadab',
     title: 'Abinadab',
     kind: 'person',
     position: [2.6, 3, 1.3],
-    description:
-      'A son of Saul, named among the three killed with him on Gilboa (1 Samuel 31:2). The death sequence itself is a later step of this build.',
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress'],
+    description: 'A son of Saul, named among the three killed with him on Gilboa (1 Samuel 31:2).',
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress', 'claim-sons-killed'],
   },
   {
     id: 'ent-malchi-shua',
     title: 'Malchi-shua',
     kind: 'person',
     position: [1.1, 3, -2.4],
-    description:
-      'A son of Saul, named among the three killed with him on Gilboa (1 Samuel 31:2). The death sequence itself is a later step of this build.',
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress'],
+    description: 'A son of Saul, named among the three killed with him on Gilboa (1 Samuel 31:2).',
+    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress', 'claim-sons-killed'],
   },
   {
     id: 'ent-armor-bearer',
@@ -76,7 +82,12 @@ export const GILBOA_BATTLE_ENTITIES: SceneEntityDef[] = [
     kind: 'person',
     position: [-1.6, 3, -1.9],
     description:
-      'Unnamed in the narrative. Asked by the badly wounded Saul to run him through rather than let the Philistines take him; he will not, "for he feared greatly" — the death sequence’s emotional pivot, staged in a later step (1 Samuel 31:4–5).',
-    claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-dress'],
+      'Unnamed in the narrative. Asked by the badly wounded Saul to run him through rather than let the Philistines take him; he will not, "for he feared greatly" — the death sequence’s emotional pivot — then follows Saul in death (1 Samuel 31:4–5).',
+    claimIds: [
+      'claim-battle-scale',
+      'claim-gilboa-topography',
+      'claim-dress',
+      'claim-armor-bearer-refusal',
+    ],
   },
 ];

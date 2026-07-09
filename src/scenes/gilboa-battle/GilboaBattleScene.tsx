@@ -17,11 +17,13 @@ import { EntityLabel } from '../../ui/scene/EntityLabel';
 const SCENE = SCENES_BY_ID.get('gilboa-battle')!;
 
 /**
- * M3 terrain + figures (Step 2 of 5). Terrain, vegetation, and entity labels
- * are Step 1; this step populates the ridge with figures — count, grouping,
- * and positioning only, using the existing ADR-010 procedural rig. No
- * rout/death-sequence pose choreography and no military-kit attachment
- * meshes yet; those land in later steps of the Gilboa build. See
+ * M3 terrain + figures + choreography (Step 3 of 5). Terrain, vegetation,
+ * and entity labels are Step 1; Step 2 populated the ridge with figures
+ * (count, grouping, positioning). This step adds the beat-driven death-
+ * sequence/rout pose choreography (`./poses.ts`, `RoutingIsraelites.tsx`,
+ * `CrestRetinue.tsx`, `PrincipalFigures.tsx`) gated by `violenceMode`
+ * (standard/reduced, ADR-009). No military-kit attachment meshes or dust
+ * system yet; those land in later steps of the Gilboa build. See
  * docs/design/gilboa-battle-brief.md.
  */
 
