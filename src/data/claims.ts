@@ -255,6 +255,26 @@ export const CLAIMS: ReconstructionClaim[] = [
     sourceIds: ['esv-bible'],
   },
   {
+    id: 'claim-gilboa-topography',
+    statement:
+      'Mount Gilboa is rendered as an identified ridge on the eastern edge of the Jezreel Valley, with the Philistine approach from the valley side and the rout draining toward the Beth-shan/Jordan side.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'The scene uses modern Gilboa/Jebel Faqqu’a identification and relative topography only; it does not claim a surveyed battle line or exact unit positions.',
+  },
+  {
+    id: 'claim-gilboa-terrain-form',
+    statement:
+      'The Gilboa battlefield terrain is a procedural west-east ridge with a lower northern approach and eastern descent. Its broad form communicates relative topography, not DEM-derived microrelief.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'DEM data sourcing/licensing is deferred for Fable-tier review; this placeholder must remain disclosed until a sourced elevation-data ADR replaces it.',
+  },
+  {
     id: 'claim-besor-channel-form',
     statement:
       'The Besor crossing is rendered as a broad braided wadi bed — dry gravel/sand braid channels with a few standing pools — cut into rolling loess country, banks thickening from steppe scrub above to tamarisk near the bed.',

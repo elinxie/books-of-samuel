@@ -159,6 +159,17 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M3',
   },
   {
+    id: 'asset-terrain-gilboa-ridge',
+    name: 'Procedural Gilboa ridge terrain',
+    represents: 'Mount Gilboa ridge, northern Jezreel-side approach, and eastern rout slope',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural hills plus a hand-tuned ridge feature, not DEM-derived terrain from Jebel Faqqu’a/Gilboa.',
+    historicalRequirements:
+      'DEM-derived terrain only after a terrain-data sourcing/licensing ADR defines source, attribution, vertical datum, and resampling policy.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-water-pool',
     name: 'Standing pool meshes',
     represents: 'Standing water in low points of the braided wadi bed',
