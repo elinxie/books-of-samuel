@@ -3,7 +3,34 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-09, post melee-combat slice)
+## State right now (2026-07-09, post rig-conversion slice)
+
+**All five Gilboa crowd components now use real limbed figures**
+(`buildCrowdLimbedGeometry`, `src/engine/characters/bodyGeometry.ts`), not
+capsule+sphere blobs — the last two (`CrestRetinue`, `PhilistinePress`) were
+converted this slice, completing what the melee-combat slice below started.
+`DefenderLine`/`EngagedPhilistines`/`RoutingIsraelites` additionally animate
+legs via baked walk-cycle/fight-stance pose buckets (`sampleWalkPoses`/
+`sampleFightPoses`, `engine/characters/animation.ts`), cycling through 6-8
+InstancedMesh buckets per component selected by phase each frame
+(`mesh.count` set to actual per-bucket occupancy). `CrestRetinue`/
+`PhilistinePress` stay single-bucket (static/idle formations, no stride to
+animate). Full detail across 4 commits in `docs/run-log.md`.
+
+**Performance risk is now higher than previously flagged, not resolved.**
+The ~325-figure count (already 2.5x the original brief's 120–140 cap, see
+below) now also renders ~4x the triangles per figure (limbed geometry vs. a
+2-part capsule) and the moving groups carry 6-8x the draw calls each
+(bucket meshes vs. 1). No FPS/frame-time measurement has been taken —
+**a real `performance-reviewer` pass is not optional before this ships
+`released`,** and should probably happen before spending more build effort
+on this scene. If it's bad, the fix is likely: fewer pose buckets (e.g. 4
+instead of 6-8), reduced `defenderCount`/`engagedInfantryCount`/general
+figure-count ratios, or geometry LOD (fall back to capsules below a distance
+threshold) — not necessarily reverting the real-figure/leg-animation work
+itself.
+
+## State before the rig-conversion slice (2026-07-09, post melee-combat slice)
 
 **`gilboa-battle` now renders real mutual combat**, not just a rout/death
 sequence: a new `DefenderLine`/`EngagedPhilistines` pair engages in a
@@ -71,26 +98,13 @@ Philistine plumed-headdress verification (must clear before the scene ships
 The visible-first build brief below is **complete** — do not re-run it. Next
 session's actual work is the follow-up list that fell out of the build pass:
 
-0. **(New top priority) Performance-reviewer pass on the ~325-figure count**:
-   the melee-combat slice bumped Gilboa's high-tier figure count well past the
-   original brief's 120–140 cap. A self-check found draw calls only grew
-   modestly (instancing means draw-call count doesn't scale with figure
-   count) but did not measure actual frame time. Get a real FPS/frame-time
-   read at high tier before treating this as safe; if it's bad, the fix is
-   probably tier-scaling the new `defenderCount`/`engagedInfantryCount` ratios
-   down rather than reverting the combat feature itself.
-   0b. **(New) Rig-based crowd figures**: user asked for animated legs and "real
-   figures, not blobs" — still capsule+sphere primitives everywhere except the
-   5 named principals. `src/engine/characters/skeleton.ts`'s
-   `poseJointPositions`/`CrowdLimbPose` (additive FK, unit-tested-free so far)
-   is the groundwork; needs wiring into baked instanced pose-buckets
-   (`bake.ts`'s `bakePoseBuckets` already exists but is unused) across
-   `PhilistinePress`, `RoutingIsraelites`, `CrestRetinue`, `DefenderLine`,
-   `EngagedPhilistines`. A new `ClipName` for fight/strike poses is needed
-   (additive — don't break `'walk' | 'idle' | 'kneel' | 'mourn'` for other
-   scenes). This is a substantial lift; the previous attempt at it failed
-   mid-task on an account monthly-spend-limit cutoff, not a code problem —
-   check spend limit status before re-attempting with a subagent.
+0. **(Top priority, not optional) Performance-reviewer pass**: real
+   FPS/frame-time measurement at high tier, not another self-check. Both the
+   figure-count bump (~325 vs. the brief's 120–140 cap) and the rig
+   conversion (real limbed geometry + pose-bucket draw calls, replacing
+   capsules) compound the same risk — see "State right now" above for exact
+   numbers and likely fixes if it's bad (fewer pose buckets, lower count
+   ratios, or a capsule-fallback LOD at distance).
 1. **ADR-009 first-visit violence advisory** (small, self-contained UI slice):
    `gilboa-battle` currently has a plain `violenceMode` toggle in the Settings
    panel (`src/ui/hud/SettingsPanel.tsx`) but no first-visit modal/advisory
@@ -98,24 +112,17 @@ session's actual work is the follow-up list that fell out of the build pass:
    violence-bearing scene, which ADR-009 calls for. `ui-engineer` task — check
    how `showLabels`/other first-visit or persisted-preference UI is structured
    for the closest existing pattern to extend, not invent from scratch.
-2. **Performance pass on `gilboa-battle`** (`performance-reviewer`, per the
-   brief's "run early, not just at the end" instruction — this is "the end" of
-   the first build pass): all 5 slices (population, pose, kit, dust) now render
-   concurrently at high tier for the first time. Check draw-call count against
-   the Amalekite scene's budget (`QUALITY_PROFILES`), and sanity-check frame
-   time isn't degraded by `CrestRetinue`/`RoutingIsraelites`'s move from
-   one-time `useEffect` placement to per-frame `useFrame` pose writes (Step 3).
-3. **Fable-review-queue #13** (headdress citation page-verification) — still
+2. **Fable-review-queue #13** (headdress citation page-verification) — still
    open, still blocking `gilboa-battle` → `released` (not blocking further
    build work). Needs primary-source page inspection, not just bibliographic
    lookup; batch with #12 (DEM data-sourcing ADR) if both are ready for a
    Fable pass.
-4. **Milestone-scope items still open for `gilboa-battle` → `released`**: the
+3. **Milestone-scope items still open for `gilboa-battle` → `released`**: the
    scene's `beth-shan-walls` and `jabesh-burial` siblings are still fully
    `planned`/empty (`SceneDef`s exist in `src/data/scenes.ts` with no beats/
    viewpoints) — M3 world-director passes for those two scenes are a Fable-tier
    task per `docs/model-handoff.md`, not yet requested.
-5. **Test-gap backlog** (small `test-engineer` task, carried forward from
+4. **Test-gap backlog** (small `test-engineer` task, carried forward from
    2026-07-08 biblical review, still not started): `integrity.test.ts` only
    scans `PASSAGES[].keyExcerpts` for the ESV excerpt budget — beat captions in
    `SCENES[].beats[]` are invisible to it. Add caption scanning.

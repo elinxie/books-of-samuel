@@ -584,3 +584,52 @@ No code conflicts — ADR-011 touched docs/config only. Resolved by keeping
 ADR-011's policy files as-is and rewriting `next-run.md`'s state/handoff section
 to reflect that `gilboa-battle` is now built (`in-progress`, not `planned`),
 carrying forward the build session's follow-up list as the actual next steps.
+
+**2026-07-09 — Sonnet 5 — melee combat + rig conversion (user-directed)**
+User asked, across the same session as the merge above: (1) real mutual
+combat visible in `gilboa-battle`, not just rout/death, with an actual
+combatant count instead of the disclosed no-headcount abstraction; (2) after
+that landed, animated legs and real limbed figures everywhere, not capsule
+blobs. A background `threejs-engineer` subagent started on both but failed
+mid-task on an account monthly-spend-limit cutoff (external constraint, not a
+code problem); picked up the work directly in the foreground afterward
+(subagents cost re-derivation from cold, foreground work reuses this
+session's live context — see the session's own reasoning on why, not
+repeated here).
+
+Landed in six commits, each independently gated (format/lint/typecheck/
+vitest/build, plus a manual headless-Chromium console-error check of
+`/observe/gilboa-battle`):
+
+- `f234794` crowd limb-pose forward kinematics (`poseJointPositions`,
+  `CrowdLimbPose`), additive, unwired.
+- `91e3606` scripted melee-clash combat wired live: new `DefenderLine`/
+  `EngagedPhilistines` components, `claim-line-defense`, new `b-line-clash`
+  beat (revises the original brief's "not blow-by-blow fighting" call —
+  logged `fable-review-queue.md` #15), figure-count ratios bumped to match
+  `claim-battle-scale`'s already-landed ~1:20 ratio (~325 figures at high
+  tier vs. the original brief's 120–140 cap — flagged, not yet perf-reviewed).
+  13 new unit tests.
+- `6f111af` docs sync.
+- `656185c` `buildCrowdLimbedGeometry` + `sampleWalkPoses`/`sampleFightPoses`
+  (`engine/characters/`) — real limbed silhouette + pose-bucket sampling,
+  additive (existing capsule-tier `buildCrowdGeometry` untouched). 11 new
+  unit tests.
+- `18bf8d4` `DefenderLine`/`EngagedPhilistines` converted to real figures +
+  braced-stance leg cycling (6 InstancedMesh buckets each, `mesh.count` set
+  to per-bucket occupancy each frame). 3 new unit tests (`clashPhase01`).
+- `0b4327f` `RoutingIsraelites` converted, walk-cycle legs (8 buckets).
+- `5ef5409` `CrestRetinue`/`PhilistinePress` converted (single rest-pose
+  geometry, no bucket cycling — static/idle formations).
+
+Research alongside: a `researcher` subagent found no scholar has published a
+Gilboa-specific combatant estimate and recommended keeping the disclosed
+abstraction; the user overrode this and asked for a derived number anyway,
+"flagged as you implement it" — done as a fully-disclosed assumption chain
+off Finkelstein & Silberman's regional population figure, logged
+`fable-review-queue.md` #14.
+
+**Not resolved, explicitly flagged for next session:** no real FPS/frame-time
+measurement has been taken at the new ~325-figure, real-geometry count — see
+`docs/next-run.md`'s item 0, now the top priority. Manual checks only
+confirmed 0 console errors and correct render, not frame time.
