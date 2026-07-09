@@ -3,7 +3,39 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-09, post-scope-policy change + post-Gilboa-build-pass)
+## State right now (2026-07-09, post melee-combat slice)
+
+**`gilboa-battle` now renders real mutual combat**, not just a rout/death
+sequence: a new `DefenderLine`/`EngagedPhilistines` pair engages in a
+scripted (non-interactive) swing/block/stagger clash from a new `b-line-clash`
+beat (t=8) through `b-rout` (t=18), per `claim-line-defense`. User-directed —
+revises the original brief's "not blow-by-blow fighting" call; logged
+`docs/fable-review-queue.md` #15, non-blocking, flagged for a Fable sanity
+check. Figure-count ratios were also bumped to actually match
+`claim-battle-scale`'s already-landed ~1:20 ratio (previously only the claim
+text said this, the render didn't) — **~325 figures at high tier, up from
+~127, well above the original brief's 120–140 cap** (`docs/design/gilboa-
+battle-brief.md` "Scale assumptions"). Literal draw-call count only grew
+modestly (~6 new instancedMesh draw calls, DefenderLine + EngagedPhilistines,
+on top of ~17-20 existing — everything here is instanced, so draw calls don't
+scale with figure count), but total instanced triangle count and the
+per-frame `useFrame` matrix-update cost are ~2.5x. Full `npm run verify`
+equivalent (format/lint/130 vitest/build/7 e2e) is green and a manual headless
+console-error check of `/observe/gilboa-battle` showed 0 errors, but **no
+actual FPS/frame-time measurement has been taken** — a real
+`performance-reviewer` pass (not just the self-check above) is the next
+priority, not deferred further.
+
+Still outstanding from this slice, explicitly told to the user: crowd figures
+are still capsule+sphere primitives, not the real procedural rig
+(`src/engine/characters/`) — no leg animation, not "real figures." The
+forward-kinematics groundwork (`poseJointPositions`/`CrowdLimbPose` in
+`src/engine/characters/skeleton.ts`) landed but isn't wired into any scene
+component yet. This was the previous background agent's task before it
+failed on an account monthly-spend-limit cutoff (not a code issue) — same
+spend limit is a live constraint for whoever picks this up next.
+
+## State before this slice (2026-07-09, post-scope-policy change + post-Gilboa-build-pass)
 
 **Policy change landed (Fable, user-directed):** the project is now an
 **atlas-first historical world with constrained game-like affordances** —
@@ -39,6 +71,26 @@ Philistine plumed-headdress verification (must clear before the scene ships
 The visible-first build brief below is **complete** — do not re-run it. Next
 session's actual work is the follow-up list that fell out of the build pass:
 
+0. **(New top priority) Performance-reviewer pass on the ~325-figure count**:
+   the melee-combat slice bumped Gilboa's high-tier figure count well past the
+   original brief's 120–140 cap. A self-check found draw calls only grew
+   modestly (instancing means draw-call count doesn't scale with figure
+   count) but did not measure actual frame time. Get a real FPS/frame-time
+   read at high tier before treating this as safe; if it's bad, the fix is
+   probably tier-scaling the new `defenderCount`/`engagedInfantryCount` ratios
+   down rather than reverting the combat feature itself.
+   0b. **(New) Rig-based crowd figures**: user asked for animated legs and "real
+   figures, not blobs" — still capsule+sphere primitives everywhere except the
+   5 named principals. `src/engine/characters/skeleton.ts`'s
+   `poseJointPositions`/`CrowdLimbPose` (additive FK, unit-tested-free so far)
+   is the groundwork; needs wiring into baked instanced pose-buckets
+   (`bake.ts`'s `bakePoseBuckets` already exists but is unused) across
+   `PhilistinePress`, `RoutingIsraelites`, `CrestRetinue`, `DefenderLine`,
+   `EngagedPhilistines`. A new `ClipName` for fight/strike poses is needed
+   (additive — don't break `'walk' | 'idle' | 'kneel' | 'mourn'` for other
+   scenes). This is a substantial lift; the previous attempt at it failed
+   mid-task on an account monthly-spend-limit cutoff, not a code problem —
+   check spend limit status before re-attempting with a subagent.
 1. **ADR-009 first-visit violence advisory** (small, self-contained UI slice):
    `gilboa-battle` currently has a plain `violenceMode` toggle in the Settings
    panel (`src/ui/hud/SettingsPanel.tsx`) but no first-visit modal/advisory
