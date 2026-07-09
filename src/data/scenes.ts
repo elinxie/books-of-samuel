@@ -126,7 +126,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'brook-besor',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M2',
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'The pursuit reaches the great wadi of the western Negev. Two hundred men too exhausted to cross stay with the baggage; four hundred press on. Nearby, an abandoned Egyptian slave is found and revived — and days later, back at the same ford, David rules that all share the spoil alike.',
     durationSec: 150,
@@ -254,7 +254,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'brook-besor',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M2',
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'The raiders’ camp spread over the land, eating, drinking, and dancing over the spoil. David’s attack from twilight to evening; the recovery of every captive; four hundred young raiders escape on camels.',
     durationSec: 170,

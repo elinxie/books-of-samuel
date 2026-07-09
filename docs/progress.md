@@ -39,7 +39,7 @@ flipped `M1` to `released` in `src/data/milestones.ts`. Rider: run
 `performance-reviewer` over `src/engine/characters` instancing/bake path with
 the next scene-content slice. See `docs/run-log.md`.
 
-## Milestone 2 — 1 Samuel 30 route and recovery: **planned**, both scenes built — Fable sign-off now due
+## Milestone 2 — 1 Samuel 30 route and recovery: **released** (2026-07-08 Fable sign-off, gate green)
 
 World-director briefs: `docs/design/besor-crossing-brief.md` and
 `docs/design/amalekite-camp-brief.md`, `SceneDef` beats/viewpoints filled in
@@ -77,9 +77,12 @@ placeholder assets. Violence per the brief: onset only, no gore geometry, the
 fallen not rendered past the compression card. Reviewed by
 archaeology/biblical-text/performance reviewers — see `docs/run-log.md`.
 
-M2 milestone stays `planned` in data until Fable runs
-`docs/fable-review-checklist.md` and signs off — **that sign-off is now due**
-(both scenes built, matching the M1 pattern).
+M2 close-out: Fable ran `docs/fable-review-checklist.md` 2026-07-08 over both
+scenes — pass. Flips: M2 milestone, both scenes, `brook-besor` location, and
+the `1sam-30` passage all `released`; features besor/camp/spoil-rule `done`.
+Scope call: `f-dem-terrain` re-scoped M2 → M3 (no M2 scene is at an identified
+site). Queue #11 (Egyptian dress) resolved — conservative shared-dress kept,
+revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
 ## Milestone 3–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 

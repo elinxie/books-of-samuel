@@ -411,3 +411,32 @@ this container because the expected browser is absent and `npx playwright instal
 chromium` returns CDN 403; earlier Claude run had 7/7 e2e green with
 `PLAYWRIGHT_CHROMIUM_PATH`. Updated `docs/next-run.md` so the next Claude/Fable
 session can merge/publish first, then run M2 sign-off.
+
+**2026-07-08 — Fable 5 — M2 sign-off (branch `claude/amalekite-camp-7h2pjc`, restarted from `main`@`e0e1ee7` after PR #16 merged)**
+
+- Note: while the build session was interrupted, PR #16 (amalekite-camp) was
+  created and merged into `main` externally, and codex merged a docs handoff
+  (PR #15) into the branch first. Branch restarted from `main` per the
+  merged-PR protocol; this entry is the follow-up sign-off pass.
+- Ran `docs/fable-review-checklist.md` over M2 (besor-crossing +
+  amalekite-camp). **Verdict: pass — M2 released.** Evidence: three reviewer
+  passes per scene with real fixes (run-log entries above), full gate green
+  (70 vitest / 7 e2e / build / lint / format re-verified this pass), quality-
+  tier screenshots for the camp (study t=34: fire sprawl reads through heavy
+  fog; high t=64: strike reads at long draw distance; zero console errors),
+  observation-not-gameplay intact (scripted reenactment only, no mechanics).
+- Status flips: `M2` milestone → `released`; `besor-crossing` +
+  `amalekite-camp` scenes → `released`; `brook-besor` location → `released`;
+  `1sam-30` passage → `released` (all three of its scenes now released);
+  features `f-besor-scene`/`f-amalekite-camp`/`f-spoil-rule` → `done`
+  (spoil-rule disclosed as staged within besor-crossing's closing beats).
+- **Scope call:** `f-dem-terrain` re-scoped M2 → M3 — no M2 scene is at an
+  identified site (Ziklag disputed, camp unlocatable), asset records already
+  target M3 for DEM replacements; disclosed in the M2 goal text.
+- **Queue #11 resolved (Egyptian servant's dress):** keep the conservative
+  shared-dress treatment — a "worn/disheveled" variant would be invented
+  specificity that reads as noise at placeholder fidelity; abandonment is
+  carried by staging and label text. Revisit in the M3 modeled-figure dress
+  review. Queue Open table is now empty.
+
+Next: see `docs/next-run.md`.

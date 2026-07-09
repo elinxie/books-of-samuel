@@ -35,7 +35,7 @@ export const MILESTONES: Milestone[] = [
   {
     id: 'M2',
     label: 'Milestone 2 — 1 Samuel 30 route and recovery',
-    status: 'planned',
+    status: 'released',
     passageRefs: ['1 Samuel 30'],
     goals: [
       'Route from Ziklag toward the brook Besor',
@@ -43,7 +43,7 @@ export const MILESTONES: Milestone[] = [
       'Egyptian servant encounter',
       'Amalekite camp reconstruction (camel-use uncertainty surfaced)',
       'Recovery and spoil-distribution scenes',
-      'DEM-based terrain investigation',
+      'DEM-based terrain investigation (re-scoped to M3 at the 2026-07-08 sign-off — see run log)',
     ],
   },
   {
