@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
+import { buildCrowdLimbedGeometry, type CharacterParams } from '../../engine/characters';
 import {
   buildArcherSlots,
   buildInfantrySlots,
@@ -62,21 +62,25 @@ export function buildPhilistineFigures(
   return [...archers, ...infantry, ...principals];
 }
 
-function makeFigureGeometry(): THREE.BufferGeometry {
-  const body = new THREE.CapsuleGeometry(0.26, 1.0, 4, 8);
-  body.translate(0, 0.86, 0);
-  const head = new THREE.SphereGeometry(0.15, 8, 6);
-  head.translate(0, 1.68, 0);
-  const merged = mergeGeometries([body, head]);
-  merged.computeVertexNormals();
-  return merged;
-}
-
 const dummy = new THREE.Object3D();
-// A cooler, undyed-linen-leaning palette distinguishes the Philistine press
-// from the Israelite crowd at a glance without asserting a documented
-// "uniform" — the kit itself is a later, comparative/disputed step.
-const PHILISTINE_PALETTE = ['#8f8a72', '#736f5c', '#a39c7e'];
+
+/** A single generic crowd-tier Philistine preset — a static idle formation
+ * needs no pose-bucket cycling, just one real limbed rest-pose geometry
+ * instead of the old capsule blob. A cooler, undyed-linen-leaning tunic
+ * distinguishes the Philistine press from the Israelite crowd at a glance
+ * without asserting a documented "uniform" — the kit itself is a later,
+ * comparative/disputed step. Per-instance variety still comes from
+ * `mesh.setColorAt` tinting. */
+const GENERIC_PHILISTINE_PARAMS: CharacterParams = {
+  stature: CROWD_KIT_STATURE,
+  build: 0.5,
+  shoulders: 1,
+  skinColor: '#a66d48',
+  hairColor: '#2b1d14',
+  beard: false,
+  detail: 'crowd',
+  dress: { tunicColor: '#8f8a72', beltColor: '#5a3722', headwear: 'bare' },
+};
 
 export function PhilistinePress({
   archerCount,
@@ -94,7 +98,7 @@ export function PhilistinePress({
   const roundShieldMeshRef = useRef<THREE.InstancedMesh>(null);
   const swordMeshRef = useRef<THREE.InstancedMesh>(null);
   const headdressMeshRef = useRef<THREE.InstancedMesh>(null);
-  const geometry = useMemo(() => makeFigureGeometry(), []);
+  const geometry = useMemo(() => buildCrowdLimbedGeometry(GENERIC_PHILISTINE_PARAMS), []);
   const bowGeo = useMemo(() => buildBowGeometry(CROWD_KIT_STATURE, 'handL'), []);
   const roundShieldGeo = useMemo(
     () => buildShieldGeometry(CROWD_KIT_STATURE, 'round', 'handL'),
@@ -127,8 +131,12 @@ export function PhilistinePress({
       dummy.scale.setScalar(fig.role === 'principal' ? 1.04 : 0.95 + rng() * 0.1);
       dummy.updateMatrix();
       mesh.setMatrixAt(i, dummy.matrix);
-      color.set(PHILISTINE_PALETTE[Math.floor(rng() * PHILISTINE_PALETTE.length)]);
-      color.offsetHSL(0, 0, (rng() - 0.5) * 0.08);
+      // The body geometry now bakes its own tunic/skin vertex colors
+      // (`buildCrowdLimbedGeometry`); this instance color multiplies
+      // against those, so it stays a near-white brightness jitter rather
+      // than a full hue pick (which would double-tint against the baked
+      // colors).
+      color.setRGB(1, 1, 1).offsetHSL(0, 0, (rng() - 0.5) * 0.14);
       mesh.setColorAt(i, color);
 
       // Archers come first, then infantry, then the principal cluster
@@ -162,7 +170,7 @@ export function PhilistinePress({
         frustumCulled={false}
         castShadow={shadows}
       >
-        <meshStandardMaterial roughness={1} />
+        <meshStandardMaterial vertexColors roughness={1} />
       </instancedMesh>
       <instancedMesh
         ref={bowMeshRef}
