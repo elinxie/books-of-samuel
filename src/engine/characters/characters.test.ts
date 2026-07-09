@@ -35,9 +35,7 @@ describe('character rig geometry', () => {
     let minY = Infinity;
     for (let i = 0; i < pos.count; i++) {
       const y = pos.getY(i);
-      expect(Number.isNaN(pos.getX(i)) || Number.isNaN(y) || Number.isNaN(pos.getZ(i))).toBe(
-        false,
-      );
+      expect(Number.isNaN(pos.getX(i)) || Number.isNaN(y) || Number.isNaN(pos.getZ(i))).toBe(false);
       maxY = Math.max(maxY, y);
       minY = Math.min(minY, y);
     }

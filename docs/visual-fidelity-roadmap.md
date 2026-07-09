@@ -85,15 +85,21 @@ one run. Check off items as they land and note the commit/PR.
 
 ## D. Characters and figures
 
-- [ ] Improve capsule proportions and pose readability within the current
-      ~1:10 ratio and abstraction policy (`asset-figure-capsule`,
-      `docs/uncertainty-register.md` #7) — better silhouette, simple cloak
-      shape, staff/shield silhouettes only where a claim supports them.
+- [x] Capsule figures replaced by the procedural skinned character system
+      (ADR-009, `src/engine/characters/`) — real proportions, period dress,
+      walk/idle/kneel/mourn clips, baked-pose instanced crowds
+      (`asset-figure-procedural`, `asset-david-marker`). Within the current
+      ~1:10 ratio/abstraction policy (`docs/uncertainty-register.md` #7).
 - [ ] Crowd distribution/grouping realism in `ReturningMen.tsx` pose
       function — legibility of the narrative beats matters more than raw
       density.
-- [ ] Do not introduce modeled GLB figures here; that's gated on the M3
-      asset-pipeline pilot (ADR-008).
+- [ ] Historical-detail review of dress (colors, weave, fringes) and
+      addition of gear/pack animals, per `asset-figure-procedural`'s
+      `historicalRequirements`.
+- [ ] Modeled GLB figures remain optional, not required: the `CharacterRig`
+      seam (same bone/clip names) keeps a Blender-authored replacement open
+      at M3+ per ADR-008/ADR-009, but the procedural system already meets
+      the "inhabit the scene" goal.
 
 ## E. Composition and observer experience
 

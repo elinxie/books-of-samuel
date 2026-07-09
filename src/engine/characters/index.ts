@@ -12,6 +12,7 @@ export {
 } from './anthropometry';
 export { buildSkeleton, jointPositions, resetToRest } from './skeleton';
 export { buildBodyGeometry, buildCharacterRig } from './bodyGeometry';
+export { Character } from './Character';
 export { makeClips } from './animation';
 export {
   applyClipPose,

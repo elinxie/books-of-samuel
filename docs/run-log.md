@@ -210,3 +210,22 @@ started the user's requested visual-fidelity track:
   live scene (no console errors; bundle size unchanged).
 
 Next: see `docs/next-run.md`.
+
+**2026-07-07 — Fable 5 — realistic characters pulled forward (ADR-009)**
+User-directed priority change: build realistic 3D characters now, ahead of
+the M3 Blender/glTF pipeline (ADR-008). Sourcing survey found no CC0 rigged
+realistic-human models meeting licensing/period constraints → project-original,
+generated in code. Shipped `src/engine/characters/` foundation: anthropometric
+17-bone skeleton, procedural skinned body + period dress (tunic/belt/mantle/
+sandals/head wrap/beard, vertex-colored), programmatic clips (walk/idle/kneel/
+mourn), two-tier LOD (principal ≤14k tris fully skinned, crowd ≤3k tris via
+baked-pose instancing, `bake.ts`). Dev-only QA harness (`char-preview.html` +
+`src/dev/charPreview.ts`), not part of the built app. ADR-009 written; ADR-008
+amended in effect (pilot figure now exists in code, `CharacterRig` keeps the
+Blender→glTF seam open). Ziklag rewired onto the new rig. Data layer: capsule
+placeholder asset replaced (`asset-figure-capsule` → `asset-figure-procedural`),
+`asset-david-marker` updated to reflect the principal rig, `AssetRecord` gains
+ADR-008's pre-authorized `modelPath`/`modelLicense`/`modelProvenance` fields
+(now populated `project-original`), `f-period-figures` moved `planned` →
+`in-progress`, `docs/asset-roadmap.md`/`docs/visual-fidelity-roadmap.md`
+updated. Design contract: `docs/design/character-system.md`.

@@ -11,8 +11,11 @@ import { BONE_NAMES } from './types';
 export function jointPositions(stature: number): Record<BoneName, THREE.Vector3> {
   const H = stature;
   const armDir = new THREE.Vector3(Math.sin(A_POSE_ARM), -Math.cos(A_POSE_ARM), 0);
-  const foreDir = new THREE.Vector3(Math.sin(A_POSE_FOREARM), -Math.cos(A_POSE_FOREARM), 0.06)
-    .normalize();
+  const foreDir = new THREE.Vector3(
+    Math.sin(A_POSE_FOREARM),
+    -Math.cos(A_POSE_FOREARM),
+    0.06,
+  ).normalize();
 
   const shoulderL = new THREE.Vector3(P.shoulderX * H, P.shoulderY * H, 0);
   const elbowL = shoulderL.clone().addScaledVector(armDir, P.upperArmLen * H);

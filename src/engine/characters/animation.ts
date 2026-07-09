@@ -19,7 +19,11 @@ const quat = new THREE.Quaternion();
 function rotTrack(bone: BoneName, times: number[], eulersDeg: [number, number, number][]) {
   const values: number[] = [];
   for (const [x, y, z] of eulersDeg) {
-    euler.set(THREE.MathUtils.degToRad(x), THREE.MathUtils.degToRad(y), THREE.MathUtils.degToRad(z));
+    euler.set(
+      THREE.MathUtils.degToRad(x),
+      THREE.MathUtils.degToRad(y),
+      THREE.MathUtils.degToRad(z),
+    );
     quat.setFromEuler(euler);
     values.push(quat.x, quat.y, quat.z, quat.w);
   }
@@ -51,17 +55,13 @@ function makeWalkClip(stature: number): THREE.AnimationClip {
       [-sway, h0 + bob * 0.7, 0],
       [0, h0 - bob, 0],
     ]),
-    rotTrack(
-      'hips',
-      T5,
-      [
-        [0, -6, 0],
-        [0, 0, 4],
-        [0, 6, 0],
-        [0, 0, -4],
-        [0, -6, 0],
-      ],
-    ),
+    rotTrack('hips', T5, [
+      [0, -6, 0],
+      [0, 0, 4],
+      [0, 6, 0],
+      [0, 0, -4],
+      [0, -6, 0],
+    ]),
     // Trunk counter-rotation keeps the shoulders opposing the pelvis.
     rotTrack('spine', T5, y([3, 0, -3, 0, 3])),
     rotTrack('chest', T5, y([4.5, 0, -4.5, 0, 4.5])),
@@ -88,18 +88,26 @@ function makeIdleClip(stature: number): THREE.AnimationClip {
   const h0 = P.hipsY * stature;
   const t = [0, 1, 2, 3, 4];
   const tracks: THREE.KeyframeTrack[] = [
-    posTrack('hips', [0, 2, 4], [
-      [0, h0, 0],
-      [0.004 * stature, h0 - 0.003 * stature, 0],
-      [0, h0, 0],
-    ]),
+    posTrack(
+      'hips',
+      [0, 2, 4],
+      [
+        [0, h0, 0],
+        [0.004 * stature, h0 - 0.003 * stature, 0],
+        [0, h0, 0],
+      ],
+    ),
     // Breathing in the chest, a slow small head turn, arms settled.
-    rotTrack('chest', [0, 1.6, 3.2, 4], [
-      [0.6, 0, 0],
-      [-1, 0, 0],
-      [0.8, 0, 0],
-      [0.6, 0, 0],
-    ]),
+    rotTrack(
+      'chest',
+      [0, 1.6, 3.2, 4],
+      [
+        [0.6, 0, 0],
+        [-1, 0, 0],
+        [0.8, 0, 0],
+        [0.6, 0, 0],
+      ],
+    ),
     rotTrack('head', t, [
       [2, 0, 0],
       [2.5, 3, 0],
@@ -107,24 +115,40 @@ function makeIdleClip(stature: number): THREE.AnimationClip {
       [2.5, -2.5, 0],
       [2, 0, 0],
     ]),
-    rotTrack('upperArmL', [0, 2, 4], [
-      [4, 0, 0],
-      [5, 0, 1],
-      [4, 0, 0],
-    ]),
-    rotTrack('upperArmR', [0, 2, 4], [
-      [4, 0, 0],
-      [3, 0, -1],
-      [4, 0, 0],
-    ]),
-    rotTrack('forearmL', [0, 4], [
-      [-10, 0, 0],
-      [-10, 0, 0],
-    ]),
-    rotTrack('forearmR', [0, 4], [
-      [-10, 0, 0],
-      [-10, 0, 0],
-    ]),
+    rotTrack(
+      'upperArmL',
+      [0, 2, 4],
+      [
+        [4, 0, 0],
+        [5, 0, 1],
+        [4, 0, 0],
+      ],
+    ),
+    rotTrack(
+      'upperArmR',
+      [0, 2, 4],
+      [
+        [4, 0, 0],
+        [3, 0, -1],
+        [4, 0, 0],
+      ],
+    ),
+    rotTrack(
+      'forearmL',
+      [0, 4],
+      [
+        [-10, 0, 0],
+        [-10, 0, 0],
+      ],
+    ),
+    rotTrack(
+      'forearmR',
+      [0, 4],
+      [
+        [-10, 0, 0],
+        [-10, 0, 0],
+      ],
+    ),
   ];
   return new THREE.AnimationClip('idle', 4, tracks);
 }

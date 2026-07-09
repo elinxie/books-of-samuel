@@ -55,6 +55,26 @@ describe('body geometry determinism', () => {
   });
 });
 
+describe('triangle budget guards (ADR-009)', () => {
+  function triangleCount(rig: CharacterRig): number {
+    return (rig.geometry.index?.count ?? 0) / 3;
+  }
+
+  it('crowd rig stays at or under 3000 triangles across several seeds', () => {
+    for (const seed of SEEDS) {
+      const rig = rigFor(seed, 'crowd');
+      expect(triangleCount(rig)).toBeLessThanOrEqual(3000);
+    }
+  });
+
+  it('principal rig stays at or under 14000 triangles across several seeds', () => {
+    for (const seed of SEEDS) {
+      const rig = rigFor(seed, 'principal');
+      expect(triangleCount(rig)).toBeLessThanOrEqual(14000);
+    }
+  });
+});
+
 describe('body geometry invariants', () => {
   for (const detail of DETAILS) {
     for (const seed of SEEDS) {

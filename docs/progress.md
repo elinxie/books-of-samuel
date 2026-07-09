@@ -49,6 +49,20 @@ Remaining for a clean M1 close-out:
 
 ## Milestone 2–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
+## Out-of-band: procedural character system (ADR-009, 2026-07-07)
+
+User-directed pull-forward, inserted ahead of the previously-planned next-run
+task (which remains pending — see `docs/next-run.md`). Shipped
+`src/engine/characters/`: procedural skinned figures (17-bone rig, period
+dress, walk/idle/kneel/mourn clips, baked-pose instanced crowds), replacing
+Ziklag's capsule figures. This is the M3 pilot figure from ADR-008, landed
+early and project-original rather than via Blender/glTF; that path stays open
+via the `CharacterRig` bone/clip-name seam. Data layer updated:
+`asset-figure-capsule` → `asset-figure-procedural`, `asset-david-marker`
+revised, `AssetRecord.modelPath`/`modelLicense`/`modelProvenance` (ADR-008,
+now populated), `f-period-figures` → `in-progress`. See
+`docs/design/character-system.md`, `docs/architecture-decisions/adr-009-procedural-characters.md`.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

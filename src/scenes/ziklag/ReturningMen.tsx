@@ -1,16 +1,28 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
+import {
+  Character,
+  WALK_STRIDE_M,
+  bakePoseBuckets,
+  buildCharacterRig,
+  makeClips,
+  randomCharacterParams,
+  type ClipName,
+  type PoseBucketSet,
+} from '../../engine/characters';
 import { APPROACH_CURVE, EXIT_CURVE, PLAZA_SLOTS } from './layout';
 
 /**
  * Scripted reenactment of 1 Samuel 30:1–9: the column returns from the north,
  * gathers on the open center, grieves, and finally departs south toward the
- * Besor. Figures are placeholder capsules rendered at ~1:10 of the narrated
- * six hundred (see claim-600-men, asset-figure-capsule).
+ * Besor. Figures are procedural skinned characters (ADR-009) rendered at
+ * ~1:10 of the narrated six hundred (see claim-600-men,
+ * asset-figure-procedural). The crowd uses baked-pose instancing: each frame
+ * every figure is assigned to the nearest baked pose bucket of its body
+ * variant; David and Abiathar are fully animated principal rigs.
  *
  * Timeline constants are derived from the beats in scenes.ts.
  */
@@ -23,30 +35,25 @@ const GRIEF_T = 57;
 const STAND_T = 132;
 const DEPART_T = 136;
 
+/** Subtle per-figure tint multiplied over the baked vertex colors — keep
+ * these near white or the whole figure darkens. */
 const WOOL_PALETTE = [
-  '#8a7a62',
-  '#6f5b43',
-  '#7d6a52',
-  '#9c8a6c',
-  '#5f5142',
-  '#7a4a3a',
-  '#54504a',
-  '#8f8168',
+  '#ffffff',
+  '#f3ece0',
+  '#e9e4da',
+  '#fff4e4',
+  '#e5dcd2',
+  '#f6efe9',
+  '#ece9e2',
+  '#fbf3e3',
 ];
+
+const VARIANT_SEEDS = [1011, 2022, 3033];
+const BUCKET_COUNTS = { walk: 8, kneel: 4, idle: 3 } as const;
 
 function smoothstep(t: number): number {
   const c = Math.min(1, Math.max(0, t));
   return c * c * (3 - 2 * c);
-}
-
-function makeFigureGeometry(): THREE.BufferGeometry {
-  const body = new THREE.CapsuleGeometry(0.26, 1.0, 4, 8);
-  body.translate(0, 0.86, 0);
-  const head = new THREE.SphereGeometry(0.15, 8, 6);
-  head.translate(0, 1.68, 0);
-  const merged = mergeGeometries([body, head]);
-  merged.computeVertexNormals();
-  return merged;
 }
 
 interface FigureState {
@@ -121,12 +128,51 @@ export function figurePose(
   return { x: tmpVec.x + px, z: tmpVec.z + pz, yaw, kneel: 0, moving: true, visible: s > 0 };
 }
 
+/** Flat list of baked pose bucket geometries across all body variants. */
+interface CrowdBuckets {
+  geometries: THREE.BufferGeometry[];
+  /** geometry list index for (variant, kind, frame) */
+  indexOf: (variant: number, kind: keyof PoseBucketSet, frame: number) => number;
+}
+
+function bakeCrowd(): CrowdBuckets {
+  const geometries: THREE.BufferGeometry[] = [];
+  const offsets: Record<string, number> = {};
+  VARIANT_SEEDS.forEach((seed, v) => {
+    const params = randomCharacterParams(mulberry32(seed), { detail: 'crowd' });
+    const rig = buildCharacterRig(params);
+    const clips = makeClips(params.stature);
+    const buckets = bakePoseBuckets(rig, clips, BUCKET_COUNTS);
+    rig.geometry.dispose();
+    for (const kind of ['walk', 'kneel', 'idle'] as const) {
+      offsets[`${v}:${kind}`] = geometries.length;
+      geometries.push(...buckets[kind]);
+    }
+  });
+  return {
+    geometries,
+    indexOf: (variant, kind, frame) => offsets[`${variant}:${kind}`] + frame,
+  };
+}
+
 export function ReturningMen({ figureCount, shadows }: { figureCount: number; shadows: boolean }) {
-  const meshRef = useRef<THREE.InstancedMesh>(null);
   const davidRef = useRef<THREE.Group>(null);
   const abiatharRef = useRef<THREE.Group>(null);
+  const meshRefs = useRef<(THREE.InstancedMesh | null)[]>([]);
+  const [davidClip, setDavidClip] = useState<ClipName>('walk');
+  const [abiatharClip, setAbiatharClip] = useState<ClipName>('idle');
 
-  const geometry = useMemo(() => makeFigureGeometry(), []);
+  const crowd = useMemo(() => bakeCrowd(), []);
+  const crowdMaterial = useMemo(
+    () =>
+      new THREE.MeshStandardMaterial({
+        vertexColors: true,
+        roughness: 1,
+        side: THREE.DoubleSide,
+      }),
+    [],
+  );
+
   const figures = useMemo<FigureState[]>(() => {
     const rng = mulberry32(1030);
     return Array.from({ length: figureCount }, (_, i) => ({
@@ -139,46 +185,111 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
     }));
   }, [figureCount]);
 
+  const tints = useMemo(() => {
+    const rng = mulberry32(808);
+    return Array.from({ length: figureCount }, () => {
+      const c = new THREE.Color(WOOL_PALETTE[Math.floor(rng() * WOOL_PALETTE.length)]);
+      c.offsetHSL(0, 0, (rng() - 0.5) * 0.05);
+      return c;
+    });
+  }, [figureCount]);
+
   const lengths = useMemo(
     () => ({ curve: APPROACH_CURVE.getLength(), exit: EXIT_CURVE.getLength() }),
     [],
   );
 
-  useEffect(() => {
-    const mesh = meshRef.current;
-    if (!mesh) return;
-    const rng = mulberry32(808);
-    const color = new THREE.Color();
-    for (let i = 0; i < figureCount; i++) {
-      color.set(WOOL_PALETTE[Math.floor(rng() * WOOL_PALETTE.length)]);
-      color.offsetHSL(0, 0, (rng() - 0.5) * 0.06);
-      mesh.setColorAt(i, color);
-    }
-    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
-  }, [figureCount]);
+  // David's dress is pinned so he stays recognizable across sessions; identity
+  // remains label-based (asset-david-marker) — this is wardrobe, not a face.
+  const davidParams = useMemo(
+    () =>
+      randomCharacterParams(mulberry32(41), {
+        detail: 'principal',
+        stature: 1.72,
+        dress: {
+          tunicColor: '#8f8168',
+          cloakColor: '#7a3b2e',
+          beltColor: '#4e3c2b',
+          headwear: 'wrap',
+          headwrapColor: '#7d6a52',
+        },
+      }),
+    [],
+  );
+  const abiatharParams = useMemo(
+    () =>
+      randomCharacterParams(mulberry32(42), {
+        detail: 'principal',
+        stature: 1.64,
+        dress: {
+          tunicColor: '#d8d2c0', // linen tone
+          cloakColor: undefined,
+          beltColor: '#665038',
+          headwear: 'wrap',
+          headwrapColor: '#d8d2c0',
+        },
+      }),
+    [],
+  );
+
+  useEffect(() => () => crowdMaterial.dispose(), [crowdMaterial]);
+  useEffect(
+    () => () => {
+      for (const g of crowd.geometries) g.dispose();
+    },
+    [crowd],
+  );
+
+  const counts = useMemo(() => new Array<number>(crowd.geometries.length), [crowd]);
 
   useFrame(() => {
     const { timeSec: t, terrain } = useAppStore.getState();
-    const mesh = meshRef.current;
-    if (mesh) {
-      for (let i = 0; i < figures.length; i++) {
-        const fig = figures[i];
-        const pose = figurePose(t, fig, lengths.curve, lengths.exit);
-        if (!pose.visible) {
-          dummy.position.set(0, -50, 0);
-          dummy.scale.setScalar(0.001);
-        } else {
-          const y = terrain.heightAt(pose.x, pose.z);
-          const bob = pose.moving ? Math.abs(Math.sin(t * 4.5 + fig.bobPhase)) * 0.07 : 0;
-          dummy.position.set(pose.x, y + bob, pose.z);
-          const kneelScale = fig.kneeler ? 1 - pose.kneel * 0.45 : 1 - pose.kneel * 0.12;
-          dummy.scale.set(0.95, 0.95 * kneelScale, 0.95);
-          dummy.rotation.set(pose.kneel * 0.3, pose.yaw, 0);
-        }
-        dummy.updateMatrix();
-        mesh.setMatrixAt(i, dummy.matrix);
+    counts.fill(0);
+
+    for (let i = 0; i < figures.length; i++) {
+      const fig = figures[i];
+      const pose = figurePose(t, fig, lengths.curve, lengths.exit);
+      if (!pose.visible) continue;
+
+      let bucket: number;
+      if (pose.moving) {
+        const speed = t >= DEPART_T ? EXIT_SPEED : MARCH_SPEED;
+        const phase = (t * speed) / WALK_STRIDE_M + fig.bobPhase;
+        const frame =
+          Math.floor((phase - Math.floor(phase)) * BUCKET_COUNTS.walk) % BUCKET_COUNTS.walk;
+        bucket = crowd.indexOf(i % VARIANT_SEEDS.length, 'walk', frame);
+      } else if (pose.kneel > 0.05) {
+        // Kneelers sink fully; the rest slump partway (kneeler flag varies depth).
+        const depth = fig.kneeler ? pose.kneel : pose.kneel * 0.6;
+        const frame = Math.min(
+          BUCKET_COUNTS.kneel - 1,
+          Math.round(depth * (BUCKET_COUNTS.kneel - 1)),
+        );
+        bucket = crowd.indexOf(i % VARIANT_SEEDS.length, 'kneel', frame);
+      } else {
+        const idlePhase = t * 0.35 + fig.bobPhase;
+        const frame =
+          Math.floor((idlePhase - Math.floor(idlePhase)) * BUCKET_COUNTS.idle) % BUCKET_COUNTS.idle;
+        bucket = crowd.indexOf(i % VARIANT_SEEDS.length, 'idle', frame);
       }
+
+      const mesh = meshRefs.current[bucket];
+      if (!mesh) continue;
+      const slot = counts[bucket]++;
+      dummy.position.set(pose.x, terrain.heightAt(pose.x, pose.z), pose.z);
+      dummy.rotation.set(0, pose.yaw, 0);
+      dummy.scale.setScalar(1);
+      dummy.updateMatrix();
+      mesh.setMatrixAt(slot, dummy.matrix);
+      mesh.setColorAt(slot, tints[i]);
+    }
+
+    for (let b = 0; b < crowd.geometries.length; b++) {
+      const mesh = meshRefs.current[b];
+      if (!mesh) continue;
+      mesh.count = counts[b];
       mesh.instanceMatrix.needsUpdate = true;
+      if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
     }
 
     // David: marches ahead of the column, stands apart at the strengthen beat.
@@ -218,9 +329,10 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
         yaw = Math.atan2(tmpTan.x, tmpTan.z);
       }
       const moving = t < arrivalT || t >= DEPART_T - 1.5 || (t >= 105 && t < 110);
-      const bob = moving ? Math.abs(Math.sin(t * 4.5)) * 0.07 : 0;
-      david.position.set(x, terrain.heightAt(x, z) + bob, z);
+      david.position.set(x, terrain.heightAt(x, z), z);
       david.rotation.set(0, yaw, 0);
+      const clip: ClipName = moving ? 'walk' : t >= GRIEF_T && t < 105 ? 'mourn' : 'idle';
+      if (clip !== davidClip) setDavidClip(clip);
     }
 
     // Abiathar: appears in the crowd, brings the ephod to David at the inquiry beat.
@@ -229,10 +341,12 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
       const appear = smoothstep((t - 64) / 2);
       let x = -7;
       let z = 5;
+      let movingAb = false;
       if (t >= 122) {
         const f = smoothstep((t - 122) / 4);
         x = -7 + (12.4 - -7) * f;
         z = 5 + (0.6 - 5) * f;
+        movingAb = t < 126.5;
       }
       if (t >= DEPART_T + 1.6) {
         const sOut = (t - (DEPART_T + 1.6)) * EXIT_SPEED;
@@ -241,36 +355,43 @@ export function ReturningMen({ figureCount, shadows }: { figureCount: number; sh
         const b = smoothstep(sOut / 8);
         x = 12.4 + (tmpVec.x - 12.4) * b;
         z = 0.6 + (tmpVec.z - 0.6) * b;
+        movingAb = true;
       }
       abiathar.position.set(x, terrain.heightAt(x, z), z);
       abiathar.scale.setScalar(appear * 0.95 + 0.001);
       abiathar.rotation.set(0, Math.atan2(14 - x, -1 - z), 0);
+      const clip: ClipName = movingAb ? 'walk' : 'idle';
+      if (clip !== abiatharClip) setAbiatharClip(clip);
     }
   });
 
   return (
     <group>
-      <instancedMesh
-        ref={meshRef}
-        args={[geometry, undefined, figureCount]}
-        frustumCulled={false}
-        castShadow={shadows}
-      >
-        <meshStandardMaterial roughness={1} />
-      </instancedMesh>
+      {crowd.geometries.map((geo, b) => (
+        <instancedMesh
+          key={b}
+          ref={(m) => {
+            meshRefs.current[b] = m;
+          }}
+          args={[geo, crowdMaterial, figureCount]}
+          frustumCulled={false}
+          castShadow={shadows}
+        />
+      ))}
 
-      {/* David — narrative figure, distinguished by cloak tone only */}
+      {/* David — narrative figure, distinguished by pinned dress + label only */}
       <group ref={davidRef}>
-        <mesh geometry={geometry} castShadow={shadows} scale={[1, 1.06, 1]}>
-          <meshStandardMaterial color="#7a3b2e" roughness={1} />
-        </mesh>
+        <Character params={davidParams} clip={davidClip} speed={MARCH_SPEED} shadows={shadows} />
       </group>
 
-      {/* Abiathar the priest — linen tone */}
+      {/* Abiathar the priest — linen tones */}
       <group ref={abiatharRef}>
-        <mesh geometry={geometry} castShadow={shadows}>
-          <meshStandardMaterial color="#d8d2c0" roughness={1} />
-        </mesh>
+        <Character
+          params={abiatharParams}
+          clip={abiatharClip}
+          speed={MARCH_SPEED}
+          shadows={shadows}
+        />
       </group>
     </group>
   );

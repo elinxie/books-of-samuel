@@ -26,11 +26,11 @@ scene.background = new THREE.Color('#cfc2a6');
 const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
 const QA_PRE = new URLSearchParams(window.location.search).get('qa') ?? undefined;
 if (QA_PRE === 'kneel-cloak') {
-  camera.position.set(0.4, 0.85, 6.2);
-  camera.lookAt(0, 0.45, 0);
+  camera.position.set(0.15, 0.62, 2.3);
+  camera.lookAt(0, 0.42, 0);
 } else if (QA_PRE === 'walk-swing') {
-  camera.position.set(0.2, 1.1, 8.6);
-  camera.lookAt(0, 0.85, 0);
+  camera.position.set(0.1, 0.85, 2.6);
+  camera.lookAt(0, 0.6, 0);
 } else {
   camera.position.set(0.6, 1.55, 7.2);
   camera.lookAt(0, 0.95, 0);
@@ -56,12 +56,17 @@ const material = new THREE.MeshStandardMaterial({
   side: THREE.DoubleSide,
 });
 
-function addSkinned(seed: number, detail: 'crowd' | 'principal', x: number, opts: {
-  clip?: 'walk' | 'idle' | 'kneel' | 'mourn';
-  time?: number;
-  yaw?: number;
-  cloak?: boolean;
-}) {
+function addSkinned(
+  seed: number,
+  detail: 'crowd' | 'principal',
+  x: number,
+  opts: {
+    clip?: 'walk' | 'idle' | 'kneel' | 'mourn';
+    time?: number;
+    yaw?: number;
+    cloak?: boolean;
+  },
+) {
   const rng = mulberry32(seed);
   const params = randomCharacterParams(rng, { detail });
   if (opts.cloak === false) params.dress.cloakColor = undefined;
@@ -80,7 +85,14 @@ function addSkinned(seed: number, detail: 'crowd' | 'principal', x: number, opts
   scene.add(mesh);
 }
 
-function addBaked(seed: number, x: number, clip: 'walk' | 'kneel', time: number, yaw = 0, cloak?: boolean) {
+function addBaked(
+  seed: number,
+  x: number,
+  clip: 'walk' | 'kneel',
+  time: number,
+  yaw = 0,
+  cloak?: boolean,
+) {
   const rng = mulberry32(seed);
   const params = randomCharacterParams(rng, { detail: 'crowd' });
   if (cloak === false) params.dress.cloakColor = undefined;
@@ -97,17 +109,17 @@ function addBaked(seed: number, x: number, clip: 'walk' | 'kneel', time: number,
 
 const QA = new URLSearchParams(window.location.search).get('qa') ?? undefined;
 
+const yawParam = new URLSearchParams(window.location.search).get('yaw');
+const timeParam = new URLSearchParams(window.location.search).get('t');
+
 if (QA === 'kneel-cloak') {
-  // Full kneel + cloak, front / side / back — Task 1a verification.
-  addBaked(14, -2.2, 'kneel', 2, 0, true);
-  addBaked(14, 0, 'kneel', 2, Math.PI / 2, true);
-  addBaked(14, 2.2, 'kneel', 2, Math.PI, true);
+  // Full kneel + cloak, single figure — yaw param picks front/side/back.
+  const yaw = yawParam ? Number(yawParam) : 0;
+  addBaked(14, 0, 'kneel', 2, yaw, true);
 } else if (QA === 'walk-swing') {
-  // Walk swing side view at several times — Task 1b verification.
-  addBaked(21, -3.3, 'walk', 0, Math.PI / 2, false);
-  addBaked(21, -1.1, 'walk', 0.25, Math.PI / 2, false);
-  addBaked(21, 1.1, 'walk', 0.55, Math.PI / 2, false);
-  addBaked(21, 3.3, 'walk', 0.8, Math.PI / 2, false);
+  // Walk swing side view at a chosen time — Task 1b verification.
+  const time = timeParam ? Number(timeParam) : 0.55;
+  addBaked(21, 0, 'walk', time, Math.PI / 2, false);
 } else {
   addSkinned(11, 'principal', -3.4, { cloak: false });
   addSkinned(12, 'principal', -2.1, { clip: 'walk', time: 0.28, yaw: 0.7, cloak: true });

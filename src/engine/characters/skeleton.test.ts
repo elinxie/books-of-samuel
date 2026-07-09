@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import * as THREE from 'three';
-import { BONE_NAMES } from './types';
+import { BONE_NAMES, type BoneName } from './types';
 import { buildSkeleton, jointPositions, resetToRest } from './skeleton';
 import { makeClips } from './animation';
 import { applyClipPose } from './bake';
@@ -37,7 +37,7 @@ describe('skeleton rest pose', () => {
 
   it('keeps the documented parent-child hierarchy intact', () => {
     const { bones } = buildSkeleton(stature);
-    const expectedParent: Record<string, string | null> = {
+    const expectedParent: Record<BoneName, BoneName | null> = {
       hips: null,
       spine: 'hips',
       chest: 'spine',

@@ -252,8 +252,7 @@ export function buildBodyGeometry(
     );
 
     // Foot with sandal: dark sole/straps below, skin above.
-    const footColor = (theta: number, base: THREE.Color) =>
-      Math.sin(theta) > 0.1 ? sandal : base; // v axis is -Y here → sin>0 is downward
+    const footColor = (theta: number, base: THREE.Color) => (Math.sin(theta) > 0.1 ? sandal : base); // v axis is -Y here → sin>0 is downward
     const f = (z: number, y: number, rx: number, rz: number): Ring => ({
       c: new THREE.Vector3(ankleX, y * H, z * H),
       rx: rx * H,
@@ -397,7 +396,10 @@ export function buildBodyGeometry(
           shape: 3,
         }),
         a(
-          wr.clone().addScaledVector(handDir, 0.1 * H).add(new THREE.Vector3(0, 0, 0.008 * H)),
+          wr
+            .clone()
+            .addScaledVector(handDir, 0.1 * H)
+            .add(new THREE.Vector3(0, 0, 0.008 * H)),
           0.018,
           skin,
           [[hand, 1]],
@@ -427,8 +429,7 @@ export function buildBodyGeometry(
     ? (theta: number, base: THREE.Color) =>
         angDist(theta, FRONT) < 0.85 ? hair : napeFn(theta, base)
     : undefined;
-  const napeFn = (theta: number, base: THREE.Color) =>
-    angDist(theta, BACK) < 1.2 ? hair : base;
+  const napeFn = (theta: number, base: THREE.Color) => (angDist(theta, BACK) < 1.2 ? hair : base);
   const eyeFn = (theta: number, base: THREE.Color) =>
     angDist(theta, FRONT - 0.45) < 0.22 || angDist(theta, FRONT + 0.45) < 0.22
       ? skinShade
@@ -453,7 +454,12 @@ export function buildBodyGeometry(
 
   builder.addTube(
     prep([
-      hd(0.862, 0.027, 0.027, 0.002, { skin: [['neck', 0.5], ['head', 0.5]] }),
+      hd(0.862, 0.027, 0.027, 0.002, {
+        skin: [
+          ['neck', 0.5],
+          ['head', 0.5],
+        ],
+      }),
       hd(0.878, 0.034, 0.04, 0.006, {
         colorFn: params.beard
           ? (th, base) => (angDist(th, FRONT) < 1.05 ? hair : napeFn(th, base))
@@ -508,7 +514,10 @@ export function buildBodyGeometry(
     });
     builder.addTube(
       prep([
-        cl(0.845, 0.078 * s, [['chest', 0.5], ['neck', 0.5]]),
+        cl(0.845, 0.078 * s, [
+          ['chest', 0.5],
+          ['neck', 0.5],
+        ]),
         cl(0.815, 0.128 * s, [['chest', 1]]),
         cl(0.72, 0.13, [
           ['chest', 0.55],

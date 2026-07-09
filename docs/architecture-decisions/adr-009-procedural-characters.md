@@ -5,7 +5,7 @@
 ## Context
 
 ADR-008 scheduled modeled figures for Milestone 3 via Blender→glTF, flagging
-instanced *skinned* crowds as the riskiest unknown. The project owner directed
+instanced _skinned_ crowds as the riskiest unknown. The project owner directed
 that realistic 3D characters be built now, ahead of the roadmap, using
 third-party models or our own — with the app remaining web-based. A sourcing
 survey (2026-07-07) found no realistic rigged human models that are both CC0
@@ -35,7 +35,7 @@ Mixamo-style assets fail the licensing hard constraint. So the figures are
 5. **The Blender→glTF path stays open.** `CharacterRig` (same bone names, same
    clip names) is the seam where a Blender-authored `.glb` body can replace the
    procedural one at M3+ without touching scene code. This ADR amends ADR-008's
-   *timing* (the "pilot figure" now exists earlier, in code) but not its
+   _timing_ (the "pilot figure" now exists earlier, in code) but not its
    tooling, sourcing, or licensing policy.
 6. **Honesty unchanged**: figures remain `placeholder: true` (dress detail and
    gear still await full historical review against King & Stager); the UI

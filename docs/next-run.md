@@ -15,6 +15,16 @@ tasks unless a real blocker forces otherwise. Keep new tests focused and
 proportionate (a couple of targeted assertions, not exhaustive coverage) —
 don't over-invest tokens in test depth for routine visual tweaks.
 
+## Out-of-band insertion (2026-07-07, Fable, ADR-009)
+
+The user directed an unscheduled pull-forward: realistic 3D characters
+(`src/engine/characters/`, procedural skinned rig + period dress + baked-pose
+crowds) landed now, ahead of everything below. This does **not** replace the
+"Next Sonnet session" list below — it was inserted before it, not instead of
+it. The visual-fidelity roadmap's §D (characters) is now mostly checked off
+as a result; §A/§B/§C and the M2 groundwork item are still exactly where they
+were. See `docs/run-log.md` and `docs/progress.md` for what shipped.
+
 ## Since the last version of this note
 
 `docs/fable-review-queue.md`'s Open table is now **empty** — queue #4
