@@ -166,6 +166,19 @@ function clashEngagement(t: number): number {
 }
 
 /**
+ * The clash cycle's position, 0..1, with no sign/engagement blending — for
+ * selecting which baked leg-pose bucket (`sampleFightPoses` in
+ * `engine/characters/animation.ts`) a figure's body geometry should use this
+ * frame. Kept separate from `defenderClashPose`'s `swing`/`stagger` (which
+ * drive the whole-body/weapon rotation) since bucket selection needs a plain
+ * cycle position, not a signed waveform.
+ */
+export function clashPhase01(t: number, phaseOffset: number): number {
+  const raw = (t - T_LINE_CLASH) / CLASH_CYCLE_SEC + phaseOffset;
+  return raw - Math.floor(raw);
+}
+
+/**
  * The Israelite defender line's clash stance: idle-engaged, swinging the
  * spear, and briefly staggering against the paired Philistine's strike
  * beat. `phaseOffset` (0..1) staggers each figure's cycle so the line reads

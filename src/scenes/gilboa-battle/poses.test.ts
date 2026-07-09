@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
   armorBearerPose,
+  CLASH_CYCLE_SEC,
+  clashPhase01,
   defenderClashPose,
   defenderFallPose,
   infantryEngagedPose,
@@ -175,6 +177,31 @@ describe('defenderClashPose / infantryEngagedPose (b-line-clash)', () => {
   it('phase offset changes the swing beat without changing engagement timing', () => {
     const t = T_LINE_CLASH + 5;
     expect(defenderClashPose(t, 0).engaged).toBeCloseTo(defenderClashPose(t, 0.5).engaged, 6);
+  });
+});
+
+describe('clashPhase01 (bucket-selection phase)', () => {
+  it('always stays within [0, 1)', () => {
+    for (let i = 0; i < 50; i++) {
+      const t = T_LINE_CLASH + i * 1.7;
+      const phase = clashPhase01(t, 0.37);
+      expect(phase).toBeGreaterThanOrEqual(0);
+      expect(phase).toBeLessThan(1);
+    }
+  });
+
+  it('wraps around continuously (no jump at the cycle boundary)', () => {
+    const before = clashPhase01(T_LINE_CLASH + CLASH_CYCLE_SEC - 0.01, 0);
+    const after = clashPhase01(T_LINE_CLASH + CLASH_CYCLE_SEC + 0.01, 0);
+    expect(before).toBeGreaterThan(0.9);
+    expect(after).toBeLessThan(0.1);
+  });
+
+  it('phase offset shifts the cycle position deterministically', () => {
+    const t = T_LINE_CLASH + 3;
+    const a = clashPhase01(t, 0);
+    const b = clashPhase01(t, 0.5);
+    expect(Math.abs(a - b)).toBeCloseTo(0.5, 5);
   });
 });
 
