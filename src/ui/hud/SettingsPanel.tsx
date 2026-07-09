@@ -81,9 +81,9 @@ export function SettingsPanel() {
 
       <h3>Violence rendering</h3>
       <p className="panel-sub">
-        Battle and death-sequence scenes (e.g. Mount Gilboa) follow one choreography in
-        two treatments — reduction abstracts how a moment is shown, never the facts. No
-        gore or dismemberment in either mode.
+        Battle and death-sequence scenes (e.g. Mount Gilboa) follow one choreography in two
+        treatments — reduction abstracts how a moment is shown, never the facts. No gore or
+        dismemberment in either mode.
       </p>
       <div className="radio-row">
         {(

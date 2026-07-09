@@ -89,10 +89,7 @@ export function CrestRetinue({ count, shadows }: { count: number; shadows: boole
   const bowMeshRef = useRef<THREE.InstancedMesh>(null);
   const geometry = useMemo(() => makeFigureGeometry(), []);
   const spearGeo = useMemo(() => buildSpearGeometry(CROWD_KIT_STATURE, 'handR'), []);
-  const shieldGeo = useMemo(
-    () => buildShieldGeometry(CROWD_KIT_STATURE, 'oval', 'handL'),
-    [],
-  );
+  const shieldGeo = useMemo(() => buildShieldGeometry(CROWD_KIT_STATURE, 'oval', 'handL'), []);
   const bowGeo = useMemo(() => buildBowGeometry(CROWD_KIT_STATURE, 'handL'), []);
   const figures = useMemo(() => buildRetinueFigures(count), [count]);
   const total = figures.length;

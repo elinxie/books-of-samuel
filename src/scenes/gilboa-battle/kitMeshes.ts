@@ -64,11 +64,7 @@ export function buildShieldGeometry(
   const board = new THREE.SphereGeometry(stature * 0.19, 10, 8);
   board.scale(shape === 'oval' ? 0.58 : 0.72, shape === 'oval' ? 0.92 : 0.72, 0.16);
   const sideSign = hand === 'handL' ? 1 : -1;
-  board.translate(
-    grip.x + sideSign * stature * 0.05,
-    grip.y * 1.05,
-    grip.z + stature * 0.12,
-  );
+  board.translate(grip.x + sideSign * stature * 0.05, grip.y * 1.05, grip.z + stature * 0.12);
   return board;
 }
 

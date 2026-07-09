@@ -77,7 +77,8 @@ export const CHARACTERS: CharacterOrGroup[] = [
     id: 'abinadab-son-of-saul',
     name: 'Abinadab',
     kind: 'person',
-    summary: 'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
+    summary:
+      'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
     passageRefs: ['1 Samuel 31:2'],
     claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-sons-killed'],
   },
@@ -85,7 +86,8 @@ export const CHARACTERS: CharacterOrGroup[] = [
     id: 'malchi-shua',
     name: 'Malchi-shua',
     kind: 'person',
-    summary: 'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
+    summary:
+      'A son of Saul, named among the three killed with him on Mount Gilboa (1 Samuel 31:2).',
     passageRefs: ['1 Samuel 31:2'],
     claimIds: ['claim-battle-scale', 'claim-gilboa-topography', 'claim-sons-killed'],
   },

@@ -92,7 +92,12 @@ const ARMOR_BEARER_PARAMS: CharacterParams = {
   hairColor: '#1f1712',
   beard: true,
   detail: 'principal',
-  dress: { tunicColor: '#b69b6d', beltColor: '#5a3722', headwear: 'wrap', headwrapColor: '#d1c09a' },
+  dress: {
+    tunicColor: '#b69b6d',
+    beltColor: '#5a3722',
+    headwear: 'wrap',
+    headwrapColor: '#d1c09a',
+  },
 };
 
 function useRigGeometry(params: CharacterParams): THREE.BufferGeometry {
@@ -112,10 +117,7 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
   const malchiShuaGeo = useRigGeometry(MALCHI_SHUA_PARAMS);
   const armorBearerGeo = useRigGeometry(ARMOR_BEARER_PARAMS);
   const spearGeo = useMemo(() => buildSpearGeometry(PRINCIPAL_KIT_STATURE, 'handR'), []);
-  const shieldGeo = useMemo(
-    () => buildShieldGeometry(PRINCIPAL_KIT_STATURE, 'oval', 'handL'),
-    [],
-  );
+  const shieldGeo = useMemo(() => buildShieldGeometry(PRINCIPAL_KIT_STATURE, 'oval', 'handL'), []);
 
   const saulRef = useRef<THREE.Group>(null);
   const jonathanRef = useRef<THREE.Group>(null);
@@ -127,14 +129,8 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
 
   // Facing toward Saul, the group's visual center — fixed baseline yaw for
   // each figure (positions never move; only the pose transform changes).
-  const jonathanBaseYaw = Math.atan2(
-    SAUL_POS[0] - JONATHAN_POS[0],
-    SAUL_POS[1] - JONATHAN_POS[1],
-  );
-  const abinadabBaseYaw = Math.atan2(
-    SAUL_POS[0] - ABINADAB_POS[0],
-    SAUL_POS[1] - ABINADAB_POS[1],
-  );
+  const jonathanBaseYaw = Math.atan2(SAUL_POS[0] - JONATHAN_POS[0], SAUL_POS[1] - JONATHAN_POS[1]);
+  const abinadabBaseYaw = Math.atan2(SAUL_POS[0] - ABINADAB_POS[0], SAUL_POS[1] - ABINADAB_POS[1]);
   const malchiShuaBaseYaw = Math.atan2(
     SAUL_POS[0] - MALCHI_SHUA_POS[0],
     SAUL_POS[1] - MALCHI_SHUA_POS[1],
