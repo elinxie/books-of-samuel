@@ -440,3 +440,38 @@ session can merge/publish first, then run M2 sign-off.
   review. Queue Open table is now empty.
 
 Next: see `docs/next-run.md`.
+
+**2026-07-09 — Fable (`world-director` subagent) — `gilboa-battle` scene brief**
+
+- M3's first scene brief: `docs/design/gilboa-battle-brief.md`. Scope guard:
+  covers 1 Sam 31:1–6 only (rout + death sequence); wall-display/stripping is
+  next-day and belongs to `beth-shan-walls`. `SceneDef` in `src/data/scenes.ts`
+  filled with 8 beats (`b-lines` → `b-silence`) and 5 viewpoints; `status`
+  stays `planned`, `claimIds`/`assetIds` stay empty until Sonnet creates the
+  records at build.
+- Resolved design calls: **ridge terrain required** (implement ADR-005's
+  anticipated `ridge` `TerrainSpec` feature, don't fake with stacked mounds);
+  **DEM deferred, procedural for v1** (DEM sourcing/licensing is untouched
+  repo territory — opened queue #12 as its own Fable-tier ADR question);
+  **dress review resolved** — differentiate Israelite/Philistine kit
+  conservatively, plumed headdress on Philistine principals only behind a
+  `scholarlyViews` dispute (queue #13 opened: source page-verification must
+  clear before `released`); **modeled-figure pilot already satisfied** by
+  ADR-010's procedural rig — Gilboa needs kit-attachment meshes + fallen pose
+  buckets, not a from-scratch glTF hero, so no redundant work scheduled.
+- Scale: no headcount asserted (register #4 forbids it) — stages the
+  ridge-crest engagement, not a national army; ~120–140 combat figures at
+  high tier, ~1:10 disclosed ratio, rout read by motion/dust not count.
+- Violence: full per-beat standard-vs-reduced table in the brief, per
+  ADR-009 (one choreography, two treatments; armor-bearer's refusal at 31:4a
+  identical in both modes as the emotional pivot; Saul's death held at
+  documentary distance in standard, fully elided in reduced; no dismemberment
+  or blood in any mode; beheading (31:9) out of scope).
+- Gate re-verified this pass: format/lint/70 vitest/build all green (fresh
+  `npm install` was needed — lockfile/node_modules had drifted since the last
+  session in this container).
+- `docs/fable-review-queue.md`: added #12 (DEM data-sourcing/licensing ADR,
+  open) and #13 (Philistine headdress attribution, open, blocks `released`
+  not the build); annotated #11's resolution with a pointer to this brief.
+
+Next: build `gilboa-battle` — see `docs/next-run.md`.

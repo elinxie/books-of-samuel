@@ -86,6 +86,18 @@ revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
 ## Milestone 3–4: **planned**, not started. See `src/data/milestones.ts` for goals.
 
+`gilboa-battle` world-director brief done 2026-07-09 (Fable):
+`docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
+`src/data/scenes.ts` (status stays `planned` — no build yet). Scope: 1 Sam
+31:1–6 only (rout + death sequence); wall-display/stripping belongs to
+`beth-shan-walls`. Key calls: `ridge` `TerrainSpec` feature required (ADR-005,
+not yet implemented); procedural terrain for v1, DEM deferred (queue #12
+opened); Israelite/Philistine dress differentiated conservatively, plumed
+Philistine headdress on principals only behind a dispute label (queue #13
+opened, must clear before `released`); ADR-010's procedural rig already
+satisfies the "modeled-figure pilot" — no new glTF hero needed, just kit
+attachments + fallen pose buckets. Next: Sonnet/`threejs-engineer` build.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:
