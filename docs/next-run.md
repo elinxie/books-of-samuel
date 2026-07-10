@@ -3,6 +3,20 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
+## State right now (2026-07-10, rig-conversion/melee-combat branch merged to main)
+
+`claude/resolve-merge-conflicts-nqbqn8` had continued past what PR #23
+actually merged (PR #23 only captured an earlier ancestor of the branch —
+the simple gilboa-battle build) — 12 more commits (melee-combat, full
+rig-conversion to real limbed figures, sandboxed performance measurement)
+were sitting unmerged on that branch. Merged cleanly onto `main` (no
+conflicts) via `claude/continue-unmerged-work-4xucqr`; full gate re-run and
+green: format, lint, 144 vitest, build, 7 e2e. See "State right now
+(2026-07-09, post rig-conversion slice)" below for the actual content —
+nothing about it has changed, just confirming it's now on `main`. Item 0
+below (real-hardware perf check) is still open; this session's gate re-run
+was sandboxed/software-rendered same as before.
+
 ## State right now (2026-07-09, post rig-conversion slice)
 
 **All five Gilboa crowd components now use real limbed figures**

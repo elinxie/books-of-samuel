@@ -654,3 +654,12 @@ real, likely-transferable signal (evidence this isn't catastrophic), but a
 software rasterizer's bottlenecks don't necessarily scale like a real GPU's
 would. Recorded honestly in `docs/next-run.md`: this is real measurement, not
 a substitute for someone checking the actual deployed scene on real hardware.
+
+**2026-07-10 — Sonnet 5 — merged unmerged rig-conversion/melee-combat work to main**
+This whole branch (`claude/resolve-merge-conflicts-nqbqn8`) had 12 commits
+past what PR #23 actually merged — PR #23 only captured an earlier ancestor
+(the simple gilboa-battle build); the melee-combat, rig-conversion, and
+performance-measurement work above never landed on `main`. Reset
+`claude/continue-unmerged-work-4xucqr` to the branch tip, merged `main` (no
+conflicts), re-ran the full gate: format:check, lint, 144 vitest, build, 7
+e2e — all green. Pushed and opened a PR to close the gap.
