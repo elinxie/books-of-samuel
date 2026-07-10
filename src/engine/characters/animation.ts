@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { type ClipName, WALK_STRIDE_M } from './types';
+import type { CrowdLimbPose } from './skeleton';
 
 function track(name: string, times: number[], values: number[]): THREE.QuaternionKeyframeTrack {
   return new THREE.QuaternionKeyframeTrack(`${name}.quaternion`, times, values);
@@ -37,3 +38,61 @@ export function makeClips(): Record<ClipName, THREE.AnimationClip> {
   };
 }
 export { WALK_STRIDE_M };
+
+/**
+ * Sampled `CrowdLimbPose` buckets for a walk cycle — a limb-angle sibling of
+ * `makeClips().walk`'s bone-quaternion track (same 0.35 rad thigh-swing / 0.25
+ * rad arm-swing amplitude convention), but returning plain pose values a
+ * caller bakes into static geometry via `buildCrowdLimbedGeometry` +
+ * `poseJointPositions`, rather than an (unused/stub-applied) `AnimationClip`.
+ * `bucketCount` static geometries, cycled through by scene-time phase, is
+ * how instanced crowds get a legible walking stride without per-instance
+ * skeletal skinning.
+ */
+export function sampleWalkPoses(bucketCount: number): CrowdLimbPose[] {
+  const out: CrowdLimbPose[] = [];
+  for (let i = 0; i < bucketCount; i++) {
+    const phase = (i / bucketCount) * Math.PI * 2;
+    const legSwingL = Math.sin(phase) * 0.35;
+    const legSwingR = Math.sin(phase + Math.PI) * 0.35;
+    // The lifting leg bends at the knee on the forward half of its swing;
+    // the planted/trailing leg stays straight.
+    const kneeBendL = Math.max(0, Math.sin(phase + Math.PI / 2)) * 0.5;
+    const kneeBendR = Math.max(0, Math.sin(phase + Math.PI / 2 + Math.PI)) * 0.5;
+    out.push({
+      legSwingL,
+      legSwingR,
+      kneeBendL,
+      kneeBendR,
+      armSwingL: -legSwingL * 0.7,
+      armSwingR: -legSwingR * 0.7,
+    });
+  }
+  return out;
+}
+
+/**
+ * Sampled `CrowdLimbPose` buckets for a braced melee stance: a weight-shift
+ * between a wide planted pair of legs, not a walking stride — read as
+ * "engaged and bracing/recovering," paired with `poses.ts`'s
+ * `defenderClashPose`/`infantryEngagedPose` swing cycle on the body/weapon
+ * transform. No arm-swing component here; the weapon-strike motion is
+ * carried entirely by the existing whole-body/weapon rotation in the scene
+ * component, not by this geometry's arms.
+ */
+export function sampleFightPoses(bucketCount: number): CrowdLimbPose[] {
+  const out: CrowdLimbPose[] = [];
+  for (let i = 0; i < bucketCount; i++) {
+    const phase = (i / bucketCount) * Math.PI * 2;
+    const brace = 0.5 + 0.5 * Math.sin(phase);
+    out.push({
+      legSwingL: 0.12,
+      legSwingR: -0.18,
+      kneeBendL: 0.25 + brace * 0.35,
+      kneeBendR: 0.15 + (1 - brace) * 0.3,
+      armSwingL: 0,
+      armSwingR: 0,
+    });
+  }
+  return out;
+}

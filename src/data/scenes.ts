@@ -390,11 +390,19 @@ export const SCENES: SceneDef[] = [
         passageRef: '1 Samuel 28:4; 31:1',
       },
       {
+        id: 'b-line-clash',
+        timeSec: 8,
+        title: 'The lines meet',
+        caption:
+          'Israel’s line and the Philistine press engage directly on the ridge. The narrative moves straight from arrayed lines to flight without describing the clash itself; a rout presupposes one. Shown as scripted, non-interactive swordplay at a documentary distance — no wound or blood is depicted in either mode. (1 Samuel 31:1)',
+        passageRef: '1 Samuel 31:1',
+      },
+      {
         id: 'b-rout',
         timeSec: 18,
         title: 'The line breaks',
         caption:
-          'The men of Israel flee before the Philistines and fall on the slopes of Gilboa. The defeat is read here in the drift downhill and the dust — not in blow-by-blow fighting. (1 Samuel 31:1)',
+          'The men of Israel flee before the Philistines and fall on the slopes of Gilboa. The defeat continues to read in the drift downhill and the dust as well as the clash just fought. (1 Samuel 31:1)',
         passageRef: '1 Samuel 31:1',
       },
       {

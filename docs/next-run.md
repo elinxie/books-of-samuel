@@ -3,7 +3,98 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-09, post-scope-policy change + post-Gilboa-build-pass)
+## State right now (2026-07-10, rig-conversion/melee-combat branch merged to main)
+
+`claude/resolve-merge-conflicts-nqbqn8` had continued past what PR #23
+actually merged (PR #23 only captured an earlier ancestor of the branch —
+the simple gilboa-battle build) — 12 more commits (melee-combat, full
+rig-conversion to real limbed figures, sandboxed performance measurement)
+were sitting unmerged on that branch. Merged cleanly onto `main` (no
+conflicts) via `claude/continue-unmerged-work-4xucqr`; full gate re-run and
+green: format, lint, 144 vitest, build, 7 e2e. See "State right now
+(2026-07-09, post rig-conversion slice)" below for the actual content —
+nothing about it has changed, just confirming it's now on `main`. Item 0
+below (real-hardware perf check) is still open; this session's gate re-run
+was sandboxed/software-rendered same as before.
+
+## State right now (2026-07-09, post rig-conversion slice)
+
+**All five Gilboa crowd components now use real limbed figures**
+(`buildCrowdLimbedGeometry`, `src/engine/characters/bodyGeometry.ts`), not
+capsule+sphere blobs — the last two (`CrestRetinue`, `PhilistinePress`) were
+converted this slice, completing what the melee-combat slice below started.
+`DefenderLine`/`EngagedPhilistines`/`RoutingIsraelites` additionally animate
+legs via baked walk-cycle/fight-stance pose buckets (`sampleWalkPoses`/
+`sampleFightPoses`, `engine/characters/animation.ts`), cycling through 6-8
+InstancedMesh buckets per component selected by phase each frame
+(`mesh.count` set to actual per-bucket occupancy). `CrestRetinue`/
+`PhilistinePress` stay single-bucket (static/idle formations, no stride to
+animate). Full detail across 4 commits in `docs/run-log.md`.
+
+**Performance: measured, not just estimated — real signal, but incomplete.**
+Frame-time sampled via a headless-Chromium `requestAnimationFrame` harness
+(`performance.now()` deltas, high quality tier), comparing this session's
+final state against a `git worktree` checkout of `2a41aca` (the pre-session
+Gilboa build) at the same scene point (rout window, the one beat that exists
+unchanged in both versions): **avg frame time went from ~222ms to ~333ms, a
+~1.5x regression** — real but milder than the naive worst-case math below
+would suggest (figure count ~2.5x, per-figure triangles ~4x, draw calls
+roughly doubled ~20→~40; costs don't compound linearly here, and a large
+fixed cost — terrain/vegetation/dust, unchanged by this session — dilutes
+the relative impact).
+
+**This sandbox has no GPU** (`WEBGL_debug_renderer_info` reports `SwiftShader
+Device`, a pure CPU software rasterizer) — the absolute numbers (~3-4.5 fps
+either way) are meaningless for real hardware and were not reported as if
+they were. The ~1.5x _relative_ regression is a real, transferable signal,
+but software-rasterizer bottlenecks (fill rate, per-pixel cost) don't
+necessarily scale the same way a real GPU's would (GPUs handle instanced
+draw-call/triangle scaling far more gracefully) — so this is genuine
+evidence the change isn't catastrophic, not proof it's fine on an actual
+device. **Someone should still check the live/deployed scene on real
+hardware before calling this fully safe** — that's the one thing no
+sandboxed session here can substitute for.
+
+If a real-device check does turn up a problem, the fix is likely: fewer pose
+buckets (e.g. 4 instead of 6-8), reduced `defenderCount`/
+`engagedInfantryCount`/general figure-count ratios, or geometry LOD (fall
+back to capsules below a distance threshold) — not necessarily reverting the
+real-figure/leg-animation work itself, since the measured regression is
+modest relative to how large the underlying changes were.
+
+## State before the rig-conversion slice (2026-07-09, post melee-combat slice)
+
+**`gilboa-battle` now renders real mutual combat**, not just a rout/death
+sequence: a new `DefenderLine`/`EngagedPhilistines` pair engages in a
+scripted (non-interactive) swing/block/stagger clash from a new `b-line-clash`
+beat (t=8) through `b-rout` (t=18), per `claim-line-defense`. User-directed —
+revises the original brief's "not blow-by-blow fighting" call; logged
+`docs/fable-review-queue.md` #15, non-blocking, flagged for a Fable sanity
+check. Figure-count ratios were also bumped to actually match
+`claim-battle-scale`'s already-landed ~1:20 ratio (previously only the claim
+text said this, the render didn't) — **~325 figures at high tier, up from
+~127, well above the original brief's 120–140 cap** (`docs/design/gilboa-
+battle-brief.md` "Scale assumptions"). Literal draw-call count only grew
+modestly (~6 new instancedMesh draw calls, DefenderLine + EngagedPhilistines,
+on top of ~17-20 existing — everything here is instanced, so draw calls don't
+scale with figure count), but total instanced triangle count and the
+per-frame `useFrame` matrix-update cost are ~2.5x. Full `npm run verify`
+equivalent (format/lint/130 vitest/build/7 e2e) is green and a manual headless
+console-error check of `/observe/gilboa-battle` showed 0 errors, but **no
+actual FPS/frame-time measurement has been taken** — a real
+`performance-reviewer` pass (not just the self-check above) is the next
+priority, not deferred further.
+
+Still outstanding from this slice, explicitly told to the user: crowd figures
+are still capsule+sphere primitives, not the real procedural rig
+(`src/engine/characters/`) — no leg animation, not "real figures." The
+forward-kinematics groundwork (`poseJointPositions`/`CrowdLimbPose` in
+`src/engine/characters/skeleton.ts`) landed but isn't wired into any scene
+component yet. This was the previous background agent's task before it
+failed on an account monthly-spend-limit cutoff (not a code issue) — same
+spend limit is a live constraint for whoever picks this up next.
+
+## State before this slice (2026-07-09, post-scope-policy change + post-Gilboa-build-pass)
 
 **Policy change landed (Fable, user-directed):** the project is now an
 **atlas-first historical world with constrained game-like affordances** —
@@ -39,6 +130,18 @@ Philistine plumed-headdress verification (must clear before the scene ships
 The visible-first build brief below is **complete** — do not re-run it. Next
 session's actual work is the follow-up list that fell out of the build pass:
 
+0. **(Still open) Real-hardware performance check.** A sandboxed relative
+   measurement is done (see "State right now" above: ~1.5x frame-time
+   regression, milder than the raw figure/triangle/draw-call multipliers
+   alone would suggest) — but it was taken on a GPU-less software renderer
+   (SwiftShader), so it's evidence the change isn't catastrophic, not proof
+   it's fine on a real device. Someone should load the actual deployed scene
+   on real hardware at high quality tier before calling this settled. If it
+   turns out bad: fewer pose buckets (4 instead of 6-8), lower
+   `defenderCount`/`engagedInfantryCount`/figure-count ratios, or a
+   capsule-fallback LOD at distance are the likely fixes — probably not
+   reverting the real-figure/leg-animation work itself, given how modest the
+   measured regression was relative to how large the underlying changes were.
 1. **ADR-009 first-visit violence advisory** (small, self-contained UI slice):
    `gilboa-battle` currently has a plain `violenceMode` toggle in the Settings
    panel (`src/ui/hud/SettingsPanel.tsx`) but no first-visit modal/advisory
@@ -46,24 +149,17 @@ session's actual work is the follow-up list that fell out of the build pass:
    violence-bearing scene, which ADR-009 calls for. `ui-engineer` task — check
    how `showLabels`/other first-visit or persisted-preference UI is structured
    for the closest existing pattern to extend, not invent from scratch.
-2. **Performance pass on `gilboa-battle`** (`performance-reviewer`, per the
-   brief's "run early, not just at the end" instruction — this is "the end" of
-   the first build pass): all 5 slices (population, pose, kit, dust) now render
-   concurrently at high tier for the first time. Check draw-call count against
-   the Amalekite scene's budget (`QUALITY_PROFILES`), and sanity-check frame
-   time isn't degraded by `CrestRetinue`/`RoutingIsraelites`'s move from
-   one-time `useEffect` placement to per-frame `useFrame` pose writes (Step 3).
-3. **Fable-review-queue #13** (headdress citation page-verification) — still
+2. **Fable-review-queue #13** (headdress citation page-verification) — still
    open, still blocking `gilboa-battle` → `released` (not blocking further
    build work). Needs primary-source page inspection, not just bibliographic
    lookup; batch with #12 (DEM data-sourcing ADR) if both are ready for a
    Fable pass.
-4. **Milestone-scope items still open for `gilboa-battle` → `released`**: the
+3. **Milestone-scope items still open for `gilboa-battle` → `released`**: the
    scene's `beth-shan-walls` and `jabesh-burial` siblings are still fully
    `planned`/empty (`SceneDef`s exist in `src/data/scenes.ts` with no beats/
    viewpoints) — M3 world-director passes for those two scenes are a Fable-tier
    task per `docs/model-handoff.md`, not yet requested.
-5. **Test-gap backlog** (small `test-engineer` task, carried forward from
+4. **Test-gap backlog** (small `test-engineer` task, carried forward from
    2026-07-08 biblical review, still not started): `integrity.test.ts` only
    scans `PASSAGES[].keyExcerpts` for the ESV excerpt budget — beat captions in
    `SCENES[].beats[]` are invisible to it. Add caption scanning.

@@ -1,12 +1,18 @@
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { useAppStore, type ViolenceMode } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
-import { TUNIC_PALETTE } from '../../engine/characters';
+import {
+  buildCrowdLimbedGeometry,
+  poseJointPositions,
+  sampleWalkPoses,
+  TUNIC_PALETTE,
+  type CharacterParams,
+} from '../../engine/characters';
 import { buildRoutSlots } from './layout';
 import { clamp01, lerp, smoothstep, T_ROUT } from './poses';
+import { CROWD_KIT_STATURE } from './kitMeshes';
 
 /**
  * Routing Israelites (M3 Step 3): figures streaming down the eastern escape
@@ -19,7 +25,27 @@ import { clamp01, lerp, smoothstep, T_ROUT } from './poses';
  * never falls: the fall is elided and the figure simply fades from the
  * scene mid-drift instead, reading as the rout "thinning and draining"
  * rather than a depicted death.
+ *
+ * Body geometry is real limbed crowd-tier figures (`buildCrowdLimbedGeometry`),
+ * not the old capsule blob, cycling through baked walk-cycle leg buckets
+ * (`sampleWalkPoses`) while moving — same bucketed-InstancedMesh approach as
+ * `DefenderLine.tsx`/`EngagedPhilistines.tsx`.
  */
+
+const BUCKET_COUNT = 8;
+/** Seconds per full stride cycle — an animation-timing choice, not a claim. */
+const WALK_CYCLE_SEC = 1.1;
+
+const GENERIC_ISRAELITE_PARAMS: CharacterParams = {
+  stature: CROWD_KIT_STATURE,
+  build: 0.5,
+  shoulders: 1,
+  skinColor: '#8f5b3d',
+  hairColor: '#1f1712',
+  beard: false,
+  detail: 'crowd',
+  dress: { tunicColor: TUNIC_PALETTE[0], beltColor: '#3b2416', headwear: 'bare' },
+};
 
 export interface RoutFigureState {
   startX: number;
@@ -33,6 +59,7 @@ export interface RoutFigureState {
   yaw: number;
   scale: number;
   color: THREE.Color;
+  walkPhaseOffset: number;
 }
 
 export interface RoutPose {
@@ -54,8 +81,11 @@ export function buildRoutFigures(count: number, seed = 31005): RoutFigureState[]
   const paletteRng = mulberry32(31008);
   const color = new THREE.Color();
   return slots.map((slot) => {
-    color.set(TUNIC_PALETTE[Math.floor(paletteRng() * TUNIC_PALETTE.length)]);
-    color.offsetHSL(0, 0, (paletteRng() - 0.5) * 0.08);
+    // The body geometry now bakes its own tunic/skin vertex colors
+    // (`buildCrowdLimbedGeometry`); this instance color multiplies against
+    // those, so it stays a near-white brightness jitter rather than a full
+    // hue pick (which would double-tint against the baked colors).
+    color.setRGB(1, 1, 1).offsetHSL(0, 0, (paletteRng() - 0.5) * 0.14);
     return {
       startX: START_X,
       startZ: slot.z * 0.35,
@@ -68,6 +98,7 @@ export function buildRoutFigures(count: number, seed = 31005): RoutFigureState[]
       yaw: slot.yaw,
       scale: 0.95 + paletteRng() * 0.1,
       color: color.clone(),
+      walkPhaseOffset: rng(),
     };
   });
 }
@@ -107,27 +138,28 @@ export function routFigurePose(t: number, fig: RoutFigureState, mode: ViolenceMo
   return { x, z, yaw: fig.yaw, fallen: 0, moving: progress < 1, visible: true };
 }
 
-function makeFigureGeometry(): THREE.BufferGeometry {
-  const body = new THREE.CapsuleGeometry(0.26, 1.0, 4, 8);
-  body.translate(0, 0.86, 0);
-  const head = new THREE.SphereGeometry(0.15, 8, 6);
-  head.translate(0, 1.68, 0);
-  const merged = mergeGeometries([body, head]);
-  merged.computeVertexNormals();
-  return merged;
-}
-
 const dummy = new THREE.Object3D();
 
 export function RoutingIsraelites({ count, shadows }: { count: number; shadows: boolean }) {
-  const meshRef = useRef<THREE.InstancedMesh>(null);
-  const geometry = useMemo(() => makeFigureGeometry(), []);
+  const bucketMeshRefs = useRef<(THREE.InstancedMesh | null)[]>(Array(BUCKET_COUNT).fill(null));
+  const bucketCursors = useRef<number[]>(Array(BUCKET_COUNT).fill(0));
+  const bucketGeometries = useMemo(
+    () =>
+      sampleWalkPoses(BUCKET_COUNT).map((pose) =>
+        buildCrowdLimbedGeometry(
+          GENERIC_ISRAELITE_PARAMS,
+          poseJointPositions(GENERIC_ISRAELITE_PARAMS.stature, pose),
+        ),
+      ),
+    [],
+  );
   const figures = useMemo(() => buildRoutFigures(count), [count]);
 
   useFrame(() => {
-    const mesh = meshRef.current;
-    if (!mesh) return;
+    if (bucketMeshRefs.current.some((m) => !m)) return;
     const { timeSec: t, terrain, violenceMode } = useAppStore.getState();
+    bucketCursors.current.fill(0);
+
     for (let i = 0; i < figures.length; i++) {
       const fig = figures[i];
       const pose = routFigurePose(t, fig, violenceMode);
@@ -145,21 +177,40 @@ export function RoutingIsraelites({ count, shadows }: { count: number; shadows: 
         dummy.scale.set(fig.scale, fig.scale * squash, fig.scale);
       }
       dummy.updateMatrix();
-      mesh.setMatrixAt(i, dummy.matrix);
-      mesh.setColorAt(i, fig.color);
+
+      const phase = pose.moving
+        ? (t / WALK_CYCLE_SEC + fig.walkPhaseOffset) % 1
+        : fig.walkPhaseOffset;
+      const bucket = Math.min(BUCKET_COUNT - 1, Math.floor(clamp01(phase) * BUCKET_COUNT));
+      const bucketMesh = bucketMeshRefs.current[bucket]!;
+      const slot = bucketCursors.current[bucket]++;
+      bucketMesh.setMatrixAt(slot, dummy.matrix);
+      bucketMesh.setColorAt(slot, fig.color);
     }
-    mesh.instanceMatrix.needsUpdate = true;
-    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+
+    for (let b = 0; b < BUCKET_COUNT; b++) {
+      const mesh = bucketMeshRefs.current[b]!;
+      mesh.count = bucketCursors.current[b];
+      mesh.instanceMatrix.needsUpdate = true;
+      if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+    }
   });
 
   return (
-    <instancedMesh
-      ref={meshRef}
-      args={[geometry, undefined, figures.length]}
-      frustumCulled={false}
-      castShadow={shadows}
-    >
-      <meshStandardMaterial roughness={1} />
-    </instancedMesh>
+    <group>
+      {bucketGeometries.map((geo, b) => (
+        <instancedMesh
+          key={b}
+          ref={(el) => {
+            bucketMeshRefs.current[b] = el;
+          }}
+          args={[geo, undefined, figures.length]}
+          frustumCulled={false}
+          castShadow={shadows}
+        >
+          <meshStandardMaterial vertexColors roughness={1} />
+        </instancedMesh>
+      ))}
+    </group>
   );
 }

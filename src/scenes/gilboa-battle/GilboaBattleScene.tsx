@@ -10,6 +10,8 @@ import { Vegetation } from './Vegetation';
 import { PrincipalFigures } from './PrincipalFigures';
 import { CrestRetinue } from './CrestRetinue';
 import { PhilistinePress } from './PhilistinePress';
+import { DefenderLine } from './DefenderLine';
+import { EngagedPhilistines } from './EngagedPhilistines';
 import { RoutingIsraelites } from './RoutingIsraelites';
 import { RoutDust } from './RoutDust';
 import { GILBOA_BATTLE_ENTITIES } from './entities';
@@ -96,14 +98,22 @@ export function GilboaBattleScene() {
   const profile = QUALITY_PROFILES[quality];
 
   // Scene-specific scaling on top of the shared figureCount tier, following
-  // the amalekite-camp pattern (camelCount = figureCount * 0.55), tuned to
-  // land the high-tier total in the brief's ~120-140 combat-figure band
-  // (see "Scale assumptions" — claim-battle-scale).
-  const retinueCount = Math.max(1, Math.round(profile.figureCount * 0.18));
-  const archerCount = Math.max(1, Math.round(profile.figureCount * 0.19));
-  const infantryCount = Math.max(1, Math.round(profile.figureCount * 0.62));
-  const philistinePrincipalCount = Math.max(1, Math.round(profile.figureCount * 0.07));
+  // the amalekite-camp pattern (camelCount = figureCount * 0.55). Ratios
+  // bumped 2026-07-09 (user-directed, see claim-battle-scale and
+  // docs/fable-review-queue.md #14) to imply the claim's larger ~1:20
+  // combatant estimate; lands ~325 figures at high tier, up from ~127 —
+  // flagged for a `performance-reviewer` pass, not yet optimized.
+  const retinueCount = Math.max(1, Math.round(profile.figureCount * 0.21));
+  const archerCount = Math.max(1, Math.round(profile.figureCount * 0.42));
+  const philistinePrincipalCount = Math.max(1, Math.round(profile.figureCount * 0.21));
   const routCount = Math.max(1, Math.round(profile.figureCount * 0.62));
+  // Philistine infantry splits into the facing engaged rank (clashes
+  // directly with `DefenderLine`, `claim-line-defense`) and the broader
+  // pursuing press behind it (`PhilistinePress`, static/ambient).
+  const totalInfantryCount = Math.max(1, Math.round(profile.figureCount * 1.81));
+  const engagedInfantryCount = Math.max(1, Math.round(totalInfantryCount * 0.3));
+  const infantryCount = Math.max(1, totalInfantryCount - engagedInfantryCount);
+  const defenderCount = Math.max(1, Math.round(profile.figureCount * 1.25));
 
   // Rout-dust sprite counts (Step 5): no dedicated quality-profile field, so
   // this scales off the existing figureCount tier per the brief's
@@ -124,12 +134,14 @@ export function GilboaBattleScene() {
       />
       <PrincipalFigures shadows={profile.shadows} />
       <CrestRetinue count={retinueCount} shadows={profile.shadows} />
+      <DefenderLine count={defenderCount} shadows={profile.shadows} />
       <PhilistinePress
         archerCount={archerCount}
         infantryCount={infantryCount}
         principalCount={philistinePrincipalCount}
         shadows={profile.shadows}
       />
+      <EngagedPhilistines count={engagedInfantryCount} shadows={profile.shadows} />
       <RoutingIsraelites count={routCount} shadows={profile.shadows} />
       <RoutDust routCount={routDustCount} pressCount={pressDustCount} />
       {showLabels && GILBOA_BATTLE_ENTITIES.map((e) => <EntityLabel key={e.id} entity={e} />)}

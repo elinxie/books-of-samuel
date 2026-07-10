@@ -397,12 +397,22 @@ export const CLAIMS: ReconstructionClaim[] = [
   {
     id: 'claim-battle-scale',
     statement:
-      'Gilboa is rendered as the ridge-crest engagement of 1 Samuel 31, not a national army. Rendered figure groups follow the project’s disclosed ~1:10 narrated ratio; the rout is read by motion and dust rather than by headcount, and no army size is asserted for either force.',
+      'Gilboa is rendered as the ridge-crest engagement of 1 Samuel 31, not a national army. The render stages an order-of-magnitude combatant estimate — roughly 3,000 Israelites and a comparable-to-somewhat-larger Philistine force — as the project’s own labeled extrapolation from regional Iron Age settlement-population data, not as an assertion of a scholarly-established army size. Rendered figure groups use an increased ~1:20 narrated ratio to keep the crowd legible and performant at this larger implied scale; the rout is read by motion and dust as well as by headcount.',
     basis: 'design-placeholder',
     confidence: 'speculative',
+    sourceIds: ['esv-bible', 'finkelstein-silberman-2001'],
+    notes:
+      "No scholar has published a combatant-count estimate for the Battle of Gilboa specifically (checked: Finkelstein & Silberman's settlement-density regional figures, Mendenhall's \"eleph as military sub-unit, not literally 'thousand'\" reading of biblical census numerals, and standard Levantine-archaeology literature — Yadin's *The Art of Warfare in Biblical Lands* is the right genre but a specific figure was not page-verified; flagged TO VERIFY in fable-review-queue if pursued further). This claim's count is the project's own labeled order-of-magnitude extrapolation, built transparently as: Finkelstein & Silberman's ~45,000 estimated highland population for the entire hill country in the 10th century BCE (settlement-density method) → roughly a third assumed to live within plausible muster range of the Jezreel/Gilboa front (~15,000) → roughly a fifth assumed to be adult males of fighting age (a standard preindustrial demographic rule of thumb, not a period-specific source) → on the order of ~3,000 Israelite combatants. The Philistine pentapolis force is staged as comparable-to-somewhat-larger given its city-state military organization, without a specific sourced figure for that step either. Every step of this chain beyond Finkelstein & Silberman's base population figure is the project's own assumption, not attributed to them or any other scholar — it exists to make the battle read as a real clash rather than a skirmish, while staying fully disclosed as extrapolated, per the project's \"label design-placeholder rather than invent\" rule (CLAUDE.md). Confidence stays speculative; this number should not be read or cited as historically established. Saul's kingdom scale is itself separately contested (see claim-david-historical); nothing here resolves that debate.",
+  },
+  {
+    id: 'claim-line-defense',
+    statement:
+      'Before "the men of Israel fled before the Philistines" (1 Samuel 31:1), the two forces necessarily met and fought directly — a rout presupposes a prior engagement, even though the text moves straight from arrayed lines to flight without narrating the clash itself.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'moderate',
     sourceIds: ['esv-bible'],
     notes:
-      'The text gives no headcount for either force, and the scale of Saul’s kingdom is itself contested (see claim-david-historical, which this claim is anchored to for that debate). Nothing here fixes a "true" army size; the render only stages the crest death-group, the Philistine press, and the rout draining east as a legible defeat.',
+      'User-directed addition, revising the scene brief\'s original choice to read the defeat "in the drift downhill and the dust — not in blow-by-blow fighting" (see docs/fable-review-queue.md #15). Rendered as a scripted (non-interactive) melee-clash cycle between an Israelite defensive line and the facing rank of the Philistine press — swing, block, and stagger gesture/orientation transforms only, never wound, blood, or dismemberment geometry in either violenceMode, per ADR-009. The clash choreography itself is identical in both modes; only the post-clash fall a fraction of the line takes is subject to the standard/reduced duration split.',
   },
   {
     id: 'claim-gilboa-rout',
@@ -412,7 +422,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Rendered as a rout draining down the eastern slope, read by motion and dust rather than by headcount (see claim-battle-scale); a seeded fraction of routing figures fall at distance in standard mode, per ADR-009.',
+      'Rendered as a rout draining down the eastern slope, read by motion and dust rather than by headcount (see claim-battle-scale); a seeded fraction of routing figures fall at distance in standard mode, per ADR-009. The line-clash beat (claim-line-defense) precedes this beat; the rout begins once that line gives way.',
   },
   {
     id: 'claim-sons-killed',

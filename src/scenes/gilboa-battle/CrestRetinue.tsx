@@ -1,10 +1,13 @@
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
-import { TUNIC_PALETTE } from '../../engine/characters';
+import {
+  buildCrowdLimbedGeometry,
+  TUNIC_PALETTE,
+  type CharacterParams,
+} from '../../engine/characters';
 import { buildRetinueSlots, type FigureSlot } from './layout';
 import { retinueFallPose } from './poses';
 import {
@@ -40,15 +43,20 @@ interface RetinueFigure extends FigureSlot {
   kit: RetinueKit;
 }
 
-function makeFigureGeometry(): THREE.BufferGeometry {
-  const body = new THREE.CapsuleGeometry(0.26, 1.0, 4, 8);
-  body.translate(0, 0.86, 0);
-  const head = new THREE.SphereGeometry(0.15, 8, 6);
-  head.translate(0, 1.68, 0);
-  const merged = mergeGeometries([body, head]);
-  merged.computeVertexNormals();
-  return merged;
-}
+/** A single generic crowd-tier Israelite preset — a static idle formation
+ * needs no pose-bucket cycling, just one real limbed rest-pose geometry
+ * instead of the old capsule blob. Per-instance variety still comes from
+ * `mesh.setColorAt` tinting. */
+const GENERIC_ISRAELITE_PARAMS: CharacterParams = {
+  stature: CROWD_KIT_STATURE,
+  build: 0.5,
+  shoulders: 1,
+  skinColor: '#8f5b3d',
+  hairColor: '#1f1712',
+  beard: false,
+  detail: 'crowd',
+  dress: { tunicColor: TUNIC_PALETTE[0], beltColor: '#3b2416', headwear: 'bare' },
+};
 
 /** Deterministic retinue roster: position, scale/tint, fall, and kit assignment. */
 function buildRetinueFigures(count: number, seed = 31001): RetinueFigure[] {
@@ -58,8 +66,11 @@ function buildRetinueFigures(count: number, seed = 31001): RetinueFigure[] {
   const kitRng = mulberry32(31010);
   const color = new THREE.Color();
   return slots.map((slot) => {
-    color.set(TUNIC_PALETTE[Math.floor(scaleRng() * TUNIC_PALETTE.length)]);
-    color.offsetHSL(0, 0, (scaleRng() - 0.5) * 0.08);
+    // The body geometry now bakes its own tunic/skin vertex colors
+    // (`buildCrowdLimbedGeometry`); this instance color multiplies against
+    // those, so it stays a near-white brightness jitter rather than a full
+    // hue pick (which would double-tint against the baked colors).
+    color.setRGB(1, 1, 1).offsetHSL(0, 0, (scaleRng() - 0.5) * 0.14);
     return {
       ...slot,
       scale: 0.95 + scaleRng() * 0.1,
@@ -87,7 +98,7 @@ export function CrestRetinue({ count, shadows }: { count: number; shadows: boole
   const spearMeshRef = useRef<THREE.InstancedMesh>(null);
   const shieldMeshRef = useRef<THREE.InstancedMesh>(null);
   const bowMeshRef = useRef<THREE.InstancedMesh>(null);
-  const geometry = useMemo(() => makeFigureGeometry(), []);
+  const geometry = useMemo(() => buildCrowdLimbedGeometry(GENERIC_ISRAELITE_PARAMS), []);
   const spearGeo = useMemo(() => buildSpearGeometry(CROWD_KIT_STATURE, 'handR'), []);
   const shieldGeo = useMemo(() => buildShieldGeometry(CROWD_KIT_STATURE, 'oval', 'handL'), []);
   const bowGeo = useMemo(() => buildBowGeometry(CROWD_KIT_STATURE, 'handL'), []);
@@ -135,7 +146,7 @@ export function CrestRetinue({ count, shadows }: { count: number; shadows: boole
         frustumCulled={false}
         castShadow={shadows}
       >
-        <meshStandardMaterial roughness={1} />
+        <meshStandardMaterial vertexColors roughness={1} />
       </instancedMesh>
       <instancedMesh
         ref={spearMeshRef}

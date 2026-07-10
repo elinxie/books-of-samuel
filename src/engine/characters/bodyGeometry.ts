@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { randomCharacterParams } from './anthropometry';
 import { buildSkeleton, jointPositions } from './skeleton';
-import type { CharacterParams, CharacterRig } from './types';
+import type { BoneName, CharacterParams, CharacterRig } from './types';
 
 /**
  * Static (unrigged) body silhouettes. `applyClipPose` in bake.ts is still a
@@ -126,6 +126,60 @@ export function buildBodyGeometry(
   return params.detail === 'principal'
     ? buildPrincipalGeometry(params)
     : buildCrowdGeometry(params);
+}
+
+/**
+ * A lighter-weight limbed silhouette — real torso/head/arms/legs (not
+ * `buildCrowdGeometry`'s single capsule), but half `buildPrincipalGeometry`'s
+ * part count and radial segments, since it's meant to be baked into several
+ * per-pose InstancedMesh buckets and multiplied by a crowd's worth of
+ * instances. Optionally takes already-posed joint positions (e.g. from
+ * `poseJointPositions`) so callers can bake a walk-cycle or fight-stance
+ * geometry directly, rather than always the rest pose. Opt-in: existing
+ * scenes keep using the cheap single-capsule `buildCrowdGeometry` via
+ * `buildBodyGeometry`/`buildCharacterRig` unchanged — nothing here is wired
+ * into that dispatch, so this is additive.
+ */
+export function buildCrowdLimbedGeometry(
+  params: CharacterParams,
+  joints: Record<BoneName, THREE.Vector3> = jointPositions(params.stature),
+): THREE.BufferGeometry {
+  const h = params.stature;
+  const build = 0.9 + params.build * 0.25;
+  const j = joints;
+  const { tunicColor } = params.dress;
+  const { skinColor } = params;
+
+  const parts: THREE.BufferGeometry[] = [];
+
+  const torsoR = 0.105 * h * build;
+  const torso = new THREE.CapsuleGeometry(torsoR, (j.chest.y - j.hips.y) * 0.85, 3, 6);
+  torso.translate(0, (j.hips.y + j.chest.y) / 2, 0);
+  parts.push(paintColor(torso, tunicColor));
+
+  const headR = 0.07 * h;
+  const head = new THREE.SphereGeometry(headR, 6, 5);
+  head.translate(j.head.x, j.head.y, j.head.z);
+  parts.push(paintColor(head, skinColor));
+
+  // Single-segment arms (shoulder straight to hand) — cheaper than
+  // principal's shoulder/elbow/hand split; `poseJointPositions`'s arm-swing
+  // rotation still reads through the hand endpoint moving.
+  const armR = 0.042 * h * build;
+  parts.push(limbGeometry(j.upperArmL, j.handL, armR, 5, tunicColor));
+  parts.push(limbGeometry(j.upperArmR, j.handR, armR, 5, tunicColor));
+
+  // Two-segment legs (thigh, shin) so a knee bend is visible — the part of
+  // the crowd silhouette a walk stride or a braced fight stance most needs.
+  const legR = 0.058 * h * build;
+  parts.push(limbGeometry(j.thighL, j.shinL, legR, 5, tunicColor));
+  parts.push(limbGeometry(j.thighR, j.shinR, legR, 5, tunicColor));
+  parts.push(limbGeometry(j.shinL, j.footL, legR * 0.8, 5, skinColor));
+  parts.push(limbGeometry(j.shinR, j.footR, legR * 0.8, 5, skinColor));
+
+  const merged = mergeGeometries(parts);
+  merged.computeVertexNormals();
+  return merged;
 }
 
 export function buildCharacterRig(params: CharacterParams = randomCharacterParams()): CharacterRig {

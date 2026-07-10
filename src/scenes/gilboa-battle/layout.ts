@@ -91,6 +91,48 @@ export function buildPhilistinePrincipalSlots(count: number, seed = 31004): Figu
 }
 
 /**
+ * Israelite defensive line (M3 melee-clash addition): the thin line that
+ * actually meets the Philistine infantry before the position gives way,
+ * staged between the infantry band (z in [-220,-70], `buildInfantrySlots`)
+ * and the crest retinue (clustered near the origin, `buildRetinueSlots`).
+ * Faces north toward the Philistine advance (yaw 0), mirroring the
+ * infantry's south-facing yaw (`Math.PI`) — the two lines face each other
+ * across the clash (`claim-line-defense`).
+ */
+export function buildDefenderSlots(count: number, seed = 31006): FigureSlot[] {
+  const rng = mulberry32(seed);
+  const out: FigureSlot[] = [];
+  for (let i = 0; i < count; i++) {
+    out.push({
+      x: (rng() - 0.5) * 190, // matches the infantry's engagement-front width
+      z: -20 - rng() * 30, // z in [-50, -20]: holding ground short of the crest
+      yaw: (rng() - 0.5) * 0.6, // facing north (toward the Philistines), mirrors infantry's Math.PI
+    });
+  }
+  return out;
+}
+
+/**
+ * The facing rank of Philistine infantry (M3 melee-clash addition):
+ * distinct from `buildInfantrySlots`'s broader pursuing mass, this is the
+ * forward edge that directly meets `buildDefenderSlots`'s Israelite line —
+ * staged just north of the defenders (z in [-70,-55]) rather than scattered
+ * across the whole infantry band, so the clash reads as two facing ranks.
+ */
+export function buildEngagedInfantrySlots(count: number, seed = 31009): FigureSlot[] {
+  const rng = mulberry32(seed);
+  const out: FigureSlot[] = [];
+  for (let i = 0; i < count; i++) {
+    out.push({
+      x: (rng() - 0.5) * 190,
+      z: -55 - rng() * 15, // z in [-70, -55]: the front edge, just short of the general press
+      yaw: Math.PI + (rng() - 0.5) * 0.6, // facing south, toward the defender line
+    });
+  }
+  return out;
+}
+
+/**
  * Routing Israelites streaming down the eastern escape slope. For this
  * slice figures are simply distributed at varied distances down the slope
  * (a range of "how far this figure has gotten"); the rout-reads-by-motion-

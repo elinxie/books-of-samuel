@@ -584,3 +584,82 @@ No code conflicts — ADR-011 touched docs/config only. Resolved by keeping
 ADR-011's policy files as-is and rewriting `next-run.md`'s state/handoff section
 to reflect that `gilboa-battle` is now built (`in-progress`, not `planned`),
 carrying forward the build session's follow-up list as the actual next steps.
+
+**2026-07-09 — Sonnet 5 — melee combat + rig conversion (user-directed)**
+User asked, across the same session as the merge above: (1) real mutual
+combat visible in `gilboa-battle`, not just rout/death, with an actual
+combatant count instead of the disclosed no-headcount abstraction; (2) after
+that landed, animated legs and real limbed figures everywhere, not capsule
+blobs. A background `threejs-engineer` subagent started on both but failed
+mid-task on an account monthly-spend-limit cutoff (external constraint, not a
+code problem); picked up the work directly in the foreground afterward
+(subagents cost re-derivation from cold, foreground work reuses this
+session's live context — see the session's own reasoning on why, not
+repeated here).
+
+Landed in six commits, each independently gated (format/lint/typecheck/
+vitest/build, plus a manual headless-Chromium console-error check of
+`/observe/gilboa-battle`):
+
+- `f234794` crowd limb-pose forward kinematics (`poseJointPositions`,
+  `CrowdLimbPose`), additive, unwired.
+- `91e3606` scripted melee-clash combat wired live: new `DefenderLine`/
+  `EngagedPhilistines` components, `claim-line-defense`, new `b-line-clash`
+  beat (revises the original brief's "not blow-by-blow fighting" call —
+  logged `fable-review-queue.md` #15), figure-count ratios bumped to match
+  `claim-battle-scale`'s already-landed ~1:20 ratio (~325 figures at high
+  tier vs. the original brief's 120–140 cap — flagged, not yet perf-reviewed).
+  13 new unit tests.
+- `6f111af` docs sync.
+- `656185c` `buildCrowdLimbedGeometry` + `sampleWalkPoses`/`sampleFightPoses`
+  (`engine/characters/`) — real limbed silhouette + pose-bucket sampling,
+  additive (existing capsule-tier `buildCrowdGeometry` untouched). 11 new
+  unit tests.
+- `18bf8d4` `DefenderLine`/`EngagedPhilistines` converted to real figures +
+  braced-stance leg cycling (6 InstancedMesh buckets each, `mesh.count` set
+  to per-bucket occupancy each frame). 3 new unit tests (`clashPhase01`).
+- `0b4327f` `RoutingIsraelites` converted, walk-cycle legs (8 buckets).
+- `5ef5409` `CrestRetinue`/`PhilistinePress` converted (single rest-pose
+  geometry, no bucket cycling — static/idle formations).
+
+Research alongside: a `researcher` subagent found no scholar has published a
+Gilboa-specific combatant estimate and recommended keeping the disclosed
+abstraction; the user overrode this and asked for a derived number anyway,
+"flagged as you implement it" — done as a fully-disclosed assumption chain
+off Finkelstein & Silberman's regional population figure, logged
+`fable-review-queue.md` #14.
+
+**Not resolved, explicitly flagged for next session:** no real FPS/frame-time
+measurement has been taken at the new ~325-figure, real-geometry count — see
+`docs/next-run.md`'s item 0, now the top priority. Manual checks only
+confirmed 0 console errors and correct render, not frame time.
+
+**2026-07-09 — Sonnet 5 — sandboxed relative performance measurement**
+Followed up on the flag above. Built a headless-Chromium `requestAnimationFrame`
+timing harness (`performance.now()` deltas over a fixed window) and compared
+this session's final `gilboa-battle` state against a `git worktree` checkout
+of `2a41aca` (the pre-session build) at the same scene point (the rout beat —
+the one moment that exists unchanged in both versions), both at high quality
+tier. Result: avg frame time ~222ms → ~333ms, a **~1.5x regression** — real,
+but milder than the raw multipliers (figure count ~2.5x, triangles/figure
+~4x, draw calls roughly doubled) alone would predict; a large fixed scene
+cost (terrain/vegetation/dust, unchanged this session) dilutes the relative
+impact of what did grow.
+
+Checked the renderer before trusting the numbers: `WEBGL_debug_renderer_info`
+reports `SwiftShader Device` — this sandbox has **no GPU**, pure software
+rasterization. Absolute fps (~3-4.5 either way) is meaningless for real
+hardware and wasn't reported as if it were; the ~1.5x _relative_ delta is a
+real, likely-transferable signal (evidence this isn't catastrophic), but a
+software rasterizer's bottlenecks don't necessarily scale like a real GPU's
+would. Recorded honestly in `docs/next-run.md`: this is real measurement, not
+a substitute for someone checking the actual deployed scene on real hardware.
+
+**2026-07-10 — Sonnet 5 — merged unmerged rig-conversion/melee-combat work to main**
+This whole branch (`claude/resolve-merge-conflicts-nqbqn8`) had 12 commits
+past what PR #23 actually merged — PR #23 only captured an earlier ancestor
+(the simple gilboa-battle build); the melee-combat, rig-conversion, and
+performance-measurement work above never landed on `main`. Reset
+`claude/continue-unmerged-work-4xucqr` to the branch tip, merged `main` (no
+conflicts), re-ran the full gate: format:check, lint, 144 vitest, build, 7
+e2e — all green. Pushed and opened a PR to close the gap.
