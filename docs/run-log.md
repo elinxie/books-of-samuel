@@ -663,3 +663,19 @@ performance-measurement work above never landed on `main`. Reset
 `claude/continue-unmerged-work-4xucqr` to the branch tip, merged `main` (no
 conflicts), re-ran the full gate: format:check, lint, 144 vitest, build, 7
 e2e — all green. Pushed and opened a PR to close the gap.
+
+**2026-07-13 — Fable 5 — review pass: queue #15 (Gilboa melee-clash beat)**
+Reviewed `b-line-clash`/`claim-line-defense` against ADR-009/ADR-011 and the
+Gilboa brief (files read: brief, `poses.ts` clash functions,
+`GilboaBattleScene.tsx` wiring, `scenes.ts` beats, `claims.ts`). **Approved as
+shipped**: scripted non-interactive reenactment (no combat mechanics), one
+choreography with the swing/block/stagger cycle mode-invariant and only the
+post-clash falls taking the standard/reduced split, zero wound/blood/
+dismemberment geometry, caption discloses the "rout presupposes an engagement"
+inference and depiction limits. The user-directed reversal of the brief's
+"not blow-by-blow" call is accepted; implementation stays "honest, never
+gratuitous." Two non-blocking Sonnet riders before `released`: fix `b-lines`'s
+now-contradictory "already giving way" caption (t=0 vs. clash at t=8), and fix
+`claim-line-defense`'s basis (`scholarly-reconstruction` with only `esv-bible`
+sourced — cite a named treatment or relabel as the project's own textual
+inference). Queue row #15 moved to Resolved.
