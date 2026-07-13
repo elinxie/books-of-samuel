@@ -166,6 +166,13 @@ session's actual work is the follow-up list that fell out of the build pass:
 
 ## Small follow-ups (fit around the above, don't block it)
 
+- **Arrow-volley roster doesn't scale down at `study` quality tier**
+  (`src/scenes/gilboa-battle/ArrowVolley.tsx`, flagged by `performance-reviewer`
+  2026-07-13): `archerCount` at `study` (17) and `high` (30) both exceed
+  `ARCHER_VOLLEY_MAX_ARROWS_PER_WAVE` (12), so the roster is a flat 36 arrows at
+  every tier — contrary to ADR-004's expectation that `study` numbers are
+  meaningfully lower. Cost is negligible either way (36 instances); bundle with
+  item 0's figure-count/melee-clash perf pass rather than fixing standalone.
 - **UI copy still says "not a game"** (`src/pages/LandingPage.tsx:121`,
   `src/ui/SiteChrome.tsx:32`, `src/pages/FeaturesPage.tsx:25`): reword to the
   ADR-011 atlas-first framing (small `ui-engineer` task; mirror the new

@@ -14,22 +14,26 @@ import { DefenderLine } from './DefenderLine';
 import { EngagedPhilistines } from './EngagedPhilistines';
 import { RoutingIsraelites } from './RoutingIsraelites';
 import { RoutDust } from './RoutDust';
+import { ArrowVolley } from './ArrowVolley';
 import { GILBOA_BATTLE_ENTITIES } from './entities';
 import { EntityLabel } from '../../ui/scene/EntityLabel';
 
 const SCENE = SCENES_BY_ID.get('gilboa-battle')!;
 
 /**
- * M3 terrain + figures + choreography (Step 5 of 5, final slice). Terrain,
+ * M3 terrain + figures + choreography (Step 6, archer-volley beat). Terrain,
  * vegetation, and entity labels are Step 1; Step 2 populated the ridge with
  * figures (count, grouping, positioning); Step 3 added the beat-driven
  * death-sequence/rout pose choreography (`./poses.ts`, `RoutingIsraelites.tsx`,
  * `CrestRetinue.tsx`, `PrincipalFigures.tsx`) gated by `violenceMode`
  * (standard/reduced, ADR-009); Step 4 added military-kit attachment meshes
- * (`kitMeshes.ts`). This step adds the rout-dust system (`RoutDust.tsx`) per
+ * (`kitMeshes.ts`); Step 5 added the rout-dust system (`RoutDust.tsx`) per
  * the brief's "Visual composition" — dust reads the mass movement of the
- * rout and, lighter, the Philistine press. See
- * docs/design/gilboa-battle-brief.md.
+ * rout and, lighter, the Philistine press. This step adds the `b-archers`
+ * beat's arrow volley (`ArrowVolley.tsx`, the archer-volley functions in
+ * `./poses.ts`) — instanced arrows arcing from the Philistine archer line to
+ * the crest, timed so the last wave lands as Saul's existing `saulPose`
+ * stagger begins. See docs/design/gilboa-battle-brief.md.
  */
 
 /** Advances scene time while playing. */
@@ -144,6 +148,7 @@ export function GilboaBattleScene() {
       <EngagedPhilistines count={engagedInfantryCount} shadows={profile.shadows} />
       <RoutingIsraelites count={routCount} shadows={profile.shadows} />
       <RoutDust routCount={routDustCount} pressCount={pressDustCount} />
+      <ArrowVolley archerCount={archerCount} shadows={profile.shadows} />
       {showLabels && GILBOA_BATTLE_ENTITIES.map((e) => <EntityLabel key={e.id} entity={e} />)}
       <TimelineDriver durationSec={SCENE.durationSec} />
       <ObserverControls />

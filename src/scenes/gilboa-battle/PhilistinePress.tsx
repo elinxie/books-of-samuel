@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber';
 import { useAppStore } from '../../state/store';
 import { mulberry32 } from '../../engine/noise';
 import { buildCrowdLimbedGeometry, type CharacterParams } from '../../engine/characters';
@@ -9,6 +10,7 @@ import {
   buildPhilistinePrincipalSlots,
   type FigureSlot,
 } from './layout';
+import { archerDrawPose } from './poses';
 import {
   buildBowGeometry,
   buildHeaddressGeometry,
@@ -36,6 +38,14 @@ import {
  * principals, each kit InstancedMesh is sized to exactly its role's count
  * and indexed by a fixed arithmetic offset — no hidden/off-scene instances
  * needed here (contrast CrestRetinue.tsx's non-uniform per-figure kit).
+ *
+ * The archer-volley beat (`b-archers`, `ArrowVolley.tsx`) adds a small
+ * per-frame lean on just the archer subset (indices `[0, archerCount)`),
+ * driven by `archerDrawPose` in `./poses.ts`: a whole-figure draw/release
+ * tilt, synchronized to the volley waves — a gesture/orientation change on
+ * the existing static bow-holding pose, never new geometry. Only the archer
+ * indices are rewritten each frame; infantry/principal instances stay as set
+ * once in the setup effect below.
  */
 
 export type PhilistineRole = 'archer' | 'infantry' | 'principal';
@@ -112,6 +122,12 @@ export function PhilistinePress({
   );
   const meleeCount = infantryCount + principalCount;
   const terrain = useAppStore((s) => s.terrain);
+  // Base (undrawn) transform for each archer, captured once so the
+  // per-frame draw-lean pass doesn't need to recompute the roster's rng/
+  // terrain sampling every frame — see the archer-volley useFrame below.
+  const archerBaseRef = useRef<{ x: number; y: number; z: number; yaw: number; scale: number }[]>(
+    [],
+  );
 
   useEffect(() => {
     const mesh = meshRef.current;
@@ -122,15 +138,20 @@ export function PhilistinePress({
     const headdressMesh = headdressMeshRef.current;
     const rng = mulberry32(31007);
     const color = new THREE.Color();
+    const archerBases: { x: number; y: number; z: number; yaw: number; scale: number }[] = [];
     for (let i = 0; i < figures.length; i++) {
       const fig = figures[i];
       const y = terrain.heightAt(fig.x, fig.z);
       dummy.position.set(fig.x, y, fig.z);
       dummy.rotation.set(0, fig.yaw, 0);
       // Principals stand marginally taller/set apart; otherwise uniform scale.
-      dummy.scale.setScalar(fig.role === 'principal' ? 1.04 : 0.95 + rng() * 0.1);
+      const scale = fig.role === 'principal' ? 1.04 : 0.95 + rng() * 0.1;
+      dummy.scale.setScalar(scale);
       dummy.updateMatrix();
       mesh.setMatrixAt(i, dummy.matrix);
+      if (fig.role === 'archer') {
+        archerBases.push({ x: fig.x, y, z: fig.z, yaw: fig.yaw, scale });
+      }
       // The body geometry now bakes its own tunic/skin vertex colors
       // (`buildCrowdLimbedGeometry`); this instance color multiplies
       // against those, so it stays a near-white brightness jitter rather
@@ -154,6 +175,7 @@ export function PhilistinePress({
         }
       }
     }
+    archerBaseRef.current = archerBases;
     mesh.instanceMatrix.needsUpdate = true;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
     if (bowMesh) bowMesh.instanceMatrix.needsUpdate = true;
@@ -161,6 +183,33 @@ export function PhilistinePress({
     if (swordMesh) swordMesh.instanceMatrix.needsUpdate = true;
     if (headdressMesh) headdressMesh.instanceMatrix.needsUpdate = true;
   }, [figures, terrain, archerCount, infantryCount]);
+
+  // Archer-volley draw/release lean (`b-archers`): only the archer subset's
+  // matrices are rewritten each frame — infantry/principal instances stay as
+  // the setup effect above left them. Cheap: archerCount tops out around 30
+  // even at the highest quality tier.
+  useFrame(() => {
+    const mesh = meshRef.current;
+    const bowMesh = bowMeshRef.current;
+    if (!mesh) return;
+    const bases = archerBaseRef.current;
+    if (bases.length === 0) return;
+    const { timeSec: t } = useAppStore.getState();
+    const { draw } = archerDrawPose(t);
+    for (let i = 0; i < bases.length; i++) {
+      const base = bases[i];
+      dummy.position.set(base.x, base.y, base.z);
+      // Leans back on the draw, snaps forward slightly through release —
+      // a whole-figure gesture, never new bow/body geometry.
+      dummy.rotation.set(draw * -0.18, base.yaw, 0);
+      dummy.scale.setScalar(base.scale);
+      dummy.updateMatrix();
+      mesh.setMatrixAt(i, dummy.matrix);
+      bowMesh?.setMatrixAt(i, dummy.matrix);
+    }
+    mesh.instanceMatrix.needsUpdate = true;
+    if (bowMesh) bowMesh.instanceMatrix.needsUpdate = true;
+  });
 
   return (
     <group>

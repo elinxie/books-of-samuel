@@ -218,6 +218,18 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M4',
   },
   {
+    id: 'asset-arrow-volley',
+    name: 'Instanced arrow-volley projectiles',
+    represents:
+      'The archer volley of 1 Samuel 31:3 — three staggered waves of arrows arcing from the Philistine archer line toward the crest death-group (see claim-saul-wounded-archers)',
+    placeholder: true,
+    whyTemporary:
+      "Simple primitive shaft/tip/fletching geometry (see src/scenes/gilboa-battle/ArrowVolley.tsx), one shared InstancedMesh with per-frame matrix updates for a small fixed-size roster (capped well inside the brief's performance target regardless of quality tier) — not modeled arrow assets. Wave count, cadence, and convergence-on-target scatter are the project's own staging/timing choice (`claim-saul-wounded-archers`'s notes), not sourced from any attested volley tactic or cadence.",
+    historicalRequirements:
+      'None specific — no source fixes volley cadence or arrow density for this engagement; any upgrade (modeled arrow geometry, a true physics-driven arc) is a visual-fidelity improvement only, not a claim-driven replacement.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-water-pool',
     name: 'Standing pool meshes',
     represents: 'Standing water in low points of the braided wadi bed',
