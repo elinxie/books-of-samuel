@@ -39,6 +39,24 @@ describe('quality and navigation', () => {
   });
 });
 
+describe('violence advisory (ADR-009)', () => {
+  it('defaults to standard mode with the advisory unseen', () => {
+    expect(useAppStore.getState().violenceMode).toBe('standard');
+    expect(useAppStore.getState().violenceAdvisorySeen).toBe(false);
+  });
+
+  it('acknowledging the advisory sets the chosen mode and marks it seen', () => {
+    useAppStore.getState().acknowledgeViolenceAdvisory('reduced');
+    expect(useAppStore.getState().violenceMode).toBe('reduced');
+    expect(useAppStore.getState().violenceAdvisorySeen).toBe(true);
+  });
+
+  it('setViolenceMode alone (via Settings) does not affect the seen flag', () => {
+    useAppStore.getState().setViolenceMode('reduced');
+    expect(useAppStore.getState().violenceAdvisorySeen).toBe(false);
+  });
+});
+
 describe('scene playback', () => {
   it('advances time by speed and pauses at the end', () => {
     const s = useAppStore.getState();

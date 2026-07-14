@@ -855,6 +855,55 @@ h3 {
   text-align: center;
 }
 
+.violence-advisory {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 8, 5, 0.86);
+  padding: 20px;
+}
+.violence-advisory-panel {
+  max-width: 480px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.violence-advisory-panel h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+.violence-advisory-panel p {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+.violence-advisory-choices {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.violence-advisory-btn {
+  flex: 1 1 200px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  color: var(--ink);
+  text-align: center;
+}
+.violence-advisory-btn:hover,
+.violence-advisory-btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .hud-restore {
   position: absolute;
   bottom: 14px;

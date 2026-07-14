@@ -108,6 +108,32 @@ describe('scenes', () => {
   });
 });
 
+/**
+ * Shared ESV short-excerpt budget check (ADR-003): at most 3 excerpts, each
+ * ≤ 200 chars, ≤ 500 chars total, per logical group (a passage's keyExcerpts,
+ * or a scene's quoted beat-caption text).
+ */
+function assertExcerptBudget(excerptTexts: string[], label: string): void {
+  expect(excerptTexts.length, `${label} excerpt count`).toBeLessThanOrEqual(3);
+  let total = 0;
+  for (const text of excerptTexts) {
+    expect(text.length, `${label} excerpt too long`).toBeLessThanOrEqual(200);
+    total += text.length;
+  }
+  expect(total, `${label} total excerpt budget`).toBeLessThanOrEqual(500);
+}
+
+/** Extracts verbatim-quoted spans (straight or curly double quotes) from free text. */
+function extractQuotedSpans(text: string): string[] {
+  const spans: string[] = [];
+  const re = /"([^"]+)"|“([^”]+)”/g;
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(text)) !== null) {
+    spans.push(match[1] ?? match[2] ?? '');
+  }
+  return spans;
+}
+
 describe('passages and the ESV excerpt budget', () => {
   it('passage references resolve', () => {
     for (const p of PASSAGES) {
@@ -120,14 +146,17 @@ describe('passages and the ESV excerpt budget', () => {
 
   it('short-excerpt policy: max 3 excerpts, each ≤ 200 chars, ≤ 500 total per passage', () => {
     for (const p of PASSAGES) {
-      const excerpts = p.keyExcerpts ?? [];
-      expect(excerpts.length, `${p.id} excerpt count`).toBeLessThanOrEqual(3);
-      let total = 0;
-      for (const e of excerpts) {
-        expect(e.text.length, `${p.id} excerpt too long`).toBeLessThanOrEqual(200);
-        total += e.text.length;
-      }
-      expect(total, `${p.id} total excerpt budget`).toBeLessThanOrEqual(500);
+      assertExcerptBudget(
+        (p.keyExcerpts ?? []).map((e) => e.text),
+        `passage ${p.id}`,
+      );
+    }
+  });
+
+  it('quoted text inside scene beat captions stays within the same excerpt budget', () => {
+    for (const scene of SCENES) {
+      const quotedSpans = scene.beats.flatMap((b) => extractQuotedSpans(b.caption));
+      assertExcerptBudget(quotedSpans, `scene ${scene.id} beat captions`);
     }
   });
 });

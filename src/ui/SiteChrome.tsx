@@ -29,8 +29,9 @@ export function SiteFooter() {
         — see the <Link to="/sources">Sources page</Link> for the full permissions statement.
       </p>
       <p>
-        This is a study aid, not a game: a first-person, neutral-observer reconstruction that is
-        explicit about what is evidenced, what is inferred, and what is placeholder.
+        This is an atlas-first historical world, not a conventional game: a first-person,
+        neutral-observer reconstruction that is explicit about what is evidenced, what is inferred,
+        and what is placeholder.
       </p>
     </footer>
   );

@@ -83,6 +83,28 @@ test('replay controls are visible and functional', async ({ page }) => {
   await expect(scrub).toHaveValue('0');
 });
 
+test('violence advisory (ADR-009) gates first visit to Gilboa, then never reappears', async ({
+  page,
+}) => {
+  await page.goto('/#/observe/gilboa-battle');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+  // Not present for scenes without the depictsDeath flag.
+  await page.goto('/#/observe/ziklag-aftermath');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+
+  await page.goto('/#/observe/gilboa-battle');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+  await page.getByTestId('violence-advisory-reduced').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+
+  // Second visit: no advisory, and the chosen mode stuck in Settings.
+  await page.goto('/#/observe/gilboa-battle');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await page.getByTestId('open-settings').click();
+  await expect(page.getByTestId('violence-reduced')).toBeChecked();
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {
