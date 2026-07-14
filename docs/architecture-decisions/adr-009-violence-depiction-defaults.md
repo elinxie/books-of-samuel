@@ -3,7 +3,11 @@
 **Status:** Accepted (2026-07-07, Fable review — resolves `fable-review-queue.md` #6).
 Applies to every scene depicting death or battle violence: Mount Gilboa and the
 Beth-shan aftermath (Milestone 3) first, then the 2 Samuel war narratives.
-Implementation lands with the M3 build.
+The first-visit advisory (`src/ui/ViolenceAdvisory.tsx`, `SceneDef.depictsDeath`)
+landed 2026-07-14 and is wired into `gilboa-battle`; `beth-shan-walls` and
+`jabesh-burial` opt in when built (see `docs/design/jabesh-burial-brief.md` for
+a proposed extension of this policy to funerary burning, not yet ratified into
+this ADR's text — tracked as `fable-review-queue.md` #17).
 
 ## Context
 

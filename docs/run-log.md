@@ -663,3 +663,51 @@ performance-measurement work above never landed on `main`. Reset
 `claude/continue-unmerged-work-4xucqr` to the branch tip, merged `main` (no
 conflicts), re-ran the full gate: format:check, lint, 144 vitest, build, 7
 e2e — all green. Pushed and opened a PR to close the gap.
+
+**2026-07-14 — Sonnet 5 — four independent slices (branch `claude/focused-mccarthy-ckjcuh`)**
+Gate green throughout: format:check, lint, 151 vitest, build, 8/8 e2e.
+
+1. **ADR-009 first-visit violence advisory, built.** New
+   `src/ui/ViolenceAdvisory.tsx` (+ test), wired via `src/pages/ObservePage.tsx`
+   and persisted through `src/state/store.ts`. `SceneDef` gains
+   `depictsDeath?: boolean` (`src/data/types.ts`); `gilboa-battle` set to
+   `depictsDeath: true` (`src/data/scenes.ts`) — the trigger is scene data, not
+   a hardcoded id, per ADR-009's own spec. E2e coverage in `e2e/smoke.spec.ts`.
+   Closes `next-run.md` item 1.
+2. **ESV excerpt-budget test-gap closed.** `src/data/integrity.test.ts` now
+   also scans `SCENES[].beats[].caption` against the excerpt budget, not just
+   `PASSAGES[].keyExcerpts`. Zero violations in existing data. Closes
+   `next-run.md` item 4.
+3. **"Not a game" copy reworded to ADR-011 atlas-first framing**:
+   `src/pages/LandingPage.tsx`, `src/ui/SiteChrome.tsx`,
+   `src/pages/FeaturesPage.tsx`. Closes the small-follow-up UI-copy item.
+4. **Two new M3 world-director briefs** (Fable-tier, via `world-director`
+   subagent): `docs/design/beth-shan-walls-brief.md`,
+   `docs/design/jabesh-burial-brief.md` — briefs only, no build; both scenes
+   stay `planned`/empty in `src/data/scenes.ts`. Beth-shan: first
+   identified/excavated site in the project (Tel Beth-Shean), wall rendered
+   narrated-but-archaeologically-thin, four wrapped/undetailed body forms (no
+   severed head/dismemberment), Philistine-control disputed via
+   `scholarlyViews`, ~55-70 figures high tier. Jabesh-gilead: stays disclosed
+   composite (site unresolved, register #8), extends ADR-009 to funerary
+   burning (covered-before-flame, no burning-body silhouette, queued for ADR-009
+   wording ratification), bones as a wrapped bundle not skeletal geometry,
+   ~45-55 figures, smallest M3 cast. Added `fable-review-queue.md` #16
+   (Beth-shan archaeological-horizon page-verification vs.
+   `mazar-beth-shean-2006`) and #17 (Jabesh pyre ADR-009 extension +
+   cremation-scholarship citations) — both block their scene's path to
+   `released`, neither blocks the build. `docs/uncertainty-register.md`
+   updated in step (#8 rewritten, #9 annotated, #11/#12/#13 added).
+
+Other notes: sandboxed GitHub Pages live-check for
+`https://elinxie.github.io/books-of-samuel/` could not run this session — the
+sandbox network proxy returns a policy-level 403 (`connect_rejected`, confirmed
+via `/root/.ccr/__agentproxy/status`) for that host, not a transient failure;
+carried forward as an environment limitation, not resolved. PR #25
+(`claude/mt-gilboa-battle-viz-s2gs7e`, separate branch/session — resolves
+queue #15 + adds archer volley) is open with failing CI from a trivial
+Prettier issue in `docs/fable-review-queue.md` on that branch; left a PR
+comment flagging it, did not push (out of scope for this branch).
+
+Still open, unchanged: `next-run.md` item 0 (real-hardware perf check),
+queue #12/#13/#14/#15.

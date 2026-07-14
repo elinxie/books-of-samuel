@@ -146,6 +146,12 @@ export interface SceneDef {
   viewpoints: SceneViewpoint[];
   claimIds: string[];
   assetIds: string[];
+  /**
+   * Content flag (ADR-009): true if this scene depicts a death or battle
+   * violence. Drives the first-visit violence advisory — never hardcode
+   * scene ids to decide whether the advisory should show.
+   */
+  depictsDeath?: boolean;
 }
 
 export interface AssetRecord {

@@ -379,6 +379,7 @@ export const SCENES: SceneDef[] = [
     status: 'in-progress',
     synopsis:
       'The battle on the ridge above the Jezreel Valley: Israel’s rout, the deaths of Jonathan, Abinadab, and Malchi-shua, and Saul’s end. To be rendered honestly but without sensationalism, with a reduced-intensity mode.',
+    depictsDeath: true,
     durationSec: 150,
     beats: [
       {

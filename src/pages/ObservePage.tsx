@@ -16,6 +16,7 @@ import { GilboaBattleScene } from '../scenes/gilboa-battle/GilboaBattleScene';
 import { GILBOA_TERRAIN } from '../scenes/gilboa-battle/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
+import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
 
 interface SceneRegistryEntry {
   component: React.ComponentType;
@@ -76,6 +77,7 @@ export default function ObservePage() {
   const setScene = useAppStore((s) => s.setScene);
   const setTerrain = useAppStore((s) => s.setTerrain);
   const requestTeleport = useAppStore((s) => s.requestTeleport);
+  const violenceAdvisorySeen = useAppStore((s) => s.violenceAdvisorySeen);
 
   // Reset playback, activate the scene's terrain, and move the observer to
   // its default viewpoint.
@@ -90,6 +92,16 @@ export default function ObservePage() {
 
   if (!scene) return <Navigate to="/" replace />;
   if (scene.status === 'planned') return <PlannedScene scene={scene} />;
+
+  // ADR-009: a scene flagged as depicting death does not render until the
+  // viewer answers the first-visit violence advisory once.
+  if (scene.depictsDeath && !violenceAdvisorySeen) {
+    return (
+      <div className="observe-root" data-testid="observe-root">
+        <ViolenceAdvisory scene={scene} />
+      </div>
+    );
+  }
 
   const SceneComponent = SCENE_REGISTRY[scene.id]?.component;
   const profile = QUALITY_PROFILES[quality];

@@ -88,7 +88,7 @@ revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
 `gilboa-battle` world-director brief done 2026-07-09 (Fable):
 `docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
-`src/data/scenes.ts` (status stays `planned` — no build yet). Scope: 1 Sam
+`src/data/scenes.ts` (brief-only pass; build followed below). Scope: 1 Sam
 31:1–6 only (rout + death sequence); wall-display/stripping belongs to
 `beth-shan-walls`. Key calls: `ridge` `TerrainSpec` feature required (ADR-005; engine primitive
 and first Gilboa terrain spec landed 2026-07-09); procedural terrain for v1, DEM deferred (queue #12
@@ -96,7 +96,37 @@ opened); Israelite/Philistine dress differentiated conservatively, plumed
 Philistine headdress on principals only behind a dispute label (queue #13
 opened, must clear before `released`); ADR-010's procedural rig already
 satisfies the "modeled-figure pilot" — no new glTF hero needed, just kit
-attachments + fallen pose buckets. Next: Sonnet/`threejs-engineer` build.
+attachments + fallen pose buckets. `gilboa-battle` built 2026-07-09 (Sonnet,
+`status: 'in-progress'`): real limbed crowd figures (not capsule+sphere),
+mutual-combat clash beat, rout dust, ~325 figures at high tier. Sandboxed
+relative perf check found a ~1.5x frame-time regression vs. pre-slice
+(GPU-less SwiftShader renderer — real signal, not proof-on-real-hardware);
+real-hardware check still open (`docs/next-run.md` item 0).
+
+Two more M3 world-director briefs done 2026-07-14 (Fable, `world-director`
+subagent): `docs/design/beth-shan-walls-brief.md` and
+`docs/design/jabesh-burial-brief.md` — briefs only, both scenes stay
+`planned`/empty in `src/data/scenes.ts` (no beats/viewpoints yet). Beth-shan:
+the project's first identified/excavated site (Tel Beth-Shean); wall rendered
+as narrated-but-archaeologically-thin; four wrapped/undetailed body forms (no
+severed head/dismemberment ever); Philistine-control disputed via
+`scholarlyViews`; ~55-70 figures at high tier. Jabesh-gilead: stays a
+disclosed composite (site identification unresolved, register #8); extends
+ADR-009's principles to funerary burning (covered-before-flame, no
+burning-body silhouette ever — queued for ADR-009 wording ratification);
+bones as a wrapped bundle, not skeletal geometry; ~45-55 figures, smallest M3
+cast. New queue items opened: #16 (Beth-shan archaeological-horizon
+page-verification against `mazar-beth-shean-2006`) and #17 (Jabesh pyre
+ADR-009 extension + cremation-scholarship citations) — both gate only their
+scene's path to `released`, not the build. Next: Sonnet/`threejs-engineer`
+build of both scenes per their briefs.
+
+**Cross-cutting, done 2026-07-14 (project-wide, not scene-specific):** ADR-009's
+first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
+`SceneDef.depictsDeath` flag, wired for `gilboa-battle`) — the advisory
+triggers per scene data, ready for `beth-shan-walls`/`jabesh-burial` to opt in
+when built. `integrity.test.ts`'s ESV excerpt-budget check now also scans
+`SCENES[].beats[].caption`, not just `PASSAGES[].keyExcerpts`.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
@@ -133,13 +163,12 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Codex handoff check, 2026-07-08)
-- `npm run lint` — pass (Codex handoff check, 2026-07-08)
-- `npm run test` (vitest) — 70/70 pass (Codex handoff check, 2026-07-08)
-- `npm run build` — pass (Codex handoff check, 2026-07-08; also copies
-  `reader/index.html` → `dist/reader/index.html`)
-- `npm run e2e` (playwright) — environment-blocked in the Codex handoff container:
-  expected Chromium is absent and `npx playwright install chromium` returns CDN 403. Earlier full `npm run verify` gate was green 2026-07-08 in Claude's
-  amalekite-camp session with
-  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
+- `npm run format:check` — pass (Sonnet, 2026-07-14)
+- `npm run lint` — pass (Sonnet, 2026-07-14)
+- `npm run test` (vitest) — 151/151 pass (Sonnet, 2026-07-14)
+- `npm run build` — pass (Sonnet, 2026-07-14)
+- `npm run e2e` (playwright) — 8/8 pass (Sonnet, 2026-07-14, sandboxed with
+  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
+- Branch `claude/focused-mccarthy-ckjcuh`, not yet merged at time of this
+  status line. See `docs/run-log.md`'s 2026-07-14 entry for what's on it.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.
