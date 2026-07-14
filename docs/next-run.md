@@ -3,7 +3,19 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-10, rig-conversion/melee-combat branch merged to main)
+## State right now (2026-07-14, four independent slices, branch `claude/focused-mccarthy-ckjcuh`)
+
+Landed and gate-green (format:check, lint, 151 vitest, build, 8/8 e2e), not yet
+merged at doc-sync time: ADR-009 first-visit violence advisory built
+(`src/ui/ViolenceAdvisory.tsx`, `SceneDef.depictsDeath`, wired for
+`gilboa-battle`); ESV excerpt-budget test now also scans beat captions
+(`src/data/integrity.test.ts`); "not a game" copy reworded to ADR-011 framing
+(`LandingPage.tsx`/`SiteChrome.tsx`/`FeaturesPage.tsx`); two new M3
+world-director briefs (`docs/design/beth-shan-walls-brief.md`,
+`docs/design/jabesh-burial-brief.md` — briefs only, scenes still `planned`/
+empty). Full detail: `docs/run-log.md`'s 2026-07-14 entry.
+
+## State before this slice (2026-07-10, rig-conversion/melee-combat branch merged to main)
 
 `claude/resolve-merge-conflicts-nqbqn8` had continued past what PR #23
 actually merged (PR #23 only captured an earlier ancestor of the branch —
@@ -125,61 +137,42 @@ the build): #12 DEM sourcing ADR (deferred — v1 uses procedural `ridge`), #13
 Philistine plumed-headdress verification (must clear before the scene ships
 `released`).
 
-## Next session (Sonnet): `gilboa-battle` follow-ups, `gilboa-battle`'s build is done
+## Next session (Sonnet): build `beth-shan-walls` and `jabesh-burial`
 
-The visible-first build brief below is **complete** — do not re-run it. Next
-session's actual work is the follow-up list that fell out of the build pass:
+Items 1, "not a game" copy, and the test-gap backlog (formerly items 1/4/
+small-follow-up below) are **done** as of 2026-07-14 — see `docs/run-log.md`.
+Remaining:
 
 0. **(Still open) Real-hardware performance check.** A sandboxed relative
-   measurement is done (see "State right now" above: ~1.5x frame-time
-   regression, milder than the raw figure/triangle/draw-call multipliers
-   alone would suggest) — but it was taken on a GPU-less software renderer
-   (SwiftShader), so it's evidence the change isn't catastrophic, not proof
-   it's fine on a real device. Someone should load the actual deployed scene
-   on real hardware at high quality tier before calling this settled. If it
-   turns out bad: fewer pose buckets (4 instead of 6-8), lower
+   measurement is done (see the 2026-07-09 state note further down: ~1.5x
+   frame-time regression, milder than the raw figure/triangle/draw-call
+   multipliers alone would suggest) — but it was taken on a GPU-less software
+   renderer (SwiftShader), so it's evidence the change isn't catastrophic, not
+   proof it's fine on a real device. Someone should load the actual deployed
+   scene on real hardware at high quality tier before calling this settled. If
+   it turns out bad: fewer pose buckets (4 instead of 6-8), lower
    `defenderCount`/`engagedInfantryCount`/figure-count ratios, or a
    capsule-fallback LOD at distance are the likely fixes — probably not
    reverting the real-figure/leg-animation work itself, given how modest the
    measured regression was relative to how large the underlying changes were.
-1. **ADR-009 first-visit violence advisory** (small, self-contained UI slice):
-   `gilboa-battle` currently has a plain `violenceMode` toggle in the Settings
-   panel (`src/ui/hud/SettingsPanel.tsx`) but no first-visit modal/advisory
-   explaining the standard/reduced choice before a viewer's first entry into a
-   violence-bearing scene, which ADR-009 calls for. `ui-engineer` task — check
-   how `showLabels`/other first-visit or persisted-preference UI is structured
-   for the closest existing pattern to extend, not invent from scratch.
-2. **Fable-review-queue #13** (headdress citation page-verification) — still
+1. **Fable-review-queue #13** (headdress citation page-verification) — still
    open, still blocking `gilboa-battle` → `released` (not blocking further
    build work). Needs primary-source page inspection, not just bibliographic
    lookup; batch with #12 (DEM data-sourcing ADR) if both are ready for a
    Fable pass.
-3. **Milestone-scope items still open for `gilboa-battle` → `released`**: the
-   scene's `beth-shan-walls` and `jabesh-burial` siblings are still fully
-   `planned`/empty (`SceneDef`s exist in `src/data/scenes.ts` with no beats/
-   viewpoints) — M3 world-director passes for those two scenes are a Fable-tier
-   task per `docs/model-handoff.md`, not yet requested.
-4. **Test-gap backlog** (small `test-engineer` task, carried forward from
-   2026-07-08 biblical review, still not started): `integrity.test.ts` only
-   scans `PASSAGES[].keyExcerpts` for the ESV excerpt budget — beat captions in
-   `SCENES[].beats[]` are invisible to it. Add caption scanning.
-
-## Small follow-ups (fit around the above, don't block it)
-
-- **Arrow-volley roster doesn't scale down at `study` quality tier**
-  (`src/scenes/gilboa-battle/ArrowVolley.tsx`, flagged by `performance-reviewer`
-  2026-07-13): `archerCount` at `study` (17) and `high` (30) both exceed
-  `ARCHER_VOLLEY_MAX_ARROWS_PER_WAVE` (12), so the roster is a flat 36 arrows at
-  every tier — contrary to ADR-004's expectation that `study` numbers are
-  meaningfully lower. Cost is negligible either way (36 instances); bundle with
-  item 0's figure-count/melee-clash perf pass rather than fixing standalone.
-- **UI copy still says "not a game"** (`src/pages/LandingPage.tsx:121`,
-  `src/ui/SiteChrome.tsx:32`, `src/pages/FeaturesPage.tsx:25`): reword to the
-  ADR-011 atlas-first framing (small `ui-engineer` task; mirror the new
-  README.md paragraph).
-- **Quick Pages-live check** (carried forward): confirm
-  `https://elinxie.github.io/books-of-samuel/` renders after the latest
-  merge (expect `/books-of-samuel/assets/...` requests, not `/src/main.tsx`).
+2. **Build `beth-shan-walls` and `jabesh-burial`** — both now have completed
+   M3 world-director briefs (`docs/design/beth-shan-walls-brief.md`,
+   `docs/design/jabesh-burial-brief.md`, 2026-07-14) but are still fully
+   `planned`/empty in `src/data/scenes.ts` (no beats/viewpoints). This is the
+   next Sonnet/`threejs-engineer` build task, mirroring how `gilboa-battle`'s
+   build followed its brief. Each scene carries its own non-blocking-to-build
+   queue item that gates only its path to `released`, not the build itself:
+   Beth-shan → queue #16 (archaeological-horizon page-verification against
+   `mazar-beth-shean-2006`); Jabesh → queue #17 (ADR-009 funerary-burning
+   extension ratification + cremation-scholarship citations). Build per each
+   brief's calls (wall as narrated-but-thin, four wrapped body forms, no
+   dismemberment for Beth-shan; covered-before-flame pyre, wrapped bone bundle
+   for Jabesh) and leave the queue items open for a later Fable pass.
 
 ## User priority note (2026-07-07, carries forward)
 
@@ -188,6 +181,12 @@ significant budget; prioritize visual realism. Keep tests focused.
 
 ## Environment notes
 
+- **Quick Pages-live check**: still open — the sandbox's network proxy
+  returns a policy-level 403 (`connect_rejected`, confirmed via
+  `/root/.ccr/__agentproxy/status`) for `elinxie.github.io`, not a transient
+  error. This is a sandbox-network-policy block, not something fixable from
+  inside this environment; needs checking from a session/environment with
+  outbound access to that host (2026-07-14).
 - Sandboxed e2e needs
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
   (unnecessary in real CI). In the 2026-07-09 remote web session, plain

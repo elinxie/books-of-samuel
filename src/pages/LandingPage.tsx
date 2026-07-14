@@ -118,12 +118,16 @@ export function LandingPage() {
       <section>
         <h2>What this is — and is not</h2>
         <p className="page-lede">
-          This is not a game. There is no combat, inventory, or winning: you observe, pause, replay,
-          and study scripted reenactments in reconstructed places. Current coverage is the 1 Samuel
-          30 vertical slice (Ziklag after the Amalekite raid); the roadmap continues through 1
-          Samuel 31 and into 2 Samuel chapter by chapter — see <Link to="/progress">Progress</Link>.
-          Early scenes lean on clearly labeled placeholder assets; every labeled element traces to
-          sources on the <Link to="/sources">Sources page</Link>.
+          This is an atlas-first historical world, not a conventional game. Game-like affordances —
+          guided paths, interactable labels, optional study objectives — appear only where they
+          deepen exploration, orientation, or learning; there are no fantasy systems, loot,
+          power-fantasy leveling, or win/loss states that distort the material. You observe, pause,
+          replay, and study scripted reenactments in reconstructed places. Current coverage is the 1
+          Samuel 30 vertical slice (Ziklag after the Amalekite raid); the roadmap continues through
+          1 Samuel 31 and into 2 Samuel chapter by chapter — see{' '}
+          <Link to="/progress">Progress</Link>. Early scenes lean on clearly labeled placeholder
+          assets; every labeled element traces to sources on the{' '}
+          <Link to="/sources">Sources page</Link>.
         </p>
       </section>
     </Page>

@@ -21,9 +21,10 @@ export function FeaturesPage() {
     <Page>
       <h1>Features</h1>
       <p className="page-lede">
-        The feature set serves observation and study — navigation, replay, labeling, and honest
-        sourcing — not gameplay. Combat mechanics, inventories, quests, and win states are
-        deliberately out of scope.
+        The feature set serves an atlas-first historical world — navigation, guided paths, replay,
+        labeling, and honest sourcing — not a conventional game. Fantasy systems, loot,
+        power-fantasy leveling, and win/loss states that distort the material are deliberately out
+        of scope; combat remains scripted reenactment, not player-driven mechanics.
       </p>
       {GROUPS.map((g) => {
         const items = FEATURES.filter((f) => f.status === g.status);

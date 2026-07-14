@@ -34,6 +34,12 @@ interface AppState {
   hudHidden: boolean;
   activePanel: PanelId;
   violenceMode: ViolenceMode;
+  /**
+   * ADR-009: whether the viewer has already answered the first-visit
+   * violence advisory. Once true, the advisory never reappears — the choice
+   * remains changeable any time via Settings.
+   */
+  violenceAdvisorySeen: boolean;
 
   // Scene playback
   sceneId: string;
@@ -53,6 +59,8 @@ interface AppState {
   toggleHud: () => void;
   setActivePanel: (p: PanelId) => void;
   setViolenceMode: (m: ViolenceMode) => void;
+  /** Answers the first-visit violence advisory: sets the mode and marks it seen. */
+  acknowledgeViolenceAdvisory: (m: ViolenceMode) => void;
 
   setScene: (id: string) => void;
   setTerrain: (terrain: Terrain) => void;
@@ -81,6 +89,7 @@ export const useAppStore = create<AppState>()(
       hudHidden: false,
       activePanel: 'none',
       violenceMode: 'standard',
+      violenceAdvisorySeen: false,
 
       sceneId: DEFAULT_SCENE_ID,
       terrain: ZIKLAG_TERRAIN,
@@ -98,6 +107,8 @@ export const useAppStore = create<AppState>()(
       toggleHud: () => set((s) => ({ hudHidden: !s.hudHidden })),
       setActivePanel: (activePanel) => set({ activePanel }),
       setViolenceMode: (violenceMode) => set({ violenceMode }),
+      acknowledgeViolenceAdvisory: (violenceMode) =>
+        set({ violenceMode, violenceAdvisorySeen: true }),
 
       setScene: (sceneId) =>
         set({ sceneId, timeSec: 0, playing: true, selectedEntityId: null, pendingTeleport: null }),
@@ -127,6 +138,7 @@ export const useAppStore = create<AppState>()(
         showLabels: s.showLabels,
         quality: s.quality,
         violenceMode: s.violenceMode,
+        violenceAdvisorySeen: s.violenceAdvisorySeen,
       }),
     },
   ),
