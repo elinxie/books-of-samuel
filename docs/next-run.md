@@ -137,6 +137,21 @@ the build): #12 DEM sourcing ADR (deferred — v1 uses procedural `ridge`), #13
 Philistine plumed-headdress verification (must clear before the scene ships
 `released`).
 
+## State right now (2026-07-14, PR #25 follow-up)
+
+`gilboa-battle` gained an archer arrow-volley beat (`ArrowVolley.tsx`, instanced,
+reuses the `RoutDust` pattern) plus a Fable-approved resolution of queue #15
+(melee-clash beat approved as-is, two housekeeping riders applied — `b-lines`
+caption reworded, `claim-line-defense` relabeled `design-placeholder`). PR #25
+merged with CI red (`format:check` failing on `docs/fable-review-queue.md`,
+introduced by the Fable pass's edit); this slice reformats that file only.
+
+Follow-up not yet done: the arrow-volley roster is a flat 36 arrows at every
+quality tier (`archerCount` at `study`/`high` both exceed
+`ARCHER_VOLLEY_MAX_ARROWS_PER_WAVE`=12) — contrary to ADR-004's expectation
+that `study` scales down. Cost is negligible either way; bundle with the
+open real-hardware perf check (item 0 below) rather than fixing standalone.
+
 ## Next session (Sonnet): build `beth-shan-walls` and `jabesh-burial`
 
 Items 1, "not a game" copy, and the test-gap backlog (formerly items 1/4/
