@@ -124,6 +124,80 @@ export function armorBearerPose(t: number, mode: ViolenceMode): ArmorBearerPose 
 }
 
 /**
+ * Archer-volley choreography (`b-archers`, `claim-saul-wounded-archers`,
+ * `ArrowVolley.tsx`): three staggered waves of arrows loosed from the
+ * Philistine archer line toward the crest, timed so the last wave lands as
+ * Saul begins to stagger (`saulPose`'s `kneel`, keyed to `T_ARCHERS`). This
+ * is staging/timing only — the text gives no wave count or cadence — and is
+ * disclosed as such in `claim-saul-wounded-archers`'s notes, not asserted as
+ * an attested volley tactic. Every function here produces only projectile
+ * position/orientation and a whole-figure draw/release lean; no wound, blood,
+ * or impact geometry (ADR-009) — identical in both violence modes, matching
+ * the brief's "the volley is shown" in reduced mode too.
+ */
+export const ARCHER_VOLLEY_WAVE_COUNT = 3;
+export const ARCHER_VOLLEY_WAVE_INTERVAL_SEC = 2.6;
+export const ARCHER_VOLLEY_FLIGHT_DURATION_SEC = 2.2;
+export const ARCHER_VOLLEY_LEAD_SEC = 6.2;
+export const ARCHER_VOLLEY_MAX_ARROWS_PER_WAVE = 12;
+
+/** Loose (release) time of a given wave (0-indexed), the last wave landing right around `T_ARCHERS`. */
+export function archerVolleyWaveStart(wave: number): number {
+  return T_ARCHERS - ARCHER_VOLLEY_LEAD_SEC + wave * ARCHER_VOLLEY_WAVE_INTERVAL_SEC;
+}
+
+/**
+ * 0..1 flight progress for an arrow loosed at `waveStart`, or `null` when
+ * that arrow isn't currently airborne (before loosing or after landing).
+ */
+export function arrowFlightProgress(t: number, waveStart: number): number | null {
+  const local = t - waveStart;
+  if (local < 0 || local > ARCHER_VOLLEY_FLIGHT_DURATION_SEC) return null;
+  return clamp01(local / ARCHER_VOLLEY_FLIGHT_DURATION_SEC);
+}
+
+/** A simple parabolic loft, 0 at loose/landing, `peak` at the arc's midpoint. */
+export function arrowArcHeight(progress: number, peak: number): number {
+  return Math.sin(Math.PI * clamp01(progress)) * peak;
+}
+
+/**
+ * Ground-scatter radius (meters) around the crest group's center that a
+ * given wave's arrows land within — later waves converge tighter, so the
+ * volley visually closes in rather than scattering uniformly across every
+ * wave.
+ */
+export function arrowTargetScatterRadius(wave: number): number {
+  const frac = ARCHER_VOLLEY_WAVE_COUNT > 1 ? wave / (ARCHER_VOLLEY_WAVE_COUNT - 1) : 0;
+  return lerp(16, 4, frac);
+}
+
+export interface ArcherDrawPose {
+  /** -1 full draw (bow pulled, torso leant back) .. 0 rest/ready stance. */
+  draw: number;
+}
+
+/**
+ * The whole archer line's draw/release lean, synchronized to whichever
+ * volley wave is currently active (or 0/rest outside any wave window) — a
+ * gesture/orientation change on the existing static bow-holding figures
+ * (`PhilistinePress.tsx`), never new bow/body geometry.
+ */
+export function archerDrawPose(t: number): ArcherDrawPose {
+  for (let w = 0; w < ARCHER_VOLLEY_WAVE_COUNT; w++) {
+    const waveStart = archerVolleyWaveStart(w);
+    const pullStart = waveStart - 0.6;
+    const releaseEnd = waveStart + ARCHER_VOLLEY_FLIGHT_DURATION_SEC * 0.5;
+    if (t < pullStart || t > releaseEnd) continue;
+    if (t < waveStart) {
+      return { draw: lerp(0, -1, smoothstep((t - pullStart) / 0.6)) };
+    }
+    return { draw: lerp(-1, 0, smoothstep((t - waveStart) / (releaseEnd - waveStart))) };
+  }
+  return { draw: 0 };
+}
+
+/**
  * Beat-driven melee-clash choreography (`claim-line-defense`, `b-line-clash`
  * through `b-rout`): the Israelite defensive line and the facing subset of
  * Philistine infantry engage directly from `T_LINE_CLASH` until the line

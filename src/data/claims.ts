@@ -408,11 +408,11 @@ export const CLAIMS: ReconstructionClaim[] = [
     id: 'claim-line-defense',
     statement:
       'Before "the men of Israel fled before the Philistines" (1 Samuel 31:1), the two forces necessarily met and fought directly — a rout presupposes a prior engagement, even though the text moves straight from arrayed lines to flight without narrating the clash itself.',
-    basis: 'scholarly-reconstruction',
+    basis: 'design-placeholder',
     confidence: 'moderate',
     sourceIds: ['esv-bible'],
     notes:
-      'User-directed addition, revising the scene brief\'s original choice to read the defeat "in the drift downhill and the dust — not in blow-by-blow fighting" (see docs/fable-review-queue.md #15). Rendered as a scripted (non-interactive) melee-clash cycle between an Israelite defensive line and the facing rank of the Philistine press — swing, block, and stagger gesture/orientation transforms only, never wound, blood, or dismemberment geometry in either violenceMode, per ADR-009. The clash choreography itself is identical in both modes; only the post-clash fall a fraction of the line takes is subject to the standard/reduced duration split.',
+      'User-directed addition, revising the scene brief\'s original choice to read the defeat "in the drift downhill and the dust — not in blow-by-blow fighting" (see docs/fable-review-queue.md #15). Rendered as a scripted (non-interactive) melee-clash cycle between an Israelite defensive line and the facing rank of the Philistine press — swing, block, and stagger gesture/orientation transforms only, never wound, blood, or dismemberment geometry in either violenceMode, per ADR-009. The clash choreography itself is identical in both modes; only the post-clash fall a fraction of the line takes is subject to the standard/reduced duration split. Basis relabeled 2026-07-13 (fable-review-queue #15b): this is the project\'s own textual/staging inference ("a rout presupposes a prior engagement"), not a citation to a named scholarly treatment of Iron Age Levantine melee combat — no such source has been page-verified for this specific claim, so `scholarly-reconstruction` overstated its footing; `esv-bible` alone was never adequate support for that basis label.',
   },
   {
     id: 'claim-gilboa-rout',
@@ -442,7 +442,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Rendered as Saul staggering/going to one knee; no wound or blood geometry in any mode. In reduced mode the hit itself is elided — he is simply down/faltering by the next beat (ADR-009).',
+      "Rendered as Saul staggering/going to one knee; no wound or blood geometry in any mode. In reduced mode the hit itself is elided — he is simply down/faltering by the next beat (ADR-009). The volley itself is rendered as three staggered instanced-arrow waves arcing from the Philistine archer line toward the crest (`ArrowVolley.tsx`), the last landing as Saul begins to stagger — a staging/timing choice (wave count, cadence, and convergence-on-the-crest scatter) disclosed here as the project's own compression, not an attested volley tactic or cadence from any source; the arrows themselves carry no impact/wound geometry, only flight. Composite-bow use by both forces' archer elements is the existing comparative-ANE assumption already carried by `claim-israelite-muster-kit`/`claim-philistine-kit` (Yadin 1963; King & Stager 2001) — this claim does not add a new weapon-form assertion, only the volley's staging.",
   },
   {
     id: 'claim-armor-bearer-refusal',

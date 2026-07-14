@@ -387,7 +387,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 0,
         title: 'Arrayed on the ridge',
         caption:
-          'Israel is drawn up on the high ground of Gilboa; the Philistines press up from the plain below, near Shunem. The line is already giving way. (1 Samuel 28:4; 31:1)',
+          'Israel is drawn up on the high ground of Gilboa; the Philistines press up from the plain below, near Shunem, and close on the line. (1 Samuel 28:4; 31:1)',
         passageRef: '1 Samuel 28:4; 31:1',
       },
       {
@@ -500,6 +500,7 @@ export const SCENES: SceneDef[] = [
       'asset-military-kit-israelite',
       'asset-military-kit-philistine',
       'asset-dust-motion',
+      'asset-arrow-volley',
     ],
   },
   {
