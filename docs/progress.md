@@ -84,7 +84,7 @@ Scope call: `f-dem-terrain` re-scoped M2 → M3 (no M2 scene is at an identified
 site). Queue #11 (Egyptian dress) resolved — conservative shared-dress kept,
 revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
-## Milestone 3–4: **planned**, not started. See `src/data/milestones.ts` for goals.
+## Milestone 3–4: milestone-level status **planned** in `src/data/milestones.ts` (flips at Fable sign-off, matching M1/M2); all three M3 scenes now built. See `src/data/milestones.ts` for goals.
 
 `gilboa-battle` world-director brief done 2026-07-09 (Fable):
 `docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
@@ -118,15 +118,39 @@ bones as a wrapped bundle, not skeletal geometry; ~45-55 figures, smallest M3
 cast. New queue items opened: #16 (Beth-shan archaeological-horizon
 page-verification against `mazar-beth-shean-2006`) and #17 (Jabesh pyre
 ADR-009 extension + cremation-scholarship citations) — both gate only their
-scene's path to `released`, not the build. Next: Sonnet/`threejs-engineer`
-build of both scenes per their briefs.
+scene's path to `released`, not the build.
+
+**Both scenes built 2026-07-15 (Sonnet)**, closing out M3's scene builds:
+`status: 'in-progress'`, `depictsDeath: true` (violence advisory wires
+automatically). `beth-shan-walls` (commit `6e48f90`): tell terrain + dense
+summit-quarter house massing, narrated-but-thin wall/gate, four
+wall-display forms + up to 2 labeled Egyptian monuments, escort/retrieval
+reenactment (8 beats, 5 viewpoints) — 57 figures at high tier (36 town + 12
+escort + 9 retrieval). `jabesh-burial` (commit `68813b6`): Wadi Yabis
+terrain + open unwalled hamlet layout, night retrieval → covered-before-
+flame pyre → bone-bundle burial → seven-day fast (7 beats, 5 viewpoints) —
+47 figures at high tier (11 retrieval column + 36 villagers); reuses
+`claim-jabesh-retrieval`/`men-of-jabesh` and `buildWrappedFormGeometry` from
+beth-shan-walls by id rather than duplicating. New shared engine piece:
+`src/engine/characters/wrappedForm.ts` (`buildWrappedFormGeometry`) for
+wrapped-silhouette bodies (display forms, biers, bone bundle). Performance-
+reviewed: beth-shan-walls clean, no fixes; jabesh-burial had one fix
+(`c5aac8f`, hoisted 4 per-frame `Color.clone()` calls in the seven-day
+shimmer branch to module-scope scratch objects). Full `npm run verify`
+(format/lint/269 vitest/build/8 e2e) green. Queue #16/#17 stay open — gate
+`released` only, not the build; not resolved by this pass. Non-blocking
+judgement calls flagged for a later review (see `docs/next-run.md`):
+beth-shan-walls picked the lower value from the brief's dual-value
+confidence ranges (`moderate/low`→`moderate`, `low/moderate`→`low`);
+jabesh-burial chose evenly-paced beat timing (brief specifies beat order,
+not seconds).
 
 **Cross-cutting, done 2026-07-14 (project-wide, not scene-specific):** ADR-009's
 first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
-`SceneDef.depictsDeath` flag, wired for `gilboa-battle`) — the advisory
-triggers per scene data, ready for `beth-shan-walls`/`jabesh-burial` to opt in
-when built. `integrity.test.ts`'s ESV excerpt-budget check now also scans
-`SCENES[].beats[].caption`, not just `PASSAGES[].keyExcerpts`.
+`SceneDef.depictsDeath` flag) — now wired for `gilboa-battle`,
+`beth-shan-walls`, and `jabesh-burial`. `integrity.test.ts`'s ESV
+excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
+`PASSAGES[].keyExcerpts`.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
@@ -163,12 +187,13 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Sonnet, 2026-07-14)
-- `npm run lint` — pass (Sonnet, 2026-07-14)
-- `npm run test` (vitest) — 151/151 pass (Sonnet, 2026-07-14)
-- `npm run build` — pass (Sonnet, 2026-07-14)
-- `npm run e2e` (playwright) — 8/8 pass (Sonnet, 2026-07-14, sandboxed with
+- `npm run format:check` — pass (Sonnet, 2026-07-15)
+- `npm run lint` — pass (Sonnet, 2026-07-15)
+- `npm run test` (vitest) — 269/269 pass (Sonnet, 2026-07-15)
+- `npm run build` — pass (Sonnet, 2026-07-15)
+- `npm run e2e` (playwright) — 8/8 pass (Sonnet, 2026-07-15, sandboxed with
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
-- Branch `claude/focused-mccarthy-ckjcuh`, not yet merged at time of this
-  status line. See `docs/run-log.md`'s 2026-07-14 entry for what's on it.
+- Branch `claude/focused-mccarthy-dhkjpx` (draft PR #30 per `docs/next-run.md`),
+  not yet merged at time of this status line. See `docs/run-log.md`'s
+  2026-07-15 entries for what's on it.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.
