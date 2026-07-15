@@ -628,6 +628,121 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Rendered as a local Canaanite town population with a visiting Philistine detachment/escort, not a "Philistine city" — the render follows the Canaanite-orbit reading’s population choice while carrying both views here rather than silently picking a winner.',
   },
+  {
+    id: 'claim-jabesh-location',
+    statement:
+      'The site of biblical Jabesh-gilead is not securely identified. Two candidate tells are defended in current scholarship; this scene renders a disclosed composite of the lower Wadi Yabis setting rather than either candidate’s actual plan (docs/uncertainty-register.md, register #8).',
+    basis: 'scholarly-reconstruction',
+    confidence: 'low',
+    sourceIds: ['rainey-notley-2006'],
+    scholarlyViews: [
+      {
+        id: 'view-jabesh-tell-el-maqlub',
+        label: 'Tell el-Maqlub',
+        summary:
+          'Fits the Wadi Yabis name continuity and Eusebius’ ancient distance notice for Jabesh from Pella; a longer-favored candidate in historical-geography atlases.',
+        confidence: 'moderate',
+        sourceIds: ['rainey-notley-2006'],
+      },
+      {
+        id: 'view-jabesh-tell-abu-al-kharaz',
+        label: 'Tell Abu al-Kharaz',
+        proponents: ['e.g., Peter Fischer (excavator)'],
+        summary:
+          'An excavated Jordan Valley-edge site with a well-published Iron Age sequence, proposed as Jabesh-gilead; attribution to specific excavation-report argumentation is not yet page-verified here.',
+        confidence: 'low',
+        sourceIds: ['rainey-notley-2006'],
+      },
+    ],
+    notes:
+      'Register #8’s current default is a disclosed composite: a representative lower-Wadi-Yabis setting (the wadi corridor, hill country over the Jordan valley) common to both candidates, not a portrait of either tell — the same discipline applied to Ziklag’s unresolved candidates. This scene deliberately does not adopt either site’s plan.',
+  },
+  {
+    id: 'claim-gilead-terrain',
+    statement:
+      'The scene renders terraced hill-flank ground above a modest perennial wadi — the Wadi Yabis corridor form on Gilead’s western flank, rising from the Jordan valley toward the Gilead hill country.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'moderate',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'Procedural terrain (ADR-005 hills + a channel feature), not DEM-derived — see asset-terrain-jabesh-wadi. The general Gilead hill-flank form (narrower, greener wadi than the Negev/Besor forms rendered earlier in the project) is reasonably well established regionally even though the specific site is not.',
+  },
+  {
+    id: 'claim-jabesh-town-form',
+    statement:
+      'The scene renders Jabesh-gilead as a small, open, unwalled hamlet cluster (roughly 8-12 structures) on a hill terrace — a settlement form distinct from both Ziklag’s enclosed ring and Beth-shan’s dense tell quarter.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'ADR-006 per-scene layout justification: since the site itself is unlocated (claim-jabesh-location), no plan-level excavated evidence exists to model against. An open, unwalled small hamlet is chosen as a generic, defensible Iron I Gilead settlement form rather than reusing either prior scene’s layout generator wholesale — disclosed as a placeholder, not an excavated reconstruction.',
+  },
+  {
+    id: 'claim-night-march',
+    statement:
+      'The narrative states that Jabesh-gilead’s valiant men walked all night, crossed to Beth-shan, and carried the bodies home (1 Samuel 31:11-12). The scene depicts the walk and its plausibility without asserting a specific distance or duration.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'No on-screen kilometer or duration figure is given, matching the Besor route’s precedent (register #2): the round trip’s real length depends on the unresolved Jabesh site question and on the Jordan crossing itself, which happens off-scene.',
+  },
+  {
+    id: 'claim-burning-bodies',
+    statement:
+      'The narrative states that the men of Jabesh burned the bodies at Jabesh before burying the bones (1 Samuel 31:12b) — cremation, which is exceptional against normal Israelite burial practice. The parallel account in 1 Chronicles 10:12 omits the burning.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    scholarlyViews: [
+      {
+        id: 'view-burning-honorable-treatment',
+        label: 'Honorable treatment of mutilated, exposed bodies',
+        summary:
+          'Burning is read as an honorable response to bodies that were mutilated (beheaded) and had been publicly displayed for some time — a protective, dignifying act rather than a normal funerary rite.',
+        confidence: 'low',
+        sourceIds: ['king-stager-2001'],
+      },
+      {
+        id: 'view-burning-prevent-desecration',
+        label: 'Preventing further desecration',
+        summary:
+          'Burning is read as a practical measure to prevent any further mistreatment or loss of what remained of the bodies, given the circumstances of their recovery from a hostile city’s wall.',
+        confidence: 'low',
+        sourceIds: ['king-stager-2001'],
+      },
+      {
+        id: 'view-burning-textual-emendation',
+        label: 'A proposed textual variant',
+        summary:
+          'Some commentators have proposed the verb here may not originally have meant full cremation (comparing usage elsewhere for burning spices/incense over a body rather than the body itself); this remains a minority proposal, not a consensus reading.',
+        confidence: 'speculative',
+        sourceIds: ['king-stager-2001'],
+      },
+    ],
+    notes:
+      'Citation verification queued (fable-review-queue #17): proponent attribution for the scholarly views above is hedged pending page-level sourcing. king-stager-2001 anchors normal Israelite (non-cremation) burial practice as the baseline this act departs from. The depiction stays restrained (documentary distance, covered-before-flame in every mode — no burning silhouette or charring detail, ever), but the anomaly itself is stated as fact in every mode’s captions; reduction abstracts the depiction, never the fact.',
+  },
+  {
+    id: 'claim-tamarisk-burial',
+    statement:
+      'The narrative states that the men of Jabesh buried the gathered bones under the tamarisk at Jabesh (1 Samuel 31:13a).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The parallel account in 1 Chronicles 10:12 names "the oak" (terebinth) rather than "the tamarisk" — a genuine textual variant, carried as a label note rather than resolved by picking one species. The tamarisk also echoes 1 Samuel 22:6, where Saul is described sitting under a tamarisk at Gibeah — the same tree type bracketing his reign’s low point and its final scene, worth noting without over-reading as deliberate authorial symmetry. The bones render only as a cloth-wrapped bundle (buildWrappedFormGeometry at a short length scale) — never skeletal geometry, in any mode.',
+  },
+  {
+    id: 'claim-seven-day-fast',
+    statement:
+      'The narrative states that Jabesh-gilead fasted seven days after the burial (1 Samuel 31:13b) — a communal mourning rite. The scene renders this as a time-compression card (a compressed day-cycle shimmer) rather than seven literal days of simulated time.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    notes:
+      'Seven-day mourning periods recur elsewhere in the Hebrew Bible (e.g., Genesis 50:10, Job 2:13) as a conventional span for acute communal grief; king-stager-2001 anchors the general practice of Israelite mourning ritual this fits within. The compression itself is a keyframed lighting-rig oscillation (a rig mutation, not new lights or a literal seven-day simulation) — see poses.ts’s sevenDayShimmerEnvelope/Oscillation.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

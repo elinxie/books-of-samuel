@@ -16,6 +16,8 @@ import { GilboaBattleScene } from '../scenes/gilboa-battle/GilboaBattleScene';
 import { GILBOA_TERRAIN } from '../scenes/gilboa-battle/terrain';
 import { BethShanWallsScene } from '../scenes/beth-shan-walls/BethShanWallsScene';
 import { BETH_SHAN_TERRAIN } from '../scenes/beth-shan-walls/terrain';
+import { JabeshBurialScene } from '../scenes/jabesh-burial/JabeshBurialScene';
+import { JABESH_TERRAIN } from '../scenes/jabesh-burial/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -31,6 +33,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'amalekite-camp': { component: AmalekiteCampScene, terrain: AMALEKITE_CAMP_TERRAIN },
   'gilboa-battle': { component: GilboaBattleScene, terrain: GILBOA_TERRAIN },
   'beth-shan-walls': { component: BethShanWallsScene, terrain: BETH_SHAN_TERRAIN },
+  'jabesh-burial': { component: JabeshBurialScene, terrain: JABESH_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

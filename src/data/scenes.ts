@@ -647,14 +647,124 @@ export const SCENES: SceneDef[] = [
     locationId: 'jabesh-gilead',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'planned',
+    status: 'in-progress',
     synopsis:
-      'The valiant men of Jabesh walk through the night, take the bodies from the wall, burn them at Jabesh, bury the bones under the tamarisk, and fast seven days.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
-    claimIds: [],
-    assetIds: [],
+      'The valiant men of Jabesh walk through the night, take the bodies from the wall, burn them at Jabesh, bury the bones under the tamarisk, and fast seven days. The quietest scene in the project so far — the kingdom’s first act answered by its last kindness.',
+    depictsDeath: true,
+    durationSec: 150,
+    beats: [
+      {
+        id: 'b-night-march',
+        timeSec: 0,
+        title: 'The column comes home, by night',
+        caption:
+          'Word reached Jabesh at dusk, across the Jordan (rendered at Beth-shan’s wall, not here). By night, the valiant men climb the wadi path from the valley below, bearing four wrapped forms by torchlight. (1 Samuel 31:11–12a)',
+        passageRef: '1 Samuel 31:11–12a',
+      },
+      {
+        id: 'b-received',
+        timeSec: 24,
+        title: 'The town receives them',
+        caption:
+          'In the grey light before sunrise, the town comes out to receive them at the village edge. No feast, no procession — quiet grief poses, restrained. (1 Samuel 31:12)',
+        passageRef: '1 Samuel 31:12',
+      },
+      {
+        id: 'b-pyre',
+        timeSec: 55,
+        title: 'The burning',
+        caption:
+          'The four forms are laid on a timber platform and fully covered before any flame is lit, in every mode. Burning the dead departs from normal Israelite practice — 1 Chronicles 10:12 omits it — and the reason has long been debated. (1 Samuel 31:12b)',
+        passageRef: '1 Samuel 31:12b',
+      },
+      {
+        id: 'b-bones',
+        timeSec: 82,
+        title: 'The bones are gathered',
+        caption:
+          'The bones are gathered as a single cloth-wrapped bundle, handled with care, and carried toward the tamarisk. No remains are shown directly, in any mode. (1 Samuel 31:13a)',
+        passageRef: '1 Samuel 31:13a',
+      },
+      {
+        id: 'b-tamarisk',
+        timeSec: 104,
+        title: 'Burial under the tamarisk',
+        caption:
+          'The bundle is lowered beneath the tamarisk and the mound is closed. 1 Chronicles 10:12 names the oak instead — a genuine textual variant, left open rather than resolved. (1 Samuel 31:13a)',
+        passageRef: '1 Samuel 31:13a',
+      },
+      {
+        id: 'b-seven-days',
+        timeSec: 122,
+        title: 'Seven days',
+        caption:
+          'The village keeps a seven-day fast. The days pass here as a compressed shimmer of light and dark, not shown one by one — a time-compression card, not a literal seven-day simulation. (1 Samuel 31:13b)',
+        passageRef: '1 Samuel 31:13b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 142,
+        title: 'Still evening',
+        caption:
+          'Evening settles and holds. Word of what happened here will reach David at Ziklag (2 Samuel 1), and he will later bless Jabesh by name for this kindness (2 Samuel 2:5–7) — not depicted in this scene.',
+        passageRef: '2 Samuel 2:5–7',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-village-edge',
+        label: 'The village edge, by night',
+        position: [-15, 0, 9],
+        lookAt: [-350, 15, 40],
+      },
+      {
+        id: 'vp-wadi-path',
+        label: 'The wadi path',
+        position: [-150, 0, -20],
+        lookAt: [-22, 10, 6],
+      },
+      {
+        id: 'vp-pyre-ground',
+        label: 'The pyre ground',
+        position: [95, 0, 60],
+        lookAt: [65, 8, 40],
+      },
+      {
+        id: 'vp-tamarisk',
+        label: 'The tamarisk',
+        position: [115, 0, -15],
+        lookAt: [100, 10, -35],
+      },
+      {
+        id: 'vp-west-terrace',
+        label: 'The west terrace',
+        position: [30, 0, 25],
+        lookAt: [-420, 10, 50],
+      },
+    ],
+    claimIds: [
+      'claim-jabesh-location',
+      'claim-gilead-terrain',
+      'claim-jabesh-town-form',
+      'claim-jabesh-retrieval',
+      'claim-night-march',
+      'claim-burning-bodies',
+      'claim-tamarisk-burial',
+      'claim-seven-day-fast',
+      'claim-dress',
+      'claim-chronology',
+    ],
+    assetIds: [
+      'asset-terrain-jabesh-wadi',
+      'asset-tamarisk-tree',
+      'asset-pyre',
+      'asset-bier-props',
+      'asset-village-cluster',
+      'asset-vegetation-gilead',
+      'asset-figure-procedural',
+      'asset-rocks',
+      'asset-torch-sprites',
+    ],
   },
 ];
 

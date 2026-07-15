@@ -763,3 +763,77 @@ town-form` → moderate, `claim-beth-shan-control` → low, both first-listed);
   `performance-reviewer`, not yet profiled on real hardware. Did not touch
   `jabesh-burial`, `next-run.md`, `progress.md`, `fable-review-queue.md`, or
   `asset-roadmap.md` (out of scope, orchestrator's job). Did not commit/push.
+
+**2026-07-15 — Sonnet 5 — `jabesh-burial` scene build (M3, scene 3, closing)**
+Built the full `jabesh-burial` scene per `docs/design/jabesh-burial-brief.md`,
+following `beth-shan-walls`'s pattern with `besor-crossing`'s simpler
+terrain/vegetation structure as the scale analogue. New:
+`src/scenes/jabesh-burial/` (terrain: ADR-005 `hills` + a narrow/shallow
+`channel` for the Wadi Yabis form + a west→east rise ramp + village/pyre/
+tamarisk flattens, Gilead's 4th regional palette; scene-local `layout.ts` —
+a loose, open, unwalled 8–12-house hamlet cluster around a clear yard, min
+11m house spacing, explicitly NOT Ziklag's ring or Beth-shan's dense
+summit-quarter grid; `poses.ts` pure beat-time choreography incl.
+`formPose`'s unconditional covered-before-flame gating, `pyreFireIntensity`,
+`boneBundlePose`/`burialMoundProgress`, `sevenDayShimmerEnvelope`/
+`Oscillation`; `GroundWorks`/`Vegetation`/`VillageHouses`/`Tamarisk`/
+`RetrievalColumn` (figures, path-following)/`Torches` (torches now move with
+their bearer, unlike Beth-shan's static wall-foot torches)/`Biers` (the 4
+wrapped forms, reuses `buildWrappedFormGeometry(1)`)/`Pyre` (seeded
+log-cabin stack that grows to fully cover the biers before flame, then the
+project's one large fire)/`BoneBundle` (`buildWrappedFormGeometry(0.3)` —
+bundle scale, never skeletal geometry)/`Villagers` (3-location crowd: yard →
+pyre-gather-ring → tamarisk, soft linear cross-fade at beat boundaries, no
+route curve needed on this open unwalled terrain)/`JabeshBurialScene` root
+with beat-driven deep-night→dawn→morning→dusk lighting rig plus a
+seven-day-fast shimmer that oscillates the SAME directional+hemisphere rig
+between the night/brightest-day reference keys — a rig mutation, no new
+lights). Data: 7 new claims (`claim-jabesh-location` [disputed, both
+candidate tells surfaced], `claim-gilead-terrain`, `claim-jabesh-town-form`
+[design-placeholder], `claim-night-march`, `claim-burning-bodies`
+[scholarlyViews carry the cremation-anomaly debate, hedged attribution,
+citation verification queued #17], `claim-tamarisk-burial` [Chronicles
+terebinth variant + 1 Sam 22:6 echo in notes], `claim-seven-day-fast`);
+reused `claim-jabesh-retrieval`, `men-of-jabesh`, `claim-dress`,
+`claim-chronology` by id, not recreated. 5 new asset records
+(`asset-terrain-jabesh-wadi`, `asset-tamarisk-tree`, `asset-pyre`,
+`asset-village-cluster`, `asset-vegetation-gilead`); reused
+`asset-bier-props`, `asset-torch-sprites`, `asset-figure-procedural`,
+`asset-rocks` by id. Full `SceneDef` (7 beats exactly matching the brief's
+table, 5 viewpoints, `status: in-progress`, `depictsDeath: true`,
+`durationSec: 150`). Registered in `ObservePage.tsx` `SCENE_REGISTRY`;
+violence advisory gates automatically via `depictsDeath`. Interpretive calls
+not fully pinned by the brief (flagging for review): exact beat `timeSec`
+values and viewpoint camera positions (brief gives beat order/table but no
+numbers — chose an evenly-paced 150s arc mirroring Beth-shan's spacing);
+villager crowd transit between the 3 locations uses a direct linear
+lerp/cross-fade rather than route-curve walking (this scene's terrain has no
+walls/obstacles, and the beat-to-beat gaps represent skipped hours the
+lighting arc already carries — flagged as a simplification, not full
+walked-transit choreography); retrieval-column figures freeze at their
+arrival slot once they reach the village and are not tracked through the
+later pyre/tamarisk beats individually (they read as absorbed into the
+general village population, matching "leadership by staging only"); pyre
+timber covering timed so the last-staggered bier's carry transit always
+finishes before any log begins covering it (no form is ever left partially
+covered). `pyreFireIntensity`/`boneBundlePose` also take a `violenceMode` arg
+(the brief's only two mode-dependent beats here: b-pyre reduced caps
+intensity at an embers-only level, never a full blaze; b-bones reduced
+elides the gathering/carry, bundle simply present at the grave once
+b-tamarisk begins) — every other beat/function is intentionally
+mode-invariant per the table. Tests: `terrain.test.ts` (3 cases),
+`layout.test.ts` (14 cases), `poses.test.ts` (26 cases, incl. the
+covered-before-flame hard constraint in both modes, the reduced-mode
+embers-cap and gathering-elision, and the shimmer's multi-cycle
+oscillation), `reenactment.test.ts` (10 cases, column/villager pose
+functions) — all new, all passing; added `JABESH_BURIAL_ENTITIES` checks to
+`integrity.test.ts`. Full gate: format:check/lint/typecheck/vitest (28
+files, 269 tests) all clean; `npm run build` clean. Did not run e2e
+(orchestrating session runs full `npm run verify`). Figure counts at high
+tier: retrieval column 11 + villagers 36 = 47 (brief target 45–55,
+deliberately smaller than Beth-shan's 57); cost here is
+vegetation/terrain/night-lighting per the brief, not crowd size —
+flagging for `performance-reviewer`, not yet profiled on real hardware. Did
+not touch `beth-shan-walls`, `next-run.md`, `progress.md`,
+`fable-review-queue.md`, `asset-roadmap.md`, or `docs/uncertainty-register.md`
+(out of scope, orchestrator's job). Did not commit/push.
