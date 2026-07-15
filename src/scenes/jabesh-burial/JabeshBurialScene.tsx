@@ -181,6 +181,14 @@ const scratchSunColor = new THREE.Color();
 const scratchSky = new THREE.Color();
 const scratchGround = new THREE.Color();
 const scratchBg = new THREE.Color();
+// Scratch targets for the seven-day shimmer's night->day color lerp, reused
+// across frames instead of `.clone()`-ing keyColors entries every frame
+// during the ~18s shimmer window (same tmpVec/dummy hoisting pattern used
+// elsewhere in this codebase, e.g. ReturningMen.tsx).
+const scratchShimmerSun = new THREE.Color();
+const scratchShimmerSky = new THREE.Color();
+const scratchShimmerGround = new THREE.Color();
+const scratchShimmerBg = new THREE.Color();
 
 function BeatLighting({ shadows, shadowMapSize }: { shadows: boolean; shadowMapSize: number }) {
   const scene = useThree((s) => s.scene);
@@ -231,24 +239,22 @@ function BeatLighting({ shadows, shadowMapSize }: { shadows: boolean; shadowMapS
       sun = lerp(sun, shimmerSun, envelope);
       hemi = lerp(hemi, shimmerHemi, envelope);
       amb = lerp(amb, shimmerAmb, envelope);
-      scratchSunColor.lerp(
-        keyColors[SHIMMER_NIGHT_KEY].sunColor
-          .clone()
-          .lerp(keyColors[SHIMMER_DAY_KEY].sunColor, osc),
-        envelope,
-      );
-      scratchSky.lerp(
-        keyColors[SHIMMER_NIGHT_KEY].sky.clone().lerp(keyColors[SHIMMER_DAY_KEY].sky, osc),
-        envelope,
-      );
-      scratchGround.lerp(
-        keyColors[SHIMMER_NIGHT_KEY].ground.clone().lerp(keyColors[SHIMMER_DAY_KEY].ground, osc),
-        envelope,
-      );
-      scratchBg.lerp(
-        keyColors[SHIMMER_NIGHT_KEY].bg.clone().lerp(keyColors[SHIMMER_DAY_KEY].bg, osc),
-        envelope,
-      );
+      scratchShimmerSun
+        .copy(keyColors[SHIMMER_NIGHT_KEY].sunColor)
+        .lerp(keyColors[SHIMMER_DAY_KEY].sunColor, osc);
+      scratchSunColor.lerp(scratchShimmerSun, envelope);
+      scratchShimmerSky
+        .copy(keyColors[SHIMMER_NIGHT_KEY].sky)
+        .lerp(keyColors[SHIMMER_DAY_KEY].sky, osc);
+      scratchSky.lerp(scratchShimmerSky, envelope);
+      scratchShimmerGround
+        .copy(keyColors[SHIMMER_NIGHT_KEY].ground)
+        .lerp(keyColors[SHIMMER_DAY_KEY].ground, osc);
+      scratchGround.lerp(scratchShimmerGround, envelope);
+      scratchShimmerBg
+        .copy(keyColors[SHIMMER_NIGHT_KEY].bg)
+        .lerp(keyColors[SHIMMER_DAY_KEY].bg, osc);
+      scratchBg.lerp(scratchShimmerBg, envelope);
     }
 
     const sun_ = sunRef.current;

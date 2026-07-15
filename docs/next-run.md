@@ -30,6 +30,7 @@ character are shared by id across both scenes (created once, by
 `beth-shan-walls`, reused by `jabesh-burial` — not duplicated).
 
 **Not yet done this session (do next):**
+
 1. Confirm/finish the `jabesh-burial` performance-reviewer pass (see above).
 2. **Doc sync** — `docs/progress.md`, `docs/asset-roadmap.md` (new
    placeholder assets from both scenes need entries),
