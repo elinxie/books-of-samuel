@@ -70,12 +70,13 @@ describe('buildPhilistinePrincipalSlots', () => {
 });
 
 describe('buildDefenderSlots', () => {
-  it('holds ground short of the crest, facing the Philistine advance', () => {
+  it('holds a close clash-front short of the crest', () => {
     const slots = buildDefenderSlots(30);
     expect(slots.length).toBe(30);
     for (const s of slots) {
       expect(s.z).toBeLessThan(0);
-      expect(s.z).toBeGreaterThanOrEqual(-50);
+      expect(s.z).toBeGreaterThanOrEqual(-46);
+      expect(s.z).toBeLessThanOrEqual(-40);
     }
   });
 
@@ -85,16 +86,19 @@ describe('buildDefenderSlots', () => {
 });
 
 describe('buildEngagedInfantrySlots', () => {
-  it('stages the facing rank just north of the defender line', () => {
+  it('stages Philistines within weapon range of the defender front', () => {
     const defenders = buildDefenderSlots(30);
     const engaged = buildEngagedInfantrySlots(30);
     expect(engaged.length).toBe(30);
-    const defenderMinZ = Math.min(...defenders.map((s) => s.z));
-    const engagedMaxZ = Math.max(...engaged.map((s) => s.z));
     for (const s of engaged) expect(s.z).toBeLessThan(0);
-    // The engaged rank's nearest edge to the crest should sit close behind
-    // the defenders' farthest-forward edge — the two lines meet, not gap.
-    expect(defenderMinZ - engagedMaxZ).toBeLessThan(15);
+
+    const nearestDistances = engaged.map((p) =>
+      Math.min(...defenders.map((d) => Math.hypot(d.x - p.x, d.z - p.z))),
+    );
+    expect(Math.max(...nearestDistances)).toBeLessThan(4.5);
+    expect(
+      Math.min(...engaged.map((p) => Math.min(...defenders.map((d) => p.z - d.z)))),
+    ).toBeLessThan(0);
   });
 
   it('is deterministic for a given seed', () => {

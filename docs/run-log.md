@@ -711,3 +711,23 @@ comment flagging it, did not push (out of scope for this branch).
 
 Still open, unchanged: `next-run.md` item 0 (real-hardware perf check),
 queue #12/#13/#14/#15.
+
+**2026-07-14 — Codex — Gilboa clash-contact fix**
+
+- Fixed user-reported `gilboa-battle` melee readability issue: Israelite
+  defenders and engaged Philistines now share a close, ragged clash front at
+  weapon range instead of separated z-bands that made figures look like they
+  were slashing at air.
+- Added/updated layout invariants so engaged Philistines must have nearby
+  defenders within weapon range; no new claims/assets/violence treatment.
+- Checks: `npm run test -- src/scenes/gilboa-battle/layout.test.ts`,
+  `npm run format:check`, `npm run lint`, `npm run test`, and `npm run build`
+  passed. `npm run verify` reached e2e and failed only because no Playwright
+  Chromium executable exists in this sandbox; rerun attempt with
+  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+  failed because that path is absent; `npx playwright install chromium` was
+  blocked by CDN 403. Screenshot not captured for the same browser limitation.
+
+Next: continue Beth-shan/Jabesh scene builds from the M3 briefs; keep the
+open Gilboa real-hardware performance check and Fable review items as noted in
+`docs/next-run.md`.
