@@ -21,6 +21,8 @@ import { ZIKLAG_ENTITIES } from '../scenes/ziklag/entities';
 import { BESOR_CROSSING_ENTITIES } from '../scenes/besor-crossing/entities';
 import { AMALEKITE_CAMP_ENTITIES } from '../scenes/amalekite-camp/entities';
 import { GILBOA_BATTLE_ENTITIES } from '../scenes/gilboa-battle/entities';
+import { BETH_SHAN_WALLS_ENTITIES } from '../scenes/beth-shan-walls/entities';
+import { JABESH_BURIAL_ENTITIES } from '../scenes/jabesh-burial/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -46,6 +48,8 @@ describe('registry id uniqueness', () => {
     uniqueIds(BESOR_CROSSING_ENTITIES);
     uniqueIds(AMALEKITE_CAMP_ENTITIES);
     uniqueIds(GILBOA_BATTLE_ENTITIES);
+    uniqueIds(BETH_SHAN_WALLS_ENTITIES);
+    uniqueIds(JABESH_BURIAL_ENTITIES);
   });
 });
 
@@ -251,6 +255,22 @@ describe('features and scene entities', () => {
 
   it('Gilboa-battle entity labels resolve to claims', () => {
     for (const e of GILBOA_BATTLE_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Beth-shan-walls entity labels resolve to claims', () => {
+    for (const e of BETH_SHAN_WALLS_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Jabesh-burial entity labels resolve to claims', () => {
+    for (const e of JABESH_BURIAL_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }

@@ -502,6 +502,247 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Round shield and straight sword are the baseline comparative-ANE/Aegean-influenced assumption for Philistine coastal-plain combatants (Yadin 1963; King & Stager 2001), not a specific excavated Gilboa-context panoply — moderate/low confidence throughout. The headdress dispute is the single most consequential material-culture call in this scene: rendering it only on the small principal cluster, behind this scholarlyViews label, is the provisional default agreed for build; it is not a resolved attribution. No "Philistine uniform" is asserted.',
   },
+  {
+    id: 'claim-beth-shan-identification',
+    statement:
+      'Beth-shan is securely identified with Tel Beth-Shean, at the junction of the Harod and Jordan valleys — a large, extensively excavated tell with a documented Egyptian-garrison town and Iron I occupation on the summit.',
+    basis: 'archaeology',
+    confidence: 'high',
+    sourceIds: ['mazar-beth-shean-2006', 'rainey-notley-2006'],
+    notes:
+      'The project’s first securely identified, excavated urban site (Mazar’s 1989–1996 renewed excavations), which raises the honesty bar for what the scene can and cannot claim about the town’s form and fortification (see claim-beth-shan-town-form, claim-beth-shan-wall).',
+  },
+  {
+    id: 'claim-beth-shan-town-form',
+    statement:
+      'The post-garrison Iron I town on the summit is rendered as a dense quarter of small conjoined mudbrick houses along narrow lanes, consistent in general character with the excavated domestic quarters, generations after the Egyptian garrison’s end.',
+    basis: 'archaeology',
+    confidence: 'moderate',
+    sourceIds: ['mazar-beth-shean-2006'],
+    notes:
+      'Confidence in the general Iron I domestic-quarter character is moderate; the specific massing, house count, and lane pattern rendered here are a disclosed design placeholder, not a reproduction of the excavated plan (asset-tell-town-blocks).',
+  },
+  {
+    id: 'claim-egyptian-monuments',
+    statement:
+      'One or two weathered Egyptian monuments — in the tradition of the excavated Seti I stelae and the Ramesses III statue — are shown near the summit, curated into visibility in the later Iron Age town.',
+    basis: 'archaeology',
+    confidence: 'moderate',
+    sourceIds: ['mazar-beth-shean-2006'],
+    notes:
+      'Additive, not load-bearing: the excavations recovered Egyptian monuments in later Iron-age contexts, suggesting some remained visible after the garrison ended, but the specific curated-into-Iron-I reading needs page-verification against mazar-beth-shean-2006 before this scene ships released (fable-review-queue #16 — the source card itself flags "volume details to verify"). If verification fails, the monuments come out; they are not load-bearing for any other claim.',
+  },
+  {
+    id: 'claim-beth-shan-wall',
+    statement:
+      'The narrative states that the Philistines fastened the bodies to the wall of Beth-shan (1 Samuel 31:10, 12); the scene renders a modest mudbrick-on-stone perimeter along the tell brow above the gate approach.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'mazar-beth-shean-2006'],
+    scholarlyViews: [
+      {
+        id: 'view-beth-shan-wall-public-square',
+        label: '2 Samuel 21:12 names a public square, not a wall',
+        summary:
+          'The parallel notice in 2 Samuel 21:12 places the bodies "in the public square of Beth-shan" rather than on a wall — a genuine textual variant. The scene resolves it visually rather than in text alone by staging the display on the wall face directly above the gate plaza, so both readings point at the same spot.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'High confidence describes what the narrative states, not archaeological corroboration: no substantial Iron I fortification wall is clearly attested at Beth-shan in the excavated record cited here. The wall is rendered as narrated, disclosed as archaeologically thin, and reads as much as the conjoined outer faces of edge buildings as a freestanding fortification — never presented as excavated-verified.',
+  },
+  {
+    id: 'claim-body-display',
+    statement:
+      'The narrative states that the Philistines fastened Saul’s body to the wall (1 Samuel 31:10), and that the men of Jabesh later took "the body of Saul and the bodies of his sons" from it (31:12) — four forms, rendered as bound, wrapped, anatomically unresolved silhouettes at wall-top distance.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      '31:9–10 speaks of the beheading and "his body" in the singular; 31:12 gives the plural "bodies of his sons" alongside Saul’s — the scene renders four forms per 31:12 rather than silently harmonizing the progression. No head or headless geometry is rendered in either violence mode (ADR-009): distance and wrapping carry the fact stated in captions without depicting or visually contradicting the mutilation. No rope/nail rigging detail is shown; the mounting mechanism stays abstract (asset-display-forms).',
+  },
+  {
+    id: 'claim-armor-ashtaroth',
+    statement:
+      'The narrative states that the Philistines put Saul’s armor in the temple of Ashtaroth and sent messengers through Philistine country to proclaim the news (1 Samuel 31:9–10); the scene carries this beat through the messengers’ departure and its caption, without locating or building a temple on-site.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-dagon-temple-1chr10',
+        label: '1 Chronicles 10:10 names a temple of Dagon for the head',
+        summary:
+          '1 Chronicles 10:10 gives a parallel notice — the head fastened in the temple of Dagon, rather than the armor in Ashtaroth’s temple — a textual variant the scene does not resolve by staging either temple, since 31:10 itself does not locate Ashtaroth’s temple at Beth-shan.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-rowe-twin-temples-beth-shan',
+        label: 'Rowe’s identification of the Level V twin temples with these shrines',
+        summary:
+          'Alan Rowe’s early-20th-century excavations identified excavated Level V twin temples at Beth-shan with the temples of Ashtaroth/Dagon named in 1 Samuel 31 and 1 Chronicles 10; this identification is no longer accepted as demonstrated in current scholarship, and its verification is queued (fable-review-queue #16) rather than asserted here.',
+        confidence: 'low',
+        sourceIds: ['mazar-beth-shean-2006'],
+      },
+    ],
+    notes:
+      'The armor beat is carried by the messenger departure and its caption alone — armor borne away, destination named, no building asserted or shown on-site (omission over invention). No trophy-carry of the head is rendered in the procession.',
+  },
+  {
+    id: 'claim-jabesh-retrieval',
+    statement:
+      'The narrative states that Jabesh-gilead heard what the Philistines had done to Saul, and that all its valiant men walked through the night, took the body of Saul and the bodies of his sons from the wall of Beth-shan, and carried them away (1 Samuel 31:11–12a).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Shared between beth-shan-walls (the news crossing the valley and the taking-down, staged at the wall where it happened) and jabesh-burial (which opens with the column arriving home and recaps the retrieval rather than re-staging it — one event, staged once, per the scope-line adjustment in docs/design/beth-shan-walls-brief.md). The text narrates no guard fight or confrontation at the wall, and none is staged: night, quiet, ropes and biers implied, documentary distance.',
+  },
+  {
+    id: 'claim-beth-shan-control',
+    statement:
+      'Who held Beth-shan when the bodies were displayed is genuinely uncertain: the narrative implies Philistine use of the city, but the excavated post-garrison material culture reads substantially Canaanite, with little classic Philistine signature.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'low',
+    sourceIds: ['mazar-beth-shean-2006', 'mazar-1990', 'finkelstein-silberman-2001'],
+    scholarlyViews: [
+      {
+        id: 'view-beth-shan-philistine-garrison',
+        label: 'Philistine garrison or direct control',
+        summary:
+          'The narrative’s use of the city to display Saul’s body implies Philistine military reach and control at Beth-shan in this period.',
+        confidence: 'low',
+        sourceIds: ['finkelstein-silberman-2001'],
+      },
+      {
+        id: 'view-beth-shan-canaanite-orbit',
+        label: 'Canaanite city within a Philistine orbit',
+        summary:
+          'The excavated post-Egyptian-garrison town’s material culture is substantially Canaanite in character, with little classic Philistine signature, suggesting a local Canaanite city usable by or aligned with Philistine interests rather than a Philistine garrison proper.',
+        confidence: 'moderate',
+        sourceIds: ['mazar-beth-shean-2006', 'mazar-1990'],
+      },
+    ],
+    notes:
+      'Rendered as a local Canaanite town population with a visiting Philistine detachment/escort, not a "Philistine city" — the render follows the Canaanite-orbit reading’s population choice while carrying both views here rather than silently picking a winner.',
+  },
+  {
+    id: 'claim-jabesh-location',
+    statement:
+      'The site of biblical Jabesh-gilead is not securely identified. Two candidate tells are defended in current scholarship; this scene renders a disclosed composite of the lower Wadi Yabis setting rather than either candidate’s actual plan (docs/uncertainty-register.md, register #8).',
+    basis: 'scholarly-reconstruction',
+    confidence: 'low',
+    sourceIds: ['rainey-notley-2006'],
+    scholarlyViews: [
+      {
+        id: 'view-jabesh-tell-el-maqlub',
+        label: 'Tell el-Maqlub',
+        summary:
+          'Fits the Wadi Yabis name continuity and Eusebius’ ancient distance notice for Jabesh from Pella; a longer-favored candidate in historical-geography atlases.',
+        confidence: 'moderate',
+        sourceIds: ['rainey-notley-2006'],
+      },
+      {
+        id: 'view-jabesh-tell-abu-al-kharaz',
+        label: 'Tell Abu al-Kharaz',
+        proponents: ['e.g., Peter Fischer (excavator)'],
+        summary:
+          'An excavated Jordan Valley-edge site with a well-published Iron Age sequence, proposed as Jabesh-gilead; attribution to specific excavation-report argumentation is not yet page-verified here.',
+        confidence: 'low',
+        sourceIds: ['rainey-notley-2006'],
+      },
+    ],
+    notes:
+      'Register #8’s current default is a disclosed composite: a representative lower-Wadi-Yabis setting (the wadi corridor, hill country over the Jordan valley) common to both candidates, not a portrait of either tell — the same discipline applied to Ziklag’s unresolved candidates. This scene deliberately does not adopt either site’s plan.',
+  },
+  {
+    id: 'claim-gilead-terrain',
+    statement:
+      'The scene renders terraced hill-flank ground above a modest perennial wadi — the Wadi Yabis corridor form on Gilead’s western flank, rising from the Jordan valley toward the Gilead hill country.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'moderate',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'Procedural terrain (ADR-005 hills + a channel feature), not DEM-derived — see asset-terrain-jabesh-wadi. The general Gilead hill-flank form (narrower, greener wadi than the Negev/Besor forms rendered earlier in the project) is reasonably well established regionally even though the specific site is not.',
+  },
+  {
+    id: 'claim-jabesh-town-form',
+    statement:
+      'The scene renders Jabesh-gilead as a small, open, unwalled hamlet cluster (roughly 8-12 structures) on a hill terrace — a settlement form distinct from both Ziklag’s enclosed ring and Beth-shan’s dense tell quarter.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'ADR-006 per-scene layout justification: since the site itself is unlocated (claim-jabesh-location), no plan-level excavated evidence exists to model against. An open, unwalled small hamlet is chosen as a generic, defensible Iron I Gilead settlement form rather than reusing either prior scene’s layout generator wholesale — disclosed as a placeholder, not an excavated reconstruction.',
+  },
+  {
+    id: 'claim-night-march',
+    statement:
+      'The narrative states that Jabesh-gilead’s valiant men walked all night, crossed to Beth-shan, and carried the bodies home (1 Samuel 31:11-12). The scene depicts the walk and its plausibility without asserting a specific distance or duration.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'No on-screen kilometer or duration figure is given, matching the Besor route’s precedent (register #2): the round trip’s real length depends on the unresolved Jabesh site question and on the Jordan crossing itself, which happens off-scene.',
+  },
+  {
+    id: 'claim-burning-bodies',
+    statement:
+      'The narrative states that the men of Jabesh burned the bodies at Jabesh before burying the bones (1 Samuel 31:12b) — cremation, which is exceptional against normal Israelite burial practice. The parallel account in 1 Chronicles 10:12 omits the burning.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    scholarlyViews: [
+      {
+        id: 'view-burning-honorable-treatment',
+        label: 'Honorable treatment of mutilated, exposed bodies',
+        summary:
+          'Burning is read as an honorable response to bodies that were mutilated (beheaded) and had been publicly displayed for some time — a protective, dignifying act rather than a normal funerary rite.',
+        confidence: 'low',
+        sourceIds: ['king-stager-2001'],
+      },
+      {
+        id: 'view-burning-prevent-desecration',
+        label: 'Preventing further desecration',
+        summary:
+          'Burning is read as a practical measure to prevent any further mistreatment or loss of what remained of the bodies, given the circumstances of their recovery from a hostile city’s wall.',
+        confidence: 'low',
+        sourceIds: ['king-stager-2001'],
+      },
+      {
+        id: 'view-burning-textual-emendation',
+        label: 'A proposed textual variant',
+        summary:
+          'Some commentators have proposed the verb here may not originally have meant full cremation (comparing usage elsewhere for burning spices/incense over a body rather than the body itself); this remains a minority proposal, not a consensus reading.',
+        confidence: 'speculative',
+        sourceIds: ['king-stager-2001'],
+      },
+    ],
+    notes:
+      'Citation verification queued (fable-review-queue #17): proponent attribution for the scholarly views above is hedged pending page-level sourcing. king-stager-2001 anchors normal Israelite (non-cremation) burial practice as the baseline this act departs from. The depiction stays restrained (documentary distance, covered-before-flame in every mode — no burning silhouette or charring detail, ever), but the anomaly itself is stated as fact in every mode’s captions; reduction abstracts the depiction, never the fact.',
+  },
+  {
+    id: 'claim-tamarisk-burial',
+    statement:
+      'The narrative states that the men of Jabesh buried the gathered bones under the tamarisk at Jabesh (1 Samuel 31:13a).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The parallel account in 1 Chronicles 10:12 names "the oak" (terebinth) rather than "the tamarisk" — a genuine textual variant, carried as a label note rather than resolved by picking one species. The tamarisk also echoes 1 Samuel 22:6, where Saul is described sitting under a tamarisk at Gibeah — the same tree type bracketing his reign’s low point and its final scene, worth noting without over-reading as deliberate authorial symmetry. The bones render only as a cloth-wrapped bundle (buildWrappedFormGeometry at a short length scale) — never skeletal geometry, in any mode.',
+  },
+  {
+    id: 'claim-seven-day-fast',
+    statement:
+      'The narrative states that Jabesh-gilead fasted seven days after the burial (1 Samuel 31:13b) — a communal mourning rite. The scene renders this as a time-compression card (a compressed day-cycle shimmer) rather than seven literal days of simulated time.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    notes:
+      'Seven-day mourning periods recur elsewhere in the Hebrew Bible (e.g., Genesis 50:10, Job 2:13) as a conventional span for acute communal grief; king-stager-2001 anchors the general practice of Israelite mourning ritual this fits within. The compression itself is a keyframed lighting-rig oscillation (a rig mutation, not new lights or a literal seven-day simulation) — see poses.ts’s sevenDayShimmerEnvelope/Oscillation.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

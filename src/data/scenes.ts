@@ -510,14 +510,135 @@ export const SCENES: SceneDef[] = [
     locationId: 'beth-shan',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'planned',
+    status: 'in-progress',
     synopsis:
-      'The Philistine aftermath: armor in the temple of Ashtaroth, bodies fastened to the wall of Beth-shan beneath the old Egyptian-garrison tell.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
-    claimIds: [],
-    assetIds: [],
+      'The Philistine aftermath: armor in the temple of Ashtaroth, bodies fastened to the wall of Beth-shan beneath the old Egyptian-garrison tell. To be rendered honestly but without sensationalism, with a reduced-intensity mode.',
+    depictsDeath: true,
+    durationSec: 150,
+    beats: [
+      {
+        id: 'b-next-day',
+        timeSec: 0,
+        title: 'The next day, on Gilboa',
+        caption:
+          'The next day, the Philistines find Saul and his sons among the slain on Gilboa, strip them, and cut off Saul’s head — stated here, not shown; that happened at Gilboa, not here. Their column starts back toward Beth-shan, visible far off on the valley road below the tell. (1 Samuel 31:8–9)',
+        passageRef: '1 Samuel 31:8–9',
+      },
+      {
+        id: 'b-procession',
+        timeSec: 20,
+        title: 'The escort reaches the gate',
+        caption:
+          'The escort arrives at Beth-shan’s gate bearing Saul’s armor. Townspeople gather in the plaza below the wall to see what has come up from the battle. No head is carried in the procession. (1 Samuel 31:9–10)',
+        passageRef: '1 Samuel 31:9–10',
+      },
+      {
+        id: 'b-messengers',
+        timeSec: 40,
+        title: 'Messengers depart',
+        caption:
+          'Messengers set out through Philistine country bearing the armor and the news, bound for the temple of Ashtaroth — its location unstated in the text and not built here. (1 Samuel 31:9–10a)',
+        passageRef: '1 Samuel 31:9–10a',
+      },
+      {
+        id: 'b-display',
+        timeSec: 55,
+        title: 'The bodies are fastened to the wall',
+        caption:
+          'Four wrapped forms are raised and fastened to the wall face above the gate — seen at plaza distance, undetailed, never closer. In reduced mode the wall stays bare; the fact is carried by this caption alone. (1 Samuel 31:10b)',
+        passageRef: '1 Samuel 31:10',
+      },
+      {
+        id: 'b-wall-watch',
+        timeSec: 75,
+        title: 'Daylight under the display',
+        caption:
+          'Daylight passes over the town under the display. Life in the lanes and the plaza continues, uneasily, beneath it. (1 Samuel 31:10)',
+        passageRef: '1 Samuel 31:10',
+      },
+      {
+        id: 'b-news-east',
+        timeSec: 95,
+        title: 'The news crosses the Jordan',
+        caption:
+          'At dusk, across the Jordan, Jabesh-gilead hears what was done to Saul. The valley opens east toward Gilead — the direction the news travels tonight, and the direction the retrieval party will come from. (1 Samuel 31:11)',
+        passageRef: '1 Samuel 31:11',
+      },
+      {
+        id: 'b-retrieval',
+        timeSec: 115,
+        title: 'The men of Jabesh, by night',
+        caption:
+          'By night, the men of Jabesh reach the wall by torchlight. Quietly, without incident, they take the forms down and bear them away as wrapped biers. No guard fight is narrated, and none is staged. (1 Samuel 31:12a)',
+        passageRef: '1 Samuel 31:12a',
+      },
+      {
+        id: 'b-empty-wall',
+        timeSec: 140,
+        title: 'The wall, empty',
+        caption:
+          'In the grey before dawn, the wall stands empty in both senses. The column is already on its way toward Jabesh — not shown here. (1 Samuel 31:12a)',
+        passageRef: '1 Samuel 31:12a',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-valley-road',
+        label: 'The valley road',
+        position: [-220, 0, 4],
+        lookAt: [-60, 8, 0],
+      },
+      {
+        id: 'vp-gate-plaza',
+        label: 'The gate plaza',
+        position: [-96, 0, 6],
+        lookAt: [-66, 6, 0],
+      },
+      {
+        id: 'vp-wall-walk',
+        label: 'The wall walk',
+        position: [-50, 3.4, -20],
+        lookAt: [-60, 4, 10],
+      },
+      {
+        id: 'vp-east-brow',
+        label: 'The eastern brow',
+        position: [130, 0, -15],
+        lookAt: [320, 4, -15],
+      },
+      {
+        id: 'vp-night-ground',
+        label: 'The night ground',
+        position: [-78, 0, -30],
+        lookAt: [-70, 10, -20],
+      },
+    ],
+    claimIds: [
+      'claim-beth-shan-identification',
+      'claim-beth-shan-town-form',
+      'claim-egyptian-monuments',
+      'claim-beth-shan-wall',
+      'claim-body-display',
+      'claim-armor-ashtaroth',
+      'claim-jabesh-retrieval',
+      'claim-beth-shan-control',
+      'claim-philistine-kit',
+      'claim-dress',
+      'claim-chronology',
+    ],
+    assetIds: [
+      'asset-terrain-beth-shan-tell',
+      'asset-tell-town-blocks',
+      'asset-beth-shan-wall',
+      'asset-display-forms',
+      'asset-egyptian-monuments',
+      'asset-bier-props',
+      'asset-torch-sprites',
+      'asset-figure-procedural',
+      'asset-military-kit-philistine',
+      'asset-vegetation-scrub',
+      'asset-rocks',
+    ],
   },
   {
     id: 'jabesh-burial',
@@ -526,14 +647,124 @@ export const SCENES: SceneDef[] = [
     locationId: 'jabesh-gilead',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'planned',
+    status: 'in-progress',
     synopsis:
-      'The valiant men of Jabesh walk through the night, take the bodies from the wall, burn them at Jabesh, bury the bones under the tamarisk, and fast seven days.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
-    claimIds: [],
-    assetIds: [],
+      'The valiant men of Jabesh walk through the night, take the bodies from the wall, burn them at Jabesh, bury the bones under the tamarisk, and fast seven days. The quietest scene in the project so far — the kingdom’s first act answered by its last kindness.',
+    depictsDeath: true,
+    durationSec: 150,
+    beats: [
+      {
+        id: 'b-night-march',
+        timeSec: 0,
+        title: 'The column comes home, by night',
+        caption:
+          'Word reached Jabesh at dusk, across the Jordan (rendered at Beth-shan’s wall, not here). By night, the valiant men climb the wadi path from the valley below, bearing four wrapped forms by torchlight. (1 Samuel 31:11–12a)',
+        passageRef: '1 Samuel 31:11–12a',
+      },
+      {
+        id: 'b-received',
+        timeSec: 24,
+        title: 'The town receives them',
+        caption:
+          'In the grey light before sunrise, the town comes out to receive them at the village edge. No feast, no procession — quiet grief poses, restrained. (1 Samuel 31:12)',
+        passageRef: '1 Samuel 31:12',
+      },
+      {
+        id: 'b-pyre',
+        timeSec: 55,
+        title: 'The burning',
+        caption:
+          'The four forms are laid on a timber platform and fully covered before any flame is lit, in every mode. Burning the dead departs from normal Israelite practice — 1 Chronicles 10:12 omits it — and the reason has long been debated. (1 Samuel 31:12b)',
+        passageRef: '1 Samuel 31:12b',
+      },
+      {
+        id: 'b-bones',
+        timeSec: 82,
+        title: 'The bones are gathered',
+        caption:
+          'The bones are gathered as a single cloth-wrapped bundle, handled with care, and carried toward the tamarisk. No remains are shown directly, in any mode. (1 Samuel 31:13a)',
+        passageRef: '1 Samuel 31:13a',
+      },
+      {
+        id: 'b-tamarisk',
+        timeSec: 104,
+        title: 'Burial under the tamarisk',
+        caption:
+          'The bundle is lowered beneath the tamarisk and the mound is closed. 1 Chronicles 10:12 names the oak instead — a genuine textual variant, left open rather than resolved. (1 Samuel 31:13a)',
+        passageRef: '1 Samuel 31:13a',
+      },
+      {
+        id: 'b-seven-days',
+        timeSec: 122,
+        title: 'Seven days',
+        caption:
+          'The village keeps a seven-day fast. The days pass here as a compressed shimmer of light and dark, not shown one by one — a time-compression card, not a literal seven-day simulation. (1 Samuel 31:13b)',
+        passageRef: '1 Samuel 31:13b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 142,
+        title: 'Still evening',
+        caption:
+          'Evening settles and holds. Word of what happened here will reach David at Ziklag (2 Samuel 1), and he will later bless Jabesh by name for this kindness (2 Samuel 2:5–7) — not depicted in this scene.',
+        passageRef: '2 Samuel 2:5–7',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-village-edge',
+        label: 'The village edge, by night',
+        position: [-15, 0, 9],
+        lookAt: [-350, 15, 40],
+      },
+      {
+        id: 'vp-wadi-path',
+        label: 'The wadi path',
+        position: [-150, 0, -20],
+        lookAt: [-22, 10, 6],
+      },
+      {
+        id: 'vp-pyre-ground',
+        label: 'The pyre ground',
+        position: [95, 0, 60],
+        lookAt: [65, 8, 40],
+      },
+      {
+        id: 'vp-tamarisk',
+        label: 'The tamarisk',
+        position: [115, 0, -15],
+        lookAt: [100, 10, -35],
+      },
+      {
+        id: 'vp-west-terrace',
+        label: 'The west terrace',
+        position: [30, 0, 25],
+        lookAt: [-420, 10, 50],
+      },
+    ],
+    claimIds: [
+      'claim-jabesh-location',
+      'claim-gilead-terrain',
+      'claim-jabesh-town-form',
+      'claim-jabesh-retrieval',
+      'claim-night-march',
+      'claim-burning-bodies',
+      'claim-tamarisk-burial',
+      'claim-seven-day-fast',
+      'claim-dress',
+      'claim-chronology',
+    ],
+    assetIds: [
+      'asset-terrain-jabesh-wadi',
+      'asset-tamarisk-tree',
+      'asset-pyre',
+      'asset-bier-props',
+      'asset-village-cluster',
+      'asset-vegetation-gilead',
+      'asset-figure-procedural',
+      'asset-rocks',
+      'asset-torch-sprites',
+    ],
   },
 ];
 
