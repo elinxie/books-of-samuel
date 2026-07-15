@@ -711,3 +711,55 @@ comment flagging it, did not push (out of scope for this branch).
 
 Still open, unchanged: `next-run.md` item 0 (real-hardware perf check),
 queue #12/#13/#14/#15.
+
+**2026-07-15 — Sonnet 5 — `beth-shan-walls` scene build (M3, scene 2)**
+Built the full `beth-shan-walls` scene per `docs/design/beth-shan-walls-brief.md`,
+following `gilboa-battle`'s pattern. New: `src/scenes/beth-shan-walls/`
+(terrain: mound tell + flattened summit + east/west ramps, greener valley
+palette; scene-local `layout.ts` per ADR-006 rider — dense summit-quarter grid
+
+- lanes, wall arc + gate, gate-plaza/lane/escort/night-work rejection-sampled
+  slot pools, valley-road + retrieval-path CatmullRom curves — NOT Ziklag's ring;
+  `poses.ts` pure beat-time choreography incl. `displayFormTransform`'s
+  standard/reduced ADR-009 fork; `TownBlocks`/`WallAndGate`/`Monuments`/
+  `DisplayForms`/`Townspeople`/`PhilistineEscort` (reuses gilboa's
+  `kitMeshes.ts`)/`RetrievalParty`/`Torches` (amalekite fire-sprite technique)/
+  `BethShanWallsScene` root with beat-driven midday→dusk→night→pre-dawn lighting
+  rig). New shared engine piece: `src/engine/characters/wrappedForm.ts`
+  (`buildWrappedFormGeometry(lengthScale)` — a lathe-revolved tapered/banded
+  cloth-bundle silhouette, no limb/head articulation; reused for both the
+  upright wall display and the horizontal carried bier, and intended for
+  `jabesh-burial`'s bone bundle at a shorter scale). Data: 8 new claims
+  (`claim-beth-shan-identification/-town-form/-wall/-control`,
+  `claim-egyptian-monuments`, `claim-body-display`, `claim-armor-ashtaroth`,
+  `claim-jabesh-retrieval` — shared forward with `jabesh-burial`), `men-of-jabesh`
+  character, 7 new asset records (`asset-terrain-beth-shan-tell`,
+  `asset-tell-town-blocks`, `asset-beth-shan-wall`, `asset-display-forms`,
+  `asset-egyptian-monuments`, `asset-bier-props`, `asset-torch-sprites`), full
+  `SceneDef` (8 beats matching the brief's table exactly — the parent task brief
+  said "9 beats" but only 8 are listed/tabled; built the actual 8 — 5 viewpoints,
+  `status: in-progress`, `depictsDeath: true`, `durationSec: 150`). Registered in
+  `ObservePage.tsx` `SCENE_REGISTRY`; violence advisory gates automatically via
+  `depictsDeath`. Interpretive calls not fully pinned by the brief (flagging for
+  review): confidence picked from brief's dual-value ranges (`claim-beth-shan-
+town-form` → moderate, `claim-beth-shan-control` → low, both first-listed);
+  retrieval party reaches the wall by circling the tell's exterior base from
+  east to west foot, never entering the gate/town (avoids implying an
+  evaded-guard/stealth read); Philistine escort withdraws down the valley road
+  before dusk so no guard presence is staged at all during the night retrieval;
+  biers reuse the same wrapped-form geometry as the wall display (one honest
+  object, not a body vs. bundle distinction) plus a simple plank+pole bier-frame
+  prop underneath. Tests: `terrain.test.ts`, `layout.test.ts` (12 cases),
+  `poses.test.ts` (19 cases), `reenactment.test.ts` (escort/retrieval pose
+  functions), `wrappedForm.test.ts` — all new, all passing; added
+  `BETH_SHAN_WALLS_ENTITIES` checks to `integrity.test.ts`. Full gate:
+  format/lint/typecheck/vitest (215 tests, 24 files) all clean; `npm run build`
+  clean; ran existing `e2e/smoke.spec.ts` (8/8 pass, untouched) plus a throwaway
+  Playwright smoke check (standard/reduced modes, high quality tier, scrubbed
+  through all 8 beat times, zero console errors) — deleted after verifying, not
+  committed. Figure counts at high tier: town 36 + escort 12 + retrieval 9 = 57
+  (target 55–70); architecture is the budget load (house socle/wall/roof ×~140
+  houses, wall socle/upper ×~17 segments, all instanced) — flagging for
+  `performance-reviewer`, not yet profiled on real hardware. Did not touch
+  `jabesh-burial`, `next-run.md`, `progress.md`, `fable-review-queue.md`, or
+  `asset-roadmap.md` (out of scope, orchestrator's job). Did not commit/push.

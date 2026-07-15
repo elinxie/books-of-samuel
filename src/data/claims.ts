@@ -502,6 +502,132 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Round shield and straight sword are the baseline comparative-ANE/Aegean-influenced assumption for Philistine coastal-plain combatants (Yadin 1963; King & Stager 2001), not a specific excavated Gilboa-context panoply — moderate/low confidence throughout. The headdress dispute is the single most consequential material-culture call in this scene: rendering it only on the small principal cluster, behind this scholarlyViews label, is the provisional default agreed for build; it is not a resolved attribution. No "Philistine uniform" is asserted.',
   },
+  {
+    id: 'claim-beth-shan-identification',
+    statement:
+      'Beth-shan is securely identified with Tel Beth-Shean, at the junction of the Harod and Jordan valleys — a large, extensively excavated tell with a documented Egyptian-garrison town and Iron I occupation on the summit.',
+    basis: 'archaeology',
+    confidence: 'high',
+    sourceIds: ['mazar-beth-shean-2006', 'rainey-notley-2006'],
+    notes:
+      'The project’s first securely identified, excavated urban site (Mazar’s 1989–1996 renewed excavations), which raises the honesty bar for what the scene can and cannot claim about the town’s form and fortification (see claim-beth-shan-town-form, claim-beth-shan-wall).',
+  },
+  {
+    id: 'claim-beth-shan-town-form',
+    statement:
+      'The post-garrison Iron I town on the summit is rendered as a dense quarter of small conjoined mudbrick houses along narrow lanes, consistent in general character with the excavated domestic quarters, generations after the Egyptian garrison’s end.',
+    basis: 'archaeology',
+    confidence: 'moderate',
+    sourceIds: ['mazar-beth-shean-2006'],
+    notes:
+      'Confidence in the general Iron I domestic-quarter character is moderate; the specific massing, house count, and lane pattern rendered here are a disclosed design placeholder, not a reproduction of the excavated plan (asset-tell-town-blocks).',
+  },
+  {
+    id: 'claim-egyptian-monuments',
+    statement:
+      'One or two weathered Egyptian monuments — in the tradition of the excavated Seti I stelae and the Ramesses III statue — are shown near the summit, curated into visibility in the later Iron Age town.',
+    basis: 'archaeology',
+    confidence: 'moderate',
+    sourceIds: ['mazar-beth-shean-2006'],
+    notes:
+      'Additive, not load-bearing: the excavations recovered Egyptian monuments in later Iron-age contexts, suggesting some remained visible after the garrison ended, but the specific curated-into-Iron-I reading needs page-verification against mazar-beth-shean-2006 before this scene ships released (fable-review-queue #16 — the source card itself flags "volume details to verify"). If verification fails, the monuments come out; they are not load-bearing for any other claim.',
+  },
+  {
+    id: 'claim-beth-shan-wall',
+    statement:
+      'The narrative states that the Philistines fastened the bodies to the wall of Beth-shan (1 Samuel 31:10, 12); the scene renders a modest mudbrick-on-stone perimeter along the tell brow above the gate approach.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'mazar-beth-shean-2006'],
+    scholarlyViews: [
+      {
+        id: 'view-beth-shan-wall-public-square',
+        label: '2 Samuel 21:12 names a public square, not a wall',
+        summary:
+          'The parallel notice in 2 Samuel 21:12 places the bodies "in the public square of Beth-shan" rather than on a wall — a genuine textual variant. The scene resolves it visually rather than in text alone by staging the display on the wall face directly above the gate plaza, so both readings point at the same spot.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'High confidence describes what the narrative states, not archaeological corroboration: no substantial Iron I fortification wall is clearly attested at Beth-shan in the excavated record cited here. The wall is rendered as narrated, disclosed as archaeologically thin, and reads as much as the conjoined outer faces of edge buildings as a freestanding fortification — never presented as excavated-verified.',
+  },
+  {
+    id: 'claim-body-display',
+    statement:
+      'The narrative states that the Philistines fastened Saul’s body to the wall (1 Samuel 31:10), and that the men of Jabesh later took "the body of Saul and the bodies of his sons" from it (31:12) — four forms, rendered as bound, wrapped, anatomically unresolved silhouettes at wall-top distance.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      '31:9–10 speaks of the beheading and "his body" in the singular; 31:12 gives the plural "bodies of his sons" alongside Saul’s — the scene renders four forms per 31:12 rather than silently harmonizing the progression. No head or headless geometry is rendered in either violence mode (ADR-009): distance and wrapping carry the fact stated in captions without depicting or visually contradicting the mutilation. No rope/nail rigging detail is shown; the mounting mechanism stays abstract (asset-display-forms).',
+  },
+  {
+    id: 'claim-armor-ashtaroth',
+    statement:
+      'The narrative states that the Philistines put Saul’s armor in the temple of Ashtaroth and sent messengers through Philistine country to proclaim the news (1 Samuel 31:9–10); the scene carries this beat through the messengers’ departure and its caption, without locating or building a temple on-site.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-dagon-temple-1chr10',
+        label: '1 Chronicles 10:10 names a temple of Dagon for the head',
+        summary:
+          '1 Chronicles 10:10 gives a parallel notice — the head fastened in the temple of Dagon, rather than the armor in Ashtaroth’s temple — a textual variant the scene does not resolve by staging either temple, since 31:10 itself does not locate Ashtaroth’s temple at Beth-shan.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-rowe-twin-temples-beth-shan',
+        label: 'Rowe’s identification of the Level V twin temples with these shrines',
+        summary:
+          'Alan Rowe’s early-20th-century excavations identified excavated Level V twin temples at Beth-shan with the temples of Ashtaroth/Dagon named in 1 Samuel 31 and 1 Chronicles 10; this identification is no longer accepted as demonstrated in current scholarship, and its verification is queued (fable-review-queue #16) rather than asserted here.',
+        confidence: 'low',
+        sourceIds: ['mazar-beth-shean-2006'],
+      },
+    ],
+    notes:
+      'The armor beat is carried by the messenger departure and its caption alone — armor borne away, destination named, no building asserted or shown on-site (omission over invention). No trophy-carry of the head is rendered in the procession.',
+  },
+  {
+    id: 'claim-jabesh-retrieval',
+    statement:
+      'The narrative states that Jabesh-gilead heard what the Philistines had done to Saul, and that all its valiant men walked through the night, took the body of Saul and the bodies of his sons from the wall of Beth-shan, and carried them away (1 Samuel 31:11–12a).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Shared between beth-shan-walls (the news crossing the valley and the taking-down, staged at the wall where it happened) and jabesh-burial (which opens with the column arriving home and recaps the retrieval rather than re-staging it — one event, staged once, per the scope-line adjustment in docs/design/beth-shan-walls-brief.md). The text narrates no guard fight or confrontation at the wall, and none is staged: night, quiet, ropes and biers implied, documentary distance.',
+  },
+  {
+    id: 'claim-beth-shan-control',
+    statement:
+      'Who held Beth-shan when the bodies were displayed is genuinely uncertain: the narrative implies Philistine use of the city, but the excavated post-garrison material culture reads substantially Canaanite, with little classic Philistine signature.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'low',
+    sourceIds: ['mazar-beth-shean-2006', 'mazar-1990', 'finkelstein-silberman-2001'],
+    scholarlyViews: [
+      {
+        id: 'view-beth-shan-philistine-garrison',
+        label: 'Philistine garrison or direct control',
+        summary:
+          'The narrative’s use of the city to display Saul’s body implies Philistine military reach and control at Beth-shan in this period.',
+        confidence: 'low',
+        sourceIds: ['finkelstein-silberman-2001'],
+      },
+      {
+        id: 'view-beth-shan-canaanite-orbit',
+        label: 'Canaanite city within a Philistine orbit',
+        summary:
+          'The excavated post-Egyptian-garrison town’s material culture is substantially Canaanite in character, with little classic Philistine signature, suggesting a local Canaanite city usable by or aligned with Philistine interests rather than a Philistine garrison proper.',
+        confidence: 'moderate',
+        sourceIds: ['mazar-beth-shean-2006', 'mazar-1990'],
+      },
+    ],
+    notes:
+      'Rendered as a local Canaanite town population with a visiting Philistine detachment/escort, not a "Philistine city" — the render follows the Canaanite-orbit reading’s population choice while carrying both views here rather than silently picking a winner.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

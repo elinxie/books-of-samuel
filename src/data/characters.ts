@@ -109,6 +109,15 @@ export const CHARACTERS: CharacterOrGroup[] = [
     passageRefs: ['1 Samuel 30:2–5', '1 Samuel 30:18–19'],
     claimIds: [],
   },
+  {
+    id: 'men-of-jabesh',
+    name: 'The men of Jabesh-gilead',
+    kind: 'group',
+    summary:
+      'Unnamed in the text ("all the valiant men"). Having heard what the Philistines did to Saul at Beth-shan, they walk all night, take the bodies of Saul and his sons from the wall, and carry them home to Jabesh — repaying Saul’s earlier rescue of their town (1 Samuel 11).',
+    passageRefs: ['1 Samuel 31:11–12a', '1 Samuel 11'],
+    claimIds: ['claim-jabesh-retrieval'],
+  },
 ];
 
 export const CHARACTERS_BY_ID: ReadonlyMap<string, CharacterOrGroup> = new Map(
