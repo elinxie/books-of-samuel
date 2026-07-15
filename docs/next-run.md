@@ -3,7 +3,62 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-14, four independent slices, branch `claude/focused-mccarthy-ckjcuh`)
+## State right now (2026-07-15, both M3 scenes built, branch `claude/focused-mccarthy-dhkjpx`, PR #30 draft)
+
+**Both remaining M3 scenes are built and gate-green** (format:check, lint,
+269 vitest, build, 8/8 e2e — full `npm run verify` re-run after each commit):
+`beth-shan-walls` (commit `6e48f90`) and `jabesh-burial` (commit `68813b6`),
+each `status: 'in-progress'`, `depictsDeath: true`, following their
+world-director briefs (`docs/design/beth-shan-walls-brief.md`,
+`docs/design/jabesh-burial-brief.md`) closely. Both performance-reviewed:
+`beth-shan-walls` passed clean (57 figures high-tier, 24 draw calls, no
+fixes needed); `jabesh-burial`'s review was in flight when this session
+checkpointed — **check its result before assuming it's clean** (a
+`performance-reviewer` agent was mid-run against a specific flagged concern:
+possible per-frame `.clone()` calls in `JabeshBurialScene.tsx`'s
+`BeatLighting` seven-day-shimmer branch, an ~18s window — may have already
+applied a mechanical fix, or may still need one; check
+`git log -1 --stat` on this branch for a follow-up commit before starting
+new work).
+
+New shared engine piece: `src/engine/characters/wrappedForm.ts`
+(`buildWrappedFormGeometry(lengthScale)`) — a lathe-revolved wrapped-cloth
+silhouette with no limb/head articulation, used for Beth-shan's four wall
+display forms/biers and reused at bundle scale (`lengthScale≈0.3`) for
+Jabesh's bone bundle. `claim-jabesh-retrieval` and the `men-of-jabesh`
+character are shared by id across both scenes (created once, by
+`beth-shan-walls`, reused by `jabesh-burial` — not duplicated).
+
+**Not yet done this session (do next):**
+1. Confirm/finish the `jabesh-burial` performance-reviewer pass (see above).
+2. **Doc sync** — `docs/progress.md`, `docs/asset-roadmap.md` (new
+   placeholder assets from both scenes need entries),
+   `docs/uncertainty-register.md` (register #8's Jabesh composite note may
+   need a "now built" update), `docs/fable-review-queue.md` (#16/#17 stay
+   open — both scenes intentionally ship `in-progress` not `released`,
+   gated by existing queue items, no new queue items needed unless a build
+   ambiguity below warrants one). None of this was touched by the build
+   agents or this orchestrating session — it's genuinely undone, not
+   forgotten-and-done.
+3. Update draft PR #30's body/checklist to mark `jabesh-burial` done, then
+   decide: keep as draft for a Fable pass (queue #13/#16/#17 all still open
+   and non-blocking-to-build, blocking-to-`released`) or mark ready — my
+   read is keep it draft; nothing here needs to ship `released` yet.
+4. **Build-agent-flagged ambiguities worth a second look** (both agents
+   resolved these on their own judgement, flagged for review, not
+   necessarily wrong): beth-shan-walls' confidence picks from the brief's
+   dual-value ranges (`claim-beth-shan-town-form` moderate/low →
+   `moderate`; `claim-beth-shan-control` low/moderate → `low`); the
+   retrieval-party staging with no guard at all (brief says "no invented
+   guard fight," agent read that as "no guard staged," not "an implied but
+   unshown guard"); jabesh-burial's evenly-paced 150s beat timing (brief
+   gives beat order, not seconds); the villager crowd's direct
+   lerp/cross-fade transit between locations rather than route-curve
+   walking.
+5. Fable-review-queue #13 (Gilboa headdress citation) — still open, still
+   unrelated to this session's work, still not blocking.
+
+## State before this slice (2026-07-14, four independent slices, branch `claude/focused-mccarthy-ckjcuh`)
 
 Landed and gate-green (format:check, lint, 151 vitest, build, 8/8 e2e), not yet
 merged at doc-sync time: ADR-009 first-visit violence advisory built
