@@ -19,6 +19,17 @@ export interface FigureSlot {
   yaw: number;
 }
 
+function clashFrontX(index: number, count: number, rng: () => number): number {
+  const spread = count > 1 ? index / (count - 1) - 0.5 : 0;
+  return spread * 150 + (rng() - 0.5) * 1.8;
+}
+
+function clashFrontCurve(x: number): number {
+  // A shallow ragged front keeps the two sides visibly interlocked instead
+  // of forming ruler-straight ranks while preserving close weapon range.
+  return -43 + Math.sin(x * 0.055) * 1.2;
+}
+
 /**
  * Crest bodyguard/retinue: a thin ring around the five named principals at
  * the ridge crest — the composition's still center (brief "Focal masses" a).
@@ -94,7 +105,8 @@ export function buildPhilistinePrincipalSlots(count: number, seed = 31004): Figu
  * Israelite defensive line (M3 melee-clash addition): the thin line that
  * actually meets the Philistine infantry before the position gives way,
  * staged between the infantry band (z in [-220,-70], `buildInfantrySlots`)
- * and the crest retinue (clustered near the origin, `buildRetinueSlots`).
+ * and the crest retinue (clustered near the origin, `buildRetinueSlots`),
+ * compressed into close weapon range with the engaged Philistine rank.
  * Faces north toward the Philistine advance (yaw 0), mirroring the
  * infantry's south-facing yaw (`Math.PI`) — the two lines face each other
  * across the clash (`claim-line-defense`).
@@ -103,10 +115,11 @@ export function buildDefenderSlots(count: number, seed = 31006): FigureSlot[] {
   const rng = mulberry32(seed);
   const out: FigureSlot[] = [];
   for (let i = 0; i < count; i++) {
+    const x = clashFrontX(i, count, rng);
     out.push({
-      x: (rng() - 0.5) * 190, // matches the infantry's engagement-front width
-      z: -20 - rng() * 30, // z in [-50, -20]: holding ground short of the crest
-      yaw: (rng() - 0.5) * 0.6, // facing north (toward the Philistines), mirrors infantry's Math.PI
+      x,
+      z: clashFrontCurve(x) + 1.3 + (rng() - 0.5) * 0.8,
+      yaw: (rng() - 0.5) * 0.5, // facing north (toward the Philistines), mirrors infantry's Math.PI
     });
   }
   return out;
@@ -116,17 +129,19 @@ export function buildDefenderSlots(count: number, seed = 31006): FigureSlot[] {
  * The facing rank of Philistine infantry (M3 melee-clash addition):
  * distinct from `buildInfantrySlots`'s broader pursuing mass, this is the
  * forward edge that directly meets `buildDefenderSlots`'s Israelite line —
- * staged just north of the defenders (z in [-70,-55]) rather than scattered
- * across the whole infantry band, so the clash reads as two facing ranks.
+ * staged just north of the defenders at roughly spear/sword reach rather
+ * than scattered across the whole infantry band, so the clash reads as
+ * contact instead of two separated ranks slashing at air.
  */
 export function buildEngagedInfantrySlots(count: number, seed = 31009): FigureSlot[] {
   const rng = mulberry32(seed);
   const out: FigureSlot[] = [];
   for (let i = 0; i < count; i++) {
+    const x = clashFrontX(i, count, rng);
     out.push({
-      x: (rng() - 0.5) * 190,
-      z: -55 - rng() * 15, // z in [-70, -55]: the front edge, just short of the general press
-      yaw: Math.PI + (rng() - 0.5) * 0.6, // facing south, toward the defender line
+      x,
+      z: clashFrontCurve(x) - 1.3 + (rng() - 0.5) * 0.8,
+      yaw: Math.PI + (rng() - 0.5) * 0.5, // facing south, toward the defender line
     });
   }
   return out;
