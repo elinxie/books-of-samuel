@@ -1,0 +1,16 @@
+{
+  "id": "gill-exposition-1763",
+  "title": "An Exposition of the Old Testament",
+  "author": "John Gill",
+  "publisher": "self-published, London",
+  "datePublished": "1748-1763",
+  "dateAccessed": "2026-07-16",
+  "sourceType": "reference",
+  "copyrightStatus": "public-domain",
+  "allowedUseNotes": "Public-domain 18th-century commentary (published 1748-1763, long pre-1928). May be cited, quoted in short excerpt, or paraphrased freely with attribution; no full-chapter reproduction needed per this project's own tighter internal policy regardless.",
+  "url": "https://sacred-texts.com/bib/cmt/gill/index.htm",
+  "summary": "Verse-by-verse exposition of the whole Bible by the English Baptist minister and Hebraist John Gill, one of the more philologically detailed 18th-century Protestant commentaries, drawing heavily on rabbinic sources (Targum, Kimchi/Radak, Solomon ben Melech's Mikhlal Yofi, and others). On 1 Samuel 31:12, Gill reports that the Aramaic Targum renders the verse as the men of Jabesh 'burning over' the bodies rather than burning the bodies themselves, comparing it to the ceremonial burning of spices or of a deceased king's bedding/household goods attested for later Judahite royal funerals (e.g. 2 Chronicles 16:14) — an interpretive tradition Gill attributes to the Targum and reports as also discussed by Kimchi and Ben Melech, though Gill notes those two commentators ultimately prefer the plain reading that the flesh itself was burned (with the bones then buried separately). Gill's own reasoning for why the flesh was burned in this case includes the possibility that the bodies were already putrid from days of exposure on Beth-shan's wall, and/or that burning was meant to keep the remains out of Philistine hands if they returned.",
+  "relevantPassages": ["1 Samuel 31"],
+  "extractedClaims": ["claim-burning-bodies"],
+  "confidenceNotes": "Content verified via web search cross-checking multiple independent digital reproductions of this public-domain text (commentary-aggregator summaries quoting Gill's text on 1 Samuel 31:12, corroborating each other), not by direct page-by-page inspection of an original 18th-century print volume. Exact original volume/page citation for the 1 Samuel 31 material is not independently confirmed. TO VERIFY: exact print volume/page citation; also TO VERIFY whether 'Ben Melech' should be further identified/dated precisely (Solomon ben Melech, 16th century, author of Mikhlal Yofi) beyond what secondary summaries state."
+}

@@ -880,3 +880,184 @@ simplification — Sonnet may upgrade to route-curve walking freely, no queue
 item). Path to `released`: clear #13/#16/#17 via `researcher`
 page-verification + a short Fable confirmation, then flip all three scenes,
 M3, and the three features together.
+
+**2026-07-16 — Sonnet 5 (researcher) — queue #17 citation verification (branch `claude/focused-mccarthy-o8d4os`, one of three parallel researcher passes with #13/#16)**
+Ran the remaining half of queue #17: named, checkable attributions for
+`claim-burning-bodies`' three `scholarlyViews`, replacing the hedged "e.g.,
+commentators…" placeholder that only cited `king-stager-2001` (a burial-
+practice baseline, not commentary on this specific crux).
+
+- Found two real, on-point, public-domain commentaries discussing 1 Samuel
+  31:12-13 by name (verified via web search cross-checking multiple
+  independent digital reproductions of each public-domain text — not
+  primary-copy page inspection): **Keil & Delitzsch's Biblical Commentary on
+  the Books of Samuel** (trans. James Martin, T&T Clark, 1866) and **John
+  Gill's Exposition of the Old Testament** (1748-63). Added both as new
+  source cards (`sources/source-cards/keil-delitzsch-1866.json`,
+  `gill-exposition-1763.json`; `copyrightStatus: public-domain`); `npm run
+build:sources` was run (by another concurrent session on this shared
+  branch — confirmed the regenerated `source-index.json` count/entries are
+  correct rather than re-running it myself, since I have no shell tool this
+  session).
+- Wired real `proponents` into all three `scholarlyViews` in `claims.ts`:
+  honorable-treatment and prevent-desecration are both attributed to Keil
+  (mutilation made normal burial impossible; feared further Philistine
+  desecration), prevent-desecration also to Gill (same desecration fear plus
+  a putrefaction rationale); the third view was retitled from "a proposed
+  textual variant" to accurately describe what was actually found — not a
+  modern textual-critical emendation, but an older Targum/Kimchi/Ben Melech
+  interpretive tradition (reported in Gill, and reported-and-rejected in
+  Keil & Delitzsch) reading the verb as ceremonial spice-burning rather than
+  cremation. `claim-burning-bodies`' `notes` and `docs/fable-review-queue.md`
+  #17 both updated accordingly; `docs/bibliography.md` given the two new
+  rows.
+- **#17 moved to Resolved** (not fully page-verified against original print
+  volumes — both source cards carry a narrow `TO VERIFY` for exact
+  pagination, parallel to queue #4's precedent for what counts as adequately
+  resolved short of primary-copy inspection). Substantive attribution is not
+  in doubt: cited by name and passage (ad loc. 1 Samuel 31:12-13) across
+  multiple independent corroborating sources. A brief Fable confirmation can
+  now close `jabesh-burial` → `released` on this gate (queue #13/#16 are the
+  other two open gates, being worked in parallel by other sessions on this
+  same branch).
+- **Tooling note:** this session's toolset had no shell/Bash access, so
+  `npm run build:sources`/`npm test`/`npm run lint`/git commit-push could
+  not be run directly. `claims.ts` and `source-index.json` were observed to
+  be concurrently edited by the parallel #13/#16 sessions on this branch
+  mid-pass (their own new claims/source-cards merged in cleanly around this
+  work; verified by re-reading the affected regions after each such
+  notification — no conflicts with this session's edits). Whichever
+  agent/session next has shell access on this branch should run the full
+  `npm run verify` gate (this pass's changes are docs/data-only — two new
+  JSON source cards + `claims.ts` text edits — and are not expected to
+  affect lint/test/build, but that expectation is unverified here) and
+  handle the actual `git commit`/`push`.
+
+**2026-07-16 — Sonnet 5 — queue #16 citation-verification pass (Beth-shan archaeological-horizon)**
+Ran the fourth of the three-parallel-agent citation gates on this branch
+(queue #13/#17 were the other two — #17 already resolved above by a sibling
+session; #13 still open, untouched by this pass). Real web research (no
+primary-copy access to the Hebrew University Beth-Shean excavation-report
+monographs, as expected), producing a genuine, useful finding: Amihai Mazar
+published his own popular-level synthesis addressing exactly this narrative-
+vs-archaeology question — "Was King Saul Impaled on the Wall of Beth Shean?",
+_Biblical Archaeology Review_ 38.2 (2012) — corroborated across multiple
+independent secondary quotations (not accessed via the paywalled original;
+flagged `TO VERIFY` in the new source card).
+
+- **(a) Stratum/level**: the relevant post-garrison Iron I horizon runs
+  through the levels Rowe/James numbered Level VI into Level V; absolute
+  dating stays inside the unresolved high/low chronology debate (register #5)
+  — no calendar date asserted. `claim-beth-shan-town-form` updated.
+- **(b) Fortification-wall evidence**: the disclosed gap was _understated_,
+  not overstated — Mazar's own conclusion is that no fortification wall of
+  _any_ excavated period (not just Iron I) has been found at the site, and no
+  distinctive Philistine material culture is attested in the relevant stratum.
+  `claim-beth-shan-wall`'s notes corrected to state this more precisely/
+  strongly.
+- **(c) Egyptian monuments**: clears. Multiple independent secondary sources
+  describe a "Monuments Courtyard" fronting the twin-temple complex (Seti I
+  stelae, a Ramesses II stela, the reused Ramesses III statue found together),
+  read as deliberate post-garrison curation/display — a real, repeated finding
+  in the literature, not one interpreter's inference. `claim-egyptian-
+monuments`/`asset-egyptian-monuments` updated to drop this as a release-
+  blocking gap; only fine-grained sub-phase timing remains unverified.
+- **(d) Rowe's Level V twin-temple = Ashtaroth/Dagon identification**:
+  confirmed as genuinely unresolved/contested, not settled either way —
+  secondary sources consistently frame it as Rowe's own proposal, and Mazar's
+  renewed excavations independently reattribute the same temple complex to an
+  earlier stratigraphic horizon ("Late Level VI"/Stratum S-2) than Rowe's
+  Level V, unmooring his chronological correlation regardless of the deity
+  question. `view-rowe-twin-temples-beth-shan` updated; the brief's omission
+  of the temple stands confirmed as the right call.
+
+Added 2 source cards (`mazar-2012-bar-saul-impaled`, `mazar-panitz-cohen-
+2009-beth-shean-vol3`); narrowed `mazar-beth-shean-2006`'s confidenceNotes to
+clarify it is specifically Volume I (tell-wide synthesis), distinct from the
+two new, more precisely relevant cards. Updated `claims.ts` (`claim-beth-shan-
+town-form`, `claim-egyptian-monuments`, `claim-beth-shan-wall`, `claim-armor-
+ashtaroth`'s Rowe scholarlyView, `claim-beth-shan-control`) and
+`assets.ts` (`asset-egyptian-monuments`). Moved `fable-review-queue.md` #16 to
+Resolved with the full four-part outcome. Updated `uncertainty-register.md`
+rows #11/#12 to point at the resolution. Did not touch `scenes.ts`/
+`milestones.ts` status fields (Fable-tier call, per this task's own scope
+guard) — `beth-shan-walls` stays `in-progress` until a Fable pass confirms.
+
+**Tooling note (same limitation as the #17 session above):** this session's
+toolset had no shell/Bash access — could not run `npm run build:sources`,
+`npm test`, `npm run lint`, or `git commit`/`push` directly. Observed
+`sources/source-index.json` already correctly regenerated and consistent
+with all 23 current source-card files (including this session's 2 new cards)
+by the time this pass finished, apparently rebuilt by a concurrent sibling
+session on this same branch — did not hand-edit it. `claims.ts`/
+`fable-review-queue.md`/`uncertainty-register.md` were each re-read
+immediately before editing after hitting stale-file errors mid-pass (sibling
+#13 session's concurrent edits), and edits were re-targeted at small unique
+anchor strings to apply cleanly without clobbering their work — no conflicts
+found on inspection. Whichever agent/session next has shell access on this
+branch should run the full `npm run verify` gate (this pass's changes are
+docs/data-only — 2 new JSON source cards + `claims.ts`/`assets.ts` text edits
+— not expected to affect lint/test/build, but unverified here) and handle
+`git commit`/`push` for this work alongside the sibling sessions' own commits.
+
+**2026-07-16 — Sonnet 5 (researcher) — queue #13 citation-verification pass (Philistine feathered headdress, third of three parallel researcher passes with #16/#17)**
+Real web research on the Medinet Habu feathered-headdress attribution question.
+Could not page-verify the headdress discussion specifically within
+`king-stager-2001` or `yadin-1963` (no accessible full text/preview surfaced
+exact pagination for either — both cards' `confidenceNotes` updated to record
+the attempt and its limit). Did find three real, checkable, peer-reviewed
+secondary sources that substantively narrow (not fully close) the question:
+
+- Yasur-Landau, "The 'Feathered Helmets' of the Sea Peoples: Joining the
+  Iconographic and Archaeological Evidence," _Talanta_ 44 (2012): 27–40 — joins
+  the Egyptian relief evidence to independent Levantine finds (a bronze
+  chariot linchpin from Tel Miqne-Ekron bearing the same headdress); the
+  motif is absent from Egyptian art before/after the 12th century BCE, but is
+  not solely an Egyptian invention.
+- Stager & Mountjoy, "A Pictorial Krater from Philistine Ashkelon," in
+  _Up to the Gates of Ekron_ (Crawford et al., eds., 2007) — a painted
+  Philistine Bichrome krater from Ashkelon (Grid 38, Phase 18) depicting a
+  warrior in the same headdress on locally made Philistine pottery, Stager's
+  own "Philistine self-portrait" reading, dated to the "ripe" Bichrome phase
+  (later 12th–11th century BCE).
+- Master, "The Philistines in the Highlands: A View from Ashkelon,"
+  _Jerusalem Journal of Archaeology_ 1 (2021): 203–220 — independently argues
+  Philistine raiding presence in the central highlands is plausible in the
+  late Iron I–early Iron IIA window (textual/settlement-pattern evidence, not
+  material-culture iconography).
+
+Net finding: the headdress is genuinely corroborated as Philistine
+self-reproduced material culture, not only Egyptian propaganda art, extending
+its directly attested range from c. 1175 BCE Medinet Habu into local
+Philistine coastal-plain art through roughly the 11th century BCE — but every
+direct attestation (relief, krater, linchpin) stays on the coastal plain and
+in representational media; none reaches the highlands, the Iron I/IIA
+transition, or excavated worn battle gear. The "worn at Gilboa" inference
+remains a disclosed extrapolation from adjacent evidence, not a directly
+attested fact. Added 3 source cards (`yasur-landau-2012-feathered-helmets`,
+`stager-mountjoy-2007-ashkelon-krater`, `master-2021-philistines-highlands`);
+rewrote `claim-philistine-kit`'s two `scholarlyViews` and `notes` with this
+material; hand-reconstructed `sources/source-index.json` (23 cards total,
+including 2 pre-existing cards — `mazar-2012-bar-saul-impaled`,
+`mazar-panitz-cohen-2009-beth-shean-vol3` — that were already on disk but
+missing from the index before this pass, i.e. drift unrelated to this task
+that got fixed incidentally). Queue #13 narrowed, not resolved: moved from a
+vague "unverified" citation gap to a precisely characterized one (genuinely
+corroborated marker, chronologically/geographically adjacent, but no direct
+highland/Iron IIA attestation) — left in the Open table with updated text;
+did not touch `gilboa-battle`/M3 `status` fields (Fable-tier call).
+
+**Tooling note (same limitation as the sibling #16/#17 sessions above):** no
+shell/Bash access in this session — could not run `npm run build:sources`,
+`npm test`, `npm run lint`, or `git commit`/`push`. Hit stale-file errors
+mid-pass editing `claims.ts` and `docs/fable-review-queue.md` (concurrent
+sibling #16 session moving its own queue item to Resolved at the same time);
+re-read immediately before each write and re-applied against the freshest
+content — no work clobbered on inspection, confirmed after the fact by
+re-reading both files and `sources/source-index.json`. Whichever agent/session
+next has shell access on this branch should run the full `npm run verify`
+gate (this pass's changes are docs/data-only — 3 new JSON source cards +
+`claims.ts`/`fable-review-queue.md` text edits + a hand-rebuilt
+`source-index.json` — not expected to affect lint/test/build, but unverified
+here) and handle `git commit`/`push` for this work alongside the sibling
+sessions' own commits.
