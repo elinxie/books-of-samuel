@@ -375,7 +375,7 @@ export const ASSETS: AssetRecord[] = [
     whyTemporary:
       'Simple primitive stela-slab and statue-block geometry, not modeled reproductions of the excavated Seti I stelae or the Ramesses III statue.',
     historicalRequirements:
-      'Modeled reproductions, and page-verification of the curated-into-Iron-I placement against mazar-beth-shean-2006 (fable-review-queue #16) before this scene ships released.',
+      'Modeled reproductions of the excavated forms (fidelity only — see claim-egyptian-monuments). Queue #16 verification pass (2026-07-16): the curated-into-Iron-I reading itself is corroborated across independent secondary summaries of the excavations (a "Monuments Courtyard" fronting the twin temples, read as deliberate post-garrison display) and is no longer a release-blocking gap; the residual hedge is fine-grained sub-phase timing, not primary-copy page access.',
     replacementMilestoneId: 'M4',
   },
   {

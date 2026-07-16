@@ -1,0 +1,16 @@
+{
+  "id": "keil-delitzsch-1866",
+  "title": "Biblical Commentary on the Books of Samuel",
+  "author": "Carl Friedrich Keil; Franz Delitzsch (trans. James Martin)",
+  "publisher": "T. & T. Clark",
+  "datePublished": "1866",
+  "dateAccessed": "2026-07-16",
+  "sourceType": "reference",
+  "copyrightStatus": "public-domain",
+  "allowedUseNotes": "Public-domain 19th-century commentary (original German editions 1864-1875; this English translation published 1866, pre-1928). May be cited, quoted in short excerpt, or paraphrased freely with attribution; no full-chapter reproduction needed per this project's own tighter internal policy regardless.",
+  "url": "https://archive.org/details/biblicalcomment00keiluoft",
+  "summary": "Classic 19th-century verse-by-verse critical-conservative commentary on 1-2 Samuel, part of the larger multi-volume Keil-Delitzsch Commentary on the Old Testament (the Samuel volume's exegetical work is Keil's; Delitzsch is credited on the original title page as the series' co-author/editor). On 1 Samuel 31:12-13, Keil explains the men of Jabesh-gilead's burning of Saul's and his sons' bodies as arising from the specific circumstances rather than ordinary Israelite funerary custom: the bodies had already been mutilated (decapitated) and displayed on Beth-shan's wall, making a normal burial impossible in the usual sense, and the men of Jabesh feared further desecration if the Philistines followed up their victory and reached Jabesh. Keil also reports and rejects an older Targumic/rabbinic reading (also discussed in the Gill source card) that the 'burning' refers to ceremonial burning of spices over the bodies rather than cremation of the flesh itself, arguing the Hebrew phrasing here differs from the idiom used for that funerary-spice custom elsewhere (e.g., the 'very great burning' made for King Asa, 2 Chronicles 16:14).",
+  "relevantPassages": ["1 Samuel 31"],
+  "extractedClaims": ["claim-burning-bodies"],
+  "confidenceNotes": "Content verified via web search cross-checking multiple independent digital reproductions of this public-domain text (an archive.org full-text scan and secondary commentary-aggregator summaries of the same passage), not by direct page-by-page inspection of the original 1866 T&T Clark print edition. Original print pagination for the 1 Samuel 31:12-13 discussion is not independently confirmed here, but the substance and attribution (Keil, ad loc. 1 Samuel 31:12-13) are corroborated across sources and this is a single well-known, widely mirrored public-domain work, so misattribution risk is low. TO VERIFY: exact print volume/page citation."
+}

@@ -480,27 +480,41 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The Philistine force at Gilboa is rendered with a distinct kit profile — round shields and straight swords for infantry and principals, and a forward archer element carrying bows. A plumed/feathered headdress (the Medinet Habu "Sea Peoples" marker) is rendered on the small kit-differentiated principal cluster only, never on crowd/infantry/archer instances.',
     basis: 'comparative-ane',
     confidence: 'low',
-    sourceIds: ['king-stager-2001', 'yadin-1963'],
+    sourceIds: [
+      'king-stager-2001',
+      'yadin-1963',
+      'yasur-landau-2012-feathered-helmets',
+      'stager-mountjoy-2007-ashkelon-krater',
+      'master-2021-philistines-highlands',
+    ],
     scholarlyViews: [
       {
         id: 'view-philistine-headdress-sea-peoples-marker',
         label: 'Plumed headdress as a genuine Sea Peoples/Philistine material-culture marker',
         summary:
-          'The feathered/plumed headdress is the best-attested and most widely reproduced Philistine visual signifier, drawn from the Egyptian Medinet Habu reliefs of Ramesses III (c. 1175 BCE) depicting "Sea Peoples" including the Peleset (Philistines); omitting it from a Philistine-force rendering is its own distortion of the best-known iconographic evidence.',
+          'The feathered/plumed headdress is the best-attested and most widely reproduced Philistine visual signifier, drawn from the Egyptian Medinet Habu reliefs of Ramesses III (c. 1175 BCE) depicting "Sea Peoples" including the Peleset (Philistines). This is not solely an Egyptian artistic invention: Yasur-Landau (Talanta 44 [2012]: 27–40) joins the Egyptian relief evidence to independent Levantine/Aegean archaeological finds, including a bronze chariot linchpin from Tel Miqne-Ekron bearing the same headdress. Stager and Mountjoy (in Crawford et al., eds., Up to the Gates of Ekron, 2007) publish a painted Philistine Bichrome krater excavated at Ashkelon (Grid 38, Phase 18) depicting a warrior wearing the same headdress on locally made Philistine pottery — read by Stager as a Philistine self-portrait rather than outside caricature — placing the motif in the "ripe"/mature Bichrome phase, conventionally the later 12th–11th century BCE. Omitting the headdress from a Philistine-force rendering would understate a marker now corroborated by Philistine material culture itself, not just Egyptian propaganda art.',
         confidence: 'moderate',
-        sourceIds: ['yadin-1963'],
+        sourceIds: [
+          'yadin-1963',
+          'yasur-landau-2012-feathered-helmets',
+          'stager-mountjoy-2007-ashkelon-krater',
+        ],
       },
       {
         id: 'view-philistine-headdress-attribution-contested',
-        label: 'Ethnic/temporal application to this scene is unverified',
+        label: 'Ethnic/temporal application to this highland scene remains an extrapolation',
         summary:
-          'Medinet Habu is Egyptian royal propaganda relief art, not a Philistine self-representation, and it dates to c. 1175 BCE — a century-plus before the Gilboa battle of the traditional Saul narrative and geographically set in Egypt/the Delta frontier, not the Jezreel highlands. Whether the headdress persisted as worn battlefield gear into Iron I/IIA highland warfare at Gilboa specifically is unverified in the excavated record cited here and page-level citation-checking is queued (`docs/fable-review-queue.md` item #13) before this scene ships `released`.',
+          "Even with the Ashkelon/Ekron corroboration, every directly attested example of the headdress — the Medinet Habu reliefs, the Ashkelon krater, the Ekron linchpin — comes from the coastal plain (the Nile Delta or Philistia proper), none from the highlands or Jezreel Valley, and all are representational media (temple relief, painted pottery, decorative bronze fitting), not excavated worn gear from a battle context. The latest directly dated local attestation (the Ashkelon krater's \"ripe\" Bichrome phase) runs into the 11th century BCE at the earliest end of estimates, but no artifact bearing this motif is dated to the Iron I/IIA transition itself (the traditional window for Saul's death, commonly placed c. 1010 BCE), so a chronological gap of decades between the latest directly attested example and the Gilboa narrative's traditional date is not closed by direct evidence. Separately, Master (Jerusalem Journal of Archaeology 1 [2021]: 203–220) argues, from text and settlement-pattern evidence, that Philistine raiding activity in the central highlands is plausible in exactly this late Iron I–early Iron IIA window — independent support for a Philistine force being present near Gilboa at all in this period — but that article does not extend the headdress motif itself into the highlands; it says nothing about material-culture iconography. The inference that this specific headdress was worn battlefield gear at Gilboa therefore remains a disclosed extrapolation from adjacent (coastal, slightly earlier) evidence, not a directly attested fact.",
         confidence: 'low',
-        sourceIds: ['king-stager-2001'],
+        sourceIds: [
+          'king-stager-2001',
+          'yasur-landau-2012-feathered-helmets',
+          'master-2021-philistines-highlands',
+        ],
       },
     ],
     notes:
-      'Round shield and straight sword are the baseline comparative-ANE/Aegean-influenced assumption for Philistine coastal-plain combatants (Yadin 1963; King & Stager 2001), not a specific excavated Gilboa-context panoply — moderate/low confidence throughout. The headdress dispute is the single most consequential material-culture call in this scene: rendering it only on the small principal cluster, behind this scholarlyViews label, is the provisional default agreed for build; it is not a resolved attribution. No "Philistine uniform" is asserted.',
+      'Round shield and straight sword are the baseline comparative-ANE/Aegean-influenced assumption for Philistine coastal-plain combatants (Yadin 1963; King & Stager 2001), not a specific excavated Gilboa-context panoply — moderate/low confidence throughout. 2026-07-16 citation-verification pass (fable-review-queue #13): could not obtain page-level citations for the headdress discussion specifically within King & Stager 2001 or Yadin 1963 (no accessible full text/preview surfaced exact pagination; see those cards\' updated `confidenceNotes`) — that narrow page-check remains outstanding. What the pass did establish, via newly added, checkable secondary literature (`yasur-landau-2012-feathered-helmets`, `stager-mountjoy-2007-ashkelon-krater`, `master-2021-philistines-highlands`): the headdress is genuinely corroborated as Philistine self-reproduced material culture (not only an Egyptian propaganda motif), extending its directly-attested range from the single c. 1175 BCE Medinet Habu moment into local Philistine coastal-plain art through roughly the 11th century BCE — but every direct attestation stays on the coastal plain and in representational media, none reaching the highlands, the Iron I/IIA transition, or excavated worn gear. Rendering it only on the small principal cluster, behind this scholarlyViews label, remains the provisional default agreed for build; the highland/Iron IIA application is now a precisely characterized, disclosed extrapolation rather than a vaguely "unverified" citation gap, but it is still not a resolved attribution. No "Philistine uniform" is asserted.',
   },
   {
     id: 'claim-beth-shan-identification',
@@ -518,9 +532,13 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The post-garrison Iron I town on the summit is rendered as a dense quarter of small conjoined mudbrick houses along narrow lanes, consistent in general character with the excavated domestic quarters, generations after the Egyptian garrison’s end.',
     basis: 'archaeology',
     confidence: 'moderate',
-    sourceIds: ['mazar-beth-shean-2006'],
+    sourceIds: [
+      'mazar-beth-shean-2006',
+      'mazar-panitz-cohen-2009-beth-shean-vol3',
+      'mazar-2012-bar-saul-impaled',
+    ],
     notes:
-      'Confidence in the general Iron I domestic-quarter character is moderate; the specific massing, house count, and lane pattern rendered here are a disclosed design placeholder, not a reproduction of the excavated plan (asset-tell-town-blocks).',
+      'Confidence in the general Iron I domestic-quarter character is moderate; the specific massing, house count, and lane pattern rendered here are a disclosed design placeholder, not a reproduction of the excavated plan (asset-tell-town-blocks). Queue #16 verification pass (2026-07-16): the relevant Iron I sequence in the renewed excavations (Mazar & Panitz-Cohen, Volume III, 2009, Areas N/S) runs through the post-Egyptian levels Rowe/James originally numbered Level VI into Level V; Mazar\'s own popular synthesis (mazar-2012-bar-saul-impaled) treats the horizon immediately after "the collapse of Egyptian control" (the end of the Egyptianized Lower VI phase) through the following Canaanite phase as the one at stake for the Saul narrative. This is cited at the resolution available from secondary summaries, not a page-verified stratum-to-verse equation, and absolute dating of this horizon is itself part of the unresolved high/low Iron Age chronology debate (register #5) — no single calendar date is asserted here.',
   },
   {
     id: 'claim-egyptian-monuments',
@@ -528,9 +546,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'One or two weathered Egyptian monuments — in the tradition of the excavated Seti I stelae and the Ramesses III statue — are shown near the summit, curated into visibility in the later Iron Age town.',
     basis: 'archaeology',
     confidence: 'moderate',
-    sourceIds: ['mazar-beth-shean-2006'],
+    sourceIds: ['mazar-beth-shean-2006', 'mazar-panitz-cohen-2009-beth-shean-vol3'],
     notes:
-      'Additive, not load-bearing: the excavations recovered Egyptian monuments in later Iron-age contexts, suggesting some remained visible after the garrison ended, but the specific curated-into-Iron-I reading needs page-verification against mazar-beth-shean-2006 before this scene ships released (fable-review-queue #16 — the source card itself flags "volume details to verify"). If verification fails, the monuments come out; they are not load-bearing for any other claim.',
+      'Additive, not load-bearing. Queue #16 verification pass (2026-07-16): secondary scholarly summaries of the excavations (describing a "Monuments Courtyard" fronting the twin-temple complex, where the Seti I stelae, a Ramesses II stela, and the reused Ramesses III statue were found together, interpreted as the post-garrison community deliberately preserving and displaying its Egyptian-period monuments) corroborate the curated-into-Iron-I reading across more than one independent source — this is a real, repeated finding in the secondary literature, not a single interpreter\'s inference. What remains unverified by primary-copy inspection is the fine-grained sub-phase: whether the courtyard display persisted specifically into the sub-phase corresponding to the traditional Saul-narrative window, versus an earlier Iron I sub-phase (see claim-beth-shan-town-form\'s stratum notes). The historical basis for showing the monuments at all is no longer a release-blocking gap; the remaining hedge is fidelity/sub-phase precision only (see asset-egyptian-monuments).',
   },
   {
     id: 'claim-beth-shan-wall',
@@ -538,7 +556,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The narrative states that the Philistines fastened the bodies to the wall of Beth-shan (1 Samuel 31:10, 12); the scene renders a modest mudbrick-on-stone perimeter along the tell brow above the gate approach.',
     basis: 'biblical-text',
     confidence: 'high',
-    sourceIds: ['esv-bible', 'mazar-beth-shean-2006'],
+    sourceIds: ['esv-bible', 'mazar-beth-shean-2006', 'mazar-2012-bar-saul-impaled'],
     scholarlyViews: [
       {
         id: 'view-beth-shan-wall-public-square',
@@ -550,7 +568,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'High confidence describes what the narrative states, not archaeological corroboration: no substantial Iron I fortification wall is clearly attested at Beth-shan in the excavated record cited here. The wall is rendered as narrated, disclosed as archaeologically thin, and reads as much as the conjoined outer faces of edge buildings as a freestanding fortification — never presented as excavated-verified.',
+      'High confidence describes what the narrative states, not archaeological corroboration. Queue #16 verification pass (2026-07-16) corrects and strengthens this note: per Mazar\'s own published position (mazar-2012-bar-saul-impaled, "Was King Saul Impaled on the Wall of Beth Shean?", BAR 38.2 [2012]), no fortification wall of any excavated period — not Iron I specifically, but any period — has been identified at Tel Beth-Shean, and the same synthesis reports no distinctive Philistine material culture in the relevant post-garrison stratum. The gap disclosed here was, if anything, understated by the previous wording ("no substantial Iron I fortification wall is clearly attested," which could be read as leaving room for partial/ambiguous wall evidence); the corrected, more precisely sourced statement is that no fortification wall has been excavated at the site at all. The wall is rendered as narrated, disclosed as archaeologically unattested, and reads as much as the conjoined outer faces of edge buildings as a freestanding fortification — never presented as excavated-verified. (This project has not obtained primary-copy page access to the BAR article itself; the finding is corroborated across multiple independent secondary quotations of it — see mazar-2012-bar-saul-impaled\'s confidenceNotes.)',
   },
   {
     id: 'claim-body-display',
@@ -582,13 +600,17 @@ export const CLAIMS: ReconstructionClaim[] = [
         id: 'view-rowe-twin-temples-beth-shan',
         label: 'Rowe’s identification of the Level V twin temples with these shrines',
         summary:
-          'Alan Rowe’s early-20th-century excavations identified excavated Level V twin temples at Beth-shan with the temples of Ashtaroth/Dagon named in 1 Samuel 31 and 1 Chronicles 10; this identification is no longer accepted as demonstrated in current scholarship, and its verification is queued (fable-review-queue #16) rather than asserted here.',
+          'Alan Rowe’s 1920s-30s University of Pennsylvania excavations identified twin temples he assigned to "Level V" at Beth-shan with the temples of Ashtaroth/Dagon named in 1 Samuel 31 and 1 Chronicles 10. Queue #16 verification pass (2026-07-16): this identification remains genuinely unresolved rather than settled either way. Secondary scholarly summaries consistently frame it as "Rowe suggests" or "Rowe identified," i.e. an excavator\'s proposal rather than an established consensus reading, and Mazar\'s own renewed excavations (mazar-2012-bar-saul-impaled; mazar-panitz-cohen-2009-beth-shean-vol3) reattribute the same twin-temple complex to an earlier stratigraphic horizon (Mazar\'s "Late Level VI" / Stratum S-2) than Rowe\'s original Level V, which itself unmoors Rowe\'s chronological correlation with Saul\'s death even apart from the deity-identification question. No source found in this pass asserts the identification has been either vindicated or formally rejected by subsequent scholarship — it is accurately described as contested/unresolved, which is why this project carries it only as a scholarlyView rather than a claim.',
         confidence: 'low',
-        sourceIds: ['mazar-beth-shean-2006'],
+        sourceIds: [
+          'mazar-beth-shean-2006',
+          'mazar-2012-bar-saul-impaled',
+          'mazar-panitz-cohen-2009-beth-shean-vol3',
+        ],
       },
     ],
     notes:
-      'The armor beat is carried by the messenger departure and its caption alone — armor borne away, destination named, no building asserted or shown on-site (omission over invention). No trophy-carry of the head is rendered in the procession.',
+      "The armor beat is carried by the messenger departure and its caption alone — armor borne away, destination named, no building asserted or shown on-site (omission over invention). No trophy-carry of the head is rendered in the procession. Queue #16 (2026-07-16): omitting the temple remains the right call — see view-rowe-twin-temples-beth-shan for the verification of that identification's unresolved status.",
   },
   {
     id: 'claim-jabesh-retrieval',
@@ -606,7 +628,12 @@ export const CLAIMS: ReconstructionClaim[] = [
       'Who held Beth-shan when the bodies were displayed is genuinely uncertain: the narrative implies Philistine use of the city, but the excavated post-garrison material culture reads substantially Canaanite, with little classic Philistine signature.',
     basis: 'scholarly-reconstruction',
     confidence: 'low',
-    sourceIds: ['mazar-beth-shean-2006', 'mazar-1990', 'finkelstein-silberman-2001'],
+    sourceIds: [
+      'mazar-beth-shean-2006',
+      'mazar-1990',
+      'finkelstein-silberman-2001',
+      'mazar-2012-bar-saul-impaled',
+    ],
     scholarlyViews: [
       {
         id: 'view-beth-shan-philistine-garrison',
@@ -626,7 +653,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'Rendered as a local Canaanite town population with a visiting Philistine detachment/escort, not a "Philistine city" — the render follows the Canaanite-orbit reading’s population choice while carrying both views here rather than silently picking a winner.',
+      'Rendered as a local Canaanite town population with a visiting Philistine detachment/escort, not a "Philistine city" — the render follows the Canaanite-orbit reading’s population choice while carrying both views here rather than silently picking a winner. Queue #16 verification pass (2026-07-16): Mazar\'s own popular synthesis (mazar-2012-bar-saul-impaled) reports no distinctive Philistine material culture (e.g., no Philistine painted pottery) in the relevant stratum, which strengthens the Canaanite-orbit reading\'s evidentiary footing without resolving the dispute — Mazar\'s own stated conclusion is that the narrative "at best" reflects a Philistine campaign into the valley rather than sustained occupation or garrison, a middle position this project does not adopt as the sole answer.',
   },
   {
     id: 'claim-jabesh-location',
@@ -698,30 +725,41 @@ export const CLAIMS: ReconstructionClaim[] = [
       {
         id: 'view-burning-honorable-treatment',
         label: 'Honorable treatment of mutilated, exposed bodies',
+        proponents: [
+          'Carl Friedrich Keil (Keil & Delitzsch commentary, ad loc. 1 Samuel 31:12-13)',
+        ],
         summary:
-          'Burning is read as an honorable response to bodies that were mutilated (beheaded) and had been publicly displayed for some time — a protective, dignifying act rather than a normal funerary rite.',
+          'Burning is read as an honorable response to bodies that were mutilated (beheaded) and had been publicly displayed for some time — a protective, dignifying act rather than a normal funerary rite. Keil reads the burning as flowing from the bodies already being mutilated/decapitated, which made an ordinary burial impossible in the usual sense.',
         confidence: 'low',
-        sourceIds: ['king-stager-2001'],
+        sourceIds: ['king-stager-2001', 'keil-delitzsch-1866'],
       },
       {
         id: 'view-burning-prevent-desecration',
         label: 'Preventing further desecration',
+        proponents: [
+          'Carl Friedrich Keil (Keil & Delitzsch commentary, ad loc. 1 Samuel 31:12-13)',
+          'John Gill (Exposition of the Old Testament, ad loc. 1 Samuel 31:12)',
+        ],
         summary:
-          'Burning is read as a practical measure to prevent any further mistreatment or loss of what remained of the bodies, given the circumstances of their recovery from a hostile city’s wall.',
+          'Burning is read as a practical measure to prevent any further mistreatment or loss of what remained of the bodies, given the circumstances of their recovery from a hostile city’s wall. Both Keil and Gill give the men of Jabesh’s fear that the Philistines might follow up their victory and reach Jabesh as a reason for the haste and the burning; Gill additionally notes the bodies may already have been too putrid (days of exposure on Beth-shan’s wall) for normal handling.',
         confidence: 'low',
-        sourceIds: ['king-stager-2001'],
+        sourceIds: ['king-stager-2001', 'keil-delitzsch-1866', 'gill-exposition-1763'],
       },
       {
         id: 'view-burning-textual-emendation',
-        label: 'A proposed textual variant',
+        label: 'An older interpretive tradition reading "burned" as spices, not cremation',
+        proponents: [
+          'Targum Jonathan (as reported by Gill and by Keil & Delitzsch)',
+          'David Kimchi (Radak) and Solomon ben Melech, per Gill’s Exposition — though Gill notes both ultimately favor the plain cremation reading',
+        ],
         summary:
-          'Some commentators have proposed the verb here may not originally have meant full cremation (comparing usage elsewhere for burning spices/incense over a body rather than the body itself); this remains a minority proposal, not a consensus reading.',
+          'An older interpretive tradition — attested in the Aramaic Targum and discussed by the medieval Jewish commentators Kimchi and Ben Melech, as reported in Gill’s Exposition — reads the verb here by analogy with the ceremonial burning of spices or a king’s bedding/goods over a body (compare 2 Chronicles 16:14’s "very great burning" for King Asa), rather than cremation of the corpse itself. This is not a modern textual-critical emendation of the Hebrew text; it is a philological/interpretive minority reading, and Keil & Delitzsch explicitly reject it, arguing the phrasing here differs from the "made a burning for him" idiom used for the spice-burning custom elsewhere. Gill reports Kimchi and Ben Melech themselves ultimately prefer the plain reading (flesh burned, bones buried) over the spice-burning alternative.',
         confidence: 'speculative',
-        sourceIds: ['king-stager-2001'],
+        sourceIds: ['keil-delitzsch-1866', 'gill-exposition-1763'],
       },
     ],
     notes:
-      'Citation verification queued (fable-review-queue #17): proponent attribution for the scholarly views above is hedged pending page-level sourcing. king-stager-2001 anchors normal Israelite (non-cremation) burial practice as the baseline this act departs from. The depiction stays restrained (documentary distance, covered-before-flame in every mode — no burning silhouette or charring detail, ever), but the anomaly itself is stated as fact in every mode’s captions; reduction abstracts the depiction, never the fact.',
+      'Citation verification (fable-review-queue #17) substantially resolved: the three scholarlyViews above are now backed by named, checkable commentators (Keil & Delitzsch’s Biblical Commentary on the Books of Samuel, 1866; John Gill’s Exposition of the Old Testament, 1748-63) discussing this exact crux at 1 Samuel 31:12-13, rather than the general burial-practice baseline (king-stager-2001) alone. Content was verified via web search cross-checking multiple independent digital reproductions of these public-domain 19th/18th-century texts, not by direct page-by-page inspection of an original print volume — exact original print pagination remains TO VERIFY (see both new source cards’ confidenceNotes), so proponents are cited by name and passage (ad loc. 1 Samuel 31:12-13) rather than by page number. king-stager-2001 still anchors normal Israelite (non-cremation) burial practice as the baseline this act departs from. The depiction stays restrained (documentary distance, covered-before-flame in every mode — no burning silhouette or charring detail, ever), but the anomaly itself is stated as fact in every mode’s captions; reduction abstracts the depiction, never the fact.',
   },
   {
     id: 'claim-tamarisk-burial',

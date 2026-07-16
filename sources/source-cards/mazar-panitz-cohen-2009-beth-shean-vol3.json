@@ -1,0 +1,19 @@
+{
+  "id": "mazar-panitz-cohen-2009-beth-shean-vol3",
+  "title": "Excavations at Tel Beth-Shean 1989-1996, Volume III: The 13th-11th Century BCE Strata in Areas N and S",
+  "author": "Amihai Mazar and Nava Panitz-Cohen (eds.)",
+  "publisher": "Israel Exploration Society / Hebrew University of Jerusalem",
+  "datePublished": "2009",
+  "dateAccessed": "2026-07-16",
+  "sourceType": "archaeology",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted excavation report. Summaries in project's own words only.",
+  "summary": "The excavation-report volume specifically covering the Late Bronze/Iron I transition strata (Areas N and S) at Tel Beth-Shean: the Egyptian garrison town's decline and the post-garrison Iron I town, including the twin-temple complex and the reused Egyptian monuments (Seti I stelae, a Ramesses II stela, and the Ramesses III statue) found in a 'Monuments Courtyard' fronting the temples. This is the excavation volume most directly relevant to the stratigraphic window the 1 Samuel 31 narrative is set in, distinct from Volume I (mazar-beth-shean-2006), which is Mazar's broader synthesis of the tell's full Late Bronze IIB-medieval sequence.",
+  "relevantPassages": ["1 Samuel 31:10-13"],
+  "extractedClaims": [
+    "claim-beth-shan-town-form",
+    "claim-egyptian-monuments",
+    "claim-armor-ashtaroth"
+  ],
+  "confidenceNotes": "TO VERIFY against primary copy: identified via secondary bibliographic search (project/foundation publication records and academic citations of the volume), not direct page inspection. The stratum labels and find-context details used in claims.ts are drawn from Mazar's own popular-level synthesis of this material (mazar-2012-bar-saul-impaled) and secondary summaries describing this volume's contents, not from this project's own inspection of the volume itself. Exact page/plate citations remain unverified."
+}

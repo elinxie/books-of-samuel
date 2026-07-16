@@ -29,6 +29,8 @@ hand-maintain a duplicate list here — see "Keeping this in sync" below.
 | `maeir-safi-2012`            | Tell es-Safi/Gath I: The 1996–2005 Seasons                            | archaeology          |
 | `mazar-beth-shean-2006`      | Excavations at Tel Beth-Shean 1989–1996, Vol. I                       | archaeology          |
 | `yadin-1963`                 | The Art of Warfare in Biblical Lands                                  | material-culture     |
+| `keil-delitzsch-1866`        | Biblical Commentary on the Books of Samuel                            | reference            |
+| `gill-exposition-1763`       | An Exposition of the Old Testament                                    | reference            |
 
 Two cards (`garfinkel-ganor-2019`, `oren-tel-sera-1993`) had a citation-completeness
 pass on 2026-07-07 (see `/docs/uncertainty-register.md` item 10, resolved): venues,

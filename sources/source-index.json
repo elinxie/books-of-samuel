@@ -1,5 +1,5 @@
 {
-  "count": 16,
+  "count": 23,
   "cards": [
     {
       "id": "biran-naveh-1993",
@@ -38,10 +38,22 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "gill-exposition-1763",
+      "title": "An Exposition of the Old Testament",
+      "sourceType": "reference",
+      "copyrightStatus": "public-domain"
+    },
+    {
       "id": "herzog-1997",
       "title": "Archaeology of the City: Urban Planning in Ancient Israel and Its Social Implications",
       "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "keil-delitzsch-1866",
+      "title": "Biblical Commentary on the Books of Samuel",
+      "sourceType": "reference",
+      "copyrightStatus": "public-domain"
     },
     {
       "id": "king-stager-2001",
@@ -53,6 +65,12 @@
       "id": "maeir-safi-2012",
       "title": "Tell es-Safi/Gath I: The 1996–2005 Seasons",
       "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "master-2021-philistines-highlands",
+      "title": "The Philistines in the Highlands: A View from Ashkelon (Jerusalem Journal of Archaeology 1, pp. 203–220)",
+      "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
@@ -68,8 +86,20 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "mazar-2012-bar-saul-impaled",
+      "title": "Was King Saul Impaled on the Wall of Beth Shean?",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "mazar-beth-shean-2006",
       "title": "Excavations at Tel Beth-Shean 1989–1996, Volume I",
+      "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "mazar-panitz-cohen-2009-beth-shean-vol3",
+      "title": "Excavations at Tel Beth-Shean 1989-1996, Volume III: The 13th-11th Century BCE Strata in Areas N and S",
       "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
     },
@@ -92,9 +122,21 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "stager-mountjoy-2007-ashkelon-krater",
+      "title": "A Pictorial Krater from Philistine Ashkelon, in Up to the Gates of Ekron: Essays on the Archaeology and History of the Eastern Mediterranean in Honor of Seymour Gitin (eds. S. W. Crawford et al.)",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "yadin-1963",
       "title": "The Art of Warfare in Biblical Lands in the Light of Archaeological Study",
       "sourceType": "material-culture",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "yasur-landau-2012-feathered-helmets",
+      "title": "The 'Feathered Helmets' of the Sea Peoples: Joining the Iconographic and Archaeological Evidence (Talanta 44, pp. 27–40)",
+      "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     }
   ]
