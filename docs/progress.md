@@ -84,7 +84,7 @@ Scope call: `f-dem-terrain` re-scoped M2 → M3 (no M2 scene is at an identified
 site). Queue #11 (Egyptian dress) resolved — conservative shared-dress kept,
 revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
-## Milestone 3–4: milestone-level status **planned** in `src/data/milestones.ts` (flips at Fable sign-off, matching M1/M2); all three M3 scenes now built. See `src/data/milestones.ts` for goals.
+## Milestone 3–4: M3 milestone-level status **in-progress** in `src/data/milestones.ts` after the 2026-07-16 Fable sign-off (approved as built; `released` gated only by fable-review-queue #13/#16/#17 page-verification). See `src/data/milestones.ts` for goals.
 
 `gilboa-battle` world-director brief done 2026-07-09 (Fable):
 `docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
@@ -145,6 +145,16 @@ confidence ranges (`moderate/low`→`moderate`, `low/moderate`→`low`);
 jabesh-burial chose evenly-paced beat timing (brief specifies beat order,
 not seconds).
 
+**M3 Fable sign-off, 2026-07-16** (branch `claude/focused-mccarthy-o8d4os`):
+full `docs/fable-review-checklist.md` pass over all three scenes — approved
+as built. M3 → `in-progress` (not `released`: queue #13/#16/#17
+page-verification gates stay open); `f-gilboa`/`f-beth-shan`/`f-jabesh` →
+`in-progress`. Queue #12 resolved (ADR-012, DEM sourcing policy), #14
+resolved (battle-scale chain approved), #15 stale duplicate removed, #17
+narrowed (ADR-009 funerary-burning extension ratified; citations remain).
+All build-agent-flagged ambiguities approved as shipped. `npm run verify`
+green this session. Full detail: `docs/run-log.md` 2026-07-16 entry.
+
 **Cross-cutting, done 2026-07-14 (project-wide, not scene-specific):** ADR-009's
 first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 `SceneDef.depictsDeath` flag) — now wired for `gilboa-battle`,
@@ -187,13 +197,13 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Sonnet, 2026-07-15)
-- `npm run lint` — pass (Sonnet, 2026-07-15)
-- `npm run test` (vitest) — 269/269 pass (Sonnet, 2026-07-15)
-- `npm run build` — pass (Sonnet, 2026-07-15)
-- `npm run e2e` (playwright) — 8/8 pass (Sonnet, 2026-07-15, sandboxed with
+- `npm run format:check` — pass (Fable session, 2026-07-16)
+- `npm run lint` — pass (Fable session, 2026-07-16)
+- `npm run test` (vitest) — 269/269 pass (Fable session, 2026-07-16)
+- `npm run build` — pass (Fable session, 2026-07-16)
+- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-16, sandboxed
+  with
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
-- Branch `claude/focused-mccarthy-dhkjpx` (draft PR #30 per `docs/next-run.md`),
-  not yet merged at time of this status line. See `docs/run-log.md`'s
-  2026-07-15 entries for what's on it.
+- PR #30 (both remaining M3 scene builds) merged into `main` (`bebb88e`);
+  `main` at `3d72f3d` at the time of the M3 sign-off.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.

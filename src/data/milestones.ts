@@ -49,7 +49,10 @@ export const MILESTONES: Milestone[] = [
   {
     id: 'M3',
     label: 'Milestone 3 — 1 Samuel 31 Gilboa',
-    status: 'planned',
+    // 2026-07-16 Fable sign-off: all three scenes built, reviewed, and approved
+    // against docs/fable-review-checklist.md; `released` is gated only by the
+    // open page-verification items (fable-review-queue #13/#16/#17).
+    status: 'in-progress',
     passageRefs: ['1 Samuel 31'],
     goals: [
       'Mount Gilboa battlefield geography',

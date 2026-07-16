@@ -3,7 +3,44 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-15, both M3 scenes built, branch `claude/focused-mccarthy-dhkjpx`, PR #30 draft)
+## State right now (2026-07-16, M3 Fable sign-off done, branch `claude/focused-mccarthy-o8d4os`)
+
+**The M3 sign-off review is done** (full `docs/fable-review-checklist.md`
+pass — see `docs/run-log.md`'s 2026-07-16 entry). PR #30 is merged (`bebb88e`);
+`main` was at `3d72f3d` when the review ran. Outcomes: M3 → `in-progress`
+(approved as built; `released` gated only by page-verification),
+`f-gilboa`/`f-beth-shan`/`f-jabesh` → `in-progress`; queue #12 resolved
+(**ADR-012**, DEM sourcing policy), #14 resolved (battle-scale chain
+approved), #15's stale duplicate row removed, #17 narrowed (**ADR-009 now
+carries the funerary-burning extension** — future violence-adjacent scenes
+inherit it as policy). All four build-agent-flagged ambiguities (dual-range
+confidence picks, no-guard staging, even beat pacing, villager
+lerp/cross-fade transit) approved as shipped — the villager transit may be
+upgraded to route-curve walking as ordinary Sonnet work, no review needed.
+`npm run verify` green this session (269 vitest, 8/8 e2e with the sandbox
+`PLAYWRIGHT_CHROMIUM_PATH`; note: run `npm install` first in a fresh
+sandbox — a missing `node_modules` makes `format:check` fall back to a
+stale global prettier and fail spuriously on `src/scenes/ziklag/terrain.ts`).
+
+**What's next (Sonnet), in priority order:**
+
+1. **Page-verification research to clear the three `released` gates** —
+   `researcher`-agent work, then a short Fable confirmation:
+   - Queue **#13**: Philistine plumed-headdress attribution (gates
+     `gilboa-battle`).
+   - Queue **#16**: the four Beth-shan archaeological-horizon specifics
+     against `mazar-beth-shean-2006` (gates `beth-shan-walls`).
+   - Queue **#17** (narrowed): cremation-scholarship citations + a commentary
+     source card for `claim-burning-bodies` (gates `jabesh-burial`).
+     When all three clear, flip the three scenes, M3, and the three features
+     to `released` together.
+2. **(Still open) Real-hardware performance check** of `gilboa-battle` at
+   high tier — see item 0 below; no sandbox can substitute for it.
+3. Optional, non-gating: DEM refinement for Beth-shan under **ADR-012**'s
+   policy (source card first); villager route-curve walking in
+   `jabesh-burial`.
+
+## State before this slice (2026-07-15, both M3 scenes built, branch `claude/focused-mccarthy-dhkjpx`, PR #30 — since merged)
 
 **Both remaining M3 scenes are built and gate-green** (format:check, lint,
 269 vitest, build, 8/8 e2e — full `npm run verify` re-run after each commit):
