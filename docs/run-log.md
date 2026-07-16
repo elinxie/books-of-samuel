@@ -837,3 +837,46 @@ flagging for `performance-reviewer`, not yet profiled on real hardware. Did
 not touch `beth-shan-walls`, `next-run.md`, `progress.md`,
 `fable-review-queue.md`, `asset-roadmap.md`, or `docs/uncertainty-register.md`
 (out of scope, orchestrator's job). Did not commit/push.
+
+**2026-07-16 — Fable 5 — M3 sign-off review (branch `claude/focused-mccarthy-o8d4os`)**
+Full `docs/fable-review-checklist.md` pass over `gilboa-battle`,
+`beth-shan-walls`, `jabesh-burial` (all built, merged to `main` at `3d72f3d`).
+**Verdict: milestone approved as built; M3 flips `planned`→`in-progress`, not
+`released`** — the three release gates (#13/#16/#17 page-verification) are real
+and stay open; scenes stay `in-progress`; `f-gilboa`/`f-beth-shan`/`f-jabesh`
+→ `in-progress`. Checklist findings: historical plausibility PASS (all
+rendered elements claim-traced; biblical-text claims phrased as narrated;
+disputes in `scholarlyViews` — headdress, wall vs. 2 Sam 21:12 square,
+Rowe/Dagon temples, Beth-shan control, Jabesh site, cremation anomaly,
+tamarisk/oak; confidence spot-checks sound). Anachronism PASS (kit hedged
+comparative-ANE; monuments labeled + removable-on-failed-verification; wall
+disclosed as archaeologically thin; no invented guard/elders/pursuit).
+Visual coherence PASS on build evidence + e2e beat-scrub checks. Performance:
+beth-shan clean (57 figs, 24 draw calls), jabesh fixed (`c5aac8f`), gilboa's
+real-hardware check still open (next-run item 0, non-blocking). Tests:
+`npm run verify` green this session — format/lint/269 vitest/build clean;
+e2e 8/8 (first run failed on the sandbox browser-path issue only;
+`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/...` per the
+documented env note). Source traceability PASS with the known TO VERIFY
+hedges (#13/#16/#17 track exactly those). ADR-011 PASS (scripted reenactment
+only, no win/loss framing, everything ignorable/replayable).
+Queue rulings: **#12 resolved** — ADR-012 (DEM sourcing: SRTM default,
+source-card + provenance disclosure, modern-surface caveat). **#14 resolved**
+— battle-scale chain approved as shipped (honestly labeled disclosed
+extrapolation). **#15 stale duplicate removed** — resolved 2026-07-13; both
+riders verified done in current code (b-lines caption, claim-line-defense
+basis relabel). **#17 narrowed** — ADR-009 funerary-burning extension
+ratified into the ADR text (covered-before-flame both modes, no burning
+silhouette/charring ever, wrapped forms only); citation verification
+remains and gates `jabesh-burial`→`released`. **#13/#16 stay open** —
+page-verification (headdress; Mazar Beth-shean horizon) is researcher work
+this session cannot substitute for; they gate their scenes' `released` only.
+Build-agent ambiguities all approved as shipped: beth-shan dual-range
+confidence picks (town-form `moderate`, control `low` — both right on a
+second read); no-guard retrieval staging + escort withdrawal (omission over
+invention; text narrates neither guard nor evasion); evenly-paced 150s beats
+(execution detail); villager lerp/cross-fade transit (disclosed
+simplification — Sonnet may upgrade to route-curve walking freely, no queue
+item). Path to `released`: clear #13/#16/#17 via `researcher`
+page-verification + a short Fable confirmation, then flip all three scenes,
+M3, and the three features together.

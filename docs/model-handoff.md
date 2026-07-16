@@ -45,6 +45,13 @@ Added in the 2026-07-09 policy session (user-directed):
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | Atlas-first scope with constrained game-like affordances (replaces the blanket "not a game") | `docs/architecture-decisions/adr-011-atlas-first-game-affordances.md` |
 
+Added in the 2026-07-16 Fable M3 sign-off session:
+
+| Decision                                                                             | Where it's recorded                                                  |
+| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| DEM terrain-data sourcing/provenance policy (SRTM default, source-card + disclosure) | `docs/architecture-decisions/adr-012-dem-terrain-data.md`            |
+| ADR-009 extended to funerary handling of the dead (covered-before-flame, both modes) | `docs/architecture-decisions/adr-009-violence-depiction-defaults.md` |
+
 Why these choices: see the individual ADRs — each states the alternatives
 considered and the consequences, not just the conclusion.
 

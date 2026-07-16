@@ -5,9 +5,9 @@ Applies to every scene depicting death or battle violence: Mount Gilboa and the
 Beth-shan aftermath (Milestone 3) first, then the 2 Samuel war narratives.
 The first-visit advisory (`src/ui/ViolenceAdvisory.tsx`, `SceneDef.depictsDeath`)
 landed 2026-07-14 and is wired into `gilboa-battle`; `beth-shan-walls` and
-`jabesh-burial` opt in when built (see `docs/design/jabesh-burial-brief.md` for
-a proposed extension of this policy to funerary burning, not yet ratified into
-this ADR's text — tracked as `fable-review-queue.md` #17).
+`jabesh-burial` opt in via `depictsDeath`. The funerary-burning extension below
+was ratified into this ADR at the M3 sign-off (2026-07-16, Fable — resolves the
+policy half of `fable-review-queue.md` #17).
 
 ## Context
 
@@ -55,6 +55,29 @@ an explorable 3D battlefield is more visceral than the same events in text.
   render; the beat card states the event.
 - Beth-shan: the wall location renders without body forms; the text card
   carries the fact.
+
+### Funerary handling of the dead (ratified at M3 sign-off, 2026-07-16)
+
+This ADR's principles extend beyond battle deaths and the wall display to any
+depiction of handling, burning, or burying the dead (first case: the Jabesh
+pyre, 1 Samuel 31:12b–13):
+
+- **Covered before flame, unconditionally.** In _both_ modes, wrapped remains
+  are laid and fully covered (by pyre timber or equivalent) before any flame
+  renders. No burning human silhouette and no charring detail is ever rendered,
+  in any mode — the same absolute bar as dismemberment.
+- Remains render only as wrapped, anatomically unresolved forms (the
+  `buildWrappedFormGeometry` treatment); skeletal or bone geometry is never
+  rendered in any mode. Bone-gathering reads as a cloth-wrapped bundle.
+- Standard shows the covered pyre lit and burning at documentary distance;
+  reduced holds a wider frame and cuts from lighting to embers (intensity
+  capped at ember level, no full blaze).
+- As everywhere in this ADR, reduction abstracts depiction, never facts:
+  anomalies the text records (cremation against normal practice, the
+  1 Chronicles 10:12 omission) are stated identically in both modes' captions.
+
+Scenes that depict handling of the dead set `depictsDeath` and get the
+first-visit advisory even when no violence occurs on-screen.
 
 ### Default and consent
 
