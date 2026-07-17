@@ -376,7 +376,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'mount-gilboa',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'The battle on the ridge above the Jezreel Valley: Israel’s rout, the deaths of Jonathan, Abinadab, and Malchi-shua, and Saul’s end. To be rendered honestly but without sensationalism, with a reduced-intensity mode.',
     depictsDeath: true,
@@ -510,7 +510,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'beth-shan',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'The Philistine aftermath: armor in the temple of Ashtaroth, bodies fastened to the wall of Beth-shan beneath the old Egyptian-garrison tell. To be rendered honestly but without sensationalism, with a reduced-intensity mode.',
     depictsDeath: true,
@@ -647,7 +647,7 @@ export const SCENES: SceneDef[] = [
     locationId: 'jabesh-gilead',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M3',
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'The valiant men of Jabesh walk through the night, take the bodies from the wall, burn them at Jabesh, bury the bones under the tamarisk, and fast seven days. The quietest scene in the project so far — the kingdom’s first act answered by its last kindness.',
     depictsDeath: true,

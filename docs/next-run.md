@@ -3,7 +3,30 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-16, M3 Fable sign-off done, branch `claude/focused-mccarthy-o8d4os`)
+## State right now (2026-07-17, M3 released)
+
+**The three M3 release gates are closed.** A Fable confirmation pass
+(`docs/run-log.md` 2026-07-17) resolved queue #13 (headdress: citation basis
+now precise and disclosed; residual highland/Iron IIA gap ruled a permanent
+evidentiary condition, not an open citation task — mitigation ratified as
+permanent) and confirmed #16/#17 (pagination-only hedges, queue-#4 precedent).
+All three scenes (`gilboa-battle`, `beth-shan-walls`, `jabesh-burial`), M3,
+and `f-gilboa`/`f-beth-shan`/`f-jabesh` are now `released`/`done`. The
+fable-review-queue's Open section is empty.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Run `npm run verify`** on the Fable pass's status/docs-only edits
+   (expected green — status-field strings only), then commit/PR/merge per the
+   checkpoint protocol.
+2. **(Still open) Real-hardware performance check** of `gilboa-battle` at
+   high tier — see item 0 further down; non-blocking, but no sandbox can
+   substitute for it.
+3. Optional, non-gating refinements: DEM for Beth-shan under ADR-012 (source
+   card first); villager route-curve walking in `jabesh-burial`;
+   `f-period-figures` dress/gear historical-detail review.
+
+## State before this slice (2026-07-16, M3 Fable sign-off done, branch `claude/focused-mccarthy-o8d4os`)
 
 **The M3 sign-off review is done** (full `docs/fable-review-checklist.md`
 pass — see `docs/run-log.md`'s 2026-07-16 entry). PR #30 is merged (`bebb88e`);

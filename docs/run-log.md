@@ -1061,3 +1061,49 @@ gate (this pass's changes are docs/data-only — 3 new JSON source cards +
 `source-index.json` — not expected to affect lint/test/build, but unverified
 here) and handle `git commit`/`push` for this work alongside the sibling
 sessions' own commits.
+
+**2026-07-17 — Fable 5 — M3 release confirmation pass (queue #13/#16/#17)**
+Short Fable-tier confirmation gate-check on the three 2026-07-16 citation
+passes. Decisions:
+
+- **#16/#17 confirmed closed.** Secondary-bibliographic verification with
+  pagination-only `TO VERIFY` hedges matches the accepted queue-#4 precedent
+  for adequately-resolved-short-of-primary-copy. Substance is done: #16's
+  four Beth-shan sub-questions all answered (and the pass _strengthened_ the
+  disclosed wall gap rather than smoothing it — the discipline working);
+  #17's three cremation `scholarlyViews` now carry named, checkable
+  attributions (Keil & Delitzsch 1866, Gill 1748-63, Targum tradition via
+  Gill). `beth-shan-walls` and `jabesh-burial` → `released`.
+- **#13 resolved, gate lifted, `gilboa-battle` → `released`.** The gate was
+  citation verification, and it is done: the headdress basis is precisely
+  characterized and corroborated (Yasur-Landau 2012, Stager & Mountjoy 2007,
+  Master 2021) — a genuine Philistine self-reproduced marker, directly
+  attested only coastal-plain/representational, with the highland/Iron IIA
+  "worn at Gilboa" application a disclosed extrapolation. The residual gap
+  is a permanent evidentiary condition (excavated worn feathered headgear
+  from an Iron I/IIA highland battlefield is not a realistically obtainable
+  find), not an open citation task. Ruling of principle: `released` in this
+  project means the citation basis is honest, precise, and disclosed — not
+  that the historical question is closed (precedents: Ziklag's unresolved
+  3-candidate location shipped `released` in M1; the camel-domestication
+  dispute shipped `released` in M2 behind a dispute chip). The provisional
+  mitigation is ratified as permanent: principal-tier-only rendering, never
+  crowd/infantry/archers; basis `comparative-ane`, confidence `low`; both
+  `scholarlyViews` stay. Riders in the queue's Resolved row: crowd-tier
+  extension needs new evidence + new queue item; pagination hedges and any
+  future highland attestation fold in silently.
+- **M3 → `released`; `f-gilboa`/`f-beth-shan`/`f-jabesh` → `done`.**
+  Partial-release check: non-scene M3-tagged refinement features
+  (`f-dem-terrain`, `f-period-figures`, `f-overview-map`) do not gate the
+  milestone — M1 is `released` with `f-citation-verification` still
+  `in-progress`, and queue #12/ADR-012 explicitly ruled DEM non-gating. The
+  real-hardware perf check (next-run item 0) stays open and non-blocking per
+  the 2026-07-16 sign-off.
+
+Edits: `src/data/scenes.ts` (3 scene statuses), `src/data/milestones.ts` (M3
+status + gating comment), `src/data/features.ts` (3 features → `done`),
+`docs/fable-review-queue.md` (#13 → Resolved with full ruling; Fable-confirmed
+stamps on #16/#17; Open section now empty), `docs/next-run.md` (state sync).
+Status/docs-only — no scene geometry, claims content, or source cards touched.
+`npm run verify` not run this pass; next Sonnet session should run it (expected
+green — status-field string changes only) before commit/PR.
