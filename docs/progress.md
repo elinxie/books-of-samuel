@@ -84,7 +84,16 @@ Scope call: `f-dem-terrain` re-scoped M2 → M3 (no M2 scene is at an identified
 site). Queue #11 (Egyptian dress) resolved — conservative shared-dress kept,
 revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
-## Milestone 3–4: M3 milestone-level status **in-progress** in `src/data/milestones.ts` after the 2026-07-16 Fable sign-off (approved as built; `released` gated only by fable-review-queue #13/#16/#17 page-verification). See `src/data/milestones.ts` for goals.
+## Milestone 3–4: M3 **released** (2026-07-18 Fable sign-off, gate green)
+
+M3 flipped `released` in `src/data/milestones.ts` 2026-07-18: the last
+release gate (queue #13, Philistine headdress attribution) was ruled
+sufficient (queue #16/#17 had already cleared 2026-07-16). All three scenes
+(`gilboa-battle`, `beth-shan-walls`, `jabesh-burial`) → `released`; features
+`f-gilboa`/`f-beth-shan`/`f-jabesh` → `done`; passage `1sam-31` →
+`released`. Full ruling: `docs/fable-review-queue.md` Resolved #13 (Open
+table now empty); `docs/run-log.md` 2026-07-18 entry. See `src/data/
+milestones.ts` for goals.
 
 `gilboa-battle` world-director brief done 2026-07-09 (Fable):
 `docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
@@ -197,13 +206,15 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Fable session, 2026-07-16)
-- `npm run lint` — pass (Fable session, 2026-07-16)
-- `npm run test` (vitest) — 269/269 pass (Fable session, 2026-07-16)
-- `npm run build` — pass (Fable session, 2026-07-16)
-- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-16, sandboxed
+- `npm run format:check` — pass (Sonnet session, 2026-07-18)
+- `npm run lint` — pass (Sonnet session, 2026-07-18)
+- `npm run test` (vitest) — 269/269 pass (Sonnet session, 2026-07-18)
+- `npm run build` — pass (Sonnet session, 2026-07-18)
+- `npm run e2e` (playwright) — 8/8 pass (Sonnet session, 2026-07-18, sandboxed
   with
   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
+- PR #35 (queue #13/#16/#17 citation pass) merged into `main` (`b65136f`);
+  M3 release ruling (this session) lands on top, same branch pattern.
 - PR #30 (both remaining M3 scene builds) merged into `main` (`bebb88e`);
   `main` at `3d72f3d` at the time of the M3 sign-off.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.

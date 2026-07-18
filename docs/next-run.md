@@ -3,42 +3,40 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-16, M3 Fable sign-off done, branch `claude/focused-mccarthy-o8d4os`)
+## State right now (2026-07-18, M3 released, branch `claude/focused-mccarthy-7vh0of`)
 
-**The M3 sign-off review is done** (full `docs/fable-review-checklist.md`
-pass — see `docs/run-log.md`'s 2026-07-16 entry). PR #30 is merged (`bebb88e`);
-`main` was at `3d72f3d` when the review ran. Outcomes: M3 → `in-progress`
-(approved as built; `released` gated only by page-verification),
-`f-gilboa`/`f-beth-shan`/`f-jabesh` → `in-progress`; queue #12 resolved
-(**ADR-012**, DEM sourcing policy), #14 resolved (battle-scale chain
-approved), #15's stale duplicate row removed, #17 narrowed (**ADR-009 now
-carries the funerary-burning extension** — future violence-adjacent scenes
-inherit it as policy). All four build-agent-flagged ambiguities (dual-range
-confidence picks, no-guard staging, even beat pacing, villager
-lerp/cross-fade transit) approved as shipped — the villager transit may be
-upgraded to route-curve walking as ordinary Sonnet work, no review needed.
-`npm run verify` green this session (269 vitest, 8/8 e2e with the sandbox
-`PLAYWRIGHT_CHROMIUM_PATH`; note: run `npm install` first in a fresh
-sandbox — a missing `node_modules` makes `format:check` fall back to a
-stale global prettier and fail spuriously on `src/scenes/ziklag/terrain.ts`).
+**M3 is `released`.** The last release gate (queue #13, Philistine
+plumed-headdress citation sufficiency) was ruled on by a `fable-architect`
+agent this session — ruled sufficient (full reasoning:
+`docs/fable-review-queue.md` Resolved #13; `docs/run-log.md` 2026-07-18
+entry). Queue #16/#17 had already resolved 2026-07-16. Flipped:
+`gilboa-battle`/`beth-shan-walls`/`jabesh-burial` → `released`
+(`src/data/scenes.ts`), M3 → `released` (`src/data/milestones.ts`),
+`f-gilboa`/`f-beth-shan`/`f-jabesh` → `done` (`src/data/features.ts`),
+passage `1sam-31` → `released` (`src/data/passages.ts`). The
+fable-review-queue's Open table is now empty. `npm run verify` green this
+session (269 vitest, 8/8 e2e with the sandbox `PLAYWRIGHT_CHROMIUM_PATH`;
+note: run `npm install` first in a fresh sandbox — a missing `node_modules`
+makes `format:check` fall back to a stale global prettier and fail
+spuriously on `src/scenes/ziklag/terrain.ts`).
 
 **What's next (Sonnet), in priority order:**
 
-1. **Page-verification research to clear the three `released` gates** —
-   `researcher`-agent work, then a short Fable confirmation:
-   - Queue **#13**: Philistine plumed-headdress attribution (gates
-     `gilboa-battle`).
-   - Queue **#16**: the four Beth-shan archaeological-horizon specifics
-     against `mazar-beth-shean-2006` (gates `beth-shan-walls`).
-   - Queue **#17** (narrowed): cremation-scholarship citations + a commentary
-     source card for `claim-burning-bodies` (gates `jabesh-burial`).
-     When all three clear, flip the three scenes, M3, and the three features
-     to `released` together.
-2. **(Still open) Real-hardware performance check** of `gilboa-battle` at
-   high tier — see item 0 below; no sandbox can substitute for it.
+1. **(Still open) Real-hardware performance check** of `gilboa-battle` at
+   high tier — see item 0 further down; no sandbox can substitute for it.
+   This is the only item carried forward from before M3's release; it does
+   not block anything already shipped, but should be checked before trusting
+   the scene's performance profile on real devices.
+2. **M4 scoping** — with M3 fully released, the next milestone (2 Samuel 1–2
+   onward per the chapter-by-chapter roadmap in `docs/model-handoff.md`)
+   needs a `world-director` pass to set scene composition/scale/sourcing
+   before any build work starts. Check `src/data/milestones.ts` for M4's
+   existing goals text before scoping from scratch.
 3. Optional, non-gating: DEM refinement for Beth-shan under **ADR-012**'s
    policy (source card first); villager route-curve walking in
-   `jabesh-burial`.
+   `jabesh-burial`; page-level pagination hedges (`king-stager-2001`,
+   `yadin-1963`, and others flagged `TO VERIFY`) can be tightened opportunistically
+   but don't gate anything.
 
 ## State before this slice (2026-07-15, both M3 scenes built, branch `claude/focused-mccarthy-dhkjpx`, PR #30 — since merged)
 

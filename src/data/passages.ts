@@ -35,7 +35,7 @@ export const PASSAGES: Passage[] = [
       'The Philistines defeat Israel on Mount Gilboa. Saul’s sons Jonathan, Abinadab, and Malchi-shua are killed; Saul, wounded by archers, falls on his own sword. The Philistines display the bodies on the wall of Beth-shan, and the men of Jabesh-gilead walk through the night to retrieve and bury them.',
     sceneIds: ['gilboa-battle', 'beth-shan-walls', 'jabesh-burial'],
     milestoneId: 'M3',
-    status: 'planned',
+    status: 'released',
   },
   {
     id: '2sam-1',

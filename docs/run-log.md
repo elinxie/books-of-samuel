@@ -1061,3 +1061,45 @@ gate (this pass's changes are docs/data-only — 3 new JSON source cards +
 `source-index.json` — not expected to affect lint/test/build, but unverified
 here) and handle `git commit`/`push` for this work alongside the sibling
 sessions' own commits.
+
+**2026-07-18 — Fable 5 — queue #13 ruling + M3 release (branch `claude/focused-mccarthy-7vh0of`)**
+Ruled queue #13 (Philistine plumed-headdress attribution) **sufficient** —
+lifted the last M3 `released` gate. Basis: the 2026-07-16 pass resolved the
+original attribution risk (Egyptian caricature vs. genuine marker) in the
+favorable direction (Ashkelon krater + Ekron linchpin = Philistine
+self-reproduced motif through ~11th c. BCE); the residual gap
+(coastal/representational, no highland/Iron IIA/worn-gear attestation) is a
+disclosed-extrapolation gap of the same kind already shipped `released`
+elsewhere (queue #1 Ziklag ring, #5 camels, #14 battle scale; the same
+claim's own round-shield/straight-sword baseline), and the mitigations
+(principal-tier only, `comparative-ane`/`low`, two-view `scholarlyViews`
+stating the limits precisely) match the residual uncertainty. Page-level
+`TO VERIFY` hedges stay non-blocking per #4/#16/#17 precedent; non-blocking
+rider recorded in the Resolved row (fold in any future page-verification or
+inland attestation; new literature killing the motif pre-Iron I/IIA would
+reopen). Full ruling in `docs/fable-review-queue.md` Resolved #13 (Open
+table now empty). Flipped: `gilboa-battle`/`beth-shan-walls`/`jabesh-burial`
+→ `released` (`scenes.ts`), M3 → `released` (`milestones.ts`, comment
+updated), `f-gilboa`/`f-beth-shan`/`f-jabesh` → `done` (`features.ts`),
+passage `1sam-31` → `released` (`passages.ts`, matching the M1 `1sam-30`
+pattern). Ran `npm run test` + `npm run build` per scope; full `verify` +
+`progress.md`/`next-run.md` updates left to the follow-up pass as directed.
+
+**2026-07-18 — Sonnet 5 — doc sync after M3 release (same branch,
+same session)** Orchestrated the above `fable-architect` ruling (queue #13
+sufficiency, run automatically per user instruction — no live approval
+needed this pass). After the ruling landed: fixed a prettier formatting
+miss in the queue table, re-ran full `npm run verify` (format/lint/269
+vitest/build/8 e2e) — green. Synced `docs/progress.md` (M3 section rewritten
+`in-progress` → `released`, build/test status block refreshed) and
+`docs/uncertainty-register.md` (register #14's status column updated from
+"narrowed, pending Fable" to resolved-and-ruled, underlying historical
+question left explicitly still open — the ruling only settles
+citation-sufficiency-for-release, not the Gilboa-attestation question
+itself). Rewrote `docs/next-run.md`'s top state section (was stale — still
+described the now-completed page-verification research as upcoming work);
+new next-run priority list: real-hardware perf check (still open, item 0,
+carried forward unchanged), M4 world-director scoping (2 Samuel 1-2, the
+next milestone now that M3 is fully released), then non-gating optional
+items (DEM refinement, villager route-curve walking, residual pagination
+hedges).
