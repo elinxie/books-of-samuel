@@ -84,7 +84,7 @@ Scope call: `f-dem-terrain` re-scoped M2 → M3 (no M2 scene is at an identified
 site). Queue #11 (Egyptian dress) resolved — conservative shared-dress kept,
 revisit at the M3 modeled-figure dress review. See `docs/run-log.md`.
 
-## Milestone 3–4: M3 milestone-level status **in-progress** in `src/data/milestones.ts` after the 2026-07-16 Fable sign-off (approved as built; `released` gated only by fable-review-queue #13/#16/#17 page-verification). See `src/data/milestones.ts` for goals.
+## Milestone 3 — 1 Samuel 31 Gilboa: **released** (2026-07-19 Fable release pass; built and approved 2026-07-16, gates #13/#16/#17 since cleared)
 
 `gilboa-battle` world-director brief done 2026-07-09 (Fable):
 `docs/design/gilboa-battle-brief.md`, `SceneDef` beats/viewpoints filled in
@@ -155,6 +155,31 @@ narrowed (ADR-009 funerary-burning extension ratified; citations remain).
 All build-agent-flagged ambiguities approved as shipped. `npm run verify`
 green this session. Full detail: `docs/run-log.md` 2026-07-16 entry.
 
+**Citation-gate clearance, 2026-07-16 (three parallel researcher passes):**
+queue #16 (Beth-shan archaeological horizon) and #17 (Jabesh cremation
+scholarship) resolved via corroborated secondary sources with narrow
+disclosed `TO VERIFY` pagination hedges (queue-#4 precedent); #13 (Philistine
+headdress) narrowed to a precisely characterized question — corroborated
+Philistine self-representation on the coastal plain (Ashkelon krater, Ekron
+linchpin), but no direct highland/Iron IIA attestation. Seven new source
+cards across the three passes.
+
+**M3 release close-out, 2026-07-19 (Fable):** all three scenes → `released`.
+`beth-shan-walls` and `jabesh-burial` flip on the resolved #16/#17 gates.
+`gilboa-battle` flips on a Fable ruling resolving #13: the corroborated-but-
+geographically-adjacent citation state is sufficient because the residual
+highland/Iron IIA gap is a permanent evidentiary state (not closable
+research) and the render already carries it honestly — principal-tier-only
+headdress behind `claim-philistine-kit`'s two-view `scholarlyViews` dispute,
+basis `comparative-ane`, confidence `low`. Cascade per the 2026-07-16
+sign-off's criterion and M2 precedent: M3 milestone → `released`;
+`f-gilboa`/`f-beth-shan`/`f-jabesh` → `done`; `1sam-31` passage and the
+`mount-gilboa`/`beth-shan`/`jabesh-gilead` locations → `released`. Queue
+Open table now empty. Still open, non-blocking (ruled so both at the
+2026-07-16 sign-off and again here): the real-hardware performance check of
+`gilboa-battle` at high tier — top item in `docs/next-run.md`. `f-dem-terrain`
+stays `planned` (non-gating per ADR-012).
+
 **Cross-cutting, done 2026-07-14 (project-wide, not scene-specific):** ADR-009's
 first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 `SceneDef.depictsDeath` flag) — now wired for `gilboa-battle`,
@@ -197,13 +222,12 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Fable session, 2026-07-16)
-- `npm run lint` — pass (Fable session, 2026-07-16)
-- `npm run test` (vitest) — 269/269 pass (Fable session, 2026-07-16)
-- `npm run build` — pass (Fable session, 2026-07-16)
-- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-16, sandboxed
-  with
-  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
+- `npm run format:check` — pass (Fable session, 2026-07-19)
+- `npm run lint` — pass (Fable session, 2026-07-19)
+- `npm run test` (vitest) — pass (Fable session, 2026-07-19)
+- `npm run build` — pass (Fable session, 2026-07-19)
+- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-19, sandboxed
+  with `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`)
 - PR #30 (both remaining M3 scene builds) merged into `main` (`bebb88e`);
   `main` at `3d72f3d` at the time of the M3 sign-off.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.

@@ -1061,3 +1061,55 @@ gate (this pass's changes are docs/data-only — 3 new JSON source cards +
 `source-index.json` — not expected to affect lint/test/build, but unverified
 here) and handle `git commit`/`push` for this work alongside the sibling
 sessions' own commits.
+
+**2026-07-19 — Fable 5 — M3 release sign-off (status flips only; no geometry/claims/source-card changes)**
+Fable-tier release pass over the three M3 gates left open by the 2026-07-16
+citation-verification passes:
+
+- **Beth-shan (`beth-shan-walls`) → `released`.** Queue #16 resolved
+  2026-07-16 with the same disclosed-hedge pattern the project accepted at
+  queue #4 (secondary corroboration on all four sub-questions; only narrow
+  `TO VERIFY` pagination hedges remain, flagged on the source cards). Nothing
+  new blocks; flip confirmed.
+- **Jabesh (`jabesh-burial`) → `released`.** Queue #17 resolved 2026-07-16
+  same pattern (Keil & Delitzsch + Gill named attributions, ad loc. 1 Sam
+  31:12-13; ADR-009 funerary-burning extension already ratified at the M3
+  sign-off). Flip confirmed.
+- **Gilboa (`gilboa-battle`) → `released` — the actual judgment call (queue
+  #13 moved to Resolved).** Ruling: "genuinely corroborated Philistine
+  marker, chronologically/geographically adjacent but not directly attested
+  at Gilboa" IS a sufficient citation basis given the render's shape. Core
+  reasons: (1) the gate as opened asked whether the attribution was real at
+  all — now answered by three peer-reviewed sources (Ashkelon krater, Ekron
+  linchpin = Philistine self-representation, not Egyptian propaganda only);
+  (2) the residual highland/Iron IIA gap is a permanent evidentiary state no
+  research pass can close — a `released` gate should gate closable work, and
+  the project's designed instrument for permanent uncertainty is the
+  `scholarlyViews` dispute label, in place and precisely worded on
+  `claim-philistine-kit` (basis `comparative-ane`, confidence `low`);
+  (3) the inference is modest — a coastal force campaigning inland wearing
+  its own documented gear, with Master 2021 independently supporting
+  Philistine highland activity in this window; (4) released precedent
+  already spans this band (unattested-but-narrated Beth-shan wall,
+  `claim-battle-scale`'s disclosed chain, M2 camels behind a dispute chip);
+  (5) principal-tier-only rendering keeps extent conservative. Riders: fold
+  in any future highland attestation or published rejection; the
+  `king-stager-2001`/`yadin-1963` page-check stays a narrow non-blocking
+  `TO VERIFY`.
+- **Real-hardware perf check (gilboa, high tier): ruled non-blocking,
+  independent of the citation question** — upholding the 2026-07-16
+  sign-off's own ruling. It is a device/rendering-quality rider (mitigations
+  already named: quality tiers, fewer pose buckets, capsule LOD), not a
+  historical-integrity gate; sandboxed relative measurement bounds it as
+  non-catastrophic. Stays the top open item in `next-run.md`.
+- **Cascade flips** per the 2026-07-16 sign-off's stated criterion ("flip all
+  three scenes, M3, and the three features together") and M2 precedent:
+  `M3` → `released`; `f-gilboa`/`f-beth-shan`/`f-jabesh` → `done`;
+  `1sam-31` passage → `released`; `mount-gilboa`/`beth-shan`/`jabesh-gilead`
+  locations → `released`. `f-dem-terrain` stays `planned` (explicitly
+  non-gating per ADR-012/queue #12).
+- Bookkeeping: queue Open table now empty (#13 → Resolved with full
+  reasoning; status-flip note added covering #16/#17); `progress.md` M3
+  section + `next-run.md` state block updated. `npm run verify` green
+  (status-field/doc-only diff). Not committed — orchestrator reviews the
+  diff and handles git.

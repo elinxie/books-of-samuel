@@ -50,9 +50,14 @@ export const MILESTONES: Milestone[] = [
     id: 'M3',
     label: 'Milestone 3 — 1 Samuel 31 Gilboa',
     // 2026-07-16 Fable sign-off: all three scenes built, reviewed, and approved
-    // against docs/fable-review-checklist.md; `released` is gated only by the
-    // open page-verification items (fable-review-queue #13/#16/#17).
-    status: 'in-progress',
+    // against docs/fable-review-checklist.md, with `released` gated only by the
+    // page-verification items (fable-review-queue #13/#16/#17). 2026-07-19
+    // Fable release pass: #16/#17 resolved 2026-07-16; #13 resolved this pass
+    // (corroborated marker + disclosed extrapolation behind a scholarlyViews
+    // dispute is a sufficient citation basis) — all three scenes `released`,
+    // so M3 flips per the sign-off's own criterion. The gilboa real-hardware
+    // perf check stays open as a non-blocking rider (docs/next-run.md).
+    status: 'released',
     passageRefs: ['1 Samuel 31'],
     goals: [
       'Mount Gilboa battlefield geography',
