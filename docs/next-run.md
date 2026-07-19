@@ -3,7 +3,44 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-16, M3 Fable sign-off done, branch `claude/focused-mccarthy-o8d4os`)
+## State right now (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
+
+**M3 is fully released.** The 2026-07-19 Fable release pass confirmed the
+resolved #16/#17 citation gates and made the #13 judgment call (headdress:
+corroborated-adjacent citation state + `scholarlyViews` dispute label is
+sufficient — full reasoning in `docs/fable-review-queue.md`'s #13 Resolved
+row and `docs/run-log.md` 2026-07-19). Flips, all landed in data:
+`gilboa-battle`/`beth-shan-walls`/`jabesh-burial` → `released`; `M3` →
+`released`; `f-gilboa`/`f-beth-shan`/`f-jabesh` → `done`; `1sam-31` passage
+and `mount-gilboa`/`beth-shan`/`jabesh-gilead` locations → `released`.
+**The fable-review-queue Open table is empty.** `npm run verify` green after
+the flips (status-field/doc-only diff).
+
+**What's next (Sonnet), in priority order:**
+
+1. **(Top, still open) Real-hardware performance check** of `gilboa-battle`
+   at high quality tier — the one thing no sandboxed session can do. Ruled
+   non-blocking for `released` (twice: 2026-07-16 sign-off and the
+   2026-07-19 release pass), but it is the last open M3 rider. The sandboxed
+   measurement only showed a ~1.5x relative frame-time regression on a
+   GPU-less SwiftShader renderer — evidence it's not catastrophic, not proof
+   it's fine. Load the deployed scene on a real device; if it's bad, the
+   likely fixes are fewer pose buckets (4 instead of 6-8), lower figure-count
+   ratios, or a capsule-fallback LOD at distance — see the 2026-07-09 state
+   notes below.
+2. **Pages-live check** of `https://elinxie.github.io/books-of-samuel/` —
+   still blocked from sandboxes by proxy policy (see Environment notes);
+   natural to fold into item 1 since both need a real browser on real
+   hardware.
+3. Optional, non-gating: DEM refinement for Beth-shan under ADR-012 (source
+   card first); villager route-curve walking in `jabesh-burial`; the narrow
+   `TO VERIFY` pagination hedges on several source cards if primary copies
+   ever become accessible (no queue items — fold in opportunistically).
+4. **M4 (2 Samuel 1–2) is the next milestone** — needs a Fable/world-director
+   scene-direction pass before any build work (same pattern as M2/M3: briefs
+   first, then Sonnet builds). Do not start M4 scene geometry without briefs.
+
+## State before this slice (2026-07-16, M3 Fable sign-off done, branch `claude/focused-mccarthy-o8d4os`)
 
 **The M3 sign-off review is done** (full `docs/fable-review-checklist.md`
 pass — see `docs/run-log.md`'s 2026-07-16 entry). PR #30 is merged (`bebb88e`);

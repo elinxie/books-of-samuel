@@ -124,7 +124,7 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 32.44, lon: 35.41, confidence: 'high' },
     sceneIds: ['gilboa-battle'],
     claimIds: [],
-    status: 'planned',
+    status: 'released',
   },
   {
     id: 'beth-shan',
@@ -149,7 +149,7 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 32.5, lon: 35.5, confidence: 'high' },
     sceneIds: ['beth-shan-walls'],
     claimIds: [],
-    status: 'planned',
+    status: 'released',
   },
   {
     id: 'jabesh-gilead',
@@ -180,7 +180,7 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 32.4, lon: 35.67, confidence: 'low' },
     sceneIds: ['jabesh-burial'],
     claimIds: [],
-    status: 'planned',
+    status: 'released',
   },
   {
     id: 'hebron',
