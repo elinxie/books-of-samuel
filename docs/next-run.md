@@ -3,7 +3,42 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
+## State right now (2026-07-20, M4 scoped — Fable scoping pass)
+
+**M4 (2 Sam 1–2) is scoped; briefs are the next work.** Decision record:
+queue #18 (Resolved), **ADR-013** (political geography is atlas-tier by
+default), `milestones.ts` M4 goals, `run-log.md` 2026-07-20. Three 3D
+scenes: `ziklag-lament` (2 Sam 1), `hebron-anointing` (2 Sam 2:1–7),
+`gibeon-pool` (2 Sam 2:12–32). No Mahanaim scene — `mahanaim` +
+`gibeon` location stubs landed; the divided-kingdom context view is a map
+layer on `f-overview-map` (re-scoped M3 → M4). `scenes.ts` intentionally
+untouched (no beats/viewpoints yet).
+
+**What's next, in order:**
+
+1. **World-director briefs (Fable-tier `world-director` agent, one pass per
+   scene, same pattern as `docs/design/gilboa-battle-brief.md`), in this
+   order:**
+   - `docs/design/ziklag-lament-brief.md` — cheapest first (Ziklag geometry
+     exists; decide reuse extent, days-after ruin state, messenger
+     staging, execution treatment under ADR-009, and how the lament is
+     handled inside the ESV excerpt budget — short excerpts only).
+   - `docs/design/hebron-anointing-brief.md` — new settlement build (Tell
+     Rumeida highland town; ADR-006 conventions, own period/regional claim
+     per queue-#1 rider — the Ziklag ring plan is not a template).
+   - `docs/design/gibeon-pool-brief.md` — pool staging (el-Jib rock-cut
+     pool is a proposed, not certain, match — needs a claim with honest
+     confidence), twelve-a-side contest + Asahel death under ADR-009,
+     scripted only per ADR-011.
+2. **Sonnet builds follow briefs** (threejs-engineer per scene, verify gate
+   per scene) — do not start scene geometry before its brief exists.
+3. **`f-overview-map` divided-kingdom layer** — Sonnet-tier under ADR-013
+   (claims + `scholarlyViews` for the 2 Sam 2:9 territory list, confidence
+   shading, no hard borders); can proceed in parallel with builds.
+4. **(Carried, still open) Real-hardware perf check** of `gilboa-battle` +
+   Pages-live check — unchanged from the 2026-07-19 list below.
+
+## State before this slice (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
 
 **M3 is fully released.** The 2026-07-19 Fable release pass confirmed the
 resolved #16/#17 citation gates and made the #13 judgment call (headdress:

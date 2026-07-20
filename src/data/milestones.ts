@@ -70,13 +70,25 @@ export const MILESTONES: Milestone[] = [
   {
     id: 'M4',
     label: 'Milestone 4 — 2 Samuel 1–2',
+    // 2026-07-20 Fable scoping pass (pre-build): three 3D scenes —
+    // `ziklag-lament` (2 Sam 1, at Ziklag per 1:1, reusing the released
+    // settlement; messenger, execution, lament), `hebron-anointing`
+    // (2 Sam 2:1-7, one scene, arrival + anointing + Jabesh message as
+    // beats), `gibeon-pool` (2 Sam 2:12-32, contest/Asahel/disengagement —
+    // added to the original goal sketch because the milestone's passageRefs
+    // include all of 2 Sam 2 and the event is narrated and site-anchored).
+    // The Ish-bosheth/Abner material (2:8-11) is atlas-tier per ADR-013:
+    // `mahanaim` LocationEntry + divided-kingdom layer on `f-overview-map`
+    // (re-scoped M3 → M4), no Mahanaim scene. World-director briefs
+    // required per scene before build (docs/next-run.md).
     status: 'planned',
     passageRefs: ['2 Samuel 1', '2 Samuel 2'],
     goals: [
-      'News of Saul’s death and David’s lament',
-      'David at Hebron; Judah anoints David',
-      'Ish-bosheth / Abner political geography',
-      'Early divided-kingdom context view',
+      'News of Saul’s death and David’s lament at Ziklag (scene: ziklag-lament)',
+      'David at Hebron; Judah anoints David (scene: hebron-anointing)',
+      'Ish-bosheth / Abner political geography — atlas-tier per ADR-013 (mahanaim location entry, no scene)',
+      'Early divided-kingdom context view (divided-kingdom map layer on f-overview-map, confidence-shaded)',
+      'Pool of Gibeon engagement and Asahel’s death (scene: gibeon-pool)',
     ],
   },
 ];

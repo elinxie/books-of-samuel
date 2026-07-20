@@ -206,6 +206,70 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'planned',
   },
+  {
+    id: 'mahanaim',
+    name: 'Mahanaim',
+    region: 'Transjordan, lower Jabbok (Zarqa) valley',
+    summary:
+      'The trans-Jordan town where Abner installed Ish-bosheth as king over the northern tribes (2 Samuel 2:8–9), later David’s refuge during Absalom’s revolt. Named in the Jacob narratives (Genesis 32:2); its precise site is disputed. Per ADR-013 this is an atlas-tier location — map marker and location page, no 3D scene — since 2 Samuel 2:8–11 narrates no scene-able event here.',
+    identification: {
+      disputed: true,
+      views: [
+        {
+          id: 'loc-view-mahanaim-tulul-dhahab',
+          label: 'Tulul adh-Dhahab (twin tells on the Jabbok)',
+          proponents: [
+            'e.g., candidates discussed in historical-geography surveys (attribution not yet page-verified)',
+          ],
+          summary:
+            'Twin mounds commanding the lower Jabbok gorge, a common modern candidate (with disagreement over which of the two tells, or whether the pair, is Mahanaim vs. Penuel).',
+          confidence: 'low',
+          sourceIds: ['rainey-notley-2006'],
+        },
+        {
+          id: 'loc-view-mahanaim-khirbet-mahneh',
+          label: 'Khirbat Mahna (name-continuity candidate)',
+          proponents: [
+            'e.g., earlier surveyors following the Arabic name continuity (attribution not yet page-verified)',
+          ],
+          summary:
+            'Older identification resting on the preserved name north of the Jabbok; topographically weaker fit with the narrative itineraries.',
+          confidence: 'low',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 32.19, lon: 35.67, confidence: 'low' },
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
+  {
+    id: 'gibeon',
+    name: 'Gibeon',
+    altNames: ['el-Jib'],
+    region: 'Central Benjamin plateau',
+    summary:
+      'The Benjaminite town at whose pool the forces of Joab and Abner met, fought after the twelve-a-side contest, and where Asahel died in the pursuit (2 Samuel 2:12–32). Securely identified with el-Jib, where excavations recovered inscribed jar handles bearing the town’s name and a great rock-cut pool.',
+    identification: {
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-gibeon-el-jib',
+          label: 'el-Jib',
+          proponents: ['James B. Pritchard (excavator, 1956–1962)'],
+          summary:
+            'Identification secured by inscribed jar handles naming Gibeon found in the excavations; the rock-cut pool at the site is a frequently proposed (though not certain) match for the pool of 2 Samuel 2:13.',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.85, lon: 35.18, confidence: 'high' },
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

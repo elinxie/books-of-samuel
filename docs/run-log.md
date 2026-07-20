@@ -1113,3 +1113,27 @@ citation-verification passes:
   section + `next-run.md` state block updated. `npm run verify` green
   (status-field/doc-only diff). Not committed — orchestrator reviews the
   diff and handles git.
+
+**2026-07-20 — Fable 5 — M4 scoping pass (scenes/locations decided, no build)**
+
+- **M4 scene breakdown decided** (queue #18, opened+resolved this pass):
+  three 3D scenes — `ziklag-lament` (2 Sam 1, new scene at released
+  `ziklag` location, reuses settlement; messenger/execution/lament,
+  `depictsDeath`), `hebron-anointing` (2 Sam 2:1–7, one scene, arrival +
+  anointing + Jabesh message as beats), `gibeon-pool` (2 Sam 2:12–32,
+  contest/Asahel/disengagement, `depictsDeath`) — Gibeon **added** beyond
+  the original goal sketch since M4's passageRefs cover all of 2 Sam 2 and
+  the event is narrated + site-anchored (el-Jib, secure).
+- **ADR-013** (new): political/administrative geography with no narrated
+  place-anchored event is atlas-tier by default — LocationEntry + map/study
+  feature, not a 3D scene. Applied: **no Mahanaim scene**; 2 Sam 2:8–11 is
+  carried by the new `mahanaim` LocationEntry (disputed identification, two
+  hedged views) + a divided-kingdom layer on `f-overview-map` (re-scoped
+  M3 → M4; 2:9 "Ashurites" dispute must get `scholarlyViews` at build).
+- Data landed: `locations.ts` + `mahanaim`, `gibeon` stubs (planned,
+  sceneIds []); `milestones.ts` M4 goals rewritten to name the scenes +
+  ADR-013 treatment; `features.ts` `f-2sam`/`f-overview-map` descriptions +
+  re-scope. **No scenes.ts changes, no briefs, no geometry** — by design.
+- Next: world-director briefs, one pass per scene, order ziklag-lament →
+  hebron-anointing → gibeon-pool, then Sonnet builds (`next-run.md`
+  updated). Not committed — orchestrator handles git.

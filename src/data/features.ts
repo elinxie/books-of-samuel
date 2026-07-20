@@ -180,7 +180,8 @@ export const FEATURES: FeatureEntry[] = [
   {
     id: 'f-2sam',
     title: '2 Samuel 1–2 scenes',
-    description: 'Lament, Hebron anointing, divided-kingdom geography.',
+    description:
+      'Three scenes per the 2026-07-20 M4 scoping pass: ziklag-lament (2 Sam 1), hebron-anointing (2 Sam 2:1–7), gibeon-pool (2 Sam 2:12–32). Divided-kingdom geography is atlas-tier (ADR-013) via f-overview-map.',
     status: 'planned',
     milestoneId: 'M4',
   },
@@ -211,8 +212,8 @@ export const FEATURES: FeatureEntry[] = [
     id: 'f-overview-map',
     title: 'Regional overview map',
     description:
-      'Political geography of Israel, Judah, Philistia, and the Amalekite fringe with confidence shading.',
+      'Political geography of Israel, Judah, Philistia, and the Amalekite fringe with confidence shading. Re-scoped M3 → M4 (2026-07-20): carries M4’s early divided-kingdom context view — David’s Judah vs. Ish-bosheth’s claimed territories (2 Sam 2:8–11), atlas-tier per ADR-013, with the 2:9 territory-list textual disputes surfaced via scholarlyViews.',
     status: 'planned',
-    milestoneId: 'M3',
+    milestoneId: 'M4',
   },
 ];
