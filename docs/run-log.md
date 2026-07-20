@@ -1137,3 +1137,32 @@ citation-verification passes:
 - Next: world-director briefs, one pass per scene, order ziklag-lament →
   hebron-anointing → gibeon-pool, then Sonnet builds (`next-run.md`
   updated). Not committed — orchestrator handles git.
+
+**2026-07-20 — Fable 5 (world-director) — `ziklag-lament` scene brief (M4 brief 1/3)**
+
+- `docs/design/ziklag-lament-brief.md` written (2 Sam 1 in full; new scene,
+  not a `ziklag-aftermath` retrofit, per queue #18). Key calls: settlement
+  **reused by import** from `src/scenes/ziklag/`'s deterministic layout/
+  terrain specs (identical footprint/seed/ruin state; no fork, no behavior
+  change to the released scene); days-after state = smoke system off, ruin
+  unrepaired (rebuilding unstated — omission over invention), habitation
+  staging as disclosed placeholder (`claim-ziklag-interval`); **no flashback**
+  of the Amalekite's account in any mode — the 1 Sam 31 vs. 2 Sam 1:6–10
+  contradiction carried textually as `scholarlyViews` on
+  `claim-amalekite-account` (lying-scavenger vs. independent-tradition);
+  crown/armlet as narrated props with placeholder forms; execution (1:13–16)
+  under ADR-009 at documentary distance plus a new **neutral-framing rule
+  for protagonist-ordered killings** (narrated rationale only, no
+  approval/catharsis staging, apology-of-David frame in study text not
+  staging) — **proposed for ratification into ADR-009 at M4 sign-off**, per
+  the M3 funerary-extension pattern; lament held to ≤2 short quoted spans in
+  beat captions (ADR-003 budget — refrain quoted once, rest paraphrased);
+  characters: reuse `david`/`davids-band`/`people-of-ziklag` (verified in
+  `characters.ts`), add only `amalekite-messenger`; ~85–95 figures high
+  tier, ≤ `ziklag-aftermath` per-tier draw calls. New claims listed as
+  claims-needed in the brief (Sonnet creates at build, M2/M3 pattern);
+  `scenes.ts` untouched by design.
+- `docs/next-run.md` updated: `hebron-anointing-brief.md` is the next
+  world-director pass; `ziklag-lament` build may start now per its brief
+  (M3 precedent — builds follow briefs scene-by-scene). Not committed —
+  orchestrator handles git.

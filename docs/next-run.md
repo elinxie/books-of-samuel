@@ -3,7 +3,38 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-20, M4 scoped — Fable scoping pass)
+## State right now (2026-07-20, ziklag-lament brief done — world-director pass)
+
+**`docs/design/ziklag-lament-brief.md` is written** (Fable world-director
+pass, same day as the scoping pass below). Key calls: reuse the released
+Ziklag layout **by import, not fork** (identical footprint/seed/ruin state;
+no behavior change to `ziklag-aftermath`); days-after state = smoke off,
+ruin unrepaired, habitation staging as placeholder; **no flashback** of the
+Amalekite's account in any mode (the 1 Sam 31 contradiction is
+`scholarlyViews` on `claim-amalekite-account`); execution under ADR-009 at
+documentary distance **plus a neutral-framing rule for protagonist-ordered
+killings** (proposed for ratification into ADR-009 at M4 sign-off, per the
+M3 funerary-extension pattern); lament held to ≤2 short quoted spans inside
+the ADR-003 beat-caption budget; one new character entity
+(`amalekite-messenger`); ~85–95 figures high tier, ≤ `ziklag-aftermath`
+draw calls. `scenes.ts` still untouched by design.
+
+**What's next, in order:**
+
+1. **`docs/design/hebron-anointing-brief.md`** — next world-director
+   (Fable-tier) pass: new settlement build (Tell Rumeida highland town;
+   ADR-006 conventions, own period/regional claim per the queue-#1 rider —
+   the Ziklag ring plan is not a template). Then `gibeon-pool-brief.md`.
+2. **Sonnet may build `ziklag-lament` now** per its brief
+   (threejs-engineer, `npm run verify` gate) — builds follow briefs
+   scene-by-scene and need not wait for the other two briefs (M3
+   precedent: Gilboa built while its siblings' briefs were pending).
+3. **`f-overview-map` divided-kingdom layer** — Sonnet-tier under ADR-013;
+   can proceed in parallel.
+4. **(Carried, still open) Real-hardware perf check** of `gilboa-battle` +
+   Pages-live check — unchanged.
+
+## State before this slice (2026-07-20, M4 scoped — Fable scoping pass)
 
 **M4 (2 Sam 1–2) is scoped; briefs are the next work.** Decision record:
 queue #18 (Resolved), **ADR-013** (political geography is atlas-tier by
@@ -23,6 +54,7 @@ untouched (no beats/viewpoints yet).
      exists; decide reuse extent, days-after ruin state, messenger
      staging, execution treatment under ADR-009, and how the lament is
      handled inside the ESV excerpt budget — short excerpts only).
+     **Done 2026-07-20 — see the section above.**
    - `docs/design/hebron-anointing-brief.md` — new settlement build (Tell
      Rumeida highland town; ADR-006 conventions, own period/regional claim
      per queue-#1 rider — the Ziklag ring plan is not a template).
