@@ -3,7 +3,45 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-20, hebron-anointing brief done — world-director pass)
+## State right now (2026-07-20, all three M4 briefs done — Fable-tier pre-build work closed)
+
+**All three M4 world-director briefs exist.** `ziklag-lament-brief.md` and
+`hebron-anointing-brief.md` are genuine Fable passes; **`gibeon-pool-brief.md`
+is provisional — written by Sonnet**, because the org's monthly API spend
+limit was hit twice in a row attempting the Fable `world-director` agent for
+it (first attempt cut off after finishing the file, recovered; second attempt
+failed immediately, no file). Per `docs/model-handoff.md`'s documented
+fallback, Sonnet wrote it directly rather than blocking M4, matching the
+sibling briefs' structure/discipline as closely as possible. **Logged as
+queue #19** — the contest-choreography call (twelve-a-side mutual killing, a
+new pose pattern) specifically needs Fable confirmation before `gibeon-pool`
+ships `released`; not blocking to build. Key calls across all three: pool
+rendered as centerpiece with honestly hedged identification confidence;
+contest staged as simultaneous/reciprocal (new pattern, flagged); Asahel's
+death gets Gilboa-armor-bearer-level individual care; casualty count (379)
+stated via caption, not modeled as bodies; `joab`/`abner`/`asahel`/`abishai`
+added as new principal-tier characters, Ish-bosheth stays unstaged per
+ADR-013; ~95–115 peak figures. `scenes.ts` untouched by all three briefs.
+
+**What's next, in order:**
+
+1. **Sonnet builds all three M4 scenes** (`threejs-engineer`, `npm run
+verify` gate per scene) — any order, per M3 precedent (Gilboa built while
+   siblings' briefs were pending). `hebron-anointing` starts with its
+   researcher-gated Hebron source-card step; `gibeon-pool` likewise gated on
+   its Gibeon-excavation source card (both briefs' "Required source basis").
+2. **`f-overview-map` divided-kingdom layer** — Sonnet-tier under ADR-013;
+   parallelizable with the builds above.
+3. **Fable confirmation of queue #19** (`gibeon-pool`'s provisional
+   choreography) — next time Fable is available; not blocking to build, only
+   to `gibeon-pool` → `released`.
+4. **(Carried, still open) Real-hardware perf check** of `gilboa-battle` +
+   Pages-live check — unchanged.
+
+This closes the M4 pre-build (world-director/Fable-tier) phase begun by the
+2026-07-20 scoping pass below.
+
+## State before this slice (2026-07-20, hebron-anointing brief done — world-director pass)
 
 **`docs/design/hebron-anointing-brief.md` is written** (Fable world-director
 pass, M4 brief 2/3). Key calls: **new terraced highland hill-town build** at

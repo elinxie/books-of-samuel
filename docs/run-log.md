@@ -1202,3 +1202,47 @@ locations.ts`); still `planned`, `sceneIds: []`. New claims/characters/
   session directly rather than re-running the agent. **The spend limit is a
   live constraint going into the `gibeon-pool` brief and any further Fable
   work this session** — flagged to the user.
+
+**2026-07-20 — Sonnet 5 — `gibeon-pool` scene brief written provisionally (M4 brief 3/3, Fable unavailable)**
+
+- Retried the `world-director` agent for `gibeon-pool`: failed immediately
+  with the same org monthly spend-limit error, no file produced this time.
+  Per `docs/model-handoff.md`'s documented Fable-unavailable fallback,
+  wrote `docs/design/gibeon-pool-brief.md` directly as Sonnet instead of
+  blocking M4 further, matching the sibling briefs' structure/discipline as
+  closely as possible and marking it explicitly provisional in its own
+  header.
+- Key calls: pool rendered as centerpiece, identification confidence
+  **moderate** (hedged, matching the `gibeon` `LocationEntry`); twelve-a-side
+  contest (2:14–16) staged as a **new simultaneous/reciprocal killing
+  pattern** — mirrored pairs, grip-and-thrust posture held then collapse
+  together, no blade-entry frame in any mode, reduced mode elides the
+  posture and cuts straight to the fallen (flagged for genuine Fable
+  confirmation, queue **#19**, non-blocking to build); wider battle (2:17)
+  compressed to ~40–60 background figures, explicitly not scaled to the
+  narrated 379-casualty total; Asahel's death (2:18–23) gets individual
+  three-part staging (pursuit, Abner's two warnings as a held gesture beat,
+  the thrust at documentary distance) at the same care level as Gilboa's
+  armor-bearer beat; the evening halt (2:24–28) staged as dialogue, not
+  action; casualty count (2:30–31) stated via caption/statistic, not
+  modeled as ~380 individual bodies; closing card paraphrases 2 Sam 3:1
+  without scoping M5. New characters: `joab`, `abner`, `asahel`, `abishai`
+  (principal tier), `servants-of-ish-bosheth` (group); Ish-bosheth himself
+  stays unstaged per ADR-013. ~95–115 peak figures high tier. `scenes.ts`
+  untouched by design; `gibeon`'s `LocationEntry` left as-is (already
+  carried the hedged pool language from the scoping pass).
+- **Queue #19 opened** in `docs/fable-review-queue.md`: the contest
+  choreography (and a general spot-check of the rest of the brief) needs a
+  real Fable pass before `gibeon-pool` ships `released`; not blocking to
+  build, per M3 precedent (scenes build ahead of their citation/judgment
+  gates routinely).
+- `docs/next-run.md` top section rewritten: all three M4 briefs now exist;
+  M4's Fable-tier pre-build phase is closed; next is Sonnet builds for all
+  three scenes (any order), the `f-overview-map` divided-kingdom layer in
+  parallel, and — whenever Fable is next available — confirming queue #19.
+  Real-hardware perf check + Pages-live check carried forward unchanged.
+- Spend limit note carries forward: **Fable is unavailable for the rest of
+  this session** unless the org raises the limit — flagged to the user via
+  push notification; further milestone-tier judgment calls should wait for
+  Fable or follow this same documented provisional-and-flag path rather than
+  blocking.
