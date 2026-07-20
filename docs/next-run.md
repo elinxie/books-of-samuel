@@ -3,7 +3,49 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-20, ziklag-lament brief done — world-director pass)
+## State right now (2026-07-20, hebron-anointing brief done — world-director pass)
+
+**`docs/design/hebron-anointing-brief.md` is written** (Fable world-director
+pass, M4 brief 2/3). Key calls: **new terraced highland hill-town build** at
+Tell Rumeida — Beth-shan precedent (secure site, schematic town form,
+disclosed), explicitly **not** the Ziklag ring (queue-#1 rider honored; ADR-006
+queue-#8 extraction not triggered — no second enclosed-ring consumer); MB
+megalithic wall rendered as weathered relic **only if** a checkable
+Hebron-archaeology source card lands at build (fallback: omit, composition must
+read without it); anointing staged open-air at the gate space — oil from a
+horn/flask poured by an **anonymous elder of Judah**, no crown/throne/dais/
+palace/procession/trumpet in any form (one-tribe elevation, not a coronation;
+ADR-011 no-triumph framing); `ahinoam`/`abigail` added as the project's first
+named women (principal-tier at ascent/arrival only, presence at the anointing
+not asserted); 2:3 dispersal to the "towns of Hebron" carried by
+thinning-column staging + caption, no satellite hamlets; Jabesh message
+(2:5–7) = oral messengers departing the north road, **no scroll**, no Jabesh
+geometry reuse, reception unstaged; 2:8–11 closing card only (ADR-013);
+`depictsDeath: false` — no advisory, no mode split; 3 short ESV excerpts
+budgeted ("To Hebron." / 2:4a / 2:5 blessing) exhausting the span budget;
+~110–130 peak figures high tier, ≤ `ziklag-aftermath` per-tier draw calls, no
+particle systems. `hebron` location summary enriched (still `planned`,
+`sceneIds: []`); `scenes.ts` untouched by design. New claims/characters/assets
+listed as needed-at-build in the brief (M2/M3 pattern — Sonnet creates them).
+
+**What's next, in order:**
+
+1. **`docs/design/gibeon-pool-brief.md`** — final M4 world-director
+   (Fable-tier) pass: pool staging (el-Jib rock-cut pool is a proposed, not
+   certain, match — needs a claim with honest confidence), twelve-a-side
+   contest + Asahel death under ADR-009, scripted only per ADR-011.
+2. **Sonnet may build `ziklag-lament` and `hebron-anointing` now** per their
+   briefs (threejs-engineer, `npm run verify` gate per scene) — builds follow
+   briefs scene-by-scene and need not wait for the gibeon-pool brief (M3
+   precedent). Note `hebron-anointing`'s build starts with the
+   researcher-gated Hebron source-card step (see the brief's Required source
+   basis).
+3. **`f-overview-map` divided-kingdom layer** — Sonnet-tier under ADR-013;
+   can proceed in parallel.
+4. **(Carried, still open) Real-hardware perf check** of `gilboa-battle` +
+   Pages-live check — unchanged.
+
+## State before this slice (2026-07-20, ziklag-lament brief done — world-director pass)
 
 **`docs/design/ziklag-lament-brief.md` is written** (Fable world-director
 pass, same day as the scoping pass below). Key calls: reuse the released
@@ -24,7 +66,8 @@ draw calls. `scenes.ts` still untouched by design.
 1. **`docs/design/hebron-anointing-brief.md`** — next world-director
    (Fable-tier) pass: new settlement build (Tell Rumeida highland town;
    ADR-006 conventions, own period/regional claim per the queue-#1 rider —
-   the Ziklag ring plan is not a template). Then `gibeon-pool-brief.md`.
+   the Ziklag ring plan is not a template). **Done 2026-07-20 — see the
+   section above.** Then `gibeon-pool-brief.md`.
 2. **Sonnet may build `ziklag-lament` now** per its brief
    (threejs-engineer, `npm run verify` gate) — builds follow briefs
    scene-by-scene and need not wait for the other two briefs (M3
@@ -58,6 +101,7 @@ untouched (no beats/viewpoints yet).
    - `docs/design/hebron-anointing-brief.md` — new settlement build (Tell
      Rumeida highland town; ADR-006 conventions, own period/regional claim
      per queue-#1 rider — the Ziklag ring plan is not a template).
+     **Done 2026-07-20 — see the top section.**
    - `docs/design/gibeon-pool-brief.md` — pool staging (el-Jib rock-cut
      pool is a proposed, not certain, match — needs a claim with honest
      confidence), twelve-a-side contest + Asahel death under ADR-009,

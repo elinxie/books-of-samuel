@@ -188,7 +188,7 @@ export const LOCATIONS: LocationEntry[] = [
     altNames: ['Tell Rumeida / Tel Hevron'],
     region: 'Southern Judean highlands',
     summary:
-      'Where David is anointed king over Judah (2 Samuel 2). Identified with Tell Rumeida above the modern city.',
+      'The highland town where the men of Judah anointed David king over the house of Judah (2 Samuel 2:1–7), and his capital for seven and a half years before Jerusalem (2 Samuel 2:11; 5:5). Among the highest towns of the hill country, identified with Tell Rumeida above the modern city.',
     identification: {
       disputed: false,
       views: [

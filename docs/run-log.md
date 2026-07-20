@@ -1166,3 +1166,39 @@ citation-verification passes:
   world-director pass; `ziklag-lament` build may start now per its brief
   (M3 precedent — builds follow briefs scene-by-scene). Not committed —
   orchestrator handles git.
+
+**2026-07-20 — Fable 5 (world-director) — `hebron-anointing` scene brief (M4 brief 2/3)**
+
+- `docs/design/hebron-anointing-brief.md` written (2 Sam 2:1–7, one scene;
+  2:8–11 stays atlas-tier per ADR-013, Gibeon is brief 3/3). Key calls: new
+  terraced-highland-hill-town build at Tell Rumeida — Beth-shan precedent
+  (secure site, thin published record → schematic, disclosed), explicitly
+  **not** the Ziklag ring (queue-#1 rider honored; ADR-006 queue-#8
+  enclosed-ring extraction trigger does not fire); the MB megalithic wall
+  renders only if a checkable Hebron-archaeology source card lands at build,
+  else omitted; anointing staged open-air at the gate space — oil poured by
+  an anonymous elder of Judah, no crown/throne/dais/palace/procession/trumpet
+  in any form (one-tribe elevation, not a coronation; ADR-011 no-triumph
+  framing); `ahinoam`/`abigail` added as the project's first named,
+  individually rendered women (principal tier at ascent/arrival only, not
+  asserted present at the anointing beat); 2:3 household dispersal carried by
+  a thinning arrival column + caption, no satellite hamlets modeled; Jabesh
+  message (2:5–7) staged as oral messengers departing the north road — no
+  scroll, no `jabesh-burial` geometry reuse, reception unstaged; 2:8–11 is
+  closing-card only. `depictsDeath: false`, no advisory. Three ESV excerpts
+  budgeted ("To Hebron." / 2:4a / 2:5 blessing), exhausting the
+  `integrity.test.ts` span cap. ~110–130 peak figures high tier, no particle
+  systems. `hebron`'s `LocationEntry` summary enriched (`src/data/
+locations.ts`); still `planned`, `sceneIds: []`. New claims/characters/
+  assets listed as needed-at-build in the brief (M2/M3 pattern);
+  `scenes.ts` untouched by design.
+- `docs/next-run.md` updated: `gibeon-pool-brief.md` is the next (final M4)
+  world-director pass; both `ziklag-lament` and `hebron-anointing` may build
+  now per their briefs. **Session note:** the world-director agent that wrote
+  this brief was cut off by the org's monthly API spend limit immediately
+  after finishing the brief file itself (before its own run-log/next-run
+  bookkeeping) — the brief content was complete and undamaged; this run-log
+  entry and the `next-run.md` update were finished by the orchestrating
+  session directly rather than re-running the agent. **The spend limit is a
+  live constraint going into the `gibeon-pool` brief and any further Fable
+  work this session** — flagged to the user.
