@@ -3,7 +3,58 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
+## State right now (2026-07-21, M4 scoping attempt, Fable spend-limit hit, branch `claude/focused-mccarthy-sqd4fc`)
+
+**Fable is currently unavailable — account hit its monthly spend limit** on
+the very first call this session (a `world-director` background agent for M4
+failed on launch, before doing any work; error explicitly said "You've hit
+your monthly spend limit. /model to switch models"). This is an
+account-level constraint, not a bug; retry the `world-director`/`fable-architect`
+agents in a future session once the limit resets (the docs give no way to
+query the remaining quota — just try, and fall back again if it's still out).
+
+Per `docs/model-handoff.md`'s documented fallback ("implement the most
+defensible option, mark it clearly as provisional... don't block the whole
+project on Fable availability"), Sonnet stood in for the `world-director` role
+this session: wrote `docs/design/ziklag-lament-brief.md` (2 Sam 1 — news of
+Saul's death, the Amalekite's execution, David's lament) as a full provisional
+brief, and logged the full M4 milestone scoping (3-scene breakdown, the open
+Gibeon-battle-inclusion question) as queue **#18** in
+`docs/fable-review-queue.md`. Nothing was built — briefs/scoping only, no
+`SceneDef`/character/location data changed, per the checklist in
+`docs/reconstruction-method.md` (briefs precede data entries precede build).
+
+Also re-verified the full gate this session: `npm install` was needed (a fresh
+container had no `node_modules`, which — as previously noted — makes
+`format:check` fall back to a stale global prettier and spuriously flag
+`src/scenes/ziklag/terrain.ts`; a real `npm install` fixes it). e2e needed
+`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+in this container (the exact pinned path differs run to run — check
+`/opt/pw-browsers/` for whatever `chromium-<version>` directory actually
+exists rather than assuming a fixed path). Full gate green after both fixes:
+format/lint/vitest/build/8 e2e all pass. Also re-confirmed the Pages-live
+check is still blocked from this environment too (403 from the outbound
+proxy on `elinxie.github.io`, both via `curl` and via `WebFetch`) — not
+sandbox-specific, a broader network-policy block; still needs a session with
+real outbound access to that host.
+
+**What's next (Sonnet or Fable), in priority order:**
+
+1. **Get a real Fable pass on queue #18** as soon as usage allows — confirm/
+   revise the M4 3-scene breakdown, rule on Gibeon-battle inclusion, review
+   `ziklag-lament-brief.md`'s specific calls (especially: gathered-camp vs.
+   near-solitary lament staging, whether the Amalekite's account gets any
+   visual representation at all, whether the execution needs its own
+   `depictsDeath` advisory gate). Until then, do not start `threejs-engineer`
+   build work on `ziklag-lament` — the brief is a strong draft, not a ruling.
+2. Write the remaining M4 briefs (`hebron-anointing`, Mahanaim/Ish-bosheth) —
+   Fable-tier per the same logic, or Sonnet-provisional fallback again if
+   Fable is still unavailable next session.
+3. (Still open, unrelated to M4) Real-hardware performance check of
+   `gilboa-battle` and the Pages-live check — see the 2026-07-19 state note
+   below; both still blocked from every sandboxed environment tried so far.
+
+## State before this slice (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
 
 **M3 is fully released.** The 2026-07-19 Fable release pass confirmed the
 resolved #16/#17 citation gates and made the #13 judgment call (headdress:

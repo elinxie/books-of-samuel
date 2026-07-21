@@ -7,7 +7,9 @@ to a "Resolved" section below if the history is worth keeping).
 
 ## Open
 
-_No open items._
+| #   | Item | Status |
+| --- | ---- | ------ |
+| 18  | **M4 (2 Samuel 1–2) scene-direction pass.** A `world-director` pass was attempted 2026-07-21 and failed on launch — account hit its **monthly Fable spend limit** before doing any work (not a code/data issue). Per `docs/model-handoff.md`'s fallback policy, Sonnet stood in and produced a provisional scoping + one full brief instead of leaving M4 unscoped. **Scoping (provisional):** M4 breaks into 3 scenes — `ziklag-lament` (2 Sam 1, brief written: `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1-7, not yet briefed), and a Mahanaim/Ish-bosheth political-geography scene (2 Sam 2:8-11, not yet briefed) — plus a genuinely open question: **does M4 include a reenactment of the Abner/Joab confrontation and pool-of-Gibeon skirmish (2 Sam 2:12-32, incl. the Asahel pursuit/death)?** Sonnet's provisional read: **no** — defer it to a later milestone. Reasoning: the milestone's own stated goals (`src/data/milestones.ts` M4) list only "political geography," not a battle; this mirrors the same narrow-scoping discipline `gilboa-battle-brief.md` used (explicitly excluding next-day events as a separate pass); and the Asahel death/Abner-Joab clash deserves its own violence-policy-aware brief rather than a rushed bolt-on. If confirmed, `2sam-2`'s passage summary (which already mentions "war begins... at the pool of Gibeon") stays accurate via caption/text even though the scene itself stops short of staging it. **Needs:** a real Fable pass to confirm/revise the 3-scene breakdown, rule on the Gibeon-inclusion question, and review (not necessarily rewrite) the `ziklag-lament` brief's specific calls, before `threejs-engineer` builds from it. | Open, provisional Sonnet fallback pending Fable — 2026-07-21 |
 
 ## Resolved
 

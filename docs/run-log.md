@@ -1113,3 +1113,26 @@ citation-verification passes:
   section + `next-run.md` state block updated. `npm run verify` green
   (status-field/doc-only diff). Not committed — orchestrator reviews the
   diff and handles git.
+
+**2026-07-21 — Sonnet 5 — scheduled session, M4 scoping attempt (Fable spend-limit hit)**
+Launched a `world-director` background agent to scope M4 (2 Samuel 1-2) into
+scenes, per `docs/next-run.md`'s top priority. It failed immediately on the
+account's monthly Fable spend limit, before doing any work — an account-level
+constraint, not a code issue. Followed `docs/model-handoff.md`'s documented
+fallback: stood in as Sonnet, wrote a full provisional brief
+(`docs/design/ziklag-lament-brief.md`, 2 Sam 1 — Amalekite's arrival/execution,
+David's lament, reusing the existing Ziklag location/settlement at a later
+narrative time) and logged the fuller M4 scoping question (3-scene breakdown;
+open call on whether the pool-of-Gibeon skirmish belongs in M4 at all) as
+queue #18, explicitly marked provisional pending a real Fable read. Also
+re-verified the full gate in this fresh container: `npm install` was needed
+(missing `node_modules` → stale global prettier → spurious `format:check`
+failure on `terrain.ts`, same false-failure mode as previously documented);
+e2e needed `PLAYWRIGHT_CHROMIUM_PATH` pointed at whichever
+`/opt/pw-browsers/chromium-<version>` actually exists in this container
+(1194 this time, not the 1228 Playwright's manifest expected) — both fixed,
+full gate green (format/lint/vitest/build/8 e2e). Re-confirmed the
+Pages-live check is still blocked from this environment too (403 via both
+`curl` and `WebFetch`) — not sandbox-specific, a wider network-policy block.
+No scene/data/component code touched this session — docs and one design
+brief only. Full state/next-steps: `docs/next-run.md`'s 2026-07-21 entry.
