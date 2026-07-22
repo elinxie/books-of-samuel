@@ -3,9 +3,13 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, all three M4 briefs + characters done under Fable-unavailable fallback, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-07-22, ziklag-lament built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 
-**Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `planned`/`in-progress`. Do not treat any of these creative/scope calls as settled.
+**Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and the `ziklag-lament` build) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
+
+**`ziklag-lament` (2 Sam 1) is built** (`threejs-engineer`, this session): `status: 'in-progress'`, `depictsDeath: true`, 17 beats, 3 viewpoints (`vp-plaza`/`vp-gate`/`vp-lament`), ~12-figure cast (the project's first conversation-scale, non-crowd scene). The brief's hardest constraint held: the Amalekite's account of killing Saul is delivered as speech only, never visually corroborated against `gilboa-battle`'s own 1 Sam 31:4 — enforced by a dedicated test. New scene folder `src/scenes/ziklag-lament/`; new claims `claim-lords-anointed-principle`/`claim-execution-messenger`/`claim-royal-tokens`/`claim-mourning-dress`/`claim-song-of-the-bow`/`claim-lament-evening`; `claim-amalekite-messenger-account` gained its brief-requested `scholarlyViews`. `f-2sam` feature flipped `planned` → `in-progress`. Gate green: format:check, lint, typecheck, 287 vitest, build, 8/8 e2e (confirmed independently by the orchestrating session, not just the build agent's own report).
+
+**Open verification item specific to this build:** the three ESV quotes in the lament beats (1:23, 1:26, 1:27) were entered from model/brief recollection, not checked against a live ESV source — this sandbox has no outbound access to Bible-text sites (confirmed: proxy 403s on biblegateway/esv.org). The orchestrating session cross-checked the wording against its own knowledge and it reads as correct ESV phrasing, but this is not the same as a live-source check — worth a final human/live-access verification before `released`.
 
 **M4 (2 Samuel 1–2) scope decided, all three world-director briefs written, all flagged character/claim data entered:**
 
@@ -24,10 +28,10 @@
 
 **What's next (Sonnet), in priority order:**
 
-1. **Build the three scenes** — `threejs-engineer` per brief, same pattern as M2/M3. Suggest building in narrative order: `ziklag-lament` (smallest cast, first scene of its kind — conversation-scale, not crowd-scale) → `hebron-anointing` (largest M4 crowd, ~250–310 figures per its brief) → `gibeon-pool` (most violence-heavy, first named-character-kills-named-character death — read its brief's Asahel-death section closely before implementing, it sets a new restraint precedent). Each brief's "Not allowed"/scope-guard section is load-bearing — re-read before starting.
+1. **Build the remaining two scenes** — `threejs-engineer` per brief, same pattern as M2/M3, `ziklag-lament` as the immediate precedent for conventions: `hebron-anointing` (largest M4 crowd, ~250–310 figures per its brief) → `gibeon-pool` (most violence-heavy, first named-character-kills-named-character death — read its brief's Asahel-death section closely before implementing, it sets a new restraint precedent). Each brief's "Not allowed"/scope-guard section is load-bearing — re-read before starting.
 2. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context view) — not started, `ui-engineer` work once scoped further (or fold into a Fable pass first, since the atlas-vs-scene call itself is still provisional).
-3. **Close the three open citation gaps above** — `researcher` pass, doesn't block scene builds.
-4. **A real Fable pass** to confirm/revise the whole M4 scope+briefs package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it. Do this before flipping any M4 scene to `released`.
+3. **Close the four open citation gaps** — `researcher` pass, doesn't block scene builds: `claim-gibeon-pool-form` (Gibeon pool dating vs. 2 Sam 2), `claim-hebron-town-form` (no source card yet for excavated early Iron IIA Tell Rumeida), `claim-amalekite-messenger-account` (needs a named commentary, e.g. McCarter's Anchor Bible _II Samuel_), and a live-ESV-source check of `ziklag-lament`'s three lament quotes (see above).
+4. **A real Fable pass** to confirm/revise the whole M4 scope+briefs+build package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it. Do this before flipping any M4 scene to `released`.
 5. **(Still open, unrelated to M4, carried forward)** Real-hardware performance check of `gilboa-battle` at high tier, and the Pages-live check — both still blocked from sandboxes; see Environment notes below, unchanged.
 
 ## State before this slice (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)

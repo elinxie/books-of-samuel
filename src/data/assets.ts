@@ -460,6 +460,18 @@ export const ASSETS: AssetRecord[] = [
       'Representative Gilead oak/scrub and riparian flora (e.g., Tabor oak, tamarisk, oleander) if ever modeled at species-accurate fidelity.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-royal-tokens',
+    name: 'Crown and armlet props',
+    represents:
+      'The crown and armlet the messenger brings to David as tokens of Saul’s death (2 Samuel 1:10) — see claim-royal-tokens',
+    placeholder: true,
+    whyTemporary:
+      'Two small primitive torus meshes (a shallow circlet for the crown, a slimmer band for the armlet), presented near the messenger figure — no securely identified Iron Age Israelite royal regalia exists to model from, so exact form is a permanent design placeholder, not merely unfinished detail.',
+    historicalRequirements:
+      'None achievable beyond stylization without an excavated or iconographic comparandum for an Iron Age Israelite royal diadem/armlet; any upgrade improves material/finish fidelity only, not a claim-driven replacement.',
+    replacementMilestoneId: 'M4',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

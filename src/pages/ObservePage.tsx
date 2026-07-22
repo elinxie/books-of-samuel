@@ -18,6 +18,8 @@ import { BethShanWallsScene } from '../scenes/beth-shan-walls/BethShanWallsScene
 import { BETH_SHAN_TERRAIN } from '../scenes/beth-shan-walls/terrain';
 import { JabeshBurialScene } from '../scenes/jabesh-burial/JabeshBurialScene';
 import { JABESH_TERRAIN } from '../scenes/jabesh-burial/terrain';
+import { ZiklagLamentScene } from '../scenes/ziklag-lament/ZiklagLamentScene';
+import { ZIKLAG_LAMENT_TERRAIN } from '../scenes/ziklag-lament/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -34,6 +36,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'gilboa-battle': { component: GilboaBattleScene, terrain: GILBOA_TERRAIN },
   'beth-shan-walls': { component: BethShanWallsScene, terrain: BETH_SHAN_TERRAIN },
   'jabesh-burial': { component: JabeshBurialScene, terrain: JABESH_TERRAIN },
+  'ziklag-lament': { component: ZiklagLamentScene, terrain: ZIKLAG_LAMENT_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

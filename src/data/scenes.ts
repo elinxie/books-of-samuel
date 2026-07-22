@@ -781,14 +781,199 @@ export const SCENES: SceneDef[] = [
     locationId: 'ziklag',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M4',
-    status: 'planned',
+    // PROVISIONAL build (2026-07-22, Sonnet implementing a Sonnet
+    // world-director brief — Fable was unavailable this session; see
+    // docs/design/ziklag-lament-brief.md and fable-review-queue.md #18).
+    // in-progress, not released, pending a real Fable pass on the brief's
+    // creative calls — matches the M2/M3 build-then-review pattern.
+    status: 'in-progress',
     synopsis:
       'An Amalekite messenger reaches David at Ziklag with news of the defeat and Saul and Jonathan’s deaths, claiming to have struck the fatal blow himself; David has him executed for raising a hand against the LORD’s anointed, then sings the Song of the Bow.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
-    claimIds: ['claim-amalekite-messenger-account'],
-    assetIds: [],
+    depictsDeath: true,
+    durationSec: 214,
+    beats: [
+      {
+        id: 'b-arrival',
+        timeSec: 0,
+        title: 'The third day',
+        caption:
+          'David has been back at Ziklag two days when, on the third day, a man arrives alone from the camp — clothes torn, dust on his head. The town reads the news off his body before he speaks a word. (2 Samuel 1:1–2)',
+        passageRef: '2 Samuel 1:1–2',
+      },
+      {
+        id: 'b-falls',
+        timeSec: 14,
+        title: 'He falls before David',
+        caption: 'He comes before David and falls to the ground in homage. (2 Samuel 1:2)',
+        passageRef: '2 Samuel 1:2',
+      },
+      {
+        id: 'b-account',
+        timeSec: 28,
+        title: 'His account — a claim, not corroborated',
+        caption:
+          'He says he escaped the rout on Gilboa and found Saul there, still alive, leaning on his spear — and that at Saul’s own request he struck him down. This does not match how Saul actually died: 1 Samuel 31:4, already shown at Gilboa, has Saul fall on his own sword unaided, after his armor-bearer refused to strike him. The narrative does not resolve which account is true, and neither does this scene — his story is staged as a claim, told here at Ziklag, never as a corroborated reenactment. (2 Samuel 1:6–10)',
+        passageRef: '2 Samuel 1:6–10',
+      },
+      {
+        id: 'b-tokens',
+        timeSec: 44,
+        title: 'Proof produced',
+        caption:
+          'As proof, he produces Saul’s crown and the armlet from his arm. That royal insignia were brought is narrated plainly; their exact form is unknown — no Iron Age Israelite royal regalia has been identified to model from. (2 Samuel 1:10)',
+        passageRef: '2 Samuel 1:10',
+      },
+      {
+        id: 'b-grief',
+        timeSec: 58,
+        title: 'Grief, before any judgment',
+        caption:
+          'David and all the men with him tear their clothes, weep, and fast until evening — for Saul, for Jonathan, for the people of the LORD, and for the house of Israel. The grief comes before judgment, and it is not staged as pretext. (2 Samuel 1:11–12)',
+        passageRef: '2 Samuel 1:11–12',
+      },
+      {
+        id: 'b-identity',
+        timeSec: 76,
+        title: 'An Amalekite, at Ziklag',
+        caption:
+          'David asks the young man where he is from. He identifies himself as an Amalekite, a resident alien in Israel — the same raiding people these men buried their grief against at this very town in 1 Samuel 30, weeks before. (2 Samuel 1:13)',
+        passageRef: '2 Samuel 1:13',
+      },
+      {
+        id: 'b-judgment',
+        timeSec: 88,
+        title: 'Judgment turns on the confession',
+        caption:
+          'David turns from grief to judgment: the young man’s own words have convicted him — he claimed to have struck down the LORD’s anointed. The verdict rests on that confession itself, not on a forensic finding about what actually happened at Gilboa — the same principle that once stayed David’s hand against Saul, alive, on two earlier occasions (1 Samuel 24:6; 26:9–11). (2 Samuel 1:14–15a)',
+        passageRef: '2 Samuel 1:14–15a',
+      },
+      {
+        id: 'b-execution',
+        timeSec: 98,
+        title: 'The sentence carried out',
+        caption:
+          'David gives the word, and one of the men strikes the messenger down. Shown at documentary distance with no wound or blood depicted, in either mode; in reduced mode the strike itself is elided, and the caption alone carries the fact. (2 Samuel 1:15b)',
+        passageRef: '2 Samuel 1:15b',
+      },
+      {
+        id: 'b-messenger-dead',
+        timeSec: 108,
+        title: 'David’s closing words',
+        caption:
+          'David speaks his final judgment over the dead man: his own testimony has condemned him. The scene does not linger on the body. (2 Samuel 1:16)',
+        passageRef: '2 Samuel 1:16',
+      },
+      {
+        id: 'b-song-commissioned',
+        timeSec: 120,
+        title: 'The Song of the Bow, commissioned',
+        caption:
+          'David laments Saul and Jonathan and orders the lament taught to the sons of Judah. It is preserved, the text says, in the Book of Jashar — a lost source the Bible cites elsewhere (Joshua 10:13), evidence of a now-vanished Israelite literary tradition. (2 Samuel 1:17–18)',
+        passageRef: '2 Samuel 1:17–18',
+      },
+      {
+        id: 'b-lament-transition',
+        timeSec: 133,
+        title: 'A quiet rise, as the light fails',
+        caption:
+          'The company moves to a modest rise near the wall — a deliberately separate, quieter space, apart from the plaza’s judgment, for the lament itself. (2 Samuel 1:17)',
+        passageRef: '2 Samuel 1:17',
+      },
+      {
+        id: 'b-lament-open',
+        timeSec: 145,
+        title: 'The song opens',
+        caption:
+          'Israel’s glory lies slain on the heights. Do not tell it in Gath; do not proclaim it in the streets of Ashkelon — let the Philistines’ daughters not rejoice over this. (2 Samuel 1:19–20)',
+        passageRef: '2 Samuel 1:19–20',
+      },
+      {
+        id: 'b-lament-gilboa',
+        timeSec: 157,
+        title: 'A curse on the mountains of Gilboa',
+        caption:
+          'The song turns on the mountains themselves: let no dew or rain fall there again, no fields yield offerings — for there the shield of the mighty lay defiled, Saul’s shield, no longer anointed with oil. (2 Samuel 1:21)',
+        passageRef: '2 Samuel 1:21',
+      },
+      {
+        id: 'b-lament-together',
+        timeSec: 169,
+        title: 'Not divided',
+        caption:
+          'Of Saul and Jonathan together, the song will not let David’s rise eclipse grief for a defeated king: “In life and in death they were not divided;” swifter than eagles, stronger than lions. (2 Samuel 1:23)',
+        passageRef: '2 Samuel 1:23',
+      },
+      {
+        id: 'b-lament-daughters',
+        timeSec: 179,
+        title: 'Daughters of Israel, weep',
+        caption:
+          'The song calls the daughters of Israel to weep for Saul, who clothed them in scarlet and finery, who put ornaments of gold on their garments. (2 Samuel 1:24)',
+        passageRef: '2 Samuel 1:24',
+      },
+      {
+        id: 'b-lament-jonathan',
+        timeSec: 189,
+        title: 'My brother Jonathan',
+        caption:
+          'David turns from the nation’s grief to his own: “I am distressed for you, my brother Jonathan; you have been very pleasant to me; your love to me was extraordinary, surpassing the love of women.” (2 Samuel 1:26)',
+        passageRef: '2 Samuel 1:26',
+      },
+      {
+        id: 'b-lament-refrain',
+        timeSec: 199,
+        title: 'How the mighty have fallen',
+        caption:
+          'The song closes on its refrain, one last time: “How the mighty have fallen, and the weapons of war perished!” Two men who spent much of this story as rivals are mourned here, together, without qualification — the Song of the Bow’s own last word. (2 Samuel 1:27)',
+        passageRef: '2 Samuel 1:27',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-plaza',
+        label: 'Settlement center (default)',
+        position: [-10, 3, 6],
+        lookAt: [2, 2, -4],
+      },
+      { id: 'vp-gate', label: 'North gate approach', position: [6, 0, -95], lookAt: [0, 4, -40] },
+      {
+        id: 'vp-lament',
+        label: 'Toward the lament rise',
+        position: [30, 2, 2],
+        lookAt: [52, 6, 20],
+      },
+    ],
+    claimIds: [
+      'claim-ziklag-location',
+      'claim-ziklag-scale',
+      'claim-oval-plan',
+      'claim-mudbrick',
+      'claim-four-room',
+      'claim-wall-gate',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-negev-terrain',
+      'claim-600-men',
+      'claim-amalekite-messenger-account',
+      'claim-lords-anointed-principle',
+      'claim-execution-messenger',
+      'claim-royal-tokens',
+      'claim-mourning-dress',
+      'claim-song-of-the-bow',
+      'claim-lament-evening',
+    ],
+    assetIds: [
+      'asset-terrain-negev',
+      'asset-house-block',
+      'asset-perimeter-wall',
+      'asset-gate-simple',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-vegetation-scrub',
+      'asset-olive-tree',
+      'asset-rocks',
+      'asset-royal-tokens',
+    ],
   },
   {
     id: 'hebron-anointing',

@@ -111,7 +111,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Rendered at reduced count (~1:10) for performance; the in-scene label discloses this. How literally to take army numbers in these narratives is debated, and the app does not take a position.',
+      'Rendered at reduced count (~1:10) for performance; the in-scene label discloses this. How literally to take army numbers in these narratives is debated, and the app does not take a position. Reused in ziklag-lament for continuity of "David’s men" as a concept only, not as a headcount ratio: that scene’s witness cluster (2 Samuel 1:11–12’s "all the men who were with him") is a small, disclosed headcount (6–10 figures), the same "no ratio applies" convention jabesh-burial set for its retrieval party — the ~1:10 army-muster ratio is the wrong register for an intimate conversation scene with no narrated headcount.',
   },
   {
     id: 'claim-david-historical',
@@ -788,8 +788,92 @@ export const CLAIMS: ReconstructionClaim[] = [
     basis: 'biblical-text',
     confidence: 'high',
     sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-amalekite-fabrication',
+        label: 'Self-serving fabrication for reward/favor',
+        proponents: [
+          'e.g., commentators reading the account as invented outright to claim credit and favor with the incoming king (a specific citation — e.g. P. Kyle McCarter’s Anchor Bible II Samuel — is not yet page-verified in this project’s bibliography; hedged per docs/reconstruction-method.md’s attribution-hedging rule)',
+        ],
+        summary:
+          'The messenger has an obvious motive (reward, standing with David) and an Amalekite identity a Ziklag audience has every reason to distrust; on this reading his entire account of finishing Saul off is invented, whether or not he was present at Gilboa at all.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-amalekite-looter-embellishment',
+        label: 'Looter’s embellishment of a genuine find',
+        proponents: [
+          'e.g., commentators reading the account as an opportunistic exaggeration rather than an outright invention (specific citation not yet page-verified; same hedge as above)',
+        ],
+        summary:
+          'On this reading the messenger genuinely found Saul’s body on the field after death (consistent with 1 Samuel 31:4’s own narration) and took the crown and armlet as a battlefield looter, then embellished a killing claim onto that genuine detail to inflate his own role.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
     notes:
-      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. A named critical commentary (e.g. McCarter’s Anchor Bible II Samuel) discussing this discrepancy would strengthen this claim’s sourcing beyond the text itself — flagged for a future researcher pass, not yet added.',
+      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated — no flashback, reenactment inset, or Gilboa-backdrop tableau, in any mode. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. A named critical commentary (e.g. McCarter’s Anchor Bible II Samuel) discussing this discrepancy would strengthen this claim’s and the scholarlyViews’ sourcing beyond the text itself — flagged for a future researcher pass, not yet added; the proponents above are hedged "e.g." accordingly and cite only esv-bible pending that pass.',
+  },
+  {
+    id: 'claim-lords-anointed-principle',
+    statement:
+      'The narrative presents a recurring principle across David’s story: harm to Saul’s person as "the LORD’s anointed" is never treated as praiseworthy, regardless of the target’s own conduct. David refuses to strike the fugitive-hunting Saul himself (1 Samuel 24:6; 26:9–11) and later executes a man for merely confessing to have struck him (2 Samuel 1:14, 16).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This is the project’s own cross-referencing observation about the narrative’s internal consistency across three passages (1 Sam 24, 1 Sam 26, 2 Sam 1), not a claim drawn from a specific scholarly source. It grounds the ziklag-lament scene’s staging choice to present David’s execution of the messenger as a judgment on the self-incriminating confession, not a forensic ruling on what actually happened at Gilboa (see claim-amalekite-messenger-account, claim-execution-messenger).',
+  },
+  {
+    id: 'claim-execution-messenger',
+    statement:
+      'The narrative states that David judged the Amalekite messenger by his own self-incriminating claim to have killed Saul, and had one of his young men strike him down (2 Samuel 1:14–16).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Phrased as narrated, not editorialized: the text does not independently corroborate the killing claim it condemns him for (see claim-amalekite-messenger-account) — the judgment is on the confession, not a verified act. The execution is staged at documentary distance with no wound/blood/close-framing geometry in either violence-rendering mode (ADR-009), the same discipline as gilboa-battle’s death sequence and jabesh-burial’s funerary handling.',
+  },
+  {
+    id: 'claim-royal-tokens',
+    statement:
+      'The narrative states that the messenger brought Saul’s crown and armlet to David as physical tokens of the king’s death (2 Samuel 1:10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'High confidence describes the fact that royal insignia are narrated as brought to David. Their specific form and appearance are unattested — no securely identified Iron Age Israelite royal regalia exists to model from — so the rendered crown/armlet props stay design-placeholder for form/fidelity only (basis for that aspect: design-placeholder), tracked at asset-royal-tokens.',
+  },
+  {
+    id: 'claim-mourning-dress',
+    statement:
+      'The narrative describes the messenger arriving with torn clothes and dust on his head (2 Samuel 1:2) and David and his men tearing their clothes, weeping, and fasting until evening in mourning for Saul, Jonathan, the people of the LORD, and the house of Israel (2 Samuel 1:11–12) — conventional ancient Near Eastern mourning gestures.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    notes:
+      'Torn garments and dust/ashes on the head recur across the Hebrew Bible and the wider ANE as conventional mourning gestures (comparative-ane corroboration; king-stager-2001 anchors general Israelite mourning-ritual context, the same source reused for claim-dress and claim-seven-day-fast). The "fasted until evening" detail (1:12) is folded into this claim rather than opened as a separate one; it is also the textual anchor for this scene’s dusk lighting arc (see claim-lament-evening).',
+  },
+  {
+    id: 'claim-song-of-the-bow',
+    statement:
+      'The narrative states that David composed a lament for Saul and Jonathan, ordered it taught to the sons of Judah, and that it was written in the Book of Jashar (2 Samuel 1:17–27).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The Book of Jashar is a lost source the Bible cites more than once (cf. Joshua 10:13) — a genuinely interesting historiographical detail about Israel’s own now-vanished literary tradition, carried as a caption note without asserting anything about the book’s nature beyond what the text itself gives. The scene delivers the poem through text/caption at a slower pace, exactly as narrated speech is delivered elsewhere in the project; no melody, chant, or vocal performance is synthesized, since the project has no basis for asserting fidelity to how it actually sounded.',
+  },
+  {
+    id: 'claim-lament-evening',
+    statement:
+      'The scene renders the grief-to-lament sequence arcing toward and through dusk, anchored to 2 Samuel 1:12’s mourning "until evening."',
+    basis: 'biblical-text',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The evening anchor is textually given for the mourning beat (1:12). The lament itself (1:17–27), narrated later in the chapter, is not explicitly timed to the same evening — extending the lighting arc across the whole scene through the lament is this project’s own staging choice for legibility and mood (the same reasoning as jabesh-burial’s dusk-through-close arc), hence moderate rather than high confidence for the extension specifically. Distinct from ziklag-aftermath’s claim-time-of-day, which is an unstated speculative placeholder with no textual anchor at all.',
   },
   {
     id: 'claim-ish-bosheth-installed',

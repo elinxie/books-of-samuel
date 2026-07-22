@@ -87,6 +87,26 @@ Also reuses `asset-bier-props`, `asset-torch-sprites` (both beth-shan-walls,
 by id), `asset-figure-procedural`, and `asset-rocks` — no new records for
 these.
 
+## Current placeholders (ziklag-lament scene, Milestone 4, built 2026-07-22, PROVISIONAL)
+
+The cheapest scene shipped so far: reused `ziklag` terrain/settlement geometry
+(damage-state re-dressed, no new geometry family) and a cast an order of
+magnitude smaller than any prior scene. Only one genuinely new asset:
+
+| Asset                | Represents                                                                                                   | Why temporary                                                                                                                                                   | Replace at                                                        |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `asset-royal-tokens` | Crown and armlet the messenger brings to David as tokens of Saul's death (2 Sam 1:10) — `claim-royal-tokens` | Two small primitive torus meshes; no securely identified Iron Age Israelite royal regalia exists to model from, so exact form is a permanent design placeholder | M4 (material/finish fidelity only — form constraint is permanent) |
+
+Reuses `asset-terrain-negev`, `asset-house-block`, `asset-perimeter-wall`,
+`asset-gate-simple` (damage-state re-dressed for a "recovering" town, not a
+new geometry family — see `RecoveringSettlement.tsx`), `asset-figure-procedural`
+(the messenger and the small witness cluster), `asset-david-marker`,
+`asset-vegetation-scrub`, `asset-olive-tree`, and `asset-rocks` — no new
+records for these. This scene's status stays `in-progress`
+(`docs/design/ziklag-lament-brief.md` is a Sonnet-authored provisional brief,
+Fable-unavailable fallback, tracked at `fable-review-queue.md` #18) pending a
+real Fable pass before it can ship `released`.
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -101,8 +121,10 @@ these.
   city/wall, Jabesh-gilead route assets, and the reduced-intensity violence
   rendering path (ADR-009) all shipped, each scene still `status:
 'in-progress'` pending Fable M3 sign-off (queue #13/#16/#17 gate `released`).
-- **M4 (2 Sam 1–2):** Hebron settlement; regional overview map
-  (`f-overview-map`) with confidence-shaded political geography.
+- **M4 (2 Sam 1–2):** `ziklag-lament` built 2026-07-22 (see table above,
+  PROVISIONAL/`in-progress`, `asset-royal-tokens` the only new record); Hebron
+  settlement and Gibeon/Mahanaim assets still outstanding; regional overview
+  map (`f-overview-map`) with confidence-shaded political geography.
 
 ## Policy
 

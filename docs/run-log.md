@@ -1176,3 +1176,38 @@ All three M4 briefs, all flagged data gaps, and the M4 scope decision are
 now complete for this fallback pass — `docs/next-run.md`'s next real task is
 building the scenes themselves. Gate green: format:check, lint, typecheck,
 269 vitest, build. E2e still not re-run (still no component code touched).
+
+**2026-07-22 — Sonnet 5 — ziklag-lament built (M4's first scene)**
+Continuation of the same session/branch, past the briefs-only work above.
+Since scene builds are ordinary Sonnet-tier work (`docs/model-handoff.md`
+routes scene implementation within already-set direction to
+`threejs-engineer`, not Fable) and Fable's quota was still exhausted,
+proceeded straight to building `ziklag-lament` per its brief rather than
+stopping at briefs-only.
+
+`threejs-engineer` built the scene in one pass: new `src/scenes/ziklag-lament/`
+folder (reuses `ziklag` terrain/vegetation, deliberately drops
+`SmokeColumns` for the "recovering, not burning" damage state per the
+brief), 17 beats / 3 viewpoints in `scenes.ts`, six new claims plus
+`scholarlyViews` added to `claim-amalekite-messenger-account` (the brief's
+two "e.g."-hedged readings on why the messenger's account might not match
+`gilboa-battle`'s own narration), a new `asset-royal-tokens` placeholder,
+`2sam-1` flipped `planned` → `in-progress`. The brief's hardest constraint —
+never visually corroborating the Amalekite's claim to have killed Saul —
+is enforced by a dedicated test, not just a caption convention. Exactly 3
+ESV quotes spent (248 chars total, well under the 500 budget), verified by
+the build agent's own script against the file content it wrote (not
+against a live ESV source — this sandbox has no outbound access to
+Bible-text sites, confirmed via proxy status).
+
+Orchestrating session independently re-ran the full gate rather than
+trusting the build agent's self-report: format:check, lint, typecheck, 287
+vitest (18 new), build all pass, confirmed directly. Also independently
+recalled/cross-checked the three ESV quotes (1:23, 1:26, 1:27) against my
+own knowledge of the text — reads as correct ESV phrasing, but flagged in
+`next-run.md` as still wanting a live-source check before `released`, since
+model recollection isn't the same guarantee as checking the actual text.
+Flipped `f-2sam` feature `planned` → `in-progress`. `docs/next-run.md`
+updated; two scenes (`hebron-anointing`, `gibeon-pool`) and the atlas/map UI
+overlay remain for M4, plus four open citation gaps and the still-pending
+real Fable pass on queue #18.

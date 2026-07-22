@@ -48,9 +48,11 @@ export const PASSAGES: Passage[] = [
       'An Amalekite brings David news of Saul’s death, claiming to have delivered the final blow, and is executed for it. David laments Saul and Jonathan in the Song of the Bow.',
     // Scene id committed 2026-07-22 (Sonnet, Fable-unavailable fallback, queue
     // #18) before the scene exists in scenes.ts — mirrors the M3 pattern.
+    // 2026-07-22: ziklag-lament built (in-progress, pending Fable review of
+    // its provisional brief) — status follows the scene, matching locations.ts.
     sceneIds: ['ziklag-lament'],
     milestoneId: 'M4',
-    status: 'planned',
+    status: 'in-progress',
   },
   {
     id: '2sam-2',

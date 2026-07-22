@@ -125,7 +125,11 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'Unnamed man who escapes the rout on Gilboa and reaches David at Ziklag with news of Saul’s death, claiming to have killed him himself. David has him executed for raising a hand against "the LORD’s anointed" — a judgment on the confession itself, not a forensic ruling on what actually happened at Gilboa (contrast his account with the narrator’s own, already rendered in 1 Samuel 31:3–5).',
     passageRefs: ['2 Samuel 1:1–16'],
-    claimIds: ['claim-amalekite-messenger-account'],
+    claimIds: [
+      'claim-amalekite-messenger-account',
+      'claim-execution-messenger',
+      'claim-lords-anointed-principle',
+    ],
   },
   {
     id: 'abner',
