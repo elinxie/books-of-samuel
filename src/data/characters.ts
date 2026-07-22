@@ -127,6 +127,51 @@ export const CHARACTERS: CharacterOrGroup[] = [
     passageRefs: ['2 Samuel 1:1–16'],
     claimIds: ['claim-amalekite-messenger-account'],
   },
+  {
+    id: 'abner',
+    name: 'Abner son of Ner',
+    kind: 'person',
+    summary:
+      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside.',
+    passageRefs: ['2 Samuel 2:8–32'],
+    claimIds: ['claim-ish-bosheth-installed', 'claim-gibeon-contest', 'claim-asahel-death'],
+  },
+  {
+    id: 'ish-bosheth',
+    name: 'Ish-bosheth',
+    kind: 'person',
+    summary:
+      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool.',
+    passageRefs: ['2 Samuel 2:8–10'],
+    claimIds: ['claim-ish-bosheth-installed'],
+  },
+  {
+    id: 'joab',
+    name: 'Joab son of Zeruiah',
+    kind: 'person',
+    summary:
+      'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back.',
+    passageRefs: ['2 Samuel 2:13–32'],
+    claimIds: ['claim-gibeon-contest', 'claim-abner-pursuit-halted'],
+  },
+  {
+    id: 'abishai',
+    name: 'Abishai son of Zeruiah',
+    kind: 'person',
+    summary:
+      'Joab’s brother, Asahel’s brother, who joins Joab in the pursuit of Abner to the hill of Ammah.',
+    passageRefs: ['2 Samuel 2:24'],
+    claimIds: ['claim-abner-pursuit-halted'],
+  },
+  {
+    id: 'asahel',
+    name: 'Asahel son of Zeruiah',
+    kind: 'person',
+    summary:
+      'Joab’s youngest brother, described as swift-footed. Pursues Abner despite being twice warned to turn aside, and is killed by a backward thrust of Abner’s spear — the project’s first named-character-kills-named-character death, rendered at documentary distance with no wound geometry, per ADR-009. Buried at Bethlehem, in his father’s tomb (2 Samuel 2:32).',
+    passageRefs: ['2 Samuel 2:18–23', '2 Samuel 2:32'],
+    claimIds: ['claim-asahel-death'],
+  },
 ];
 
 export const CHARACTERS_BY_ID: ReadonlyMap<string, CharacterOrGroup> = new Map(

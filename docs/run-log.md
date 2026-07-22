@@ -1142,3 +1142,37 @@ Gate green this session: format:check, lint, typecheck, 269 vitest, build
 (had to run `npm install` first — fresh sandbox, no `node_modules`). E2e not
 re-run (doc/data-only diff, no component code touched). Pushed to
 `claude/focused-mccarthy-ybp2iz`, opened draft PR #42.
+
+**2026-07-22 — Sonnet 5 — M4 briefs completed, all flagged characters/claims entered**
+Continuation of the same session/branch. Third `world-director` agent
+(model-overridden `sonnet`, same Fable-fallback policy) wrote
+`gibeon-pool-brief.md` (2 Sam 2:8-32) — the last of the three M4 briefs.
+Notable calls: `locationId: 'gibeon'` (Mahanaim narrated only, never built —
+its disputed identification stays reference-only); the pool itself gets
+real geometry on the strength of Pritchard's excavated rock-cut pool, but
+flagged an open dating gap; scale kept deliberately smaller than Gilboa
+(civil-war skirmish, not a national battle) except the 24 champions, who
+render at literal 1:1 per the text's own number; Asahel's death — the
+project's first named-character-kills-named-character rendering — sets a
+documentary-distance/no-wound-geometry precedent per ADR-009, using the
+text's own "stood still" reaction beat as the emotional pivot instead of a
+graphic replay.
+
+Filled every character/claim gap flagged across all three M4 briefs myself
+(execution-tier, no Fable/world-director needed): `amalekite-messenger`,
+`abner`, `ish-bosheth`, `joab`, `abishai`, `asahel` in `characters.ts`;
+`claim-amalekite-messenger-account`, `claim-ish-bosheth-installed`,
+`claim-gibeon-contest`, `claim-asahel-death`, `claim-abner-pursuit-halted`,
+`claim-gibeon-pool-form` in `claims.ts` — each `basis: 'biblical-text'`
+except the last (`archaeology`, low confidence, dating gap disclosed in
+notes). Wired all three scene stubs' `claimIds` accordingly. One
+self-inflicted bug caught by re-reading the diff before committing: my
+first `claims.ts` edit landed the new claim object _after_ the array's
+closing `];` instead of inside it (old_string matched only the exported
+`CLAIMS_BY_ID` line, not the preceding bracket) — fixed before it could
+break typecheck.
+
+All three M4 briefs, all flagged data gaps, and the M4 scope decision are
+now complete for this fallback pass — `docs/next-run.md`'s next real task is
+building the scenes themselves. Gate green: format:check, lint, typecheck,
+269 vitest, build. E2e still not re-run (still no component code touched).

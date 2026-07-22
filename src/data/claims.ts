@@ -791,6 +791,56 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. A named critical commentary (e.g. McCarter’s Anchor Bible II Samuel) discussing this discrepancy would strengthen this claim’s sourcing beyond the text itself — flagged for a future researcher pass, not yet added.',
   },
+  {
+    id: 'claim-ish-bosheth-installed',
+    statement:
+      'The narrative states that Abner took Ish-bosheth, Saul’s son, and made him king over Israel at Mahanaim — Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel — while the house of Judah followed David (2 Samuel 2:8–10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The tribal-writ split (2:9 vs. 2:10b) is the textual basis for staging gibeon-pool as civil war rather than a foreign-enemy battle. Mahanaim itself is narrated only in this scene, not built — see the mahanaim LocationEntry’s disputed, low-confidence identification.',
+  },
+  {
+    id: 'claim-gibeon-contest',
+    statement:
+      'The narrative states that at the pool of Gibeon, Abner proposed a contest of twelve chosen young men from each side, who seized each other and killed one another in pairs (2 Samuel 2:12–16), after which battle broke out and Israel was routed before the servants of David.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The twenty-four champions render at literal 1:1 count per the text’s own exact number; the wider contingents behind them are a disclosed, smaller-than-Gilboa design choice (no army-size figure is given in the text for this engagement), per the gibeon-pool brief.',
+  },
+  {
+    id: 'claim-asahel-death',
+    statement:
+      'The narrative states that Joab’s youngest brother Asahel pursued Abner despite being twice warned to turn aside, and that Abner killed him with a backward thrust of his spear (2 Samuel 2:18–23).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The project’s first named-character-kills-named-character death (distinct from Saul’s suicide in gilboa-battle). Per ADR-009: documentary distance, no wound/blood geometry in any mode. The text’s one specific non-graphic detail — Abner’s reversed spear grip — and the "stood still" reaction beat (2:23b) are used as the emotional pivot in place of a graphic replay. Abner is staged as reluctant, consistent with his two on-record warnings.',
+  },
+  {
+    id: 'claim-abner-pursuit-halted',
+    statement:
+      'The narrative states that Joab and Abishai pursued Abner to the hill of Ammah, that Benjaminites rallied to Abner there, and that at Abner’s appeal Joab sounded the trumpet and called off the pursuit; the text gives Israel’s dead as 360 men to David’s 20 (2 Samuel 2:24–31).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The 360/20 casualty count is delivered as caption text only, never as a rendered corpse tally, per the gibeon-pool brief’s restraint policy.',
+  },
+  {
+    id: 'claim-gibeon-pool-form',
+    statement:
+      'The pool of Gibeon (2 Samuel 2:13) is rendered as a rock-cut basin with a flat water plane, on the strength of Pritchard’s excavation of a rock-cut pool/water-tunnel system at Tell el-Jib.',
+    basis: 'archaeology',
+    confidence: 'low',
+    sourceIds: ['pritchard-gibeon-1962'],
+    notes:
+      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

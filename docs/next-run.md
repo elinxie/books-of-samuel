@@ -3,26 +3,32 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, M4 briefs done under Fable-unavailable fallback, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-07-22, all three M4 briefs + characters done under Fable-unavailable fallback, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 
 **Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `planned`/`in-progress`. Do not treat any of these creative/scope calls as settled.
 
-**M4 (2 Samuel 1–2) scope decided, all three world-director briefs written:**
+**M4 (2 Samuel 1–2) scope decided, all three world-director briefs written, all flagged character/claim data entered:**
 
-- 3-scene breakdown: `ziklag-lament` (2 Sam 1, reuses the `ziklag` location — `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7 — `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam 2:8–32, Abner/Ish-bosheth/Asahel's death — brief **still needed**, see below).
-- M4's 4th goal ("early divided-kingdom context view") was called as an atlas/map UI overlay, not a 4th 3D scene — fits ADR-011 better than forcing cartography into a walkable scene. Needs Fable confirmation.
+- 3-scene breakdown, all briefed: `ziklag-lament` (2 Sam 1 — `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7 — `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam 2:8–32, Abner/Ish-bosheth/Asahel's death — `docs/design/gibeon-pool-brief.md`).
+- M4's 4th goal ("early divided-kingdom context view") was called as an atlas/map UI overlay, not a 4th 3D scene — fits ADR-011 better than forcing cartography into a walkable scene. Needs Fable confirmation. **Not yet built — no UI work done this session, scope call only.**
 - New `gibeon` (Tell el-Jib, well-corroborated, `disputed: false`) and `mahanaim` (disputed, two low-confidence candidates: Tulul adh-Dhahab, Tell Hajjaj) location entries in `src/data/locations.ts`, each with new source cards (`pritchard-gibeon-1962`, `finkelstein-ornan-2024-mahanaim`, `coughenour-1989-mahanaim`) — all three seeded from secondary/search-engine sources, not primary-copy inspection, flagged `TO VERIFY` in their `confidenceNotes`.
-- `planned` `SceneDef` stubs for all three scenes added to `src/data/scenes.ts` (empty beats/viewpoints, mirrors the M3 stub-before-build pattern); `2sam-1`/`2sam-2` passage `sceneIds` wired to them.
-- Gate green: format:check, lint, typecheck, 269 vitest, build. **E2e (`npm run e2e`) not yet re-run this session** — do it before the next commit if scene/component code changes; doc/data-only changes so far shouldn't need it but confirm.
+- `planned` `SceneDef` stubs for all three scenes in `src/data/scenes.ts` (empty beats/viewpoints, mirrors the M3 stub-before-build pattern) — now with `claimIds` wired, still no beats/viewpoints (that's the actual build). `2sam-1`/`2sam-2` passage `sceneIds` wired.
+- All character/claim gaps flagged by the briefs are filled: `amalekite-messenger` (+ `claim-amalekite-messenger-account`, explicitly recording what the text has him _say_, not that it's true — contradicts `gilboa-battle`'s already-rendered 1 Sam 31:3–5); `abner`/`ish-bosheth`/`joab`/`abishai`/`asahel` (+ `claim-ish-bosheth-installed`/`claim-gibeon-contest`/`claim-asahel-death`/`claim-abner-pursuit-halted`/`claim-gibeon-pool-form`) in `src/data/characters.ts`/`claims.ts`.
+- Gate green: format:check, lint, typecheck, 269 vitest, build. **E2e (`npm run e2e`) still not re-run this session** — no scene/component code touched yet (data + docs only), but run it before the first scene build.
+
+**Known open citation/sourcing gaps, flagged by the briefs, not yet closed (fold into a future `researcher` pass, not blocking the builds below):**
+
+- `claim-gibeon-pool-form`: whether the excavated Gibeon pool/water-tunnel predates or postdates the early Iron IIA setting of 2 Sam 2 is not established by `pritchard-gibeon-1962` as currently cataloged.
+- `claim-hebron-town-form` (flagged by `hebron-anointing`): no source card yet covers excavated early Iron IIA town form at Tell Rumeida specifically; `rainey-notley-2006` only supports the site _identification_.
+- `claim-amalekite-messenger-account`: a named critical commentary (e.g. McCarter's Anchor Bible _II Samuel_) on the Gilboa/2 Sam 1 discrepancy would strengthen sourcing beyond the text itself.
 
 **What's next (Sonnet), in priority order:**
 
-1. **`gibeon-pool` world-director brief** — the last of the three M4 scene briefs, not yet written. Cover Abner installing Ish-bosheth at Mahanaim, the twelve-vs-twelve contest at the pool of Gibeon, the battle, and Asahel's death/Joab's pursuit halted at the hill of Ammah (2 Sam 2:8–32). Mark provisional (Fable fallback) like the other two, fold into queue #18. `mahanaim`'s disputed identification (low confidence, no scene there — it's a political-geography reference point only) and `gibeon`'s settled identification are both already in `locations.ts`.
-2. **Character data entries** flagged by the two completed briefs but not yet written: `amalekite-messenger` (ziklag-lament brief) and whatever `gibeon-pool`'s brief flags for Abner/Ish-bosheth/Joab/Asahel — none of these exist yet in `src/data/characters.ts`.
-3. **Source-basis gap** flagged by the `hebron-anointing` brief: no source card yet covers excavated early Iron IIA town form at Tell Rumeida/Hebron specifically (`rainey-notley-2006` only supports the site _identification_) — `researcher` pass before `claim-hebron-town-form` can move past `design-placeholder`.
-4. **Build the three scenes** once all three briefs exist — `threejs-engineer` per brief, same pattern as M2/M3. Do not start before the `gibeon-pool` brief lands (item 1).
-5. **A real Fable pass** to confirm/revise the whole M4 scope+briefs package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it.
-6. **(Still open, unrelated to M4, carried forward)** Real-hardware performance check of `gilboa-battle` at high tier, and the Pages-live check — both still blocked from sandboxes; see Environment notes below, unchanged.
+1. **Build the three scenes** — `threejs-engineer` per brief, same pattern as M2/M3. Suggest building in narrative order: `ziklag-lament` (smallest cast, first scene of its kind — conversation-scale, not crowd-scale) → `hebron-anointing` (largest M4 crowd, ~250–310 figures per its brief) → `gibeon-pool` (most violence-heavy, first named-character-kills-named-character death — read its brief's Asahel-death section closely before implementing, it sets a new restraint precedent). Each brief's "Not allowed"/scope-guard section is load-bearing — re-read before starting.
+2. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context view) — not started, `ui-engineer` work once scoped further (or fold into a Fable pass first, since the atlas-vs-scene call itself is still provisional).
+3. **Close the three open citation gaps above** — `researcher` pass, doesn't block scene builds.
+4. **A real Fable pass** to confirm/revise the whole M4 scope+briefs package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it. Do this before flipping any M4 scene to `released`.
+5. **(Still open, unrelated to M4, carried forward)** Real-hardware performance check of `gilboa-battle` at high tier, and the Pages-live check — both still blocked from sandboxes; see Environment notes below, unchanged.
 
 ## State before this slice (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
 

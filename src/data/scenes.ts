@@ -819,7 +819,13 @@ export const SCENES: SceneDef[] = [
     durationSec: 0,
     beats: [],
     viewpoints: [],
-    claimIds: [],
+    claimIds: [
+      'claim-ish-bosheth-installed',
+      'claim-gibeon-contest',
+      'claim-asahel-death',
+      'claim-abner-pursuit-halted',
+      'claim-gibeon-pool-form',
+    ],
     assetIds: [],
   },
 ];

@@ -187,6 +187,25 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
+## Milestone 4 — 2 Samuel 1–2: **planned** (scope + all three briefs done 2026-07-22, provisional)
+
+Fable hit its monthly spend limit mid-session; the scope decision and all
+three world-director briefs below were written by Sonnet under
+`docs/model-handoff.md`'s fallback policy and are marked **provisional**
+(`docs/fable-review-queue.md` #18) pending a real Fable pass.
+
+3-scene breakdown: `ziklag-lament` (2 Sam 1, `docs/design/ziklag-lament-brief.md`),
+`hebron-anointing` (2 Sam 2:1–7, `docs/design/hebron-anointing-brief.md`),
+`gibeon-pool` (2 Sam 2:8–32, `docs/design/gibeon-pool-brief.md`). The
+milestone's 4th goal (divided-kingdom political geography) was called as an
+atlas/map UI overlay rather than a 4th 3D scene, per ADR-011. New `gibeon`
+(settled identification) and `mahanaim` (disputed, narrated-only — no
+scene there) locations added. All `SceneDef`s are `planned` stubs (no
+beats/viewpoints yet — that's the next Sonnet build task); all
+brief-flagged character/claim gaps (`amalekite-messenger`, `abner`,
+`ish-bosheth`, `joab`, `abishai`, `asahel` + their claims) are filled. See
+`docs/run-log.md`'s 2026-07-22 entries for full detail.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:
