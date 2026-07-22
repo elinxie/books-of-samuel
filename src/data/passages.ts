@@ -46,7 +46,9 @@ export const PASSAGES: Passage[] = [
     translationAnchor: 'ESV',
     summary:
       'An Amalekite brings David news of Saul’s death, claiming to have delivered the final blow, and is executed for it. David laments Saul and Jonathan in the Song of the Bow.',
-    sceneIds: [],
+    // Scene id committed 2026-07-22 (Sonnet, Fable-unavailable fallback, queue
+    // #18) before the scene exists in scenes.ts — mirrors the M3 pattern.
+    sceneIds: ['ziklag-lament'],
     milestoneId: 'M4',
     status: 'planned',
   },
@@ -58,7 +60,7 @@ export const PASSAGES: Passage[] = [
     translationAnchor: 'ESV',
     summary:
       'David goes up to Hebron and is anointed king over Judah; he commends Jabesh-gilead for burying Saul. Abner installs Ish-bosheth over the northern tribes, and war begins between the houses at the pool of Gibeon.',
-    sceneIds: [],
+    sceneIds: ['hebron-anointing', 'gibeon-pool'],
     milestoneId: 'M4',
     status: 'planned',
   },

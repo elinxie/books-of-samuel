@@ -70,13 +70,17 @@ export const MILESTONES: Milestone[] = [
   {
     id: 'M4',
     label: 'Milestone 4 — 2 Samuel 1–2',
+    // Scene breakdown decided 2026-07-22 (Sonnet, Fable-unavailable fallback —
+    // see fable-review-queue.md #18, needs a real Fable confirmation): three
+    // scenes, `ziklag-lament` / `hebron-anointing` / `gibeon-pool`, per the
+    // goals below. World-director briefs for each are next, then builds.
     status: 'planned',
     passageRefs: ['2 Samuel 1', '2 Samuel 2'],
     goals: [
-      'News of Saul’s death and David’s lament',
-      'David at Hebron; Judah anoints David',
-      'Ish-bosheth / Abner political geography',
-      'Early divided-kingdom context view',
+      'News of Saul’s death and David’s lament (`ziklag-lament`)',
+      'David at Hebron; Judah anoints David (`hebron-anointing`)',
+      'Abner/Ish-bosheth at Mahanaim; the pool of Gibeon and Asahel’s death (`gibeon-pool`)',
+      'Early divided-kingdom political geography — provisionally called as an atlas/map UI overlay, not a 4th 3D scene (queue #18)',
     ],
   },
 ];
