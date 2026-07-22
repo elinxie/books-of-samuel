@@ -111,7 +111,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Rendered at reduced count (~1:10) for performance; the in-scene label discloses this. How literally to take army numbers in these narratives is debated, and the app does not take a position. Reused in ziklag-lament for continuity of "David’s men" as a concept only, not as a headcount ratio: that scene’s witness cluster (2 Samuel 1:11–12’s "all the men who were with him") is a small, disclosed headcount (6–10 figures), the same "no ratio applies" convention jabesh-burial set for its retrieval party — the ~1:10 army-muster ratio is the wrong register for an intimate conversation scene with no narrated headcount.',
+      'Rendered at reduced count (~1:10) for performance; the in-scene label discloses this. How literally to take army numbers in these narratives is debated, and the app does not take a position. Reused in ziklag-lament for continuity of "David’s men" as a concept only, not as a headcount ratio: that scene’s witness cluster (2 Samuel 1:11–12’s "all the men who were with him") is a small, disclosed headcount (6–10 figures), the same "no ratio applies" convention jabesh-burial set for its retrieval party — the ~1:10 army-muster ratio is the wrong register for an intimate conversation scene with no narrated headcount. Reused again in hebron-anointing at the standard ~1:10 narrated ratio (the same convention as ziklag-aftermath/ziklag-lament, not a new count) for the approach-column retinue — kept visually and conceptually distinct there from that scene’s two other, differently-scaled crowds: a disclosed design-choice household column (claim-david-move-hebron) and the representative Judah assembly (claim-judah-assembly-scale), neither of which is a ratio of this six hundred.',
   },
   {
     id: 'claim-david-historical',
@@ -874,6 +874,86 @@ export const CLAIMS: ReconstructionClaim[] = [
     sourceIds: ['esv-bible'],
     notes:
       'The evening anchor is textually given for the mourning beat (1:12). The lament itself (1:17–27), narrated later in the chapter, is not explicitly timed to the same evening — extending the lighting arc across the whole scene through the lament is this project’s own staging choice for legibility and mood (the same reasoning as jabesh-burial’s dusk-through-close arc), hence moderate rather than high confidence for the extension specifically. Distinct from ziklag-aftermath’s claim-time-of-day, which is an unstated speculative placeholder with no textual anchor at all.',
+  },
+  {
+    id: 'claim-hebron-identification',
+    statement:
+      'Hebron is identified with Tell Rumeida, above the modern city — one of the more securely located Old Testament highland sites.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'high',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'Matches the hebron LocationEntry’s identification.views (loc-view-hebron). Site identification only — no claim here about excavated Iron IIA town form, fortification, or size at Tell Rumeida (see claim-hebron-town-form for that separate, open gap).',
+  },
+  {
+    id: 'claim-hebron-town-form',
+    statement:
+      'The scene renders Hebron as a modest highland hill town on Tell Rumeida — no wall plan, gate-tower form, or building footprint is asserted as excavated, and the surrounding terraced highland setting is a generic Judean-highland composite, not a surveyed landscape.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'rainey-notley-2006 supports the site identification (claim-hebron-identification) but says nothing about excavated early Iron IIA town form, fortification, or size at Tell Rumeida. Checked sources/source-cards/ for a dedicated Tell Rumeida excavation-results card: none exists yet, despite renewed excavation activity at the site in recent decades. A researcher pass should check for a citable published Tell Rumeida/Hebron excavation or survey report before this claim can move past design-placeholder — flagged in docs/fable-review-queue.md #18. Until then this stays a disclosed generic "modest highland hill town" placeholder, following the beth-shan/jabesh pattern of disclosing exactly this kind of gap rather than inventing a plan; no single Tell Rumeida excavation phase is adopted as "the" Davidic-era plan.',
+  },
+  {
+    id: 'claim-hebron-inquiry',
+    statement:
+      'The narrative states that David inquired of the LORD before going up, asking whether and where he should go; the answer given is Hebron (2 Samuel 2:1).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      '2 Samuel 2:1 does not name the inquiry’s mechanism or location; the scene infers the ephod/Abiathar practice already established at 1 Samuel 30:7–8 (the identical inquiry formula, "shall I go up... where shall I go up") rather than depicting a different, unattested method, and carries no new terrain or Ziklag-geometry reuse for the vignette.',
+  },
+  {
+    id: 'claim-david-move-hebron',
+    statement:
+      'The narrative states that David went up to Hebron with his two wives, and that his men and their households went up with him, and they settled in the towns of Hebron (2 Samuel 2:2–3).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text gives no headcount for the households; the scene renders a disclosed design-choice household column/camp of roughly 40–50 figures at high quality tier (mixed adults and children), sized to read as "a following’s families," not asserted as a real headcount or a fixed multiple of claim-600-men’s six hundred. David’s two named wives (Ahinoam and Abigail) are not individually modeled as distinguished figures within the household group.',
+  },
+  {
+    id: 'claim-judah-anointing',
+    statement:
+      'The narrative states plainly that the men of Judah came and anointed David king over the house of Judah (2 Samuel 2:4) — not over Israel. The rest of the former kingdom remains Saul’s house’s to claim at this point in the narrative.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The single most important claim in this scene: every caption and composition choice touching 2:4 must carry the "house of Judah" qualifier, never presenting this as David becoming king in an unqualified sense. A wider anointing "king over all Israel" follows only later, at 2 Samuel 5:3 — several chapters and, per the narrative’s own chronology, several years after this scene — and is not asserted as having happened here. See claim-david-historical for the separate, disputed scholarly question of how large a kingdom either anointing actually controlled on the ground; nothing here resolves that debate.',
+  },
+  {
+    id: 'claim-jabesh-commendation',
+    statement:
+      'The narrative states that David sent messengers to the men of Jabesh-gilead commending them for burying Saul, and informing them of his own anointing (2 Samuel 2:5–7).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Cross-references claim-jabesh-retrieval (the burial itself, rendered in jabesh-burial) — this scene does not re-render that burial, pyre, wall, or bone-bundle geometry; it stages only David’s side of the exchange, a messenger dispatch carrying the message outward, never shown arriving at or being received in Jabesh-gilead.',
+  },
+  {
+    id: 'claim-anointing-rite-form',
+    statement:
+      'The scene stages a physical anointing gesture (an unnamed elder figure pouring from a horn near David) as the choreography for 2:4’s bare statement that Judah "anointed David king" — the verse narrates the fact of anointing, not who poured, what vessel was used, or what the assembled elders/townspeople did.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Checked king-stager-2001 (the project’s primary material-culture source) for a comparative ancient Near Eastern kingship/covenant-investiture parallel that could move this past design-placeholder; its coverage is general Israelite daily life and material culture (houses, dress, wells, food production, tools) and does not discuss anointing or investiture ritual mechanics, so it does not support a comparative-ane basis here. The horn vessel echoes 1 Samuel 16:13’s "horn of oil" at David’s earlier, private anointing by Samuel — the only physical-vessel detail the text gives for any of David’s anointings, and the most textually grounded prop choice available, not an assertion that 2:4 itself names a horn.',
+  },
+  {
+    id: 'claim-judah-assembly-scale',
+    statement:
+      'The anointing assembly ("the men of Judah," 2:4) is rendered as a representative civic gathering of roughly 150–200 figures at high quality tier, standing for Hebron’s own townspeople plus a visible elder contingent — not a literal muster of the tribe of Judah, which any regional Iron Age highland population estimate the project has already cited would put at several thousand at minimum.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'finkelstein-silberman-2001'],
+    notes:
+      'Parallel in form to claim-battle-scale and to jabesh-burial’s "no ratio applies" disclosure for its retrieval party: 2:4 names no headcount and no gathering mechanism (a levy? a self-selected assembly of local elders and townspeople? Hebron alone or its satellite towns too?) for the anointing, so the standard ~1:10 narrated-army ratio (claim-600-men) does not apply here. This is the largest crowd of the three M4 scenes, deliberately so — a public political founding is the one M4 beat that is structurally a crowd event — but the figure stays an order of magnitude below any literal tribal count, and the in-scene label says so.',
   },
   {
     id: 'claim-ish-bosheth-installed',

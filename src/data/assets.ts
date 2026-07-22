@@ -472,6 +472,66 @@ export const ASSETS: AssetRecord[] = [
       'None achievable beyond stylization without an excavated or iconographic comparandum for an Iron Age Israelite royal diadem/armlet; any upgrade improves material/finish fidelity only, not a claim-driven replacement.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-terrain-hebron-hills',
+    name: 'Procedural Judean highland terrain (Hebron)',
+    represents:
+      'Terraced limestone hill country above Hebron’s spring-fed valley, with a south approach ridge — see claim-hebron-town-form',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise plus hand-tuned mound/channel/ridge/ramp features (ADR-005), not derived from real elevation data for Tell Rumeida or its surrounding valley.',
+    historicalRequirements:
+      'DEM-derived terrain becomes appropriate once a citable Tell Rumeida excavation/survey source closes the researcher gap noted on claim-hebron-town-form; until then this stays a disclosed procedural composite.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-hebron-town-form',
+    name: 'Hill-town massing (Hebron)',
+    represents:
+      'The modest hill-town/gate-plaza structure on Tell Rumeida — see claim-hebron-town-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple box massing from a scene-local layout (src/scenes/hebron-anointing/layout.ts, ADR-006 conventions), not a reproduction of any excavated Tell Rumeida plan — no dedicated excavation-results source card exists yet (flagged for a researcher pass, docs/fable-review-queue.md #18).',
+    historicalRequirements:
+      'Revise only once the researcher gap on claim-hebron-town-form closes with a citable published Tell Rumeida plan; until then this stays a disclosed generic placeholder.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-terrace-walls',
+    name: 'Dry-stone agricultural terracing',
+    represents:
+      'Judean hill-country terrace walls for olive/vine cultivation on the slopes around Hebron',
+    placeholder: true,
+    whyTemporary:
+      'Generic instanced low stone-wall segments following elevation contour bands around the town hill, not surveyed or excavated terrace remains at any specific location.',
+    historicalRequirements:
+      'Representative Judean-highland terrace form/material if ever modeled at higher fidelity; optional visual upgrade only.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-household-camp',
+    name: 'Household tent/lean-structure cluster',
+    represents:
+      'The satellite camp where David’s men’s households settle "in the towns of Hebron" (2 Samuel 2:3) — see claim-david-move-hebron',
+    placeholder: true,
+    whyTemporary:
+      'Simple tent/lean-structure primitive geometry at a disclosed design-choice headcount (~40-50 figures), not a reconstruction of any specific excavated domestic form.',
+    historicalRequirements:
+      'None beyond optional visual upgrade; the household headcount itself is a permanent disclosed design choice, not a data gap awaiting a source.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-anointing-props',
+    name: 'Anointing horn prop',
+    represents:
+      'The oil vessel used in the anointing gesture staged for 2 Samuel 2:4 — see claim-anointing-rite-form',
+    placeholder: true,
+    whyTemporary:
+      'A single primitive horn-shaped mesh, presented near David and the elder figure during the rite gesture — 2:4 narrates the fact of anointing only, not the vessel or physical choreography, so exact form is a disclosed design placeholder, not a modeled reconstruction.',
+    historicalRequirements:
+      'None achievable beyond stylization without a period-specific comparandum for an anointing vessel; any upgrade improves material/finish fidelity only.',
+    replacementMilestoneId: 'M4',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

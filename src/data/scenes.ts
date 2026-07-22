@@ -982,14 +982,118 @@ export const SCENES: SceneDef[] = [
     locationId: 'hebron',
     periodId: 'iron-iia',
     milestoneId: 'M4',
-    status: 'planned',
+    // PROVISIONAL build (2026-07-22, Sonnet implementing a Sonnet
+    // world-director brief — Fable was unavailable this session; see
+    // docs/design/hebron-anointing-brief.md and fable-review-queue.md #18).
+    // in-progress, not released, pending a real Fable pass on the brief's
+    // creative calls — matches the ziklag-lament/M2/M3 build-then-review
+    // pattern.
+    status: 'in-progress',
     synopsis:
-      'David goes up to Hebron with his men and their households; the men of Judah anoint him king over the house of Judah. David sends word commending the men of Jabesh-gilead for burying Saul.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
-    claimIds: [],
-    assetIds: [],
+      'David goes up to Hebron with his men and their households; the men of Judah anoint him king over the house of Judah — not yet over Israel. David sends word commending the men of Jabesh-gilead for burying Saul.',
+    depictsDeath: false,
+    durationSec: 170,
+    beats: [
+      {
+        id: 'b-inquiry',
+        timeSec: 0,
+        title: 'David inquires of the LORD',
+        caption:
+          'After this, David inquires of the LORD: should he go up to one of the towns of Judah, and if so, where? The answer is Hebron. The text does not say where this inquiry happens or, here, name the method — the same ephod practice already shown at Ziklag (1 Samuel 30:7–8) is inferred, not restated. (2 Samuel 2:1)',
+        passageRef: '2 Samuel 2:1',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 16,
+        title: 'The column climbs the highland road',
+        caption:
+          'David goes up, and with him his two wives — and his men, everyone with his household. The column climbs from the south, the direction of the Negev and Ziklag, and comes into view of Hebron on its hill. (2 Samuel 2:2–3a)',
+        passageRef: '2 Samuel 2:2–3a',
+      },
+      {
+        id: 'b-settling',
+        timeSec: 58,
+        title: 'The towns of Hebron',
+        caption:
+          "They settle in the towns of Hebron — households dispersing into a satellite camp around the town, a quieter, domestic beat, while David's men gather near the gate plaza. The roughly 40–50 household figures shown are a disclosed design choice, not a headcount the text gives. (2 Samuel 2:3b)",
+        passageRef: '2 Samuel 2:3b',
+      },
+      {
+        id: 'b-anointing',
+        timeSec: 98,
+        title: 'Anointed king — over the house of Judah',
+        caption:
+          "The men of Judah come and anoint David king over the house of Judah — one tribe's elders and townspeople, in one tribal hill town, installing him over themselves alone. Not over Israel: the rest of the former kingdom is still Saul's house's to claim, and a wider anointing \"king over all Israel\" is still years and several chapters away (2 Samuel 5:3). The ~150–200 figures gathered are an explicitly labeled representative assembly, not a literal tribal muster. (2 Samuel 2:4a)",
+        passageRef: '2 Samuel 2:4a',
+      },
+      {
+        id: 'b-jabesh-message',
+        timeSec: 138,
+        title: 'Word sent to Jabesh-gilead',
+        caption:
+          'Told that the men of Jabesh-gilead buried Saul, David — now a king, of Judah — sends messengers commending them and telling them of his own new, partial kingship. Staged as correspondence: the messengers are given the message and walk the road east until they are out of frame. No burial, pyre, or wall geometry is re-rendered here — that already happened, elsewhere, in jabesh-burial. (2 Samuel 2:4b–7)',
+        passageRef: '2 Samuel 2:4b–7',
+      },
+      {
+        id: 'b-close',
+        timeSec: 165,
+        title: 'A partial, contested kingship',
+        caption:
+          "Not shown: Abner has already moved to install Saul's son Ish-bosheth over the northern tribes at Mahanaim, in direct rivalry — the war that follows at the pool of Gibeon is the next scene, not this one. (2 Samuel 2:8–32)",
+        passageRef: '2 Samuel 2:8–32',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-approach-ridge',
+        label: 'The approach ridge (default)',
+        position: [6, 6, 190],
+        lookAt: [0, 14, -40],
+      },
+      {
+        id: 'vp-anointing-plaza',
+        label: 'The gate plaza',
+        position: [16, 2, -28],
+        lookAt: [0, 3, -18],
+      },
+      {
+        id: 'vp-household-camp',
+        label: 'The household camp',
+        position: [-70, 2, -35],
+        lookAt: [-95, 2, -20],
+      },
+      {
+        id: 'vp-messenger-departure',
+        label: 'The road east, toward Gilead',
+        position: [130, 2, -18],
+        lookAt: [300, 2, -30],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-hebron-inquiry',
+      'claim-david-move-hebron',
+      'claim-judah-anointing',
+      'claim-jabesh-commendation',
+      'claim-anointing-rite-form',
+      'claim-judah-assembly-scale',
+      'claim-dress',
+      'claim-chronology',
+      'claim-david-historical',
+      'claim-600-men',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-household-camp',
+      'asset-anointing-props',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
   },
   {
     id: 'gibeon-pool',

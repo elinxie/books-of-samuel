@@ -62,9 +62,16 @@ export const PASSAGES: Passage[] = [
     translationAnchor: 'ESV',
     summary:
       'David goes up to Hebron and is anointed king over Judah; he commends Jabesh-gilead for burying Saul. Abner installs Ish-bosheth over the northern tribes, and war begins between the houses at the pool of Gibeon.',
+    // 2026-07-22: hebron-anointing built (in-progress); gibeon-pool briefed
+    // but not yet built. Bumped to in-progress on the same "status follows
+    // the scene" logic used for 2sam-1/ziklag: one of this passage's two
+    // scenes has progressed, matching 1sam-31's precedent of tracking
+    // passage status against its scenes' collective progress during M3
+    // (rather than waiting for every scene to land before reflecting any
+    // progress at all).
     sceneIds: ['hebron-anointing', 'gibeon-pool'],
     milestoneId: 'M4',
-    status: 'planned',
+    status: 'in-progress',
   },
 ];
 

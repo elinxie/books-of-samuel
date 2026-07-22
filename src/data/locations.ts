@@ -204,7 +204,10 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.52, lon: 35.1, confidence: 'high' },
     sceneIds: ['hebron-anointing'],
     claimIds: [],
-    status: 'planned',
+    // 2026-07-22: hebron-anointing built (in-progress, PROVISIONAL, pending
+    // Fable review of its brief) — status follows the scene, matching the
+    // ziklag/ziklag-lament precedent.
+    status: 'in-progress',
   },
   {
     id: 'gibeon',

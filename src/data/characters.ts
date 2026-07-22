@@ -24,9 +24,9 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Abiathar the priest',
     kind: 'person',
     summary:
-      'Son of Ahimelech, survivor of the Nob massacre, who carries the ephod by which David inquires of the LORD before the pursuit (1 Samuel 30:7–8).',
-    passageRefs: ['1 Samuel 22:20–23', '1 Samuel 30:7–8'],
-    claimIds: [],
+      'Son of Ahimelech, survivor of the Nob massacre, who carries the ephod by which David inquires of the LORD before the pursuit (1 Samuel 30:7–8) and again before the move to Hebron (2 Samuel 2:1, mechanism inferred from the identical earlier practice, not restated in the text).',
+    passageRefs: ['1 Samuel 22:20–23', '1 Samuel 30:7–8', '2 Samuel 2:1'],
+    claimIds: ['claim-hebron-inquiry'],
   },
   {
     id: 'amalekites',
@@ -114,9 +114,18 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'The men of Jabesh-gilead',
     kind: 'group',
     summary:
-      'Unnamed in the text ("all the valiant men"). Having heard what the Philistines did to Saul at Beth-shan, they walk all night, take the bodies of Saul and his sons from the wall, and carry them home to Jabesh — repaying Saul’s earlier rescue of their town (1 Samuel 11).',
-    passageRefs: ['1 Samuel 31:11–12a', '1 Samuel 11'],
+      'Unnamed in the text ("all the valiant men"). Having heard what the Philistines did to Saul at Beth-shan, they walk all night, take the bodies of Saul and his sons from the wall, and carry them home to Jabesh — repaying Saul’s earlier rescue of their town (1 Samuel 11). Later commended by David, now anointed king of Judah, for this act (2 Samuel 2:5–7) — not rendered again in hebron-anointing, which stages only David’s side of that exchange.',
+    passageRefs: ['1 Samuel 31:11–12a', '1 Samuel 11', '2 Samuel 2:5–7'],
     claimIds: ['claim-jabesh-retrieval'],
+  },
+  {
+    id: 'men-of-judah',
+    name: 'The men of Judah',
+    kind: 'group',
+    summary:
+      'Unnamed in the text — no individual elders are invented. Hebron’s own townspeople and a visible elder contingent who come and anoint David king over the house of Judah (2 Samuel 2:4), rendered as a representative civic assembly, not a literal tribal muster.',
+    passageRefs: ['2 Samuel 2:4'],
+    claimIds: ['claim-judah-anointing', 'claim-judah-assembly-scale', 'claim-dress'],
   },
   {
     id: 'amalekite-messenger',

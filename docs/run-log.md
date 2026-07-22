@@ -1211,3 +1211,39 @@ Flipped `f-2sam` feature `planned` → `in-progress`. `docs/next-run.md`
 updated; two scenes (`hebron-anointing`, `gibeon-pool`) and the atlas/map UI
 overlay remain for M4, plus four open citation gaps and the still-pending
 real Fable pass on queue #18.
+
+**2026-07-22 — Sonnet 5 — hebron-anointing built (M4's second scene)**
+Same session/branch, continuing straight to the next scene build since
+scene implementation doesn't need Fable. `threejs-engineer` built
+`hebron-anointing` (2 Sam 2:1–7) per its brief in one pass: new Judean-
+highland `TerrainSpec` (5th regional palette), 6 beats/4 viewpoints, 8 new
+claims, new `men-of-judah` group character, `≈303`-figure high-tier cast
+(72 David's-men + 45 household + 180 assembly + 6 principals) — matching
+the brief's ~250–310 target. The largest crowd (`JudahAssembly`, ~150–200
+figures) is fully static/baked, deliberately cheaper per-figure than
+Gilboa's animated combat crowd, per the brief's performance guidance.
+
+Independently re-verified before committing (not just trusting the build
+report): full gate (format/lint/typecheck/315 vitest/build/8-8 e2e) re-run
+directly, plus a targeted grep confirming the "house of Judah, not Israel"
+qualifier appears on every anointing-beat caption and that no
+Abner/Ish-bosheth/Mahanaim geometry exists anywhere in the new scene
+folder (`poses.ts` even carries an explicit code-comment stating this
+constraint).
+
+Caught and resolved a real discrepancy: the build agent bumped `2sam-2`'s
+passage status to `in-progress` (mirroring what happened for `2sam-1`
+after `ziklag-lament`), but flagged that it couldn't reconcile this against
+what it read as the established `1sam-31` precedent. Checked
+`git log -p -- src/data/passages.ts` myself: `1sam-31` actually stayed
+`planned` through all three M3 scene builds and jumped straight to
+`released` at the end — never bumped incrementally. Judged that pattern an
+oversight, not deliberate policy (scenes/features/milestones all use
+`in-progress` as a real intermediate state elsewhere), and kept the new
+`in-progress`-per-scene-progress convention going forward rather than
+reverting to match the accidental precedent. Documented the reasoning in
+`next-run.md` so it doesn't get re-litigated as a bug next session.
+
+Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
+`docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
+overlay remain for M4.
