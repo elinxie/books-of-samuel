@@ -118,6 +118,15 @@ export const CHARACTERS: CharacterOrGroup[] = [
     passageRefs: ['1 Samuel 31:11–12a', '1 Samuel 11'],
     claimIds: ['claim-jabesh-retrieval'],
   },
+  {
+    id: 'amalekite-messenger',
+    name: 'The Amalekite messenger',
+    kind: 'person',
+    summary:
+      'Unnamed man who escapes the rout on Gilboa and reaches David at Ziklag with news of Saul’s death, claiming to have killed him himself. David has him executed for raising a hand against "the LORD’s anointed" — a judgment on the confession itself, not a forensic ruling on what actually happened at Gilboa (contrast his account with the narrator’s own, already rendered in 1 Samuel 31:3–5).',
+    passageRefs: ['2 Samuel 1:1–16'],
+    claimIds: ['claim-amalekite-messenger-account'],
+  },
 ];
 
 export const CHARACTERS_BY_ID: ReadonlyMap<string, CharacterOrGroup> = new Map(

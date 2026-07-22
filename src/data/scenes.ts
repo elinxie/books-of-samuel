@@ -787,7 +787,7 @@ export const SCENES: SceneDef[] = [
     durationSec: 0,
     beats: [],
     viewpoints: [],
-    claimIds: [],
+    claimIds: ['claim-amalekite-messenger-account'],
     assetIds: [],
   },
   {
