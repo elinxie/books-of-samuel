@@ -1113,3 +1113,32 @@ citation-verification passes:
   section + `next-run.md` state block updated. `npm run verify` green
   (status-field/doc-only diff). Not committed — orchestrator reviews the
   diff and handles git.
+
+**2026-07-22 — Sonnet 5 — M4 scope + 2 of 3 world-director briefs (Fable spend limit hit)**
+Scheduled/automated continuation session. First action — spawning `fable-architect`
+for the M4 scope call — errored immediately: "You've hit your monthly spend
+limit." Proceeded under `docs/model-handoff.md`'s documented fallback (Sonnet
+does the call, marks it provisional, keeps moving) rather than blocking.
+
+Decided M4's 3-scene breakdown myself (queue #18, provisional): `ziklag-lament`
+(2 Sam 1), `hebron-anointing` (2 Sam 2:1–7), `gibeon-pool` (2 Sam 2:8–32). M4's
+4th goal (divided-kingdom context view) called as an atlas/map UI overlay, not
+a 4th scene. Wrote `planned` `SceneDef` stubs into `scenes.ts` and wired
+`2sam-1`/`2sam-2` `sceneIds` (mirrors the M3 stub-before-build pattern —
+verified against `git show e5c555f` for the exact stub shape).
+
+Delegated: `researcher` agent added `gibeon` (Tell el-Jib, settled) and
+`mahanaim` (disputed, 2 low-confidence candidates) locations + 3 source cards
+(had to add a second Mahanaim view myself — `coughenour-1989-mahanaim` — was
+delivered with only 1 view, which fails `integrity.test.ts`'s disputed→≥2-views
+rule). Two `world-director` agents (model overridden to `sonnet`, marked
+provisional per that role's own stated fallback policy) wrote
+`ziklag-lament-brief.md` and `hebron-anointing-brief.md` in parallel — both
+landed cleanly, no edit conflicts on the shared `fable-review-queue.md` fold-in
+(confirmed by both agents' own final checks). `gibeon-pool`'s brief is not yet
+written — next up.
+
+Gate green this session: format:check, lint, typecheck, 269 vitest, build
+(had to run `npm install` first — fresh sandbox, no `node_modules`). E2e not
+re-run (doc/data-only diff, no component code touched). Pushed to
+`claude/focused-mccarthy-ybp2iz`, opened draft PR #42.
