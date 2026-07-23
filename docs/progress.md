@@ -187,6 +187,38 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
+## Milestone 4 — 2 Samuel 1–2: **in-progress** (2 of 3 scenes built 2026-07-22, provisional)
+
+Fable hit its monthly spend limit mid-session; the scope decision, all
+three world-director briefs, and the scene builds below were done by
+Sonnet under `docs/model-handoff.md`'s fallback policy and are marked
+**provisional** (`docs/fable-review-queue.md` #18) pending a real Fable
+pass — no M4 scene should ship past `in-progress` until then.
+
+3-scene breakdown: `ziklag-lament` (2 Sam 1, **built**,
+`docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7,
+**built**, `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam
+2:8–32, briefed, not yet built, `docs/design/gibeon-pool-brief.md`). The
+milestone's 4th goal (divided-kingdom political geography) was called as
+an atlas/map UI overlay rather than a 4th 3D scene, per ADR-011 — not yet
+built. New `gibeon` (settled identification) and `mahanaim` (disputed,
+narrated-only — no scene there) locations added.
+
+`ziklag-lament`: the project's first conversation-scale scene (~12 figures,
+not a crowd ratio); its hardest constraint — the Amalekite messenger's
+claim to have killed Saul must never be visually corroborated against
+`gilboa-battle`'s own 1 Sam 31:4 — is enforced by a dedicated test.
+`hebron-anointing`: the largest M4 crowd (≈303 figures high-tier), a new
+Judean-highland terrain palette (the project's fifth), and a hard framing
+constraint (David anointed over the house of Judah only, never Israel,
+carried in every relevant caption) — the ~150–200-figure assembly crowd is
+fully static/baked for performance. Both gates independently re-verified
+(not just taken from build-agent reports): format/lint/typecheck/315
+vitest/build/8-8 e2e, all green. All brief-flagged character/claim gaps
+across all three briefs are filled (`amalekite-messenger`, `abner`,
+`ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
+See `docs/run-log.md`'s 2026-07-22 entries for full detail.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

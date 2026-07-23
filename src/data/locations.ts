@@ -49,7 +49,7 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.39, lon: 34.68, confidence: 'low' },
-    sceneIds: ['ziklag-aftermath'],
+    sceneIds: ['ziklag-aftermath', 'ziklag-lament'],
     claimIds: ['claim-ziklag-location', 'claim-ziklag-scale', 'claim-ziklag-raided'],
     status: 'in-progress',
   },
@@ -202,6 +202,74 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.52, lon: 35.1, confidence: 'high' },
+    sceneIds: ['hebron-anointing'],
+    claimIds: [],
+    // 2026-07-22: hebron-anointing built (in-progress, PROVISIONAL, pending
+    // Fable review of its brief) — status follows the scene, matching the
+    // ziklag/ziklag-lament precedent.
+    status: 'in-progress',
+  },
+  {
+    id: 'gibeon',
+    name: 'Gibeon',
+    altNames: ['Tell el-Jib', 'el-Jib'],
+    region: 'Central Benjamin highlands, north of Jerusalem',
+    summary:
+      'Site of the pool where the young men of Abner and Joab fought, and of the battle in which Asahel died (2 Samuel 2:12–17). Identified with Tell el-Jib.',
+    identification: {
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-gibeon',
+          label: 'Tell el-Jib (el-Jib)',
+          proponents: ['James B. Pritchard (excavator, 1956–1962)'],
+          summary:
+            'Secured largely by jar handles recovered at the site inscribed with the Hebrew triliteral gb’n ("Gibeon"); widely regarded as one of the more strongly corroborated site identifications in biblical archaeology.',
+          confidence: 'high',
+          sourceIds: ['pritchard-gibeon-1962', 'rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.85, lon: 35.18, confidence: 'high' },
+    sceneIds: ['gibeon-pool'],
+    claimIds: [],
+    status: 'planned',
+  },
+  {
+    id: 'mahanaim',
+    name: 'Mahanaim',
+    region: 'Transjordan, Gilead (Jabbok/Zarqa valley area)',
+    summary:
+      'Ish-bosheth’s capital east of the Jordan after Saul’s death (2 Samuel 2:8, 12), and later a refuge for David during Absalom’s revolt. No site identification commands scholarly consensus; several candidates in the Jabbok valley have been proposed and none is secure.',
+    identification: {
+      disputed: true,
+      views: [
+        {
+          id: 'loc-view-mahanaim-tulul-dhahab',
+          label: 'Tulul adh-Dhahab al-Gharbi (Tell ed-Dahab el-Gharbi, western mound)',
+          proponents: [
+            'Robert A. Coughenour (1989, iron-industry argument)',
+            'Israel Finkelstein and Tallay Ornan (2024 proposal)',
+          ],
+          summary:
+            'Proposed on two independent grounds: Coughenour (1989) argued the site fit a hypothesized regional iron-industry role; Finkelstein and Ornan (2024) point to carved ashlar blocks found there, dated to roughly the early-to-mid 8th century BCE, as remains of an Israelite-period monumental building. Neither amounts to an established consensus.',
+          confidence: 'low',
+          sourceIds: ['coughenour-1989-mahanaim', 'finkelstein-ornan-2024-mahanaim'],
+        },
+        {
+          id: 'loc-view-mahanaim-tell-hajjaj',
+          label: 'Tell Hajjaj',
+          proponents: [
+            'e.g., discussed by Robert A. Coughenour (1989) as the strongest alternative candidate',
+          ],
+          summary:
+            'A competing Jabbok-valley candidate raised in the same literature that argues for Tulul adh-Dhahab; no excavation has confirmed it as Mahanaim.',
+          confidence: 'low',
+          sourceIds: ['coughenour-1989-mahanaim'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 32.19, lon: 35.69, confidence: 'low' },
     sceneIds: [],
     claimIds: [],
     status: 'planned',

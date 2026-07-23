@@ -87,6 +87,51 @@ Also reuses `asset-bier-props`, `asset-torch-sprites` (both beth-shan-walls,
 by id), `asset-figure-procedural`, and `asset-rocks` — no new records for
 these.
 
+## Current placeholders (ziklag-lament scene, Milestone 4, built 2026-07-22, PROVISIONAL)
+
+The cheapest scene shipped so far: reused `ziklag` terrain/settlement geometry
+(damage-state re-dressed, no new geometry family) and a cast an order of
+magnitude smaller than any prior scene. Only one genuinely new asset:
+
+| Asset                | Represents                                                                                                   | Why temporary                                                                                                                                                   | Replace at                                                        |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `asset-royal-tokens` | Crown and armlet the messenger brings to David as tokens of Saul's death (2 Sam 1:10) — `claim-royal-tokens` | Two small primitive torus meshes; no securely identified Iron Age Israelite royal regalia exists to model from, so exact form is a permanent design placeholder | M4 (material/finish fidelity only — form constraint is permanent) |
+
+Reuses `asset-terrain-negev`, `asset-house-block`, `asset-perimeter-wall`,
+`asset-gate-simple` (damage-state re-dressed for a "recovering" town, not a
+new geometry family — see `RecoveringSettlement.tsx`), `asset-figure-procedural`
+(the messenger and the small witness cluster), `asset-david-marker`,
+`asset-vegetation-scrub`, `asset-olive-tree`, and `asset-rocks` — no new
+records for these. This scene's status stays `in-progress`
+(`docs/design/ziklag-lament-brief.md` is a Sonnet-authored provisional brief,
+Fable-unavailable fallback, tracked at `fable-review-queue.md` #18) pending a
+real Fable pass before it can ship `released`.
+
+## Current placeholders (hebron-anointing scene, Milestone 4, built 2026-07-22, PROVISIONAL)
+
+The largest M4 crowd (~250-310 figures at high tier across three distinct,
+disclosed crowd-scale treatments — David's ~600 men at the standard ~1:10
+ratio, a ~40-50-figure household column, and a ~150-200-figure representative
+Judah assembly), but a static/ceremonial one, not a moving battle line — the
+project's fifth regional terrain palette (Judean highland).
+
+| Asset                        | Represents                                                                                                                | Why temporary                                                                                                                                                                                                  | Replace at |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-hebron-hills` | Terraced limestone hill country above Hebron's spring-fed valley, with a south approach ridge — `claim-hebron-town-form`  | Procedural noise + hand-tuned mound/channel/ridge/ramp features (ADR-005), not derived from real elevation data for Tell Rumeida or its valley                                                                 | M4         |
+| `asset-hebron-town-form`     | The modest hill-town/gate-plaza structure on Tell Rumeida — `claim-hebron-town-form`                                      | Simple box massing from a scene-local layout (ADR-006 conventions), not a reproduction of any excavated Tell Rumeida plan — no dedicated excavation-results source card exists yet (researcher gap, queue #18) | M4         |
+| `asset-terrace-walls`        | Judean hill-country dry-stone terrace walls for olive/vine cultivation                                                    | Generic instanced low stone-wall segments following elevation contour bands, not surveyed or excavated terrace remains                                                                                         | M4         |
+| `asset-household-camp`       | The satellite camp where David's men's households settle "in the towns of Hebron" (2 Sam 2:3) — `claim-david-move-hebron` | Simple tent/lean-structure primitive geometry at a disclosed design-choice headcount (~40-50 figures), not a reconstruction of any specific excavated domestic form                                            | M4         |
+| `asset-anointing-props`      | The oil vessel used in the anointing gesture staged for 2 Sam 2:4 — `claim-anointing-rite-form`                           | A single primitive horn-shaped mesh; 2:4 narrates the fact of anointing only, not the vessel or physical choreography, so exact form is a disclosed design placeholder                                         | M4         |
+
+Reuses `asset-figure-procedural`, `asset-david-marker`, `asset-olive-tree`,
+and `asset-rocks` — no new records for these. This scene's status stays
+`in-progress` (`docs/design/hebron-anointing-brief.md` is a Sonnet-authored
+provisional brief, Fable-unavailable fallback, tracked at
+`fable-review-queue.md` #18) pending a real Fable pass before it can ship
+`released` — in particular a `researcher` pass on the Tell Rumeida
+excavation-results citation gap noted on `claim-hebron-town-form` /
+`asset-hebron-town-form`.
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -101,7 +146,9 @@ these.
   city/wall, Jabesh-gilead route assets, and the reduced-intensity violence
   rendering path (ADR-009) all shipped, each scene still `status:
 'in-progress'` pending Fable M3 sign-off (queue #13/#16/#17 gate `released`).
-- **M4 (2 Sam 1–2):** Hebron settlement; regional overview map
+- **M4 (2 Sam 1–2):** `ziklag-lament` and `hebron-anointing` both built
+  2026-07-22 (see tables above, both PROVISIONAL/`in-progress`); Gibeon/
+  Mahanaim assets (`gibeon-pool`) still outstanding; regional overview map
   (`f-overview-map`) with confidence-shaded political geography.
 
 ## Policy

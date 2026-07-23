@@ -1113,3 +1113,137 @@ citation-verification passes:
   section + `next-run.md` state block updated. `npm run verify` green
   (status-field/doc-only diff). Not committed — orchestrator reviews the
   diff and handles git.
+
+**2026-07-22 — Sonnet 5 — M4 scope + 2 of 3 world-director briefs (Fable spend limit hit)**
+Scheduled/automated continuation session. First action — spawning `fable-architect`
+for the M4 scope call — errored immediately: "You've hit your monthly spend
+limit." Proceeded under `docs/model-handoff.md`'s documented fallback (Sonnet
+does the call, marks it provisional, keeps moving) rather than blocking.
+
+Decided M4's 3-scene breakdown myself (queue #18, provisional): `ziklag-lament`
+(2 Sam 1), `hebron-anointing` (2 Sam 2:1–7), `gibeon-pool` (2 Sam 2:8–32). M4's
+4th goal (divided-kingdom context view) called as an atlas/map UI overlay, not
+a 4th scene. Wrote `planned` `SceneDef` stubs into `scenes.ts` and wired
+`2sam-1`/`2sam-2` `sceneIds` (mirrors the M3 stub-before-build pattern —
+verified against `git show e5c555f` for the exact stub shape).
+
+Delegated: `researcher` agent added `gibeon` (Tell el-Jib, settled) and
+`mahanaim` (disputed, 2 low-confidence candidates) locations + 3 source cards
+(had to add a second Mahanaim view myself — `coughenour-1989-mahanaim` — was
+delivered with only 1 view, which fails `integrity.test.ts`'s disputed→≥2-views
+rule). Two `world-director` agents (model overridden to `sonnet`, marked
+provisional per that role's own stated fallback policy) wrote
+`ziklag-lament-brief.md` and `hebron-anointing-brief.md` in parallel — both
+landed cleanly, no edit conflicts on the shared `fable-review-queue.md` fold-in
+(confirmed by both agents' own final checks). `gibeon-pool`'s brief is not yet
+written — next up.
+
+Gate green this session: format:check, lint, typecheck, 269 vitest, build
+(had to run `npm install` first — fresh sandbox, no `node_modules`). E2e not
+re-run (doc/data-only diff, no component code touched). Pushed to
+`claude/focused-mccarthy-ybp2iz`, opened draft PR #42.
+
+**2026-07-22 — Sonnet 5 — M4 briefs completed, all flagged characters/claims entered**
+Continuation of the same session/branch. Third `world-director` agent
+(model-overridden `sonnet`, same Fable-fallback policy) wrote
+`gibeon-pool-brief.md` (2 Sam 2:8-32) — the last of the three M4 briefs.
+Notable calls: `locationId: 'gibeon'` (Mahanaim narrated only, never built —
+its disputed identification stays reference-only); the pool itself gets
+real geometry on the strength of Pritchard's excavated rock-cut pool, but
+flagged an open dating gap; scale kept deliberately smaller than Gilboa
+(civil-war skirmish, not a national battle) except the 24 champions, who
+render at literal 1:1 per the text's own number; Asahel's death — the
+project's first named-character-kills-named-character rendering — sets a
+documentary-distance/no-wound-geometry precedent per ADR-009, using the
+text's own "stood still" reaction beat as the emotional pivot instead of a
+graphic replay.
+
+Filled every character/claim gap flagged across all three M4 briefs myself
+(execution-tier, no Fable/world-director needed): `amalekite-messenger`,
+`abner`, `ish-bosheth`, `joab`, `abishai`, `asahel` in `characters.ts`;
+`claim-amalekite-messenger-account`, `claim-ish-bosheth-installed`,
+`claim-gibeon-contest`, `claim-asahel-death`, `claim-abner-pursuit-halted`,
+`claim-gibeon-pool-form` in `claims.ts` — each `basis: 'biblical-text'`
+except the last (`archaeology`, low confidence, dating gap disclosed in
+notes). Wired all three scene stubs' `claimIds` accordingly. One
+self-inflicted bug caught by re-reading the diff before committing: my
+first `claims.ts` edit landed the new claim object _after_ the array's
+closing `];` instead of inside it (old_string matched only the exported
+`CLAIMS_BY_ID` line, not the preceding bracket) — fixed before it could
+break typecheck.
+
+All three M4 briefs, all flagged data gaps, and the M4 scope decision are
+now complete for this fallback pass — `docs/next-run.md`'s next real task is
+building the scenes themselves. Gate green: format:check, lint, typecheck,
+269 vitest, build. E2e still not re-run (still no component code touched).
+
+**2026-07-22 — Sonnet 5 — ziklag-lament built (M4's first scene)**
+Continuation of the same session/branch, past the briefs-only work above.
+Since scene builds are ordinary Sonnet-tier work (`docs/model-handoff.md`
+routes scene implementation within already-set direction to
+`threejs-engineer`, not Fable) and Fable's quota was still exhausted,
+proceeded straight to building `ziklag-lament` per its brief rather than
+stopping at briefs-only.
+
+`threejs-engineer` built the scene in one pass: new `src/scenes/ziklag-lament/`
+folder (reuses `ziklag` terrain/vegetation, deliberately drops
+`SmokeColumns` for the "recovering, not burning" damage state per the
+brief), 17 beats / 3 viewpoints in `scenes.ts`, six new claims plus
+`scholarlyViews` added to `claim-amalekite-messenger-account` (the brief's
+two "e.g."-hedged readings on why the messenger's account might not match
+`gilboa-battle`'s own narration), a new `asset-royal-tokens` placeholder,
+`2sam-1` flipped `planned` → `in-progress`. The brief's hardest constraint —
+never visually corroborating the Amalekite's claim to have killed Saul —
+is enforced by a dedicated test, not just a caption convention. Exactly 3
+ESV quotes spent (248 chars total, well under the 500 budget), verified by
+the build agent's own script against the file content it wrote (not
+against a live ESV source — this sandbox has no outbound access to
+Bible-text sites, confirmed via proxy status).
+
+Orchestrating session independently re-ran the full gate rather than
+trusting the build agent's self-report: format:check, lint, typecheck, 287
+vitest (18 new), build all pass, confirmed directly. Also independently
+recalled/cross-checked the three ESV quotes (1:23, 1:26, 1:27) against my
+own knowledge of the text — reads as correct ESV phrasing, but flagged in
+`next-run.md` as still wanting a live-source check before `released`, since
+model recollection isn't the same guarantee as checking the actual text.
+Flipped `f-2sam` feature `planned` → `in-progress`. `docs/next-run.md`
+updated; two scenes (`hebron-anointing`, `gibeon-pool`) and the atlas/map UI
+overlay remain for M4, plus four open citation gaps and the still-pending
+real Fable pass on queue #18.
+
+**2026-07-22 — Sonnet 5 — hebron-anointing built (M4's second scene)**
+Same session/branch, continuing straight to the next scene build since
+scene implementation doesn't need Fable. `threejs-engineer` built
+`hebron-anointing` (2 Sam 2:1–7) per its brief in one pass: new Judean-
+highland `TerrainSpec` (5th regional palette), 6 beats/4 viewpoints, 8 new
+claims, new `men-of-judah` group character, `≈303`-figure high-tier cast
+(72 David's-men + 45 household + 180 assembly + 6 principals) — matching
+the brief's ~250–310 target. The largest crowd (`JudahAssembly`, ~150–200
+figures) is fully static/baked, deliberately cheaper per-figure than
+Gilboa's animated combat crowd, per the brief's performance guidance.
+
+Independently re-verified before committing (not just trusting the build
+report): full gate (format/lint/typecheck/315 vitest/build/8-8 e2e) re-run
+directly, plus a targeted grep confirming the "house of Judah, not Israel"
+qualifier appears on every anointing-beat caption and that no
+Abner/Ish-bosheth/Mahanaim geometry exists anywhere in the new scene
+folder (`poses.ts` even carries an explicit code-comment stating this
+constraint).
+
+Caught and resolved a real discrepancy: the build agent bumped `2sam-2`'s
+passage status to `in-progress` (mirroring what happened for `2sam-1`
+after `ziklag-lament`), but flagged that it couldn't reconcile this against
+what it read as the established `1sam-31` precedent. Checked
+`git log -p -- src/data/passages.ts` myself: `1sam-31` actually stayed
+`planned` through all three M3 scene builds and jumped straight to
+`released` at the end — never bumped incrementally. Judged that pattern an
+oversight, not deliberate policy (scenes/features/milestones all use
+`in-progress` as a real intermediate state elsewhere), and kept the new
+`in-progress`-per-scene-progress convention going forward rather than
+reverting to match the accidental precedent. Documented the reasoning in
+`next-run.md` so it doesn't get re-litigated as a bug next session.
+
+Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
+`docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
+overlay remain for M4.

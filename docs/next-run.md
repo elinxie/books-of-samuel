@@ -3,7 +3,39 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
+## State right now (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+
+**Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and two of the three scene builds) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
+
+**`ziklag-lament` (2 Sam 1) is built** (`threejs-engineer`, this session): `status: 'in-progress'`, `depictsDeath: true`, 17 beats, 3 viewpoints (`vp-plaza`/`vp-gate`/`vp-lament`), ~12-figure cast (the project's first conversation-scale, non-crowd scene). The brief's hardest constraint held: the Amalekite's account of killing Saul is delivered as speech only, never visually corroborated against `gilboa-battle`'s own 1 Sam 31:4 — enforced by a dedicated test. New scene folder `src/scenes/ziklag-lament/`; new claims `claim-lords-anointed-principle`/`claim-execution-messenger`/`claim-royal-tokens`/`claim-mourning-dress`/`claim-song-of-the-bow`/`claim-lament-evening`; `claim-amalekite-messenger-account` gained its brief-requested `scholarlyViews`.
+
+**`hebron-anointing` (2 Sam 2:1–7) is also built** (`threejs-engineer`, same session): `status: 'in-progress'`, `depictsDeath: false`, 6 beats, 4 viewpoints (`vp-approach-ridge` default, `vp-anointing-plaza`, `vp-household-camp`, `vp-messenger-departure`). New Judean-highland `TerrainSpec` (the project's fifth regional palette). Figure counts at high tier ≈303 (72 David's-men + 45 household + 180 assembly + 6 principals/messengers), matching the brief's ~250–310 target; the ~150–200-figure `JudahAssembly` is fully static (baked pose-bucket `InstancedMesh`es, zero per-frame cost) — deliberately cheaper per-figure than Gilboa's animated combat crowd. The "house of Judah only, not Israel" qualifier is carried in every caption touching the anointing beat, and `poses.ts` carries an explicit code-comment constraint that nothing in this scene ever stages Abner/Ish-bosheth/Mahanaim geometry (verified by the orchestrating session via grep, not just trusted from the build report). 8 new claims per the brief's list (`claim-hebron-identification`, `claim-hebron-town-form` [stays `design-placeholder`], `claim-hebron-inquiry`, `claim-david-move-hebron`, `claim-judah-anointing`, `claim-jabesh-commendation`, `claim-anointing-rite-form` [stays `design-placeholder`, `king-stager-2001` checked and doesn't cover investiture rites], `claim-judah-assembly-scale`); new `men-of-judah` group character (no invented named elders, per the brief).
+
+**New project convention established (worth knowing, not itself a bug):** both scene builds bumped their passage's status (`2sam-1`, `2sam-2`) to `in-progress` as soon as one of their scenes left `planned`. This deliberately diverges from what `1sam-31` actually did historically (stayed `planned` through all three M3 scene builds, jumping straight to `released` at the very end — confirmed via `git log -p -- src/data/passages.ts`) — that older pattern looks like an oversight, not a deliberate policy, since scenes/features/milestones all use `in-progress` as a real intermediate state elsewhere. Treated as the correct convention going forward; not retroactively touching `1sam-31` since it's already `released`. Worth a one-line mention if a Fable pass ever reviews `docs/reconstruction-method.md`'s status-field conventions.
+
+`f-2sam` feature is `in-progress`. Gate green on both builds: format:check, lint, typecheck, 315 vitest (after `hebron-anointing`), build, 8/8 e2e — **independently re-verified by the orchestrating session after each build, not just taken from the build agents' own reports.**
+
+**Open verification items:**
+
+- `ziklag-lament`'s three ESV quotes (1:23, 1:26, 1:27) were entered from model/brief recollection, not checked against a live ESV source — this sandbox has no outbound access to Bible-text sites (confirmed: proxy 403s on biblegateway/esv.org). Cross-checked against the orchestrating session's own knowledge and reads as correct ESV phrasing, but this is not the same as a live-source check.
+- `claim-hebron-town-form` stays `design-placeholder` — no source card yet covers excavated early Iron IIA town form at Tell Rumeida; `rainey-notley-2006` only supports the site _identification_.
+
+**Known open citation/sourcing gaps, not yet closed (fold into a future `researcher` pass, not blocking the remaining build below):**
+
+- `claim-gibeon-pool-form`: whether the excavated Gibeon pool/water-tunnel predates or postdates the early Iron IIA setting of 2 Sam 2 is not established by `pritchard-gibeon-1962` as currently cataloged.
+- `claim-hebron-town-form`: no source card yet covers excavated early Iron IIA town form at Tell Rumeida specifically; `rainey-notley-2006` only supports the site _identification_.
+- `claim-amalekite-messenger-account`: a named critical commentary (e.g. McCarter's Anchor Bible _II Samuel_) on the Gilboa/2 Sam 1 discrepancy would strengthen sourcing beyond the text itself.
+- `ziklag-lament`'s three ESV quotes need a live-source wording check (see above).
+
+**What's next (Sonnet), in priority order:**
+
+1. **Build the last scene, `gibeon-pool`** — `threejs-engineer` per `docs/design/gibeon-pool-brief.md`, same pattern as the two builds above. Most violence-heavy M4 scene, first named-character-kills-named-character death (Asahel) — read its Asahel-death section closely before implementing, it sets a new restraint precedent. Its "Not allowed"/scope-guard section (no 2 Sam 3+ content) is load-bearing.
+2. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context view) — not started, `ui-engineer` work once scoped further (or fold into a Fable pass first, since the atlas-vs-scene call itself is still provisional).
+3. **Close the four open citation gaps above** — `researcher` pass, doesn't block the `gibeon-pool` build.
+4. **A real Fable pass** to confirm/revise the whole M4 scope+briefs+build package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it. Do this before flipping any M4 scene to `released`.
+5. **(Still open, unrelated to M4, carried forward)** Real-hardware performance check of `gilboa-battle` at high tier, and the Pages-live check — both still blocked from sandboxes; see Environment notes below, unchanged.
+
+## State before this slice (2026-07-19, M3 released — Fable release pass, branch `claude/focused-mccarthy-o8d4os`)
 
 **M3 is fully released.** The 2026-07-19 Fable release pass confirmed the
 resolved #16/#17 citation gates and made the #13 judgment call (headdress:

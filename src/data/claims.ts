@@ -111,7 +111,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'Rendered at reduced count (~1:10) for performance; the in-scene label discloses this. How literally to take army numbers in these narratives is debated, and the app does not take a position.',
+      'Rendered at reduced count (~1:10) for performance; the in-scene label discloses this. How literally to take army numbers in these narratives is debated, and the app does not take a position. Reused in ziklag-lament for continuity of "David’s men" as a concept only, not as a headcount ratio: that scene’s witness cluster (2 Samuel 1:11–12’s "all the men who were with him") is a small, disclosed headcount (6–10 figures), the same "no ratio applies" convention jabesh-burial set for its retrieval party — the ~1:10 army-muster ratio is the wrong register for an intimate conversation scene with no narrated headcount. Reused again in hebron-anointing at the standard ~1:10 narrated ratio (the same convention as ziklag-aftermath/ziklag-lament, not a new count) for the approach-column retinue — kept visually and conceptually distinct there from that scene’s two other, differently-scaled crowds: a disclosed design-choice household column (claim-david-move-hebron) and the representative Judah assembly (claim-judah-assembly-scale), neither of which is a ratio of this six hundred.',
   },
   {
     id: 'claim-david-historical',
@@ -780,6 +780,230 @@ export const CLAIMS: ReconstructionClaim[] = [
     sourceIds: ['esv-bible', 'king-stager-2001'],
     notes:
       'Seven-day mourning periods recur elsewhere in the Hebrew Bible (e.g., Genesis 50:10, Job 2:13) as a conventional span for acute communal grief; king-stager-2001 anchors the general practice of Israelite mourning ritual this fits within. The compression itself is a keyframed lighting-rig oscillation (a rig mutation, not new lights or a literal seven-day simulation) — see poses.ts’s sevenDayShimmerEnvelope/Oscillation.',
+  },
+  {
+    id: 'claim-amalekite-messenger-account',
+    statement:
+      'The narrative states that an Amalekite messenger told David he found Saul leaning on his spear, still alive with the Philistines closing in, and that at Saul’s own request he killed him (2 Samuel 1:6–10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-amalekite-fabrication',
+        label: 'Self-serving fabrication for reward/favor',
+        proponents: [
+          'e.g., commentators reading the account as invented outright to claim credit and favor with the incoming king (a specific citation — e.g. P. Kyle McCarter’s Anchor Bible II Samuel — is not yet page-verified in this project’s bibliography; hedged per docs/reconstruction-method.md’s attribution-hedging rule)',
+        ],
+        summary:
+          'The messenger has an obvious motive (reward, standing with David) and an Amalekite identity a Ziklag audience has every reason to distrust; on this reading his entire account of finishing Saul off is invented, whether or not he was present at Gilboa at all.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-amalekite-looter-embellishment',
+        label: 'Looter’s embellishment of a genuine find',
+        proponents: [
+          'e.g., commentators reading the account as an opportunistic exaggeration rather than an outright invention (specific citation not yet page-verified; same hedge as above)',
+        ],
+        summary:
+          'On this reading the messenger genuinely found Saul’s body on the field after death (consistent with 1 Samuel 31:4’s own narration) and took the crown and armlet as a battlefield looter, then embellished a killing claim onto that genuine detail to inflate his own role.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated — no flashback, reenactment inset, or Gilboa-backdrop tableau, in any mode. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. A named critical commentary (e.g. McCarter’s Anchor Bible II Samuel) discussing this discrepancy would strengthen this claim’s and the scholarlyViews’ sourcing beyond the text itself — flagged for a future researcher pass, not yet added; the proponents above are hedged "e.g." accordingly and cite only esv-bible pending that pass.',
+  },
+  {
+    id: 'claim-lords-anointed-principle',
+    statement:
+      'The narrative presents a recurring principle across David’s story: harm to Saul’s person as "the LORD’s anointed" is never treated as praiseworthy, regardless of the target’s own conduct. David refuses to strike the fugitive-hunting Saul himself (1 Samuel 24:6; 26:9–11) and later executes a man for merely confessing to have struck him (2 Samuel 1:14, 16).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This is the project’s own cross-referencing observation about the narrative’s internal consistency across three passages (1 Sam 24, 1 Sam 26, 2 Sam 1), not a claim drawn from a specific scholarly source. It grounds the ziklag-lament scene’s staging choice to present David’s execution of the messenger as a judgment on the self-incriminating confession, not a forensic ruling on what actually happened at Gilboa (see claim-amalekite-messenger-account, claim-execution-messenger).',
+  },
+  {
+    id: 'claim-execution-messenger',
+    statement:
+      'The narrative states that David judged the Amalekite messenger by his own self-incriminating claim to have killed Saul, and had one of his young men strike him down (2 Samuel 1:14–16).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Phrased as narrated, not editorialized: the text does not independently corroborate the killing claim it condemns him for (see claim-amalekite-messenger-account) — the judgment is on the confession, not a verified act. The execution is staged at documentary distance with no wound/blood/close-framing geometry in either violence-rendering mode (ADR-009), the same discipline as gilboa-battle’s death sequence and jabesh-burial’s funerary handling.',
+  },
+  {
+    id: 'claim-royal-tokens',
+    statement:
+      'The narrative states that the messenger brought Saul’s crown and armlet to David as physical tokens of the king’s death (2 Samuel 1:10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'High confidence describes the fact that royal insignia are narrated as brought to David. Their specific form and appearance are unattested — no securely identified Iron Age Israelite royal regalia exists to model from — so the rendered crown/armlet props stay design-placeholder for form/fidelity only (basis for that aspect: design-placeholder), tracked at asset-royal-tokens.',
+  },
+  {
+    id: 'claim-mourning-dress',
+    statement:
+      'The narrative describes the messenger arriving with torn clothes and dust on his head (2 Samuel 1:2) and David and his men tearing their clothes, weeping, and fasting until evening in mourning for Saul, Jonathan, the people of the LORD, and the house of Israel (2 Samuel 1:11–12) — conventional ancient Near Eastern mourning gestures.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    notes:
+      'Torn garments and dust/ashes on the head recur across the Hebrew Bible and the wider ANE as conventional mourning gestures (comparative-ane corroboration; king-stager-2001 anchors general Israelite mourning-ritual context, the same source reused for claim-dress and claim-seven-day-fast). The "fasted until evening" detail (1:12) is folded into this claim rather than opened as a separate one; it is also the textual anchor for this scene’s dusk lighting arc (see claim-lament-evening).',
+  },
+  {
+    id: 'claim-song-of-the-bow',
+    statement:
+      'The narrative states that David composed a lament for Saul and Jonathan, ordered it taught to the sons of Judah, and that it was written in the Book of Jashar (2 Samuel 1:17–27).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The Book of Jashar is a lost source the Bible cites more than once (cf. Joshua 10:13) — a genuinely interesting historiographical detail about Israel’s own now-vanished literary tradition, carried as a caption note without asserting anything about the book’s nature beyond what the text itself gives. The scene delivers the poem through text/caption at a slower pace, exactly as narrated speech is delivered elsewhere in the project; no melody, chant, or vocal performance is synthesized, since the project has no basis for asserting fidelity to how it actually sounded.',
+  },
+  {
+    id: 'claim-lament-evening',
+    statement:
+      'The scene renders the grief-to-lament sequence arcing toward and through dusk, anchored to 2 Samuel 1:12’s mourning "until evening."',
+    basis: 'biblical-text',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The evening anchor is textually given for the mourning beat (1:12). The lament itself (1:17–27), narrated later in the chapter, is not explicitly timed to the same evening — extending the lighting arc across the whole scene through the lament is this project’s own staging choice for legibility and mood (the same reasoning as jabesh-burial’s dusk-through-close arc), hence moderate rather than high confidence for the extension specifically. Distinct from ziklag-aftermath’s claim-time-of-day, which is an unstated speculative placeholder with no textual anchor at all.',
+  },
+  {
+    id: 'claim-hebron-identification',
+    statement:
+      'Hebron is identified with Tell Rumeida, above the modern city — one of the more securely located Old Testament highland sites.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'high',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'Matches the hebron LocationEntry’s identification.views (loc-view-hebron). Site identification only — no claim here about excavated Iron IIA town form, fortification, or size at Tell Rumeida (see claim-hebron-town-form for that separate, open gap).',
+  },
+  {
+    id: 'claim-hebron-town-form',
+    statement:
+      'The scene renders Hebron as a modest highland hill town on Tell Rumeida — no wall plan, gate-tower form, or building footprint is asserted as excavated, and the surrounding terraced highland setting is a generic Judean-highland composite, not a surveyed landscape.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'rainey-notley-2006 supports the site identification (claim-hebron-identification) but says nothing about excavated early Iron IIA town form, fortification, or size at Tell Rumeida. Checked sources/source-cards/ for a dedicated Tell Rumeida excavation-results card: none exists yet, despite renewed excavation activity at the site in recent decades. A researcher pass should check for a citable published Tell Rumeida/Hebron excavation or survey report before this claim can move past design-placeholder — flagged in docs/fable-review-queue.md #18. Until then this stays a disclosed generic "modest highland hill town" placeholder, following the beth-shan/jabesh pattern of disclosing exactly this kind of gap rather than inventing a plan; no single Tell Rumeida excavation phase is adopted as "the" Davidic-era plan.',
+  },
+  {
+    id: 'claim-hebron-inquiry',
+    statement:
+      'The narrative states that David inquired of the LORD before going up, asking whether and where he should go; the answer given is Hebron (2 Samuel 2:1).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      '2 Samuel 2:1 does not name the inquiry’s mechanism or location; the scene infers the ephod/Abiathar practice already established at 1 Samuel 30:7–8 (the identical inquiry formula, "shall I go up... where shall I go up") rather than depicting a different, unattested method, and carries no new terrain or Ziklag-geometry reuse for the vignette.',
+  },
+  {
+    id: 'claim-david-move-hebron',
+    statement:
+      'The narrative states that David went up to Hebron with his two wives, and that his men and their households went up with him, and they settled in the towns of Hebron (2 Samuel 2:2–3).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text gives no headcount for the households; the scene renders a disclosed design-choice household column/camp of roughly 40–50 figures at high quality tier (mixed adults and children), sized to read as "a following’s families," not asserted as a real headcount or a fixed multiple of claim-600-men’s six hundred. David’s two named wives (Ahinoam and Abigail) are not individually modeled as distinguished figures within the household group.',
+  },
+  {
+    id: 'claim-judah-anointing',
+    statement:
+      'The narrative states plainly that the men of Judah came and anointed David king over the house of Judah (2 Samuel 2:4) — not over Israel. The rest of the former kingdom remains Saul’s house’s to claim at this point in the narrative.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The single most important claim in this scene: every caption and composition choice touching 2:4 must carry the "house of Judah" qualifier, never presenting this as David becoming king in an unqualified sense. A wider anointing "king over all Israel" follows only later, at 2 Samuel 5:3 — several chapters and, per the narrative’s own chronology, several years after this scene — and is not asserted as having happened here. See claim-david-historical for the separate, disputed scholarly question of how large a kingdom either anointing actually controlled on the ground; nothing here resolves that debate.',
+  },
+  {
+    id: 'claim-jabesh-commendation',
+    statement:
+      'The narrative states that David sent messengers to the men of Jabesh-gilead commending them for burying Saul, and informing them of his own anointing (2 Samuel 2:5–7).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Cross-references claim-jabesh-retrieval (the burial itself, rendered in jabesh-burial) — this scene does not re-render that burial, pyre, wall, or bone-bundle geometry; it stages only David’s side of the exchange, a messenger dispatch carrying the message outward, never shown arriving at or being received in Jabesh-gilead.',
+  },
+  {
+    id: 'claim-anointing-rite-form',
+    statement:
+      'The scene stages a physical anointing gesture (an unnamed elder figure pouring from a horn near David) as the choreography for 2:4’s bare statement that Judah "anointed David king" — the verse narrates the fact of anointing, not who poured, what vessel was used, or what the assembled elders/townspeople did.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Checked king-stager-2001 (the project’s primary material-culture source) for a comparative ancient Near Eastern kingship/covenant-investiture parallel that could move this past design-placeholder; its coverage is general Israelite daily life and material culture (houses, dress, wells, food production, tools) and does not discuss anointing or investiture ritual mechanics, so it does not support a comparative-ane basis here. The horn vessel echoes 1 Samuel 16:13’s "horn of oil" at David’s earlier, private anointing by Samuel — the only physical-vessel detail the text gives for any of David’s anointings, and the most textually grounded prop choice available, not an assertion that 2:4 itself names a horn.',
+  },
+  {
+    id: 'claim-judah-assembly-scale',
+    statement:
+      'The anointing assembly ("the men of Judah," 2:4) is rendered as a representative civic gathering of roughly 150–200 figures at high quality tier, standing for Hebron’s own townspeople plus a visible elder contingent — not a literal muster of the tribe of Judah, which any regional Iron Age highland population estimate the project has already cited would put at several thousand at minimum.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'finkelstein-silberman-2001'],
+    notes:
+      'Parallel in form to claim-battle-scale and to jabesh-burial’s "no ratio applies" disclosure for its retrieval party: 2:4 names no headcount and no gathering mechanism (a levy? a self-selected assembly of local elders and townspeople? Hebron alone or its satellite towns too?) for the anointing, so the standard ~1:10 narrated-army ratio (claim-600-men) does not apply here. This is the largest crowd of the three M4 scenes, deliberately so — a public political founding is the one M4 beat that is structurally a crowd event — but the figure stays an order of magnitude below any literal tribal count, and the in-scene label says so.',
+  },
+  {
+    id: 'claim-ish-bosheth-installed',
+    statement:
+      'The narrative states that Abner took Ish-bosheth, Saul’s son, and made him king over Israel at Mahanaim — Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel — while the house of Judah followed David (2 Samuel 2:8–10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The tribal-writ split (2:9 vs. 2:10b) is the textual basis for staging gibeon-pool as civil war rather than a foreign-enemy battle. Mahanaim itself is narrated only in this scene, not built — see the mahanaim LocationEntry’s disputed, low-confidence identification.',
+  },
+  {
+    id: 'claim-gibeon-contest',
+    statement:
+      'The narrative states that at the pool of Gibeon, Abner proposed a contest of twelve chosen young men from each side, who seized each other and killed one another in pairs (2 Samuel 2:12–16), after which battle broke out and Israel was routed before the servants of David.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The twenty-four champions render at literal 1:1 count per the text’s own exact number; the wider contingents behind them are a disclosed, smaller-than-Gilboa design choice (no army-size figure is given in the text for this engagement), per the gibeon-pool brief.',
+  },
+  {
+    id: 'claim-asahel-death',
+    statement:
+      'The narrative states that Joab’s youngest brother Asahel pursued Abner despite being twice warned to turn aside, and that Abner killed him with a backward thrust of his spear (2 Samuel 2:18–23).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The project’s first named-character-kills-named-character death (distinct from Saul’s suicide in gilboa-battle). Per ADR-009: documentary distance, no wound/blood geometry in any mode. The text’s one specific non-graphic detail — Abner’s reversed spear grip — and the "stood still" reaction beat (2:23b) are used as the emotional pivot in place of a graphic replay. Abner is staged as reluctant, consistent with his two on-record warnings.',
+  },
+  {
+    id: 'claim-abner-pursuit-halted',
+    statement:
+      'The narrative states that Joab and Abishai pursued Abner to the hill of Ammah, that Benjaminites rallied to Abner there, and that at Abner’s appeal Joab sounded the trumpet and called off the pursuit; the text gives Israel’s dead as 360 men to David’s 20 (2 Samuel 2:24–31).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The 360/20 casualty count is delivered as caption text only, never as a rendered corpse tally, per the gibeon-pool brief’s restraint policy.',
+  },
+  {
+    id: 'claim-gibeon-pool-form',
+    statement:
+      'The pool of Gibeon (2 Samuel 2:13) is rendered as a rock-cut basin with a flat water plane, on the strength of Pritchard’s excavation of a rock-cut pool/water-tunnel system at Tell el-Jib.',
+    basis: 'archaeology',
+    confidence: 'low',
+    sourceIds: ['pritchard-gibeon-1962'],
+    notes:
+      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
   },
 ];
 

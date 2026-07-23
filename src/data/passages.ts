@@ -46,9 +46,13 @@ export const PASSAGES: Passage[] = [
     translationAnchor: 'ESV',
     summary:
       'An Amalekite brings David news of Saul’s death, claiming to have delivered the final blow, and is executed for it. David laments Saul and Jonathan in the Song of the Bow.',
-    sceneIds: [],
+    // Scene id committed 2026-07-22 (Sonnet, Fable-unavailable fallback, queue
+    // #18) before the scene exists in scenes.ts — mirrors the M3 pattern.
+    // 2026-07-22: ziklag-lament built (in-progress, pending Fable review of
+    // its provisional brief) — status follows the scene, matching locations.ts.
+    sceneIds: ['ziklag-lament'],
     milestoneId: 'M4',
-    status: 'planned',
+    status: 'in-progress',
   },
   {
     id: '2sam-2',
@@ -58,9 +62,16 @@ export const PASSAGES: Passage[] = [
     translationAnchor: 'ESV',
     summary:
       'David goes up to Hebron and is anointed king over Judah; he commends Jabesh-gilead for burying Saul. Abner installs Ish-bosheth over the northern tribes, and war begins between the houses at the pool of Gibeon.',
-    sceneIds: [],
+    // 2026-07-22: hebron-anointing built (in-progress); gibeon-pool briefed
+    // but not yet built. Bumped to in-progress on the same "status follows
+    // the scene" logic used for 2sam-1/ziklag: one of this passage's two
+    // scenes has progressed, matching 1sam-31's precedent of tracking
+    // passage status against its scenes' collective progress during M3
+    // (rather than waiting for every scene to land before reflecting any
+    // progress at all).
+    sceneIds: ['hebron-anointing', 'gibeon-pool'],
     milestoneId: 'M4',
-    status: 'planned',
+    status: 'in-progress',
   },
 ];
 

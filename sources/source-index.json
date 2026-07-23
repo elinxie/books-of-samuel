@@ -1,5 +1,5 @@
 {
-  "count": 23,
+  "count": 26,
   "cards": [
     {
       "id": "biran-naveh-1993",
@@ -14,6 +14,12 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "coughenour-1989-mahanaim",
+      "title": "A Search for Mahanaim",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "esv-bible",
       "title": "The Holy Bible, English Standard Version (ESV)",
       "sourceType": "biblical-text",
@@ -23,6 +29,12 @@
       "id": "faust-2012",
       "title": "The Archaeology of Israelite Society in Iron Age II",
       "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "finkelstein-ornan-2024-mahanaim",
+      "title": "An Israelite Residency at Mahanaim in Transjordan?",
+      "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
@@ -106,6 +118,12 @@
     {
       "id": "oren-tel-sera-1993",
       "title": "Sera', Tel (entry in: The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 4)",
+      "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "pritchard-gibeon-1962",
+      "title": "Gibeon: Where the Sun Stood Still: The Discovery of the Biblical City",
       "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
     },
