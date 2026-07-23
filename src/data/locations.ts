@@ -233,7 +233,10 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.85, lon: 35.18, confidence: 'high' },
     sceneIds: ['gibeon-pool'],
     claimIds: [],
-    status: 'planned',
+    // 2026-07-23: gibeon-pool built (in-progress, PROVISIONAL, pending
+    // Fable review of its brief) — status follows the scene, matching the
+    // hebron/ziklag-lament precedent.
+    status: 'in-progress',
   },
   {
     id: 'mahanaim',

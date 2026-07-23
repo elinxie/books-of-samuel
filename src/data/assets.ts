@@ -173,7 +173,7 @@ export const ASSETS: AssetRecord[] = [
     id: 'asset-figure-fallen',
     name: 'Fallen/prone pose transform',
     represents:
-      'The Gilboa death sequence and rout: sons overtaken, Saul wounded/kneeling and fallen, the armor-bearer following, and routing figures who crumple at distance',
+      'The Gilboa death sequence and rout: sons overtaken, Saul wounded/kneeling and fallen, the armor-bearer following, and routing figures who crumple at distance; reused in gibeon-pool for the champions’ mutual fall, the wider contingents’ battle-spread casualties, and Asahel’s death',
     placeholder: true,
     whyTemporary:
       'A body-orientation/collapse transform (rotation + non-uniform scale) applied to the existing ADR-010 procedural rig, not a distinct fallen-body mesh or skeletal animation clip — see the pure pose functions in src/scenes/gilboa-battle/poses.ts. No wound, blood, or dismemberment geometry in either violence-rendering mode (ADR-009).',
@@ -185,10 +185,10 @@ export const ASSETS: AssetRecord[] = [
     id: 'asset-military-kit-israelite',
     name: 'Israelite military-kit attachments (spear, oval shield, bow)',
     represents:
-      'Simple, non-uniform arms on Israelite combatants at Gilboa — spear, oval shield, and a minority of bows on the retinue; spear + shield on Saul, his sons, and his armor-bearer as marginally-better-equipped principals',
+      'Simple, non-uniform arms on Israelite combatants at Gilboa — spear, oval shield, and a minority of bows on the retinue; spear + shield on Saul, his sons, and his armor-bearer as marginally-better-equipped principals. Reused as-is in gibeon-pool for both sides alike (Abner’s Benjamin/Israel contingent and Joab’s Judah contingent), since both are Israelite there and no dress/kit distinction between the two sides is invented; gibeon-pool additionally uses the same builder’s straight sword on the twelve-a-side champions only, per the text’s own detail (2 Samuel 2:16).',
     placeholder: true,
     whyTemporary:
-      'Cylinder/cone/sphere primitive geometry (see src/scenes/gilboa-battle/kitMeshes.ts), attached as InstancedMesh instances at a fixed offset from a representative joint position on the existing ADR-010 rig — not modeled weapon/shield assets and not bound to a specific excavated Israelite panoply. No sword is rendered on Israelite figures; the brief specifies swords for Philistines only.',
+      'Cylinder/cone/sphere primitive geometry (see src/scenes/gilboa-battle/kitMeshes.ts), attached as InstancedMesh instances at a fixed offset from a representative joint position on the existing ADR-010 rig — not modeled weapon/shield assets and not bound to a specific excavated Israelite panoply. At Gilboa, no sword is rendered on Israelite figures (the brief there specifies swords for Philistines only); gibeon-pool imports the same sword-geometry builder for its champions’ contest, where the text itself specifies swords on both sides.',
     historicalRequirements:
       'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
     replacementMilestoneId: 'M4',
@@ -209,7 +209,7 @@ export const ASSETS: AssetRecord[] = [
     id: 'asset-dust-motion',
     name: 'Rout-dust GPU sprite system',
     represents:
-      'Dust kicked up by the mass movement of the routing Israelites draining down the eastern slope, and (lighter density) the Philistine press climbing the northern slope — the visual device the brief assigns to carry the scale of the defeat in place of a blow-by-blow crowd (illustrates claim-gilboa-rout, claim-battle-scale; not a new claim of its own)',
+      'Dust kicked up by the mass movement of the routing Israelites draining down the eastern slope, and (lighter density) the Philistine press climbing the northern slope — the visual device the brief assigns to carry the scale of the defeat in place of a blow-by-blow crowd (illustrates claim-gilboa-rout, claim-battle-scale; not a new claim of its own). The same GPU point-sprite technique is reused, single-density, in gibeon-pool’s spreading battlefield (`b-battle-spreads`, see src/scenes/gibeon-pool/BattleDust.tsx and claim-gibeon-battle-scale).',
     placeholder: true,
     whyTemporary:
       'A stylized GPU point-sprite field (one shared shader material, vertex-displaced drift keyed to scene time, in the manner of ziklag/SmokeColumns.tsx — see src/scenes/gilboa-battle/RoutDust.tsx), not a physical dust/particle simulation. Density and drift direction are seeded and hand-tuned to the rout/press footprints, not derived from any period-specific account of visibility or weather.',
@@ -530,6 +530,30 @@ export const ASSETS: AssetRecord[] = [
       'A single primitive horn-shaped mesh, presented near David and the elder figure during the rite gesture — 2:4 narrates the fact of anointing only, not the vessel or physical choreography, so exact form is a disclosed design placeholder, not a modeled reconstruction.',
     historicalRequirements:
       'None achievable beyond stylization without a period-specific comparandum for an anointing vessel; any upgrade improves material/finish fidelity only.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-terrain-gibeon-pool',
+    name: 'Procedural Benjamin-highland terrain (Gibeon)',
+    represents:
+      'The Gibeon plateau: open, rockier highland ground north of Jerusalem, the pool basin, the champions’ ground and spreading battlefield, the pursuit route, and the hill of Ammah — see claim-gibeon-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise plus hand-tuned basin/mound/ramp features (ADR-005, extended with a new `basin` TerrainFeature kind in engine/terrain.ts), not derived from real elevation data for Tell el-Jib or its surrounding plateau.',
+    historicalRequirements:
+      'DEM-derived terrain becomes appropriate only once a terrain-data sourcing/licensing ADR defines source, attribution, vertical datum, and resampling policy — Gibeon is a natural early candidate given its secure identification.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-water-plane',
+    name: 'Flat pool water surface',
+    represents:
+      'Standing water in the pool basin at Gibeon (2 Samuel 2:13) — see claim-gibeon-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally-lit tinted plane nested inside the terrain’s basin depression — no reflection, refraction, or animated ripple shader, matching the gilboa-battle/jabesh-burial precedent of declining a water shader. The plane’s extent is a disclosed approximation, not an assertion of the pool’s excavated dimensions (see claim-gibeon-pool-form’s open dating question).',
+    historicalRequirements:
+      'None achievable beyond stylization without resolving the dating question on claim-gibeon-pool-form; any upgrade (true reflection, seasonal water-level variation) is a visual-fidelity improvement only, not a claim-driven replacement.',
     replacementMilestoneId: 'M4',
   },
 ];

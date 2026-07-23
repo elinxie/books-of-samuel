@@ -472,7 +472,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'moderate',
     sourceIds: ['esv-bible', 'yadin-1963', 'king-stager-2001'],
     notes:
-      'The archers who find Saul are named in the text (1 Samuel 31:3), so bows are load-bearing rather than decorative; spear and shield are the baseline comparative-ANE assumption for Iron I–IIA highland combatants (Yadin 1963; King & Stager 2001), not a specific excavated Israelite panoply. Kit is deliberately non-uniform per figure (see `assignRetinueKit` in the scene code) — the render does not claim a documented "Israelite uniform".',
+      'The archers who find Saul are named in the text (1 Samuel 31:3), so bows are load-bearing rather than decorative; spear and shield are the baseline comparative-ANE assumption for Iron I–IIA highland combatants (Yadin 1963; King & Stager 2001), not a specific excavated Israelite panoply. Kit is deliberately non-uniform per figure (see `assignRetinueKit` in the scene code) — the render does not claim a documented "Israelite uniform". Reused as-is in gibeon-pool for both sides’ spear/shield/bow kit (Abner’s Benjamin/Israel contingent and Joab’s Judah contingent alike), since both are Israelite there and the brief explicitly declines any invented Judah/Benjamin kit distinction — grouping and position carry the two sides, not equipment. The champions’ contest (2 Samuel 2:16) additionally uses a plain straight sword on both sides, per the text’s own detail ("thrust his sword"), reusing the same primitive sword geometry already built for gilboa-battle’s kit meshes (src/scenes/gilboa-battle/kitMeshes.ts) — imported directly rather than duplicated, matching the project’s existing cross-scene reuse convention (e.g. ziklag-lament reusing ziklag/Vegetation.tsx).',
   },
   {
     id: 'claim-philistine-kit',
@@ -1003,7 +1003,27 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'low',
     sourceIds: ['pritchard-gibeon-1962'],
     notes:
-      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh. This claim covers identification/archaeological corroboration specifically; see claim-gibeon-terrain-form for the separate design-placeholder disclosure covering how the basin/water plane is actually built.',
+  },
+  {
+    id: 'claim-gibeon-terrain-form',
+    statement:
+      'Gibeon’s terrain renders a shallow basin depression at the pool’s identified location plus a flat, unlit/minimally-lit tinted water plane — a procedural approximation, not an assertion of the pool’s excavated dimensions or of any dating for its construction.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'pritchard-gibeon-1962'],
+    notes:
+      'Parallel in form to claim-gilboa-terrain-form/claim-hebron-town-form: this claim carries the "how it is built" disclosure (a new `basin` TerrainFeature kind in engine/terrain.ts, plus a static flat water-surface mesh, asset-water-plane), separate from claim-gibeon-pool-form’s identification/archaeology-corroboration claim and its open dating question. No water reflection/refraction shader is used, matching the gilboa-battle/jabesh-burial precedent of declining one — see asset-terrain-gibeon-pool and asset-water-plane.',
+  },
+  {
+    id: 'claim-gibeon-battle-scale',
+    statement:
+      'The wider Benjamin/Israel and Judah contingents at Gibeon (2 Samuel 2:17), and the smaller rallying band at the hill of Ammah (2:25), are rendered at a disclosed design-choice headcount — not a ratio of any asserted true army size.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text gives no headcount for either side’s force at Gibeon (contrast the exact "twelve" of the champions’ contest, rendered literally 1:1 and needing no such disclosure). Target counts: ~35–45 for Abner’s contingent and ~30–40 for Joab’s at high quality tier, with the hill-of-Ammah rally band (~12–18) drawn from Abner’s existing contingent rather than added on top — a deliberately smaller design count than gilboa-battle’s already-modest crest/press/rout groupings (claim-battle-scale), since this is a contingent-level clash between two commanders’ followings at one town, not a national muster. Explicitly not derived from, or intended to visually prove, the 360/20 casualty figures stated afterward (2:30–31, carried as text only — see claim-abner-pursuit-halted’s notes); a seeded fraction of each contingent "falls" during the battle-spread beat as a generic collapse transform (higher on Benjamin’s side, reflecting the text’s own "Israel was routed" qualitatively), not a numeric mapping of that count.',
   },
 ];
 
