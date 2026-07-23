@@ -1,6 +1,12 @@
 {
-  "count": 26,
+  "count": 30,
   "cards": [
+    {
+      "id": "arnold-1989-amalekite-report",
+      "title": "The Amalekite's Report of Saul's Death: Political Intrigue or Incompatible Sources?",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
     {
       "id": "biran-naveh-1993",
       "title": "An Aramaic Stele Fragment from Tel Dan (Israel Exploration Journal 43)",
@@ -116,6 +122,12 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "ofer-1993-hebron-neaehl",
+      "title": "Hebron (entry, vol. 2, pp. 606-609)",
+      "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "oren-tel-sera-1993",
       "title": "Sera', Tel (entry in: The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 4)",
       "sourceType": "archaeology",
@@ -134,6 +146,12 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "reis-2006-killing-messenger",
+      "title": "Killing the Messenger: David's Policy or Politics?",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "sapir-hen-ben-yosef-2013",
       "title": "The Introduction of Domestic Camels to the Southern Levant: Evidence from the Aravah Valley (Tel Aviv 40)",
       "sourceType": "scholarly-article",
@@ -142,6 +160,12 @@
     {
       "id": "stager-mountjoy-2007-ashkelon-krater",
       "title": "A Pictorial Krater from Philistine Ashkelon, in Up to the Gates of Ekron: Essays on the Archaeology and History of the Eastern Mediterranean in Honor of Seymour Gitin (eds. S. W. Crawford et al.)",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "tamburrini-2021-gibeon-pool",
+      "title": "Inside the Pool of Gibeon: 3D Model Reconstruction and Some Observations about Finds",
       "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     },

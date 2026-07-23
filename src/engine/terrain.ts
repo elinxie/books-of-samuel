@@ -33,7 +33,16 @@ export type TerrainFeature =
   /** Elongated gaussian rise between two points — ridges, spurs, long hills. */
   | { kind: 'ridge'; start: [number, number]; end: [number, number]; width: number; height: number }
   /** Carved bed along a polyline — wadis, stream channels. `width` is bank to bank. */
-  | { kind: 'channel'; path: [number, number][]; width: number; depth: number };
+  | { kind: 'channel'; path: [number, number][]; width: number; depth: number }
+  /**
+   * Radial-elliptical gaussian depression — a shallow standing-water basin
+   * (e.g. the pool of Gibeon, `gibeon-pool`). Distinct from `flatten` (which
+   * only suppresses hill noise, never actually digs down) and from `channel`
+   * (a linear carved bed): a basin is a bowl-shaped dip with independent
+   * x/z radii, so an elongated (non-circular) pool footprint can be
+   * expressed without a polyline. `depth` is meters removed at the center.
+   */
+  | { kind: 'basin'; center: [number, number]; radiusX: number; radiusZ: number; depth: number };
 
 export interface ColorZone {
   center: [number, number];
@@ -121,6 +130,9 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     if (f.kind === 'channel' && (f.path.length < 2 || f.width <= 0)) {
       throw new Error('terrain channel needs a path of >= 2 points and a positive width');
     }
+    if (f.kind === 'basin' && (f.radiusX <= 0 || f.radiusZ <= 0)) {
+      throw new Error('terrain basin needs positive radiusX and radiusZ');
+    }
   }
   // Normalize ramp directions once so heightAt stays cheap.
   const ramps = features
@@ -133,6 +145,7 @@ export function createTerrain(spec: TerrainSpec): Terrain {
   const mounds = features.filter((f) => f.kind === 'mound');
   const ridges = features.filter((f) => f.kind === 'ridge');
   const channels = features.filter((f) => f.kind === 'channel');
+  const basins = features.filter((f) => f.kind === 'basin');
 
   function heightAt(x: number, z: number): number {
     let hills = 0;
@@ -165,6 +178,12 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     for (const f of channels) {
       const d = distanceToPolyline(x, z, f.path);
       h -= f.depth * (1 - smoothstep01(d / (f.width / 2)));
+    }
+    for (const f of basins) {
+      const dx = x - f.center[0];
+      const dz = z - f.center[1];
+      const norm = (dx * dx) / (f.radiusX * f.radiusX) + (dz * dz) / (f.radiusZ * f.radiusZ);
+      h -= f.depth * Math.exp(-norm * 2);
     }
     return h;
   }

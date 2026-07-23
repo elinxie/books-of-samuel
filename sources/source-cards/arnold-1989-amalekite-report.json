@@ -1,0 +1,16 @@
+{
+  "id": "arnold-1989-amalekite-report",
+  "title": "The Amalekite's Report of Saul's Death: Political Intrigue or Incompatible Sources?",
+  "author": "Bill T. Arnold",
+  "publisher": "Journal of the Evangelical Theological Society 32.3",
+  "datePublished": "1989",
+  "dateAccessed": "2026-07-23",
+  "sourceType": "scholarly-article",
+  "url": "https://etsjets.org/wp-content/uploads/2010/08/files_JETS-PDFs_32_32-3_32-3-pp289-298_JETS.pdf",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted journal article, freely hosted as a PDF on the Evangelical Theological Society's own open archive. Summary in project's own words only, drawn from the publicly available abstract/description of the article, not a full read of the hosted PDF (this project's outbound fetch tool could not retrieve the PDF's body text during this research pass).",
+  "summary": "A journal article devoted specifically to this project's open discrepancy question: why 1 Samuel 31:4 narrates Saul's death by his own hand (after his armor-bearer refuses to kill him) while the Amalekite in 2 Samuel 1:6-10 claims to have killed Saul himself at Saul's request. The article's own title frames two named alternative explanations this project's claim-amalekite-messenger-account scholarlyViews did not previously have a citable academic source distinguishing: (1) 'political intrigue' — a within-the-narrative reading, where the discrepancy is explained by the Amalekite's motives and/or David's political handling of the report, broadly consonant with this project's existing 'self-serving fabrication' and 'looter's embellishment' readings; and (2) 'incompatible sources' — a source-critical reading, that the two accounts may preserve separate underlying textual/historical traditions about Saul's death stitched together by the book's compiler, a different kind of explanation than either existing scholarlyView (neither of which is a documentary/source-critical claim about the text's own composition history).",
+  "relevantPassages": ["1 Samuel 31:1-6", "2 Samuel 1:1-16"],
+  "extractedClaims": ["claim-amalekite-messenger-account"],
+  "confidenceNotes": "TO VERIFY: this project could not retrieve the article's full text (the ETS-hosted PDF returned HTTP 403 to this project's outbound fetch tool) or confirm which of the two titled positions Arnold himself ultimately argues for — the summary above states only the two framed alternatives, not Arnold's own conclusion, which stays unconfirmed. Bibliographic details (author, journal, volume/issue/pages 289-298, 1989) are corroborated across multiple independent secondary listings (Galaxie Software's abstract page, the ETS's own JETS volume-32 index) so misattribution risk is low, but the article's actual argument and conclusion need primary-copy verification before being cited as supporting any single position rather than merely posing the question."
+}

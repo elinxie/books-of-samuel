@@ -22,6 +22,8 @@ import { ZiklagLamentScene } from '../scenes/ziklag-lament/ZiklagLamentScene';
 import { ZIKLAG_LAMENT_TERRAIN } from '../scenes/ziklag-lament/terrain';
 import { HebronAnointingScene } from '../scenes/hebron-anointing/HebronAnointingScene';
 import { HEBRON_TERRAIN } from '../scenes/hebron-anointing/terrain';
+import { GibeonPoolScene } from '../scenes/gibeon-pool/GibeonPoolScene';
+import { GIBEON_POOL_TERRAIN } from '../scenes/gibeon-pool/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -40,6 +42,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'jabesh-burial': { component: JabeshBurialScene, terrain: JABESH_TERRAIN },
   'ziklag-lament': { component: ZiklagLamentScene, terrain: ZIKLAG_LAMENT_TERRAIN },
   'hebron-anointing': { component: HebronAnointingScene, terrain: HEBRON_TERRAIN },
+  'gibeon-pool': { component: GibeonPoolScene, terrain: GIBEON_POOL_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

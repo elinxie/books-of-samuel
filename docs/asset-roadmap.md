@@ -132,6 +132,35 @@ provisional brief, Fable-unavailable fallback, tracked at
 excavation-results citation gap noted on `claim-hebron-town-form` /
 `asset-hebron-town-form`.
 
+## Current placeholders (gibeon-pool scene, Milestone 4, built 2026-07-23, PROVISIONAL)
+
+The last of the three M4 scenes, and the smallest combat-figure total the
+project has staged (~90-115 high-tier combat figures — 24 champions rendered
+literally 1:1, plus disclosed-design-count Benjamin/Judah contingents —
+noticeably below `gilboa-battle`'s already-modest 120-140). Two genuinely new
+asset families: the basin/water-plane terrain feature, and the extension of
+`engine/terrain.ts`'s `TerrainSpec` with a new `basin` kind.
+
+| Asset                       | Represents                                                                                                                           | Why temporary                                                                                                                                                                             | Replace at |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-gibeon-pool` | The Gibeon plateau: pool basin, champions' ground, spreading battlefield, pursuit route, hill of Ammah — `claim-gibeon-terrain-form` | Procedural noise + hand-tuned basin/mound/ramp features (ADR-005, extended with a new `basin` `TerrainFeature` kind), not derived from real elevation data for Tell el-Jib or its plateau | M4         |
+| `asset-water-plane`         | Standing water in the pool basin (2 Sam 2:13) — `claim-gibeon-terrain-form`                                                          | Single flat, minimally-lit tinted plane nested inside the basin depression; no reflection/refraction/ripple shader, matching the gilboa-battle/jabesh-burial precedent of declining one   | M4         |
+
+Reuses `asset-figure-fallen` (the champions' mutual fall, the wider
+contingents' battle-spread casualties, and Asahel's death), `asset-figure-
+procedural`/`asset-david-marker` (Abner, Joab, Abishai, Asahel), `asset-
+military-kit-israelite` (spear/oval-shield/bow on both sides, undifferentiated,
+plus the straight-sword builder for the champions' contest), `asset-dust-
+motion` (single-density reuse for the `b-battle-spreads` beat, see
+`BattleDust.tsx`), and `asset-rocks`/`asset-vegetation-scrub` (no new
+regional vegetation system) — no new records for these. This scene's status
+stays `in-progress` (`docs/design/gibeon-pool-brief.md` is a Sonnet-authored
+provisional brief, Fable-unavailable fallback, tracked at
+`fable-review-queue.md` #18) pending a real Fable pass before it can ship
+`released` — in particular the `researcher` flag on `claim-gibeon-pool-form`'s
+open dating question (does the excavated rock-cut pool/tunnel system predate
+or postdate the early Iron IIA setting of 2 Samuel 2?).
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -146,10 +175,11 @@ excavation-results citation gap noted on `claim-hebron-town-form` /
   city/wall, Jabesh-gilead route assets, and the reduced-intensity violence
   rendering path (ADR-009) all shipped, each scene still `status:
 'in-progress'` pending Fable M3 sign-off (queue #13/#16/#17 gate `released`).
-- **M4 (2 Sam 1–2):** `ziklag-lament` and `hebron-anointing` both built
-  2026-07-22 (see tables above, both PROVISIONAL/`in-progress`); Gibeon/
-  Mahanaim assets (`gibeon-pool`) still outstanding; regional overview map
-  (`f-overview-map`) with confidence-shaded political geography.
+- **M4 (2 Sam 1–2):** all three planned M4 scenes now built — `ziklag-lament`
+  and `hebron-anointing` (2026-07-22) and `gibeon-pool` (2026-07-23), all
+  PROVISIONAL/`in-progress` pending a real Fable pass (queue #18); regional
+  overview map (`f-overview-map`) with confidence-shaded political geography
+  still outstanding.
 
 ## Policy
 

@@ -76,7 +76,25 @@ describe('createTerrain feature primitives', () => {
     expect(t.heightAt(0, 150)).toBe(0); // 50 m past the end of the path
   });
 
-  it('rejects degenerate ramp directions, ridges, and channel paths', () => {
+  it('basin carves an elliptical depression, deepest at center, tapering off-axis', () => {
+    const t = createTerrain(
+      specWith({
+        features: [{ kind: 'basin', center: [0, 0], radiusX: 10, radiusZ: 20, depth: 4 }],
+      }),
+    );
+    expect(t.heightAt(0, 0)).toBeCloseTo(-4, 10);
+    // Far outside either radius, the basin has no effect.
+    expect(t.heightAt(0, 400)).toBeCloseTo(0, 6);
+    expect(t.heightAt(400, 0)).toBeCloseTo(0, 6);
+    // The same offset along the long (z) axis sits shallower than along the
+    // short (x) axis would at an equivalent absolute distance, since the
+    // gaussian falloff is normalized by each axis's own radius.
+    const atShortRadius = t.heightAt(10, 0);
+    const atLongRadius = t.heightAt(0, 20);
+    expect(atShortRadius).toBeCloseTo(atLongRadius, 10);
+  });
+
+  it('rejects degenerate ramp directions, ridges, channel paths, and basin radii', () => {
     expect(() =>
       createTerrain(
         specWith({ features: [{ kind: 'ramp', direction: [0, 0], start: 0, end: 1, drop: 1 }] }),
@@ -92,6 +110,13 @@ describe('createTerrain feature primitives', () => {
     expect(() =>
       createTerrain(
         specWith({ features: [{ kind: 'channel', path: [[0, 0]], width: 10, depth: 1 }] }),
+      ),
+    ).toThrow();
+    expect(() =>
+      createTerrain(
+        specWith({
+          features: [{ kind: 'basin', center: [0, 0], radiusX: 0, radiusZ: 10, depth: 1 }],
+        }),
       ),
     ).toThrow();
   });
