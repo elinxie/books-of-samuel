@@ -1247,3 +1247,89 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+**2026-07-23 — Sonnet, scheduled session — PR cleanup, `gibeon-pool` built (M4 complete), Fable review attempt blocked again**
+
+Found the repo in a tangled multi-branch state from several independent
+prior sessions that hadn't reconciled with each other: `main` already had
+the M3 release sign-off merged directly (`9ce260b`, "(#39)"), but two open
+draft PRs (#36, #38) still proposed the same already-landed flip — closed
+both as superseded, no unique content. Three open draft PRs (#40, #41, #42)
+all independently redid the M4 scope-decision/briefs pass; diffed all three
+and confirmed #42 (`ybp2iz`) is a strict superset of #40 and #41 (plus two
+scenes actually built: `ziklag-lament`, `hebron-anointing`) — closed #40/#41
+as superseded, independently re-ran the full gate on #42 in a worktree
+(format/lint/315 vitest/build/8-8 e2e all green), then merged #42 into
+`main` (squash, `2898ac2`). Left PR #37 (an unrelated docs proposal from a
+different GitHub user) untouched.
+
+With `main` current, built the last M4 scene, `gibeon-pool` (2 Sam
+2:8–32), via `threejs-engineer` per `docs/design/gibeon-pool-brief.md`:
+14 beats, 5 viewpoints, new scene folder `src/scenes/gibeon-pool/`, a new
+`basin` `TerrainFeature` kind in `src/engine/terrain.ts` for the pool (no
+water shader, matching Gilboa/Jabesh's declined-shader precedent). Scale:
+24 champions rendered literally 1:1, ~40 Benjamin + ~35 Judah contingent
+figures, ~14-figure hilltop rally drawn from Benjamin's own survivors
+(not additive) — ≈99 combat figures at high tier, disclosed as
+deliberately below Gilboa's 120–140. Reused the 5 existing coarse
+`gibeon-pool` claims rather than splitting into the brief's finer
+10-claim scheme (avoids unnecessary `characters.ts` churn); added 2 new
+claims (`claim-gibeon-terrain-form`, `claim-gibeon-battle-scale`) for the
+pool-fidelity and crowd-scale disclosures the brief specifically called
+for. Asahel's death (`b-asahel-death`) is the project's first
+named-character-kills-named-character rendering — documentary distance,
+Abner's reversed spear grip shown as a gesture only, no wound geometry,
+the text's "stood still" reaction (2:23b) used as a held crowd-stillness
+beat; this sets the restraint precedent for future individual killings
+(Abner's own death, 2 Sam 3, not yet built). The 360/20 casualty count
+(2:29–31) is caption text only, never a rendered tally. No Mahanaim/
+Bethlehem/Hebron geometry — all three stay referenced-only per the
+brief's scope guard (spot-checked directly in `scenes.ts`'s beat captions,
+not just trusted from the build report). Independently re-ran the full
+gate after the build agent's own report: format:check, lint, 354 vitest
+(36 files), build, 8/8 e2e — all green. Committed (`eaa73bb`), pushed,
+opened PR #43 (draft, no PR template exists in the repo yet — #37
+proposes adding one, still unmerged).
+
+Attempted the natural next step — a `fable-architect` confirmation pass
+on the whole M4 package (queue #18: scope decision + all three briefs +
+all three now-complete builds), since all three scenes being done makes
+this the right moment to batch the review per the queue's own stated
+plan ("batch it, don't spend a partial Fable session on it"). The agent
+call failed immediately: "You've hit your monthly spend limit." Per
+`docs/model-handoff.md`'s fallback policy, did not have Sonnet stand in
+to "confirm" its own already-provisional work — that would defeat the
+purpose of the queue item, which exists specifically to get judgment
+independent of the tier that made the original calls. Left queue #18
+open, unchanged in substance (just noted the failed attempt and its
+timestamp), and did not flip any M4 scene's status. Notified the user of
+the recurring spend-limit block via push notification, since it's now
+happened on two separate sessions and needs the user's own awareness/
+action (spend-limit reset or increase) to actually clear — no amount of
+further Sonnet-side retrying resolves it.
+
+Also fixed local git identity (`noreply@anthropic.com`/`Claude`) for
+future commits in this session, after the stop hook flagged `2898ac2`
+(the GitHub-API squash-merge commit for #42) as unverified — that commit
+was created via `merge_pull_request`, not a local `git commit`, so its
+`noreply@github.com` committer is GitHub's own merge attribution, not
+something to rewrite; amending and force-pushing `main`'s already-merged
+history to fix a cosmetic badge was judged disproportionate and out of
+scope for an unattended session (force-pushing a shared default branch
+needs explicit user authorization per the project's git safety rules).
+
+Gate green (independently verified, see above): format:check, lint, 354
+vitest, build, 8/8 e2e. `docs/progress.md`, `docs/next-run.md`,
+`docs/fable-review-queue.md` updated this pass.
+
+**What's next:** the M4 Fable confirmation pass (queue #18) stays the top
+priority once Fable's spend limit resets — batch it exactly as planned,
+now with all three builds actually done so there's nothing left to wait
+on but the review itself. Non-blocking in the meantime: the citation/
+sourcing gaps flagged across the three briefs (Gibeon pool dating vs.
+Pritchard's excavation, Hebron town form, a stronger commentary citation
+for the Amalekite account, `ziklag-lament`'s ESV quotes still needing a
+live-source wording check); the atlas/map UI overlay for M4's 4th goal
+(hold until Fable weighs in on the atlas-vs-scene call itself, per the
+brief's own note); the still-open, sandbox-blocked real-hardware
+performance check and Pages-live check carried forward from M3.

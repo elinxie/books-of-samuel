@@ -3,7 +3,51 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-07-23, all 3 M4 scenes built, branch `claude/focused-mccarthy-j3zmz8`, PR #43 draft)
+
+**All three M4 scenes are now built.** This session found `main` already
+current with the M3 release sign-off (`9ce260b`) and merged the furthest-
+advanced of three competing M4-scoping PRs (#42, superseding #40/#41;
+#36/#38 closed as superseded M3 duplicates) — see `docs/run-log.md`'s
+2026-07-23 entry for the full PR-reconciliation story. With `main` current,
+built the last scene, `gibeon-pool` (2 Sam 2:8–32), per
+`docs/design/gibeon-pool-brief.md`: 14 beats, 5 viewpoints, ~99 combat
+figures at high tier, a new `basin` `TerrainFeature` kind for the pool, and
+the project's first named-character-kills-named-character death (Asahel,
+by Abner) — full detail in run-log. `status: 'in-progress'`. Gate
+independently re-verified: format/lint/354 vitest/build/8-8 e2e all green.
+Committed (`eaa73bb`), pushed, PR #43 open (draft).
+
+**A `fable-architect` confirmation pass on the whole queue #18 package
+(scope + all 3 briefs + all 3 now-complete builds) was attempted this
+session and failed immediately on the monthly spend limit** — same
+recurring block as 2026-07-22. No review happened; queue #18 stays open,
+unchanged in substance. Do not have Sonnet stand in to "confirm" its own
+provisional work for this specific item — that defeats the point of the
+queue entry. Wait for a real Fable pass with usage available.
+
+**What's next (Sonnet), in priority order:**
+
+1. **A real Fable pass on queue #18** — now genuinely the only thing
+   blocking M4 from moving past `in-progress`. All three scenes are done;
+   nothing else needs to land first. Try `/model claude-fable-5` in a
+   fresh session once usage has reset.
+2. Non-blocking, doable now: close the citation/sourcing gaps flagged
+   across the three M4 briefs via a `researcher` pass — Gibeon pool
+   dating vs. Pritchard's excavation (`claim-gibeon-pool-form`), Hebron
+   town form (`claim-hebron-town-form`), a stronger commentary citation
+   for the Amalekite account, and `ziklag-lament`'s three ESV quotes still
+   needing a live-source wording check (sandbox proxy still 403s Bible-text
+   sites, per Environment notes below — may need a session with different
+   network access).
+3. The atlas/map UI overlay for M4's 4th goal — hold until the Fable pass
+   confirms the atlas-vs-scene call itself; building it now would compound
+   an already-provisional decision.
+4. Carried forward, still blocked from sandboxes: real-hardware
+   performance check of `gilboa-battle`, Pages-live check. See Environment
+   notes.
+
+## State before this slice (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft — since merged to main as `2898ac2`)
 
 **Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and two of the three scene builds) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
 
