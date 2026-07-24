@@ -19,7 +19,7 @@ Gate green, independently re-verified by the orchestrating session (not just the
 
 1. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context view) — not started, `ui-engineer` work once scoped further (or fold into a Fable pass first, since the atlas-vs-scene call itself is still provisional).
 2. **Close the open citation gaps** (below) — `researcher` pass, doesn't block anything already built.
-3. **A real Fable pass** to confirm/revise the whole M4 scope+briefs+all-three-builds package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it. Do this before flipping any M4 scene to `released`.
+3. **A real Fable pass** to confirm/revise the whole M4 scope+briefs+all-three-builds package (queue #18) once Fable's spend limit resets — batch it, don't spend a partial Fable session on it. Do this before flipping any M4 scene to `released`. **Retried 2026-07-24, same session as the gibeon-pool build**: `fable-architect` errored on the same monthly spend limit before any review began (no partial review substituted). Still the top blocker for any M4 `released` flip.
 4. **(Still open, unrelated to M4, carried forward)** Real-hardware performance check of `gilboa-battle` at high tier, and the Pages-live check — both still blocked from sandboxes; see Environment notes below, unchanged.
 
 **Known open citation/sourcing gaps, not yet closed (fold into a future `researcher` pass, none blocking any build)**:
