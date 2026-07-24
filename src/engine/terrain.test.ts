@@ -76,7 +76,17 @@ describe('createTerrain feature primitives', () => {
     expect(t.heightAt(0, 150)).toBe(0); // 50 m past the end of the path
   });
 
-  it('rejects degenerate ramp directions, ridges, and channel paths', () => {
+  it('basin carves full depth at center, tapering to nothing at its radius', () => {
+    const t = createTerrain(
+      specWith({ features: [{ kind: 'basin', center: [5, -5], radius: 20, depth: 4 }] }),
+    );
+    expect(t.heightAt(5, -5)).toBeCloseTo(-4, 12);
+    expect(t.heightAt(15, -5)).toBeCloseTo(-2, 12); // halfway to the radius (d=10, radius=20)
+    expect(t.heightAt(25, -5)).toBe(0); // at the radius edge
+    expect(t.heightAt(305, -5)).toBe(0); // far outside
+  });
+
+  it('rejects degenerate ramp directions, ridges, channel paths, and basin radii', () => {
     expect(() =>
       createTerrain(
         specWith({ features: [{ kind: 'ramp', direction: [0, 0], start: 0, end: 1, drop: 1 }] }),
@@ -92,6 +102,11 @@ describe('createTerrain feature primitives', () => {
     expect(() =>
       createTerrain(
         specWith({ features: [{ kind: 'channel', path: [[0, 0]], width: 10, depth: 1 }] }),
+      ),
+    ).toThrow();
+    expect(() =>
+      createTerrain(
+        specWith({ features: [{ kind: 'basin', center: [0, 0], radius: 0, depth: 1 }] }),
       ),
     ).toThrow();
   });

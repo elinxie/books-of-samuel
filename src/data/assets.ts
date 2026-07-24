@@ -532,6 +532,52 @@ export const ASSETS: AssetRecord[] = [
       'None achievable beyond stylization without a period-specific comparandum for an anointing vessel; any upgrade improves material/finish fidelity only.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-terrain-gibeon-plateau',
+    name: 'Procedural Gibeon plateau terrain',
+    represents:
+      'Central Benjamin-highlands terrain around the pool of Gibeon, the battle-spread/pursuit-route ground, and the hill of Ammah — see claim-gibeon-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural hills plus hand-tuned basin/ramp/mound features (ADR-005), not DEM-derived terrain from Tell el-Jib or its surroundings.',
+    historicalRequirements:
+      'DEM-derived terrain once a terrain-data sourcing/licensing ADR-012 pass is applied here; Gibeon is a strong identification candidate given its high-confidence site identification (queue #12 precedent).',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-pool-basin',
+    name: 'Pool of Gibeon rock-cut basin',
+    represents:
+      'The pool of Gibeon itself (2 Samuel 2:13) — see claim-gibeon-pool-feature, claim-gibeon-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'A procedural radial basin landform (engine/terrain.ts’s new `basin` TerrainSpec kind) plus a simple stone-rim ring mesh, at a modest, disclosed approximation of scale — not Pritchard’s excavated monumental pool/tunnel dimensions, pending the open dating question flagged on claim-gibeon-pool-feature (does the excavated pool predate or postdate the early Iron IIA setting of 2 Samuel 2?).',
+    historicalRequirements:
+      'Revise dimensions/form only once the researcher dating question on claim-gibeon-pool-feature closes; until then this stays a disclosed, deliberately modest placeholder, not an assertion of the excavated form.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-water-plane',
+    name: 'Flat water-surface plane',
+    represents: 'The still water of the pool of Gibeon, between the two seated companies (2:13)',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally lit circular mesh with a tinted, semi-transparent material — no reflection/refraction shader, no animated ripple, matching the explicitly declined water-shader precedent from gilboa-battle/jabesh-burial and reusing besor-crossing’s asset-water-pool technique.',
+    historicalRequirements: 'None strictly achievable beyond stylization; visual upgrade optional.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-battle-kit',
+    name: 'Generic spear/sword weapon attachments',
+    represents:
+      'Undifferentiated combat kit for both civil-war sides at Gibeon — a spear (Abner’s weapon, 2:23) and a short sword (the champions’ weapon, 2:16) — see claim-champions-contest, claim-asahel-pursuit-death',
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/box primitive geometry (src/scenes/gibeon-pool/kitMeshes.ts), attached at a representative hand joint — not modeled weapon assets, and deliberately not differentiated by side (no invented "Judah kit" vs. "Benjamin kit"; both sides are Israelite and the text gives no kit-distinguishing detail here the way gilboa-battle’s Philistine/Israelite split had).',
+    historicalRequirements:
+      'Modeled weapon forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
+    replacementMilestoneId: 'M4',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

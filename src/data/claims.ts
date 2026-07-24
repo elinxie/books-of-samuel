@@ -956,54 +956,104 @@ export const CLAIMS: ReconstructionClaim[] = [
       'Parallel in form to claim-battle-scale and to jabesh-burial’s "no ratio applies" disclosure for its retrieval party: 2:4 names no headcount and no gathering mechanism (a levy? a self-selected assembly of local elders and townspeople? Hebron alone or its satellite towns too?) for the anointing, so the standard ~1:10 narrated-army ratio (claim-600-men) does not apply here. This is the largest crowd of the three M4 scenes, deliberately so — a public political founding is the one M4 beat that is structurally a crowd event — but the figure stays an order of magnitude below any literal tribal count, and the in-scene label says so.',
   },
   {
-    id: 'claim-ish-bosheth-installed',
+    id: 'claim-gibeon-pool-feature',
     statement:
-      'The narrative states that Abner took Ish-bosheth, Saul’s son, and made him king over Israel at Mahanaim — Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel — while the house of Judah followed David (2 Samuel 2:8–10).',
-    basis: 'biblical-text',
-    confidence: 'high',
-    sourceIds: ['esv-bible'],
-    notes:
-      'The tribal-writ split (2:9 vs. 2:10b) is the textual basis for staging gibeon-pool as civil war rather than a foreign-enemy battle. Mahanaim itself is narrated only in this scene, not built — see the mahanaim LocationEntry’s disputed, low-confidence identification.',
-  },
-  {
-    id: 'claim-gibeon-contest',
-    statement:
-      'The narrative states that at the pool of Gibeon, Abner proposed a contest of twelve chosen young men from each side, who seized each other and killed one another in pairs (2 Samuel 2:12–16), after which battle broke out and Israel was routed before the servants of David.',
-    basis: 'biblical-text',
-    confidence: 'high',
-    sourceIds: ['esv-bible'],
-    notes:
-      'The twenty-four champions render at literal 1:1 count per the text’s own exact number; the wider contingents behind them are a disclosed, smaller-than-Gilboa design choice (no army-size figure is given in the text for this engagement), per the gibeon-pool brief.',
-  },
-  {
-    id: 'claim-asahel-death',
-    statement:
-      'The narrative states that Joab’s youngest brother Asahel pursued Abner despite being twice warned to turn aside, and that Abner killed him with a backward thrust of his spear (2 Samuel 2:18–23).',
-    basis: 'biblical-text',
-    confidence: 'high',
-    sourceIds: ['esv-bible'],
-    notes:
-      'The project’s first named-character-kills-named-character death (distinct from Saul’s suicide in gilboa-battle). Per ADR-009: documentary distance, no wound/blood geometry in any mode. The text’s one specific non-graphic detail — Abner’s reversed spear grip — and the "stood still" reaction beat (2:23b) are used as the emotional pivot in place of a graphic replay. Abner is staged as reluctant, consistent with his two on-record warnings.',
-  },
-  {
-    id: 'claim-abner-pursuit-halted',
-    statement:
-      'The narrative states that Joab and Abishai pursued Abner to the hill of Ammah, that Benjaminites rallied to Abner there, and that at Abner’s appeal Joab sounded the trumpet and called off the pursuit; the text gives Israel’s dead as 360 men to David’s 20 (2 Samuel 2:24–31).',
-    basis: 'biblical-text',
-    confidence: 'high',
-    sourceIds: ['esv-bible'],
-    notes:
-      'The 360/20 casualty count is delivered as caption text only, never as a rendered corpse tally, per the gibeon-pool brief’s restraint policy.',
-  },
-  {
-    id: 'claim-gibeon-pool-form',
-    statement:
-      'The pool of Gibeon (2 Samuel 2:13) is rendered as a rock-cut basin with a flat water plane, on the strength of Pritchard’s excavation of a rock-cut pool/water-tunnel system at Tell el-Jib.',
+      'The pool of Gibeon (2 Samuel 2:13) is a real, named place-feature — corroborated by Pritchard’s excavation of a rock-cut pool and stepped water-tunnel system at the identified site (Tell el-Jib) — rendered as a modest basin and water plane, not asserted at Pritchard’s exact excavated monumental dimensions.',
     basis: 'archaeology',
     confidence: 'low',
-    sourceIds: ['pritchard-gibeon-1962'],
+    sourceIds: ['pritchard-gibeon-1962', 'rainey-notley-2006'],
     notes:
-      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+      'One of the more striking text-to-feature matches in the whole project — 2:13 names "the pool of Gibeon" as a specific place, and the site’s own identification is independently secured (inscribed jar handles, see the gibeon LocationEntry). The textual narration itself (a pool existed at Gibeon) is high confidence; the archaeological corroboration is held at moderate-to-low confidence pending a genuinely open, checkable dating question this claim does not resolve: does Pritchard’s own stratigraphy (or a later reassessment) date the excavated pool/tunnel’s construction to a phase contemporary with or before the early Iron IIA setting of 2 Samuel 2, or is it a later Iron II (e.g., 9th-8th century) construction that postdates the narrated event? Flagged for a researcher pass and logged in docs/uncertainty-register.md; not resolved by this claim. Render stays a disclosed, undated-fidelity feature (see claim-gibeon-terrain-form) — no reflection/refraction water shader, matching the declined-water-shader precedent from gilboa-battle/jabesh-burial.',
+  },
+  {
+    id: 'claim-gibeon-terrain-form',
+    statement:
+      'The Gibeon terrain is a procedural Benjamin-highlands composite — a shallow rock-cut pool basin near the origin, open ground draining east through the battle-spread/pursuit-route field, and a modest rise at the hill of Ammah — communicating relative narrative geography, not DEM-derived microrelief or Pritchard’s surveyed pool dimensions.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'Parallel in form to claim-gilboa-terrain-form/claim-hebron-town-form: a disclosed procedural approximation, not a DEM or excavation-plan reproduction. The pool basin/water-plane approximation and the no-water-shader disclosure are the one genuinely new terrain feature this scene adds (engine/terrain.ts’s new `basin` TerrainSpec kind) — see claim-gibeon-pool-feature for the identification/dating corroboration this terrain form illustrates but does not itself assert.',
+  },
+  {
+    id: 'claim-mahanaim-installation',
+    statement:
+      'The narrative states that Abner took Ish-bosheth, Saul’s son, and made him king over Israel at Mahanaim — Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel, for two years — while the house of Judah followed David (2 Samuel 2:8–10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The mirror event to claim-judah-anointing (hebron-anointing): Judah anoints David over itself alone, while Abner installs Ish-bosheth over the rest — the tribal-writ split (2:9 vs. 2:10b) is the textual basis for staging gibeon-pool as civil war rather than a foreign-enemy battle. Cross-references claim-david-historical for the separate, disputed question of how large either resulting kingdom actually was on the ground; nothing here resolves that debate. Mahanaim itself is narrated only, never built, in this scene — the mahanaim LocationEntry stays disputed/low-confidence with no confident site (two low-confidence Jabbok-valley candidates) and keeps `sceneIds: []`.',
+  },
+  {
+    id: 'claim-champions-contest',
+    statement:
+      'The narrative states that at the pool of Gibeon, Abner proposed a contest of twelve chosen young men from each side, who seized each other by the head and drove a sword into each other’s side, dying together in pairs (2 Samuel 2:14–16) — afterward named Helkath-hazzurim.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The twenty-four champions render literally at 1:1 count — the text’s own exact, small, countable number, not a design ratio (contrast claim-gibeon-battle-scale below, which does need one). The most choreographically specific violence the project has rendered to date; no blade-entry, blood, or dismemberment geometry in either violence mode (ADR-009) — the head-grasp gesture and the mutual fall carry the fact, and the place-name itself is carried by the beat caption, not new geometry.',
+  },
+  {
+    id: 'claim-gibeon-battle',
+    statement:
+      'The narrative states that the champions’ contest ignited a full engagement, "very fierce that day," in which Abner and the men of Israel were beaten before the servants of David (2 Samuel 2:17).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Civil-war framing is explicit and load-bearing here: both sides are Israelite (see claim-mahanaim-installation’s tribal-writ split), so no invented "Judah kit" vs. "Benjamin kit" is rendered — the two wider contingents are distinguished only by grouping and position (claim-dress, reused as-is for both sides), never by costume. Figure counts are a disclosed design choice (claim-gibeon-battle-scale), not derived from this same passage’s later casualty figures (claim-gibeon-casualties).',
+  },
+  {
+    id: 'claim-asahel-pursuit-death',
+    statement:
+      'The narrative states that Asahel, Joab’s youngest brother, "swift of foot as a wild gazelle," pursued Abner and would not turn aside despite two warnings; Abner struck him with the back end of his spear, and he died there, and all who came to the place stood still (2 Samuel 2:18–23).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This project’s first rendering of one named character killing another named character at close range (distinct from Saul’s suicide in gilboa-battle, and from the anonymous rout deaths at gilboa-battle/here). ADR-009 precedent for future individual killings (Abner’s own death in 2 Samuel 3, Amasa’s in 2 Samuel 20, neither built yet): documentary distance, no wound geometry in either mode; the text’s one specific, legible, non-graphic detail — the reversed spear grip — is shown in standard mode, never penetration; 2:23b’s "stood still" is used as a literal held camera/stillness beat carrying the emotional weight, not a graphic replay. Abner is staged as reluctant (his two on-record warnings and 2:22’s dramatic-irony line, "how then could I lift up my face to your brother Joab?" — he will in fact lose that reckoning in 2 Samuel 3, not shown or gestured at here), not villainous; Asahel is staged as loyal, not reckless — both readings stay available to the observer. Reduced mode elides the strike itself, cutting from Abner turning to Asahel already fallen and still; the caption carries the fact and the method in text either way.',
+  },
+  {
+    id: 'claim-ammah-standoff',
+    statement:
+      'The narrative states that Joab and Abishai pursued Abner to the hill of Ammah, that Benjaminites rallied to Abner there as one band on the hilltop, and that at Abner’s appeal ("Shall the sword devour forever?", 2:26) Joab sounded the trumpet and the pursuit stopped (2 Samuel 2:24–28).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'A parallel restraint-toward-kin theme to claim-lords-anointed-principle (ziklag-lament) — there David refuses to raise a hand against "the LORD’s anointed" even in hostility; here Abner invokes plain kinship ("their brothers") to a numerically overwhelming opposing force, and Joab (who has just lost his youngest brother to this same Abner) grants the appeal anyway. A genuine ethical choice on both sides, not a tactical retreat or exhaustion — composed with the Benjaminites physically above the pursuers on the hill, a deliberate visual irony (the losing side, per claim-gibeon-casualties, holds the high ground and asks for mercy) that this scene keeps rather than "fixing" into a more conventionally heroic composition. No triumphal staging for either side.',
+  },
+  {
+    id: 'claim-gibeon-casualties',
+    statement:
+      'The narrative gives an exact casualty count: nineteen of David’s servants plus Asahel (twenty total) against three hundred sixty of Benjamin/Abner’s men, after which Abner’s men return by night march to Mahanaim (2 Samuel 2:29–31).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'One of the few moments in Samuel where the text hands the project an actual battlefield statistic (an almost 18:1 kill ratio) rather than a round or rhetorical number. Delivered as caption text only, at the point in the timeline the text itself states it (after the pursuit is called off) — never as a rendered corpse tally, which would be both a performance problem and a tone violation of this project’s standing ADR-009 restraint. The disclosed figure counts for the rendered contingents (claim-gibeon-battle-scale) are a design choice for staging legibility made independently of this real number; this claim’s count is not used to size or "true up" the rendered crowds, and the rendered crowds are not offered as a visual proof of this count.',
+  },
+  {
+    id: 'claim-asahel-burial-hebron-march',
+    statement:
+      'The narrative states that Asahel was taken up and buried in his father’s tomb at Bethlehem, and that Joab and his men marched all night, reaching Hebron by daybreak (2 Samuel 2:32).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Text-only closing card (`b-close`) — neither Bethlehem nor Hebron is rendered in this scene, consistent with `locationId: gibeon` throughout. No content from 2 Samuel 3 onward (Abner’s later negotiation with David, or his assassination by Joab in revenge for Asahel) is depicted or gestured at here — out of scope for this scene and this milestone.',
+  },
+  {
+    id: 'claim-gibeon-battle-scale',
+    statement:
+      'The two wider contingents behind the champions are rendered at a disclosed design count — roughly 35-45 figures for Abner’s side and 30-40 for Joab’s at high quality tier (a rallying hilltop band of 12-18 drawn from, not additive to, Abner’s contingent) — not a ratio of any asserted "true" army size, and not derived from this scene’s own later casualty figures.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-battle-scale (gilboa-battle) and claim-judah-assembly-scale (hebron-anointing): the text gives no headcount for either side’s total force at Gibeon, so no ratio can be derived or defended. Deliberately smaller than gilboa-battle’s already-modest 120-140 high-tier combat figures (landing at roughly 90-115 total including the 24 literal champions) — this is one contingent-level clash between two commanders’ followings at a single town, not the kind of full national muster gilboa-battle staged. Explicitly not derived from, or intended to visually prove, the 360/20 casualty figures in claim-gibeon-casualties — those numbers are carried by text alone.',
   },
 ];
 

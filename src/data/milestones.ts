@@ -73,7 +73,10 @@ export const MILESTONES: Milestone[] = [
     // Scene breakdown decided 2026-07-22 (Sonnet, Fable-unavailable fallback —
     // see fable-review-queue.md #18, needs a real Fable confirmation): three
     // scenes, `ziklag-lament` / `hebron-anointing` / `gibeon-pool`, per the
-    // goals below. World-director briefs for each are next, then builds.
+    // goals below. All three are now built (`in-progress`, PROVISIONAL,
+    // 2026-07-22/2026-07-24) — this milestone's own `status` stays `planned`
+    // until a real Fable sign-off pass, matching M3's precedent of only
+    // flipping milestone-level status at that review, not per-scene.
     status: 'planned',
     passageRefs: ['2 Samuel 1', '2 Samuel 2'],
     goals: [

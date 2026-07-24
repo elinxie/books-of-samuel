@@ -187,7 +187,7 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
-## Milestone 4 — 2 Samuel 1–2: **in-progress** (2 of 3 scenes built 2026-07-22, provisional)
+## Milestone 4 — 2 Samuel 1–2: **in-progress** (all 3 scenes built, provisional)
 
 Fable hit its monthly spend limit mid-session; the scope decision, all
 three world-director briefs, and the scene builds below were done by
@@ -195,14 +195,15 @@ Sonnet under `docs/model-handoff.md`'s fallback policy and are marked
 **provisional** (`docs/fable-review-queue.md` #18) pending a real Fable
 pass — no M4 scene should ship past `in-progress` until then.
 
-3-scene breakdown: `ziklag-lament` (2 Sam 1, **built**,
+3-scene breakdown, all **built**: `ziklag-lament` (2 Sam 1,
 `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7,
-**built**, `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam
-2:8–32, briefed, not yet built, `docs/design/gibeon-pool-brief.md`). The
-milestone's 4th goal (divided-kingdom political geography) was called as
-an atlas/map UI overlay rather than a 4th 3D scene, per ADR-011 — not yet
-built. New `gibeon` (settled identification) and `mahanaim` (disputed,
-narrated-only — no scene there) locations added.
+`docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam 2:8–32,
+`docs/design/gibeon-pool-brief.md`, built 2026-07-24). The milestone's 4th
+goal (divided-kingdom political geography) was called as an atlas/map UI
+overlay rather than a 4th 3D scene, per ADR-011 — not yet built. New
+`gibeon` (settled identification, now `in-progress`) and `mahanaim`
+(disputed, narrated-only — no scene there, stays `planned`/`sceneIds: []`)
+locations added.
 
 `ziklag-lament`: the project's first conversation-scale scene (~12 figures,
 not a crowd ratio); its hardest constraint — the Amalekite messenger's
@@ -212,12 +213,36 @@ claim to have killed Saul must never be visually corroborated against
 Judean-highland terrain palette (the project's fifth), and a hard framing
 constraint (David anointed over the house of Judah only, never Israel,
 carried in every relevant caption) — the ~150–200-figure assembly crowd is
-fully static/baked for performance. Both gates independently re-verified
-(not just taken from build-agent reports): format/lint/typecheck/315
-vitest/build/8-8 e2e, all green. All brief-flagged character/claim gaps
-across all three briefs are filled (`amalekite-messenger`, `abner`,
-`ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
-See `docs/run-log.md`'s 2026-07-22 entries for full detail.
+fully static/baked for performance.
+
+`gibeon-pool` (2026-07-24): the project's first civil-war battle (both
+sides Israelite, no invented "Judah kit" vs. "Benjamin kit" — sides read
+by grouping/position only) and its first named-character-kills-named-
+character death (Asahel, killed by Abner) — documentary distance, no wound
+geometry in either violence mode, the text's own reversed-spear-grip
+detail shown in standard mode only, and 2:23b's "stood still" used as a
+literal held-reaction beat via Joab/Abishai's pursuit pose pausing at the
+place Asahel fell. The champions' contest renders literally 1:1 (24
+figures); the two wider contingents are a disclosed design count
+(`claim-gibeon-battle-scale`, ~99 combat figures at high tier including the
+champions, below gilboa-battle's 120–140); the 360/20 casualty figures
+(2:29–31) are caption text only, never a rendered corpse tally. New
+`engine/terrain.ts` `basin` `TerrainSpec` kind for the pool of Gibeon
+(2:13), corroborated by Pritchard's excavated rock-cut pool/tunnel system
+at the identified site — with an explicit, disclosed open dating question
+(does the excavated pool predate or postdate 2 Samuel 2's setting?) logged
+in `docs/uncertainty-register.md` rather than resolved either way. Ten new
+claims, five character entries reconciled to them (the pre-existing
+`abner`/`ish-bosheth`/`joab`/`abishai`/`asahel` stub entries' `claimIds`
+updated to the brief's actual claim ids, no duplicate claims created under
+two naming schemes).
+
+All three scenes' gates independently re-verified (not just taken from
+build-agent reports): format/lint/typecheck/349 vitest/build/8-8 e2e, all
+green. All brief-flagged character/claim gaps across all three briefs are
+filled (`amalekite-messenger`, `abner`, `ish-bosheth`, `joab`, `abishai`,
+`asahel`, `men-of-judah` + their claims). See `docs/run-log.md`'s
+2026-07-22 and 2026-07-24 entries for full detail.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

@@ -181,8 +181,10 @@ export const FEATURES: FeatureEntry[] = [
     id: 'f-2sam',
     title: '2 Samuel 1–2 scenes',
     description: 'Lament, Hebron anointing, divided-kingdom geography.',
-    // ziklag-lament and hebron-anointing built 2026-07-22 (both
-    // in-progress, PROVISIONAL); gibeon-pool briefed but not yet built.
+    // ziklag-lament and hebron-anointing built 2026-07-22, gibeon-pool built
+    // 2026-07-24 (all three in-progress, PROVISIONAL, pending a Fable pass —
+    // see fable-review-queue.md #18). The divided-kingdom atlas/map overlay
+    // (M4's 4th goal) is not yet started.
     status: 'in-progress',
     milestoneId: 'M4',
   },

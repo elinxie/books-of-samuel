@@ -1097,25 +1097,193 @@ export const SCENES: SceneDef[] = [
   },
   {
     id: 'gibeon-pool',
-    title: 'The pool of Gibeon — Abner, Ish-bosheth, and the death of Asahel',
+    title: 'The pool of Gibeon — Abner, Joab, and the death of Asahel',
     passageIds: ['2sam-2'],
     locationId: 'gibeon',
     periodId: 'iron-iia',
     milestoneId: 'M4',
-    status: 'planned',
+    // PROVISIONAL build (2026-07-24, Sonnet implementing a Sonnet
+    // world-director brief — Fable was unavailable the session that wrote
+    // it; see docs/design/gibeon-pool-brief.md and fable-review-queue.md
+    // #18). in-progress, not released, pending a real Fable pass — matches
+    // the ziklag-lament/hebron-anointing build-then-review pattern. Third
+    // and last of the three M4 scenes; scope ends at 2:32 exactly (nothing
+    // from 2 Samuel 3 onward is depicted or gestured at).
+    status: 'in-progress',
     synopsis:
-      'Abner has installed Ish-bosheth over the northern tribes at Mahanaim; at the pool of Gibeon a contest between twelve young men from each side turns into open war between the houses of Saul and David, and Joab’s brother Asahel is killed in the pursuit of Abner.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
-    claimIds: [
-      'claim-ish-bosheth-installed',
-      'claim-gibeon-contest',
-      'claim-asahel-death',
-      'claim-abner-pursuit-halted',
-      'claim-gibeon-pool-form',
+      'Abner has installed Ish-bosheth over the northern tribes at Mahanaim; at the pool of Gibeon a contest between twelve young men from each side turns into open civil war between the houses of Saul and David. Joab’s youngest brother Asahel is killed pursuing Abner, and Abner’s plea for restraint halts the pursuit at the hill of Ammah.',
+    depictsDeath: true,
+    durationSec: 194,
+    beats: [
+      {
+        id: 'b-context',
+        timeSec: 0,
+        title: 'Two houses, two years on',
+        caption:
+          'Abner has made Ish-bosheth, Saul’s son, king over Israel at Mahanaim — Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel — for two years now. But the house of Judah followed David. Mahanaim itself, east of the Jordan, has no confidently identified site and is not shown here. (2 Samuel 2:8–10)',
+        passageRef: '2 Samuel 2:8–10',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 8,
+        title: 'Two companies, one pool',
+        caption:
+          'Abner’s men and Joab’s men come out and meet at the pool of Gibeon, and sit down, one on one side of the pool and the other on the other side — a held, almost diplomatic tableau before a blow is struck. (2 Samuel 2:12–13)',
+        passageRef: '2 Samuel 2:12–13',
+      },
+      {
+        id: 'b-proposal',
+        timeSec: 26,
+        title: 'Abner proposes a contest',
+        caption:
+          'Abner proposes that the young men arise and compete before the two companies. Joab agrees at once — let them arise. (2 Samuel 2:14)',
+        passageRef: '2 Samuel 2:14',
+      },
+      {
+        id: 'b-champions',
+        timeSec: 40,
+        title: 'Helkath-hazzurim',
+        caption:
+          'Twelve young men from Benjamin and Ish-bosheth’s side, twelve from David’s — an exact, literal count, not a design choice. Each catches his opponent by the head and drives a sword into his side, and they fall down together. The place is called Helkath-hazzurim, the field of sword-edges, to this day. (2 Samuel 2:15–16)',
+        passageRef: '2 Samuel 2:15–16',
+      },
+      {
+        id: 'b-battle-spreads',
+        timeSec: 60,
+        title: 'The battle spreads',
+        caption:
+          'The contest ignites a full engagement — very fierce that day. Abner and the men of Israel are beaten before the servants of David. Israelites against Israelites: no invented banner or uniform marks the two sides, only where they stand. (2 Samuel 2:17)',
+        passageRef: '2 Samuel 2:17',
+      },
+      {
+        id: 'b-asahel-pursuit',
+        timeSec: 82,
+        title: 'Is it you, Asahel?',
+        caption:
+          'Asahel, Joab’s youngest brother, swift of foot as a wild gazelle, pursues Abner alone, turning aside for nothing. Abner looks behind him: "Is it you, Asahel?" Asahel answers that it is. (2 Samuel 2:18–20)',
+        passageRef: '2 Samuel 2:18–20',
+      },
+      {
+        id: 'b-abner-warns',
+        timeSec: 100,
+        title: 'Abner warns him twice',
+        caption:
+          'Twice Abner tells Asahel to turn aside — first to seize one of the young men’s equipment instead, then plainly: "Why should I strike you to the ground? How then could I lift up my face to your brother Joab?" Abner is not hunting this killing; he is trying to avoid it. Asahel refuses to turn aside. (2 Samuel 2:21–22)',
+        passageRef: '2 Samuel 2:21–22',
+      },
+      {
+        id: 'b-asahel-death',
+        timeSec: 112,
+        title: 'Asahel falls',
+        caption:
+          'Abner strikes him in the stomach with the back end of his spear, and the spear comes out behind him. He falls there and dies on the spot. All who come to the place where Asahel had fallen and died stand still. (2 Samuel 2:23)',
+        passageRef: '2 Samuel 2:23',
+      },
+      {
+        id: 'b-pursuit-continues',
+        timeSec: 126,
+        title: 'Toward the hill of Ammah',
+        caption:
+          'Joab and Abishai continue after Abner as the sun goes down, until they come to the hill of Ammah, east of Gibeon on the way to the wilderness. (2 Samuel 2:24)',
+        passageRef: '2 Samuel 2:24',
+      },
+      {
+        id: 'b-standoff',
+        timeSec: 140,
+        title: 'The Benjaminites rally',
+        caption:
+          'The men of Benjamin gather themselves after Abner into one band and take their stand on the top of the hill — physically above their pursuers, even though their side is losing badly by the numbers. (2 Samuel 2:25)',
+        passageRef: '2 Samuel 2:25',
+      },
+      {
+        id: 'b-abner-plea',
+        timeSec: 152,
+        title: 'Abner’s plea',
+        caption:
+          'From the hilltop Abner calls to Joab: "Shall the sword devour forever? Do you not know that the end will be bitter?" He asks how long before Joab tells his people to turn from pursuing their brothers. (2 Samuel 2:26)',
+        passageRef: '2 Samuel 2:26',
+      },
+      {
+        id: 'b-joab-halts',
+        timeSec: 162,
+        title: 'The trumpet sounds',
+        caption:
+          'Joab answers that if Abner had not spoken, the men would have pursued their brothers until morning. Then Joab blows the trumpet, and all the men stop — restraint stops the killing here, not exhaustion or a treaty. (2 Samuel 2:27–28)',
+        passageRef: '2 Samuel 2:27–28',
+      },
+      {
+        id: 'b-casualty-count',
+        timeSec: 172,
+        title: 'The reckoning',
+        caption:
+          'Abner and his men march all that night back toward Mahanaim. The day’s toll: nineteen of David’s servants, and Asahel — twenty in all — against three hundred sixty of Benjamin and Abner’s men, an almost 18-to-1 disproportion. This count is carried by the record alone, not by a rendered field of the fallen. (2 Samuel 2:29–31)',
+        passageRef: '2 Samuel 2:29–31',
+      },
+      {
+        id: 'b-close',
+        timeSec: 182,
+        title: 'Bethlehem, then Hebron by daybreak',
+        caption:
+          'Asahel is taken up and buried in his father’s tomb at Bethlehem — not shown here, outside this scene’s ground. Joab and his men march all night and reach Hebron at daybreak. (2 Samuel 2:32)',
+        passageRef: '2 Samuel 2:32',
+      },
     ],
-    assetIds: [],
+    viewpoints: [
+      {
+        id: 'vp-pool',
+        label: 'The pool of Gibeon (default)',
+        position: [8, 48, -85],
+        lookAt: [10, 4, 4],
+      },
+      {
+        id: 'vp-champions',
+        label: 'The champions’ ground',
+        position: [34, 10, -35],
+        lookAt: [34, 3, 0],
+      },
+      {
+        id: 'vp-battle-spread',
+        label: 'The spreading battlefield',
+        position: [140, 40, -90],
+        lookAt: [140, 5, 20],
+      },
+      {
+        id: 'vp-pursuit',
+        label: 'The pursuit route',
+        position: [300, 12, -40],
+        lookAt: [340, 4, 6],
+      },
+      {
+        id: 'vp-ammah-hill',
+        label: 'The hill of Ammah',
+        position: [400, 14, 20],
+        lookAt: [460, 28, 0],
+      },
+    ],
+    claimIds: [
+      'claim-gibeon-pool-feature',
+      'claim-gibeon-terrain-form',
+      'claim-mahanaim-installation',
+      'claim-champions-contest',
+      'claim-gibeon-battle',
+      'claim-asahel-pursuit-death',
+      'claim-ammah-standoff',
+      'claim-gibeon-casualties',
+      'claim-asahel-burial-hebron-march',
+      'claim-gibeon-battle-scale',
+      'claim-dress',
+      'claim-david-historical',
+    ],
+    assetIds: [
+      'asset-terrain-gibeon-plateau',
+      'asset-gibeon-pool-basin',
+      'asset-water-plane',
+      'asset-gibeon-battle-kit',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-rocks',
+      'asset-vegetation-scrub',
+    ],
   },
 ];
 

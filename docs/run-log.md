@@ -1247,3 +1247,19 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+## 2026-07-24 — gibeon-pool built (M4, third and last scene), Sonnet (subagent, Fable-unavailable fallback carried forward)
+
+Built per `docs/design/gibeon-pool-brief.md` (already-provisional, written 2026-07-22). New `src/scenes/gibeon-pool/` (terrain/layout/poses/kitMeshes/entities + GroundWorks/Vegetation/ChampionsGround/Contingents/PrincipalFigures/GibeonPoolScene), registered in `ObservePage.tsx`. `status: 'in-progress'`, `depictsDeath: true`, 13 beats, 5 viewpoints, 194s.
+
+New engine feature: `engine/terrain.ts` `basin` `TerrainSpec` kind (radial depression, flat-ish floor, smooth rising sides — the pool of Gibeon), own engine-level test in `engine/terrain.test.ts`.
+
+Scale: champions literal 1:1 (24 figures, 12 shared-function grapple/fall pairs); wider contingents scaled off `figureCount` (~0.556 Abner / ~0.486 Joab), landing ~99 combat figures at high tier including champions (below gilboa-battle's 120-140, per `claim-gibeon-battle-scale`); hilltop rally band (≤15) drawn from Abner's contingent via the same figure-config type, not additive.
+
+Asahel's death: `abnerPose`'s `spearReversed`/`strike` are exactly 0 in reduced mode (not merely shortened); `asahelPose`'s `fallen` uses the same `fallDuration` helper as every prior scene (near-instant cut in reduced); Joab/Abishai's `pursuerPose` implements the "stood still" (2:23b) reaction beat as a literal movement-hold, not a separate flag or camera replay.
+
+Data: ten new claims per the brief's exact list. **Reconciled the pre-existing stub**: `gibeon-pool`'s scene entry and the five character entries (`abner`/`ish-bosheth`/`joab`/`abishai`/`asahel`, all pre-existing from the same 2026-07-22 session that wrote the brief) had used different placeholder claim ids written before this detailed brief existed — those five old claims removed from `claims.ts`, every reference repointed to the new ids, no duplicates left under two naming schemes. `gibeon` location bumped to `in-progress`; `mahanaim` untouched (still `planned`, `sceneIds: []`, per the brief). Four new asset records + `docs/asset-roadmap.md` + `docs/uncertainty-register.md` #15 (the pool-dating question). ESV budget: 3 quotes (2:20/2:22/2:26), 187 chars, in this scene's own beat captions — `2sam-2`'s `keyExcerpts` field stays empty (neither M4 scene used it).
+
+Gate green, independently re-run: format:check, lint, typecheck, 349 vitest (up from 315), build, 8/8 e2e, plus a manual headless console-error check of `/observe/gibeon-pool` in both violence modes (0 errors).
+
+All three M4 scenes are now built (`in-progress`, PROVISIONAL). Remaining: M4's atlas/map overlay goal (not started), the citation gaps logged in `next-run.md`, and the batched Fable pass on queue #18 before anything ships `released`.
