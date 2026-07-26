@@ -187,22 +187,31 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
-## Milestone 4 — 2 Samuel 1–2: **in-progress** (2 of 3 scenes built 2026-07-22, provisional)
+## Milestone 4 — 2 Samuel 1–2: **in-progress** (all 3 scenes built 2026-07-26, all provisional, awaiting Fable sign-off)
 
-Fable hit its monthly spend limit mid-session; the scope decision, all
-three world-director briefs, and the scene builds below were done by
-Sonnet under `docs/model-handoff.md`'s fallback policy and are marked
-**provisional** (`docs/fable-review-queue.md` #18) pending a real Fable
-pass — no M4 scene should ship past `in-progress` until then.
+Fable hit its monthly spend limit mid-session on 2026-07-22 and again on
+2026-07-26; the scope decision, all three world-director briefs, and all
+three scene builds below were done by Sonnet under
+`docs/model-handoff.md`'s fallback policy and are marked **provisional**
+(`docs/fable-review-queue.md` #18) pending a real Fable pass — no M4 scene
+should ship past `in-progress`, and the `M4` milestone itself stays
+`planned`, until then. **The 2026-07-26 attempt to run the queue #18
+sign-off itself with Fable also failed on the first call** (same
+spend-limit error) — unlike the scope/brief/build work, this was not
+attempted as a Sonnet stand-in, since a milestone sign-off review is
+judged Fable-tier, not routine execution. Queue #18 is unchanged: still
+open, still needs a real Fable pass. See `docs/next-run.md` for the exact
+next-step framing.
 
-3-scene breakdown: `ziklag-lament` (2 Sam 1, **built**,
+3-scene breakdown, all now built: `ziklag-lament` (2 Sam 1,
 `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7,
-**built**, `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam
-2:8–32, briefed, not yet built, `docs/design/gibeon-pool-brief.md`). The
-milestone's 4th goal (divided-kingdom political geography) was called as
-an atlas/map UI overlay rather than a 4th 3D scene, per ADR-011 — not yet
-built. New `gibeon` (settled identification) and `mahanaim` (disputed,
-narrated-only — no scene there) locations added.
+`docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam 2:8–32,
+`docs/design/gibeon-pool-brief.md`). The milestone's 4th goal
+(divided-kingdom political geography) was called as an atlas/map UI
+overlay rather than a 4th 3D scene, per ADR-011 — not yet built, and that
+call itself is unconfirmed pending the same Fable pass. New `gibeon`
+(settled identification) and `mahanaim` (disputed, narrated-only — no
+scene there) locations added.
 
 `ziklag-lament`: the project's first conversation-scale scene (~12 figures,
 not a crowd ratio); its hardest constraint — the Amalekite messenger's
@@ -212,12 +221,36 @@ claim to have killed Saul must never be visually corroborated against
 Judean-highland terrain palette (the project's fifth), and a hard framing
 constraint (David anointed over the house of Judah only, never Israel,
 carried in every relevant caption) — the ~150–200-figure assembly crowd is
-fully static/baked for performance. Both gates independently re-verified
-(not just taken from build-agent reports): format/lint/typecheck/315
-vitest/build/8-8 e2e, all green. All brief-flagged character/claim gaps
-across all three briefs are filled (`amalekite-messenger`, `abner`,
-`ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
-See `docs/run-log.md`'s 2026-07-22 entries for full detail.
+fully static/baked for performance. `gibeon-pool` (built 2026-07-26): 14
+beats, 5 viewpoints, a new pool-basin terrain treatment (negative-height
+`mound` + rim + unlit water plane, no new `TerrainSpec` kind), 24 champions
+rendered literally 1:1, ~99 combat figures high-tier (Abner ~40, Joab
+~35 — a same-session follow-up fixed a real gap where ~75 of those figures
+were rendering body-only with no weapon), and the project's first
+named-character-kills-named-character death (Asahel, by Abner) —
+documentary distance, reversed-spear-grip gesture, the text's own "stood
+still" reaction beat, no wound geometry in either violence mode; sets the
+template for future individual killings. All three gates independently
+re-verified (not just taken from build-agent reports): format/lint/
+typecheck/365 vitest/build/8-8 e2e, all green as of the last run. All
+brief-flagged character/claim gaps across all three briefs are filled
+(`amalekite-messenger`, `abner`, `ish-bosheth`, `joab`, `abishai`,
+`asahel`, `men-of-judah` + their claims). See `docs/run-log.md`'s
+2026-07-22 and 2026-07-26 entries for full detail.
+
+**Citation-gap progress, 2026-07-26 (researcher pass, non-Fable):** of the
+four open M4 citation gaps carried in `docs/next-run.md`, two are
+substantially advanced and two are closed. `claim-gibeon-pool-form`
+(Tamburrini 2021, a preprint, dates the pool to the 10th c. BCE — stays
+low-confidence) and `claim-hebron-town-form` (Ofer 1994 vs. a 2021 ZDPV
+reassessment, now two competing `scholarlyViews`, stays
+`design-placeholder`) are advanced but still open — see
+`docs/uncertainty-register.md` rows #15/#16. `claim-amalekite-messenger-
+account` is substantially closed (McCarter 1984 + Reis 2006 now give
+`view-amalekite-fabrication` named proponents). A live-text check of
+`ziklag-lament`'s ESV quotes found and fixed one real word-order error in
+2 Sam 1:26's beat caption; the other two quotes checked out correct. 5 new
+source cards.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
@@ -254,12 +287,15 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Fable session, 2026-07-19)
-- `npm run lint` — pass (Fable session, 2026-07-19)
-- `npm run test` (vitest) — pass (Fable session, 2026-07-19)
-- `npm run build` — pass (Fable session, 2026-07-19)
-- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-19, sandboxed
-  with `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`)
+- `npm run format:check` — pass (Sonnet session, 2026-07-26)
+- `npm run lint` — pass (Sonnet session, 2026-07-26)
+- `npm run test` (vitest) — pass, 365 tests (Sonnet session, 2026-07-26)
+- `npm run typecheck` — pass (Sonnet session, 2026-07-26)
+- `npm run build` — pass (Sonnet session, 2026-07-26)
+- `npm run e2e` (playwright) — 8/8 pass (Sonnet session, 2026-07-26, sandboxed
+  with `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
+- Branch `claude/focused-mccarthy-n6e6wt`, PR #45 (draft, `gibeon-pool` build +
+  citation-gap pass) open against `main`, not yet merged as of this doc sync.
 - PR #30 (both remaining M3 scene builds) merged into `main` (`bebb88e`);
   `main` at `3d72f3d` at the time of the M3 sign-off.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.

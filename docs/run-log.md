@@ -1247,3 +1247,61 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+**2026-07-26 — Sonnet 5 — gibeon-pool built (M4's third and last scene)**
+Branch `claude/focused-mccarthy-n6e6wt`, PR #45 draft. `npm install` first
+(fresh sandbox). `threejs-engineer` built `gibeon-pool` (2 Sam 2:8-32) per
+its brief: 14 beats, 5 viewpoints, pool basin as negative-height `mound`
+terrain + torus rim + unlit water plane (no new `TerrainSpec` kind — the
+brief left this to the implementer), 24 champions at literal 1:1, ~99
+combat figures high-tier (Abner ~40, Joab ~35). Asahel-death precedent
+implemented per the brief exactly: documentary distance, reversed-spear-
+grip gesture, 2:23b's "stood still" beat as a unit-tested time-freeze
+(`effectiveTime`/`stillnessActive`) applied to every figure still in
+motion, no wound geometry in either violence mode. New claims
+`claim-gibeon-battle-scale`, `claim-asahel-burial-hebron-march`; 4 new
+placeholder assets; `gibeon` location → `in-progress`;
+`docs/uncertainty-register.md` row #15 added. `status: 'in-progress'`,
+`depictsDeath: true`. 365 vitest (up from 315), format/lint/typecheck/build
+green; e2e not re-run this commit (flagged for `performance-reviewer` per
+the brief's own request instead).
+
+Performance review found a real gap: Abner/Joab crowd contingents were
+rendering body-only, no weapon, for ~75 of the 99 combat figures. Fixed
+with a small follow-up commit — spear `InstancedMesh` added to both,
+matching the Gilboa/ChampionsContest precedent. Re-verified gate green.
+
+Attempted a batched Fable pass for queue #18 (full M4 sign-off, now that
+all three scenes are built) — **first call failed immediately: "You've hit
+your monthly spend limit,"** same failure as the session that wrote the
+three M4 briefs. Unlike that session, did **not** attempt this specific
+task (a milestone sign-off review) as a Sonnet stand-in — judged as
+Fable-tier judgment work, not routine execution, per
+`docs/model-handoff.md`'s fallback policy. Queue #18 left exactly as-is;
+M4 stays `planned` at the milestone level; nothing flipped to `released`.
+This is the top item in `docs/next-run.md` for the next session.
+
+Ran a `researcher` pass on the four open citation gaps instead (legitimate
+non-Fable work): `claim-gibeon-pool-form` advanced (Tamburrini 2021
+preprint dates the pool to 10th c. BCE, stays low-confidence — no source
+found arguing for a later construction); `claim-hebron-town-form` advanced
+(Ofer 1994 vs. a 2021 ZDPV reassessment as two competing `scholarlyViews`
+on Tell Rumeida's "cyclopean wall," the latter's author attribution
+deliberately left unnamed/`TO VERIFY` in user-facing text per its own
+hedge — stays `design-placeholder`); `claim-amalekite-messenger-account`
+substantially closed (McCarter 1984 + Reis 2006 give
+`view-amalekite-fabrication` named proponents). Also live-checked
+`ziklag-lament`'s three ESV quotes (previously entered from
+model/brief recollection, never checked against source text) and found
+one real error: 2 Sam 1:26's beat caption had "you have been very
+pleasant to me" where the actual ESV reads "very pleasant have you been
+to me" — fixed in `src/data/scenes.ts`. 1:23 and 1:27 checked out
+correct. 5 new source cards, `sources/source-index.json` regenerated.
+`docs/uncertainty-register.md` rows #15/#16 carry the full framing for the
+two still-open gaps.
+
+All four commits this session independently gate-verified: 365 vitest,
+format:check, lint, typecheck, build, 8/8 e2e. Doc sync (this entry,
+`progress.md`, `next-run.md`, `asset-roadmap.md`/`fable-review-queue.md`
+spot-checked already accurate from the build/researcher agents) done by a
+separate doc-sync pass same session.
