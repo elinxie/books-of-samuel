@@ -1,0 +1,15 @@
+{
+  "id": "mccarter-1984-ii-samuel",
+  "title": "II Samuel: A New Translation with Introduction, Notes, and Commentary (Anchor Bible, vol. 9)",
+  "author": "P. Kyle McCarter Jr.",
+  "publisher": "Doubleday (Anchor Bible); reissued as Anchor Yale Bible, Yale University Press",
+  "datePublished": "1984",
+  "dateAccessed": "2026-07-26",
+  "sourceType": "reference",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted critical commentary. Project stores its own summary/paraphrase of the relevant discussion only; no reproduction of McCarter's translation or notes text.",
+  "summary": "Standard critical Anchor Bible commentary on 2 Samuel. On the Amalekite messenger's account in 2 Samuel 1:6-10 against 1 Samuel 31:3-5's own narration of Saul's death by his own sword, secondary sources consistently attribute to McCarter the observation that the text itself does not resolve whether David was taken in by the Amalekite's claim ('Whether David was deceived or not, we cannot tell') — treating the discrepancy as a real narrative tension the text leaves open rather than adjudicating it as either a confirmed fabrication or a genuine secondhand report.",
+  "relevantPassages": ["2 Samuel 1:1-16"],
+  "extractedClaims": ["claim-amalekite-messenger-account"],
+  "confidenceNotes": "TO VERIFY: located via web search-result summaries quoting/paraphrasing McCarter (a phrase attributed to him, 'Whether David was deceived or not, we cannot tell', recurs across independent secondary sources), not via direct inspection of the 1984 volume's own pages — no page number is confirmed here. This is the specific named critical commentary flagged as a gap in docs/next-run.md's citation-gap list; treat the quoted phrase as a paraphrase-level attribution pending a primary-copy check, not a verified direct quotation."
+}

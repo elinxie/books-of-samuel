@@ -793,18 +793,19 @@ export const CLAIMS: ReconstructionClaim[] = [
         id: 'view-amalekite-fabrication',
         label: 'Self-serving fabrication for reward/favor',
         proponents: [
-          'e.g., commentators reading the account as invented outright to claim credit and favor with the incoming king (a specific citation — e.g. P. Kyle McCarter’s Anchor Bible II Samuel — is not yet page-verified in this project’s bibliography; hedged per docs/reconstruction-method.md’s attribution-hedging rule)',
+          'P. Kyle McCarter Jr. (Anchor Bible II Samuel, 1984) — secondary sources attribute to McCarter the judgment that the text itself leaves open "whether David was deceived or not" (page not yet page-verified, see mccarter-1984-ii-samuel’s confidenceNotes)',
+          'Pamela Tamarkin Reis (Journal for the Study of the Old Testament 30.3, 2006), who reads David as genuinely taken in by "the lying Amalekite" at the time, only learning the truth later (by 2 Samuel 4)',
         ],
         summary:
           'The messenger has an obvious motive (reward, standing with David) and an Amalekite identity a Ziklag audience has every reason to distrust; on this reading his entire account of finishing Saul off is invented, whether or not he was present at Gilboa at all.',
         confidence: 'low',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['esv-bible', 'mccarter-1984-ii-samuel', 'reis-2006-killing-the-messenger'],
       },
       {
         id: 'view-amalekite-looter-embellishment',
         label: 'Looter’s embellishment of a genuine find',
         proponents: [
-          'e.g., commentators reading the account as an opportunistic exaggeration rather than an outright invention (specific citation not yet page-verified; same hedge as above)',
+          'e.g., commentators reading the account as an opportunistic exaggeration rather than an outright invention (specific citation not yet page-verified; same hedge as above — a plausible candidate, F. C. Cook’s 19th-century Speaker’s Commentary, was checked in the 2026-07-26 researcher pass but not confidently enough attributed to name here, since secondary sources conflict on whether Cook personally authored the Samuel volume’s notes within that edited series)',
         ],
         summary:
           'On this reading the messenger genuinely found Saul’s body on the field after death (consistent with 1 Samuel 31:4’s own narration) and took the crown and armlet as a battlefield looter, then embellished a killing claim onto that genuine detail to inflate his own role.',
@@ -813,7 +814,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated — no flashback, reenactment inset, or Gilboa-backdrop tableau, in any mode. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. A named critical commentary (e.g. McCarter’s Anchor Bible II Samuel) discussing this discrepancy would strengthen this claim’s and the scholarlyViews’ sourcing beyond the text itself — flagged for a future researcher pass, not yet added; the proponents above are hedged "e.g." accordingly and cite only esv-bible pending that pass.',
+      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated — no flashback, reenactment inset, or Gilboa-backdrop tableau, in any mode. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. Researcher pass (2026-07-26): view-amalekite-fabrication now carries two named, checkable sources (McCarter’s Anchor Bible commentary, hedged pending page-verification of the exact quoted phrase; Reis 2006’s peer-reviewed JSOT article, whose bibliographic details are independently corroborated across multiple sources). view-amalekite-looter-embellishment could not be as confidently attributed to a specific named scholar in this pass and stays on the hedged "e.g." placeholder per docs/reconstruction-method.md’s attribution-hedging rule — a candidate (F. C. Cook) was found but not attributed with enough confidence to name.',
   },
   {
     id: 'claim-lords-anointed-principle',
@@ -863,7 +864,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'The Book of Jashar is a lost source the Bible cites more than once (cf. Joshua 10:13) — a genuinely interesting historiographical detail about Israel’s own now-vanished literary tradition, carried as a caption note without asserting anything about the book’s nature beyond what the text itself gives. The scene delivers the poem through text/caption at a slower pace, exactly as narrated speech is delivered elsewhere in the project; no melody, chant, or vocal performance is synthesized, since the project has no basis for asserting fidelity to how it actually sounded.',
+      'The Book of Jashar is a lost source the Bible cites more than once (cf. Joshua 10:13) — a genuinely interesting historiographical detail about Israel’s own now-vanished literary tradition, carried as a caption note without asserting anything about the book’s nature beyond what the text itself gives. The scene delivers the poem through text/caption at a slower pace, exactly as narrated speech is delivered elsewhere in the project; no melody, chant, or vocal performance is synthesized, since the project has no basis for asserting fidelity to how it actually sounded. Wording check (2026-07-26, Sonnet): the scene’s three quoted ESV excerpts from this song (1:23, 1:26, 1:27) were cross-checked via web search against esv.org/biblehub.com/bible.com result snippets (direct WebFetch to Bible-text sites is still blocked from this sandbox — 403s across every domain tried, not ESV-specific this time). 1:23 and 1:27 matched exactly; 1:26 had a real word-order error ("you have been very pleasant to me" instead of the actual ESV "very pleasant have you been to me") and has been corrected in scenes.ts. This is search-snippet corroboration across multiple independent mirrors of the same ESV text, not a single authoritative page fetch, so treat as strong but not airtight.',
   },
   {
     id: 'claim-lament-evening',
@@ -891,9 +892,35 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The scene renders Hebron as a modest highland hill town on Tell Rumeida — no wall plan, gate-tower form, or building footprint is asserted as excavated, and the surrounding terraced highland setting is a generic Judean-highland composite, not a surveyed landscape.',
     basis: 'design-placeholder',
     confidence: 'speculative',
-    sourceIds: ['rainey-notley-2006'],
+    sourceIds: [
+      'rainey-notley-2006',
+      'ofer-1994-hill-country-judah',
+      'ussishkin-2021-cyclopean-wall-hebron',
+    ],
+    scholarlyViews: [
+      {
+        id: 'view-hebron-wall-iron-i-reuse',
+        label: 'Middle Bronze "cyclopean" wall reused through Iron I into early Iron II',
+        proponents: ['Avi Ofer (Judean Hills Survey Expedition, 1980s; published 1994)'],
+        summary:
+          'Ofer’s survey/excavation work reads Tell Rumeida’s massive Middle Bronze Age perimeter wall as reused by Iron I occupants, with the site’s occupational peak spanning roughly the 11th century into the end of the 10th century BCE — i.e., a visible, if reused rather than newly built, fortification standing through David’s era. Distinct Iron IIA-specific remains beyond this broader horizon are reported as scattered, not a well-defined stratum or plan.',
+        confidence: 'low',
+        sourceIds: ['ofer-1994-hill-country-judah'],
+      },
+      {
+        id: 'view-hebron-wall-iron-ii-later',
+        label: 'Wall built centuries later, in Iron II Judah',
+        proponents: [
+          'e.g., a 2021 ZDPV reassessment (author attribution TO VERIFY — see ussishkin-2021-cyclopean-wall-hebron’s confidenceNotes)',
+        ],
+        summary:
+          'A more recent reassessment argues the "cyclopean" wall and its glacis were built during the later Iron Age, when Hebron was a fortified Judahite city, citing 8th-7th century pottery from the rampart make-up — not reused from the Middle Bronze Age at all. On this reading no fortification wall is attested at Tell Rumeida as early as David’s reign, directly against view-hebron-wall-iron-i-reuse.',
+        confidence: 'low',
+        sourceIds: ['ussishkin-2021-cyclopean-wall-hebron'],
+      },
+    ],
     notes:
-      'rainey-notley-2006 supports the site identification (claim-hebron-identification) but says nothing about excavated early Iron IIA town form, fortification, or size at Tell Rumeida. Checked sources/source-cards/ for a dedicated Tell Rumeida excavation-results card: none exists yet, despite renewed excavation activity at the site in recent decades. A researcher pass should check for a citable published Tell Rumeida/Hebron excavation or survey report before this claim can move past design-placeholder — flagged in docs/fable-review-queue.md #18. Until then this stays a disclosed generic "modest highland hill town" placeholder, following the beth-shan/jabesh pattern of disclosing exactly this kind of gap rather than inventing a plan; no single Tell Rumeida excavation phase is adopted as "the" Davidic-era plan.',
+      'rainey-notley-2006 supports the site identification (claim-hebron-identification) but says nothing about excavated early Iron IIA town form, fortification, or size at Tell Rumeida. Researcher pass (2026-07-26): found two conflicting scholarly accounts of the tell’s one major visible fortification feature (see scholarlyViews above) — Ofer’s earlier reading that the site’s Middle Bronze wall was reused through Iron I, versus a 2021 reassessment redating the same wall entirely to Iron II (8th-7th century), centuries after David. This dispute is exactly why the scene continues to render no asserted wall plan: even the strongest candidate for "a fortification David would have seen" is now actively contested at the level of which era it belongs to, not just its precise footprint. No source located covers excavated building footprints, gate forms, or a settlement plan for this period at Tell Rumeida at all — that narrower gap stays fully open. Checked sources/source-cards/ before this pass: no dedicated Tell Rumeida excavation-results card existed. Flagged in docs/fable-review-queue.md #18. Until a building-level plan is found, this stays a disclosed generic "modest highland hill town" placeholder, following the beth-shan/jabesh pattern of disclosing exactly this kind of gap rather than inventing a plan; no single Tell Rumeida excavation phase is adopted as "the" Davidic-era plan.',
   },
   {
     id: 'claim-hebron-inquiry',
@@ -1001,9 +1028,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The pool of Gibeon (2 Samuel 2:13) is rendered as a rock-cut basin with a flat water plane, on the strength of Pritchard’s excavation of a rock-cut pool/water-tunnel system at Tell el-Jib.',
     basis: 'archaeology',
     confidence: 'low',
-    sourceIds: ['pritchard-gibeon-1962'],
+    sourceIds: ['pritchard-gibeon-1962', 'tamburrini-2021-pool-of-gibeon'],
     notes:
-      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+      'Researcher pass (2026-07-26): a PhD-research-based reassessment of Pritchard’s own excavation records (Tamburrini 2021, a preprint reanalyzing the fill stratigraphy and finds) dates the pool’s construction to the 10th century BCE, with a separate later artifact group (8th-6th century BCE) read as fill/use-phase material rather than evidence of a later construction date. This is the most specific dating claim located in this research pass, and it narrows the open question without fully resolving it: secondary sources on Pritchard’s original work otherwise range from the 12th century BCE to the 10th century BCE for the pool’s cutting, and no source located argues for a later, 9th-8th century (postdating) construction specifically — so the "later Iron II expansion postdating the narrative" horn of the original question is not attested anywhere found, while "predates or is contemporary with" the early Iron IIA setting of 2 Samuel 2 is the best-supported reading, on preprint-level, non-primary-verified evidence. Confidence stays low: Tamburrini 2021 is a preprint, not confirmed here as peer-reviewed, and "10th century BCE" does not itself distinguish early vs. late in that century. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh. See docs/uncertainty-register.md #15.',
   },
   {
     id: 'claim-gibeon-battle-scale',

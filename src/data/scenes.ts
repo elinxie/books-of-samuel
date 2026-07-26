@@ -916,7 +916,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 189,
         title: 'My brother Jonathan',
         caption:
-          'David turns from the nation’s grief to his own: “I am distressed for you, my brother Jonathan; you have been very pleasant to me; your love to me was extraordinary, surpassing the love of women.” (2 Samuel 1:26)',
+          'David turns from the nation’s grief to his own: “I am distressed for you, my brother Jonathan; very pleasant have you been to me; your love to me was extraordinary, surpassing the love of women.” (2 Samuel 1:26)',
         passageRef: '2 Samuel 1:26',
       },
       {
