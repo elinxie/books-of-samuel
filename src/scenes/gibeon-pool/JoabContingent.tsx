@@ -10,7 +10,7 @@ import {
 } from '../../engine/characters';
 import { HILL_BASE_SLOTS, JUDAH_BANK_SLOTS, JUDAH_BATTLE_SLOTS } from './layout';
 import { joabContingentPose } from './poses';
-import { CROWD_KIT_STATURE } from './kitMeshes';
+import { buildSpearGeometry, CROWD_KIT_STATURE } from './kitMeshes';
 
 /**
  * Joab/Judah's wider contingent (claim-gibeon-battle-scale): a disclosed
@@ -73,11 +73,14 @@ const dummy = new THREE.Object3D();
 
 export function JoabContingent({ count, shadows }: { count: number; shadows: boolean }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
+  const spearRef = useRef<THREE.InstancedMesh>(null);
   const geometry = useMemo(() => buildCrowdLimbedGeometry(GENERIC_JUDAH_PARAMS), []);
+  const spearGeo = useMemo(() => buildSpearGeometry(CROWD_KIT_STATURE, 'handR'), []);
   const figures = useMemo(() => buildJoabContingentFigures(count), [count]);
 
   useFrame(() => {
     const mesh = meshRef.current;
+    const spear = spearRef.current;
     if (!mesh) return;
     const { timeSec: t, terrain, violenceMode } = useAppStore.getState();
 
@@ -106,19 +109,31 @@ export function JoabContingent({ count, shadows }: { count: number; shadows: boo
       dummy.updateMatrix();
       mesh.setMatrixAt(i, dummy.matrix);
       mesh.setColorAt(i, fig.color);
+      spear?.setMatrixAt(i, dummy.matrix);
     }
     mesh.instanceMatrix.needsUpdate = true;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+    if (spear) spear.instanceMatrix.needsUpdate = true;
   });
 
   return (
-    <instancedMesh
-      ref={meshRef}
-      args={[geometry, undefined, figures.length]}
-      frustumCulled={false}
-      castShadow={shadows}
-    >
-      <meshStandardMaterial vertexColors roughness={1} />
-    </instancedMesh>
+    <group>
+      <instancedMesh
+        ref={meshRef}
+        args={[geometry, undefined, figures.length]}
+        frustumCulled={false}
+        castShadow={shadows}
+      >
+        <meshStandardMaterial vertexColors roughness={1} />
+      </instancedMesh>
+      <instancedMesh
+        ref={spearRef}
+        args={[spearGeo, undefined, figures.length]}
+        frustumCulled={false}
+        castShadow={shadows}
+      >
+        <meshStandardMaterial color="#8a8a86" roughness={0.6} metalness={0.3} />
+      </instancedMesh>
+    </group>
   );
 }
