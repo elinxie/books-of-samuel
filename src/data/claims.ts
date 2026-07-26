@@ -1005,6 +1005,26 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
   },
+  {
+    id: 'claim-gibeon-battle-scale',
+    statement:
+      'The two wider contingents behind the twenty-four champions (Abner/Israel’s and Joab/Judah’s followings) are rendered at a disclosed design-choice headcount — roughly 35–45 and 30–40 figures respectively at high quality tier, with a rallying subset of 12–18 drawn from (not additive to) Abner’s contingent at the hill of Ammah — not a ratio of any asserted "true" army size.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      "Parallel in form to claim-battle-scale (gilboa-battle) and claim-judah-assembly-scale (hebron-anointing): 2:8-31 gives no headcount for either side's force at Gibeon. The total (twenty-four champions plus the two contingents, roughly 90-115 figures at high tier) is deliberately smaller than gilboa-battle's already-modest 120-140, reflecting a contingent-level clash between two commanders' followings at one town rather than a national muster. Explicitly not derived from, and not scaled to visually \"prove,\" the 360/20 casualty figures the text gives at 2:30-31 — see claim-gibeon-casualties' own notes on that same point. A small, seeded fraction of each contingent \"falls\" during the battle-spread beat (heavier on Abner's side than Joab's, directionally lopsided) purely for staging legibility, not as a literal casualty count.",
+  },
+  {
+    id: 'claim-asahel-burial-hebron-march',
+    statement:
+      'The narrative states that Asahel was taken up and buried in his father’s tomb at Bethlehem, and that Joab and his men marched through the night and reached Hebron by daybreak (2 Samuel 2:32).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Delivered as a text-only closing card (b-close) — neither Bethlehem nor Hebron geometry is rendered here; this scene’s locationId stays gibeon throughout, per the brief’s hard scope guard. Bethlehem as Asahel’s (and so Joab’s and David’s) family town is otherwise unaddressed in this scene; Hebron itself was already built as its own location in hebron-anointing, not re-rendered.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

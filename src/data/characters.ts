@@ -165,7 +165,11 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back.',
     passageRefs: ['2 Samuel 2:13–32'],
-    claimIds: ['claim-gibeon-contest', 'claim-abner-pursuit-halted'],
+    claimIds: [
+      'claim-gibeon-contest',
+      'claim-abner-pursuit-halted',
+      'claim-asahel-burial-hebron-march',
+    ],
   },
   {
     id: 'abishai',
@@ -183,7 +187,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'Joab’s youngest brother, described as swift-footed. Pursues Abner despite being twice warned to turn aside, and is killed by a backward thrust of Abner’s spear — the project’s first named-character-kills-named-character death, rendered at documentary distance with no wound geometry, per ADR-009. Buried at Bethlehem, in his father’s tomb (2 Samuel 2:32).',
     passageRefs: ['2 Samuel 2:18–23', '2 Samuel 2:32'],
-    claimIds: ['claim-asahel-death'],
+    claimIds: ['claim-asahel-death', 'claim-asahel-burial-hebron-march'],
   },
 ];
 

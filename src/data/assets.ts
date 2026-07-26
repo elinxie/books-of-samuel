@@ -173,7 +173,7 @@ export const ASSETS: AssetRecord[] = [
     id: 'asset-figure-fallen',
     name: 'Fallen/prone pose transform',
     represents:
-      'The Gilboa death sequence and rout: sons overtaken, Saul wounded/kneeling and fallen, the armor-bearer following, and routing figures who crumple at distance',
+      "The Gilboa death sequence and rout: sons overtaken, Saul wounded/kneeling and fallen, the armor-bearer following, and routing figures who crumple at distance; reused in gibeon-pool for the champions' paired fall and Asahel's death",
     placeholder: true,
     whyTemporary:
       'A body-orientation/collapse transform (rotation + non-uniform scale) applied to the existing ADR-010 procedural rig, not a distinct fallen-body mesh or skeletal animation clip — see the pure pose functions in src/scenes/gilboa-battle/poses.ts. No wound, blood, or dismemberment geometry in either violence-rendering mode (ADR-009).',
@@ -530,6 +530,52 @@ export const ASSETS: AssetRecord[] = [
       'A single primitive horn-shaped mesh, presented near David and the elder figure during the rite gesture — 2:4 narrates the fact of anointing only, not the vessel or physical choreography, so exact form is a disclosed design placeholder, not a modeled reconstruction.',
     historicalRequirements:
       'None achievable beyond stylization without a period-specific comparandum for an anointing vessel; any upgrade improves material/finish fidelity only.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-terrain-gibeon-highlands',
+    name: 'Procedural Benjamin-highland terrain (Gibeon)',
+    represents:
+      "The Gibeon plateau north of Jerusalem — drier, more open, and rockier ground than Judean Hebron's intensively terraced hills, plus the hill of Ammah rise along the pursuit route",
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise plus hand-tuned mound/channel features (ADR-005), not derived from real elevation data for Tell el-Jib or its surroundings.',
+    historicalRequirements:
+      'DEM-derived terrain once a terrain-data sourcing/licensing ADR defines source, attribution, vertical datum, and resampling policy — Gibeon is a natural candidate given its secure identification.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-pool-basin',
+    name: 'Pool of Gibeon basin and rim',
+    represents: 'The rock-cut basin narrated at 2 Samuel 2:13 — see claim-gibeon-pool-form',
+    placeholder: true,
+    whyTemporary:
+      "A shallow procedural depression (a negative-height terrain mound, not a dedicated TerrainSpec `basin` kind) plus a single low stone-rim mesh, at a modest, non-monumental scale — deliberately not built to Pritchard's excavated dimensions, since neither the source card nor the location entry establishes whether that excavated form is contemporary with or postdates the early Iron IIA setting of 2 Samuel 2 (open researcher question, see claim-gibeon-pool-form's notes).",
+    historicalRequirements:
+      "Revise scale/form once the researcher gap on the pool's dating is closed with a citable stratigraphic source; until then this stays a disclosed, deliberately modest placeholder.",
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-water-plane',
+    name: 'Flat water-surface plane (pool of Gibeon)',
+    represents: 'The standing water in the pool basin — see claim-gibeon-pool-form',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally-lit circular mesh (meshStandardMaterial, low roughness, no reflection/refraction shader) — the engine has no dedicated water/reflection system, matching the besor-crossing/gilboa-battle/jabesh-burial precedent that explicitly declined one for this scene too.',
+    historicalRequirements:
+      'None strictly — water level/clarity is unstated in the text; any upgrade (a real reflection/refraction pass) is a visual-fidelity improvement only, pending a dedicated water-rendering ADR the project has not yet made.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-weapon-kit',
+    name: 'Spear and short-sword kit attachments (Gibeon)',
+    represents:
+      "Abner's (and Joab's/Abishai's) spear, and the champions' contest swords (2:16) — undifferentiated between the two Israelite sides, reusing claim-dress rather than a new kit-differentiation claim",
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/box primitive geometry (src/scenes/gibeon-pool/kitMeshes.ts), attached as instance/group transforms on the existing ADR-010 rig — not modeled weapon assets. Deliberately the same kit on both Israelite sides, per the brief\'s explicit "no invented dress differentiation" rule.',
+    historicalRequirements:
+      'Modeled weapon forms sourced from a specific comparative-ANE assemblage or excavated Iron I-IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
     replacementMilestoneId: 'M4',
   },
 ];
