@@ -3,7 +3,61 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-07-30, all 3 M4 scenes built, branch `claude/focused-mccarthy-w6cr30`)
+
+**All three M4 scenes are now built** (`ziklag-lament`, `hebron-anointing`, `gibeon-pool` —
+last one built this session, `threejs-engineer`). Everything about M4 remains
+**provisional** per queue #18 (Fable hit its monthly spend limit 2026-07-22;
+scope + all three briefs + all three builds are Sonnet fallback work) — no M4
+scene should ship past `in-progress` until a real Fable pass confirms it.
+
+`gibeon-pool` (2 Sam 2:8–32): new scene folder `src/scenes/gibeon-pool/`, new
+`basin` `TerrainSpec` kind (`src/engine/terrain.ts`) + unlit water plane (no
+shader, per brief), 14 beats/5 viewpoints, 10 new claims, 5 new characters
+(`abner`/`ish-bosheth`/`joab`/`abishai`/`asahel`). 24 champions rendered
+literally 1:1 + ~99-figure high-tier wider contingents (target 90–115, below
+Gilboa's 120–140). Sets the project's first named-character-kills-named-
+character precedent (Asahel's death: documentary distance, reversed-spear-
+grip gesture only, no wound geometry, "stood still" reaction beat carries the
+weight) — the template for future individual killings (Abner's own death in
+2 Sam 3, not yet built, and explicitly out of scope here).
+
+Independently re-verified before committing: full gate (format/lint/
+typecheck/359 vitest/build/9-9 e2e), plus a dedicated `performance-reviewer`
+pass on the new pool geometry (clean). **Caught and fixed one real scope
+violation the build agent missed**: a scene-entity label
+(`src/scenes/gibeon-pool/entities.ts`'s `ent-abner`) explicitly named "2
+Samuel 3" as foreshadowing, violating the brief's hard scope guard — trimmed
+before commit. Full detail: `docs/run-log.md`'s 2026-07-30 entry.
+
+**Open verification items carried forward (non-blocking):**
+
+- The Pritchard pool-dating question: whether the excavated rock-cut pool at
+  Tell el-Jib predates or postdates 2 Samuel 2's early Iron IIA setting —
+  flagged for `researcher`, `docs/uncertainty-register.md` row #15.
+- `gibeon-pool`'s two ESV quotes (2:22, 2:26) are from model recollection, not
+  a live-source check — same sandbox limitation as `ziklag-lament`'s quotes
+  (no outbound access to Bible-text sites).
+
+**What's next (Sonnet), in priority order:**
+
+1. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context
+   view) — not started, `ui-engineer` work once scoped further (or fold into
+   the Fable pass below first, since the atlas-vs-scene call itself is still
+   provisional).
+2. **A real Fable pass** to confirm/revise the whole M4 scope+briefs+build
+   package (queue #18) now that all three scenes are built — batch it, don't
+   spend a partial Fable session on it. Do this before flipping any M4 scene
+   to `released`. The user has authorized running Fable automatically when
+   needed; attempt this next if Fable is available this session.
+3. **Close the open citation/verification gaps above** — `researcher` pass,
+   doesn't block anything.
+4. **(Still open, unrelated to M4, carried forward)** Real-hardware
+   performance check of `gilboa-battle` at high tier, and the Pages-live
+   check — both still blocked from sandboxes; see Environment notes below,
+   unchanged.
+
+## State before this slice (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 
 **Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and two of the three scene builds) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
 

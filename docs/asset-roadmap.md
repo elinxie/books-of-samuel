@@ -132,6 +132,31 @@ provisional brief, Fable-unavailable fallback, tracked at
 excavation-results citation gap noted on `claim-hebron-town-form` /
 `asset-hebron-town-form`.
 
+## Current placeholders (gibeon-pool scene, Milestone 4, built 2026-07-30, PROVISIONAL)
+
+Third and last M4 scene: the pool of Gibeon, the champions' contest,
+the wider battle, Asahel's pursuit and death, and the halt at the hill of
+Ammah. High-tier total ~99 combat figures (24 literal champions + ~40
+Abner-side + ~35 Joab-side), noticeably below gilboa-battle's own
+high-tier totals — a contingent-level civil-war skirmish, not a national
+muster. The pool basin is the one genuinely new terrain-feature kind this
+scene adds to `engine/terrain.ts` (`TerrainFeature`'s `basin` kind).
+
+| Asset                          | Represents                                                                                                                          | Why temporary                                                                                                                                                                                             | Replace at |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-gibeon-plateau` | Central Benjamin-highland plateau, the pool basin, and the hill of Ammah — `claim-gibeon-terrain-form`, `claim-gibeon-pool-feature` | Procedural hills + hand-tuned basin/mound/ramp/flatten features (ADR-005), not DEM-derived; pool form/dimensions not asserted at Pritchard's excavated scale                                              | M4         |
+| `asset-water-plane`            | The pool of Gibeon's standing water (2 Samuel 2:13) — `claim-gibeon-pool-feature`                                                   | A single flat, unlit/minimally-lit tinted plane — explicitly no reflection/refraction shader, matching gilboa-battle/besor-crossing's declined-water-shader precedent                                     | M4         |
+| `asset-gibeon-kit-props`       | The champions' contest sword, the generic Israelite spear (both sides, undifferentiated), Joab's halt-signal horn                   | Primitive cylinder/box/torus geometry, deliberately identical on both sides — no invented "Judah kit" vs. "Benjamin/Israel kit"                                                                           | M4         |
+| `asset-gibeon-combat-poses`    | The champions' paired grapple/fall cycle and Abner's reversed-spear-grip strike gesture on Asahel                                   | Rotation/scale collapse transforms and a prop-rotation gesture on the existing ADR-010 rig, not modeled fall animation or a bespoke weapon-grip rig; no wound/blood/dismemberment geometry in either mode | M4         |
+
+Reuses `asset-figure-procedural`, `asset-david-marker`, `asset-figure-fallen`,
+`asset-vegetation-scrub`, and `asset-rocks` — no new records for these. This
+scene's status stays `in-progress` (`docs/design/gibeon-pool-brief.md` is a
+Sonnet-authored provisional brief, Fable-unavailable fallback, tracked at
+`fable-review-queue.md` #18) pending a real Fable pass before it can ship
+`released` — in particular a `researcher` pass on the pool's excavated-vs-
+narrated dating question flagged on `claim-gibeon-pool-feature`.
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -146,10 +171,11 @@ excavation-results citation gap noted on `claim-hebron-town-form` /
   city/wall, Jabesh-gilead route assets, and the reduced-intensity violence
   rendering path (ADR-009) all shipped, each scene still `status:
 'in-progress'` pending Fable M3 sign-off (queue #13/#16/#17 gate `released`).
-- **M4 (2 Sam 1–2):** `ziklag-lament` and `hebron-anointing` both built
-  2026-07-22 (see tables above, both PROVISIONAL/`in-progress`); Gibeon/
-  Mahanaim assets (`gibeon-pool`) still outstanding; regional overview map
-  (`f-overview-map`) with confidence-shaded political geography.
+- **M4 (2 Sam 1–2):** all three scenes now built — `ziklag-lament` and
+  `hebron-anointing` (2026-07-22) and `gibeon-pool` (2026-07-30), all three
+  PROVISIONAL/`in-progress` pending a real Fable review pass; regional
+  overview map (`f-overview-map`) with confidence-shaded political geography
+  still outstanding.
 
 ## Policy
 

@@ -532,6 +532,54 @@ export const ASSETS: AssetRecord[] = [
       'None achievable beyond stylization without a period-specific comparandum for an anointing vessel; any upgrade improves material/finish fidelity only.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-terrain-gibeon-plateau',
+    name: 'Procedural Gibeon plateau terrain (with pool basin and hill of Ammah)',
+    represents:
+      'Central Benjamin-highland plateau north of Jerusalem, the shallow flat-bottomed basin the pool of Gibeon occupies (2 Samuel 2:13), and the modest rise of the hill of Ammah east of it (2:24) — see claim-gibeon-terrain-form, claim-gibeon-pool-feature',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural hills plus hand-tuned basin/mound/ramp/flatten features (ADR-005, extended this scene with the new `basin` TerrainFeature kind, engine/terrain.ts), not DEM-derived terrain from Tell el-Jib or any surveyed hill-of-Ammah candidate. The pool basin’s exact form/dimensions are not asserted at Pritchard’s excavated monumental scale, and the hill of Ammah’s exact form/elevation is likewise unattested.',
+    historicalRequirements:
+      'DEM-derived terrain once a terrain-data sourcing/licensing ADR defines source, attribution, vertical datum, and resampling policy; the pool’s exact form should only move past this placeholder once the researcher dating question on claim-gibeon-pool-feature resolves.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-water-plane',
+    name: 'Pool-of-Gibeon water surface (flat plane)',
+    represents:
+      'Standing water in the pool of Gibeon (2 Samuel 2:13) — see claim-gibeon-pool-feature, claim-gibeon-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'A single flat circular mesh with an unlit/minimally-lit tinted material — no real-time reflection or refraction shader, matching gilboa-battle/besor-crossing’s own declined-water-shader precedent (asset-water-pool). Water level/extent is a design placeholder, not an assertion about the pool’s real historical dimensions.',
+    historicalRequirements:
+      'None achievable beyond stylization without resolving the dating question on claim-gibeon-pool-feature first; a future real-time water shader is an explicitly declined upgrade path per the brief, not merely deferred.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-kit-props',
+    name: 'Gibeon combat props (sword, spear, horn)',
+    represents:
+      'The champions’ contest sword (2:16), the generic Israelite spear carried by both contingents and the named principals (claim-dress, undifferentiated between sides), and Joab’s halt-signal horn (2:28) — see claim-champions-contest, claim-ammah-standoff',
+    placeholder: true,
+    whyTemporary:
+      'Simple cylinder/box/torus primitive geometry (src/scenes/gibeon-pool/kitMeshes.ts), attached at a fixed offset from a representative joint position on the existing ADR-010 rig — not modeled weapon assets. Deliberately identical on both sides: no invented "Judah kit" vs. "Benjamin/Israel kit" distinction, per the brief’s resolved design call.',
+    historicalRequirements:
+      'Modeled weapon/prop forms from a defensible comparative-ANE assemblage, once the character/kit pipeline moves beyond primitive attachment geometry.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-combat-poses',
+    name: 'Champions grapple/fall cycle and Abner’s reversed-spear-grip gesture',
+    represents:
+      'The twelve champions’ paired head-grasp/mutual-fall choreography (2:15-16) and Abner’s reversed spear-grip strike gesture on Asahel (2:23) — see claim-champions-contest, claim-asahel-pursuit-death',
+    placeholder: true,
+    whyTemporary:
+      'Body-orientation/collapse transforms and a prop-rotation gesture (rotation + non-uniform scale on the existing ADR-010 procedural rig, src/scenes/gibeon-pool/poses.ts), not modeled fall animation or a bespoke reversed-grip rig. No wound, blood, or dismemberment geometry in either violence-rendering mode (ADR-009); the reversed grip and the mutual fall are both gestures, never penetration/contact geometry.',
+    historicalRequirements:
+      'A modeled prone/collapsed pose bucket and a dedicated weapon-grip rig on the ADR-010 rig, once the character pipeline supports it beyond the current rigid-transform approach (same requirement as asset-figure-fallen).',
+    replacementMilestoneId: 'M4',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

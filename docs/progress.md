@@ -187,22 +187,22 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
-## Milestone 4 — 2 Samuel 1–2: **in-progress** (2 of 3 scenes built 2026-07-22, provisional)
+## Milestone 4 — 2 Samuel 1–2: **in-progress** (all 3 scenes built 2026-07-30, provisional)
 
-Fable hit its monthly spend limit mid-session; the scope decision, all
-three world-director briefs, and the scene builds below were done by
-Sonnet under `docs/model-handoff.md`'s fallback policy and are marked
-**provisional** (`docs/fable-review-queue.md` #18) pending a real Fable
-pass — no M4 scene should ship past `in-progress` until then.
+Fable hit its monthly spend limit mid-session on 2026-07-22; the scope
+decision, all three world-director briefs, and all three scene builds
+below were done by Sonnet under `docs/model-handoff.md`'s fallback policy
+and are marked **provisional** (`docs/fable-review-queue.md` #18) pending
+a real Fable pass — no M4 scene should ship past `in-progress` until then.
 
-3-scene breakdown: `ziklag-lament` (2 Sam 1, **built**,
+3-scene breakdown, all **built**: `ziklag-lament` (2 Sam 1,
 `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7,
-**built**, `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam
-2:8–32, briefed, not yet built, `docs/design/gibeon-pool-brief.md`). The
-milestone's 4th goal (divided-kingdom political geography) was called as
-an atlas/map UI overlay rather than a 4th 3D scene, per ADR-011 — not yet
-built. New `gibeon` (settled identification) and `mahanaim` (disputed,
-narrated-only — no scene there) locations added.
+`docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam 2:8–32,
+`docs/design/gibeon-pool-brief.md`, built 2026-07-30). The milestone's 4th
+goal (divided-kingdom political geography) was called as an atlas/map UI
+overlay rather than a 4th 3D scene, per ADR-011 — not yet built. `gibeon`
+(settled identification) and `mahanaim` (disputed, narrated-only — no
+scene there) locations both populated.
 
 `ziklag-lament`: the project's first conversation-scale scene (~12 figures,
 not a crowd ratio); its hardest constraint — the Amalekite messenger's
@@ -212,12 +212,37 @@ claim to have killed Saul must never be visually corroborated against
 Judean-highland terrain palette (the project's fifth), and a hard framing
 constraint (David anointed over the house of Judah only, never Israel,
 carried in every relevant caption) — the ~150–200-figure assembly crowd is
-fully static/baked for performance. Both gates independently re-verified
-(not just taken from build-agent reports): format/lint/typecheck/315
-vitest/build/8-8 e2e, all green. All brief-flagged character/claim gaps
-across all three briefs are filled (`amalekite-messenger`, `abner`,
-`ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
-See `docs/run-log.md`'s 2026-07-22 entries for full detail.
+fully static/baked for performance.
+`gibeon-pool`: the last M4 scene, staging 2 Sam 2:8–32 as civil war (no
+invented Judah-vs-Benjamin kit distinction); 24 champions rendered
+literally 1:1 alongside ~99-figure high-tier wider contingents (below
+Gilboa's 120–140, a deliberate contingent-scale-not-national-muster
+choice); a new `basin` `TerrainSpec` kind + unlit water plane for the pool
+(no reflection/refraction shader, matching Gilboa/Jabesh's declined-shader
+precedent); sets the project's first named-character-kills-named-character
+precedent (Asahel's death — documentary distance, reversed-spear-grip
+gesture only, no wound geometry, the text's own "stood still" reaction
+beat carrying the emotional weight) as the template for future individual
+killings. The 360/19-plus-Asahel casualty count (2:30–31) is delivered as
+caption text only, never a rendered corpse tally. Caught and fixed one
+real scope violation before commit: a scene-entity label
+(`src/scenes/gibeon-pool/entities.ts`'s `ent-abner`) explicitly named "2
+Samuel 3" as foreshadowing, violating the brief's hard "no content from 2
+Samuel 3 onward, textually or otherwise" scope guard — the parallel claim
+notes already got this right; the entity label didn't. Trimmed.
+
+All three gates independently re-verified (not just taken from
+build-agent reports): format/lint/typecheck/359 vitest/build/9-9 e2e, all
+green; a dedicated `performance-reviewer` pass on `gibeon-pool`'s new pool
+basin/water-plane geometry and figure-count instancing found no issues.
+All brief-flagged character/claim gaps across all three briefs are filled
+(`amalekite-messenger`, `abner`, `ish-bosheth`, `joab`, `abishai`,
+`asahel`, `men-of-judah` + their claims).
+See `docs/run-log.md`'s 2026-07-22 and 2026-07-30 entries for full detail.
+
+**Next for M4:** the atlas/map UI overlay (4th goal, not yet scoped), and
+the real Fable pass on queue #18 confirming/revising the whole M4
+package — both still open. Neither blocks the other.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

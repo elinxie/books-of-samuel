@@ -33,7 +33,15 @@ export type TerrainFeature =
   /** Elongated gaussian rise between two points — ridges, spurs, long hills. */
   | { kind: 'ridge'; start: [number, number]; end: [number, number]; width: number; height: number }
   /** Carved bed along a polyline — wadis, stream channels. `width` is bank to bank. */
-  | { kind: 'channel'; path: [number, number][]; width: number; depth: number };
+  | { kind: 'channel'; path: [number, number][]; width: number; depth: number }
+  /**
+   * A radial, flat-bottomed depression — a standing-water basin/pool, as
+   * distinct from `channel`'s linear carved bed. Flat at `depth` for
+   * `radius` meters from center, then smoothsteps back to the surrounding
+   * height across `rimWidth` (default `radius * 0.5`) meters beyond that —
+   * a rounded rim, not a sharp cliff edge.
+   */
+  | { kind: 'basin'; center: [number, number]; radius: number; depth: number; rimWidth?: number };
 
 export interface ColorZone {
   center: [number, number];
@@ -121,6 +129,9 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     if (f.kind === 'channel' && (f.path.length < 2 || f.width <= 0)) {
       throw new Error('terrain channel needs a path of >= 2 points and a positive width');
     }
+    if (f.kind === 'basin' && (f.radius <= 0 || (f.rimWidth ?? 1) <= 0)) {
+      throw new Error('terrain basin needs a positive radius and rimWidth');
+    }
   }
   // Normalize ramp directions once so heightAt stays cheap.
   const ramps = features
@@ -133,6 +144,7 @@ export function createTerrain(spec: TerrainSpec): Terrain {
   const mounds = features.filter((f) => f.kind === 'mound');
   const ridges = features.filter((f) => f.kind === 'ridge');
   const channels = features.filter((f) => f.kind === 'channel');
+  const basins = features.filter((f) => f.kind === 'basin');
 
   function heightAt(x: number, z: number): number {
     let hills = 0;
@@ -165,6 +177,14 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     for (const f of channels) {
       const d = distanceToPolyline(x, z, f.path);
       h -= f.depth * (1 - smoothstep01(d / (f.width / 2)));
+    }
+    for (const f of basins) {
+      const dx = x - f.center[0];
+      const dz = z - f.center[1];
+      const d = Math.sqrt(dx * dx + dz * dz);
+      const rim = f.rimWidth ?? f.radius * 0.5;
+      const outer = smoothstep01((d - f.radius) / rim);
+      h -= f.depth * (1 - outer);
     }
     return h;
   }

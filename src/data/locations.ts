@@ -232,8 +232,11 @@ export const LOCATIONS: LocationEntry[] = [
     },
     approxCoordinates: { lat: 31.85, lon: 35.18, confidence: 'high' },
     sceneIds: ['gibeon-pool'],
-    claimIds: [],
-    status: 'planned',
+    claimIds: ['claim-gibeon-pool-feature', 'claim-gibeon-terrain-form'],
+    // 2026-07-30: gibeon-pool built (in-progress, PROVISIONAL, pending
+    // Fable review of its brief) — status follows the scene, matching the
+    // ziklag-lament/hebron-anointing precedent.
+    status: 'in-progress',
   },
   {
     id: 'mahanaim',
@@ -271,7 +274,7 @@ export const LOCATIONS: LocationEntry[] = [
     },
     approxCoordinates: { lat: 32.19, lon: 35.69, confidence: 'low' },
     sceneIds: [],
-    claimIds: [],
+    claimIds: ['claim-mahanaim-installation'],
     status: 'planned',
   },
 ];

@@ -105,6 +105,16 @@ test('violence advisory (ADR-009) gates first visit to Gilboa, then never reappe
   await expect(page.getByTestId('violence-reduced')).toBeChecked();
 });
 
+test('user can enter the gibeon-pool observer scene (M4, depictsDeath gated)', async ({ page }) => {
+  await page.goto('/#/observe/gibeon-pool');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.locator('canvas')).toBeVisible();
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {

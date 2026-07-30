@@ -1247,3 +1247,48 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+**2026-07-30 — Sonnet 5 — gibeon-pool built (M4's third and last scene)**
+Scheduled-routine session, branch `claude/focused-mccarthy-w6cr30`. `npm
+install` (fresh sandbox, no `node_modules`), full `npm run verify` baseline
+green (e2e needed `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome`, same known sandbox quirk as before). `threejs-engineer`
+built `gibeon-pool` (2 Sam 2:8–32) per its brief in one pass: new scene
+folder, new `basin` `TerrainSpec` kind + unlit water plane (no shader, per
+brief), 14 beats/5 viewpoints, 10 new claims, 5 new characters (`abner`,
+`ish-bosheth`, `joab`, `abishai`, `asahel`). 24 champions rendered literally
+1:1 + ~99-figure high-tier wider contingents (target 90–115, below Gilboa's
+120–140). Casualty count (2:30–31, nineteen-plus-Asahel vs. three-sixty)
+delivered as caption text only. Sets the project's first named-character-
+kills-named-character precedent (Asahel's death): documentary distance,
+reversed-spear-grip gesture only, no wound geometry, the text's own "stood
+still" reaction beat carries the emotional weight — the stated template for
+future individual killings.
+
+Independently re-verified before committing, not just trusting the build
+report: full gate re-run directly (format/lint/typecheck/359 vitest/build/
+9-9 e2e, all green), plus a targeted grep sweep for the brief's "Not
+allowed" list (Mahanaim/Bethlehem/Hebron geometry, 2 Sam 3 content, invented
+Judah/Benjamin kit distinction, water shader, rendered corpse tally) and a
+dedicated `performance-reviewer` pass on the new pool basin/water-plane
+geometry and figure instancing (clean, no fixes needed).
+
+**Caught and fixed a real scope violation the build agent missed:**
+`src/scenes/gibeon-pool/entities.ts`'s `ent-abner` label explicitly named "2
+Samuel 3" as foreshadowing ("dramatic irony, since Joab will in fact hold it
+against him in 2 Samuel 3") — a direct violation of the brief's hard "no
+content from 2 Samuel 3 onward, depicted or textually foreshadowed" scope
+guard. The parallel `claim-asahel-pursuit-death` notes already got this
+right (explicitly "not shown or gestured at here"); the scene-local entity
+label didn't. Trimmed the clause before commit — this is exactly the kind
+of thing a second independent read catches that a build agent's own
+self-check can miss.
+
+All three M4 scenes are now built. Two non-blocking open items carried to
+`next-run.md`: the Pritchard pool-dating question (`docs/uncertainty-
+register.md` row #15, flagged for `researcher`) and unverified ESV wording
+for the scene's two quotes (sandbox has no live Bible-text access, same
+limitation noted for `ziklag-lament`). Gate green: format:check, lint,
+typecheck, 359 vitest, build, 9/9 e2e. `docs/next-run.md` updated. Only the
+atlas/map UI overlay (M4's 4th goal) and the real Fable pass on queue #18
+remain for the milestone.
