@@ -48,8 +48,13 @@ before commit. Full detail: `docs/run-log.md`'s 2026-07-30 entry.
 2. **A real Fable pass** to confirm/revise the whole M4 scope+briefs+build
    package (queue #18) now that all three scenes are built — batch it, don't
    spend a partial Fable session on it. Do this before flipping any M4 scene
-   to `released`. The user has authorized running Fable automatically when
-   needed; attempt this next if Fable is available this session.
+   to `released`. **Attempted 2026-07-30**: a `fable-architect` call was
+   launched for exactly this (full prompt logged in this session's history
+   if it needs re-issuing) and failed immediately with "You've hit your
+   monthly spend limit" — same failure mode as 2026-07-22, so this is
+   evidently still the same unresolved monthly limit, not a transient error.
+   Retry next session if the user reports the limit has reset; otherwise
+   this stays blocked and #18 stays open/provisional.
 3. **Close the open citation/verification gaps above** — `researcher` pass,
    doesn't block anything.
 4. **(Still open, unrelated to M4, carried forward)** Real-hardware
