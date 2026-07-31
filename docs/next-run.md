@@ -3,7 +3,81 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-07-31, gibeon-pool built — all three M4 scenes now built, branch `claude/focused-mccarthy-4bb7o6`)
+
+**All three M4 scenes are built.** `gibeon-pool` (2 Sam 2:8–32), M4's
+third and last, was built this session by `threejs-engineer` per
+`docs/design/gibeon-pool-brief.md` (commit `383de28`): 14 beats, 5
+viewpoints, 270s, `depictsDeath: true`, 24 champions rendered literally
+1:1, ≈106 combat figures at high tier (within the brief's 90–115 target).
+Reviewed by `performance-reviewer` (no fixes needed), `biblical-text-
+reviewer` (`5ff2c2d` — KJV/ESV misquote fix, unsupported timeline claim
+removed, citation-range gap closed, two descriptions de-quoted, an
+etymology hedge added; also flagged a pre-existing project-wide gap:
+`integrity.test.ts`'s ESV budget check doesn't scan `SceneEntityDef.
+description`, only `beat.caption` — not fixed, worth a future decision),
+and `archaeology-reviewer` (`7af2e6f` — strengthened the
+`claim-gibeon-pool-form` dating hedge, added the required
+`docs/uncertainty-register.md` row, added a missing
+`claim-gibeon-battle-scale` design-placeholder claim the brief required).
+Full detail: `docs/run-log.md`'s 2026-07-31 entry.
+
+**Still provisional, same as the other two M4 scenes** — Fable hit its
+monthly spend limit before any of this M4 work started (2026-07-22) and
+still hasn't run a real review pass. `docs/fable-review-queue.md` #18
+already carries the gibeon-pool build update; `docs/uncertainty-
+register.md` and `docs/asset-roadmap.md` were already synced by the
+build/review agents themselves this session (verified this doc-sync pass,
+not re-edited).
+
+Gate green, independently re-verified this session (not just taken from
+agent reports): format:check, lint, typecheck, 358 vitest (42 new since
+the 315 recorded after `hebron-anointing`), build, 8/8 e2e (needed
+`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/
+chrome` in this sandbox — the plain `chromium` path noted below also
+exists but wasn't retried once the versioned path worked).
+
+**What's next (Sonnet), in priority order:**
+
+1. **A real Fable pass on queue #18** — now the top priority, not item 4.
+   All three M4 scenes (scope, all three briefs, all three builds) are
+   built and gate-green; nothing scene-implementation-side is blocking
+   this anymore. Batch the whole package in one pass once Fable's spend
+   limit resets: confirm/revise the 3-scene scope call, the atlas-vs-scene
+   call for the 4th goal, and each scene's flagged creative-direction
+   judgment calls (see each scene's `docs/design/*-brief.md` and the
+   per-scene "Update" notes in queue #18). This is the gate before any M4
+   scene can flip past `in-progress` to `released`.
+2. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context
+   view) — not started, `ui-engineer` work once scoped further. Still
+   provisional itself (the atlas-vs-scene call is part of what queue #18
+   needs Fable to confirm) — reasonable to fold into or sequence right
+   after item 1 rather than build it fully independently.
+3. **Close the open citation/sourcing gaps** — `researcher` pass, doesn't
+   block a Fable review (Fable can review with these still open, same as
+   it did for M3's #13/#16/#17 pattern):
+   - `claim-gibeon-pool-form`: whether Pritchard's excavated Gibeon pool/
+     tunnel predates or postdates early Iron IIA (now tracked as
+     `docs/uncertainty-register.md` #15).
+   - `claim-hebron-town-form`: no source card yet covers excavated early
+     Iron IIA town form at Tell Rumeida; `rainey-notley-2006` only
+     supports the site _identification_.
+   - `claim-amalekite-messenger-account`: a named critical commentary
+     (e.g. McCarter's Anchor Bible _II Samuel_) on the Gilboa/2 Sam 1
+     discrepancy would strengthen sourcing beyond the text itself.
+   - `ziklag-lament`'s three ESV quotes (1:23, 1:26, 1:27) still want a
+     live-source wording check — this sandbox has no outbound access to
+     Bible-text sites.
+   - New this session: `integrity.test.ts`'s ESV excerpt-budget check
+     only scans `beat.caption`, not `SceneEntityDef.description` — decide
+     whether to extend it (flagged by `biblical-text-reviewer`, not
+     gibeon-pool-specific, project-wide).
+4. **(Still open, unrelated to M4, carried forward)** Real-hardware
+   performance check of `gilboa-battle` at high tier, and the Pages-live
+   check — both still blocked from sandboxes; see Environment notes below,
+   unchanged.
+
+## State before this slice (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 
 **Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and two of the three scene builds) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
 

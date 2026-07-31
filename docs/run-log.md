@@ -1247,3 +1247,70 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+**2026-07-31 — Sonnet 5 — gibeon-pool built (M4's third and final scene)**
+Branch `claude/focused-mccarthy-4bb7o6`. `threejs-engineer` built
+`gibeon-pool` (2 Sam 2:8–32) per `docs/design/gibeon-pool-brief.md`
+(commit `383de28`): 14 beats, 5 viewpoints (`vp-pool` default,
+`vp-champions`, `vp-battle-spread`, `vp-pursuit`, `vp-ammah-hill`), 270s,
+`depictsDeath: true`. 24 champions rendered literally 1:1 (the text's
+exact number); high-tier total ≈106 combat figures, within the brief's
+90–115 target, below `gilboa-battle`'s 120–140. New `src/scenes/
+gibeon-pool/` folder; 3 new placeholder assets
+(`asset-terrain-gibeon-highlands`, `asset-water-plane`,
+`asset-champion-sword`); 6 reused. All 5 required claims and 5 characters
+(`abner`/`ish-bosheth`/`joab`/`abishai`/`asahel`) were already created in
+the prior session (`2898ac2`) — build just populated them, no new
+creation. Same fallback pattern as the other two M4 scenes: provisional,
+folds into `docs/fable-review-queue.md` #18 (not a new queue item).
+
+`performance-reviewer` found **no fixes needed**: ~33 draw calls (on par
+with Gilboa's 20-40), instancing/allocation conventions followed
+correctly, +25KB gzip on the `ObservePage` lazy chunk. One non-blocking
+note: the brief mentioned reusing `asset-dust-motion` but the scene
+doesn't actually use any dust/motion sprites — unused boilerplate in the
+brief, not a defect.
+
+`biblical-text-reviewer` found and fixed several issues (`5ff2c2d`): a
+KJV-not-ESV misquote at 2:22 ("hold up" → "lift up my face"), an
+unsupported "two years pass" timeline claim in `b-context` (2:10a gives
+total reign length, not elapsed time before Gibeon), a citation-range gap
+in `claim-gibeon-contest` (extended to cover 2:17), two entity
+descriptions de-quoted from verbatim-reading ESV to paraphrase, and a
+hedge added on the disputed "Helkath-hazzurim" etymology gloss (KJV's
+marginal note gives a different reading). Also flagged, not fixed, a
+pre-existing project-wide gap: `integrity.test.ts`'s ESV excerpt-budget
+check only scans `beat.caption`, not `SceneEntityDef.description`, even
+though entity descriptions across many built scenes carry
+ESV-adjacent quoted text too — worth a future decision on extending the
+check, not urgent.
+
+`archaeology-reviewer` found and fixed two things (`7af2e6f`):
+strengthened `claim-gibeon-pool-form`'s dating-uncertainty disclosure and
+added the required `docs/uncertainty-register.md` row (register #15 — the
+build had omitted it); added a missing `claim-gibeon-battle-scale`
+design-placeholder claim (parallel to `claim-battle-scale`/
+`claim-judah-assembly-scale`, required by the brief but the build had only
+described the contingent-size disclosure in `claim-gibeon-contest`'s
+notes) — now wired into `scenes.ts`'s `claimIds` and `entities.ts`.
+Confirmed no invented "Judah kit"/"Benjamin kit" visual distinction exists
+(checked, cleared, not a fix).
+
+Gate green after every commit: format:check, lint, typecheck, 358 vitest
+(42 new, none removed), build, `build:sources` (no index diff), 8/8 e2e.
+Doc-sync session independently re-ran the full gate rather than trusting
+agent reports: format/lint/358 vitest/build all pass directly; e2e needed
+`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/
+chrome` (the default `npm run verify` invocation fails in this sandbox on
+a stale/missing headless-shell path — known env quirk, not a regression)
+— 8/8 pass once pointed at the right binary.
+
+**All three M4 scenes are now built** (`ziklag-lament`, `hebron-anointing`,
+`gibeon-pool`, all `status: 'in-progress'`, all provisional under queue
+#18). `docs/fable-review-queue.md` #18 already carries the gibeon-pool
+build update (added by the archaeology-reviewer's pass) and
+`docs/uncertainty-register.md`/`docs/asset-roadmap.md` were already synced
+by the build/review agents themselves — verified, not re-edited. Doc sync
+this session: `docs/progress.md`, `docs/next-run.md`, this entry. Top open
+item going forward: a real Fable pass on queue #18, now that all three M4
+scenes exist to review together.

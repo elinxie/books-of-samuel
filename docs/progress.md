@@ -187,22 +187,22 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
-## Milestone 4 — 2 Samuel 1–2: **in-progress** (2 of 3 scenes built 2026-07-22, provisional)
+## Milestone 4 — 2 Samuel 1–2: **in-progress** (all 3 scenes built, provisional; last one 2026-07-31)
 
 Fable hit its monthly spend limit mid-session; the scope decision, all
-three world-director briefs, and the scene builds below were done by
+three world-director briefs, and all three scene builds below were done by
 Sonnet under `docs/model-handoff.md`'s fallback policy and are marked
 **provisional** (`docs/fable-review-queue.md` #18) pending a real Fable
 pass — no M4 scene should ship past `in-progress` until then.
 
-3-scene breakdown: `ziklag-lament` (2 Sam 1, **built**,
+3-scene breakdown, all built: `ziklag-lament` (2 Sam 1,
 `docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7,
-**built**, `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam
-2:8–32, briefed, not yet built, `docs/design/gibeon-pool-brief.md`). The
-milestone's 4th goal (divided-kingdom political geography) was called as
-an atlas/map UI overlay rather than a 4th 3D scene, per ADR-011 — not yet
-built. New `gibeon` (settled identification) and `mahanaim` (disputed,
-narrated-only — no scene there) locations added.
+`docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam 2:8–32,
+`docs/design/gibeon-pool-brief.md`). The milestone's 4th goal
+(divided-kingdom political geography) was called as an atlas/map UI
+overlay rather than a 4th 3D scene, per ADR-011 — not yet built. New
+`gibeon` (settled identification) and `mahanaim` (disputed, narrated-only
+— no scene there) locations added.
 
 `ziklag-lament`: the project's first conversation-scale scene (~12 figures,
 not a crowd ratio); its hardest constraint — the Amalekite messenger's
@@ -218,6 +218,56 @@ vitest/build/8-8 e2e, all green. All brief-flagged character/claim gaps
 across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
+
+**`gibeon-pool` built 2026-07-31 (Sonnet, `threejs-engineer`), M4's third
+and last scene** (commit `383de28`): 14 beats, 5 viewpoints, 270s,
+`depictsDeath: true`. The project's sixth regional terrain palette (central
+Benjamin highlands). The twenty-four champions (2:16) render literally
+1:1 — no ratio — while the two wider Abner/Joab contingents get a disclosed
+design-choice count deliberately smaller than Gilboa's (high tier ≈106
+combat figures total, within the brief's 90–115 target, vs. Gilboa's
+120–140). All five required claims and five named characters (`abner`,
+`ish-bosheth`, `joab`, `abishai`, `asahel`) had already been created in the
+prior session — this build populated them into the scene, no new creation
+needed. 3 new placeholder assets (`asset-terrain-gibeon-highlands`,
+`asset-water-plane`, `asset-champion-sword`). Sets the project's first
+named-character-kills-named-character precedent (Asahel's death):
+documentary distance, no wound geometry, Abner's reversed spear grip shown
+as a continuous rotation (no penetration), 2:23b's "stood still" reaction
+used as a held camera beat in place of graphic detail — the template for
+future individual killings (Abner's own death in 2 Sam 3, not yet built).
+
+Reviewed by three agents: `performance-reviewer` found **no fixes
+needed** (~33 draw calls, on par with Gilboa's 20–40 range, all
+instancing/allocation conventions followed, +25KB gzip on the
+`ObservePage` lazy chunk). `biblical-text-reviewer` found and fixed
+several issues (commit `5ff2c2d`): a KJV-not-ESV misquote at 2:22 ("hold
+up" → "lift up my face"), an unsupported "two years pass" timeline claim
+in `b-context` (2:10a gives total reign length, not elapsed time before
+Gibeon), a citation-range gap in `claim-gibeon-contest` (extended to cover
+2:17), two entity descriptions de-quoted from verbatim-reading ESV to
+paraphrase, and a hedge added on the disputed "Helkath-hazzurim" etymology
+gloss; also flagged a pre-existing, project-wide gap (not fixed, not
+gibeon-pool-specific): `integrity.test.ts`'s ESV excerpt-budget check only
+scans `beat.caption`, not `SceneEntityDef.description`, though entity
+descriptions across many built scenes carry quoted ESV-adjacent text too —
+worth a future decision on whether to extend the check.
+`archaeology-reviewer` found and fixed two things (commit `7af2e6f`):
+strengthened the `claim-gibeon-pool-form` dating-uncertainty disclosure and
+added the required `docs/uncertainty-register.md` row (the build had
+omitted it); and added a missing `claim-gibeon-battle-scale`
+design-placeholder claim (the brief required a dedicated claim for the
+contingent-size disclosure, parallel to `claim-battle-scale`/
+`claim-judah-assembly-scale`, but the build had only described this in
+`claim-gibeon-contest`'s notes) — now wired into `scenes.ts`/`entities.ts`.
+Confirmed no invented "Judah kit"/"Benjamin kit" visual distinction exists.
+Gate green after every commit: format/lint/typecheck/358 vitest (42 new)/
+build/8-8 e2e — independently re-verified this doc-sync session too, not
+just taken from agent reports.
+
+**All three M4 scenes are now built.** Fable's real review of queue #18
+(scope + all three briefs + all three builds) is the top open item before
+any of them can flip past `in-progress`.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
@@ -254,12 +304,16 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Fable session, 2026-07-19)
-- `npm run lint` — pass (Fable session, 2026-07-19)
-- `npm run test` (vitest) — pass (Fable session, 2026-07-19)
-- `npm run build` — pass (Fable session, 2026-07-19)
-- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-19, sandboxed
-  with `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`)
+- `npm run format:check` — pass (doc-sync session, 2026-07-31)
+- `npm run lint` — pass (doc-sync session, 2026-07-31)
+- `npm run test` (vitest) — pass, 358 tests (doc-sync session, 2026-07-31)
+- `npm run build` — pass (doc-sync session, 2026-07-31)
+- `npm run e2e` (playwright) — 8/8 pass (doc-sync session, 2026-07-31,
+  sandboxed with `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome`)
+- `gibeon-pool` (M4's third and final scene) built on branch
+  `claude/focused-mccarthy-4bb7o6`, commits `383de28`/`5ff2c2d`/`7af2e6f`;
+  not yet merged to `main` at doc-sync time.
 - PR #30 (both remaining M3 scene builds) merged into `main` (`bebb88e`);
   `main` at `3d72f3d` at the time of the M3 sign-off.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.
