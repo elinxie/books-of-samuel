@@ -181,8 +181,9 @@ export const FEATURES: FeatureEntry[] = [
     id: 'f-2sam',
     title: '2 Samuel 1–2 scenes',
     description: 'Lament, Hebron anointing, divided-kingdom geography.',
-    // ziklag-lament and hebron-anointing built 2026-07-22 (both
-    // in-progress, PROVISIONAL); gibeon-pool briefed but not yet built.
+    // All three scenes built (in-progress, PROVISIONAL pending Fable
+    // review of queue #18): ziklag-lament and hebron-anointing 2026-07-22,
+    // gibeon-pool 2026-07-31.
     status: 'in-progress',
     milestoneId: 'M4',
   },
