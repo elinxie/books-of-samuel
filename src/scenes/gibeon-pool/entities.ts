@@ -22,7 +22,7 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     kind: 'feature',
     position: [POOL_CENTER[0], 3, POOL_CENTER[1]],
     description:
-      '"They sat down, one on one side of the pool and the other on the other side" (2 Samuel 2:13). A rare, striking text/archaeology convergence: Pritchard\'s excavation at Tell el-Jib found an actual rock-cut pool and stepped water-tunnel system at this identified site. Rendered as a modest basin, not Pritchard\'s excavated monumental dimensions — whether that monumental form already existed in the early Iron IIA setting of this narrative, or is a later expansion, is a genuinely open dating question this scene does not resolve.',
+      "The two companies arrived and sat down on opposite banks of the pool, one on each side, before a blow was struck (2 Samuel 2:13). A rare, striking text/archaeology convergence: Pritchard's excavation at Tell el-Jib found an actual rock-cut pool and stepped water-tunnel system at this identified site. Rendered as a modest basin, not Pritchard's excavated monumental dimensions — whether that monumental form already existed in the early Iron IIA setting of this narrative, or is a later expansion, is a genuinely open dating question this scene does not resolve.",
     claimIds: ['claim-gibeon-pool-form'],
   },
   {
@@ -31,7 +31,7 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     kind: 'feature',
     position: [CHAMPIONS_GROUND_CENTER[0], 3, CHAMPIONS_GROUND_CENTER[1]],
     description:
-      'Twelve chosen young men from each side, seized their opponents by the head, and drove their swords into each other’s sides — a simultaneous, mutually fatal contest, twelve times over. The place was named Helkath-hazzurim, "the field of sword-edges," for what happened here (2 Samuel 2:14-16). Rendered literally, 1:1 — the text’s own exact number, not a design-choice ratio.',
+      'Twelve chosen young men from each side, seized their opponents by the head, and drove their swords into each other’s sides — a simultaneous, mutually fatal contest, twelve times over. The place was named Helkath-hazzurim for what happened here — a name usually glossed "the field of sword-edges" or "the field of strong men" (the KJV’s marginal reading); the Hebrew etymology is not fully certain (2 Samuel 2:14-16). Rendered literally, 1:1 — the text’s own exact number, not a design-choice ratio.',
     claimIds: ['claim-gibeon-contest'],
   },
   {
@@ -102,7 +102,7 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     kind: 'person',
     position: [JUDAH_BANK_CENTER[0] - 3, 3, JUDAH_BANK_CENTER[1] + 5],
     description:
-      'Joab’s youngest brother, "swift as a gazelle" (2:18). Pursues Abner alone, refusing to turn aside despite two warnings, and is killed by a backward thrust of Abner’s spear — the project’s first named-character-kills-named-character death, shown at documentary distance with no wound geometry. His refusal reads as loyal zeal, not folly; both readings of Abner and Asahel stay available, per the text’s own framing. Buried afterward at Bethlehem, in his father’s tomb (2:32) — not shown, outside this scene’s location.',
+      'Joab’s youngest brother, described in the text as swift of foot, like a wild gazelle (2:18). Pursues Abner alone, refusing to turn aside despite two warnings, and is killed by a backward thrust of Abner’s spear — the project’s first named-character-kills-named-character death, shown at documentary distance with no wound geometry. His refusal reads as loyal zeal, not folly; both readings of Abner and Asahel stay available, per the text’s own framing. Buried afterward at Bethlehem, in his father’s tomb (2:32) — not shown, outside this scene’s location.',
     claimIds: ['claim-asahel-death'],
   },
 ];

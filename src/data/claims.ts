@@ -968,7 +968,7 @@ export const CLAIMS: ReconstructionClaim[] = [
   {
     id: 'claim-gibeon-contest',
     statement:
-      'The narrative states that at the pool of Gibeon, Abner proposed a contest of twelve chosen young men from each side, who seized each other and killed one another in pairs (2 Samuel 2:12–16), after which battle broke out and Israel was routed before the servants of David.',
+      'The narrative states that at the pool of Gibeon, Abner proposed a contest of twelve chosen young men from each side, who seized each other and killed one another in pairs, after which battle broke out and Israel was routed before the servants of David (2 Samuel 2:12–17).',
     basis: 'biblical-text',
     confidence: 'high',
     sourceIds: ['esv-bible'],

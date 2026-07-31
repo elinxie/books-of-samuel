@@ -1119,7 +1119,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 0,
         title: 'Two houses, two writs',
         caption:
-          'Abner has taken Saul’s son Ish-bosheth and made him king over Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel, at Mahanaim — narrated only; Mahanaim’s exact site is disputed and not built in this scene. Judah, meanwhile, follows David at Hebron. Two years pass. This is civil war, not a foreign-enemy battle: men who may have stood together against the Philistines at Gilboa are about to kill each other at a well outside Gibeon. (2 Samuel 2:8–10)',
+          'Abner has taken Saul’s son Ish-bosheth and made him king over Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel, at Mahanaim — narrated only; Mahanaim’s exact site is disputed and not built in this scene. Judah, meanwhile, follows David at Hebron. The text gives Ish-bosheth’s reign as two years in total; it does not say how much of that time had passed before the events at the pool of Gibeon that follow. This is civil war, not a foreign-enemy battle: men who may have stood together against the Philistines at Gilboa are about to kill each other at a well outside Gibeon. (2 Samuel 2:8–10)',
         passageRef: '2 Samuel 2:8–10',
       },
       {
@@ -1167,7 +1167,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 130,
         title: 'Turn aside',
         caption:
-          'Abner warns Asahel twice to turn aside — visibly reluctant, not hunting him: "How then could I hold up my face to your brother Joab?" Asahel still will not turn away. Both men’s readings stay open: Abner is not staged as a villain, nor Asahel as reckless — his refusal is loyal zeal, the text’s own framing. (2 Samuel 2:21–22)',
+          'Abner warns Asahel twice to turn aside — visibly reluctant, not hunting him: "How then could I lift up my face to your brother Joab?" Asahel still will not turn away. Both men’s readings stay open: Abner is not staged as a villain, nor Asahel as reckless — his refusal is loyal zeal, the text’s own framing. (2 Samuel 2:21–22)',
         passageRef: '2 Samuel 2:21–22',
       },
       {
