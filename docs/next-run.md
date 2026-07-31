@@ -47,7 +47,14 @@ exists but wasn't retried once the versioned path worked).
    call for the 4th goal, and each scene's flagged creative-direction
    judgment calls (see each scene's `docs/design/*-brief.md` and the
    per-scene "Update" notes in queue #18). This is the gate before any M4
-   scene can flip past `in-progress` to `released`.
+   scene can flip past `in-progress` to `released`. **Retried and still
+   blocked as of 2026-07-31** (same session, right after the `gibeon-pool`
+   build/reviews landed): the very first `fable-architect` call errored
+   immediately with the same "You've hit your monthly spend limit"
+   message as 2026-07-22 — the limit had not reset in the intervening 9
+   days. Don't retry again reflexively; check whether the monthly cycle
+   has actually turned over before spending a session context on another
+   attempt.
 2. **The atlas/map UI overlay** for M4's 4th goal (divided-kingdom context
    view) — not started, `ui-engineer` work once scoped further. Still
    provisional itself (the atlas-vs-scene call is part of what queue #18
