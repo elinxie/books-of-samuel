@@ -521,6 +521,41 @@ export const ASSETS: AssetRecord[] = [
     replacementMilestoneId: 'M4',
   },
   {
+    id: 'asset-terrain-gibeon-highlands',
+    name: 'Procedural Benjamin-highlands terrain (Gibeon)',
+    represents:
+      'The central Benjamin plateau around Gibeon: the pool basin, level banks on either side of it, the champions’ ground, an open pursuit corridor, and the modest rise at the hill of Ammah — see claim-gibeon-pool-form',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise plus hand-tuned flatten/mound/ridge features (ADR-005), not derived from real elevation data for Tell el-Jib or its surrounding plateau. The pool basin itself is an inverted (negative-height) mound — the brief’s own disclosed implementer’s-call approximation, not Pritchard’s excavated monumental dimensions.',
+    historicalRequirements:
+      'DEM-derived terrain once a terrain-data sourcing/licensing ADR defines source, attribution, vertical datum, and resampling policy; the pool basin’s exact excavated form/dimensions stay withheld pending the researcher dating question on claim-gibeon-pool-form (does the excavated rock-cut pool predate or postdate the early Iron IIA setting of 2 Samuel 2?).',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-water-plane',
+    name: 'Pool water surface (flat plane)',
+    represents: 'Standing water in the pool of Gibeon (2 Samuel 2:13) — see claim-gibeon-pool-form',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally lit circular plane with a tinted material — no reflection, no refraction, no animated ripple shader, matching the declined-water-shader precedent from gilboa-battle/jabesh-burial/besor-crossing. Water clarity, depth, and exact extent are unstated in the text and are a disclosed design placeholder, not an assertion.',
+    historicalRequirements:
+      'None achievable beyond stylization without a resolved dating/form answer for the excavated pool (see asset-terrain-gibeon-highlands); any upgrade is a rendering-fidelity improvement only (e.g. a real-time reflection pass), not a claim-driven replacement, and must still avoid asserting a specific historical water level.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-champion-sword',
+    name: 'Gripped champion sword',
+    represents:
+      'The short sword each of the twenty-four champions thrusts into his opponent’s side (2 Samuel 2:16) — see claim-gibeon-contest',
+    placeholder: true,
+    whyTemporary:
+      'Simple box/cylinder primitive geometry (see src/scenes/gibeon-pool/kitMeshes.ts, buildGripSwordGeometry), held forward from the hand rather than sheathed like gilboa-battle’s Philistine sword — distinct from the reused asset-military-kit-israelite spear/shield family carried by the wider contingents and principals. Never renders penetration or contact geometry, in either violence mode (ADR-009).',
+    historicalRequirements:
+      'Modeled weapon geometry sourced from a specific comparative-ANE or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
+    replacementMilestoneId: 'M4',
+  },
+  {
     id: 'asset-anointing-props',
     name: 'Anointing horn prop',
     represents:
