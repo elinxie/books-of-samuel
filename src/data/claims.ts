@@ -1003,7 +1003,17 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'low',
     sourceIds: ['pritchard-gibeon-1962'],
     notes:
-      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent (see docs/uncertainty-register.md). Rendered geometry is a deliberately modest, shallow basin (terrain.ts’s inverted-mound approximation, ~30 m across, ~3 m deep) and does not adopt Pritchard’s excavated dimensions for the pool/tunnel system, which secondary summaries describe as a substantially narrower and much deeper rock-cut shaft with a stepped tunnel reaching the water table — this project has not independently verified those exact figures against a primary source, so no specific dimension is asserted here either; the point is only that the rendered form is disclosed as an undated, non-monumental placeholder, not a scaled reconstruction of the excavated feature. No reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+  },
+  {
+    id: 'claim-gibeon-battle-scale',
+    statement:
+      'Abner’s Israel/Benjamin contingent and Joab’s Judah contingent at the pool of Gibeon are each rendered at a disclosed, deliberately modest design-choice headcount (roughly 25–45 and 21–37 figures respectively across quality tiers; the hilltop rallying band and Joab’s pursuing detachment are drawn from, not additive to, these totals) — not a ratio of any asserted "true" force size, since 2 Samuel 2 gives no headcount for either side’s wider following.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-battle-scale (gilboa-battle) and claim-judah-assembly-scale (hebron-anointing): the text is silent on force size for this engagement, so the standard ~1:10 narrated-army ratio (register #7) does not apply. Deliberately smaller than gilboa-battle’s already-modest crest/press/rout groupings (high-tier total ≈106 combat figures including the 24 literal champions, vs. Gilboa’s 120–140), reflecting this being a contingent-level clash between two commanders’ followings rather than a national muster. Explicitly not derived from, cross-checked against, or scaled to "true up" with the 360/20 casualty figures given later in the text (2:30–31, carried by claim-abner-pursuit-halted) — those numbers are a real textual detail belonging to the narrative’s own reckoning, not a target this rendered crowd tries to visually prove.',
   },
 ];
 

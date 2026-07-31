@@ -1265,6 +1265,7 @@ export const SCENES: SceneDef[] = [
       'claim-asahel-death',
       'claim-abner-pursuit-halted',
       'claim-gibeon-pool-form',
+      'claim-gibeon-battle-scale',
       'claim-dress',
       'claim-david-historical',
     ],

@@ -41,7 +41,7 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     position: [ISRAEL_BANK_CENTER[0], 3, ISRAEL_BANK_CENTER[1]],
     description:
       'The men who came out with Abner from Mahanaim, gathered on the pool’s north bank. No headcount is narrated for either side’s wider force; the figures shown are a disclosed, deliberately modest design choice — smaller than the gilboa-battle wide shots, and not derived from the 360-man casualty figure given later in the text. Dressed identically to Joab’s company (claim-dress) — no invented Judah-kit/Benjamin-kit distinction; the two sides read by grouping and position, not insignia.',
-    claimIds: ['claim-gibeon-contest', 'claim-dress'],
+    claimIds: ['claim-gibeon-contest', 'claim-gibeon-battle-scale', 'claim-dress'],
   },
   {
     id: 'ent-judah-contingent',
@@ -50,7 +50,7 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     position: [JUDAH_BANK_CENTER[0], 3, JUDAH_BANK_CENTER[1]],
     description:
       'David’s servants under Joab, gathered on the pool’s south bank. The same disclosed, modest design-choice headcount convention as Abner’s company — this is a contingent-level clash between two commanders’ followings at one town, not a national muster.',
-    claimIds: ['claim-gibeon-contest', 'claim-dress'],
+    claimIds: ['claim-gibeon-contest', 'claim-gibeon-battle-scale', 'claim-dress'],
   },
   {
     id: 'ent-ammah-hill',
@@ -58,8 +58,8 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     kind: 'feature',
     position: [AMMAH_HILL_CENTER[0], 18, AMMAH_HILL_CENTER[1]],
     description:
-      '"The people of Benjamin gathered themselves together after Abner and became one group and stood on the top of a hill" (2 Samuel 2:25) — a modest rise, not a dramatic peak. The side that is losing badly by the numbers (2:30-31) holds the higher ground here; height does not track the military outcome in this scene, a deliberate composition choice, not a "fix."',
-    claimIds: ['claim-abner-pursuit-halted'],
+      '"The people of Benjamin gathered themselves together after Abner and became one group and stood on the top of a hill" (2 Samuel 2:25) — a modest rise, not a dramatic peak. The side that is losing badly by the numbers (2:30-31) holds the higher ground here; height does not track the military outcome in this scene, a deliberate composition choice, not a "fix." The rallying band’s size is drawn from, not added to, Abner’s wider contingent’s disclosed design-choice headcount.',
+    claimIds: ['claim-abner-pursuit-halted', 'claim-gibeon-battle-scale'],
   },
   {
     id: 'ent-ammah-foot',
@@ -68,7 +68,7 @@ export const GIBEON_POOL_ENTITIES: SceneEntityDef[] = [
     position: [AMMAH_FOOT_CENTER[0], 4, AMMAH_FOOT_CENTER[1]],
     description:
       'Joab’s pursuing detachment halts here, at the foot of the hill, looking up at the rallied band above — the losing side, by casualty count, asking for and receiving mercy from the numerically stronger pursuers.',
-    claimIds: ['claim-abner-pursuit-halted'],
+    claimIds: ['claim-abner-pursuit-halted', 'claim-gibeon-battle-scale'],
   },
   {
     id: 'ent-abner',
