@@ -1,5 +1,5 @@
 import type { ViolenceMode } from '../../state/store';
-import { DEATH_ROUTE_U, pursuitPointAt } from './layout';
+import { DEATH_POINT, DEATH_ROUTE_U, pursuitPointAt, ROUTE_END_POINT } from './layout';
 
 /**
  * Pure, beat-driven pose/timing choreography for the pool of Gibeon (ADR-007
@@ -91,11 +91,13 @@ function travelRouteAndSettle(
     return { x: pt.x, z: pt.z, yaw: pt.yaw, moving: true };
   }
   const settle = smoothstep((ct - arriveClock) / ARRIVE_SETTLE_DUR);
-  const endPt = pursuitPointAt(1);
+  // u=1 is a fixed point on the curve — reuse the module-scope constant
+  // rather than reallocating it (two new THREE.Vector3s) every frame per
+  // settling figure (jabesh-burial c5aac8f hoisting precedent).
   return {
-    x: lerp(endPt.x, slot[0], settle),
-    z: lerp(endPt.z, slot[1], settle),
-    yaw: endPt.yaw,
+    x: lerp(ROUTE_END_POINT.x, slot[0], settle),
+    z: lerp(ROUTE_END_POINT.z, slot[1], settle),
+    yaw: ROUTE_END_POINT.yaw,
     moving: settle < 1,
   };
 }
@@ -268,10 +270,12 @@ export function contingentFigurePose(
   }
 
   // 'rally' (Abner's side) | 'pursue' (Joab's side): travel the full route,
-  // then settle into the hilltop/hill-base slot.
+  // then settle into the hilltop/hill-base slot. Every figure of this role
+  // always has `finalSlot` set (see `buildContingentFigures`); the u=1
+  // fallback below reuses the hoisted constant rather than recomputing an
+  // unused curve point every frame (jabesh-burial c5aac8f precedent).
   const arriveClock = STANDOFF_ARRIVE_CLOCK + fig.routeArriveDelay;
-  const endPt = pursuitPointAt(1);
-  const slot: [number, number] = fig.finalSlot ?? [endPt.x, endPt.z];
+  const slot: [number, number] = fig.finalSlot ?? [ROUTE_END_POINT.x, ROUTE_END_POINT.z];
   const travel = travelRouteAndSettle(ct, routeStart, arriveClock, slot);
   return {
     x: travel.x,
@@ -357,8 +361,11 @@ export function abnerPrincipalPose(
   }
   if (ct <= T_ASAHEL_DEATH) {
     // Halted at the death point through the two warnings and the strike
-    // itself — turned back to face Asahel, not fleeing further.
-    const pt = pursuitPointAt(DEATH_ROUTE_U);
+    // itself — turned back to face Asahel, not fleeing further. DEATH_POINT
+    // is a hoisted constant (DEATH_ROUTE_U never varies here), avoiding a
+    // repeated curve allocation every frame for the whole hold (jabesh-burial
+    // c5aac8f precedent).
+    const pt = DEATH_POINT;
     return { x: pt.x, z: pt.z, yaw: pt.yaw + Math.PI, fallen: 0, visible: true };
   }
 
@@ -388,7 +395,10 @@ export function asahelPrincipalPose(
     const pt = pursuitPointAt(p * DEATH_ROUTE_U);
     return { x: pt.x, z: pt.z, yaw: pt.yaw, fallen: 0, visible: true };
   }
-  const pt = pursuitPointAt(DEATH_ROUTE_U);
+  // DEATH_POINT is a hoisted constant — Asahel stays here for the rest of
+  // the scene, so this must not recompute the curve every frame forever
+  // after the death beat (jabesh-burial c5aac8f precedent).
+  const pt = DEATH_POINT;
   const fallen = smoothstep((t - T_ASAHEL_DEATH) / fallDuration(mode, 6));
   return { x: pt.x, z: pt.z, yaw: pt.yaw, fallen, visible: true };
 }

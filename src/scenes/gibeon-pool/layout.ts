@@ -170,6 +170,13 @@ export function pursuitPointAt(u: number): { x: number; z: number; yaw: number }
 /** The death point itself (2:23) — Abner halts, Asahel falls here and stays. */
 export const DEATH_POINT = pursuitPointAt(DEATH_ROUTE_U);
 
+/** The route's own endpoint (u=1) — hoisted since several per-frame pose
+ * functions in `./poses.ts` settle figures at this fixed point and would
+ * otherwise reallocate it (two new THREE.Vector3s via the curve) every
+ * frame per figure (jabesh-burial c5aac8f precedent: hoist constant-input
+ * per-frame allocations to a module-scope value computed once). */
+export const ROUTE_END_POINT = pursuitPointAt(1);
+
 // ---------------------------------------------------------------------------
 // The hill of Ammah (b-standoff onward, 2:24-28): Abner's rallying band
 // gathers on top; Joab, Abishai, and the pursuing subset hold below, looking
