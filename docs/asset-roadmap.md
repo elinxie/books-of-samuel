@@ -163,6 +163,26 @@ provisional brief, Fable-unavailable fallback, tracked at
 excavated pool/tunnel predate or postdate the early Iron IIA setting of
 2 Samuel 2?), already tracked in `docs/next-run.md`.
 
+## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
+
+Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the
+project's placeholder-asset machinery (`whyTemporary`/`historicalRequirements`/
+`replacementMilestoneId`) is scoped to modeled/procedural scene geometry, and
+this is a 2D SVG UI page (`src/pages/AtlasPage.tsx`,
+`src/ui/DividedKingdomMap.tsx`). Noted here anyway because it's a genuinely new
+placeholder-fidelity rendering approach worth tracking: a plain
+equirectangular-ish SVG projection (no external tileset/basemap, no modern
+borders or place names), location markers sized by `approxCoordinates`
+confidence, and two soft, Gaussian-blurred radial-gradient region shapes for
+Ish-bosheth's writ vs. the house of Judah — deliberately never a bordered
+polygon (per `claim-divided-kingdom-atlas-overlay` and the 2026-08-02 Fable
+review, `docs/fable-review-queue.md` #18). Region shapes/softness/projection
+are the disclosed design-placeholder layer; the underlying allegiance split is
+biblical text at high confidence (`claim-ish-bosheth-installed`,
+`claim-judah-anointing`). Toggleable (shading can be turned off, leaving just
+the plotted points) and reached only by choosing to visit `/atlas` — no forced
+gate, per ADR-011.
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -178,10 +198,12 @@ excavated pool/tunnel predate or postdate the early Iron IIA setting of
   rendering path (ADR-009) all shipped, each scene still `status:
 'in-progress'` pending Fable M3 sign-off (queue #13/#16/#17 gate `released`).
 - **M4 (2 Sam 1–2):** all three scenes now built — `ziklag-lament` and
-  `hebron-anointing` 2026-07-22, `gibeon-pool` 2026-08-02 (see tables above,
-  all PROVISIONAL/`in-progress` pending a real Fable pass); regional overview
-  map (`f-overview-map`) with confidence-shaded political geography still
-  outstanding.
+  `hebron-anointing` 2026-07-22, `gibeon-pool` 2026-08-02 (see tables above);
+  all three approved as built at the 2026-08-02 Fable review (queue #18
+  resolved), still `in-progress` pending queue #19's citation gates. The 4th
+  goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
+  section above) — the wider `f-overview-map` feature (Philistia/Amalekite
+  fringe too) stays a separate, still-`planned` future scope.
 
 ## Policy
 

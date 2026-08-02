@@ -10,6 +10,7 @@ export function SiteNav() {
       </Link>
       <nav className="nav-links">
         <NavLink to={`/observe/${DEFAULT_SCENE_ID}`}>Observe</NavLink>
+        <NavLink to="/atlas">Atlas</NavLink>
         <NavLink to="/progress">Progress</NavLink>
         <NavLink to="/features">Features</NavLink>
         <NavLink to="/sources">Sources</NavLink>

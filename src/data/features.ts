@@ -182,8 +182,9 @@ export const FEATURES: FeatureEntry[] = [
     title: '2 Samuel 1–2 scenes',
     description: 'Lament, Hebron anointing, divided-kingdom geography.',
     // All three M4 scenes built; approved as built at the 2026-08-02 Fable
-    // review (queue #18 resolved). `done` waits on queue #19's citation
-    // gates and the divided-kingdom atlas overlay build.
+    // review (queue #18 resolved). The divided-kingdom atlas overlay
+    // (/atlas) also landed per that review's binding design constraints.
+    // `done` still waits on queue #19's four citation gates.
     status: 'in-progress',
     milestoneId: 'M4',
   },
@@ -215,6 +216,10 @@ export const FEATURES: FeatureEntry[] = [
     title: 'Regional overview map',
     description:
       'Political geography of Israel, Judah, Philistia, and the Amalekite fringe with confidence shading.',
+    // A first, narrower version of this idea shipped under f-2sam/M4 instead:
+    // the divided-kingdom atlas overlay (`/atlas`, `AtlasPage`) covers only
+    // Israel vs. Judah (2 Sam 2:8–11), not Philistia or the Amalekite fringe.
+    // This feature stays `planned` for that wider scope.
     status: 'planned',
     milestoneId: 'M3',
   },

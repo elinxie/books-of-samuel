@@ -1025,6 +1025,16 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Parallel in form to claim-battle-scale and claim-judah-assembly-scale: no headcount is narrated for either side’s total force at Gibeon, so no ratio of any asserted "true" army size applies. Explicitly not derived from, or intended to visually prove, the casualty figures in claim-abner-pursuit-halted (nineteen of David’s servants plus Asahel against three hundred sixty of Benjamin/Abner’s men, 2 Samuel 2:30–31) — those numbers are carried by caption text alone, never a rendered corpse tally.',
   },
+  {
+    id: 'claim-divided-kingdom-atlas-overlay',
+    statement:
+      'The divided-kingdom map overlay (the /atlas page) renders Ish-bosheth’s Israel-writ and the house of Judah as two soft, unbordered shaded regions clustered around the text’s own named locations, and plots Mahanaim, Hebron, Gibeon, and neighboring sites at their approximate coordinates — a schematic study aid, not a scholarly reconstruction of an Iron IIA political boundary.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Mixed-provenance claim, parallel in form to claim-gibeon-terrain-form and claim-battle-scale: the allegiance split itself is high-confidence biblical text, already carried by claim-ish-bosheth-installed (2:8–10, the Gilead/Ashurites/Jezreel/Ephraim/Benjamin/all-Israel writ at Mahanaim) and claim-judah-anointing (2:4, the house of Judah alone) — this claim does not re-assert that split and stays out of its way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choices: soft-shaded, deliberately hard-edge-free region shapes (no polygon boundary is drawn, because no Iron IIA source establishes a literal line on the ground — see CLAUDE.md’s anachronism-discipline rule), the plain equirectangular-ish projection used to place points, and which locations are clustered into which region (e.g. grouping Mount Gilboa/Beth-shan/Jabesh-gilead under the "Israel-writ" region reflects their being within Jezreel/Gilead per 2:9, not a separately sourced boundary claim). Mahanaim is plotted at its own low-confidence, disputed coordinates (see the mahanaim LocationEntry’s two candidate identifications, both surfaced on the page, not just in data) rather than a firmer point standing in for it. Gibeon sits in the unshaded gap between the two soft regions on the map, which is a deliberate rendering choice reflecting its role as the contested meeting-ground of Abner’s and Joab’s men (2:12–17), not an assertion that Gibeon itself changed hands. Kingdom-scale is a separate, disputed question the overlay does not resolve — see claim-david-historical. The overlay is dismissible: a page-level toggle hides the shaded regions entirely, leaving only the plotted points, and the page itself is reached only by choosing to visit /atlas (ADR-011’s "can still ignore it" test).',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(
