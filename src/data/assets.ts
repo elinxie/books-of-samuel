@@ -532,6 +532,53 @@ export const ASSETS: AssetRecord[] = [
       'None achievable beyond stylization without a period-specific comparandum for an anointing vessel; any upgrade improves material/finish fidelity only.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-terrain-gibeon-plateau',
+    name: 'Procedural Gibeon plateau terrain',
+    represents:
+      'The Benjamin-highlands plateau around Gibeon, the pursuit route east of the pool, and the hill of Ammah',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural hills plus a hand-tuned mound (the hill of Ammah), not DEM-derived terrain from Tell el-Jib or the wider plateau.',
+    historicalRequirements:
+      'DEM-derived terrain for Tell el-Jib and its surroundings, with the hill of Ammah’s real form and position if it is ever more precisely located.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-gibeon-pool-basin',
+    name: 'Pool of Gibeon basin depression',
+    represents:
+      'The rock-cut pool named at 2 Samuel 2:13 — see claim-gibeon-pool-form, claim-gibeon-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'A shallow, flat-floored radial depression (the new `basin` TerrainFeature kind, engine/terrain.ts), modest and disclosed dimensions — not Pritchard’s excavated monumental pool/water-tunnel form. Whether that excavated form is contemporary with 2 Samuel 2 or a later Iron II expansion is an open dating question (see claim-gibeon-pool-form’s notes), not yet resolved.',
+    historicalRequirements:
+      'A researcher pass on Pritchard’s stratigraphy (or a later reassessment) to resolve the dating question, then — if the excavated form is confirmed contemporary — a terrain feature matched to its real dimensions.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-water-plane',
+    name: 'Flat water-surface plane',
+    represents: 'The water surface of the pool of Gibeon',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally-lit tinted disc over the basin floor — no reflection, refraction, or animated ripple shader, matching the declined-water-shader precedent from gilboa-battle and jabesh-burial (asset-water-pool).',
+    historicalRequirements:
+      'A dedicated water/reflection rendering system, if the engine ever adds one; purely a rendering-fidelity upgrade, not a historical claim.',
+    replacementMilestoneId: 'M4',
+  },
+  {
+    id: 'asset-military-kit-gibeon',
+    name: 'Gibeon military-kit attachments (spear, oval shield, straight sword)',
+    represents:
+      'Simple, undifferentiated Israelite arms on both sides at Gibeon — spear and oval shield on the wider contingents; the straight sword 2 Samuel 2:16 names for the champions’ contest; Abner’s spear, including its reversed-grip pose for 2:23’s strike on Asahel',
+    placeholder: true,
+    whyTemporary:
+      'Cylinder/cone/box primitive geometry (src/scenes/gibeon-pool/kitMeshes.ts), attached at a fixed offset from a representative joint position on the existing ADR-010 rig — not modeled weapon/shield assets. Deliberately undifferentiated between Abner’s and Joab’s sides (claim-dress) — no invented Judah/Benjamin kit split.',
+    historicalRequirements:
+      'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
+    replacementMilestoneId: 'M4',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

@@ -1005,6 +1005,26 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
   },
+  {
+    id: 'claim-gibeon-terrain-form',
+    statement:
+      'The pool of Gibeon is rendered as a shallow, flat-floored basin depression cut into a procedural Benjamin-highlands terrain, with a flat, unlit water plane over its floor — a modest, disclosed approximation, not Pritchard’s excavated monumental dimensions and not a real-time reflection/refraction water shader.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'pritchard-gibeon-1962'],
+    notes:
+      'Distinct from claim-gibeon-pool-form (the archaeology-basis claim that a real excavated pool/tunnel system exists at the identified site): this claim covers only the rendered terrain-form and no-water-shader disclosure itself, parallel to claim-gilboa-terrain-form. No reflection/refraction shader is built, matching the declined-water-shader precedent from gilboa-battle and jabesh-burial; the basin’s exact dimensions stay unresolved pending the dating question flagged on claim-gibeon-pool-form.',
+  },
+  {
+    id: 'claim-gibeon-battle-scale',
+    statement:
+      'The two wider contingents behind the twelve-a-side champions (Abner’s Israel/Benjamin following and Joab’s Judah following) are rendered at a disclosed design-choice scale — roughly 35–45 and 30–40 figures at high quality tier, with a further 12–18-figure subset drawn from Abner’s contingent (not additive to it) rallying at the hill of Ammah — deliberately smaller than gilboa-battle’s already-modest crowd, since this is one contingent-level clash between two commanders’ followings at Gibeon, not a national muster.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-battle-scale and claim-judah-assembly-scale: no headcount is narrated for either side’s total force at Gibeon, so no ratio of any asserted "true" army size applies. Explicitly not derived from, or intended to visually prove, the casualty figures in claim-abner-pursuit-halted (nineteen of David’s servants plus Asahel against three hundred sixty of Benjamin/Abner’s men, 2 Samuel 2:30–31) — those numbers are carried by caption text alone, never a rendered corpse tally.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

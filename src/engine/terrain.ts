@@ -33,7 +33,14 @@ export type TerrainFeature =
   /** Elongated gaussian rise between two points — ridges, spurs, long hills. */
   | { kind: 'ridge'; start: [number, number]; end: [number, number]; width: number; height: number }
   /** Carved bed along a polyline — wadis, stream channels. `width` is bank to bank. */
-  | { kind: 'channel'; path: [number, number][]; width: number; depth: number };
+  | { kind: 'channel'; path: [number, number][]; width: number; depth: number }
+  /**
+   * Radial depression with a flat floor and a smoothed rim — a shallow
+   * rock-cut basin/pool depression (gibeon-pool's `claim-gibeon-terrain-form`).
+   * Full `depth` from `center` out to `flatRadius` (default `radius * 0.4`),
+   * smoothly rising back to 0 at `radius`.
+   */
+  | { kind: 'basin'; center: [number, number]; radius: number; depth: number; flatRadius?: number };
 
 export interface ColorZone {
   center: [number, number];
@@ -121,6 +128,12 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     if (f.kind === 'channel' && (f.path.length < 2 || f.width <= 0)) {
       throw new Error('terrain channel needs a path of >= 2 points and a positive width');
     }
+    if (f.kind === 'basin') {
+      const flat = f.flatRadius ?? f.radius * 0.4;
+      if (f.radius <= 0 || flat <= 0 || flat >= f.radius) {
+        throw new Error('terrain basin needs a positive radius and 0 < flatRadius < radius');
+      }
+    }
   }
   // Normalize ramp directions once so heightAt stays cheap.
   const ramps = features
@@ -133,6 +146,7 @@ export function createTerrain(spec: TerrainSpec): Terrain {
   const mounds = features.filter((f) => f.kind === 'mound');
   const ridges = features.filter((f) => f.kind === 'ridge');
   const channels = features.filter((f) => f.kind === 'channel');
+  const basins = features.filter((f) => f.kind === 'basin');
 
   function heightAt(x: number, z: number): number {
     let hills = 0;
@@ -165,6 +179,17 @@ export function createTerrain(spec: TerrainSpec): Terrain {
     for (const f of channels) {
       const d = distanceToPolyline(x, z, f.path);
       h -= f.depth * (1 - smoothstep01(d / (f.width / 2)));
+    }
+    for (const f of basins) {
+      const dx = x - f.center[0];
+      const dz = z - f.center[1];
+      const d = Math.sqrt(dx * dx + dz * dz);
+      const flat = f.flatRadius ?? f.radius * 0.4;
+      if (d <= flat) {
+        h -= f.depth;
+      } else {
+        h -= f.depth * (1 - smoothstepRange(flat, f.radius, d));
+      }
     }
     return h;
   }

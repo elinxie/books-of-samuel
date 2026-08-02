@@ -1102,20 +1102,183 @@ export const SCENES: SceneDef[] = [
     locationId: 'gibeon',
     periodId: 'iron-iia',
     milestoneId: 'M4',
-    status: 'planned',
+    // Third and last M4 scene, built under the same Fable-unavailable
+    // fallback as ziklag-lament/hebron-anointing (docs/design/gibeon-pool-
+    // brief.md, fable-review-queue.md #18) — stays in-progress pending a
+    // real Fable read before it can ship released.
+    status: 'in-progress',
     synopsis:
       'Abner has installed Ish-bosheth over the northern tribes at Mahanaim; at the pool of Gibeon a contest between twelve young men from each side turns into open war between the houses of Saul and David, and Joab’s brother Asahel is killed in the pursuit of Abner.',
-    durationSec: 0,
-    beats: [],
-    viewpoints: [],
+    depictsDeath: true,
+    durationSec: 240,
+    beats: [
+      {
+        id: 'b-context',
+        timeSec: 0,
+        title: 'Two houses, two years on',
+        caption:
+          'Abner has made Ish-bosheth, Saul’s son, king at Mahanaim over Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel — but the house of Judah follows David. Mahanaim itself is not shown here: no confident site identification exists for it. This is civil war, not a foreign-enemy fight. (2 Samuel 2:8–10)',
+        passageRef: '2 Samuel 2:8–10',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 14,
+        title: 'One side of the pool, the other',
+        caption:
+          'Joab and Abner bring their companies to Gibeon and sit down, one on one side of the pool and the other on the other side — two councils facing each other across still water, before a blow is struck. (2 Samuel 2:13)',
+        passageRef: '2 Samuel 2:13',
+      },
+      {
+        id: 'b-proposal',
+        timeSec: 34,
+        title: 'A contest is proposed',
+        caption:
+          'Abner proposes that young men from each side fight before them; Joab agrees. Twelve are chosen from Benjamin and Ish-bosheth’s side, twelve from David’s servants. (2 Samuel 2:14–15)',
+        passageRef: '2 Samuel 2:14–15',
+      },
+      {
+        id: 'b-champions',
+        timeSec: 52,
+        title: 'Helkath-hazzurim',
+        caption:
+          'Each man seizes his opponent by the head and drives his sword into his companion’s side, and they fall down together — twelve times over. The place is named Helkath-hazzurim, the field of sword-edges, for what happens here. Shown at documentary distance: no blade-entry, no blood. (2 Samuel 2:16)',
+        passageRef: '2 Samuel 2:15–16',
+      },
+      {
+        id: 'b-battle-spreads',
+        timeSec: 78,
+        title: 'The battle spreads',
+        caption:
+          'The contest ignites a fierce battle that day, and Israel is beaten before the servants of David. Men who may have stood together against the Philistines at Gilboa two years ago are now killing each other here. Dust and motion carry the wider clash; no gore. (2 Samuel 2:17)',
+        passageRef: '2 Samuel 2:17',
+      },
+      {
+        id: 'b-asahel-pursuit',
+        timeSec: 104,
+        title: 'Is that you, Asahel?',
+        caption:
+          'Asahel, Joab’s youngest brother and swift as a gazelle, breaks off alone after Abner. Abner looks back and asks, "Is that you, Asahel?" Asahel answers that it is, and keeps coming. No violence yet — a chase, shot low and close to feel its speed. (2 Samuel 2:18–20)',
+        passageRef: '2 Samuel 2:18–20',
+      },
+      {
+        id: 'b-abner-warns',
+        timeSec: 122,
+        title: 'Two warnings',
+        caption:
+          'Abner tells Asahel to turn aside and strip a fallen man instead — twice. "How then could I hold up my face to your brother Joab?" he asks, visibly reluctant. Asahel will not turn aside. Neither man is staged as a fool or a villain; both readings stay open. (2 Samuel 2:21–22)',
+        passageRef: '2 Samuel 2:21–22',
+      },
+      {
+        id: 'b-asahel-death',
+        timeSec: 138,
+        title: 'The back of the spear',
+        caption:
+          'Abner halts and strikes Asahel with the back end of his spear — the one specific detail the text gives, shown as a gesture, not a wound. Asahel falls and dies. All who come to the place stand still — a held moment, not replayed. (2 Samuel 2:23)',
+        passageRef: '2 Samuel 2:23',
+      },
+      {
+        id: 'b-pursuit-continues',
+        timeSec: 150,
+        title: 'Toward the hill of Ammah',
+        caption:
+          'Joab and Abishai keep on after Abner as the sun goes down, until they come to the hill of Ammah. (2 Samuel 2:24)',
+        passageRef: '2 Samuel 2:24',
+      },
+      {
+        id: 'b-standoff',
+        timeSec: 166,
+        title: 'A stand on the hilltop',
+        caption:
+          'The Benjaminites rally behind Abner and take their stand on top of the hill — a standoff, not combat. By the numbers this is the losing side (2:30–31), yet it holds the higher ground; that irony is kept, not smoothed over. (2 Samuel 2:25)',
+        passageRef: '2 Samuel 2:25',
+      },
+      {
+        id: 'b-abner-plea',
+        timeSec: 182,
+        title: 'Shall the sword devour forever?',
+        caption:
+          'Abner calls down to Joab, "Shall the sword devour forever?" — asking whether Joab knows it will end bitterly, and how long before he tells his people to stop pursuing their own brothers. (2 Samuel 2:26)',
+        passageRef: '2 Samuel 2:26',
+      },
+      {
+        id: 'b-joab-halts',
+        timeSec: 196,
+        title: 'The trumpet sounds',
+        caption:
+          'Joab answers that he would have pursued past morning if Abner had not spoken — then blows the trumpet, and all his people stop and pursue Israel no more. A real act of restraint, granted by the very brother of the man just killed. (2 Samuel 2:27–28)',
+        passageRef: '2 Samuel 2:27–28',
+      },
+      {
+        id: 'b-casualty-count',
+        timeSec: 210,
+        title: 'The reckoning',
+        caption:
+          'Abner and his men march all night back toward Mahanaim, not shown here. The text’s own numbers: nineteen of David’s servants and Asahel — twenty in all — against three hundred and sixty of Benjamin and Abner’s men. Delivered as text, not as a corpse count on screen. (2 Samuel 2:29–31)',
+        passageRef: '2 Samuel 2:29–31',
+      },
+      {
+        id: 'b-close',
+        timeSec: 226,
+        title: 'Bethlehem, and Hebron by daybreak',
+        caption:
+          'Asahel is taken up and buried in his father’s tomb at Bethlehem. Joab and his men march all night and reach Hebron by daybreak — neither place shown here; both lie outside Gibeon, this scene’s setting. (2 Samuel 2:32)',
+        passageRef: '2 Samuel 2:32',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-pool',
+        label: 'The pool of Gibeon (default)',
+        position: [46, 26, -8],
+        lookAt: [0, 3, 6],
+      },
+      {
+        id: 'vp-champions',
+        label: "The champions' ground",
+        position: [-14, 6, 0],
+        lookAt: [0, 2, 0],
+      },
+      {
+        id: 'vp-battle-spread',
+        label: 'The spreading battlefield',
+        position: [40, 16, -30],
+        lookAt: [16, 3, 0],
+      },
+      {
+        id: 'vp-pursuit',
+        label: 'The pursuit route',
+        position: [70, 4, -10],
+        lookAt: [140, 3, 10],
+      },
+      {
+        id: 'vp-ammah-hill',
+        label: 'The hill of Ammah',
+        position: [300, 6, 20],
+        lookAt: [345, 18, -8],
+      },
+    ],
     claimIds: [
       'claim-ish-bosheth-installed',
       'claim-gibeon-contest',
       'claim-asahel-death',
       'claim-abner-pursuit-halted',
       'claim-gibeon-pool-form',
+      'claim-gibeon-terrain-form',
+      'claim-gibeon-battle-scale',
+      'claim-dress',
+      'claim-david-historical',
     ],
-    assetIds: [],
+    assetIds: [
+      'asset-terrain-gibeon-plateau',
+      'asset-gibeon-pool-basin',
+      'asset-water-plane',
+      'asset-military-kit-gibeon',
+      'asset-figure-fallen',
+      'asset-figure-procedural',
+      'asset-dust-motion',
+      'asset-vegetation-scrub',
+      'asset-rocks',
+    ],
   },
 ];
 

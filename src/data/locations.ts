@@ -232,8 +232,8 @@ export const LOCATIONS: LocationEntry[] = [
     },
     approxCoordinates: { lat: 31.85, lon: 35.18, confidence: 'high' },
     sceneIds: ['gibeon-pool'],
-    claimIds: [],
-    status: 'planned',
+    claimIds: ['claim-gibeon-pool-form'],
+    status: 'in-progress',
   },
   {
     id: 'mahanaim',
