@@ -782,10 +782,11 @@ export const SCENES: SceneDef[] = [
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M4',
     // Approved as built at the 2026-08-02 Fable M4 review (queue #18 resolved).
-    // `released` gated only by queue #19's citation items: named commentator
-    // attributions for claim-amalekite-messenger-account's scholarlyViews and
-    // a live-source ESV wording check of the three lament quotes.
-    status: 'in-progress',
+    // Released at the 2026-08-02 Fable M4 release pass: queue #19a/#19b closed
+    // (Gill + Keil named attributions on the messenger-account scholarlyViews,
+    // per the #17 precedent; ESV wording live-checked, 1:26 corrected, excerpt
+    // budget re-verified at 249/500).
+    status: 'released',
     synopsis:
       'An Amalekite messenger reaches David at Ziklag with news of the defeat and Saul and Jonathan’s deaths, claiming to have struck the fatal blow himself; David has him executed for raising a hand against the LORD’s anointed, then sings the Song of the Bow.',
     depictsDeath: true,
@@ -982,10 +983,12 @@ export const SCENES: SceneDef[] = [
     periodId: 'iron-iia',
     milestoneId: 'M4',
     // Approved as built at the 2026-08-02 Fable M4 review (queue #18 resolved).
-    // `released` gated only by queue #19's citation item: a researcher check
-    // of published Tell Rumeida excavation results for claim-hebron-town-form
-    // (per the M3 queue-#16 precedent for identified, excavated sites).
-    status: 'in-progress',
+    // Released at the 2026-08-02 Fable M4 release pass: queue #19c closed as
+    // "checked, permanently thin" — three citable Tell Rumeida sources confirm
+    // the 11th-10th-century town-form gap rather than closing it (the queue-#13
+    // permanent-evidentiary-state pattern), so claim-hebron-town-form's
+    // disclosed design-placeholder stands as the honest, releasable rendering.
+    status: 'released',
     synopsis:
       'David goes up to Hebron with his men and their households; the men of Judah anoint him king over the house of Judah — not yet over Israel. David sends word commending the men of Jabesh-gilead for burying Saul.',
     depictsDeath: false,
@@ -1102,10 +1105,11 @@ export const SCENES: SceneDef[] = [
     periodId: 'iron-iia',
     milestoneId: 'M4',
     // Approved as built at the 2026-08-02 Fable M4 review (queue #18 resolved).
-    // `released` gated only by queue #19's citation item: the researcher check
-    // on whether Pritchard's excavated pool predates or postdates the early
-    // Iron IIA setting (claim-gibeon-pool-form, uncertainty register #15).
-    status: 'in-progress',
+    // Released at the 2026-08-02 Fable M4 release pass: queue #19d closed
+    // affirmatively — Pritchard's excavation-era dating + Tamburrini 2021 both
+    // place the pool's construction at Iron I/10th century BCE (at or before
+    // 2 Sam 2's setting); claim-gibeon-pool-form raised low → moderate.
+    status: 'released',
     synopsis:
       'Abner has installed Ish-bosheth over the northern tribes at Mahanaim; at the pool of Gibeon a contest between twelve young men from each side turns into open war between the houses of Saul and David, and Joab’s brother Asahel is killed in the pursuit of Abner.',
     depictsDeath: true,

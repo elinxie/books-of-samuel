@@ -1275,3 +1275,29 @@ Pritchard pool dating) per the M3 #16/#17 precedent. Passage-status
 in-progress convention confirmed. Docs synced: progress.md, next-run.md,
 queue, register, ADR-009. Targeted re-verify after edits (data tests +
 typecheck + format) — see commit.
+
+**2026-08-02 — Fable 5 — M4 release pass (status flips only; no geometry/claims/source-card changes)**
+Executed the cascade queue #19 flagged for Fable judgment. Ruling: all four
+#19 closures sufficient for release. (a) Gill/Keil named attributions +
+McCarter card = #17 precedent met; (b) live ESV check fixed a real 1:26
+wording error, budget 249/500; (c) Tell Rumeida = the actual judgment call:
+three citable sources (Ofer 1993, Eisenberg & Ben-Shlomo 2017, Ussishkin 2021) genuinely checked and converging on CONFIRMING the 11th-10th c.
+town-form gap — the #13 permanent-evidentiary-state standard applies; a
+released gate should gate closable work, and claim-hebron-town-form's
+disclosed design-placeholder surviving a real research pass is a valid
+release state (beth-shan-wall precedent). (d) pool construction dated
+Iron I/10th c. affirmatively, confidence low→moderate. Verified /atlas
+overlay landed (AtlasPage + route + nav + schematic claim + tests) before
+treating M4 complete. Spot-checked gibeon-pool's design-placeholder scale
+claims (claim-gibeon-battle-scale parallel to the #14-approved
+claim-battle-scale form) — no extra scrutiny needed beyond #18's approval.
+Cascade flips: 3 scenes → released; M4 → released; f-2sam → done;
+2sam-1/2sam-2 → released; hebron/gibeon → released; ziklag → released
+(found in-progress despite both scenes now released — M1/M2-era oversight,
+flipped per jabesh-gilead precedent that disputed identification doesn't
+bar location release). mahanaim stays planned (deliberate). Non-blocking
+riders carried forward: real-hardware perf, Pages-live, TO VERIFY hedges.
+Re-verified #19's no-shell follow-up: `npm run build:sources` regenerates
+byte-identical index. Docs synced: queue status-flip note, progress.md M4
+section, next-run.md (top item now M5 scoping). Full verify gate re-run
+green after the flips.

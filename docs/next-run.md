@@ -3,34 +3,36 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-02, Fable M4 review done, branch `claude/focused-mccarthy-n2fea6`)
+## State right now (2026-08-02, M4 RELEASED — Fable release pass, branch `claude/focused-mccarthy-n2fea6`)
 
-**The real Fable pass on M4 has happened.** Queue #18 → Resolved (full verdict
-in `docs/fable-review-queue.md`): 3-scene breakdown confirmed, all three
-briefs approved, all three builds approved as built (`gibeon-pool` was built
-this branch, commits `d810db3`/`edcade8`, before the review ran). Two content
-corrections applied at review in `scenes.ts` (gibeon-pool title; ziklag-lament
-`b-account` caption wording). ADR-009 gained a ratified §Named-character
-killings template (the Asahel precedent). Uncertainty register gained row #15
-(Gibeon pool dating). M4 → `in-progress` in `milestones.ts`.
+**M4 is fully released.** The 2026-08-02 Fable release pass confirmed queue
+#19's four citation closures as sufficient (full reasoning in
+`docs/fable-review-queue.md`'s 2026-08-02 status-flip note: (a)/(b)/(d)
+affirmative, (c) Tell Rumeida closed as "checked, permanently thin" per the
+#13 permanent-evidentiary-state standard), verified the `/atlas` overlay had
+landed (M4 goal 4), and executed the cascade per M2/M3 precedent:
+`ziklag-lament`/`hebron-anointing`/`gibeon-pool` → `released`; `M4` →
+`released`; `f-2sam` → `done`; `2sam-1`/`2sam-2` → `released`;
+`hebron`/`gibeon` → `released`; `ziklag` → `released` (both its scenes now
+released — closed an M1/M2-era oversight, jabesh-gilead precedent).
+`mahanaim` stays `planned` (never built, disputed site — deliberate).
+Source-index sync re-verified (regenerated = committed); full gate green
+after the flips.
 
 **What's next (Sonnet), in priority order:**
 
-1. **The divided-kingdom atlas/map UI overlay** — the atlas-vs-scene call is
-   now **confirmed**; `ui-engineer` may build it. Binding design constraints
-   are in queue #18's resolution row: allegiance as labeled regions/soft
-   shading from the text's own name-lists (2 Sam 2:9 vs 2:10b), never hard
-   border lines; cites `claim-ish-bosheth-installed`/`claim-judah-anointing`,
-   cross-refs `claim-david-historical`'s kingdom-scale dispute; Mahanaim at
-   low-confidence coordinates with its dispute surfaced; disclosed as
-   schematic via a new claim; toggleable/ignorable per ADR-011.
-2. **Queue #19 — one batched `researcher` pass** on the four M4 release
-   citation gates (messenger-account commentator attributions; ziklag-lament
-   ESV wording live check; Tell Rumeida town-form; Pritchard pool dating).
-   When all four close, flip the three scenes/passages/locations per #19's
-   cascade note; M4 and `f-2sam` flip when the overlay has also landed.
-3. **(Carried forward, unchanged)** Real-hardware `gilboa-battle` perf check
-   and the Pages-live check — still need a non-sandboxed environment.
+1. **(Top, still open, non-blocking to any release) Real-hardware perf check**
+   of `gilboa-battle` at high tier + the Pages-live check — still need a
+   non-sandboxed environment; see Environment notes below.
+2. **M5 (2 Samuel 3+ or next scope) needs a Fable/world-director
+   scene-direction pass before any build work** — same pattern as M2/M3/M4:
+   briefs first, then Sonnet builds. Do not start M5 scene geometry without
+   briefs. No M5 milestone entry exists yet in `src/data/milestones.ts`;
+   defining it is itself Fable-tier scope work.
+3. Optional, non-gating: `TO VERIFY` pagination hedges on source cards if
+   primary copies become accessible; DEM refinement under ADR-012;
+   `f-overview-map`'s wider (Philistia/Amalekite-fringe) scope beyond the
+   shipped `/atlas` overlay.
 
 ## State before this slice (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 

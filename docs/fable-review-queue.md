@@ -14,6 +14,31 @@ _(No open items — everything currently in flight is either resolved below or t
 
 ## Resolved
 
+Status-flip note (2026-08-02, Fable M4 release pass): the cascade #19 flagged as
+needing Fable judgment was confirmed and executed. Ruling: all four #19 closures
+are sufficient for release. (a)/(b)/(d) closed affirmatively (named Gill/Keil
+attributions per the #17 precedent; a real ESV wording error found and fixed;
+the Gibeon pool's construction affirmatively dated Iron I/10th c. BCE,
+confidence raised). (c) closed under the #13 "permanent evidentiary state"
+standard: three citable Tell Rumeida sources genuinely checked and found to
+confirm the 11th–10th-century town-form gap rather than close it — a
+`released` gate should gate closable work, and an honestly disclosed
+`design-placeholder` that survives a real research pass is a valid release
+state (Beth-shan-wall precedent, where citation likewise strengthened a
+disclosed gap). The atlas overlay (M4 goal 4) was verified landed
+(`AtlasPage.tsx` + `/atlas` route + nav + `claim-divided-kingdom-atlas-overlay`)
+before treating M4 complete. Flips, all together per the M2/M3 cascade:
+`ziklag-lament`/`hebron-anointing`/`gibeon-pool` → `released`; `M4` →
+`released`; `f-2sam` → `done`; `2sam-1`/`2sam-2` → `released`;
+`hebron`/`gibeon` → `released`; `ziklag` → `released` (closing an M1/M2-era
+oversight — both its scenes are now released, and the jabesh-gilead precedent
+establishes that a disputed identification does not bar location release).
+`mahanaim` stays `planned` (never built, disputed site — deliberate).
+Non-blocking riders carried forward unchanged: real-hardware perf check,
+Pages-live check, `TO VERIFY` pagination hedges on the #19 source cards, and
+#19's build:sources/test follow-up (re-verified this pass: regenerated index is
+byte-identical to the hand-edited one; full gate green after the flips).
+
 Status-flip note (2026-07-19): the `beth-shan-walls` → `released` and
 `jabesh-burial` → `released` flips that #16 and #17 left as a Fable-tier
 call were confirmed and executed in the same 2026-07-19 release pass, on the

@@ -73,10 +73,14 @@ export const MILESTONES: Milestone[] = [
     // 2026-08-02 Fable M4 review (queue #18 resolved): the 3-scene breakdown
     // and the atlas-overlay call for the 4th goal are CONFIRMED — no longer
     // provisional. All three scenes are built and approved as built; the
-    // divided-kingdom atlas overlay (4th goal) is also now built (`/atlas`).
-    // `released` is gated only by queue #19's narrow citation items.
-    // in-progress until then.
-    status: 'in-progress',
+    // divided-kingdom atlas overlay (4th goal) is also built (`/atlas`).
+    // 2026-08-02 Fable M4 release pass: queue #19's four citation gates all
+    // closed (three affirmatively, Tell Rumeida as "checked, permanently thin"
+    // per the #13 pattern) — all three scenes, both passages, and the
+    // hebron/gibeon locations flipped to `released` together per the M2/M3
+    // cascade precedent. Real-hardware perf + Pages-live checks stay
+    // non-blocking riders (docs/next-run.md).
+    status: 'released',
     passageRefs: ['2 Samuel 1', '2 Samuel 2'],
     goals: [
       'News of Saul’s death and David’s lament (`ziklag-lament`)',

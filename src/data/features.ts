@@ -184,8 +184,9 @@ export const FEATURES: FeatureEntry[] = [
     // All three M4 scenes built; approved as built at the 2026-08-02 Fable
     // review (queue #18 resolved). The divided-kingdom atlas overlay
     // (/atlas) also landed per that review's binding design constraints.
-    // `done` still waits on queue #19's four citation gates.
-    status: 'in-progress',
+    // Done at the 2026-08-02 Fable M4 release pass: queue #19's four
+    // citation gates all closed and the full M4 cascade flipped together.
+    status: 'done',
     milestoneId: 'M4',
   },
   {

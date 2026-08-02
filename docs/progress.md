@@ -187,7 +187,7 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
-## Milestone 4 — 2 Samuel 1–2: **in-progress** (all 3 scenes built; Fable review passed 2026-08-02)
+## Milestone 4 — 2 Samuel 1–2: **released** (2026-08-02 Fable release pass)
 
 The scope decision, all three world-director briefs, and all three scene
 builds were done by Sonnet under `docs/model-handoff.md`'s Fable-unavailable
@@ -212,12 +212,25 @@ Mahanaim's dispute surfaced, schematic disclosure, toggleable) are in queue
 #18's resolution. New `gibeon` (settled identification) and `mahanaim`
 (disputed, narrated-only — no scene there) locations added.
 
-Release gating: all three scenes stay `in-progress` pending queue **#19**'s
-four narrow citation items (named commentator attributions + live ESV wording
-check for `ziklag-lament`; Tell Rumeida town-form check for
-`hebron-anointing`; Pritchard pool-dating check for `gibeon-pool`, register
-#15) — one batched `researcher` pass, per the M3 #16/#17 precedent. M4 flips
-to `released` when #19 clears and the atlas overlay lands.
+Release (2026-08-02 Fable release pass): queue **#19**'s four citation gates
+all closed the same day — (a) named Gill/Keil attributions on the
+messenger-account `scholarlyViews` plus a McCarter card, per the #17
+precedent; (b) live ESV wording check that caught and fixed a real 1:26
+caption error (budget re-verified, 249/500); (c) Tell Rumeida town-form
+closed as "checked, permanently thin" under the #13 permanent-evidentiary-
+state standard — three citable sources confirm the 11th–10th-century gap,
+so `claim-hebron-town-form`'s disclosed `design-placeholder` stands as the
+honest, releasable rendering; (d) the Gibeon pool's construction
+affirmatively dated Iron I/10th c. BCE (Pritchard + Tamburrini 2021),
+`claim-gibeon-pool-form` raised low → moderate. The divided-kingdom atlas
+overlay (`/atlas`, `AtlasPage`, `claim-divided-kingdom-atlas-overlay`) was
+verified landed before treating M4 complete. Cascade flipped together per
+the M2/M3 precedent: all three scenes, `M4`, `f-2sam` (→ `done`),
+`2sam-1`/`2sam-2`, and the `hebron`/`gibeon` locations → `released`; the
+`ziklag` location also flipped (both its scenes now released — closes an
+M1/M2-era oversight). `mahanaim` stays `planned` (never built, disputed
+site). Non-blocking riders carried forward: real-hardware perf check,
+Pages-live check, `TO VERIFY` pagination hedges.
 
 `ziklag-lament`: the project's first conversation-scale scene (~12 figures,
 not a crowd ratio); its hardest constraint — the Amalekite messenger's
