@@ -781,11 +781,10 @@ export const SCENES: SceneDef[] = [
     locationId: 'ziklag',
     periodId: 'iron-i-iia-transition',
     milestoneId: 'M4',
-    // PROVISIONAL build (2026-07-22, Sonnet implementing a Sonnet
-    // world-director brief — Fable was unavailable this session; see
-    // docs/design/ziklag-lament-brief.md and fable-review-queue.md #18).
-    // in-progress, not released, pending a real Fable pass on the brief's
-    // creative calls — matches the M2/M3 build-then-review pattern.
+    // Approved as built at the 2026-08-02 Fable M4 review (queue #18 resolved).
+    // `released` gated only by queue #19's citation items: named commentator
+    // attributions for claim-amalekite-messenger-account's scholarlyViews and
+    // a live-source ESV wording check of the three lament quotes.
     status: 'in-progress',
     synopsis:
       'An Amalekite messenger reaches David at Ziklag with news of the defeat and Saul and Jonathan’s deaths, claiming to have struck the fatal blow himself; David has him executed for raising a hand against the LORD’s anointed, then sings the Song of the Bow.',
@@ -812,7 +811,7 @@ export const SCENES: SceneDef[] = [
         timeSec: 28,
         title: 'His account — a claim, not corroborated',
         caption:
-          'He says he escaped the rout on Gilboa and found Saul there, still alive, leaning on his spear — and that at Saul’s own request he struck him down. This does not match how Saul actually died: 1 Samuel 31:4, already shown at Gilboa, has Saul fall on his own sword unaided, after his armor-bearer refused to strike him. The narrative does not resolve which account is true, and neither does this scene — his story is staged as a claim, told here at Ziklag, never as a corroborated reenactment. (2 Samuel 1:6–10)',
+          'He says he escaped the rout on Gilboa and found Saul there, still alive, leaning on his spear — and that at Saul’s own request he struck him down. This does not match the narrative’s own account: 1 Samuel 31:4, already shown at Gilboa, has Saul fall on his own sword unaided, after his armor-bearer refused to strike him. The narrative never reconciles the two accounts, and neither does this scene — his story is staged as a claim, told here at Ziklag, never as a corroborated reenactment. (2 Samuel 1:6–10)',
         passageRef: '2 Samuel 1:6–10',
       },
       {
@@ -982,12 +981,10 @@ export const SCENES: SceneDef[] = [
     locationId: 'hebron',
     periodId: 'iron-iia',
     milestoneId: 'M4',
-    // PROVISIONAL build (2026-07-22, Sonnet implementing a Sonnet
-    // world-director brief — Fable was unavailable this session; see
-    // docs/design/hebron-anointing-brief.md and fable-review-queue.md #18).
-    // in-progress, not released, pending a real Fable pass on the brief's
-    // creative calls — matches the ziklag-lament/M2/M3 build-then-review
-    // pattern.
+    // Approved as built at the 2026-08-02 Fable M4 review (queue #18 resolved).
+    // `released` gated only by queue #19's citation item: a researcher check
+    // of published Tell Rumeida excavation results for claim-hebron-town-form
+    // (per the M3 queue-#16 precedent for identified, excavated sites).
     status: 'in-progress',
     synopsis:
       'David goes up to Hebron with his men and their households; the men of Judah anoint him king over the house of Judah — not yet over Israel. David sends word commending the men of Jabesh-gilead for burying Saul.',
@@ -1097,15 +1094,17 @@ export const SCENES: SceneDef[] = [
   },
   {
     id: 'gibeon-pool',
-    title: 'The pool of Gibeon — Abner, Ish-bosheth, and the death of Asahel',
+    // Title names the two commanders actually present at Gibeon; Ish-bosheth
+    // is referenced in the context card only (2:8-10) and never staged here.
+    title: 'The pool of Gibeon — Abner, Joab, and the death of Asahel',
     passageIds: ['2sam-2'],
     locationId: 'gibeon',
     periodId: 'iron-iia',
     milestoneId: 'M4',
-    // Third and last M4 scene, built under the same Fable-unavailable
-    // fallback as ziklag-lament/hebron-anointing (docs/design/gibeon-pool-
-    // brief.md, fable-review-queue.md #18) — stays in-progress pending a
-    // real Fable read before it can ship released.
+    // Approved as built at the 2026-08-02 Fable M4 review (queue #18 resolved).
+    // `released` gated only by queue #19's citation item: the researcher check
+    // on whether Pritchard's excavated pool predates or postdates the early
+    // Iron IIA setting (claim-gibeon-pool-form, uncertainty register #15).
     status: 'in-progress',
     synopsis:
       'Abner has installed Ish-bosheth over the northern tribes at Mahanaim; at the pool of Gibeon a contest between twelve young men from each side turns into open war between the houses of Saul and David, and Joab’s brother Asahel is killed in the pursuit of Abner.',

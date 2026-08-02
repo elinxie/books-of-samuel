@@ -1247,3 +1247,31 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+**2026-08-02 — Fable 5 — M4 review pass (queue #18 resolved, #19 opened)**
+First real Fable session to touch M4; genuine review, not a rubber stamp.
+Read all three briefs, spot-checked all three builds (scenes/claims/
+characters/locations + load-bearing scene code: ziklag-lament's
+no-corroboration pose test, gibeon-pool's reversed-grip/stood-still poses
+and no-uniform Contingent palette, hebron's qualifier captions). Verdicts:
+(1) 3-scene breakdown CONFIRMED — text's own seams; no Mahanaim scene
+(disputed site, 3 verses, no stageable action). (2) Atlas-overlay call for
+the 4th goal CONFIRMED — divided-kingdom content is inherently cartographic;
+a 3D territory render = invented borders = ADR-011's "unsourced invented
+certainty"; ui-engineer green-lit with constraints in #18's resolution row
+(soft regions, no border lines, Mahanaim dispute surfaced, schematic claim,
+toggleable). Map-table-in-scene rejected as anachronism. (3) All three
+briefs approved; gibeon-pool's 8→5 claim consolidation approved (2:32 is a
+text-only card, no claim needed). (4) Asahel template ratified into ADR-009
+§Named-character killings. Fixes applied at review: gibeon-pool retitled
+(Abner/Joab, not the never-staged Ish-bosheth); ziklag-lament b-account
+caption de-asserted ("the narrative's own account", not "how Saul actually
+died" — checklist's narrated-not-asserted rule); register row #15 added
+(pool dating — brief asked for it, build missed it); M4 → in-progress
+(was still 'planned' despite 3 built scenes). Release: all 3 scenes stay
+in-progress on queue #19's four closable citation gates (messenger-account
+named attributions + ESV live wording check; Tell Rumeida town-form;
+Pritchard pool dating) per the M3 #16/#17 precedent. Passage-status
+in-progress convention confirmed. Docs synced: progress.md, next-run.md,
+queue, register, ADR-009. Targeted re-verify after edits (data tests +
+typecheck + format) — see commit.

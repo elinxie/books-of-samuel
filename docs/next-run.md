@@ -3,7 +3,36 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-08-02, Fable M4 review done, branch `claude/focused-mccarthy-n2fea6`)
+
+**The real Fable pass on M4 has happened.** Queue #18 → Resolved (full verdict
+in `docs/fable-review-queue.md`): 3-scene breakdown confirmed, all three
+briefs approved, all three builds approved as built (`gibeon-pool` was built
+this branch, commits `d810db3`/`edcade8`, before the review ran). Two content
+corrections applied at review in `scenes.ts` (gibeon-pool title; ziklag-lament
+`b-account` caption wording). ADR-009 gained a ratified §Named-character
+killings template (the Asahel precedent). Uncertainty register gained row #15
+(Gibeon pool dating). M4 → `in-progress` in `milestones.ts`.
+
+**What's next (Sonnet), in priority order:**
+
+1. **The divided-kingdom atlas/map UI overlay** — the atlas-vs-scene call is
+   now **confirmed**; `ui-engineer` may build it. Binding design constraints
+   are in queue #18's resolution row: allegiance as labeled regions/soft
+   shading from the text's own name-lists (2 Sam 2:9 vs 2:10b), never hard
+   border lines; cites `claim-ish-bosheth-installed`/`claim-judah-anointing`,
+   cross-refs `claim-david-historical`'s kingdom-scale dispute; Mahanaim at
+   low-confidence coordinates with its dispute surfaced; disclosed as
+   schematic via a new claim; toggleable/ignorable per ADR-011.
+2. **Queue #19 — one batched `researcher` pass** on the four M4 release
+   citation gates (messenger-account commentator attributions; ziklag-lament
+   ESV wording live check; Tell Rumeida town-form; Pritchard pool dating).
+   When all four close, flip the three scenes/passages/locations per #19's
+   cascade note; M4 and `f-2sam` flip when the overlay has also landed.
+3. **(Carried forward, unchanged)** Real-hardware `gilboa-battle` perf check
+   and the Pages-live check — still need a non-sandboxed environment.
+
+## State before this slice (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 
 **Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and two of the three scene builds) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
 
