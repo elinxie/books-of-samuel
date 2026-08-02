@@ -1,5 +1,5 @@
 {
-  "count": 26,
+  "count": 31,
   "cards": [
     {
       "id": "biran-naveh-1993",
@@ -17,6 +17,12 @@
       "id": "coughenour-1989-mahanaim",
       "title": "A Search for Mahanaim",
       "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "eisenberg-ben-shlomo-2017-tel-hevron",
+      "title": "The Tel Ḥevron 2014 Excavations: Final Report (Ariel University Institute of Archaeology Monograph Series No. 1)",
+      "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
@@ -116,6 +122,18 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "mccarter-1984-ii-samuel",
+      "title": "II Samuel: A New Translation with Introduction, Notes, and Commentary (The Anchor Bible, vol. 9)",
+      "sourceType": "reference",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "ofer-1993-hebron-neaehl",
+      "title": "Hebron (entry), in The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2",
+      "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "oren-tel-sera-1993",
       "title": "Sera', Tel (entry in: The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 4)",
       "sourceType": "archaeology",
@@ -142,6 +160,18 @@
     {
       "id": "stager-mountjoy-2007-ashkelon-krater",
       "title": "A Pictorial Krater from Philistine Ashkelon, in Up to the Gates of Ekron: Essays on the Archaeology and History of the Eastern Mediterranean in Honor of Seymour Gitin (eds. S. W. Crawford et al.)",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "tamburrini-2021-pool-of-gibeon-3d",
+      "title": "Inside the Pool of Gibeon: 3D Model Reconstruction and Some Observations About Finds",
+      "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "ussishkin-2021-cyclopean-wall-hebron",
+      "title": "The Date of the \"Cyclopean Wall\" at Hebron",
       "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     },

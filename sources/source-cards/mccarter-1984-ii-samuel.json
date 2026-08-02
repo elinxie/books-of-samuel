@@ -1,0 +1,15 @@
+{
+  "id": "mccarter-1984-ii-samuel",
+  "title": "II Samuel: A New Translation with Introduction, Notes, and Commentary (The Anchor Bible, vol. 9)",
+  "author": "P. Kyle McCarter Jr.",
+  "publisher": "Doubleday",
+  "datePublished": "1984",
+  "dateAccessed": "2026-08-02",
+  "sourceType": "reference",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Modern copyrighted critical commentary. Project stores only its own summary/paraphrase of McCarter's discussion, with a single short attributed quotation (under 15 words) of his own stated conclusion; no reproduction of his translation, textual notes, or broader commentary.",
+  "summary": "McCarter's Anchor Bible commentary on 2 Samuel, a standard modern critical reference for the book. On 2 Samuel 1:1-16, McCarter notes the episode's structural resemblance to the messenger scene at 1 Samuel 4:12-17 (the fugitive who brings news of a battlefield disaster) and treats the Amalekite's claim to have killed Saul as fundamentally unresolved by the narrative itself: commenting on whether David was taken in by the messenger's story, McCarter writes that '[w]hether David was deceived or not, we cannot tell' (McCarter, II Samuel, p. 63). This project cites McCarter for that narrower, agnostic point — that a leading modern critical commentary treats the reliability question as genuinely open in the text rather than as a settled harmonization problem — rather than for adopting either of the two more specific scholarlyViews (outright fabrication vs. looter's embellishment of a genuine find) surfaced from the two public-domain commentaries also cited on this claim (Keil & Delitzsch 1866; Gill's Exposition 1748-63).",
+  "relevantPassages": ["2 Samuel 1"],
+  "extractedClaims": ["claim-amalekite-messenger-account"],
+  "confidenceNotes": "Bibliographic details (title, publisher, year, Anchor Bible volume number) and the page-63 quotation are drawn from secondary/tertiary web sources quoting and citing McCarter directly (cross-corroborated across independent search results, including a citation of this line in Pamela Tamarkin Reis's 2006 Journal for the Study of the Old Testament article 'Killing the Messenger: David's Policy or Politics?'), not from direct page-by-page inspection of the 1984 Doubleday print volume. TO VERIFY: exact print pagination and surrounding context of the quoted line against a physical or full-digital copy of the commentary."
+}

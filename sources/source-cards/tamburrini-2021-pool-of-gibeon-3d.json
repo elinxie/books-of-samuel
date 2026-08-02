@@ -1,0 +1,15 @@
+{
+  "id": "tamburrini-2021-pool-of-gibeon-3d",
+  "title": "Inside the Pool of Gibeon: 3D Model Reconstruction and Some Observations About Finds",
+  "author": "Maria Tamburrini",
+  "publisher": "self-archived preprint (OSF/Academia.edu), Università degli Studi \"La Sapienza\" di Roma",
+  "datePublished": "2021",
+  "dateAccessed": "2026-08-02",
+  "sourceType": "archaeology",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted preprint/article. Project stores its own summary of the reported dating and stratigraphy only; no reproduction of the 3D model, plans, or photographs.",
+  "summary": "A 3D digital reconstruction of Pritchard's excavated rock-cut pool at Tell el-Jib (Gibeon), paired with a reassessment of the finds recovered from its fill. Tamburrini reports the pool's original cutting/construction as datable to the 10th century BCE (Iron I/early Iron IIA), consistent with Pritchard's own excavation-era estimate that the pool was first dug near the start of the Iron Age. Separately, she describes a stratigraphically complex filling history: a substantial group of artifacts recovered from within the pool shaft dates to the 8th-6th centuries BCE, reflecting the pool's later reuse/disuse and infill over centuries, not its original excavation. This project's key finding from this source: the later Iron II material found in and around the pool documents the site's long subsequent occupation and the pool's eventual filling, not a later Iron II date for the pool's original construction — the construction itself sits at or before the early Iron IIA window 2 Samuel 2 requires.",
+  "relevantPassages": ["2 Samuel 2:12-17"],
+  "extractedClaims": ["claim-gibeon-pool-form"],
+  "confidenceNotes": "Bibliographic details and the construction-vs-fill dating distinction are drawn from secondary web citations of this preprint (search-indexed summaries; DOI 10.31235/osf.io/5ajpc reported in secondary listings), not from direct inspection of the full paper. TO VERIFY: direct confirmation of the 10th-century construction date and the 8th-6th century fill dating against the paper's own stratigraphic argument and its citation of Pritchard's original excavation data."
+}

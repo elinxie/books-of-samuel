@@ -787,33 +787,33 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The narrative states that an Amalekite messenger told David he found Saul leaning on his spear, still alive with the Philistines closing in, and that at Saul’s own request he killed him (2 Samuel 1:6–10).',
     basis: 'biblical-text',
     confidence: 'high',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'mccarter-1984-ii-samuel'],
     scholarlyViews: [
       {
         id: 'view-amalekite-fabrication',
         label: 'Self-serving fabrication for reward/favor',
         proponents: [
-          'e.g., commentators reading the account as invented outright to claim credit and favor with the incoming king (a specific citation — e.g. P. Kyle McCarter’s Anchor Bible II Samuel — is not yet page-verified in this project’s bibliography; hedged per docs/reconstruction-method.md’s attribution-hedging rule)',
+          'John Gill (Gill’s Exposition of the Old Testament, 1748–63, ad loc. 2 Samuel 1:6)',
         ],
         summary:
-          'The messenger has an obvious motive (reward, standing with David) and an Amalekite identity a Ziklag audience has every reason to distrust; on this reading his entire account of finishing Saul off is invented, whether or not he was present at Gilboa at all.',
+          'Gill reads the messenger’s account as containing invented specifics, not just an inflated role: the claim that Saul was found "leaning on his spear" contradicts 1 Samuel 31:4’s own narration that he fell on his sword, and the claim that "chariots and horsemen" pressed Saul contradicts 1 Samuel 31:3’s archers — discrepancies Gill notes directly against the earlier chapter. On this reading the messenger has an obvious motive (reward, standing with David) and an Amalekite identity a Ziklag audience has every reason to distrust; the narrated manner of Saul’s death and the killing claim itself are invented, even if Gill judges the crown and armlet themselves to be a genuine find (see view-amalekite-looter-embellishment for the related, narrower reading of that detail).',
         confidence: 'low',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['gill-exposition-1763'],
       },
       {
         id: 'view-amalekite-looter-embellishment',
         label: 'Looter’s embellishment of a genuine find',
         proponents: [
-          'e.g., commentators reading the account as an opportunistic exaggeration rather than an outright invention (specific citation not yet page-verified; same hedge as above)',
+          'Carl Friedrich Keil (Keil & Delitzsch, Biblical Commentary on the Books of Samuel, 1866, ad loc. 2 Samuel 1:1–10)',
         ],
         summary:
-          'On this reading the messenger genuinely found Saul’s body on the field after death (consistent with 1 Samuel 31:4’s own narration) and took the crown and armlet as a battlefield looter, then embellished a killing claim onto that genuine detail to inflate his own role.',
+          'Keil judges that the only certainly true element of the messenger’s account is that he came upon Saul’s body already dead on the field (consistent with 1 Samuel 31:4’s own narration) and stripped the crown and armlet from it as a battlefield looter; the claim to have delivered the death-blow at Saul’s own request is read as an invented embellishment told to secure a reward and a welcome from the incoming king, not a report of something the messenger actually did.',
         confidence: 'low',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['keil-delitzsch-1866'],
       },
     ],
     notes:
-      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated — no flashback, reenactment inset, or Gilboa-backdrop tableau, in any mode. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. A named critical commentary (e.g. McCarter’s Anchor Bible II Samuel) discussing this discrepancy would strengthen this claim’s and the scholarlyViews’ sourcing beyond the text itself — flagged for a future researcher pass, not yet added; the proponents above are hedged "e.g." accordingly and cite only esv-bible pending that pass.',
+      'High confidence describes the content of the narrative — that this is what the messenger tells David — not a claim that the account is true. It contradicts 1 Samuel 31:3–5’s own narration (already rendered in gilboa-battle), where Saul, badly wounded and refused a killing blow by his armor-bearer, falls on his own sword unaided. Whether the messenger invented the story outright, opportunistically claimed credit for finding Saul already dead, or is passing on a garbled secondhand report, the text does not resolve, and this project does not resolve it either: the ziklag-lament scene stages the account as a claim only, never visually corroborated — no flashback, reenactment inset, or Gilboa-backdrop tableau, in any mode. David’s judgment on the messenger turns on the self-incriminating confession ("your own mouth has testified against you," 1:16), not a forensic determination of events on Gilboa. Citation-verification pass (2026-08-02, Sonnet, queue #19): both scholarlyViews now carry named, checkable public-domain commentator attributions (Gill’s Exposition; Keil & Delitzsch) discussing the 2 Sam 1 / 1 Sam 31 discrepancy directly, replacing the prior unnamed "e.g., commentators..." hedge, following the same pattern queue #17 used for claim-burning-bodies. A modern critical commentary (McCarter’s Anchor Bible II Samuel, 1984) is also now cited: McCarter treats the messenger’s reliability as genuinely unresolved by the text ("[w]hether David was deceived or not, we cannot tell," p. 63, per secondary citation — see mccarter-1984-ii-samuel), corroborating this project’s own narrated-not-corroborated framing rather than adopting either specific view. All three attributions are verified via secondary/web-search cross-corroboration, not primary-copy page inspection — TO VERIFY flags on exact print pagination live on the respective source cards, per the queue-#16/#17 precedent for what counts as adequately resolved short of that inspection.',
   },
   {
     id: 'claim-lords-anointed-principle',
@@ -891,9 +891,14 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The scene renders Hebron as a modest highland hill town on Tell Rumeida — no wall plan, gate-tower form, or building footprint is asserted as excavated, and the surrounding terraced highland setting is a generic Judean-highland composite, not a surveyed landscape.',
     basis: 'design-placeholder',
     confidence: 'speculative',
-    sourceIds: ['rainey-notley-2006'],
+    sourceIds: [
+      'rainey-notley-2006',
+      'ofer-1993-hebron-neaehl',
+      'eisenberg-ben-shlomo-2017-tel-hevron',
+      'ussishkin-2021-cyclopean-wall-hebron',
+    ],
     notes:
-      'rainey-notley-2006 supports the site identification (claim-hebron-identification) but says nothing about excavated early Iron IIA town form, fortification, or size at Tell Rumeida. Checked sources/source-cards/ for a dedicated Tell Rumeida excavation-results card: none exists yet, despite renewed excavation activity at the site in recent decades. A researcher pass should check for a citable published Tell Rumeida/Hebron excavation or survey report before this claim can move past design-placeholder — flagged in docs/fable-review-queue.md #18. Until then this stays a disclosed generic "modest highland hill town" placeholder, following the beth-shan/jabesh pattern of disclosing exactly this kind of gap rather than inventing a plan; no single Tell Rumeida excavation phase is adopted as "the" Davidic-era plan.',
+      'rainey-notley-2006 supports the site identification (claim-hebron-identification) but says nothing about excavated early Iron IIA town form, fortification, or size at Tell Rumeida. Researcher pass (2026-08-02, Sonnet, queue #19c): checked for citable published Tell Rumeida excavation results specifically bearing on Iron I/early Iron IIA (11th-10th century BCE) town form, the horizon 2 Samuel 2:1-7 requires. Found three genuinely relevant, checkable sources, but they converge on confirming the gap rather than closing it. Avi Ofer\'s own 1980s excavation synthesis (ofer-1993-hebron-neaehl) reads the 11th-10th century as the site\'s Iron Age demographic peak, but on regional-survey grounds, not an excavated town plan at Tell Rumeida itself. Eisenberg and Ben-Shlomo\'s 2017 final report on the 1999/2014 seasons (eisenberg-ben-shlomo-2017-tel-hevron) finds the site\'s well-dated fortification horizons cluster at Middle Bronze Age (the "cyclopean" wall) and at the later Iron II Judahite-state period (glacis/tower elements paralleled at Tell el-Ful and Tell Beit Mirsim, dated 8th-7th century BCE, plausibly a Hezekiah-era phase) — with only scattered, non-diagnostic remains attributed to the intervening 11th-10th century window, no excavated gate, wall circuit, or building footprint specific to it. Ussishkin (2021, ussishkin-2021-cyclopean-wall-hebron) goes further, disputing even the cyclopean wall\'s conventional Middle Bronze date and arguing it and its glacis were built later in the Iron Age — which, if correct, removes rather than adds an early Iron Age fortification candidate. Finding: the gap is real and now citably confirmed, not merely unchecked — this is a permanent evidentiary state for the specific 10th-century-BCE window, parallel to the beth-shan-wall precedent (queue #16) where citation strengthened a disclosed gap rather than closing it with a positive attribution. The disclosed "modest highland hill town" placeholder (basis design-placeholder, confidence speculative) is the honest rendering; no single Tell Rumeida excavation phase is adopted as "the" Davidic-era plan, following the beth-shan/jabesh pattern.',
   },
   {
     id: 'claim-hebron-inquiry',
@@ -1000,10 +1005,10 @@ export const CLAIMS: ReconstructionClaim[] = [
     statement:
       'The pool of Gibeon (2 Samuel 2:13) is rendered as a rock-cut basin with a flat water plane, on the strength of Pritchard’s excavation of a rock-cut pool/water-tunnel system at Tell el-Jib.',
     basis: 'archaeology',
-    confidence: 'low',
-    sourceIds: ['pritchard-gibeon-1962'],
+    confidence: 'moderate',
+    sourceIds: ['pritchard-gibeon-1962', 'tamburrini-2021-pool-of-gibeon-3d'],
     notes:
-      'Open sourcing gap flagged by the gibeon-pool brief: neither pritchard-gibeon-1962 nor the gibeon LocationEntry currently establishes whether the excavated pool’s construction predates or postdates the early Iron IIA setting of 2 Samuel 2 — TO VERIFY before this claim’s confidence can move past low/design-placeholder-adjacent. Rendered as a disclosed, undated-fidelity feature; no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.',
+      "Researcher pass (2026-08-02, Sonnet, queue #19d / uncertainty register #15): checked for Pritchard's own stratigraphic dating of the pool's construction and for later reassessments. Finding: multiple sources, including Pritchard's own excavation-era estimate and Tamburrini's 2021 reassessment (tamburrini-2021-pool-of-gibeon-3d), converge on the pool's original cutting/construction dating to Iron I/early Iron IIA — Pritchard placed it near the start of the Iron Age, Tamburrini's reconstruction more specifically to the 10th century BCE — i.e., at or before the early Iron IIA window 2 Samuel 2 requires, not a later Iron II expansion postdating the narrative. This resolves the specific dating worry the gibeon-pool brief flagged (construction-vs-postdating), raising confidence from low to moderate. What remains genuinely later is the pool's subsequent history, not its construction: a substantial group of artifacts recovered from the pool's fill dates to the 8th-6th centuries BCE (Tamburrini), reflecting centuries of later reuse/disuse and infill after the period this scene depicts — a separate fact from when the pool was first cut. Residual hedge: this dating rests on pottery typology and Pritchard's original stratigraphic reads (both cited only via secondary/web-search corroboration, not primary-copy excavation-report inspection — TO VERIFY on both source cards), and is not immune to the high/low chronology debate already tracked at register #5. The rendered pool stays a disclosed, undated-fidelity/dimension approximation regardless (see claim-gibeon-terrain-form); no reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh.",
   },
   {
     id: 'claim-gibeon-terrain-form',
@@ -1013,7 +1018,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'speculative',
     sourceIds: ['esv-bible', 'pritchard-gibeon-1962'],
     notes:
-      'Distinct from claim-gibeon-pool-form (the archaeology-basis claim that a real excavated pool/tunnel system exists at the identified site): this claim covers only the rendered terrain-form and no-water-shader disclosure itself, parallel to claim-gilboa-terrain-form. No reflection/refraction shader is built, matching the declined-water-shader precedent from gilboa-battle and jabesh-burial; the basin’s exact dimensions stay unresolved pending the dating question flagged on claim-gibeon-pool-form.',
+      'Distinct from claim-gibeon-pool-form (the archaeology-basis claim that a real excavated pool/tunnel system exists at the identified site, dated construction-wise per the 2026-08-02 researcher pass): this claim covers only the rendered terrain-form and no-water-shader disclosure itself, parallel to claim-gilboa-terrain-form. No reflection/refraction shader is built, matching the declined-water-shader precedent from gilboa-battle and jabesh-burial; the basin is rendered at a modest, disclosed approximation rather than Pritchard’s excavated monumental dimensions (27m deep, 11.3m diameter) as a fidelity/scale choice, independent of the now-resolved dating question.',
   },
   {
     id: 'claim-gibeon-battle-scale',
