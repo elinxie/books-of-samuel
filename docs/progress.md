@@ -247,6 +247,49 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
+## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; no build yet)
+
+Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
+milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
+its murder site is the deliberately-unbuilt, disputed Mahanaim, leaving only
+the Hebron judgment stageable; 3–4 form one narrative unit (the collapse of
+the house of Saul, closing at 4:12 with the burial in Abner's tomb); and all
+staged action shares the already-built Hebron, so one milestone amortizes the
+geometry reuse. M6 will start at 2 Samuel 5 (all-Israel anointing, Jerusalem
+— genuinely new scope).
+
+Three scenes, all at Hebron (hard continuity rule: reuse `hebron-anointing`'s
+palette/massing/layout constants), plus an atlas extension:
+
+- `hebron-covenant` (2 Sam 3:1–21, staged from 3:20) — Abner's twenty-man
+  delegation (literal 1:1), the feast, the threefold "he went in peace."
+  Michal/Paltiel and the Rizpah accusation carried as cards, not staged.
+  `docs/design/hebron-covenant-brief.md`.
+- `hebron-gate` (2 Sam 3:22–39) — the recall (cistern of Sirah narrated),
+  the killing in the midst of the gate under ADR-009's named-character-
+  killing template (2nd application), David's disavowal and curse, the
+  funeral procession with Joab commanded to mourn, the lament, the fast.
+  Motive framing (blood vengeance vs. rival elimination) and the
+  Davidic-apologia reading both carried as `scholarlyViews`, never
+  editorialized. `docs/design/hebron-gate-brief.md`.
+- `hebron-reckoning` (2 Sam 4) — the assassination narrated by cards only
+  (no Mahanaim geometry; 4:6 MT/LXX divergence surfaced), the assassins'
+  arrival, David's judgment (the text's own 4:10 cross-link to
+  `ziklag-lament`), the execution, and the burial of the head (covered
+  bundle only — never anatomy) in Abner's tomb. Hands-and-feet display is
+  caption-only under ADR-009's unconditional dismemberment bar.
+  `docs/design/hebron-reckoning-brief.md`.
+- Atlas extension: `/atlas` gains the 2 Sam 3–4 phase (long-war trend,
+  northern collapse) — UI work per ADR-011, not a 4th scene.
+
+Build order: `hebron-covenant` → `hebron-gate` → `hebron-reckoning` → atlas
+extension. Researcher gaps (non-blocking to build, gating named attributions
+before release) listed in `docs/next-run.md`: McCarter coverage extension to
+2 Sam 3–4, Herzog gate typology, King & Stager feasting/mourning material,
+Hebron water installations. No new fable-review-queue items — the contested
+staging calls were resolved in the 2026-08-03 Fable pass and recorded in the
+briefs; release gates open at the M5 review per M3/M4 precedent.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

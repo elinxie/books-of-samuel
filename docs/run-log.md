@@ -1301,3 +1301,33 @@ Re-verified #19's no-shell follow-up: `npm run build:sources` regenerates
 byte-identical index. Docs synced: queue status-flip note, progress.md M4
 section, next-run.md (top item now M5 scoping). Full verify gate re-run
 green after the flips.
+
+**2026-08-03 — Fable 5 — M5 scope + world-director pass (briefs only, no build)**
+Defined M5 per next-run's top item. Scope ruling: **M5 = 2 Sam 3–4 bundled**
+(M4 precedent) — ch. 4 alone too thin (murder site = unbuildable disputed
+Mahanaim; only the Hebron judgment stages), 3–4 one narrative unit closing
+the house of Saul at 4:12, all staged action at already-built Hebron
+(geometry amortized). M6 starts at 2 Sam 5. Scene breakdown: 3 scenes, all
+Hebron, + /atlas phase extension (not a 4th scene, per the M4 atlas
+precedent — 3:1's long-war trend is cartographic content). Briefs written:
+hebron-covenant (3:1–21, staged from 3:20; Michal/Paltiel + Rizpah
+accusation cards-only — text never places Michal at the feast; Bahurim
+unbuilt; 20 men literal 1:1), hebron-gate (3:22–39; ADR-009 named-killing
+template 2nd application — aside-into-the-gate as the shown gesture, strike
+at documentary distance, David's words as the reaction beat; motive
+(vengeance vs. rival-elimination) + Davidic-apologia dispute as
+scholarlyViews, never captioned as fact; gate = modest chambered
+design-placeholder, no six-chamber over-claim; medieval Tomb-of-Abner
+tradition not adopted; refuge-city irony only if a named citation lands),
+hebron-reckoning (2 Sam 4; murder cards-only incl. 4:6 MT/LXX divergence;
+head = covered bundle only; hands/feet display caption-only under ADR-009's
+unconditional dismemberment bar; pool of Hebron = gibeon-pool-convention
+basin, Birket es-Sultan rejected; 4:10 Ziklag cross-link is the text's own).
+M5 entry added to milestones.ts (planned, with scope-reasoning comment).
+Researcher gaps flagged in next-run (McCarter→2 Sam 3–4 extension, Herzog
+gate typology, King-Stager feasting/mourning, Hebron water installations) —
+none block builds. No queue items opened: contested calls resolved this
+pass, recorded in briefs. Docs synced: next-run.md (new top state + build
+order: covenant → gate → reckoning → atlas), progress.md M5 section. No
+code/scene/claim changes; no verify run (data edit is one additive
+milestone entry; orchestrating session gates before merge).
