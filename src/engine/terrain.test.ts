@@ -76,6 +76,41 @@ describe('createTerrain feature primitives', () => {
     expect(t.heightAt(0, 150)).toBe(0); // 50 m past the end of the path
   });
 
+  it('basin carves a flat floor at full depth, then rises smoothly to 0 at the rim', () => {
+    const t = createTerrain(
+      specWith({
+        features: [{ kind: 'basin', center: [5, -5], radius: 20, depth: 3, flatRadius: 8 }],
+      }),
+    );
+    expect(t.heightAt(5, -5)).toBe(-3);
+    expect(t.heightAt(11, -5)).toBe(-3); // still inside flatRadius (6 < 8)
+    expect(t.heightAt(5, -25)).toBeCloseTo(0, 10); // at the rim
+    expect(t.heightAt(5, -55)).toBeCloseTo(0, 10); // well past the rim
+  });
+
+  it('basin defaults flatRadius to 0.4 * radius', () => {
+    const t = createTerrain(
+      specWith({ features: [{ kind: 'basin', center: [0, 0], radius: 10, depth: 4 }] }),
+    );
+    expect(t.heightAt(3, 0)).toBe(-4); // within the default flat radius (4)
+    expect(t.heightAt(4, 0)).toBe(-4);
+  });
+
+  it('rejects a degenerate basin radius/flatRadius', () => {
+    expect(() =>
+      createTerrain(
+        specWith({ features: [{ kind: 'basin', center: [0, 0], radius: 0, depth: 1 }] }),
+      ),
+    ).toThrow();
+    expect(() =>
+      createTerrain(
+        specWith({
+          features: [{ kind: 'basin', center: [0, 0], radius: 10, depth: 1, flatRadius: 10 }],
+        }),
+      ),
+    ).toThrow();
+  });
+
   it('rejects degenerate ramp directions, ridges, and channel paths', () => {
     expect(() =>
       createTerrain(

@@ -79,6 +79,29 @@ pyre, 1 Samuel 31:12b–13):
 Scenes that depict handling of the dead set `depictsDeath` and get the
 first-visit advisory even when no violence occurs on-screen.
 
+### Named-character killings (ratified at the M4 review, 2026-08-02)
+
+First case: Abner's killing of Asahel (`gibeon-pool`, 2 Sam 2:23), the
+project's first rendering of one named character killing another at close
+range (distinct from Saul's suicide). The template set by the gibeon-pool
+brief is ratified as this ADR's standard for all future individual killings
+(Abner in 2 Sam 3, Amasa in 2 Sam 20, Uriah's engineered death, etc.):
+
+- **Distance + restraint as always** — documentary distance, no wound/blood/
+  dismemberment geometry, no close or lingering framing, in either mode.
+- **The text's own specific, non-graphic detail may be shown as gesture**
+  (Asahel: the reversed spear grip) — the analog of Gilboa's armor-bearer
+  refusal gesture. What may never be shown is penetration or wound detail.
+- **A held reaction beat carries the emotional weight** in place of graphic
+  detail, preferably one the text itself supplies (2:23b's bystanders who
+  "stood still" rendered as a literal motion freeze). The reaction beat is
+  identical in both modes.
+- **Reduced mode elides the strike, never the fact or the method** — cut to
+  the aftermath; the caption states plainly what happened and how.
+- **No editorializing either party into villain or fool** where the text
+  keeps both readings open (Abner's reluctance and Asahel's zeal both stay
+  legible); killings inside Israel get no triumphal staging for any side.
+
 ### Default and consent
 
 - **Standard is the default.** The advisory (below) is the consent mechanism.

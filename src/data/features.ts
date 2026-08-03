@@ -181,9 +181,12 @@ export const FEATURES: FeatureEntry[] = [
     id: 'f-2sam',
     title: '2 Samuel 1–2 scenes',
     description: 'Lament, Hebron anointing, divided-kingdom geography.',
-    // ziklag-lament and hebron-anointing built 2026-07-22 (both
-    // in-progress, PROVISIONAL); gibeon-pool briefed but not yet built.
-    status: 'in-progress',
+    // All three M4 scenes built; approved as built at the 2026-08-02 Fable
+    // review (queue #18 resolved). The divided-kingdom atlas overlay
+    // (/atlas) also landed per that review's binding design constraints.
+    // Done at the 2026-08-02 Fable M4 release pass: queue #19's four
+    // citation gates all closed and the full M4 cascade flipped together.
+    status: 'done',
     milestoneId: 'M4',
   },
   {
@@ -214,6 +217,10 @@ export const FEATURES: FeatureEntry[] = [
     title: 'Regional overview map',
     description:
       'Political geography of Israel, Judah, Philistia, and the Amalekite fringe with confidence shading.',
+    // A first, narrower version of this idea shipped under f-2sam/M4 instead:
+    // the divided-kingdom atlas overlay (`/atlas`, `AtlasPage`) covers only
+    // Israel vs. Judah (2 Sam 2:8–11), not Philistia or the Amalekite fringe.
+    // This feature stays `planned` for that wider scope.
     status: 'planned',
     milestoneId: 'M3',
   },

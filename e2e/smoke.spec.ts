@@ -105,6 +105,35 @@ test('violence advisory (ADR-009) gates first visit to Gilboa, then never reappe
   await expect(page.getByTestId('violence-reduced')).toBeChecked();
 });
 
+test('divided-kingdom atlas overlay loads, shows the map, and the shading toggle dismisses/restores it', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Atlas' }).click();
+  await expect(page).toHaveURL(/#\/atlas/);
+
+  await expect(page.getByTestId('atlas-map')).toBeVisible();
+  await expect(page.getByTestId('atlas-point-hebron')).toBeVisible();
+  await expect(page.getByTestId('atlas-point-mahanaim')).toBeVisible();
+  await expect(page.getByTestId('location-dispute-mahanaim')).toBeVisible();
+
+  const shadingToggle = page.getByTestId('atlas-toggle-shading');
+  await expect(shadingToggle).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByTestId('region-shading-judah')).toBeVisible();
+  await shadingToggle.click();
+  await expect(shadingToggle).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.getByTestId('region-shading-judah')).toHaveCount(0);
+  // Dismissing the shading never hides the plotted points themselves.
+  await expect(page.getByTestId('atlas-point-hebron')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {

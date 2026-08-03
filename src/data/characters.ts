@@ -147,7 +147,13 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside.',
     passageRefs: ['2 Samuel 2:8–32'],
-    claimIds: ['claim-ish-bosheth-installed', 'claim-gibeon-contest', 'claim-asahel-death'],
+    claimIds: [
+      'claim-ish-bosheth-installed',
+      'claim-gibeon-contest',
+      'claim-asahel-death',
+      'claim-abner-pursuit-halted',
+      'claim-gibeon-battle-scale',
+    ],
   },
   {
     id: 'ish-bosheth',
@@ -165,7 +171,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back.',
     passageRefs: ['2 Samuel 2:13–32'],
-    claimIds: ['claim-gibeon-contest', 'claim-abner-pursuit-halted'],
+    claimIds: ['claim-gibeon-contest', 'claim-abner-pursuit-halted', 'claim-gibeon-battle-scale'],
   },
   {
     id: 'abishai',

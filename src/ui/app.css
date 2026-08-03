@@ -24,6 +24,10 @@
   --conf-low: #c9702e;
   --conf-speculative: #b8544d;
 
+  /* Atlas overlay allegiance regions (soft shading only, never a border). */
+  --region-israel: #5b8fc4;
+  --region-judah: #c29433;
+
   --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
@@ -500,6 +504,50 @@ h3 {
 }
 .source-list li {
   margin: 2px 0;
+}
+
+/* Atlas overlay (divided-kingdom map) */
+
+.atlas-map {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  margin: 18px 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raised);
+}
+.atlas-map-bg {
+  fill: var(--bg-raised);
+}
+.atlas-region-label {
+  fill: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+.atlas-point-label {
+  fill: var(--ink);
+  font-size: 11px;
+}
+.atlas-point:not(.atlas-point-emphasized) .atlas-point-label {
+  fill: var(--faint);
+  font-size: 10px;
+}
+.atlas-point:not(.atlas-point-emphasized) .atlas-point-dot {
+  opacity: 0.55;
+}
+.atlas-point-dot.conf-high {
+  fill: var(--conf-high);
+}
+.atlas-point-dot.conf-moderate {
+  fill: var(--conf-moderate);
+}
+.atlas-point-dot.conf-low {
+  fill: var(--conf-low);
+}
+.atlas-point-dot.conf-speculative {
+  fill: var(--conf-speculative);
 }
 
 /* ---------- Observer HUD ---------- */

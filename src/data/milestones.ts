@@ -70,17 +70,23 @@ export const MILESTONES: Milestone[] = [
   {
     id: 'M4',
     label: 'Milestone 4 — 2 Samuel 1–2',
-    // Scene breakdown decided 2026-07-22 (Sonnet, Fable-unavailable fallback —
-    // see fable-review-queue.md #18, needs a real Fable confirmation): three
-    // scenes, `ziklag-lament` / `hebron-anointing` / `gibeon-pool`, per the
-    // goals below. World-director briefs for each are next, then builds.
-    status: 'planned',
+    // 2026-08-02 Fable M4 review (queue #18 resolved): the 3-scene breakdown
+    // and the atlas-overlay call for the 4th goal are CONFIRMED — no longer
+    // provisional. All three scenes are built and approved as built; the
+    // divided-kingdom atlas overlay (4th goal) is also built (`/atlas`).
+    // 2026-08-02 Fable M4 release pass: queue #19's four citation gates all
+    // closed (three affirmatively, Tell Rumeida as "checked, permanently thin"
+    // per the #13 pattern) — all three scenes, both passages, and the
+    // hebron/gibeon locations flipped to `released` together per the M2/M3
+    // cascade precedent. Real-hardware perf + Pages-live checks stay
+    // non-blocking riders (docs/next-run.md).
+    status: 'released',
     passageRefs: ['2 Samuel 1', '2 Samuel 2'],
     goals: [
       'News of Saul’s death and David’s lament (`ziklag-lament`)',
       'David at Hebron; Judah anoints David (`hebron-anointing`)',
       'Abner/Ish-bosheth at Mahanaim; the pool of Gibeon and Asahel’s death (`gibeon-pool`)',
-      'Early divided-kingdom political geography — provisionally called as an atlas/map UI overlay, not a 4th 3D scene (queue #18)',
+      'Early divided-kingdom political geography — built as an atlas/map UI overlay (`/atlas`, `AtlasPage`), not a 4th 3D scene, per the 2026-08-02 Fable review',
     ],
   },
 ];

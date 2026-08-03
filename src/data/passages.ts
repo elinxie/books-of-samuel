@@ -48,11 +48,11 @@ export const PASSAGES: Passage[] = [
       'An Amalekite brings David news of Saul’s death, claiming to have delivered the final blow, and is executed for it. David laments Saul and Jonathan in the Song of the Bow.',
     // Scene id committed 2026-07-22 (Sonnet, Fable-unavailable fallback, queue
     // #18) before the scene exists in scenes.ts — mirrors the M3 pattern.
-    // 2026-07-22: ziklag-lament built (in-progress, pending Fable review of
-    // its provisional brief) — status follows the scene, matching locations.ts.
+    // 2026-08-02 Fable M4 release pass: ziklag-lament → released (queue #19a/b
+    // closed), so the passage releases with it.
     sceneIds: ['ziklag-lament'],
     milestoneId: 'M4',
-    status: 'in-progress',
+    status: 'released',
   },
   {
     id: '2sam-2',
@@ -62,16 +62,13 @@ export const PASSAGES: Passage[] = [
     translationAnchor: 'ESV',
     summary:
       'David goes up to Hebron and is anointed king over Judah; he commends Jabesh-gilead for burying Saul. Abner installs Ish-bosheth over the northern tribes, and war begins between the houses at the pool of Gibeon.',
-    // 2026-07-22: hebron-anointing built (in-progress); gibeon-pool briefed
-    // but not yet built. Bumped to in-progress on the same "status follows
-    // the scene" logic used for 2sam-1/ziklag: one of this passage's two
-    // scenes has progressed, matching 1sam-31's precedent of tracking
-    // passage status against its scenes' collective progress during M3
-    // (rather than waiting for every scene to land before reflecting any
-    // progress at all).
+    // 2026-08-02 Fable M4 release pass: both scenes (hebron-anointing,
+    // gibeon-pool) → released with queue #19c/#19d closed, so the passage
+    // releases with them. (The in-progress-per-scene-progress convention
+    // adopted 2026-07-22 was confirmed at the 2026-08-02 Fable review.)
     sceneIds: ['hebron-anointing', 'gibeon-pool'],
     milestoneId: 'M4',
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

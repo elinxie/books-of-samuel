@@ -25,6 +25,7 @@ import { BETH_SHAN_WALLS_ENTITIES } from '../scenes/beth-shan-walls/entities';
 import { JABESH_BURIAL_ENTITIES } from '../scenes/jabesh-burial/entities';
 import { ZIKLAG_LAMENT_ENTITIES } from '../scenes/ziklag-lament/entities';
 import { HEBRON_ANOINTING_ENTITIES } from '../scenes/hebron-anointing/entities';
+import { GIBEON_POOL_ENTITIES } from '../scenes/gibeon-pool/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -54,6 +55,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(JABESH_BURIAL_ENTITIES);
     uniqueIds(ZIKLAG_LAMENT_ENTITIES);
     uniqueIds(HEBRON_ANOINTING_ENTITIES);
+    uniqueIds(GIBEON_POOL_ENTITIES);
   });
 });
 
@@ -291,6 +293,14 @@ describe('features and scene entities', () => {
 
   it('Hebron-anointing entity labels resolve to claims', () => {
     for (const e of HEBRON_ANOINTING_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Gibeon-pool entity labels resolve to claims', () => {
+    for (const e of GIBEON_POOL_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }

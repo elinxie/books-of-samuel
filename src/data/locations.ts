@@ -51,7 +51,13 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.39, lon: 34.68, confidence: 'low' },
     sceneIds: ['ziklag-aftermath', 'ziklag-lament'],
     claimIds: ['claim-ziklag-location', 'claim-ziklag-scale', 'claim-ziklag-raided'],
-    status: 'in-progress',
+    // 2026-08-02 Fable M4 release pass: with ziklag-lament → released, both of
+    // this location's scenes are now released, so the location follows per the
+    // M2/M3 cascade convention. (It was never flipped at the M1/M2 sign-offs —
+    // an oversight, not policy: the jabesh-gilead precedent shows a disputed
+    // identification lives in identification.disputed/views and does not bar
+    // location release; status tracks build progress.)
+    status: 'released',
   },
   {
     id: 'brook-besor',
@@ -204,10 +210,11 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.52, lon: 35.1, confidence: 'high' },
     sceneIds: ['hebron-anointing'],
     claimIds: [],
-    // 2026-07-22: hebron-anointing built (in-progress, PROVISIONAL, pending
-    // Fable review of its brief) — status follows the scene, matching the
-    // ziklag/ziklag-lament precedent.
-    status: 'in-progress',
+    // 2026-08-02 Fable M4 release pass: hebron-anointing → released (queue
+    // #19c closed as "checked, permanently thin" — the Tell Rumeida town-form
+    // gap is citably confirmed, the disclosed placeholder stands) — status
+    // follows the scene per the M2/M3 cascade precedent.
+    status: 'released',
   },
   {
     id: 'gibeon',
@@ -232,8 +239,10 @@ export const LOCATIONS: LocationEntry[] = [
     },
     approxCoordinates: { lat: 31.85, lon: 35.18, confidence: 'high' },
     sceneIds: ['gibeon-pool'],
-    claimIds: [],
-    status: 'planned',
+    claimIds: ['claim-gibeon-pool-form'],
+    // 2026-08-02 Fable M4 release pass: gibeon-pool → released (queue #19d
+    // closed affirmatively — pool construction dated Iron I/10th c. BCE).
+    status: 'released',
   },
   {
     id: 'mahanaim',

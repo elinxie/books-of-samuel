@@ -1247,3 +1247,57 @@ reverting to match the accidental precedent. Documented the reasoning in
 Gate green: format:check, lint, typecheck, 315 vitest, build, 8/8 e2e.
 `docs/next-run.md` updated. One scene (`gibeon-pool`) and the atlas/map UI
 overlay remain for M4.
+
+**2026-08-02 — Fable 5 — M4 review pass (queue #18 resolved, #19 opened)**
+First real Fable session to touch M4; genuine review, not a rubber stamp.
+Read all three briefs, spot-checked all three builds (scenes/claims/
+characters/locations + load-bearing scene code: ziklag-lament's
+no-corroboration pose test, gibeon-pool's reversed-grip/stood-still poses
+and no-uniform Contingent palette, hebron's qualifier captions). Verdicts:
+(1) 3-scene breakdown CONFIRMED — text's own seams; no Mahanaim scene
+(disputed site, 3 verses, no stageable action). (2) Atlas-overlay call for
+the 4th goal CONFIRMED — divided-kingdom content is inherently cartographic;
+a 3D territory render = invented borders = ADR-011's "unsourced invented
+certainty"; ui-engineer green-lit with constraints in #18's resolution row
+(soft regions, no border lines, Mahanaim dispute surfaced, schematic claim,
+toggleable). Map-table-in-scene rejected as anachronism. (3) All three
+briefs approved; gibeon-pool's 8→5 claim consolidation approved (2:32 is a
+text-only card, no claim needed). (4) Asahel template ratified into ADR-009
+§Named-character killings. Fixes applied at review: gibeon-pool retitled
+(Abner/Joab, not the never-staged Ish-bosheth); ziklag-lament b-account
+caption de-asserted ("the narrative's own account", not "how Saul actually
+died" — checklist's narrated-not-asserted rule); register row #15 added
+(pool dating — brief asked for it, build missed it); M4 → in-progress
+(was still 'planned' despite 3 built scenes). Release: all 3 scenes stay
+in-progress on queue #19's four closable citation gates (messenger-account
+named attributions + ESV live wording check; Tell Rumeida town-form;
+Pritchard pool dating) per the M3 #16/#17 precedent. Passage-status
+in-progress convention confirmed. Docs synced: progress.md, next-run.md,
+queue, register, ADR-009. Targeted re-verify after edits (data tests +
+typecheck + format) — see commit.
+
+**2026-08-02 — Fable 5 — M4 release pass (status flips only; no geometry/claims/source-card changes)**
+Executed the cascade queue #19 flagged for Fable judgment. Ruling: all four
+#19 closures sufficient for release. (a) Gill/Keil named attributions +
+McCarter card = #17 precedent met; (b) live ESV check fixed a real 1:26
+wording error, budget 249/500; (c) Tell Rumeida = the actual judgment call:
+three citable sources (Ofer 1993, Eisenberg & Ben-Shlomo 2017, Ussishkin 2021) genuinely checked and converging on CONFIRMING the 11th-10th c.
+town-form gap — the #13 permanent-evidentiary-state standard applies; a
+released gate should gate closable work, and claim-hebron-town-form's
+disclosed design-placeholder surviving a real research pass is a valid
+release state (beth-shan-wall precedent). (d) pool construction dated
+Iron I/10th c. affirmatively, confidence low→moderate. Verified /atlas
+overlay landed (AtlasPage + route + nav + schematic claim + tests) before
+treating M4 complete. Spot-checked gibeon-pool's design-placeholder scale
+claims (claim-gibeon-battle-scale parallel to the #14-approved
+claim-battle-scale form) — no extra scrutiny needed beyond #18's approval.
+Cascade flips: 3 scenes → released; M4 → released; f-2sam → done;
+2sam-1/2sam-2 → released; hebron/gibeon → released; ziklag → released
+(found in-progress despite both scenes now released — M1/M2-era oversight,
+flipped per jabesh-gilead precedent that disputed identification doesn't
+bar location release). mahanaim stays planned (deliberate). Non-blocking
+riders carried forward: real-hardware perf, Pages-live, TO VERIFY hedges.
+Re-verified #19's no-shell follow-up: `npm run build:sources` regenerates
+byte-identical index. Docs synced: queue status-flip note, progress.md M4
+section, next-run.md (top item now M5 scoping). Full verify gate re-run
+green after the flips.

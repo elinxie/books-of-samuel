@@ -5,6 +5,7 @@ import { ProgressPage } from './pages/ProgressPage';
 import { FeaturesPage } from './pages/FeaturesPage';
 import { SourcesPage } from './pages/SourcesPage';
 import { MethodPage } from './pages/MethodPage';
+import { AtlasPage } from './pages/AtlasPage';
 import { DEFAULT_SCENE_ID } from './data/scenes';
 
 // The 3D observer (three.js and scene code) loads lazily so the study pages stay light.
@@ -25,6 +26,7 @@ export default function App() {
           }
         />
         <Route path="/progress" element={<ProgressPage />} />
+        <Route path="/atlas" element={<AtlasPage />} />
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/sources" element={<SourcesPage />} />
         <Route path="/method" element={<MethodPage />} />

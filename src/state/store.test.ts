@@ -23,6 +23,14 @@ describe('study toggles', () => {
   it('keeps theological commentary off by default (deferred feature)', () => {
     expect(useAppStore.getState().theologicalCommentary).toBe(false);
   });
+
+  it('toggles the atlas allegiance-shading overlay, default on (ADR-011 dismissible affordance)', () => {
+    expect(useAppStore.getState().showAllegianceShading).toBe(true);
+    useAppStore.getState().toggleAllegianceShading();
+    expect(useAppStore.getState().showAllegianceShading).toBe(false);
+    useAppStore.getState().toggleAllegianceShading();
+    expect(useAppStore.getState().showAllegianceShading).toBe(true);
+  });
 });
 
 describe('quality and navigation', () => {

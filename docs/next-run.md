@@ -3,7 +3,38 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
+## State right now (2026-08-02, M4 RELEASED — Fable release pass, branch `claude/focused-mccarthy-n2fea6`)
+
+**M4 is fully released.** The 2026-08-02 Fable release pass confirmed queue
+#19's four citation closures as sufficient (full reasoning in
+`docs/fable-review-queue.md`'s 2026-08-02 status-flip note: (a)/(b)/(d)
+affirmative, (c) Tell Rumeida closed as "checked, permanently thin" per the
+#13 permanent-evidentiary-state standard), verified the `/atlas` overlay had
+landed (M4 goal 4), and executed the cascade per M2/M3 precedent:
+`ziklag-lament`/`hebron-anointing`/`gibeon-pool` → `released`; `M4` →
+`released`; `f-2sam` → `done`; `2sam-1`/`2sam-2` → `released`;
+`hebron`/`gibeon` → `released`; `ziklag` → `released` (both its scenes now
+released — closed an M1/M2-era oversight, jabesh-gilead precedent).
+`mahanaim` stays `planned` (never built, disputed site — deliberate).
+Source-index sync re-verified (regenerated = committed); full gate green
+after the flips.
+
+**What's next (Sonnet), in priority order:**
+
+1. **(Top, still open, non-blocking to any release) Real-hardware perf check**
+   of `gilboa-battle` at high tier + the Pages-live check — still need a
+   non-sandboxed environment; see Environment notes below.
+2. **M5 (2 Samuel 3+ or next scope) needs a Fable/world-director
+   scene-direction pass before any build work** — same pattern as M2/M3/M4:
+   briefs first, then Sonnet builds. Do not start M5 scene geometry without
+   briefs. No M5 milestone entry exists yet in `src/data/milestones.ts`;
+   defining it is itself Fable-tier scope work.
+3. Optional, non-gating: `TO VERIFY` pagination hedges on source cards if
+   primary copies become accessible; DEM refinement under ADR-012;
+   `f-overview-map`'s wider (Philistia/Amalekite-fringe) scope beyond the
+   shipped `/atlas` overlay.
+
+## State before this slice (2026-07-22, ziklag-lament + hebron-anointing built, branch `claude/focused-mccarthy-ybp2iz`, PR #42 draft)
 
 **Fable hit its monthly spend limit mid-session** (the very first `fable-architect` call this session errored with "You've hit your monthly spend limit"). Everything below (scope, all three briefs, and two of the three scene builds) was done by Sonnet under `docs/model-handoff.md`'s documented fallback policy and is marked **provisional** in `docs/fable-review-queue.md` #18 — it needs a real Fable pass before any M4 scene goes past `in-progress`. Do not treat any of these creative/scope calls as settled.
 

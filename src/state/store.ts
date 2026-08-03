@@ -28,6 +28,14 @@ interface AppState {
   showLabels: boolean;
   /** Deliberately deferred; kept in state so the UI can show it as "coming later". */
   theologicalCommentary: boolean;
+  /**
+   * Atlas page (divided-kingdom overlay, ADR-011): whether the soft
+   * allegiance-region shading is shown over the plotted locations. Purely a
+   * display preference for an optional affordance — dismissible/toggleable
+   * per ADR-011's "can still ignore it" test; the map's points stay visible
+   * either way.
+   */
+  showAllegianceShading: boolean;
 
   quality: QualityMode;
   navMode: NavMode;
@@ -61,6 +69,7 @@ interface AppState {
   setViolenceMode: (m: ViolenceMode) => void;
   /** Answers the first-visit violence advisory: sets the mode and marks it seen. */
   acknowledgeViolenceAdvisory: (m: ViolenceMode) => void;
+  toggleAllegianceShading: () => void;
 
   setScene: (id: string) => void;
   setTerrain: (terrain: Terrain) => void;
@@ -83,6 +92,7 @@ export const useAppStore = create<AppState>()(
       showScholarlyNotes: true,
       showLabels: true,
       theologicalCommentary: false,
+      showAllegianceShading: true,
 
       quality: 'balanced',
       navMode: 'inspect',
@@ -109,6 +119,8 @@ export const useAppStore = create<AppState>()(
       setViolenceMode: (violenceMode) => set({ violenceMode }),
       acknowledgeViolenceAdvisory: (violenceMode) =>
         set({ violenceMode, violenceAdvisorySeen: true }),
+      toggleAllegianceShading: () =>
+        set((s) => ({ showAllegianceShading: !s.showAllegianceShading })),
 
       setScene: (sceneId) =>
         set({ sceneId, timeSec: 0, playing: true, selectedEntityId: null, pendingTeleport: null }),
@@ -136,6 +148,7 @@ export const useAppStore = create<AppState>()(
         showSources: s.showSources,
         showScholarlyNotes: s.showScholarlyNotes,
         showLabels: s.showLabels,
+        showAllegianceShading: s.showAllegianceShading,
         quality: s.quality,
         violenceMode: s.violenceMode,
         violenceAdvisorySeen: s.violenceAdvisorySeen,

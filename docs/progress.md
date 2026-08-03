@@ -187,22 +187,50 @@ first-visit violence advisory is built (`src/ui/ViolenceAdvisory.tsx`,
 excerpt-budget check now also scans `SCENES[].beats[].caption`, not just
 `PASSAGES[].keyExcerpts`.
 
-## Milestone 4 — 2 Samuel 1–2: **in-progress** (2 of 3 scenes built 2026-07-22, provisional)
+## Milestone 4 — 2 Samuel 1–2: **released** (2026-08-02 Fable release pass)
 
-Fable hit its monthly spend limit mid-session; the scope decision, all
-three world-director briefs, and the scene builds below were done by
-Sonnet under `docs/model-handoff.md`'s fallback policy and are marked
-**provisional** (`docs/fable-review-queue.md` #18) pending a real Fable
-pass — no M4 scene should ship past `in-progress` until then.
+The scope decision, all three world-director briefs, and all three scene
+builds were done by Sonnet under `docs/model-handoff.md`'s Fable-unavailable
+fallback (2026-07-22). **The real Fable review ran 2026-08-02 and confirmed
+the entire package** (queue #18 → Resolved): the 3-scene breakdown, all three
+briefs' creative calls, and the builds' fidelity to them — approved as built,
+with two small content corrections applied at review (`gibeon-pool` retitled
+to name Abner/Joab rather than the never-staged Ish-bosheth; `ziklag-lament`'s
+`b-account` caption rephrased to contrast the messenger's story with "the
+narrative's own account" instead of asserting "how Saul actually died"). The
+Asahel-death restraint template was ratified into ADR-009 (§Named-character
+killings) as the standard for all future named-character killings.
 
-3-scene breakdown: `ziklag-lament` (2 Sam 1, **built**,
-`docs/design/ziklag-lament-brief.md`), `hebron-anointing` (2 Sam 2:1–7,
-**built**, `docs/design/hebron-anointing-brief.md`), `gibeon-pool` (2 Sam
-2:8–32, briefed, not yet built, `docs/design/gibeon-pool-brief.md`). The
-milestone's 4th goal (divided-kingdom political geography) was called as
-an atlas/map UI overlay rather than a 4th 3D scene, per ADR-011 — not yet
-built. New `gibeon` (settled identification) and `mahanaim` (disputed,
-narrated-only — no scene there) locations added.
+3-scene breakdown (confirmed): `ziklag-lament` (2 Sam 1), `hebron-anointing`
+(2 Sam 2:1–7), `gibeon-pool` (2 Sam 2:8–32, built 2026-08-02 session, commit
+`d810db3`+`edcade8` — pool-across-water tableau, literal 1:1 champions,
+Asahel death per the ADR-009 template, ~90–115 high-tier combat figures). The
+milestone's 4th goal (divided-kingdom political geography) is **confirmed as
+an atlas/map UI overlay, not a 4th 3D scene** — `ui-engineer` may proceed;
+design constraints (soft allegiance regions, no invented border lines,
+Mahanaim's dispute surfaced, schematic disclosure, toggleable) are in queue
+#18's resolution. New `gibeon` (settled identification) and `mahanaim`
+(disputed, narrated-only — no scene there) locations added.
+
+Release (2026-08-02 Fable release pass): queue **#19**'s four citation gates
+all closed the same day — (a) named Gill/Keil attributions on the
+messenger-account `scholarlyViews` plus a McCarter card, per the #17
+precedent; (b) live ESV wording check that caught and fixed a real 1:26
+caption error (budget re-verified, 249/500); (c) Tell Rumeida town-form
+closed as "checked, permanently thin" under the #13 permanent-evidentiary-
+state standard — three citable sources confirm the 11th–10th-century gap,
+so `claim-hebron-town-form`'s disclosed `design-placeholder` stands as the
+honest, releasable rendering; (d) the Gibeon pool's construction
+affirmatively dated Iron I/10th c. BCE (Pritchard + Tamburrini 2021),
+`claim-gibeon-pool-form` raised low → moderate. The divided-kingdom atlas
+overlay (`/atlas`, `AtlasPage`, `claim-divided-kingdom-atlas-overlay`) was
+verified landed before treating M4 complete. Cascade flipped together per
+the M2/M3 precedent: all three scenes, `M4`, `f-2sam` (→ `done`),
+`2sam-1`/`2sam-2`, and the `hebron`/`gibeon` locations → `released`; the
+`ziklag` location also flipped (both its scenes now released — closes an
+M1/M2-era oversight). `mahanaim` stays `planned` (never built, disputed
+site). Non-blocking riders carried forward: real-hardware perf check,
+Pages-live check, `TO VERIFY` pagination hedges.
 
 `ziklag-lament`: the project's first conversation-scale scene (~12 figures,
 not a crowd ratio); its hardest constraint — the Amalekite messenger's
