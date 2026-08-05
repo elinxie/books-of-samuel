@@ -208,7 +208,12 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.52, lon: 35.1, confidence: 'high' },
-    sceneIds: ['hebron-anointing'],
+    // hebron-covenant (M5) added 2026-08-05: same identified site, a few
+    // years later in the narrative — location status stays `released`
+    // (the site identification itself is unaffected by which scene visits
+    // it; hebron-covenant's own scene status is the thing that stays
+    // `in-progress` until a Fable pass).
+    sceneIds: ['hebron-anointing', 'hebron-covenant'],
     claimIds: [],
     // 2026-08-02 Fable M4 release pass: hebron-anointing → released (queue
     // #19c closed as "checked, permanently thin" — the Tell Rumeida town-form

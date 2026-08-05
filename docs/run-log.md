@@ -1331,3 +1331,61 @@ pass, recorded in briefs. Docs synced: next-run.md (new top state + build
 order: covenant → gate → reckoning → atlas), progress.md M5 section. No
 code/scene/claim changes; no verify run (data edit is one additive
 milestone entry; orchestrating session gates before merge).
+
+**2026-08-05 — Sonnet 5 — `hebron-covenant` build (M5, scene 1 of 3)**
+Merged the already-drafted PR #49 (M5 scope + three briefs, gate-green,
+clean) into `main` first, since it was sitting unmerged and blocking any
+build work. Then built `hebron-covenant` (2 Sam 3:1–21, staged from 3:20)
+per `docs/design/hebron-covenant-brief.md` via `threejs-engineer`: reuses
+`hebron-anointing`'s Hebron terrain/town/palette/layout constants verbatim
+(no re-invention), new `src/scenes/hebron-covenant/` (terrain/layout/poses/
+entities + 6 components + 3 test files, 21 new tests), 6 new claims
+(`claim-long-war`, `claim-abner-break`, `claim-abner-overture`,
+`claim-covenant-feast`, `claim-feast-form`, `claim-covenant-cast-scale`),
+3 new referenced-only characters (michal/paltiel/rizpah — never staged, per
+brief), `2sam-3` passage added (`in-progress`), `hebron` location's
+`sceneIds` extended, new `asset-feast-props`. Figure counts 57/68/77 across
+quality tiers — inside the brief's ≈60–80 high-tier target, smallest M5
+crowd by design. `depictsDeath: false`, no violence advisory. ESV budget:
+one quote used (3:21), rest of `2sam-3`'s budget reserved for `hebron-gate`
+per the brief. Scene status `in-progress` (not `released` — matches M3/M4
+precedent, gates on a later Fable M5 sign-off). Full gate green:
+format/lint/395 vitest (+21)/build/9-9 e2e, independently re-run by this
+orchestrating session, not just taken from the build agent's report.
+Dispatched archaeology/biblical-text/performance reviewers in parallel
+(results land in a follow-up commit if fixes are needed). Build-agent-
+flagged ambiguities (feast-ground placement, north-road course, beat
+timing, McCarter citation deferred pending researcher pass) are within the
+brief's disclosed-placeholder allowances — no queue item needed. Next:
+`hebron-gate`, then `hebron-reckoning`, then the `/atlas` M5 extension, per
+`docs/next-run.md`'s build order.
+
+**2026-08-05 — Sonnet 5 — `hebron-covenant` review pass (archaeology/biblical-text/performance)**
+Three parallel reviewers dispatched against the `hebron-covenant` build.
+**Archaeology: clean, no fixes** — feast material culture, dress reuse
+(no faction-coding), source citations, and figure-count disclosures all
+checked out. **Performance: 1 real fix applied** — `poses.ts`'s
+`curvePoint()` called `Curve.getPointAt`/`getTangentAt` with no target arg,
+allocating a fresh `Vector3` per call on the hot path (up to 21 figures ×
+2 allocs/frame during arrival/departure) — same bug class as the
+`jabesh-burial` fix (`c5aac8f`); hoisted to module-scope `tmpPos`/`tmpTan`
+scratch vectors. Two non-blocking notes left informational: `PartyFigures`
+rewrites instance color every frame instead of once (small, not an
+allocation); `davidEscortCount`/`townAmbientCount` use an inline
+quality-ternary rather than a `QualityProfile` field (ADR-004 literal
+deviation, but an existing unfixed precedent already lives at
+`ziklag-lament/ZiklagLamentScene.tsx:233` — flagged as a shared-interface
+question, not fixed here). **Biblical-text: 1 real fix applied** —
+`entities.ts` had two additional verbatim-ESV-style quotes
+(`ent-feast-ground`, `ent-abners-men`) beyond the one tracked `b-pledge`
+quote, exceeding the brief's "at most one quote" cap; rewritten as original
+summaries. **Systemic gap surfaced, not fixed this pass**:
+`integrity.test.ts`'s excerpt-budget scan only inspects
+`scene.beats[].caption`, not `entities.ts` descriptions — the same
+untracked-quote pattern already exists in already-released
+`hebron-anointing`/`gibeon-pool` entity descriptions. Extending the scan
+project-wide needs a deliberate pass (could push already-released scenes
+over budget) — flagged in `docs/next-run.md`, not fixed reflexively.
+`b-break`'s caption also omits the brief's "Ish-bosheth's fear" (3:11)
+beat element — left as a completeness note, not a fidelity error. Full gate
+re-run after all fixes: format/lint/395 vitest/build green.

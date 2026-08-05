@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; no build yet)
+## Milestone 5 — 2 Samuel 3–4: **in-progress** (`hebron-covenant` built 2026-08-05; `hebron-gate`/`hebron-reckoning`/atlas extension still to build)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
@@ -289,6 +289,23 @@ before release) listed in `docs/next-run.md`: McCarter coverage extension to
 Hebron water installations. No new fable-review-queue items — the contested
 staging calls were resolved in the 2026-08-03 Fable pass and recorded in the
 briefs; release gates open at the M5 review per M3/M4 precedent.
+
+**`hebron-covenant` built 2026-08-05 (Sonnet, `threejs-engineer`):**
+`status: 'in-progress'`, `depictsDeath: false` — the smallest M5 crowd by
+design. Reuses `hebron-anointing`'s terrain/town/palette/layout constants
+verbatim (no re-invention). 9-beat timeline (`b-long-war` through
+`b-close`); 3:1–19 stays context cards only, staged action is Abner's
+arrival/feast/pledge/peaceable departure (3:20–21). Abner's twenty men
+render literal 1:1 (`claim-covenant-cast-scale`); David's escort and town
+background are disclosed design counts. Figure totals 57/68/77
+(study/balanced/high) — inside the brief's ≈60–80 target. 6 new claims,
+3 new referenced-only characters (michal/paltiel/rizpah — text-only per the
+brief, never staged), `2sam-3` passage added (`in-progress`), new
+`asset-feast-props`. ESV budget: one quote spent (3:21), the rest of
+`2sam-3`'s budget reserved for `hebron-gate`. Full gate re-verified by the
+orchestrating session: format/lint/395 vitest/build/9-9 e2e green.
+Archaeology/biblical-text/performance reviewers dispatched; see
+`docs/run-log.md` for outcomes.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

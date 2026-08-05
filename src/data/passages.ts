@@ -70,6 +70,25 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M4',
     status: 'released',
   },
+  {
+    id: '2sam-3',
+    book: '2 Samuel',
+    chapter: 3,
+    reference: '2 Samuel 3',
+    translationAnchor: 'ESV',
+    summary:
+      'A long war between the houses of Saul and David; Abner, accused by Ish-bosheth over Rizpah, breaks with him and opens a covenant with David, securing Michal’s return and the elders’ consent. Abner comes to Hebron with twenty men, is received with a feast, pledges to bring all Israel to David, and is sent away in peace — before Joab returns and the story turns.',
+    // No keyExcerpts here: 2sam-3's ≤3-quote ESV budget is shared with
+    // hebron-gate and deliberately spent there (the lament needs it more,
+    // per the hebron-covenant brief's "Required source basis"). This scene
+    // itself uses at most one short quote, inside a beat caption only.
+    sceneIds: ['hebron-covenant'],
+    milestoneId: 'M5',
+    // hebron-covenant is M5's first scene to leave `planned`; status follows
+    // the M4 in-progress-per-scene-progress convention (confirmed at the
+    // 2026-08-02 Fable M4 review, see 2sam-2's history above).
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

@@ -3,7 +3,62 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+## State right now (2026-08-05, M5 build in progress — `hebron-covenant` built)
+
+**`hebron-covenant` (2 Sam 3:1–21) is built**, `status: 'in-progress'`,
+following `docs/design/hebron-covenant-brief.md`. Reuses `hebron-anointing`'s
+Hebron terrain/town/palette/layout constants verbatim. 6 new claims
+(`claim-long-war`, `claim-abner-break`, `claim-abner-overture`,
+`claim-covenant-feast`, `claim-feast-form`, `claim-covenant-cast-scale`), 3
+new referenced-only characters (michal/paltiel/rizpah, never staged),
+`2sam-3` passage added (`in-progress`), new `asset-feast-props`. Figure
+totals 57/68/77 across quality tiers (brief target ≈60–80 high-tier).
+`depictsDeath: false`. ESV budget: one quote spent (3:21), rest reserved for
+`hebron-gate`. Full gate green (format/lint/395 vitest/build/9-9 e2e),
+independently re-verified. Archaeology/biblical-text/performance reviewers
+dispatched in parallel this session — check `docs/run-log.md`'s latest entry
+for their outcomes before assuming this is fully clean; if this note wasn't
+updated with their findings, a follow-up commit may still be landing.
+
+**Review pass done (2026-08-05):** archaeology clean; performance found+
+fixed a real per-frame `Vector3`-allocation bug in `poses.ts`; biblical-text
+found+fixed 2 untracked verbatim-ESV quotes in `entities.ts` (exceeded the
+brief's 1-quote cap, invisible to `integrity.test.ts`'s budget scan since it
+only checks beat captions). **New, non-blocking systemic gap surfaced**:
+`integrity.test.ts`'s excerpt-budget scan doesn't cover `entities.ts`
+descriptions anywhere in the project — the same untracked-quote pattern
+already exists in released `hebron-anointing`/`gibeon-pool` entity
+descriptions. Extending the scan project-wide is a deliberate follow-up (not
+done reflexively here since it could retroactively flag already-released
+scenes as over budget) — do this as ordinary Sonnet engineering work, no
+Fable needed, but budget time to check what it turns up before assuming
+released scenes stay compliant.
+
+**What's next (Sonnet), in priority order:**
+
+0. **(New, non-blocking)** Extend `integrity.test.ts`'s ESV excerpt-budget
+   scan to cover `entities.ts` descriptions project-wide, not just
+   `scene.beats[].caption`; audit `hebron-anointing`/`gibeon-pool` entity
+   descriptions for the same untracked-quote pattern found in
+   `hebron-covenant` and fix any that exceed budget once counted.
+1. **Build `hebron-gate`** (2 Sam 3:22–39) per
+   `docs/design/hebron-gate-brief.md` — the milestone's load-bearing scene,
+   2nd application of ADR-009's named-character-killing template (Abner
+   killed by Joab in the gate). Reuse `hebron-covenant`'s Hebron continuity;
+   spend the rest of `2sam-3`'s ESV quote budget here (`hebron-covenant`
+   only used one of three).
+2. Build `hebron-reckoning` (2 Sam 4) per
+   `docs/design/hebron-reckoning-brief.md`.
+3. `/atlas` M5 phase extension (2 Sam 3–4 long-war trend/northern collapse) —
+   `ui-engineer`, small.
+4. `researcher` pass on the four M5 gap clusters (McCarter extension, Herzog
+   gate typology, King-Stager feast/mourning material, Hebron water
+   installations) — parallelizable, doesn't block builds.
+5. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + Pages-live check — see Environment notes.
+6. Fable M5 sign-off review before any status flips past `in-progress`.
+
+## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
 **M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
 (reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`
