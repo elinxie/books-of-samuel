@@ -89,6 +89,25 @@ export const MILESTONES: Milestone[] = [
       'Early divided-kingdom political geography — built as an atlas/map UI overlay (`/atlas`, `AtlasPage`), not a 4th 3D scene, per the 2026-08-02 Fable review',
     ],
   },
+  {
+    id: 'M5',
+    label: 'Milestone 5 — 2 Samuel 3–4',
+    // 2026-08-03 Fable scope pass: 2 Sam 3 and 4 bundled into one milestone
+    // (M4 precedent): 4 alone is too thin to stand — its murder site is the
+    // unbuildable, disputed Mahanaim, leaving only the Hebron judgment
+    // stageable — and 3–4 form one narrative unit (the collapse of the house
+    // of Saul, closing at 4:12) with all staged action at the already-built
+    // Hebron. Three scenes + an atlas extension; briefs in docs/design/
+    // (hebron-covenant, hebron-gate, hebron-reckoning). M6 starts at 2 Sam 5.
+    status: 'planned',
+    passageRefs: ['2 Samuel 3', '2 Samuel 4'],
+    goals: [
+      'Abner’s overture and the covenant feast at Hebron (`hebron-covenant`)',
+      'Joab’s killing of Abner at the Hebron gate; David’s disavowal, the funeral, and the lament (`hebron-gate`) — second application of ADR-009’s named-character-killing template',
+      'Ish-bosheth’s assassination (narrated only — no Mahanaim geometry) and David’s judgment on Rechab and Baanah at Hebron (`hebron-reckoning`)',
+      'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

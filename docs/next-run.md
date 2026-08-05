@@ -3,7 +3,77 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-02, M4 RELEASED — Fable release pass, branch `claude/focused-mccarthy-n2fea6`)
+## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+
+**M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
+(reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`
+2026-08-03): chapters 3 and 4 bundled (M4 precedent — ch. 4 alone is too
+thin since its murder site is the unbuildable Mahanaim; 3–4 are one
+narrative unit ending the house of Saul at 4:12; all staged action shares
+the already-built Hebron). **Three scenes, all at Hebron, + one atlas
+extension (no 4th scene):**
+
+1. `hebron-covenant` — 2 Sam 3:1–21 (staged from 3:20): Abner's twenty-man
+   delegation, the feast, "he went in peace." `depictsDeath: false`.
+   Brief: `docs/design/hebron-covenant-brief.md`.
+2. `hebron-gate` — 2 Sam 3:22–39: the recall, the killing in the midst of
+   the gate (2nd application of ADR-009 §Named-character killings), David's
+   disavowal/curse, funeral procession, lament, fast. The milestone's
+   load-bearing scene. Brief: `docs/design/hebron-gate-brief.md`.
+3. `hebron-reckoning` — 2 Sam 4: murder narrated by cards only (no Mahanaim
+   geometry), assassins' arrival, David's judgment (the text's own
+   `ziklag-lament` twin, 4:10), execution + burial in Abner's tomb.
+   Hands-and-feet display is caption-only, absolutely (ADR-009
+   dismemberment bar); the head renders only as a covered bundle.
+   Brief: `docs/design/hebron-reckoning-brief.md`.
+4. Atlas extension (`ui-engineer`, small): `/atlas` gains the 2 Sam 3–4
+   phase — the long-war trend (3:1) and the northern house's collapse —
+   same soft-region/no-borders constraints as the M4 overlay.
+
+**Build order for Sonnet: `hebron-covenant` first** (cheapest, no death,
+establishes the Hebron-continuity/asset-reuse pattern the other two depend
+on), then `hebron-gate`, then `hebron-reckoning`, then the atlas extension.
+Same discipline as M3/M4: scenes stay out of `scenes.ts` until built;
+claims/characters/passages (`2sam-3`, `2sam-4`) created at build time per
+each brief's Required source basis; passage status → `in-progress` when its
+first scene leaves `planned` (confirmed convention). Hard continuity rule
+in all three briefs: reuse `hebron-anointing`'s Hebron palette/massing/
+layout constants — do not re-invent the town.
+
+**Known researcher gaps flagged by the briefs (fold into a `researcher`
+pass; none block the builds, all gate named attributions before release):**
+
+- Extend `mccarter-1984-ii-samuel` coverage to 2 Sam 3–4: the
+  Davidic-apologia reading (`claim-public-response` scholarlyViews), the 4:6
+  MT/LXX entry divergence (`claim-ish-bosheth-assassination`), the
+  refuge-city (Josh 20:7) irony note (omit entirely if no citation lands),
+  and the Abner-killing motive views.
+- Extend `herzog-1997` with a checkable gate-typology citation if
+  `claim-hebron-gate-form` is to move past pure `design-placeholder`.
+- Check `king-stager-2001` for feasting/meal material culture
+  (`claim-feast-form` upgrade path) and mourning/burial customs.
+- Iron Age water installations at Hebron for `claim-hebron-pool-feature`
+  (likely permanently thin — Birket es-Sultan explicitly not adoptable).
+
+No new fable-review-queue items opened: the contested calls (Michal/Paltiel
+text-only, deception staged literally-and-minimally, apologia dispute as
+scholarlyViews, dismemberment handling) were resolved in this Fable pass and
+are recorded in the briefs. Release-gate queue items get opened at the M5
+review, per the M3/M4 pattern.
+
+**What's next (Sonnet), in priority order:**
+
+1. Build `hebron-covenant` per its brief (`threejs-engineer`).
+2. Build `hebron-gate`, then `hebron-reckoning`, per their briefs.
+3. Atlas `/atlas` M5 phase extension (`ui-engineer`).
+4. `researcher` pass on the four gap clusters above (parallelizable;
+   doesn't block builds).
+5. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + Pages-live check — see Environment notes.
+6. Then a Fable M5 sign-off review before any status flips past
+   `in-progress`.
+
+## State before this slice (2026-08-02, M4 RELEASED — Fable release pass, branch `claude/focused-mccarthy-n2fea6`)
 
 **M4 is fully released.** The 2026-08-02 Fable release pass confirmed queue
 #19's four citation closures as sufficient (full reasoning in
