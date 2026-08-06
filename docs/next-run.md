@@ -3,7 +3,54 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+## State right now (2026-08-06, M5 scene 1/3 built — `hebron-covenant`, branch `claude/focused-mccarthy-u0d9p9`)
+
+**`hebron-covenant` (2 Sam 3:1–21, staged from 3:20) is built** (Sonnet/
+`threejs-engineer`, this session): `status: 'in-progress'`, `depictsDeath:
+false`, 9 beats (4 card-only, 5 staged), 4 viewpoints, ~66 high-tier
+figures. Reuses `hebron-anointing`'s terrain/town/vegetation unchanged. 6
+new claims, 3 new referenced-only characters (`michal`/`paltiel`/`rizpah`),
+`2sam-3` passage created `in-progress`. Full detail: `docs/run-log.md`'s
+2026-08-06 entry. Full gate independently re-verified by the orchestrating
+session (not just the build agent's own report): format/lint/396 vitest
+(+23 new)/build/9-9 e2e all green.
+
+**One flagged judgment call, non-blocking, worth a look at the M5 Fable
+review:** the feast is staged as two facing sides (Abner's/David's),
+echoing `gibeon-pool`'s champions-across-the-pool visual grammar as a
+deliberate thematic callback — not brief-specified, the build agent's own
+compositional choice.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Build `hebron-gate`** (2 Sam 3:22–39) per
+   `docs/design/hebron-gate-brief.md` — `threejs-engineer`, same pattern as
+   above. The milestone's load-bearing scene: the recall, the killing in the
+   midst of the gate (ADR-009 named-character-killing template, 2nd
+   application), David's disavowal/curse, funeral procession, lament, fast.
+   Spend the remaining `2sam-3` ESV quote budget here (this scene's brief
+   assumes it, `hebron-covenant` only used one quote). Joab appears here for
+   the first time in M5 — he was deliberately absent from `hebron-covenant`.
+2. Then `hebron-reckoning` (2 Sam 4) per its brief — murder narrated by
+   cards only, no Mahanaim geometry, head as covered bundle only (ADR-009
+   dismemberment bar).
+3. Then the `/atlas` M5 phase extension (`ui-engineer`, small) — the
+   long-war trend (3:1) and the northern house's collapse.
+4. `researcher` pass on the four gap clusters below (parallelizable,
+   doesn't block builds): McCarter coverage extension to 2 Sam 3–4 (now
+   also needed for `claim-abner-break`'s hedged "commonly noted by
+   commentators" citation, added by `hebron-covenant`), Herzog gate
+   typology (needed before `hebron-gate`'s `claim-hebron-gate-form` can move
+   past `design-placeholder`), King & Stager feasting/mourning material
+   (checked narrowly for `hebron-covenant`'s `claim-feast-form` — only the
+   cataloged summary, not a deeper page-level check; still open), Hebron
+   water installations (likely permanently thin).
+5. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + Pages-live check — see Environment notes.
+6. Then a Fable M5 sign-off review before any status flips past
+   `in-progress` — fold in the feast-staging judgment call above.
+
+## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
 **M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
 (reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`

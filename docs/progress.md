@@ -290,6 +290,20 @@ Hebron water installations. No new fable-review-queue items — the contested
 staging calls were resolved in the 2026-08-03 Fable pass and recorded in the
 briefs; release gates open at the M5 review per M3/M4 precedent.
 
+**`hebron-covenant` built 2026-08-06 (Sonnet):** 2 Sam 3:1–21 (staged from
+3:20), `status: 'in-progress'`, `depictsDeath: false`. Reuses
+`hebron-anointing`'s terrain/town/vegetation unchanged; 9 beats (4
+card-only for 3:1–19, 5 staged), 4 viewpoints, ~66 high-tier figures
+(Abner's 21 men literal 1:1, smallest M5 cast). 6 new claims, 3 new
+referenced-only characters (`michal`/`paltiel`/`rizpah`, no geometry),
+`2sam-3` passage created `in-progress` (shared ESV budget with
+`hebron-gate`, this scene spent one quote). Hard scope guards (no Joab/
+Michal/Paltiel/Rizpah/Mahanaim/Bahurim geometry, no 3:22+/5+ content)
+verified by grep and a dedicated test. Full gate re-verified green
+(format/lint/396 vitest/build/9-9 e2e). See `docs/run-log.md` for full
+detail and one flagged compositional judgment call (feast staged as two
+facing sides, echoing `gibeon-pool`'s visual grammar).
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

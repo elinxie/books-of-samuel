@@ -70,6 +70,21 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M4',
     status: 'released',
   },
+  {
+    id: '2sam-3',
+    book: '2 Samuel',
+    chapter: 3,
+    reference: '2 Samuel 3',
+    translationAnchor: 'ESV',
+    summary:
+      'A long war between the houses of Saul and David goes David’s way. Abner, Saul’s commander, breaks with Ish-bosheth over an accusation involving Rizpah, opens negotiations with David on condition of Michal’s return, and secures the elders’ consent before coming to Hebron himself with twenty men. David receives him with a feast; Abner pledges to bring all Israel over to David — and departs in peace, not yet knowing what Joab will do. Shared with hebron-gate (3:22 onward), the next scene in Milestone 5.',
+    // Passage created at build time for hebron-covenant (docs/next-run.md's
+    // confirmed convention: status -> in-progress as soon as its first scene
+    // leaves 'planned', rather than sitting at 'planned' first).
+    sceneIds: ['hebron-covenant'],
+    milestoneId: 'M5',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

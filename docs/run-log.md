@@ -1331,3 +1331,35 @@ pass, recorded in briefs. Docs synced: next-run.md (new top state + build
 order: covenant → gate → reckoning → atlas), progress.md M5 section. No
 code/scene/claim changes; no verify run (data edit is one additive
 milestone entry; orchestrating session gates before merge).
+
+**2026-08-06 — Sonnet 5 — `hebron-covenant` build (M5, scene 1 of 3)**
+Built per `docs/design/hebron-covenant-brief.md` (`threejs-engineer`
+subagent), independently re-verified by the orchestrating session (not
+just taken from the build report): format/lint/396 vitest (+23 new)/
+build/9-9 e2e all green. New scene folder `src/scenes/hebron-covenant/`:
+reuses `hebron-anointing`'s `TerrainSpec`/`TownAndPlaza`/`TerraceWalls`/
+`Vegetation` unmodified (same Hebron, a few years later — no re-invention),
+owns only what's new (`NORTH_ROAD_CURVE`, feast-ground/side layout,
+Abner-party/David-escort/town-background crowd slots, pure ADR-007 pose
+functions). 9 beats (4 card-only for 3:1–19, 5 staged for 3:20–21), 4
+viewpoints (`vp-north-road` default, `vp-feast`, `vp-gate-plaza`,
+`vp-departure`). ~66 figures at high tier (Abner's 21 literal 1:1 + ~21
+David's-side escort + ~25 town background) — smallest M5 scene by design.
+6 new claims (`claim-long-war`, `claim-abner-break`, `claim-abner-overture`,
+`claim-covenant-feast`, `claim-feast-form` [stays `design-placeholder`,
+`king-stager-2001`'s cataloged summary checked, no feasting material
+found — not a deeper page-level check], `claim-covenant-cast-scale`);
+`michal`/`paltiel`/`rizpah` added as referenced-only characters (no
+geometry); `2sam-3` passage created, `status: 'in-progress'` (shared with
+the not-yet-built `hebron-gate` — this scene spent only one ESV quote of
+the shared budget, per the brief's instruction to save the rest). Hard
+scope guards verified by grep, not just trusted: no Joab/Michal/Paltiel/
+Rizpah/Mahanaim/Bahurim geometry anywhere (a dedicated pose test also
+guards this); no 2 Sam 3:22+ or 5+ content; departure beat (`b-peace`)
+plays straight, no dread staging. One build-agent judgment call flagged
+for a later look: staging the feast as two facing sides (Abner's/David's)
+deliberately echoes `gibeon-pool`'s champions-across-the-pool visual
+grammar as a thematic callback — not brief-specified, a compositional
+choice worth a second opinion. Scene `status: 'in-progress'`,
+`depictsDeath: false`. Next: `hebron-gate` (per `docs/next-run.md` build
+order).

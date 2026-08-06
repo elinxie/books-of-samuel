@@ -163,6 +163,37 @@ provisional brief, Fable-unavailable fallback, tracked at
 excavated pool/tunnel predate or postdate the early Iron IIA setting of
 2 Samuel 2?), already tracked in `docs/next-run.md`.
 
+## Current placeholders (hebron-covenant scene, Milestone 5, built 2026-08-06, PROVISIONAL)
+
+First and cheapest M5 scene by design: Abner's twenty men rendered literally
+1:1 (2 Sam 3:20's own exact count), David's escort and the town background at
+disclosed design-choice scales deliberately far below hebron-anointing's
+150-200-figure civic assembly (~66 figures total at high tier — 21 Abner's
+party, 20 David's escort, 25 town background), and the first scene to reuse
+another scene's terrain/town massing wholesale (Judean-highland
+`HEBRON_TERRAIN`, `TownAndPlaza`/`TerraceWalls`/`Vegetation` all imported
+directly from `hebron-anointing`, unmodified) rather than re-deriving it. Only
+2 Sam 3:20-21 renders as geometry; 3:1-19 is context-card material only — no
+Rizpah, Michal, Paltiel, Mahanaim, or Bahurim geometry anywhere, and no Joab
+presence (the text states he was away, 3:22 — his return belongs to
+`hebron-gate`, not yet built).
+
+| Asset               | Represents                                                                  | Why temporary                                                                                                                                                                                                | Replace at |
+| ------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| `asset-feast-props` | The open-air meal David prepares for Abner and his men — `claim-feast-form` | Primitive instanced mat (flat box) and vessel (simple cylinder) geometry, disclosed and fixed-count (not quality-scaled); 2 Sam 3:20 narrates only that a feast was made, not its furnishing or vessel forms | M5         |
+
+Reuses `asset-terrain-hebron-hills`, `asset-hebron-town-form`,
+`asset-terrace-walls`, `asset-figure-procedural`, `asset-david-marker`,
+`asset-olive-tree`, and `asset-rocks` — no new records for these; Hebron's
+town-form placeholder stays at its already-released fidelity, not upgraded or
+re-argued by this scene. This scene's status stays `in-progress`
+(`docs/design/hebron-covenant-brief.md` is a Fable-authored world-director
+brief, 2026-08-03) pending a Fable M5 sign-off review before it can ship
+`released`. `claim-feast-form` stays `design-placeholder`: checked
+`king-stager-2001` for citable feasting/meal material culture at the
+cataloged-summary level this build and did not find it — a fuller page-level
+researcher pass is still open (`docs/next-run.md`).
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the
@@ -204,6 +235,12 @@ gate, per ADR-011.
   goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
   section above) — the wider `f-overview-map` feature (Philistia/Amalekite
   fringe too) stays a separate, still-`planned` future scope.
+- **M5 (2 Sam 3–4):** first scene, `hebron-covenant`, built 2026-08-06 (see
+  table above) — the cheapest and first-built of the milestone's three Hebron
+  scenes, establishing the Hebron-continuity/asset-reuse pattern
+  `hebron-gate` and `hebron-reckoning` are expected to follow. Still
+  `in-progress` pending those two scenes, the `/atlas` M5 extension, and a
+  Fable M5 sign-off review.
 
 ## Policy
 

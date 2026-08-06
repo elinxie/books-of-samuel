@@ -1283,6 +1283,142 @@ export const SCENES: SceneDef[] = [
       'asset-rocks',
     ],
   },
+  {
+    id: 'hebron-covenant',
+    title: 'Hebron — Abner’s overture and the covenant feast',
+    passageIds: ['2sam-3'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    status: 'in-progress',
+    synopsis:
+      'The civil war between the houses of Saul and David ends not by battle but by defection: Abner, the man who made Ish-bosheth king, breaks with him, opens negotiations with David, and comes to Hebron with twenty men. David receives him with a feast; Abner pledges to bring all Israel over to David — and is dismissed in peace, not yet knowing what Joab will do.',
+    depictsDeath: false,
+    durationSec: 168,
+    beats: [
+      {
+        id: 'b-long-war',
+        timeSec: 0,
+        title: 'The long war',
+        caption:
+          'A long war follows between the house of Saul and the house of David. David grows steadily stronger; the house of Saul grows weaker. Six sons are born to David at Hebron — among them, in time, Amnon and Absalom, though the text says nothing more about them here. (2 Samuel 3:1–5)',
+        passageRef: '2 Samuel 3:1–5',
+      },
+      {
+        id: 'b-break',
+        timeSec: 18,
+        title: 'Abner breaks with the house of Saul',
+        caption:
+          'Ish-bosheth accuses Abner of going in to Rizpah, Saul’s concubine — an accusation carrying a claim on the throne itself, in the period’s political logic. The text never says whether it was true. Stung, Abner swears to transfer the kingdom to David, naming the whole span of the land, from Dan to Beersheba. Not shown: Mahanaim, where this exchange happens, and Rizpah herself, referenced only. (2 Samuel 3:6–11)',
+        passageRef: '2 Samuel 3:6–11',
+      },
+      {
+        id: 'b-overture',
+        timeSec: 36,
+        title: 'Terms: give me back my wife Michal',
+        caption:
+          'Abner sends messengers proposing a covenant. David’s one condition: the return of Michal, his first wife, given to another man during his exile. She is taken from Paltiel, who follows her weeping as far as Bahurim before Abner sends him home. Not shown: the transfer itself, or Paltiel’s grief — both an unbuilt or unlocated site, carried here by caption alone. (2 Samuel 3:12–16)',
+        passageRef: '2 Samuel 3:12–16',
+      },
+      {
+        id: 'b-elders',
+        timeSec: 54,
+        title: 'Word to the elders',
+        caption:
+          'Before coming to Hebron himself, Abner speaks to the elders of Israel and to the tribe of Benjamin — securing the north’s own consent to the move he is about to make. (2 Samuel 3:17–19)',
+        passageRef: '2 Samuel 3:17–19',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 68,
+        title: 'Abner and the twenty come up the northern road',
+        caption:
+          'Abner comes to David at Hebron, with twenty men — the deliberate inverse of David’s own approach from the south, years before: this time the north comes to him. They are received in peace. (2 Samuel 3:20a)',
+        passageRef: '2 Samuel 3:20a',
+      },
+      {
+        id: 'b-feast',
+        timeSec: 100,
+        title: 'A feast is made',
+        caption:
+          'David makes a feast for Abner and the men with him — an open-air meal, not a banquet hall. The observer who walked the pool of Gibeon should recognize this man: the same Abner who killed Joab’s brother Asahel there. David receives him anyway — statecraft, not vendetta, is the business of this table. (2 Samuel 3:20b)',
+        passageRef: '2 Samuel 3:20b',
+      },
+      {
+        id: 'b-pledge',
+        timeSec: 122,
+        title: 'I will bring all Israel to you',
+        caption:
+          'Abner pledges to gather all Israel to David in covenant, "that you may reign over all that your heart desires." The house of Judah alone, anointed years ago at this same town, is about to become something much larger. (2 Samuel 3:21a)',
+        passageRef: '2 Samuel 3:21a',
+      },
+      {
+        id: 'b-peace',
+        timeSec: 136,
+        title: 'He went in peace',
+        caption:
+          'David sends Abner away, and he goes in peace — back up the same northern road, unhurried, watched, under safe-conduct. The narrative repeats this three times before it says anything else. (2 Samuel 3:21b)',
+        passageRef: '2 Samuel 3:21b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 160,
+        title: 'Not yet the end of it',
+        caption:
+          'Not shown: Joab, away on a raid throughout this scene (3:22), has not yet returned to Hebron. What happens next, at this same gate, is a different scene — hebron-gate.',
+        passageRef: '2 Samuel 3:22–39',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-north-road',
+        label: 'The northern road (default)',
+        position: [16, 26, -230],
+        lookAt: [-4, 12, -70],
+      },
+      {
+        id: 'vp-feast',
+        label: 'The feast ground',
+        position: [46, 2.4, -20],
+        lookAt: [26, 1.6, -28],
+      },
+      {
+        id: 'vp-gate-plaza',
+        label: 'The gate plaza',
+        position: [16, 2, -28],
+        lookAt: [0, 3, -18],
+      },
+      {
+        id: 'vp-departure',
+        label: 'The departure road',
+        position: [10, 4, -30],
+        lookAt: [-10, 6, -180],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-judah-anointing',
+      'claim-long-war',
+      'claim-abner-break',
+      'claim-abner-overture',
+      'claim-covenant-feast',
+      'claim-feast-form',
+      'claim-covenant-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-feast-props',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));
