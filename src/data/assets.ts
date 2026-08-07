@@ -615,6 +615,40 @@ export const ASSETS: AssetRecord[] = [
       'Comparative ANE bier/litter form, if a specific type is ever sourced; currently an abstract, undetailed carrying frame by design, matching asset-bier-props’ (jabesh-burial) precedent.',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-hebron-pool-basin',
+    name: 'Pool of Hebron basin depression',
+    represents: 'The pool of Hebron named at 2 Samuel 4:12 — see claim-hebron-pool-feature',
+    placeholder: true,
+    whyTemporary:
+      'A shallow, flat-floored radial depression (the `basin` TerrainFeature kind, engine/terrain.ts, reused unchanged from gibeon-pool), modest and disclosed dimensions — not a reconstruction of any excavated or securely dated Hebron water installation. The extant "Birket es-Sultan" pool in modern Hebron is deliberately not adopted as site or form.',
+    historicalRequirements:
+      'A researcher pass finding a citable, dated treatment of Iron Age water installations at Hebron specifically, then a terrain feature matched to real dimensions if one is ever found.',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-hebron-pool-water',
+    name: 'Flat water-surface plane (pool of Hebron)',
+    represents: 'The water surface of the pool of Hebron — see claim-hebron-pool-feature',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally-lit tinted disc over the basin floor — no reflection, refraction, or animated ripple shader, matching the declined-water-shader precedent from gilboa-battle/jabesh-burial/gibeon-pool (asset-water-plane).',
+    historicalRequirements:
+      'A dedicated water/reflection rendering system, if the engine ever adds one; purely a rendering-fidelity upgrade, not a historical claim.',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-head-bundle',
+    name: 'Covered head bundle',
+    represents:
+      'The head of Ish-bosheth, presented to David and buried in Abner’s tomb (2 Samuel 4:8, 12b) — see claim-david-judgment',
+    placeholder: true,
+    whyTemporary:
+      'The project’s existing honest funerary standard (buildWrappedFormGeometry, reused unchanged from Beth-shan/Jabesh-gilead/hebron-gate) at its smallest scale yet (src/scenes/hebron-reckoning/HeadBundle.tsx) — an anatomically unresolved, bound-cloth silhouette, never a head, face, or any anatomical feature, in either violence mode. ADR-009 permanently bans anatomical detail for this content in any mode, so no future fidelity upgrade may add it; only cloth/weathering fidelity can improve.',
+    historicalRequirements:
+      'None beyond improved cloth/weathering surface fidelity — the no-anatomy constraint is permanent, not a placeholder gap.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

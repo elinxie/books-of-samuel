@@ -105,6 +105,44 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M5',
     status: 'in-progress',
   },
+  {
+    id: '2sam-4',
+    book: '2 Samuel',
+    chapter: 4,
+    reference: '2 Samuel 4',
+    translationAnchor: 'ESV',
+    summary:
+      'News of Abner’s death breaks Ish-bosheth’s courage. Two of his own captains, Rechab and Baanah, assassinate him in his own house at noon rest and carry his head by night to Hebron, expecting reward. David answers by recalling his own execution of the messenger who once claimed credit for killing Saul, judges the two as wicked men who killed a righteous man in his own house on his bed, has them executed and their hands and feet displayed beside the pool of Hebron, and buries Ish-bosheth’s head in Abner’s tomb — the house of Saul’s last king dead and buried at the same ground, without David’s hand in it.',
+    // '2sam-4' committed 2026-08-07 (Sonnet, threejs-engineer, per
+    // hebron-reckoning brief) as this milestone's third and final passage —
+    // hebron-reckoning is the sole scene that spends this passage's ESV
+    // excerpt budget. Exact ESV wording could not be re-verified against a
+    // live source at this build time (WebFetch against esv.org returns
+    // EGRESS_BLOCKED — a network proxy policy block in this sandbox, not a
+    // tool-availability gap): both excerpts below are transcribed from the
+    // agent's own trained knowledge of the ESV text, cross-checked internally
+    // for consistency, not from a live fetch. Same known deviation from the
+    // #19b lesson's live-source-check instruction already flagged on
+    // '2sam-3'; flagged here too for a citation-verification pass before this
+    // scene ships `released`. The 4:11 excerpt is rendered as the complete
+    // verse (a full rhetorical question) rather than the brief's suggested
+    // "4:11a" partial clause, which would end on a dangling comma as a
+    // stand-alone quote — an implementer's legibility choice, not a wording
+    // change; both readings stay well inside the excerpt budget below.
+    keyExcerpts: [
+      {
+        verse: '2 Samuel 4:10',
+        text: 'when one told me, “Behold, Saul is dead,” and thought he was bringing good news, I seized him and killed him at Ziklag.',
+      },
+      {
+        verse: '2 Samuel 4:11',
+        text: 'How much more, when wicked men have killed a righteous man in his own house on his bed, shall I not now require his blood at your hand and destroy you from the earth?',
+      },
+    ],
+    sceneIds: ['hebron-reckoning'],
+    milestoneId: 'M5',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

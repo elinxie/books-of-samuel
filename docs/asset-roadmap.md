@@ -186,6 +186,27 @@ application of ADR-009's named-character-killing template (first:
 mode — the strike itself is staged only as Abner's own collapse transform, the
 same convention as Asahel's death and Gilboa's fallen figures.
 
+## Current placeholders (hebron-reckoning scene, Milestone 5, built 2026-08-07)
+
+| Asset                     | Represents                                          | Why temporary                                                                                                                       | Replace at                                                                     |
+| ------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `asset-hebron-pool-basin` | The pool of Hebron basin depression (2 Sam 4:12)    | Shallow basin `TerrainFeature`, reused from `gibeon-pool`'s convention; not the extant "Birket es-Sultan" pool in modern Hebron     | M5 (upgrade path via a researcher pass on Iron Age Hebron water installations) |
+| `asset-hebron-pool-water` | The pool's flat water surface                       | Single flat, minimally-lit tinted disc; no reflection/refraction shader, matching the gilboa/jabesh/gibeon precedent                | M5 (rendering-fidelity only, not a historical claim)                           |
+| `asset-head-bundle`       | Ish-bosheth's head, presented and buried (4:8, 12b) | `buildWrappedFormGeometry` at its smallest scale yet — a covered, anatomically unresolved bundle, never a head or face, in any mode | M5 (cloth/weathering fidelity only — the no-anatomy constraint is permanent)   |
+
+Third and last M5 scene; reuses `hebron-anointing`'s terrain/town/terrace/
+vegetation assets and `hebron-gate`'s exact tomb placement/form directly (no
+new placeholders for either) — hard continuity rule per the brief, "the same
+tomb, days apart." Third application of ADR-009's named-character-killing
+template (first: `gibeon-pool`; second: `hebron-gate`), the first as a
+judicial act, and the project's first trigger of ADR-009's absolute
+dismemberment bar: the hands-and-feet display (4:12a) renders as caption text
+only, in every mode — no geometry, wrapped or otherwise, stands in for it,
+unlike Beth-shan's whole-body display forms. No gesture of any kind is
+invented for the execution strike (the text gives no method detail); Rechab
+and Baanah's own collapse is the only transform the execution produces, the
+same convention as Abner's/Asahel's/the Ziklag messenger's.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the

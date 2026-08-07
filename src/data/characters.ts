@@ -6,13 +6,14 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David',
     kind: 'person',
     summary:
-      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron he receives Abner — the man who killed Asahel at Gibeon — at his own table anyway, making the return of his wife Michal a condition of Abner’s overture (2 Samuel 3:12–21). When Joab kills Abner at the city’s own gate, David publicly disavows the killing, curses Joab’s house, commands the mourning, and walks behind the bier himself — the narrative’s own insistence that "it had not been the king’s will" (2 Samuel 3:22–39).',
+      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron he receives Abner — the man who killed Asahel at Gibeon — at his own table anyway, making the return of his wife Michal a condition of Abner’s overture (2 Samuel 3:12–21). When Joab kills Abner at the city’s own gate, David publicly disavows the killing, curses Joab’s house, commands the mourning, and walks behind the bier himself — the narrative’s own insistence that "it had not been the king’s will" (2 Samuel 3:22–39). When Rechab and Baanah bring him Ish-bosheth’s head expecting reward, David answers by recalling his own execution of the Amalekite messenger at Ziklag, judges the two "wicked men" for killing "a righteous man in his own house on his bed," has them executed, and buries the head in Abner’s tomb — the house of Saul’s last king dead and buried without David’s hand in it, on David’s own repeated insistence (2 Samuel 4:9–12).',
     passageRefs: [
       '1 Samuel 27',
       '1 Samuel 30',
       '2 Samuel 2',
       '2 Samuel 3:12–21',
       '2 Samuel 3:22–39',
+      '2 Samuel 4:9–12',
     ],
     claimIds: [
       'claim-david-historical',
@@ -20,6 +21,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'claim-david-disavowal',
       'claim-abner-funeral',
       'claim-public-response',
+      'claim-david-judgment',
     ],
   },
   {
@@ -177,9 +179,41 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Ish-bosheth',
     kind: 'person',
     summary:
-      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool. Later accuses Abner of going in to Rizpah, Saul’s concubine — an accusation the narrative states but never adjudicates — and, fearing Abner, says nothing further; referenced only (never staged) in hebron-covenant (2 Samuel 3:6–11).',
-    passageRefs: ['2 Samuel 2:8–10', '2 Samuel 3:6–11'],
-    claimIds: ['claim-ish-bosheth-installed', 'claim-abner-break'],
+      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool. Later accuses Abner of going in to Rizpah, Saul’s concubine — an accusation the narrative states but never adjudicates — and, fearing Abner, says nothing further; referenced only (never staged) in hebron-covenant (2 Samuel 3:6–11). His own courage fails at the news of Abner’s death; two of his own captains, Rechab and Baanah, kill him in his own house at noon rest and carry his head to Hebron. Referenced only in hebron-reckoning as well — never staged as a figure, per the project’s standing rule against building the disputed, unlocated site of his own house at Mahanaim; his death and his head’s eventual burial in Abner’s tomb are carried entirely by caption text (2 Samuel 4:1–12).',
+    passageRefs: ['2 Samuel 2:8–10', '2 Samuel 3:6–11', '2 Samuel 4:1–12'],
+    claimIds: [
+      'claim-ish-bosheth-installed',
+      'claim-abner-break',
+      'claim-ish-bosheth-assassination',
+      'claim-david-judgment',
+    ],
+  },
+  {
+    id: 'rechab',
+    name: 'Rechab son of Rimmon',
+    kind: 'person',
+    summary:
+      'One of Ish-bosheth’s own captains of raiding bands, a Beerothite (Beeroth is reckoned to Benjamin, though its people had fled to Gittaim). With his brother Baanah, enters Ish-bosheth’s house while he lies resting at noon, kills him, beheads him, and carries the head by night down the Arabah to Hebron, presenting it to David as proof the LORD had avenged him on Saul’s line. David judges the killing itself, not any doubt that it happened, and has both men executed — their hands and feet cut off and hung beside the pool at Hebron, stated in caption text only, never rendered as geometry (2 Samuel 4:1–12).',
+    passageRefs: ['2 Samuel 4:1–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'baanah',
+    name: 'Baanah son of Rimmon',
+    kind: 'person',
+    summary:
+      'Rechab’s brother and fellow captain, a Beerothite. Named alongside Rechab at every stage the text mentions either of them — the assassination, the night flight, the presentation to David, and the execution; the narrative never distinguishes an individual role for either man (2 Samuel 4:1–12).',
+    passageRefs: ['2 Samuel 4:1–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'mephibosheth',
+    name: 'Mephibosheth',
+    kind: 'person',
+    summary:
+      'Jonathan’s son, five years old at the time of this chapter — lamed in both feet when his nurse fled with him at the news from Jezreel of Saul and Jonathan’s deaths, and he fell. The text’s own parenthetical aside on what remains of Saul’s house (2 Samuel 4:4); referenced only here, never staged as a figure, with no forward pointer to his later reappearance in 2 Samuel 9.',
+    passageRefs: ['2 Samuel 4:4'],
+    claimIds: ['claim-mephibosheth-parenthesis'],
   },
   {
     id: 'joab',

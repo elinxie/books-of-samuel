@@ -28,6 +28,7 @@ import { HEBRON_ANOINTING_ENTITIES } from '../scenes/hebron-anointing/entities';
 import { GIBEON_POOL_ENTITIES } from '../scenes/gibeon-pool/entities';
 import { HEBRON_COVENANT_ENTITIES } from '../scenes/hebron-covenant/entities';
 import { HEBRON_GATE_ENTITIES } from '../scenes/hebron-gate/entities';
+import { HEBRON_RECKONING_ENTITIES } from '../scenes/hebron-reckoning/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -60,6 +61,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(GIBEON_POOL_ENTITIES);
     uniqueIds(HEBRON_COVENANT_ENTITIES);
     uniqueIds(HEBRON_GATE_ENTITIES);
+    uniqueIds(HEBRON_RECKONING_ENTITIES);
   });
 });
 
@@ -321,6 +323,14 @@ describe('features and scene entities', () => {
 
   it('Hebron-gate entity labels resolve to claims', () => {
     for (const e of HEBRON_GATE_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Hebron-reckoning entity labels resolve to claims', () => {
+    for (const e of HEBRON_RECKONING_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }
