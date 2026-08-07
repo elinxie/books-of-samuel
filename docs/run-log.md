@@ -1360,3 +1360,44 @@ next-run.md. No Fable needed for this slice (Sonnet-tier implementation
 within an already-approved brief). Next: `hebron-gate` (load-bearing M5
 scene, ADR-009 2nd named-killing application), then `hebron-reckoning`, then
 the atlas M5 extension.
+
+---
+
+**2026-08-07 — Sonnet 5 — hebron-gate built (M5 scene 2/3), automated session**
+`hebron-gate` (2 Sam 3:22–39) built via `threejs-engineer` per
+`docs/design/hebron-gate-brief.md`, commit `7aa0ae1`, on top of
+`hebron-covenant` (`fd1834f`). The milestone's load-bearing scene: ADR-009
+named-character-killing template's 2nd application. 13 beats, 5 viewpoints,
+`depictsDeath: true`. Orchestrating session independently re-verified (not
+just the build report) the safety-critical constraints by grep across all
+new scene files: zero wound/blood/gore/weapon matches outside comments/test
+assertions, strike structurally staged as Joab's alone (Abishai's pose
+function carries no fall-transform), no cistern-of-Sirah/medieval-tomb/
+six-chamber-gate/2-Sam-4+/2-Sam-5+/1-Kings leakage — all clean. `poses.test.ts`
+carries the narrative-discipline guards: no wound/blood/weapon field on any
+pose object, reduced mode's `fallDuration` reaches ~1 at ~12% of standard
+duration (actual elision, not just a caption difference), David's position
+never nears the killing ground before `T_DAVID_HEARS`. 8 new claims incl.
+`claim-abner-killing` (scholarlyViews: blood-vengeance vs. rival-elimination,
+both hedged pending McCarter-extension) and `claim-public-response`
+(scholarlyViews: apologia vs. plain-report, same hedge). `2sam-3` now spends
+its ESV budget (3:33b–34a + 3:38, 164 chars) — **not live-verified**: tried
+`WebFetch` against esv.org this session, got `EGRESS_BLOCKED` (network proxy
+policy, same sandbox limitation documented for `ziklag-lament` 2026-07-22);
+cross-checked against the orchestrating session's own knowledge, reads
+correct, but flagged for a live-source pass before `released`. High-tier
+figures ≈124 (100–140 band). Independent `npm run verify` re-run: 426
+vitest, 9/9 e2e, build clean. Docs synced: progress.md M5 section (fixed a
+duplicated-paragraph edit slip), asset-roadmap.md (agent's own commit
+already added the hebron-gate table), next-run.md.
+
+Also this session: CI failed on PR #52 (`elinxie/books-of-samuel#52`) with a
+`prettier --check` formatting error on the hebron-covenant doc-sync commit's
+`docs/asset-roadmap.md`/`docs/next-run.md` edits — fixed with
+`prettier --write` and pushed (commit `6ca5926`), unrelated to any scene
+code.
+
+Next: `hebron-reckoning` (2 Sam 4, third M5 scene), then the atlas M5
+extension, then the researcher pass (now six items: the M5-briefs' four,
+`claim-abner-break`'s McCarter citation, and the two ESV live-verification
+flags), then Fable M5 sign-off before any status flips past `in-progress`.

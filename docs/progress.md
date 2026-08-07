@@ -247,7 +247,38 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **in-progress** (first scene built 2026-08-07)
+## Milestone 5 — 2 Samuel 3–4: **in-progress** (two of three scenes built 2026-08-07)
+
+`hebron-gate` built 2026-08-07 (Sonnet/`threejs-engineer`, commit `7aa0ae1`,
+on top of `hebron-covenant`): status `in-progress`, `depictsDeath: true`, 13
+beats, 5 viewpoints — the milestone's load-bearing scene and ADR-009's
+named-character-killing template's second application (first:
+`gibeon-pool`/Asahel). Documentary-distance staging throughout: no
+wound/blood/weapon geometry in any mode (independently re-checked by the
+orchestrating session via grep, not just the build report — confirmed
+clean); the drawing-aside (3:27a) is the one shown gesture, the strike is
+never animated, only Abner's own collapse; strike staged as Joab's alone
+even though 3:30 names Abishai (structurally enforced — Abishai's pose
+function has no fall-transform); reduced mode actually elides the strike
+(`fallDuration` reaches ~1 at ~12% of standard duration); "but David did not
+know it" structurally enforced (David's position never nears the killing
+ground before he hears of it). No monumental six-chamber gate, no medieval
+Tomb-of-Abner adoption, no 2 Sam 4+/5+/1 Kings leakage (also independently
+re-checked, clean). 8 new claims incl. `claim-abner-killing` and
+`claim-public-response` (both `scholarlyViews`, hedged pending the
+McCarter-extension researcher pass); 2 new placeholder assets
+(`asset-hebron-gate-passage`, `asset-bier`). `2sam-3` now spends its ESV
+excerpt budget (3:33b–34a lament core + 3:38, 164 chars) — **not
+live-verified against ESV.org** (this sandbox's network proxy blocks
+esv.org/biblegateway.com, confirmed again this session via `WebFetch`; same
+sandbox limitation as `ziklag-lament`'s 2026-07-22 quotes) but cross-checked
+against the orchestrating session's own knowledge and reads correct; flag
+for a live-source check before `released`, same as the standing
+`ziklag-lament` item. High-tier figure total ≈124 (within the 100–140
+band). One rider for `performance-reviewer`: the mourning assembly is a
+single rigid-pose `InstancedMesh` even while it moves during the procession
+beat — worth a look, not yet reviewed. Independently re-verified gate: 426
+vitest, 9/9 e2e, build clean.
 
 `hebron-covenant` built 2026-08-07 (Sonnet/`threejs-engineer`, commit
 `fd1834f`): status `in-progress`, `depictsDeath: false`, 9 beats (4 context

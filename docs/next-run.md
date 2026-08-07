@@ -3,44 +3,58 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-07, M5 scene 1/3 built — hebron-covenant, automated session)
+## State right now (2026-08-07, M5 scenes 1–2/3 built — hebron-covenant + hebron-gate, automated session)
 
-**`hebron-covenant` (2 Sam 3:1–21) is built**, commit `fd1834f`, branch
-`claude/focused-mccarthy-3pwetx` (not yet merged — no open PR for this
-branch as of this write-up; open one before further work stacks on it).
-`status: 'in-progress'`, `depictsDeath: false`, per
-`docs/design/hebron-covenant-brief.md`. Full detail in `docs/run-log.md`'s
-2026-08-07 entry and `docs/progress.md`'s M5 section. Gate independently
-re-verified by the orchestrating session (not just the build agent's
-report): 392 vitest, 9/9 e2e, build/lint/format clean.
+**`hebron-covenant` and `hebron-gate` are both built.** Branch
+`claude/focused-mccarthy-3pwetx`, PR **#52 open (draft)** against `main`.
+`hebron-covenant` (commit `fd1834f`, `depictsDeath: false`) and
+`hebron-gate` (commit `7aa0ae1`, on top of it, `depictsDeath: true`, the
+milestone's load-bearing ADR-009 named-killing scene) — full detail in
+`docs/run-log.md`'s two 2026-08-07 entries and `docs/progress.md`'s M5
+section. Gate independently re-verified by the orchestrating session after
+each build (not just the build agents' own reports): 426 vitest, 9/9 e2e,
+build/lint/format clean. `hebron-gate`'s safety-critical constraints
+(no wound/blood/weapon geometry, strike staged as Joab's alone, no 2 Sam
+4+/5+ leakage, no medieval-tomb/six-chamber-gate over-claims) were also
+independently grep-checked by the orchestrating session, not just trusted.
 
-**One open item from this build, non-blocking:** `hebron-covenant` reuses
-`hebron-anointing`'s `TownAndPlaza`/`TerraceWalls`/`Vegetation`
-_components_ directly (imported, not just their layout constants) — the
-brief said "constants may be shared" per ADR-006, and the build agent read
-that as extending to whole generic-massing components since nothing about
-the town's form changes between scenes. Reasonable, but flagged for a look
-at the M5 Fable sign-off, not before.
+**PR #52 had one CI failure this session**, a `prettier --check` formatting
+issue on the hebron-covenant doc-sync commit — fixed and pushed (`6ca5926`),
+unrelated to scene code. Session is subscribed to PR #52's activity; if you
+are a later session picking this up, check whether it's still open/still
+subscribed before assuming ownership.
+
+**Two open items, both non-blocking, both flagged for the M5 Fable
+sign-off:**
+
+- `hebron-covenant` reuses `hebron-anointing`'s `TownAndPlaza`/
+  `TerraceWalls`/`Vegetation` _components_ directly (not just constants) —
+  a step beyond ADR-006's literal wording.
+- `hebron-gate`'s two ESV excerpts (3:33b–34a, 3:38) are **not
+  live-verified** — this sandbox's network proxy blocks esv.org/
+  biblegateway.com (`WebFetch` returned `EGRESS_BLOCKED` when tried this
+  session), same standing limitation as `ziklag-lament`'s 2026-07-22
+  quotes. Cross-checked against trained knowledge, reads correct, but
+  needs a live-source check (from an environment with outbound access)
+  before either scene ships `released`.
 
 **What's next (Sonnet), in priority order:**
 
-1. **Open a PR** for `claude/focused-mccarthy-3pwetx` if none exists yet.
-2. **Build `hebron-gate`** (2 Sam 3:22–39) per
-   `docs/design/hebron-gate-brief.md` — the milestone's load-bearing scene,
-   2nd application of ADR-009's named-character-killing template. Spend
-   the shared `2sam-3` ESV excerpt budget here (`hebron-covenant`
-   deliberately used none).
-3. **Build `hebron-reckoning`** (2 Sam 4) per
+1. **Build `hebron-reckoning`** (2 Sam 4, third and final M5 scene) per
    `docs/design/hebron-reckoning-brief.md`.
-4. **Atlas `/atlas` M5 phase extension** (`ui-engineer`, small).
-5. **`researcher` pass** on the four gap clusters below (parallelizable,
-   non-blocking to builds) — now five: also close `claim-abner-break`'s
-   missing `mccarter-1984-ii-samuel` citation (that source card's
-   `relevantPassages` currently only covers 2 Sam 1, not chapter 3).
-6. (Carried forward, non-blocking) real-hardware perf check of
+2. **Atlas `/atlas` M5 phase extension** (`ui-engineer`, small).
+3. **`researcher` pass** — now six gap clusters: the four from the
+   2026-08-03 briefing (McCarter→3–4 extension incl. `claim-abner-killing`/
+   `claim-public-response`'s hedged `scholarlyViews`, Herzog gate typology
+   for `claim-hebron-gate-form`, King-Stager feasting/mourning material,
+   Hebron water installations) plus the two ESV live-verification flags
+   above (`ziklag-lament` + `hebron-gate`) — needs an environment with
+   outbound access to esv.org/biblegateway.com, not available in this
+   sandbox.
+4. (Carried forward, non-blocking) real-hardware perf check of
    `gilboa-battle` at high tier + Pages-live check — see Environment notes.
-7. Fable M5 sign-off review before any status flips past `in-progress`
-   (also the natural point to settle the component-reuse question above).
+5. Fable M5 sign-off review before any status flips past `in-progress`
+   (settle both open items above at the same pass).
 
 ## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
