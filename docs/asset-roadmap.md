@@ -172,6 +172,20 @@ excavated pool/tunnel predate or postdate the early Iron IIA setting of
 Reuses `hebron-anointing`'s terrain/town/terrace/vegetation assets directly
 (no new placeholders for those) — hard continuity rule per the brief.
 
+## Current placeholders (hebron-gate scene, Milestone 5, built 2026-08-07)
+
+| Asset                       | Represents                                         | Why temporary                                                                                                                | Replace at                                                                                                  |
+| --------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `asset-hebron-gate-passage` | Two-chamber gate passage ("the midst of the gate") | Simple box massing; no gate of any period is excavated at Tell Rumeida — deliberately not a monumental six-chamber gate      | M5 (upgrade path via `herzog-1997` gate-typology extension if a researcher pass lands a checkable citation) |
+| `asset-bier`                | Abner's funeral bier and wrapped body form         | Existing honest funerary standard (`buildWrappedFormGeometry`, reused from Beth-shan/Jabesh) on a simple plank-and-pole bier | M5 (upgrade path via a comparative-ANE bier/litter form, matching `asset-bier-props`' precedent)            |
+
+Reuses `hebron-anointing`'s terrain/town/terrace/vegetation assets directly
+(no new placeholders for those) — hard continuity rule per the brief. Second
+application of ADR-009's named-character-killing template (first:
+`gibeon-pool`): no wound/blood/weapon geometry anywhere, in either violence
+mode — the strike itself is staged only as Abner's own collapse transform, the
+same convention as Asahel's death and Gilboa's fallen figures.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the

@@ -591,6 +591,30 @@ export const ASSETS: AssetRecord[] = [
       'Upgradeable to a comparative-ANE-sourced vessel/mat form only if a researcher pass finds citable meal/feasting material culture (checked once against king-stager-2001, per claim-feast-form’s notes; not found there).',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-hebron-gate-passage',
+    name: 'Two-chamber gate passage',
+    represents:
+      'The modest chambered gateway at Hebron where Joab draws Abner aside and kills him (2 Samuel 3:27) — see claim-hebron-gate-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple box massing (walls, threshold jambs, chamber recesses, a single roof slab) from a scene-local layout (src/scenes/hebron-gate/GatePassage.tsx, ADR-006 conventions), not a reproduction of any excavated Tell Rumeida gate — no gate of any period is excavated there. Deliberately a modest two-chamber form, not a monumental six-chamber Solomonic-type gate, per the scene brief’s anachronism-discipline instruction.',
+    historicalRequirements:
+      'Upgradeable to comparative-ane only if a researcher pass extends herzog-1997’s urban-form coverage with a checkable citation for early Iron II gate typology; revise fully only if a citable published Tell Rumeida gate plan is ever found (see claim-hebron-town-form’s permanent researcher-gap finding, queue #19c).',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-bier',
+    name: 'Funeral bier and wrapped form',
+    represents:
+      'Abner’s body, carried to burial at Hebron (2 Samuel 3:31–32) — see claim-abner-funeral',
+    placeholder: true,
+    whyTemporary:
+      'The project’s existing honest funerary standard (buildWrappedFormGeometry — an anatomically unresolved, bound-cloth silhouette, reused unchanged from Beth-shan/Jabesh-gilead) on a simple plank-and-pole bier frame (src/scenes/hebron-gate/Bier.tsx), never a distinct "body" mesh and never any wound/blood geometry, in either violence mode.',
+    historicalRequirements:
+      'Comparative ANE bier/litter form, if a specific type is ever sourced; currently an abstract, undetailed carrying frame by design, matching asset-bier-props’ (jabesh-burial) precedent.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));
