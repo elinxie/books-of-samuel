@@ -165,8 +165,8 @@ excavated pool/tunnel predate or postdate the early Iron IIA setting of
 
 ## Current placeholders (hebron-covenant scene, Milestone 5, built 2026-08-07)
 
-| Asset               | Represents                          | Why temporary                                                                     | Replace at |
-| -------------------- | ------------------------------------ | ---------------------------------------------------------------------------------- | ---------- |
+| Asset               | Represents                              | Why temporary                                                                  | Replace at                                                                                    |
+| ------------------- | --------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
 | `asset-feast-props` | Feast mats/vessels at the covenant meal | Simple instanced set; text names only "a feast," no described vessel/mat forms | M5 (upgrade path via `king-stager-2001` if a researcher pass finds citable feasting material) |
 
 Reuses `hebron-anointing`'s terrain/town/terrace/vegetation assets directly

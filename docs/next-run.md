@@ -16,7 +16,7 @@ report): 392 vitest, 9/9 e2e, build/lint/format clean.
 
 **One open item from this build, non-blocking:** `hebron-covenant` reuses
 `hebron-anointing`'s `TownAndPlaza`/`TerraceWalls`/`Vegetation`
-*components* directly (imported, not just their layout constants) — the
+_components_ directly (imported, not just their layout constants) — the
 brief said "constants may be shared" per ADR-006, and the build agent read
 that as extending to whole generic-massing components since nothing about
 the town's form changes between scenes. Reasonable, but flagged for a look
