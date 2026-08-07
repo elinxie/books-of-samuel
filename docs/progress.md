@@ -247,7 +247,45 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **in-progress** (two of three scenes built 2026-08-07)
+## Milestone 5 — 2 Samuel 3–4: **in-progress** (all three scenes built 2026-08-07; atlas extension + Fable sign-off still open)
+
+`hebron-reckoning` built 2026-08-07 (Sonnet/`threejs-engineer`, commit
+`adb50be`, on top of `hebron-gate`): status `in-progress`, `depictsDeath:
+true`, 9 beats, 4 viewpoints. Third and last M5 scene, `ziklag-lament`'s
+structural twin (4:10's own Ziklag retelling, cross-referenced not
+restated). Smallest M5 scene by design (~20–35 high-tier figures). First
+scene to trigger ADR-009's absolute, unconditional dismemberment bar (the
+hands-and-feet display renders as caption text only, in every mode, no
+geometry stands in for it at all) — independently re-checked by the
+orchestrating session via grep (not just the build report): zero
+severed-anatomy/display-geometry component or field names anywhere, only
+doc-comment/caption prose mentions; `poses.test.ts` structurally asserts
+`AssassinPose`/`HeadBundlePose` carry no `display|dismember|sever|strike|cut`
+field. Ish-bosheth's head renders only as a small covered bundle
+(`buildWrappedFormGeometry(0.16)`, smaller than Jabesh's bone-bundle scale),
+never brandished; Ish-bosheth and Mephibosheth are referenced-only, never
+staged as figures (also grep-confirmed). Pool of Hebron reuses `gibeon-pool`'s
+basin/no-shader convention exactly; Birket es-Sultan explicitly not adopted
+(grep-confirmed clean). Burial reuses `hebron-gate`'s tomb constants exactly
+— "the same tomb, days apart," the milestone's deliberate closing image.
+Closing card carries zero 2 Sam 5+ content (grep-confirmed: no
+Jerusalem/all-Israel/2-Sam-5 matches). 5 new claims
+(`claim-ish-bosheth-assassination` with hedged 4:6 MT/LXX `scholarlyViews`,
+`claim-mephibosheth-parenthesis`, `claim-david-judgment`,
+`claim-hebron-pool-feature`, `claim-reckoning-cast-scale`); 3 new characters
+(`rechab`, `baanah` staged; `mephibosheth` referenced-only, confined to
+exactly 4:4, no 2 Sam 9 pointer). New `2sam-4` passage, 2 ESV excerpts
+(4:10, 4:11 — the build used the full 4:11 verse rather than the brief's
+literal "4:11a" partial clause, reads better as a stand-alone card, still
+well under budget at 285/500 chars) — **not live-verified** (same standing
+`WebFetch`/`EGRESS_BLOCKED` sandbox limitation as the other two M5 scenes;
+cross-checked, not live-sourced). Independently re-verified gate: 452
+vitest, 9/9 e2e, build clean.
+
+**All three M5 scenes are now built.** Remaining before the milestone can
+move past `in-progress`: the `/atlas` M5 phase extension (not yet started),
+the researcher pass on six open citation gaps (see `docs/next-run.md`), and
+a Fable M5 sign-off review.
 
 `hebron-gate` built 2026-08-07 (Sonnet/`threejs-engineer`, commit `7aa0ae1`,
 on top of `hebron-covenant`): status `in-progress`, `depictsDeath: true`, 13

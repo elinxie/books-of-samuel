@@ -3,20 +3,25 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-07, M5 scenes 1–2/3 built — hebron-covenant + hebron-gate, automated session)
+## State right now (2026-08-07, all three M5 scenes built, automated session)
 
-**`hebron-covenant` and `hebron-gate` are both built.** Branch
-`claude/focused-mccarthy-3pwetx`, PR **#52 open (draft)** against `main`.
-`hebron-covenant` (commit `fd1834f`, `depictsDeath: false`) and
-`hebron-gate` (commit `7aa0ae1`, on top of it, `depictsDeath: true`, the
-milestone's load-bearing ADR-009 named-killing scene) — full detail in
-`docs/run-log.md`'s two 2026-08-07 entries and `docs/progress.md`'s M5
-section. Gate independently re-verified by the orchestrating session after
-each build (not just the build agents' own reports): 426 vitest, 9/9 e2e,
-build/lint/format clean. `hebron-gate`'s safety-critical constraints
-(no wound/blood/weapon geometry, strike staged as Joab's alone, no 2 Sam
-4+/5+ leakage, no medieval-tomb/six-chamber-gate over-claims) were also
-independently grep-checked by the orchestrating session, not just trusted.
+**All three M5 scenes are built: `hebron-covenant`, `hebron-gate`,
+`hebron-reckoning`.** Branch `claude/focused-mccarthy-3pwetx`, PR **#52
+open (draft)** against `main`. Commits, in order: `fd1834f`
+(hebron-covenant, `depictsDeath: false`), `7aa0ae1` (hebron-gate,
+`depictsDeath: true`, the milestone's load-bearing ADR-009 named-killing
+scene, 2nd application), `adb50be` (hebron-reckoning, `depictsDeath: true`,
+3rd ADR-009 application and the project's first trigger of its absolute
+dismemberment bar). Full detail in `docs/run-log.md`'s three 2026-08-07
+entries and `docs/progress.md`'s M5 section. Gate independently re-verified
+by the orchestrating session after each build (not just the build agents'
+own reports): final state 452 vitest, 9/9 e2e, build/lint/format clean.
+Every scene's safety-critical constraints (no wound/blood/weapon/anatomy
+geometry in any mode, killings staged exactly as the text attributes them,
+no 2 Sam 4+/5+ leakage between scenes, no medieval-tomb/six-chamber-gate/
+Birket-es-Sultan over-claims) were independently grep-checked by the
+orchestrating session after every build, not just trusted from build
+reports — all clean.
 
 **PR #52 had one CI failure this session**, a `prettier --check` formatting
 issue on the hebron-covenant doc-sync commit — fixed and pushed (`6ca5926`),
@@ -24,37 +29,45 @@ unrelated to scene code. Session is subscribed to PR #52's activity; if you
 are a later session picking this up, check whether it's still open/still
 subscribed before assuming ownership.
 
-**Two open items, both non-blocking, both flagged for the M5 Fable
+**Three open items, all non-blocking, all flagged for the M5 Fable
 sign-off:**
 
 - `hebron-covenant` reuses `hebron-anointing`'s `TownAndPlaza`/
   `TerraceWalls`/`Vegetation` _components_ directly (not just constants) —
   a step beyond ADR-006's literal wording.
-- `hebron-gate`'s two ESV excerpts (3:33b–34a, 3:38) are **not
-  live-verified** — this sandbox's network proxy blocks esv.org/
-  biblegateway.com (`WebFetch` returned `EGRESS_BLOCKED` when tried this
-  session), same standing limitation as `ziklag-lament`'s 2026-07-22
-  quotes. Cross-checked against trained knowledge, reads correct, but
-  needs a live-source check (from an environment with outbound access)
-  before either scene ships `released`.
+- `hebron-gate`'s two ESV excerpts (3:33b–34a, 3:38) and
+  `hebron-reckoning`'s two (4:10, 4:11) are **not live-verified** — this
+  sandbox's network proxy blocks esv.org/biblegateway.com (`WebFetch`
+  returned `EGRESS_BLOCKED` every time it was tried this session), same
+  standing limitation as `ziklag-lament`'s 2026-07-22 quotes. Cross-checked
+  against trained knowledge, reads correct, but needs a live-source check
+  (from an environment with outbound access) before any of these scenes
+  ships `released`.
+- `hebron-reckoning`'s ESV spend used the full 4:11 verse rather than the
+  brief's literal "4:11a" partial-clause suggestion (judged a dangling
+  comma would read badly as a stand-alone card) — still well under budget.
 
 **What's next (Sonnet), in priority order:**
 
-1. **Build `hebron-reckoning`** (2 Sam 4, third and final M5 scene) per
-   `docs/design/hebron-reckoning-brief.md`.
-2. **Atlas `/atlas` M5 phase extension** (`ui-engineer`, small).
-3. **`researcher` pass** — now six gap clusters: the four from the
-   2026-08-03 briefing (McCarter→3–4 extension incl. `claim-abner-killing`/
-   `claim-public-response`'s hedged `scholarlyViews`, Herzog gate typology
-   for `claim-hebron-gate-form`, King-Stager feasting/mourning material,
-   Hebron water installations) plus the two ESV live-verification flags
-   above (`ziklag-lament` + `hebron-gate`) — needs an environment with
-   outbound access to esv.org/biblegateway.com, not available in this
-   sandbox.
-4. (Carried forward, non-blocking) real-hardware perf check of
+1. **Atlas `/atlas` M5 phase extension** (`ui-engineer`, small) — the last
+   piece of M5's actual scope, not yet started.
+2. **`researcher` pass** — six gap clusters: the four from the 2026-08-03
+   briefing (McCarter→3–4 extension incl. `claim-abner-killing`/
+   `claim-public-response`/`claim-ish-bosheth-assassination`'s hedged
+   `scholarlyViews`, Herzog gate typology for `claim-hebron-gate-form`,
+   King-Stager feasting/mourning material, Hebron water installations for
+   `claim-hebron-pool-feature`) plus the ESV live-verification flag (now
+   covering `ziklag-lament` + `hebron-gate` + `hebron-reckoning` — needs an
+   environment with outbound access to esv.org/biblegateway.com, not
+   available in this sandbox).
+3. (Carried forward, non-blocking) real-hardware perf check of
    `gilboa-battle` at high tier + Pages-live check — see Environment notes.
-5. Fable M5 sign-off review before any status flips past `in-progress`
-   (settle both open items above at the same pass).
+4. **Fable M5 sign-off review** before any status flips past `in-progress`
+   — settle the three open items above, confirm the three scenes' creative
+   fidelity to their briefs, and decide the release-gate queue items (same
+   pattern as M3/M4's queue #13/#16/#17/#18/#19). Do this once the atlas
+   extension also lands, per the M4 precedent of reviewing the whole
+   milestone package together.
 
 ## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 

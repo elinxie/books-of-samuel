@@ -1401,3 +1401,32 @@ Next: `hebron-reckoning` (2 Sam 4, third M5 scene), then the atlas M5
 extension, then the researcher pass (now six items: the M5-briefs' four,
 `claim-abner-break`'s McCarter citation, and the two ESV live-verification
 flags), then Fable M5 sign-off before any status flips past `in-progress`.
+
+---
+
+**2026-08-07 — Sonnet 5 — hebron-reckoning built (M5 scene 3/3, all M5 scenes now built), automated session**
+`hebron-reckoning` (2 Sam 4) built via `threejs-engineer` per
+`docs/design/hebron-reckoning-brief.md`, commit `adb50be`, on top of
+`hebron-gate`. Third and last M5 scene, `ziklag-lament`'s structural twin
+(4:10's own retelling, cross-referenced not restated). Smallest M5 scene
+(~20–35 high-tier figures). First trigger of ADR-009's absolute
+dismemberment bar (stricter than the funerary wrapped-form convention: the
+hands-and-feet display is caption-only in every mode, no geometry stands in
+for it at all). Orchestrating session independently re-checked (not just the
+build report) by grep across all new scene files: zero
+severed-anatomy/display-geometry component or field names (only doc-comment/
+caption prose), zero Ish-bosheth/Mephibosheth rendered-figure components,
+zero Birket es-Sultan/water-shader matches, zero 2 Sam 5+/Jerusalem/
+all-Israel matches — all clean. 5 new claims, 3 new characters
+(`rechab`/`baanah` staged, `mephibosheth` referenced-only). New `2sam-4`
+passage, 2 ESV excerpts (4:10, 4:11 full verse — build deviated slightly
+from the brief's literal "4:11a" partial-clause suggestion, judged the full
+verse reads better standalone, still well under budget) — not live-verified,
+same standing sandbox limitation. Independent `npm run verify` re-run: 452
+vitest, 9/9 e2e, build clean.
+
+**All three M5 scenes are now built.** Docs synced: progress.md M5 section
+closed out with a "what's left" note, next-run.md rewritten for the new
+phase. Remaining before M5 can move past `in-progress`: `/atlas` M5 phase
+extension (not started), researcher pass (six open items, listed in
+next-run.md), Fable M5 sign-off review.
