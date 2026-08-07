@@ -70,6 +70,24 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M4',
     status: 'released',
   },
+  {
+    id: '2sam-3',
+    book: '2 Samuel',
+    chapter: 3,
+    reference: '2 Samuel 3',
+    translationAnchor: 'ESV',
+    summary:
+      'A long war between the houses of Saul and David ends by defection, not battle. Abner, who made Ish-bosheth king, breaks with him after being accused of taking Saul’s concubine Rizpah, and opens negotiations with David — who makes the return of his wife Michal a condition. Abner brings his twenty men to Hebron; David receives him with a feast, and Abner pledges to gather all Israel to David before departing in peace.',
+    // Scene id committed 2026-08-07 (Sonnet, threejs-engineer, per hebron-covenant
+    // brief) before hebron-gate exists — mirrors the M3/M4 pattern. No
+    // keyExcerpts recorded here: this passage's ESV excerpt budget is shared
+    // with the future hebron-gate scene, which needs it more (its lament) —
+    // hebron-covenant deliberately spends none of it (see claim-covenant-feast
+    // and the hebron-covenant brief's "ESV excerpt budget" note).
+    sceneIds: ['hebron-covenant'],
+    milestoneId: 'M5',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));
