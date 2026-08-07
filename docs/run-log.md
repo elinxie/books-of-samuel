@@ -1331,3 +1331,32 @@ pass, recorded in briefs. Docs synced: next-run.md (new top state + build
 order: covenant → gate → reckoning → atlas), progress.md M5 section. No
 code/scene/claim changes; no verify run (data edit is one additive
 milestone entry; orchestrating session gates before merge).
+
+---
+
+**2026-08-07 — Sonnet 5 — hebron-covenant built (M5 scene 1/3), automated session**
+`hebron-covenant` (2 Sam 3:1–21) built via `threejs-engineer` per
+`docs/design/hebron-covenant-brief.md`, commit `fd1834f`. 9 beats (4
+context-card-only for 3:1–19, then staged arrival/feast/pledge/peace, closing
+pointer to `hebron-gate`), 4 viewpoints, `depictsDeath: false`. Reuses
+`hebron-anointing`'s `TownAndPlaza`/`TerraceWalls`/`Vegetation` components
+directly (not just constants — a step beyond ADR-006's literal wording; worth
+a look at the next Fable pass, not blocking). Abner's twenty literal 1:1;
+David's escort/town background disclosed design counts, ~60–80 figures
+high-tier. 6 new claims (`claim-long-war`, `claim-abner-break`,
+`claim-abner-overture`, `claim-covenant-feast`, `claim-feast-form`,
+`claim-covenant-cast-scale`); 3 new referenced-only characters
+(`michal`/`paltiel`/`rizpah`, no geometry). New `2sam-3` passage entry,
+`in-progress`, zero ESV `keyExcerpts` — shared 2sam-3 quote budget left for
+`hebron-gate`. New `asset-feast-props` placeholder. Verified by the
+orchestrating session (not just the build agent's own report): grepped for
+Joab/palace/banquet/Michal-Paltiel-geometry across all new scene files — none
+found, matches the brief's placeholder-policy bar. Independent `npm run
+verify` re-run: 41 test files, 392 vitest, build clean, 9/9 e2e — all green.
+`claim-abner-break` doesn't yet cite `mccarter-1984-ii-samuel` (that card's
+`relevantPassages` only covers 2 Sam 1) — folds into the standing researcher
+pass. Docs synced: progress.md M5 section, asset-roadmap.md new table,
+next-run.md. No Fable needed for this slice (Sonnet-tier implementation
+within an already-approved brief). Next: `hebron-gate` (load-bearing M5
+scene, ADR-009 2nd named-killing application), then `hebron-reckoning`, then
+the atlas M5 extension.

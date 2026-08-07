@@ -247,7 +247,31 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; no build yet)
+## Milestone 5 — 2 Samuel 3–4: **in-progress** (first scene built 2026-08-07)
+
+`hebron-covenant` built 2026-08-07 (Sonnet/`threejs-engineer`, commit
+`fd1834f`): status `in-progress`, `depictsDeath: false`, 9 beats (4 context
+cards for 3:1–19, then staged arrival/feast/pledge/peace, closing pointer to
+`hebron-gate`), 4 viewpoints. Reuses `hebron-anointing`'s `TownAndPlaza`/
+`TerraceWalls`/`Vegetation` components directly (not just constants — flagged
+as a step beyond ADR-006's literal wording, worth a look at the next Fable
+pass but not blocking). Abner's twenty render literal 1:1; David's escort and
+town background are disclosed design counts (~60–80 figures high-tier,
+smallest M5 crowd by design). 6 new claims (`claim-long-war`,
+`claim-abner-break`, `claim-abner-overture`, `claim-covenant-feast`,
+`claim-feast-form`, `claim-covenant-cast-scale`); 3 new referenced-only
+characters (`michal`, `paltiel`, `rizpah` — no geometry, no invented named
+members of the twenty); no Joab, no palace/banquet architecture (verified by
+grep, not just trusted from the build report). New `2sam-3` passage entry,
+`in-progress`, deliberately zero ESV `keyExcerpts` — the shared 2sam-3 quote
+budget is left for `hebron-gate`. Gate independently re-verified by the
+orchestrating session after the build: 392 vitest, 9/9 e2e, build clean.
+`claim-abner-break` does not yet cite `mccarter-1984-ii-samuel` (that source
+card's `relevantPassages` only covers 2 Sam 1) — folds into the researcher
+pass below. `hebron-gate` and `hebron-reckoning` still `planned`/empty.
+
+**Previously:** scoped + briefed 2026-08-03, Fable world-director pass, no
+build yet.
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —

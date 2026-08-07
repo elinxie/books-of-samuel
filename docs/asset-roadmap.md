@@ -163,6 +163,15 @@ provisional brief, Fable-unavailable fallback, tracked at
 excavated pool/tunnel predate or postdate the early Iron IIA setting of
 2 Samuel 2?), already tracked in `docs/next-run.md`.
 
+## Current placeholders (hebron-covenant scene, Milestone 5, built 2026-08-07)
+
+| Asset               | Represents                          | Why temporary                                                                     | Replace at |
+| -------------------- | ------------------------------------ | ---------------------------------------------------------------------------------- | ---------- |
+| `asset-feast-props` | Feast mats/vessels at the covenant meal | Simple instanced set; text names only "a feast," no described vessel/mat forms | M5 (upgrade path via `king-stager-2001` if a researcher pass finds citable feasting material) |
+
+Reuses `hebron-anointing`'s terrain/town/terrace/vegetation assets directly
+(no new placeholders for those) — hard continuity rule per the brief.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the

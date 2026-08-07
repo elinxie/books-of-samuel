@@ -3,7 +3,46 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+## State right now (2026-08-07, M5 scene 1/3 built — hebron-covenant, automated session)
+
+**`hebron-covenant` (2 Sam 3:1–21) is built**, commit `fd1834f`, branch
+`claude/focused-mccarthy-3pwetx` (not yet merged — no open PR for this
+branch as of this write-up; open one before further work stacks on it).
+`status: 'in-progress'`, `depictsDeath: false`, per
+`docs/design/hebron-covenant-brief.md`. Full detail in `docs/run-log.md`'s
+2026-08-07 entry and `docs/progress.md`'s M5 section. Gate independently
+re-verified by the orchestrating session (not just the build agent's
+report): 392 vitest, 9/9 e2e, build/lint/format clean.
+
+**One open item from this build, non-blocking:** `hebron-covenant` reuses
+`hebron-anointing`'s `TownAndPlaza`/`TerraceWalls`/`Vegetation`
+*components* directly (imported, not just their layout constants) — the
+brief said "constants may be shared" per ADR-006, and the build agent read
+that as extending to whole generic-massing components since nothing about
+the town's form changes between scenes. Reasonable, but flagged for a look
+at the M5 Fable sign-off, not before.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Open a PR** for `claude/focused-mccarthy-3pwetx` if none exists yet.
+2. **Build `hebron-gate`** (2 Sam 3:22–39) per
+   `docs/design/hebron-gate-brief.md` — the milestone's load-bearing scene,
+   2nd application of ADR-009's named-character-killing template. Spend
+   the shared `2sam-3` ESV excerpt budget here (`hebron-covenant`
+   deliberately used none).
+3. **Build `hebron-reckoning`** (2 Sam 4) per
+   `docs/design/hebron-reckoning-brief.md`.
+4. **Atlas `/atlas` M5 phase extension** (`ui-engineer`, small).
+5. **`researcher` pass** on the four gap clusters below (parallelizable,
+   non-blocking to builds) — now five: also close `claim-abner-break`'s
+   missing `mccarter-1984-ii-samuel` citation (that source card's
+   `relevantPassages` currently only covers 2 Sam 1, not chapter 3).
+6. (Carried forward, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + Pages-live check — see Environment notes.
+7. Fable M5 sign-off review before any status flips past `in-progress`
+   (also the natural point to settle the component-reuse question above).
+
+## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
 **M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
 (reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`
