@@ -69,4 +69,43 @@ describe('AtlasPage (divided-kingdom atlas overlay, M4 4th goal)', () => {
       expect(document.querySelector(`[data-claim-id="${id}"]`)).toBeTruthy();
     }
   });
+
+  it('defaults to the 2 Sam 2 (m4) phase, matching the overlay as it shipped', () => {
+    renderAtlasPage();
+    expect(screen.getByTestId('atlas-phase-m4')).toBeChecked();
+    expect(screen.getByTestId('atlas-phase-m5')).not.toBeChecked();
+    expect(screen.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm4');
+    // M5-only claims are not cited until the M5 phase is selected.
+    expect(
+      document.querySelector('[data-claim-id="claim-divided-kingdom-collapse-overlay"]'),
+    ).toBeNull();
+  });
+
+  it('switching to the 2 Sam 3–4 (m5) phase shows the collapse annotation and its claims, without deleting the m4 phase', () => {
+    renderAtlasPage();
+    fireEvent.click(screen.getByTestId('atlas-phase-m5'));
+
+    expect(screen.getByTestId('atlas-phase-m5')).toBeChecked();
+    expect(screen.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm5');
+    expect(screen.getByTestId('region-annotation-israel-writ').textContent).toMatch(/no king/i);
+
+    const m5ClaimIds = [
+      'claim-long-war',
+      'claim-abner-break',
+      'claim-ish-bosheth-assassination',
+      'claim-divided-kingdom-collapse-overlay',
+    ];
+    for (const id of m5ClaimIds) {
+      expect(document.querySelector(`[data-claim-id="${id}"]`)).toBeTruthy();
+    }
+    // The original m4-phase claims stay cited too — additive, not a replacement.
+    expect(
+      document.querySelector('[data-claim-id="claim-divided-kingdom-atlas-overlay"]'),
+    ).toBeTruthy();
+
+    // Switching back restores the m4 phase exactly — nothing was deleted.
+    fireEvent.click(screen.getByTestId('atlas-phase-m4'));
+    expect(screen.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm4');
+    expect(screen.queryByTestId('region-annotation-israel-writ')).not.toBeInTheDocument();
+  });
 });

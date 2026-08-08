@@ -58,4 +58,48 @@ describe('DividedKingdomMap (divided-kingdom atlas overlay, 2 Sam 2:8-11)', () =
     );
     expect(hebronDot?.getAttribute('stroke')).toBe('none');
   });
+
+  it('defaults to the m4 phase when no phase prop is given', () => {
+    render(<DividedKingdomMap locations={LOCATIONS} showShading />);
+    expect(screen.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm4');
+    expect(screen.queryByTestId('region-annotation-israel-writ')).not.toBeInTheDocument();
+  });
+});
+
+describe('DividedKingdomMap — M5 phase (2 Sam 3-4, long-war trend + collapse)', () => {
+  it('still renders both regions and never adds a hard-edged polygon border', () => {
+    const { container } = render(
+      <DividedKingdomMap locations={LOCATIONS} showShading phase="m5" />,
+    );
+    expect(screen.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm5');
+    expect(screen.getByTestId('region-shading-israel-writ')).toBeInTheDocument();
+    expect(screen.getByTestId('region-shading-judah')).toBeInTheDocument();
+    expect(container.querySelectorAll('polygon').length).toBe(0);
+
+    const regionShapes = container.querySelectorAll('[data-testid^="region-shading-"] ellipse');
+    for (const shape of Array.from(regionShapes)) {
+      expect(shape.getAttribute('stroke')).toBe('none');
+      expect(shape.getAttribute('filter')).toContain('atlas-soft-blur');
+    }
+  });
+
+  it('fades Ish-bosheth’s writ and annotates its collapse, while leaving Judah unchanged', () => {
+    const { container } = render(
+      <DividedKingdomMap locations={LOCATIONS} showShading phase="m5" />,
+    );
+
+    const israelGroup = screen.getByTestId('region-shading-israel-writ');
+    expect(Number(israelGroup.getAttribute('opacity'))).toBeLessThan(1);
+    expect(screen.getByTestId('region-annotation-israel-writ').textContent).toMatch(/no king/i);
+
+    const judahGroup = screen.getByTestId('region-shading-judah');
+    expect(judahGroup.getAttribute('opacity')).toBe('1');
+    expect(container.querySelector('[data-testid="region-annotation-judah"]')).toBeNull();
+  });
+
+  it('keeps Hebron and Mahanaim emphasized (this milestone’s own scenes and their referenced seat)', () => {
+    render(<DividedKingdomMap locations={LOCATIONS} showShading phase="m5" />);
+    expect(screen.getByTestId('atlas-point-hebron')).toHaveClass('atlas-point-emphasized');
+    expect(screen.getByTestId('atlas-point-mahanaim')).toHaveClass('atlas-point-emphasized');
+  });
 });

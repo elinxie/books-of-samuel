@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware';
 import { DEFAULT_SCENE_ID } from '../data/scenes';
 import type { Terrain } from '../engine/terrain';
 import { ZIKLAG_TERRAIN } from '../scenes/ziklag/terrain';
+import type { AtlasPhase } from '../ui/atlasRegions';
 
 export type QualityMode = 'study' | 'balanced' | 'high';
 export type NavMode = 'inspect' | 'walk';
@@ -36,6 +37,14 @@ interface AppState {
    * either way.
    */
   showAllegianceShading: boolean;
+  /**
+   * Atlas page: which phase of the divided-kingdom overlay is displayed —
+   * 'm4' (2 Sam 2:8–11's initial writ/Judah split, as shipped) or 'm5'
+   * (2 Sam 3–4's long-war trend and the north's collapse). Additive: both
+   * phases' content always exists; this only selects which is currently
+   * shown.
+   */
+  atlasPhase: AtlasPhase;
 
   quality: QualityMode;
   navMode: NavMode;
@@ -70,6 +79,7 @@ interface AppState {
   /** Answers the first-visit violence advisory: sets the mode and marks it seen. */
   acknowledgeViolenceAdvisory: (m: ViolenceMode) => void;
   toggleAllegianceShading: () => void;
+  setAtlasPhase: (p: AtlasPhase) => void;
 
   setScene: (id: string) => void;
   setTerrain: (terrain: Terrain) => void;
@@ -93,6 +103,7 @@ export const useAppStore = create<AppState>()(
       showLabels: true,
       theologicalCommentary: false,
       showAllegianceShading: true,
+      atlasPhase: 'm4',
 
       quality: 'balanced',
       navMode: 'inspect',
@@ -121,6 +132,7 @@ export const useAppStore = create<AppState>()(
         set({ violenceMode, violenceAdvisorySeen: true }),
       toggleAllegianceShading: () =>
         set((s) => ({ showAllegianceShading: !s.showAllegianceShading })),
+      setAtlasPhase: (atlasPhase) => set({ atlasPhase }),
 
       setScene: (sceneId) =>
         set({ sceneId, timeSec: 0, playing: true, selectedEntityId: null, pendingTeleport: null }),
@@ -149,6 +161,7 @@ export const useAppStore = create<AppState>()(
         showScholarlyNotes: s.showScholarlyNotes,
         showLabels: s.showLabels,
         showAllegianceShading: s.showAllegianceShading,
+        atlasPhase: s.atlasPhase,
         quality: s.quality,
         violenceMode: s.violenceMode,
         violenceAdvisorySeen: s.violenceAdvisorySeen,

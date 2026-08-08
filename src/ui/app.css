@@ -526,6 +526,11 @@ h3 {
   font-size: 13px;
   font-style: italic;
 }
+.atlas-region-annotation {
+  fill: var(--faint);
+  font-size: 10.5px;
+  font-style: italic;
+}
 .atlas-point-label {
   fill: var(--ink);
   font-size: 11px;

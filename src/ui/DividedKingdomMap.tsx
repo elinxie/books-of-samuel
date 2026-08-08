@@ -1,7 +1,13 @@
 import { useMemo } from 'react';
 import type { Confidence, LocationEntry } from '../data/types';
-import type { AllegianceRegionConfig } from './atlasRegions';
-import { ALLEGIANCE_REGIONS, M4_LOCATION_IDS, MAP_LAT_RANGE, MAP_LON_RANGE } from './atlasRegions';
+import type { AllegianceRegionConfig, AtlasPhase } from './atlasRegions';
+import {
+  ALLEGIANCE_REGIONS,
+  M4_LOCATION_IDS,
+  M5_LOCATION_IDS,
+  MAP_LAT_RANGE,
+  MAP_LON_RANGE,
+} from './atlasRegions';
 
 const WIDTH = 640;
 const HEIGHT = 560;
@@ -31,20 +37,29 @@ function project(lat: number, lon: number): [number, number] {
 }
 
 /**
- * Divided-kingdom atlas overlay (2 Samuel 2:8–11, claim-divided-kingdom-atlas-overlay).
+ * Divided-kingdom atlas overlay (2 Samuel 2:8–11, claim-divided-kingdom-atlas-overlay)
+ * and its M5 phase extension (2 Samuel 3–4, claim-divided-kingdom-collapse-overlay).
  * A plain, honest schematic — no external basemap/tileset, no modern borders,
- * no hard-edged territory polygons. Allegiance is shown only as soft, blurred,
- * unbordered shading clustered around the text's own named locations,
- * following the queue #18 Fable resolution's binding design constraint.
+ * no hard-edged territory polygons in either phase. Allegiance is shown only
+ * as soft, blurred, unbordered shading clustered around the text's own named
+ * locations, following the queue #18 Fable resolution's binding design
+ * constraint. The M5 phase never adds a border or a new territory shape: the
+ * "house of Saul grew weaker and weaker" trend (3:1) and the north's
+ * collapse (3:6–4:12) are rendered as the same region fading and annotated,
+ * not as new or shrinking geometry.
  */
 export function DividedKingdomMap({
   locations,
   showShading,
+  phase = 'm4',
 }: {
   locations: LocationEntry[];
   showShading: boolean;
+  /** Which snapshot to render — defaults to the original M4 (2 Sam 2) state. */
+  phase?: AtlasPhase;
 }) {
   const byId = useMemo(() => new Map(locations.map((l) => [l.id, l])), [locations]);
+  const emphasizedIds = phase === 'm5' ? M5_LOCATION_IDS : M4_LOCATION_IDS;
 
   const regionGeometry = useMemo<RegionGeometry[]>(() => {
     const geometries: RegionGeometry[] = [];
@@ -66,9 +81,14 @@ export function DividedKingdomMap({
     <svg
       className="atlas-map"
       data-testid="atlas-map"
+      data-atlas-phase={phase}
       viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
       role="img"
-      aria-label="Schematic map of the divided kingdom after Saul's death, 2 Samuel 2"
+      aria-label={
+        phase === 'm5'
+          ? "Schematic map of the divided kingdom's collapse, 2 Samuel 3-4"
+          : "Schematic map of the divided kingdom after Saul's death, 2 Samuel 2"
+      }
     >
       <defs>
         <filter id="atlas-soft-blur" x="-50%" y="-50%" width="200%" height="200%">
@@ -85,29 +105,48 @@ export function DividedKingdomMap({
       <rect x={0} y={0} width={WIDTH} height={HEIGHT} className="atlas-map-bg" />
 
       {showShading &&
-        regionGeometry.map(({ region, cx, cy, rx, ry }) => (
-          <g key={region.id} data-testid={`region-shading-${region.id}`}>
-            <ellipse
-              cx={cx}
-              cy={cy}
-              rx={rx}
-              ry={ry}
-              fill={`url(#atlas-gradient-${region.id})`}
-              stroke="none"
-              filter="url(#atlas-soft-blur)"
-            />
-            <text x={cx} y={cy - ry * 0.55} textAnchor="middle" className="atlas-region-label">
-              {region.label}
-            </text>
-          </g>
-        ))}
+        regionGeometry.map(({ region, cx, cy, rx, ry }) => {
+          const m5 = phase === 'm5' ? region.m5 : undefined;
+          const label = m5?.label ?? region.label;
+          return (
+            <g
+              key={region.id}
+              data-testid={`region-shading-${region.id}`}
+              opacity={m5?.opacity ?? 1}
+            >
+              <ellipse
+                cx={cx}
+                cy={cy}
+                rx={rx}
+                ry={ry}
+                fill={`url(#atlas-gradient-${region.id})`}
+                stroke="none"
+                filter="url(#atlas-soft-blur)"
+              />
+              <text x={cx} y={cy - ry * 0.55} textAnchor="middle" className="atlas-region-label">
+                {label}
+              </text>
+              {m5 && (
+                <text
+                  x={cx}
+                  y={cy - ry * 0.55 + 15}
+                  textAnchor="middle"
+                  className="atlas-region-annotation"
+                  data-testid={`region-annotation-${region.id}`}
+                >
+                  {m5.annotation}
+                </text>
+              )}
+            </g>
+          );
+        })}
 
       {locations
         .filter((l) => l.approxCoordinates)
         .map((loc) => {
           const { lat, lon, confidence } = loc.approxCoordinates!;
           const [x, y] = project(lat, lon);
-          const emphasized = M4_LOCATION_IDS.includes(loc.id);
+          const emphasized = emphasizedIds.includes(loc.id);
           const r = MARKER_RADIUS[confidence];
           return (
             <g

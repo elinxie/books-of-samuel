@@ -130,6 +130,18 @@ test('divided-kingdom atlas overlay loads, shows the map, and the shading toggle
   await expect(page.getByTestId('region-shading-judah')).toHaveCount(0);
   // Dismissing the shading never hides the plotted points themselves.
   await expect(page.getByTestId('atlas-point-hebron')).toBeVisible();
+  await shadingToggle.click();
+
+  // The M5 (2 Sam 3-4) phase adds the collapse annotation without deleting
+  // the M4 phase's own content.
+  await expect(page.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm4');
+  await page.getByTestId('atlas-phase-m5').click();
+  await expect(page.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm5');
+  await expect(page.getByTestId('region-annotation-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('atlas-point-hebron')).toBeVisible();
+  await page.getByTestId('atlas-phase-m4').click();
+  await expect(page.getByTestId('atlas-map')).toHaveAttribute('data-atlas-phase', 'm4');
+  await expect(page.getByTestId('region-annotation-israel-writ')).toHaveCount(0);
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });

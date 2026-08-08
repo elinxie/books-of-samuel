@@ -1292,6 +1292,16 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Parallel in form to claim-gate-cast-scale, claim-judah-assembly-scale, and claim-gibeon-battle-scale: the same no-narrated-count, representative convention. Never conflated with the scene’s three staged, named principals (David, Rechab, Baanah), who are not part of this disclosed-scale group.',
   },
+  {
+    id: 'claim-divided-kingdom-collapse-overlay',
+    statement:
+      'The divided-kingdom map overlay’s M5 phase (the /atlas page’s "2 Sam 3–4" tab) renders the same Ish-bosheth’s-writ and house-of-Judah regions as the M4 phase, but with Ish-bosheth’s writ shown fading and annotated "no king after 2 Sam 4:1–12" while the house of Judah is left unchanged — a schematic visualization of the long-war trend and the north’s collapse, not a scholarly reconstruction of territory changing hands.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Mixed-provenance claim, parallel in form and purpose to claim-divided-kingdom-atlas-overlay, of which this is the M5 phase extension (docs/next-run.md, Milestone 5’s fourth/last build item): the underlying textual claims are already carried at high confidence by claim-long-war (3:1’s "house of Saul grew weaker and weaker" trend), claim-abner-break (3:6–21, Abner’s defection), and claim-ish-bosheth-assassination (4:1–12, the assassination itself) — this claim does not re-assert any of them and stays out of their way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choice for showing change over the milestone’s span: the same soft, unbordered, hard-edge-free region shape used in the M4 phase is kept exactly as-is (no new territory shape is invented, because the text describes a collapse of rule, not a redrawn border), but its shading opacity is reduced and a short annotation is added, so the "grew weaker and weaker" trend and Ish-bosheth’s death read as a fading, no-longer-occupied region rather than a static one. The house of Judah’s region is deliberately left unmodified between phases: the text says David "grew stronger and stronger" but never describes Judah’s territory itself expanding, so nothing is added to its shading that the text does not support. Both phases remain reachable on the page at all times via a phase control — switching phases never deletes or rewrites the M4 phase’s own shipped content (fable-review-queue.md #18’s binding constraint, carried forward unchanged) — and the overlay stays dismissible via the same allegiance-shading toggle the M4 phase already has (ADR-011’s "can still ignore it" test).',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(
