@@ -1040,6 +1040,66 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Mixed-provenance claim, parallel in form to claim-gibeon-terrain-form and claim-battle-scale: the allegiance split itself is high-confidence biblical text, already carried by claim-ish-bosheth-installed (2:8–10, the Gilead/Ashurites/Jezreel/Ephraim/Benjamin/all-Israel writ at Mahanaim) and claim-judah-anointing (2:4, the house of Judah alone) — this claim does not re-assert that split and stays out of its way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choices: soft-shaded, deliberately hard-edge-free region shapes (no polygon boundary is drawn, because no Iron IIA source establishes a literal line on the ground — see CLAUDE.md’s anachronism-discipline rule), the plain equirectangular-ish projection used to place points, and which locations are clustered into which region (e.g. grouping Mount Gilboa/Beth-shan/Jabesh-gilead under the "Israel-writ" region reflects their being within Jezreel/Gilead per 2:9, not a separately sourced boundary claim). Mahanaim is plotted at its own low-confidence, disputed coordinates (see the mahanaim LocationEntry’s two candidate identifications, both surfaced on the page, not just in data) rather than a firmer point standing in for it. Gibeon sits in the unshaded gap between the two soft regions on the map, which is a deliberate rendering choice reflecting its role as the contested meeting-ground of Abner’s and Joab’s men (2:12–17), not an assertion that Gibeon itself changed hands. Kingdom-scale is a separate, disputed question the overlay does not resolve — see claim-david-historical. The overlay is dismissible: a page-level toggle hides the shaded regions entirely, leaving only the plotted points, and the page itself is reached only by choosing to visit /atlas (ADR-011’s "can still ignore it" test).',
   },
+  {
+    id: 'claim-long-war',
+    statement:
+      'The narrative states there was a long war between the house of Saul and the house of David; David grew steadily stronger through it while the house of Saul grew steadily weaker, and lists six sons born to David at Hebron, one by each of six different wives (2 Samuel 3:1–5).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Card-only in hebron-covenant (docs/design/hebron-covenant-brief.md, b-long-war): no geometry is staged for this beat, and the sons are listed as the text lists them, with no forward commentary on Amnon or Absalom’s later stories — those lie far outside this milestone. The war’s trend (David strengthening, Saul’s house weakening) is the thing the M5 `/atlas` phase extension is meant to map, per the milestone’s fourth goal; this claim is the textual anchor for that overlay work, not a rendering of the war itself.',
+  },
+  {
+    id: 'claim-abner-break',
+    statement:
+      'The narrative states that Ish-bosheth accused Abner of going in to Rizpah, Saul’s concubine; Abner responds with anger, not confession or denial, and swears to transfer the kingdom from Dan to Beersheba, from the house of Saul to David (2 Samuel 3:6–11). The text does not state whether the accusation was true.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Narrated-vs-corroborated discipline at its most delicate (brief’s historical intent #3): the accusation is carried exactly as Ish-bosheth’s speech, Abner’s reply is indignation rather than a plea either way, and nothing here asserts what actually happened between Abner and Rizpah. That taking a king’s concubine carried royal-claim overtones in the ancient Near East is commonly noted by commentators, but this claim does not yet attach a named citation for that reading — a researcher pass extending mccarter-1984-ii-samuel’s coverage to 2 Samuel 3–4 is flagged (docs/next-run.md) to supply one before any upgrade past this hedge. No geometry stages the accusation, Rizpah, or Mahanaim (card-only beat, b-break); Rizpah gets a light referenced-only character entry (`rizpah`) since she returns to the narrative at 2 Samuel 21, far outside this milestone.',
+  },
+  {
+    id: 'claim-abner-overture',
+    statement:
+      'The narrative states that Abner sent messengers to David proposing a covenant; David’s condition was the return of Michal, Saul’s daughter, taken from Paltiel son of Laish and brought back to David, with Paltiel following her weeping as far as Bahurim before Abner sent him home; Abner also spoke to the elders of Israel and to Benjamin, securing their consent, before coming to Hebron himself (2 Samuel 3:12–19).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Text-only in hebron-covenant (brief’s "Resolved design calls"): staging Michal’s arrival at the Hebron feast, or in Abner’s party, would assert something the text never places there; staging Paltiel’s grief would require inventing an entire route setting for an unlocated two-verse vignette (Bahurim, unbuilt). Both are carried by caption text at the point the narrative states them, with 3:16’s "weeping after her all the way" carried as a short caption note, not a render. `michal` and `paltiel` get light referenced-only character entries so the inspector can surface them without any geometry standing in for either. The elders’ consultation (3:17–19) is likewise card-only — no council geometry, no individual elder invented.',
+  },
+  {
+    id: 'claim-covenant-feast',
+    statement:
+      'The narrative states that Abner came to David at Hebron with twenty men; David made a feast for Abner and the men with him; Abner pledged to gather all Israel to David in a covenant; and Abner departed — the narrative’s first of three repetitions across 3:21–23 that "he went in peace" (2 Samuel 3:20–21).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The staged center of this scene (b-arrival through b-peace). The twenty-men count is the text’s own exact number, rendered literally — no ratio, no disclosure needed beyond "this is the stated count," the same register gibeon-pool used for its twelve-a-side champions. The threefold repetition of "he went in peace" (3:21, 3:22, 3:23) is a deliberate narrative device holding the reader on the fact of safe-conduct before revealing what Joab did (3:22 onward, hebron-gate’s territory, not staged or foreshadowed here); this scene stages only the first occurrence (3:21b) and holds the frame there, without dread staging.',
+  },
+  {
+    id: 'claim-feast-form',
+    statement:
+      'The feast (3:20b) is rendered as a modest open-air meal at the same gate plaza hebron-anointing already established — mats and shared clay vessels laid out between David and Abner — not a banquet hall, table furniture, or any specific reconstructed vessel assemblage.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      '2 Samuel 3:20 states only that "David made Abner and the men who were with him a feast" — no building, furniture, or vessel form. Upgrade path: a researcher pass checking king-stager-2001 for citable Iron Age meal/feasting material culture is flagged (docs/next-run.md) but not yet done as of this scene’s build; until a citable source lands, this stays a disclosed generic placeholder, parallel in form to claim-anointing-rite-form. No banquet-hall or palace architecture is added to Hebron’s own claim-hebron-town-form placeholder, which stays a modest highland hill town.',
+  },
+  {
+    id: 'claim-covenant-cast-scale',
+    statement:
+      'Only Abner’s twenty men (3:20) is a narrated count. David’s escort/household presence at the feast (~15–25 figures at high quality tier) and the ambient town background (~20–30 figures) are disclosed design-choice headcounts, deliberately far below hebron-anointing’s 150–200-figure civic assembly — this is a closed political meal, not a public event.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-judah-assembly-scale and claim-gibeon-battle-scale: no headcount or gathering mechanism is narrated for who else was present at Hebron besides Abner’s twenty, so no ratio of claim-600-men applies. The scale contrast with hebron-anointing’s assembly (roughly an order of magnitude smaller total cast) is a deliberate compositional choice carrying the brief’s point directly — a working town on an ordinary day receiving one delegation, not a founding assembly.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

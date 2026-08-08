@@ -1283,6 +1283,147 @@ export const SCENES: SceneDef[] = [
       'asset-rocks',
     ],
   },
+  {
+    id: 'hebron-covenant',
+    title: 'Hebron — Abner’s overture and the covenant feast',
+    passageIds: ['2sam-3'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    // Built at Sonnet's implementation pass against Fable's world-director
+    // brief (docs/design/hebron-covenant-brief.md, 2026-08-03). Stays
+    // in-progress pending a Fable M5 sign-off review (docs/next-run.md) —
+    // no status flips past in-progress before that review.
+    status: 'in-progress',
+    synopsis:
+      'A long war ends not by battle but by defection: Abner, having broken with Ish-bosheth, negotiates with David and comes to Hebron with twenty men. David feasts him, Abner pledges to bring all Israel over in covenant, and he departs in peace — the first of three times the chapter says so, before it tells what Joab did.',
+    depictsDeath: false,
+    durationSec: 150,
+    beats: [
+      {
+        id: 'b-long-war',
+        timeSec: 0,
+        title: 'A long war',
+        caption:
+          'There is a long war between the house of Saul and the house of David; David grows steadily stronger, and the house of Saul grows steadily weaker. Six sons are born to David at Hebron in these years — Amnon, Chileab, Absalom, Adonijah, Shephatiah, and Ithream, each by a different wife — listed here as the text lists them, with no forward comment on where any of their stories lead. No geometry beyond this card. (2 Samuel 3:1–5)',
+        passageRef: '2 Samuel 3:1–5',
+      },
+      {
+        id: 'b-break',
+        timeSec: 15,
+        title: 'A rupture at Mahanaim',
+        caption:
+          'As the war goes on, Abner grows strong in the house of Saul. Ish-bosheth accuses him of going in to Rizpah, Saul’s concubine — an accusation the text states as Ish-bosheth’s own charge, never as an established fact; taking a king’s concubine carried royal-claim overtones in the ancient Near East, commonly noted by commentators, though the narrative itself does not say whether the charge was true. Abner answers with anger, not confession or denial, and swears to transfer the kingdom from Dan to Beersheba, from Saul’s house to David. Mahanaim is not shown here: no confident site identification exists for it. (2 Samuel 3:6–11)',
+        passageRef: '2 Samuel 3:6–11',
+      },
+      {
+        id: 'b-overture',
+        timeSec: 30,
+        title: 'A covenant proposed',
+        caption:
+          'Abner sends messengers to David proposing a covenant. David agrees, on one condition: the return of Michal, Saul’s daughter, given to him after David’s exile and since married to Paltiel son of Laish. Ish-bosheth has her taken from Paltiel, who follows her weeping as far as Bahurim before Abner sends him home. None of this is staged here — Michal and Paltiel are carried by the text alone. (2 Samuel 3:12–16)',
+        passageRef: '2 Samuel 3:12–16',
+      },
+      {
+        id: 'b-elders',
+        timeSec: 45,
+        title: 'Word to the elders',
+        caption:
+          'Before ever coming to Hebron himself, Abner speaks to the elders of Israel and, separately, to Benjamin — securing the north’s own consent to bring the kingdom over to David. Text-only; no council is staged. (2 Samuel 3:17–19)',
+        passageRef: '2 Samuel 3:17–19',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 60,
+        title: 'Abner comes to Hebron',
+        caption:
+          'Abner comes to David at Hebron, and with him twenty men — the text’s own exact count, rendered here literally, one figure per man. He arrives by the road from the north, the direction of Israel and Benjamin: the same king who received his own men climbing from the Negev two years ago now receives the north itself, coming to him. (2 Samuel 3:20a)',
+        passageRef: '2 Samuel 3:20a',
+      },
+      {
+        id: 'b-feast',
+        timeSec: 90,
+        title: 'A feast, not a celebration',
+        caption:
+          'David makes Abner and his men a feast — quiet, formal, watchful, a working negotiation. This is the same Abner who killed Joab’s brother Asahel at the pool of Gibeon two years before; David receives him at his own table anyway. No hall or throne room is shown: the text says only that a feast was made, and this scene keeps it an open-air meal in the plaza — mats and shared vessels, not invented banquet architecture. (2 Samuel 3:20b)',
+        passageRef: '2 Samuel 3:20b',
+      },
+      {
+        id: 'b-pledge',
+        timeSec: 115,
+        title: 'The pledge',
+        caption:
+          'Abner pledges to gather all Israel to David in a covenant, "that you may reign over all that your heart desires." (2 Samuel 3:21a)',
+        passageRef: '2 Samuel 3:21a',
+      },
+      {
+        id: 'b-peace',
+        timeSec: 130,
+        title: 'He went in peace',
+        caption:
+          'David sends Abner away, and Abner goes in peace — the first of three times this chapter says so, before it tells what Joab did. The frame holds on the road as the party recedes north: settled, public, unhurried, watched. Nothing here foreshadows what follows. (2 Samuel 3:21b)',
+        passageRef: '2 Samuel 3:21b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 145,
+        title: 'Not shown',
+        caption:
+          'Not shown: Joab’s return to Hebron and what follows there — the next scene, hebron-gate, not this one. (2 Samuel 3:22–39)',
+        passageRef: '2 Samuel 3:22–39',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-north-road',
+        label: 'The northern approach (default)',
+        position: [70, 26, -230],
+        lookAt: [10, 14, -70],
+      },
+      {
+        id: 'vp-feast',
+        label: 'The feast ground',
+        position: [-14, 2.2, -20],
+        lookAt: [4, 1.8, -18],
+      },
+      {
+        id: 'vp-gate-plaza',
+        label: 'The gate plaza',
+        position: [16, 2, -28],
+        lookAt: [0, 3, -18],
+      },
+      {
+        id: 'vp-departure',
+        label: 'The road north, in peace',
+        position: [40, 10, -60],
+        lookAt: [55, 16, -190],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-judah-anointing',
+      'claim-long-war',
+      'claim-abner-break',
+      'claim-abner-overture',
+      'claim-covenant-feast',
+      'claim-feast-form',
+      'claim-covenant-cast-scale',
+      'claim-chronology',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-feast-props',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

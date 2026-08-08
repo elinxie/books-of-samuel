@@ -7,7 +7,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     kind: 'person',
     summary:
       'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives.',
-    passageRefs: ['1 Samuel 27', '1 Samuel 30', '2 Samuel 2'],
+    passageRefs: ['1 Samuel 27', '1 Samuel 30', '2 Samuel 2', '2 Samuel 3'],
     claimIds: ['claim-david-historical'],
   },
   {
@@ -145,14 +145,17 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Abner son of Ner',
     kind: 'person',
     summary:
-      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside.',
-    passageRefs: ['2 Samuel 2:8–32'],
+      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside. After a rupture with Ish-bosheth over an accusation involving Rizpah, Saul’s concubine, Abner defects, negotiates Michal’s return, and secures the north’s own consent before coming to David at Hebron with twenty men to pledge the kingdom over — the same man who killed Asahel at Gibeon, received at David’s own table. He leaves in peace.',
+    passageRefs: ['2 Samuel 2:8–32', '2 Samuel 3:1–21'],
     claimIds: [
       'claim-ish-bosheth-installed',
       'claim-gibeon-contest',
       'claim-asahel-death',
       'claim-abner-pursuit-halted',
       'claim-gibeon-battle-scale',
+      'claim-abner-break',
+      'claim-abner-overture',
+      'claim-covenant-feast',
     ],
   },
   {
@@ -190,6 +193,33 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'Joab’s youngest brother, described as swift-footed. Pursues Abner despite being twice warned to turn aside, and is killed by a backward thrust of Abner’s spear — the project’s first named-character-kills-named-character death, rendered at documentary distance with no wound geometry, per ADR-009. Buried at Bethlehem, in his father’s tomb (2 Samuel 2:32).',
     passageRefs: ['2 Samuel 2:18–23', '2 Samuel 2:32'],
     claimIds: ['claim-asahel-death'],
+  },
+  {
+    id: 'rizpah',
+    name: 'Rizpah daughter of Aiah',
+    kind: 'person',
+    summary:
+      'Saul’s concubine. Ish-bosheth accuses Abner of going in to her — the rupture that drives Abner to defect to David (2 Samuel 3:6–11); the narrative states the accusation, never whether it was true. Referenced only in hebron-covenant; not staged or illustrated there. She returns to the narrative at 2 Samuel 21, far outside this milestone.',
+    passageRefs: ['2 Samuel 3:6–11'],
+    claimIds: ['claim-abner-break'],
+  },
+  {
+    id: 'michal',
+    name: 'Michal daughter of Saul',
+    kind: 'person',
+    summary:
+      'Saul’s daughter and David’s first wife, given by Saul to Paltiel son of Laish during David’s years as a fugitive. David’s condition for Abner’s covenant is her return, and Abner’s messengers bring her back to him (2 Samuel 3:13–16). Referenced only — the narrative never places her at the Hebron feast, and no scene has staged her arrival.',
+    passageRefs: ['2 Samuel 3:13–16'],
+    claimIds: ['claim-abner-overture'],
+  },
+  {
+    id: 'paltiel',
+    name: 'Paltiel son of Laish',
+    kind: 'person',
+    summary:
+      'The man to whom Saul had given Michal. Ordered to hand her back to David’s messengers, he follows her weeping as far as Bahurim before Abner tells him to turn back and go home (2 Samuel 3:15–16). Referenced only — Bahurim is unbuilt and his grief is carried by caption, not staged.',
+    passageRefs: ['2 Samuel 3:15–16'],
+    claimIds: ['claim-abner-overture'],
   },
 ];
 
