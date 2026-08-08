@@ -988,7 +988,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible'],
     notes:
-      'The project’s first named-character-kills-named-character death (distinct from Saul’s suicide in gilboa-battle). Per ADR-009: documentary distance, no wound/blood geometry in any mode. The text’s one specific non-graphic detail — Abner’s reversed spear grip — and the "stood still" reaction beat (2:23b) are used as the emotional pivot in place of a graphic replay. Abner is staged as reluctant, consistent with his two on-record warnings.',
+      'The project’s first named-character-kills-named-character death (distinct from Saul’s suicide in gilboa-battle). Per ADR-009: documentary distance, no wound/blood geometry in any mode. The text’s one specific non-graphic detail — Abner’s reversed spear grip — and the "stood still" reaction beat (2:23b) are used as the emotional pivot in place of a graphic replay. Abner is staged as reluctant, consistent with his two on-record warnings. Cross-referenced forward by claim-abner-killing (hebron-gate, 2 Sam 3:26–27): the text names "the blood of Asahel" as one of Joab’s own stated reasons for later killing Abner — the second application of the same ADR-009 named-character-killing template this claim established.',
   },
   {
     id: 'claim-abner-pursuit-halted',
@@ -1099,6 +1099,134 @@ export const CLAIMS: ReconstructionClaim[] = [
     sourceIds: ['esv-bible'],
     notes:
       'Parallel in form to claim-judah-assembly-scale and claim-gibeon-battle-scale: no headcount or gathering mechanism is narrated for who else was present at Hebron besides Abner’s twenty, so no ratio of claim-600-men applies. The scale contrast with hebron-anointing’s assembly (roughly an order of magnitude smaller total cast) is a deliberate compositional choice carrying the brief’s point directly — a working town on an ordinary day receiving one delegation, not a founding assembly.',
+  },
+  {
+    id: 'claim-joab-return-protest',
+    statement:
+      'The narrative states that Joab and his army returned from a raid with much spoil, that Joab was told Abner had come to David and been sent away in peace, and that Joab went to David and protested — asking why David had let Abner go, and stating his own reading that Abner had come to deceive him and to learn his comings and goings (2 Samuel 3:22–25).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Joab’s protest is carried exactly as his own stated words, not adopted as the narrative’s own verdict — 3:26–27 shows what he did about it, not whether his reading of Abner’s intentions was correct. The raid itself, its target, and its scale are not narrated; the returning party is staged at a disclosed design-choice headcount (claim-gate-cast-scale), not a number the text gives.',
+  },
+  {
+    id: 'claim-abner-killing',
+    statement:
+      'The narrative states that David sent messengers after Abner who brought him back from the cistern of Sirah without David’s knowledge ("but David did not know it," 3:26b); that Joab took Abner aside into the midst of the gate to speak with him privately; and that there Joab struck him in the stomach, and he died — for the blood of Asahel his brother (2 Samuel 3:26–27). Abishai is separately named as sharing responsibility for the killing (3:30), but the text attributes the strike to Joab alone.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-abner-killing-blood-vengeance',
+        label: 'Blood vengeance for Asahel, complicated by wartime killing',
+        proponents: [
+          'e.g., scholars following the blood-vengeance/lex-talionis reading of the text’s own stated motive (named attribution not yet page-verified — see notes)',
+        ],
+        summary:
+          'The text’s own stated reason (3:27, "for the blood of Asahel his brother") reads Joab’s act as kin-based blood vengeance for Asahel, whom Abner killed at Gibeon (claim-asahel-death, gibeon-pool). The narrative itself complicates this reading rather than simply endorsing it: Asahel died in open battle after two explicit warnings to turn aside, which is part of why David’s own verdict treats Joab’s act as murder rather than lawful vengeance, and why 1 Kings 2:5 later describes Joab as having "avenged in peacetime blood that had been shed in war."',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-abner-killing-rival-elimination',
+        label: 'Political elimination of a rival for command',
+        proponents: [
+          'e.g., scholars reading Abner as Joab’s obvious rival for command of a united army (named attribution not yet page-verified — see notes)',
+        ],
+        summary:
+          'A reading the text leaves implicit rather than states: with Abner defecting to David and pledging to unite the kingdom, he was the obvious rival to Joab for command of the combined army — a political motive alongside, not necessarily instead of, the blood-vengeance one the text names outright.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The milestone’s most important claim. Per the brief, the app asserts as fact only what the text asserts — the recall, the aside, the strike, the stated Asahel connection, and David’s verdict as David’s verdict — and does not editorialize Joab into a simple villain or a simple avenger; Abner’s own reluctance and Asahel’s own zeal (claim-asahel-death) both stay legible rather than resolved. Cross-references claim-asahel-death (gibeon-pool, 2 Sam 2:23) both ways: that claim documents the battlefield killing this one names as Joab’s stated motive. Both scholarlyViews above are hedged pending a researcher pass extending mccarter-1984-ii-samuel’s coverage to 2 Samuel 3 (flagged docs/next-run.md); until named, checkable proponents land, this stays at moderate/low confidence rather than a resolved scholarly consensus. Staged per ADR-009’s second named-character-killing application: documentary distance, no wound/blood/dismemberment geometry in either mode; the drawing-aside itself is the one specific, non-graphic detail shown as gesture; reduced mode elides the strike, cutting from the aside to the aftermath while stating the fact and the method identically in caption text.',
+  },
+  {
+    id: 'claim-david-disavowal',
+    statement:
+      'The narrative states that on hearing of the killing, David publicly disavowed it — declaring his and his kingdom’s innocence before the LORD forever concerning the blood of Abner — and pronounced a curse on Joab’s house (discharge, leprosy, one who holds a spindle, one who falls by the sword, one who lacks bread), while separately naming Joab and Abishai as more severe than himself (2 Samuel 3:28–30, 39).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The curse’s content is carried in captions exactly as harsh as the text states it (reduction abstracts depiction, never facts, per ADR-009) and is never visualized in any mode. David does not remove Joab from command here or in the rest of Samuel — a restraint the text states without explaining, which this claim does not resolve or editorialize.',
+  },
+  {
+    id: 'claim-abner-funeral',
+    statement:
+      'The narrative states that David ordered Joab and all the people with him to tear their clothes, put on sackcloth, and mourn before Abner; that King David himself walked behind the bier; that Abner was buried at Hebron, with the king weeping aloud at the grave and all the people weeping with him; that David lamented over Abner; and that David refused food until sundown, over the people’s urging (2 Samuel 3:31–35).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The scene’s gravitational center by design (per the brief’s historical intent #4: the text gives more verses to the mourning than to the killing). Its single most striking staged detail is 3:31 itself — Joab, the killer, made a public mourner at his own victim’s bier by David’s own command — staged exactly as narrated, without any caption commentary on Joab’s interior state, since the text supplies none. Abner’s body renders throughout as a wrapped, anatomically unresolved form (buildWrappedFormGeometry, the ADR-009 funerary standard also used for Beth-shan’s wall display and Jabesh’s retrieval/pyre), never a modeled corpse. See claim-abner-tomb-form for the tomb’s own disclosed placeholder form and claim-mourning-dress (reused from ziklag-lament) for the sackcloth/torn-clothes convention.',
+  },
+  {
+    id: 'claim-public-response',
+    statement:
+      'The narrative states that everything the king did pleased all the people, and that all the people and all Israel understood that day that it had not been the king’s will to put Abner to death; the chapter closes with David’s own words to his servants — "a prince and a great man has fallen this day in Israel" — and his statement that the sons of Zeruiah were too severe for him to control (2 Samuel 3:36–39).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-public-response-apologia',
+        label: 'Davidic apologia — a narrative shaped to clear David',
+        proponents: [
+          'e.g., scholars following the "apology of David" reading of this chapter’s emphatic insistence on David’s innocence (named attribution pending — the mccarter-1984-ii-samuel source card’s coverage does not yet extend to 2 Samuel 3; see notes)',
+        ],
+        summary:
+          'Reads 3:26b’s "but David did not know it," the public curse, the commanded mourning, the lament, the fast, and 3:36–37’s explicit insistence together as a narrative visibly concerned to clear David of a politically convenient death — the death of the one man positioned to unite the kingdom against him — rather than as disinterested reporting.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-public-response-plain-report',
+        label: 'Plain report of genuine public reaction',
+        proponents: [
+          'e.g., scholars reading 3:36–37 as a straightforward report of how the killing was in fact received (named attribution pending — see notes)',
+        ],
+        summary:
+          'Reads the same verses as a plain report: David’s visible grief, restraint toward Joab’s house, and public mourning were genuinely persuasive to observers at the time, without needing to posit a later apologetic hand shaping the account.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'Per the never-fake-consensus rule and the brief’s historical intent #3: the app stages what the text narrates (David’s disavowal, the mourning, the lament, the fast, 3:36–37’s own statement) and keeps the dispute about why the text narrates it so emphatically at the claim layer, not resolved in captions. The apologia-vs-plain-report framing is McCarter’s own well-known scholarly label for this material, but this project cannot yet attach his name as a checkable, page-verified citation here — the mccarter-1984-ii-samuel source card currently covers only 2 Samuel 1 (claim-amalekite-messenger-account); extending its coverage to 2 Samuel 3 is an open researcher-pass gap (docs/next-run.md), not yet done as of this scene’s build. Both views stay hedged with an unnamed "e.g." attribution and low confidence until that pass lands and supplies checkable proponents.',
+  },
+  {
+    id: 'claim-hebron-gate-form',
+    statement:
+      'The Hebron gate (3:27, "the midst of the gate") is rendered as a modest two-chamber gate passage — outer walls with one recessed alcove per side, deep enough to draw someone into its interior shadow — not a monumental six-chamber Solomonic-type gate.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Tell Rumeida’s 11th–10th-century town form is a permanently thin evidentiary window (see claim-hebron-town-form’s own researcher-pass finding, queue #19c) and no gate of any type is archaeologically attested there for this period. "The midst of the gate" requires some interior for the aside to be staged into, so this claim supplies a disclosed, modest placeholder consistent with hebron-anointing’s existing gate-plaza massing, not an assertion of excavated form. Upgrade path: a researcher pass extending herzog-1997 (his urban-form monograph covers gate typology generally) with a checkable citation specific to modest early Iron II gate types, if one exists, could move this claim from design-placeholder to comparative-ane — not yet done (docs/next-run.md).',
+  },
+  {
+    id: 'claim-abner-tomb-form',
+    statement:
+      'Abner’s tomb at Hebron (3:32) is rendered as a simple rock-cut entry on the hill’s flank — a modest boulder mass with a single dark inset opening, no interior modeled or implied.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text states only that Abner was buried at Hebron; no tomb form, location, or construction detail is narrated. This claim explicitly does not adopt the medieval "Tomb of Abner" tradition shown to visitors in modern Hebron as a site or form — that tradition has no claimed basis in this project’s source discipline. Iron Age water/installation evidence at Hebron more broadly is likely permanently thin (docs/next-run.md); this placeholder is not expected to upgrade past design-placeholder without a genuinely new excavation finding.',
+  },
+  {
+    id: 'claim-gate-cast-scale',
+    statement:
+      'Joab’s returning raid party (~15–25 figures at high quality tier), the mourning assembly ("all the people," ~60–90 figures, representative, mostly static or slow-procession), and the ambient town background (~15–25 figures) are disclosed design-choice headcounts — no number is narrated for any of the three.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-covenant-cast-scale, claim-judah-assembly-scale, and claim-gibeon-battle-scale: the same no-narrated-count, representative-assembly convention. The mourning assembly is deliberately smaller than hebron-anointing’s civic-founding assembly (a funeral, not a tribal founding) and is staged as the same three-crowd discipline as hebron-covenant — raid party, mourning assembly, and ambient town are never conflated with one another.',
   },
 ];
 

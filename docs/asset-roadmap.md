@@ -209,6 +209,46 @@ world-director brief, 2026-08-03) pending a Fable M5 sign-off review
 open `king-stager-2001` feasting-material-culture check flagged as a
 researcher gap on `claim-feast-form`.
 
+## Current placeholders (hebron-gate scene, Milestone 5, built 2026-08-08, PROVISIONAL)
+
+The milestone's load-bearing scene: the killing of Abner at the Hebron gate
+and his funeral (2 Sam 3:22-39) — the second application of ADR-009's
+named-character-killing template (first: gibeon-pool's Asahel). The largest
+M5 scene by cast (Joab's raid party ~15-25, the mourning assembly ~60-90
+disclosed-representative, ambient town ~15-25, plus the four principals —
+~100-140 at high tier) but cheap: procession-pace movement, no combat
+choreography. Reuses hebron-anointing's/hebron-covenant's Hebron terrain,
+town massing, terracing, and gate plaza location outright (mandatory visual
+continuity — the same plaza across all three Hebron M5 scenes), plus
+hebron-covenant's own north road (Abner "re-enters the scene already
+returning through" it) and `engine/characters/wrappedForm.ts`'s
+`buildWrappedFormGeometry` (reused unchanged for the bier, the same ADR-009
+funerary standard Beth-shan's wall display and Jabesh's pyre used). Two new
+structures: the gate-passage interior and the tomb ground.
+
+| Asset                       | Represents                                                                             | Why temporary                                                                                                                                                                                                                                                   | Replace at |
+| --------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-hebron-gate-passage` | The gate of Hebron (3:27, "the midst of the gate") — `claim-hebron-gate-form`          | A modest two-chamber gate passage (box massing: outer walls, one recessed alcove per side, a lintel), not a reconstruction of any excavated Tell Rumeida gate, and deliberately not a monumental six-chamber Solomonic-type gate                                | M5         |
+| `asset-bier`                | Abner's body borne to the tomb (3:31) — `claim-abner-funeral`, `claim-abner-tomb-form` | A plank-and-pole bier (reusing jabesh-burial's frame construction) carrying a wrapped, anatomically unresolved cloth form (`buildWrappedFormGeometry`); the tomb itself is a simple rock-cut entry, not the medieval "Tomb of Abner" tradition in modern Hebron | M5         |
+
+Reuses `asset-terrain-hebron-hills`, `asset-hebron-town-form`,
+`asset-terrace-walls`, `asset-figure-procedural`, `asset-figure-fallen`,
+`asset-david-marker`, `asset-olive-tree`, and `asset-rocks` directly — no new
+records for these. No new weapon-kit geometry: per the brief, the text's one
+specific non-graphic detail for this killing is the drawing-aside gesture
+itself (not a weapon reveal, unlike gibeon-pool's reversed spear grip), so
+the strike renders as an unweaponed arm/body gesture at documentary
+distance, no wound/blood/dismemberment geometry in either violence mode, and
+reduced mode elides the strike entirely (cuts from the aside to the
+aftermath — `poses.ts`'s `gateStrikePose`). This scene's status stays
+`in-progress` (`docs/design/hebron-gate-brief.md` is a genuine Fable
+world-director brief, 2026-08-03) pending a Fable M5 sign-off review
+(`docs/next-run.md`) before it can ship `released` — in particular the open
+researcher gaps on `claim-abner-killing`'s and `claim-public-response`'s
+scholarlyViews (both hedged pending an `mccarter-1984-ii-samuel` extension
+to 2 Samuel 3) and `claim-hebron-gate-form`'s `herzog-1997` gate-typology
+upgrade path.
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -230,11 +270,12 @@ researcher gap on `claim-feast-form`.
   goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
   section above) — the wider `f-overview-map` feature (Philistia/Amalekite
   fringe too) stays a separate, still-`planned` future scope.
-- **M5 (2 Sam 3–4):** `hebron-covenant` built 2026-08-08 (see table above),
-  reusing hebron-anointing's Hebron terrain/town/terrace assets directly;
-  one new asset (`asset-feast-props`). `hebron-gate` and `hebron-reckoning`
-  still outstanding, plus the `/atlas` M5 phase extension (the long war's
-  trend and the northern house's collapse).
+- **M5 (2 Sam 3–4):** `hebron-covenant` and `hebron-gate` both built
+  2026-08-08 (see tables above), both reusing hebron-anointing's Hebron
+  terrain/town/terrace assets directly; two new assets total
+  (`asset-feast-props`, plus `hebron-gate`'s `asset-hebron-gate-passage` and
+  `asset-bier`). `hebron-reckoning` still outstanding, plus the `/atlas` M5
+  phase extension (the long war's trend and the northern house's collapse).
 
 ## Policy
 

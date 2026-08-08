@@ -1424,6 +1424,190 @@ export const SCENES: SceneDef[] = [
       'asset-rocks',
     ],
   },
+  {
+    id: 'hebron-gate',
+    title: 'Hebron gate — the killing of Abner and his funeral',
+    passageIds: ['2sam-3'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    // Built at Sonnet's implementation pass against Fable's world-director
+    // brief (docs/design/hebron-gate-brief.md, 2026-08-03) — the second
+    // application of ADR-009's named-character-killing template. Stays
+    // in-progress pending a Fable M5 sign-off review (docs/next-run.md) —
+    // no status flips past in-progress before that review.
+    status: 'in-progress',
+    synopsis:
+      'Joab returns from a raid, protests Abner’s reception at David’s table, and has him secretly recalled — then draws him aside into the gate of Hebron and kills him, for the blood of Asahel his brother. David publicly disavows the killing and curses Joab’s house, then orders Joab himself to tear his clothes and mourn: the killer made a public mourner at his own victim’s bier. The funeral — the procession, the burial, the lament, the fast until sundown — carries more of the chapter, and more of this scene, than the killing itself.',
+    depictsDeath: true,
+    durationSec: 190,
+    beats: [
+      {
+        id: 'b-joab-returns',
+        timeSec: 0,
+        title: 'Joab returns',
+        caption:
+          'Joab and all David’s army return from a raid, bringing much spoil. Joab is told that Abner son of Ner came to the king and has gone in peace — the third time this chapter says so (3:21, 22, 23). No violence in this beat. (2 Samuel 3:22–23)',
+        passageRef: '2 Samuel 3:22–23',
+      },
+      {
+        id: 'b-protest',
+        timeSec: 14,
+        title: 'Joab’s protest',
+        caption:
+          'Joab goes to David and protests: why did he let Abner go? Joab’s own reading is that Abner came to deceive him — to learn his comings and goings. Carried as Joab’s own stated words, not adopted here as the narrative’s verdict. (2 Samuel 3:24–25)',
+        passageRef: '2 Samuel 3:24–25',
+      },
+      {
+        id: 'b-recall',
+        timeSec: 28,
+        title: 'The recall',
+        caption:
+          'David sends messengers after Abner, who overtake him at the cistern of Sirah and bring him back — not shown here, an unbuilt and unidentified site. But David did not know it. Abner re-enters Hebron already returning through the gate. (2 Samuel 3:26)',
+        passageRef: '2 Samuel 3:26',
+      },
+      {
+        id: 'b-gate-aside',
+        timeSec: 42,
+        title: 'The midst of the gate',
+        caption:
+          'Abner passes back through the gate. Joab takes him aside into its interior, to speak with him privately — the drawing-aside itself staged literally, no invented dialogue or struggle. Abner had left Hebron under safe-conduct, a guest at David’s own table. (2 Samuel 3:27a)',
+        passageRef: '2 Samuel 3:27a',
+      },
+      {
+        id: 'b-abner-death',
+        timeSec: 58,
+        title: 'For the blood of Asahel',
+        caption:
+          'There Joab strikes Abner in the stomach, and he dies — for the blood of Asahel his brother, whom Abner killed at Gibeon (see gibeon-pool). Shown at documentary distance, in the gate’s own shadow: no wound or blood geometry in any mode; reduced mode cuts from the aside straight to the aftermath. Abishai shares responsibility (3:30) but the strike is Joab’s alone. (2 Samuel 3:27b)',
+        passageRef: '2 Samuel 3:27b',
+      },
+      {
+        id: 'b-david-hears',
+        timeSec: 76,
+        title: 'David’s disavowal',
+        caption:
+          'David publicly declares his and his kingdom’s innocence before the LORD forever concerning Abner’s blood, and curses Joab’s house — a harsh curse (discharge, leprosy, one who holds a spindle, one who falls by the sword, one who lacks bread), stated here plainly, never visualized. Abishai’s own share of the responsibility (3:30) is stated as the text states it. (2 Samuel 3:28–30)',
+        passageRef: '2 Samuel 3:28–30',
+      },
+      {
+        id: 'b-mourning-cmd',
+        timeSec: 94,
+        title: 'Joab, the mourner',
+        caption:
+          'David commands mourning. Joab himself tears his clothes and puts on sackcloth with the rest, and takes his place before the bier — the killer made a public mourner at his own victim’s funeral, staged exactly as narrated, with no comment on what he might be feeling. David takes his place behind the bier. (2 Samuel 3:31a)',
+        passageRef: '2 Samuel 3:31a',
+      },
+      {
+        id: 'b-procession',
+        timeSec: 112,
+        title: 'The procession',
+        caption:
+          'The bier — a wrapped form, never a modeled body — is carried to the tomb at funeral pace; the people follow, and King David walks directly behind the bier, exactly as the text places him. This procession, not the killing, is this scene’s real center of gravity. (2 Samuel 3:31b–32a)',
+        passageRef: '2 Samuel 3:31b–32a',
+      },
+      {
+        id: 'b-burial-weep',
+        timeSec: 134,
+        title: 'Burial at Hebron',
+        caption:
+          'Abner is buried at Hebron. The king weeps aloud at the grave, and all the people weep with him — held, unhurried, without music or hurry. (2 Samuel 3:32b)',
+        passageRef: '2 Samuel 3:32b',
+      },
+      {
+        id: 'b-lament',
+        timeSec: 148,
+        title: 'The lament',
+        caption:
+          'David laments over Abner: "Should Abner die as a fool dies? Your hands were not bound; your feet were not fettered;" — spoken over the grave, no invented melody (the standing rule since ziklag-lament). (2 Samuel 3:33–34)',
+        passageRef: '2 Samuel 3:33–34',
+      },
+      {
+        id: 'b-fast',
+        timeSec: 162,
+        title: 'The fast',
+        caption:
+          'The people urge David to eat while it is still day; he swears to taste nothing until sundown. The light begins to turn here — the one lighting hour this chapter states directly. (2 Samuel 3:35)',
+        passageRef: '2 Samuel 3:35',
+      },
+      {
+        id: 'b-people-note',
+        timeSec: 172,
+        title: 'It had not been the king’s will',
+        caption:
+          'Everything the king does pleases the people. All the people and all Israel understand that day that it had not been the king’s will to put Abner to death — the narrative’s own emphatic insistence on David’s innocence, presented here as the narrative’s, not adjudicated by this caption. (2 Samuel 3:36–37)',
+        passageRef: '2 Samuel 3:36–37',
+      },
+      {
+        id: 'b-close',
+        timeSec: 182,
+        title: 'A prince and a great man',
+        caption:
+          'At sundown David says to his servants, "Do you not know that a prince and a great man has fallen this day in Israel?" — and that the sons of Zeruiah are more severe than he can control. Not shown: Ish-bosheth’s own assassination and its aftermath — hebron-reckoning, not this scene. (2 Samuel 3:38–39)',
+        passageRef: '2 Samuel 3:38–39',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-gate-plaza',
+        label: 'The gate plaza (default)',
+        position: [16, 2, -24],
+        lookAt: [0, 2.4, -34],
+      },
+      {
+        id: 'vp-gate-shadow',
+        label: 'The gate’s interior shadow',
+        position: [10, 2, -30],
+        lookAt: [-6, 1.6, -41],
+      },
+      {
+        id: 'vp-procession',
+        label: 'The procession route',
+        position: [-14, 6, -30],
+        lookAt: [-32, 3, -40],
+      },
+      {
+        id: 'vp-tomb',
+        label: 'The tomb ground',
+        position: [-58, 3, -46],
+        lookAt: [-69, 2.4, -54],
+      },
+      {
+        id: 'vp-kings-response',
+        label: 'David’s vantage',
+        position: [-6, 2, -22],
+        lookAt: [0, 2, -30],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-joab-return-protest',
+      'claim-abner-killing',
+      'claim-david-disavowal',
+      'claim-abner-funeral',
+      'claim-public-response',
+      'claim-hebron-gate-form',
+      'claim-abner-tomb-form',
+      'claim-gate-cast-scale',
+      'claim-asahel-death',
+      'claim-mourning-dress',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-hebron-gate-passage',
+      'asset-bier',
+      'asset-figure-procedural',
+      'asset-figure-fallen',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

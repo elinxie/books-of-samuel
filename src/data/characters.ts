@@ -8,7 +8,12 @@ export const CHARACTERS: CharacterOrGroup[] = [
     summary:
       'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives.',
     passageRefs: ['1 Samuel 27', '1 Samuel 30', '2 Samuel 2', '2 Samuel 3'],
-    claimIds: ['claim-david-historical'],
+    claimIds: [
+      'claim-david-historical',
+      'claim-david-disavowal',
+      'claim-abner-funeral',
+      'claim-public-response',
+    ],
   },
   {
     id: 'davids-band',
@@ -145,8 +150,8 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Abner son of Ner',
     kind: 'person',
     summary:
-      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside. After a rupture with Ish-bosheth over an accusation involving Rizpah, Saul’s concubine, Abner defects, negotiates Michal’s return, and secures the north’s own consent before coming to David at Hebron with twenty men to pledge the kingdom over — the same man who killed Asahel at Gibeon, received at David’s own table. He leaves in peace.',
-    passageRefs: ['2 Samuel 2:8–32', '2 Samuel 3:1–21'],
+      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside. After a rupture with Ish-bosheth over an accusation involving Rizpah, Saul’s concubine, Abner defects, negotiates Michal’s return, and secures the north’s own consent before coming to David at Hebron with twenty men to pledge the kingdom over — the same man who killed Asahel at Gibeon, received at David’s own table. He leaves in peace, three times over — until Joab has him recalled and killed at the gate of Hebron itself (2 Samuel 3:26–27), for the blood of Asahel among the reasons the text names.',
+    passageRefs: ['2 Samuel 2:8–32', '2 Samuel 3:1–39'],
     claimIds: [
       'claim-ish-bosheth-installed',
       'claim-gibeon-contest',
@@ -156,6 +161,8 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'claim-abner-break',
       'claim-abner-overture',
       'claim-covenant-feast',
+      'claim-abner-killing',
+      'claim-abner-funeral',
     ],
   },
   {
@@ -172,18 +179,25 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Joab son of Zeruiah',
     kind: 'person',
     summary:
-      'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back.',
-    passageRefs: ['2 Samuel 2:13–32'],
-    claimIds: ['claim-gibeon-contest', 'claim-abner-pursuit-halted', 'claim-gibeon-battle-scale'],
+      'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back. Two years on, protests David’s reception of Abner at Hebron, draws Abner aside at the gate, and kills him — the text names his own stated reasons (Abner’s supposed deception, 3:24–25; blood for Asahel, 3:27) and scholars additionally read an unstated rivalry for command; David later makes Joab himself tear his clothes and walk behind Abner’s bier (3:31).',
+    passageRefs: ['2 Samuel 2:13–32', '2 Samuel 3:22–31'],
+    claimIds: [
+      'claim-gibeon-contest',
+      'claim-abner-pursuit-halted',
+      'claim-gibeon-battle-scale',
+      'claim-joab-return-protest',
+      'claim-abner-killing',
+      'claim-abner-funeral',
+    ],
   },
   {
     id: 'abishai',
     name: 'Abishai son of Zeruiah',
     kind: 'person',
     summary:
-      'Joab’s brother, Asahel’s brother, who joins Joab in the pursuit of Abner to the hill of Ammah.',
-    passageRefs: ['2 Samuel 2:24'],
-    claimIds: ['claim-abner-pursuit-halted'],
+      'Joab’s brother, Asahel’s brother, who joins Joab in the pursuit of Abner to the hill of Ammah. Named at 2 Samuel 3:30 as sharing responsibility for Abner’s killing at Hebron, staged present near the gate — the text attributes the strike itself to Joab alone.',
+    passageRefs: ['2 Samuel 2:24', '2 Samuel 3:30'],
+    claimIds: ['claim-abner-pursuit-halted', 'claim-abner-killing'],
   },
   {
     id: 'asahel',

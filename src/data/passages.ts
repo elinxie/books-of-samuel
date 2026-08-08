@@ -81,7 +81,7 @@ export const PASSAGES: Passage[] = [
     // First scene of this passage (hebron-covenant) leaves `planned` at this
     // build — status follows the scene-progress convention confirmed
     // 2026-07-22/2026-08-02 (M4 precedent).
-    sceneIds: ['hebron-covenant'],
+    sceneIds: ['hebron-covenant', 'hebron-gate'],
     milestoneId: 'M5',
     status: 'in-progress',
   },

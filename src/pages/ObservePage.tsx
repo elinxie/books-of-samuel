@@ -26,6 +26,8 @@ import { GibeonPoolScene } from '../scenes/gibeon-pool/GibeonPoolScene';
 import { GIBEON_POOL_TERRAIN } from '../scenes/gibeon-pool/terrain';
 import { HebronCovenantScene } from '../scenes/hebron-covenant/HebronCovenantScene';
 import { HEBRON_TERRAIN as HEBRON_COVENANT_TERRAIN } from '../scenes/hebron-covenant/terrain';
+import { HebronGateScene } from '../scenes/hebron-gate/HebronGateScene';
+import { HEBRON_TERRAIN as HEBRON_GATE_TERRAIN } from '../scenes/hebron-gate/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -46,6 +48,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'hebron-anointing': { component: HebronAnointingScene, terrain: HEBRON_TERRAIN },
   'gibeon-pool': { component: GibeonPoolScene, terrain: GIBEON_POOL_TERRAIN },
   'hebron-covenant': { component: HebronCovenantScene, terrain: HEBRON_COVENANT_TERRAIN },
+  'hebron-gate': { component: HebronGateScene, terrain: HEBRON_GATE_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

@@ -591,6 +591,30 @@ export const ASSETS: AssetRecord[] = [
       'Revise if a researcher pass finds citable meal/feasting material culture in king-stager-2001 (or another comparative-ANE source) worth adopting; until then this stays a disclosed generic placeholder.',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-hebron-gate-passage',
+    name: 'Hebron gate passage',
+    represents:
+      'The gate of Hebron (2 Samuel 3:27, "the midst of the gate") where Joab draws Abner aside and kills him — see claim-hebron-gate-form',
+    placeholder: true,
+    whyTemporary:
+      'A modest two-chamber gate passage built from simple box massing (outer walls plus one recessed alcove per side and a lintel), not a reconstruction of any excavated Tell Rumeida gate — no gate of any type is archaeologically attested there for this period, and this is deliberately not a monumental six-chamber Solomonic-type gate.',
+    historicalRequirements:
+      'Revise only if a researcher pass extends herzog-1997 with a checkable citation on modest early Iron II gate typology generally applicable here; until then this stays a disclosed generic placeholder.',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-bier',
+    name: 'Funeral bier and wrapped form',
+    represents:
+      'Abner’s body borne to the tomb (2 Samuel 3:31) — see claim-abner-funeral, claim-abner-tomb-form',
+    placeholder: true,
+    whyTemporary:
+      'A plank-and-pole bier frame (reused construction from jabesh-burial’s asset-bier-props) carrying a wrapped, anatomically unresolved cloth form (buildWrappedFormGeometry, the shared ADR-009 funerary standard) — never a modeled corpse. The tomb itself renders as a simple rock-cut entry, a disclosed placeholder, not the medieval "Tomb of Abner" tradition in modern Hebron.',
+    historicalRequirements:
+      'Comparative ANE bier/tomb form, if a specific type is ever sourced for Iron Age Judah; currently an abstract, undetailed carrying frame and tomb entry by design.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));
