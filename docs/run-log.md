@@ -1331,3 +1331,107 @@ pass, recorded in briefs. Docs synced: next-run.md (new top state + build
 order: covenant → gate → reckoning → atlas), progress.md M5 section. No
 code/scene/claim changes; no verify run (data edit is one additive
 milestone entry; orchestrating session gates before merge).
+
+**2026-08-08 — Sonnet (scheduled routine) — M5 all three scenes + atlas built; Fable sign-off attempt hit spend limit, Sonnet fallback self-review**
+
+Built all four remaining M5 items in sequence, each via a `threejs-engineer`/
+`ui-engineer` subagent build against its brief followed by an independent
+`npm run verify` re-run by the orchestrating session (not just trusting the
+build agent's own report) before commit:
+
+1. `hebron-covenant` (2 Sam 3:1–21, staged from 3:20; `depictsDeath: false`)
+   — commit `7f60d37`. ~68–89 figures high-tier. New claims
+   `claim-long-war`/`claim-abner-break`/`claim-abner-overture`/
+   `claim-covenant-feast`/`claim-feast-form`/`claim-covenant-cast-scale`;
+   referenced-only `michal`/`paltiel`/`rizpah`. Spot-checked: no Joab
+   presence anywhere except narrated caption text; closing card is a bare
+   forward pointer, no 3:22+ content.
+2. `hebron-gate` (2 Sam 3:22–39; `depictsDeath: true`, ADR-009's 2nd
+   named-killing template application) — commit `d14eaad`. ~122 figures
+   high-tier (76-figure mourning procession, the milestone's one moving
+   crowd). New claims `claim-joab-return-protest`/`claim-abner-killing`/
+   `claim-david-disavowal`/`claim-abner-funeral`/`claim-public-response`/
+   `claim-hebron-gate-form`/`claim-abner-tomb-form`/`claim-gate-cast-scale`.
+   Spot-checked: reduced-mode `thrust` stays 0 (strike always elided), gate
+   passage explicitly two-chamber not monumental six-chamber (checked
+   `layout.ts`/`GatePassage.tsx`/`entities.ts` comments directly), closing
+   card stops exactly at 3:38–39 with a "not shown" pointer to
+   `hebron-reckoning`.
+3. `hebron-reckoning` (2 Sam 4; `depictsDeath: true`, ADR-009's 3rd
+   named-killing application, first as a judicial act) — commit `81cd49b`.
+   ~32 figures high-tier, the milestone's cheapest scene. New claims
+   `claim-ish-bosheth-assassination`/`claim-david-judgment`/
+   `claim-hebron-pool-feature`/`claim-reckoning-cast-scale`; new characters
+   `rechab`/`baanah` (staged), `mephibosheth` (referenced-only). **Most
+   load-bearing compliance check this session**: grepped the entire scene
+   directory for hand/feet/sever/dismember language and confirmed every hit
+   is a comment/caption/claim, never geometry — the head of Ish-bosheth
+   renders only via `buildWrappedFormGeometry` (`HeadBundle.tsx`), and the
+   hands-and-feet display from 4:12 has no render path at all, in either
+   violence mode, per ADR-009's unconditional dismemberment bar.
+4. `/atlas` M5 phase extension (2 Sam 3–4 phase toggle: Ish-bosheth's writ
+   region fades + is annotated "no king after 2 Sam 4:1–12," Judah's region
+   unchanged; M4 phase rendering byte-for-byte unchanged) — commit `bf9a44e`.
+   New `claim-divided-kingdom-collapse-overlay`. Spot-checked: no hard
+   border/stroke added in either phase, the M4/M5 constraint from queue #18
+   held.
+
+**Performance fix** (commit `3e1454a`): a `performance-reviewer` pass found
+a real issue — `hebron-gate/poses.ts` and `hebron-covenant/poses.ts` called
+`Curve.getPointAt()`/`getTangentAt()` without an `optionalTarget`, allocating
+a `Vector3` internally on every call, concentrated in `hebron-gate`'s
+76-figure mourning procession (the brief's own pre-flagged risk point) and
+`hebron-covenant`'s 21-figure road envelope — the same per-frame-allocation
+bug class as the Jabesh-burial precedent. Applied the orchestrating
+session's own fix directly (mechanical, not a design change): hoisted shared
+`tmpVec`/`tmpTan` scratch vectors per file, mirroring the already-correct
+pattern in `hebron-reckoning/poses.ts`. Re-verified clean after a Prettier
+fixup.
+
+**Researcher pass** (commit `bf7f361`): closed 3 of 4 gaps `docs/next-run.md`
+had flagged. `mccarter-1984-ii-samuel` extended to 2 Sam 3–4; new source card
+`mccarter-1980-apology-of-david` (JBL 99, the origin of the Davidic-apologia
+reading); `keil-delitzsch-1866` extended as the plain-report counterweight.
+Named attribution landed on `claim-public-response` (both views),
+`claim-abner-killing`'s blood-vengeance view, and both `claim-ish-bosheth-
+assassination` MT/LXX views. `herzog-1997` extended with Iron Age
+gate-typology chronology, upgrading `claim-hebron-gate-form` design-
+placeholder/speculative → comparative-ane/low (still never a six-chamber
+gate). `king-stager-2001` extended for feasting/mourning material culture,
+upgrading `claim-feast-form` the same way. `claim-hebron-pool-feature`/
+`claim-abner-tomb-form`: a real, specific water-installation check at Hebron
+found a spring but no dated Iron Age built pool — closed as a permanent
+evidentiary state (queue #13 convention), not left ambiguously open.
+`claim-abner-killing`'s rival-elimination view and `claim-abner-break`'s
+Rizpah/royal-claim reading stay honestly hedged — searched specifically, no
+checkable citation found, not fabricated. `sources/source-index.json`
+regenerated (31→32 cards).
+
+**Fable M5 sign-off review: attempted, failed on spend limit, Sonnet
+fallback ran instead.** The `fable-architect` call errored immediately with
+"You've hit your monthly spend limit" — same failure mode as queue #18's
+M4 precedent (2026-07-22). Per `docs/model-handoff.md`'s documented
+fallback, the orchestrating Sonnet session ran its own checklist
+self-assessment against `docs/fable-review-checklist.md` rather than
+simulating Fable's judgment, and logged the result as **provisional**
+(queue #20, opened this session — see that entry for the two items
+specifically flagged as needing real Fable judgment, not just a mechanical
+check). Self-assessment summary: historical-plausibility and source-
+traceability checks pass on direct inspection (claims phrased as narrated
+content, disputed questions carry `scholarlyViews`, new source cards carry
+honest `copyrightStatus`); anachronism check passes on the gate/tomb/pool
+placeholder discipline verified above; visual coherence could only be
+checked at the code level (quality-tier figure-count clamping confirmed:
+covenant 69→57, gate 122→69, reckoning 32→21 across tiers) since no
+sandboxed session here can launch a real browser for a full visual pass;
+performance risk is closed by the fix above; test coverage confirmed (all
+three scenes' entities wired into `src/data/integrity.test.ts`); ADR-011
+affordances check is trivial (only new UI is the dismissible atlas phase
+toggle). **No status flips made** — every M5 scene, `M5` itself, and
+`2sam-3`/`2sam-4` all stay `in-progress`, per the fallback policy's explicit
+instruction to hold status when a materially-affecting decision (a
+milestone sign-off, definitionally) hasn't had real Fable judgment. Docs
+synced: `docs/fable-review-queue.md` (#20 opened), `docs/next-run.md` (new
+top section), this entry. `npm run verify` green at every commit along the
+way, independently re-run by the orchestrating session each time (not just
+taken from build-agent self-reports).

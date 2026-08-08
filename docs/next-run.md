@@ -3,7 +3,57 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+## State right now (2026-08-08, M5 BUILT — all four items done, Fable sign-off PENDING on spend limit, branch `claude/focused-mccarthy-2x9nmb`, PR #53 draft)
+
+**All four M5 build items are done, gate-verified, and committed:**
+`hebron-covenant` (`7f60d37`), `hebron-gate` (`d14eaad`), `hebron-reckoning`
+(`81cd49b`), the `/atlas` M5 phase extension (`bf9a44e`), a performance fix
+for unhoisted curve-sampling allocations in `hebron-gate`'s/
+`hebron-covenant`'s `poses.ts` (`3e1454a`), and a researcher pass closing 3
+of 4 flagged citation gaps (`bf7f361`). Full detail in `docs/run-log.md`'s
+2026-08-08 entry — read it before continuing, it has the per-scene
+compliance spot-checks (ADR-009 dismemberment bar, no-Joab-geometry, gate
+scope boundaries, no-hard-borders on the atlas) already done this session,
+no need to redo them from scratch.
+
+**The Fable M5 sign-off review could not run — Fable hit its monthly spend
+limit** on this session's first `fable-architect` call (same failure mode as
+queue #18's M4 precedent, 2026-07-22). Per `docs/model-handoff.md`'s
+documented fallback, the orchestrating Sonnet session ran its own checklist
+self-assessment instead and logged the result as **provisional**
+(`docs/fable-review-queue.md` #20). **No status flips were made** — every M5
+scene, `M5`, and `2sam-3`/`2sam-4` all stay `in-progress`. Do not treat the
+self-assessment as a substitute for a real Fable pass.
+
+**What's next (top priority): a real Fable M5 sign-off review once Fable's
+spend limit resets.** Batch it, don't spend a partial Fable session on it
+(same instruction the M4 precedent left). Queue #20 has the two items that
+specifically need real Fable judgment, not just a mechanical recheck: (1)
+whether `claim-abner-killing`'s still-unnamed rival-elimination
+`scholarlyView` and `claim-abner-break`'s still-unnamed Rizpah/royal-claim
+reading are acceptable to ship `in-progress` as-is, or need their own gate;
+(2) an independent check of the self-assessment's "nothing needs correction"
+read, since self-review is inherently less reliable than Fable's. If the
+review passes, execute the same release cascade the M3 (2026-07-19)/M4
+(2026-08-02) passes used — see `docs/run-log.md` for the exact pattern.
+
+**Also open, lower priority:**
+
+1. The one still-open researcher gap (4 of 4): `claim-abner-killing`'s
+   rival-elimination `scholarlyView` and `claim-abner-break`'s Rizpah/
+   royal-claim reading — both searched specifically this session, no
+   checkable named citation found. A future researcher pass with real
+   bibliographic/library access (not just web search) is the only thing
+   likely to close this further; don't re-attempt with the same tools.
+2. (Carried forward, still open, non-blocking, unchanged) real-hardware
+   perf check of `gilboa-battle` at high tier + Pages-live check — see
+   Environment notes below, still blocked from every sandboxed session.
+3. `docs/progress.md` and `docs/asset-roadmap.md` doc-sync pass — the scene
+   builds updated `asset-roadmap.md` themselves as they went, but a full
+   `docs-maintainer` consistency pass hasn't run this session; low priority,
+   non-blocking.
+
+## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
 **M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
 (reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`
