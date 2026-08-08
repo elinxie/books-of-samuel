@@ -1,0 +1,15 @@
+{
+  "id": "mccarter-1980-apology-of-david",
+  "title": "The Apology of David",
+  "author": "P. Kyle McCarter Jr.",
+  "publisher": "Journal of Biblical Literature 99/4",
+  "datePublished": "1980",
+  "dateAccessed": "2026-08-08",
+  "sourceType": "reference",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Modern copyrighted journal article. Project stores only its own summary/paraphrase of the article's thesis and scope, no reproduction of McCarter's own argument text or translation.",
+  "summary": "McCarter's foundational article proposing that the whole of the so-called 'History of David's Rise' (roughly 1 Samuel 16 through 2 Samuel 5) is shaped as apologetic literature — a genre with ancient Near Eastern parallels (McCarter draws the comparison to the Hittite 'Apology of Hattusili III') in which a ruler whose accession is politically suspect commissions or shapes an account establishing his innocence and legitimacy. McCarter reads the narrative's treatment of Saul's death, Abner's death, and Ish-bosheth's death as a connected apologetic sequence: in each case David is shown to be uninvolved in, ignorant of, or actively opposed to the killing of a rival or rival's supporter whose death conveniently clears his path to the throne, and the text repeatedly has David himself, or the narrative voice, insist on this innocence at exactly the points where a contemporary audience might suspect otherwise. McCarter's own summary judgment is that the apology succeeds in presenting David's accession to the kingship of all Israel as entirely lawful and his kingship as free of guilt. This project cites the article as the origin and clearest statement of the 'Davidic apologia' reading applied specifically to 2 Samuel 3's account of Abner's death and the public response to it (claim-public-response's apologia scholarlyView) — a reading the companion mccarter-1984-ii-samuel commentary card carries forward into its own comments on 2 Samuel 3:31-39.",
+  "relevantPassages": ["2 Samuel 1", "2 Samuel 3", "2 Samuel 4"],
+  "extractedClaims": ["claim-public-response"],
+  "confidenceNotes": "Bibliographic details (journal, volume, issue, year, page range 489-504) and the article's thesis/scope are drawn from cross-corroborated secondary/web-search sources describing and citing the article (including its listing at the Scholarly Publishing Collective/SBL Press JBL archive and multiple academic papers citing it by name), not from direct inspection of the article's full text — this sandbox has no access to JSTOR/JBL's own paywalled archive. TO VERIFY: exact page-level detail of the Abner/Ish-bosheth argument within the 489-504 range against the article itself or a library copy."
+}

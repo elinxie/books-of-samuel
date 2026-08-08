@@ -8,8 +8,13 @@
   "sourceType": "archaeology",
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
-  "summary": "Urban-form study covering, among much else, the early Iron Age 'enclosed settlement' plan (dwellings ringing an open center, e.g. Beersheba VII) used as the comparative model for the Ziklag placeholder layout.",
-  "relevantPassages": ["1 Samuel 30"],
-  "extractedClaims": ["claim-oval-plan", "claim-ziklag-scale", "claim-wall-gate"],
-  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+  "summary": "Urban-form study covering, among much else, the early Iron Age 'enclosed settlement' plan (dwellings ringing an open center, e.g. Beersheba VII) used as the comparative model for the Ziklag placeholder layout. Herzog's own scholarly specialty is city-gate typology (his 1977 Tel Aviv University PhD dissertation was 'The City-Gate in Eretz-Israel and Its Neighboring Countries,' developed further in a 1986 German monograph before this 1997 synthesis); this book's urban-planning treatment covers gate form as part of its wider argument. Researcher pass (2026-08-08, M5 citation-gap closure): the general chronological pattern for Israelite Iron Age city gates — as established by Yadin's original Megiddo-based typological sequence and refined/critiqued by later scholarship including Herzog's own — places simpler two-chamber gates as the prevalent type through the 11th and early 10th centuries BCE, with monumental six-chamber gates (the type popularly associated with Solomonic building activity, e.g. Megiddo, Hazor, Gezer) appearing only from the mid-10th century BCE onward, later giving way to four-chamber gates as the Iron II standard from the 9th century BCE. This project cites that general chronological pattern (comparative-ane basis — a wider Iron Age Israelite pattern, not site-specific evidence for Hebron, where no gate of any period is excavated) as corroboration for hebron-gate's already-modeled choice of a modest two-chamber gate passage rather than a monumental six-chamber Solomonic-type gate for a scene set within David's Hebron reign, i.e., before the six-chamber type's mid-10th-century emergence (claim-hebron-gate-form).",
+  "relevantPassages": ["1 Samuel 30", "2 Samuel 3"],
+  "extractedClaims": [
+    "claim-oval-plan",
+    "claim-ziklag-scale",
+    "claim-wall-gate",
+    "claim-hebron-gate-form"
+  ],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1). 2026-08-08 extension: the two-chamber/four-chamber/six-chamber chronological pattern was confirmed via cross-corroborated web search describing the general scholarly typology (attributed originally to Yadin, refined by subsequent scholarship including Herzog's own gate-typology specialty), not by direct page-by-page inspection of this 1997 volume's own text or table of contents. TO VERIFY: the exact page(s) within this specific book presenting the chronological table, and confirmation that Herzog's own position in 1997 matches the general pattern described above rather than a revision of it (a 2026-08-08 search also surfaced that Herzog's broader body of work is known for complicating strict linear gate-typology chronologies with counterexamples of co-existing types — this project's citation is to the general period-appropriate-type point only, not to any single strict chronological table)."
 }

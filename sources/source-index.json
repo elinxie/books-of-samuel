@@ -1,5 +1,5 @@
 {
-  "count": 31,
+  "count": 32,
   "cards": [
     {
       "id": "biran-naveh-1993",
@@ -119,6 +119,12 @@
       "id": "mazar-panitz-cohen-2009-beth-shean-vol3",
       "title": "Excavations at Tel Beth-Shean 1989-1996, Volume III: The 13th-11th Century BCE Strata in Areas N and S",
       "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "mccarter-1980-apology-of-david",
+      "title": "The Apology of David",
+      "sourceType": "reference",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
