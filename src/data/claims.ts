@@ -1228,6 +1228,70 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Parallel in form to claim-covenant-cast-scale, claim-judah-assembly-scale, and claim-gibeon-battle-scale: the same no-narrated-count, representative-assembly convention. The mourning assembly is deliberately smaller than hebron-anointing’s civic-founding assembly (a funeral, not a tribal founding) and is staged as the same three-crowd discipline as hebron-covenant — raid party, mourning assembly, and ambient town are never conflated with one another.',
   },
+  {
+    id: 'claim-ish-bosheth-assassination',
+    statement:
+      'The narrative states that Ish-bosheth’s courage failed at the news of Abner’s death and all Israel was dismayed; that two of his own captains, Rechab and Baanah, sons of Rimmon the Beerothite, entered his house at noon rest, struck him in his bed, beheaded him, and carried the head away all night by way of the Arabah to present to David at Hebron, claiming credit for avenging him against Saul (2 Samuel 4:1–8). The text’s own parenthesis at 4:4 — Jonathan’s surviving son, five years old, lame in both feet since his nurse fled with him at the Jezreel news — is carried as narrated fact at the point the text places it, with no forward pointer to his later reappearance.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-ishbosheth-entry-mt',
+        label: 'MT: the captains enter "as though to take wheat"',
+        proponents: [
+          'e.g., commentators reading the Masoretic Text’s own terse, disputed wording at face value (named attribution pending — the mccarter-1984-ii-samuel source card’s coverage does not yet extend to 2 Samuel 4; see notes)',
+        ],
+        summary:
+          'Reads 4:6 as the Masoretic Text states it: the two captains come into the middle of the house as though to take wheat, and strike Ish-bosheth in the stomach — terse, and by wide agreement textually difficult.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-ishbosheth-entry-lxx',
+        label: 'LXX: a drowsing doorkeeper',
+        proponents: [
+          'e.g., commentators following the Septuagint’s longer, different account of the entry (named attribution pending — see notes)',
+        ],
+        summary:
+          'The Greek Septuagint instead describes a female doorkeeper sifting wheat who grows drowsy and falls asleep, letting the two captains slip past her into the house.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The 4:6 entry divergence is a genuine textual-criticism crux, not a harmonization problem this project resolves — both readings stay hedged with an unnamed "e.g." attribution and low confidence pending a researcher pass extending mccarter-1984-ii-samuel’s coverage to 2 Samuel 4 for named, checkable attribution (the same open gap claim-public-response already carries for 2 Samuel 3). Mahanaim is a disputed, unbuilt site (standing rule since gibeon-pool): none of 4:5–8’s events are staged, ever — narrated by card only, no Mahanaim geometry, no murder staging, no anatomy at any point. Mephibosheth is referenced only here and in the mephibosheth CharacterOrGroup entry; never staged as a figure.',
+  },
+  {
+    id: 'claim-david-judgment',
+    statement:
+      'The narrative states that David answered Rechab and Baanah by retelling his own execution of the Amalekite messenger at Ziklag as the standard he judges by (4:10, the text’s own cross-link to 2 Samuel 1), declared Ish-bosheth "a righteous man" wrongly killed "in his own house on his bed" (4:11), commanded the young men to execute the two, ordered their hands and feet cut off and their bodies hanged beside the pool of Hebron, and had the head of Ish-bosheth buried in Abner’s own tomb at Hebron (2 Samuel 4:9–12).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The 4:10 retelling is the text’s own explicit cross-link to ziklag-lament’s claim-execution-messenger, not this project’s editorializing (see the brief’s historical intent #1) — two men arrive claiming credit for a rival’s death, and David executes them exactly as he executed the Amalekite, except this time the killing they report is real and theirs, which his own words treat as far worse. Whether David’s repeated public condemnation of every death that clears his path (see also hebron-gate) is plain report or apologetic shaping is the same scholarly dispute already carried on hebron-gate’s claim-public-response — referenced here, not restated as a second, divergent version. The hands-and-feet display (4:12a) is stated in this claim, and in the scene’s own captions, as narrated fact only: ADR-009’s dismemberment bar is unconditional, so it is never rendered as geometry, in any mode, at any fidelity tier — no shrouded shapes stand in for it either. The head of Ish-bosheth renders only as a small covered/wrapped bundle (buildWrappedFormGeometry at a short lengthScale), identifiable by caption alone, never by geometry, at both the presentation (4:8) and the burial (4:12b).',
+  },
+  {
+    id: 'claim-hebron-pool-feature',
+    statement:
+      'The pool of Hebron (2 Samuel 4:12) is rendered as a modest, shallow rock-cut basin depression with a flat, unlit water plane — the same disclosed-placeholder convention gibeon-pool’s claim-gibeon-terrain-form used for the pool of Gibeon, without that scene’s archaeological corroboration (no excavated Iron Age water installation is attested for Hebron’s pool).',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text names the pool as a known landmark at high confidence (biblical-text) — that existence is not what this claim disputes, the same distinction claim-abner-tomb-form draws for Abner’s burial site. What stays speculative is form, scale, and placement, none of which the text or any excavation supplies. The extant Birket es-Sultan pool shown to visitors in modern Hebron is explicitly not adopted as this pool’s site or form — an anachronism dressed as corroboration, the same reasoning claim-abner-tomb-form applies to the medieval "Tomb of Abner" tradition. No reflection/refraction water shader, matching the declined-water-shader precedent from gilboa-battle/jabesh-burial/gibeon-pool. If a researcher pass ever finds a serious treatment of Iron Age water installations at Hebron, this claim can cite it and move basis; until then it stays design-placeholder.',
+  },
+  {
+    id: 'claim-reckoning-cast-scale',
+    statement:
+      'David’s attendants/guard ("the young men," 4:12a — no number narrated, ~8–14 figures at high quality tier) and the ambient town background (~10–20 figures) are disclosed design-choice headcounts, deliberately the smallest cast of any Milestone 5 scene — a judgment scene, not a crowd event, the same conversation-scale convention ziklag-lament set.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-gate-cast-scale, claim-judah-assembly-scale, and claim-gibeon-battle-scale: the same no-narrated-count, representative convention. Never conflated with the scene’s three staged, named principals (David, Rechab, Baanah), who are not part of this disclosed-scale group.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

@@ -615,6 +615,44 @@ export const ASSETS: AssetRecord[] = [
       'Comparative ANE bier/tomb form, if a specific type is ever sourced for Iron Age Judah; currently an abstract, undetailed carrying frame and tomb entry by design.',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-hebron-pool-basin',
+    name: 'Pool of Hebron basin depression',
+    represents:
+      'The pool named at 2 Samuel 4:12, where Rechab and Baanah were hanged after execution — see claim-hebron-pool-feature',
+    placeholder: true,
+    whyTemporary:
+      'A shallow, flat-floored radial depression (the `basin` TerrainFeature kind, engine/terrain.ts, plus a local `flatten` to keep the floor legible against the town mound’s own gradient tail), modest and disclosed dimensions — not the extant Birket es-Sultan pool in modern Hebron, which this project does not adopt as site or form. Unlike claim-gibeon-pool-form, no excavation corroborates any Iron Age installation here.',
+    historicalRequirements:
+      'A researcher pass on Iron Age water installations at Hebron specifically, if one is ever published with checkable citation; likely permanently thin (see claim-abner-tomb-form’s own note on the same evidentiary gap).',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-hebron-pool-water',
+    name: 'Flat water-surface plane (pool of Hebron)',
+    represents: 'The water surface of the pool of Hebron',
+    placeholder: true,
+    whyTemporary:
+      'A single flat, minimally-lit tinted disc over the basin floor — no reflection, refraction, or animated ripple shader, matching the declined-water-shader precedent from gilboa-battle, jabesh-burial, and gibeon-pool’s own asset-water-plane.',
+    historicalRequirements:
+      'A dedicated water/reflection rendering system, if the engine ever adds one; purely a rendering-fidelity upgrade, not a historical claim.',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-head-bundle',
+    name: 'Covered head bundle',
+    represents:
+      'The head of Ish-bosheth, presented to David (2 Samuel 4:8) and buried in Abner’s tomb (4:12b) — see claim-david-judgment',
+    placeholder: true,
+    whyTemporary:
+      'A small-scale application of buildWrappedFormGeometry (the same lathe-revolved wrapped-cloth silhouette used for Beth-shan’s wall display, Jabesh’s bone bundle, and hebron-gate’s bier), anatomically unresolved by design — not a placeholder awaiting anatomical detail. ADR-009 permanently bans head/limb articulation for this content in any mode; only cloth/weathering fidelity can ever improve. The hands-and-feet display (4:12a) has no corresponding asset at all — it is caption-only, absolutely, with no honest non-anatomical rendering attempted.',
+    historicalRequirements:
+      'None beyond improved cloth/weathering surface fidelity — the no-anatomy constraint is permanent, not a placeholder gap.',
+    replacementMilestoneId: 'M5',
+    modelPath: 'src/engine/characters/wrappedForm.ts',
+    modelLicense: 'project-original',
+    modelProvenance: 'Generated in code; no external mesh or texture sources.',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

@@ -7,12 +7,13 @@ export const CHARACTERS: CharacterOrGroup[] = [
     kind: 'person',
     summary:
       'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives.',
-    passageRefs: ['1 Samuel 27', '1 Samuel 30', '2 Samuel 2', '2 Samuel 3'],
+    passageRefs: ['1 Samuel 27', '1 Samuel 30', '2 Samuel 2', '2 Samuel 3', '2 Samuel 4'],
     claimIds: [
       'claim-david-historical',
       'claim-david-disavowal',
       'claim-abner-funeral',
       'claim-public-response',
+      'claim-david-judgment',
     ],
   },
   {
@@ -170,9 +171,40 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Ish-bosheth',
     kind: 'person',
     summary:
-      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool.',
-    passageRefs: ['2 Samuel 2:8–10'],
-    claimIds: ['claim-ish-bosheth-installed'],
+      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool. His courage fails at Abner’s death; he is assassinated in his own bed at noon rest by two of his own captains and beheaded (2 Samuel 4:1–7, narrated only — Mahanaim is a disputed, unbuilt site, never staged). Referenced-only throughout hebron-reckoning as well: his head is presented to David as a small covered bundle, never rendered as anatomy, and is finally buried in Abner’s tomb at Hebron (4:12b).',
+    passageRefs: ['2 Samuel 2:8–10', '2 Samuel 4:1–12'],
+    claimIds: [
+      'claim-ish-bosheth-installed',
+      'claim-ish-bosheth-assassination',
+      'claim-david-judgment',
+    ],
+  },
+  {
+    id: 'mephibosheth',
+    name: 'Mephibosheth',
+    kind: 'person',
+    summary:
+      'Jonathan’s son, five years old — lame in both feet since his nurse fled carrying him at the news of Saul and Jonathan’s deaths from Jezreel, and in her haste he fell (2 Samuel 4:4). The text’s own aside on what remains of the house of Saul, named here only, at the point 2 Samuel 4 itself places him. Referenced-only in hebron-reckoning; never staged as a figure, and carries no forward pointer to his later reappearance in this history.',
+    passageRefs: ['2 Samuel 4:4'],
+    claimIds: ['claim-ish-bosheth-assassination'],
+  },
+  {
+    id: 'rechab',
+    name: 'Rechab son of Rimmon',
+    kind: 'person',
+    summary:
+      'A Beerothite, one of two captains of raiding bands under Ish-bosheth (2 Samuel 4:2). With Baanah his brother, kills Ish-bosheth at noon rest, beheads him, and carries the head to David at Hebron expecting reward — staged exactly as the text states, without inventing motive or character beyond what it gives. Executed at David’s command (4:12a).',
+    passageRefs: ['2 Samuel 4:2', '2 Samuel 4:5–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'baanah',
+    name: 'Baanah son of Rimmon',
+    kind: 'person',
+    summary:
+      'A Beerothite, Rechab’s brother and the second of the two captains under Ish-bosheth (2 Samuel 4:2). Joins Rechab in the killing and beheading of Ish-bosheth and the presentation of the head to David at Hebron. Executed alongside Rechab at David’s command (4:12a).',
+    passageRefs: ['2 Samuel 4:2', '2 Samuel 4:5–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
   },
   {
     id: 'joab',

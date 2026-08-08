@@ -249,6 +249,49 @@ scholarlyViews (both hedged pending an `mccarter-1984-ii-samuel` extension
 to 2 Samuel 3) and `claim-hebron-gate-form`'s `herzog-1997` gate-typology
 upgrade path.
 
+## Current placeholders (hebron-reckoning scene, Milestone 5, built 2026-08-08, PROVISIONAL)
+
+The milestone's third and last scene, and its smallest/cheapest by design:
+Ish-bosheth's assassination narrated by card only (4:1–8, no Mahanaim
+geometry — the disputed site is never built) and David's judgment on Rechab
+and Baanah at Hebron (4:9–12) — the third application of ADR-009's
+named-character-killing template, and its first as a judicial act.
+Conversation-scale cast (David's attendants ~8–14, ambient town ~10–20, plus
+the three staged principals — ~20–35 at high tier), matching
+`ziklag-lament`'s precedent. Reuses hebron-anointing's/hebron-gate's Hebron
+terrain, town massing, terracing, gate plaza, and — deliberately, the
+milestone's closing echo — hebron-gate's own tomb ground and constants
+outright, imported directly rather than recomputed. Two new grounds only:
+the pool of Hebron and the assassins' Arabah-road approach.
+
+| Asset                     | Represents                                                                                                    | Why temporary                                                                                                                                                                                                                                                                              | Replace at |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| `asset-hebron-pool-basin` | The pool named at 4:12, where Rechab and Baanah were hanged after execution — `claim-hebron-pool-feature`     | A shallow, flat-floored radial depression (the `basin` TerrainFeature kind plus a local `flatten`), modest and disclosed dimensions — not the extant Birket es-Sultan pool in modern Hebron, and unlike `asset-gibeon-pool-basin`, no excavation corroborates any installation here at all | M5         |
+| `asset-hebron-pool-water` | The water surface of the pool of Hebron                                                                       | A single flat, minimally-lit tinted disc over the basin floor — no reflection/refraction shader, matching the declined-water-shader precedent                                                                                                                                              | M5         |
+| `asset-head-bundle`       | The head of Ish-bosheth, presented to David (4:8) and buried in Abner's tomb (4:12b) — `claim-david-judgment` | A small-scale `buildWrappedFormGeometry` application (the same lathe-revolved wrapped-cloth silhouette as Beth-shan's wall display, Jabesh's bone bundle, and hebron-gate's bier), anatomically unresolved by permanent design, not a placeholder awaiting detail                          | M5         |
+
+The hands-and-feet display (4:12a) has **no asset record at all** — per the
+brief's absolute bar, it is caption-only in every mode, with no honest
+non-anatomical rendering attempted (unlike Beth-shan's whole-body wrapped
+display forms, there is no partial-body analog that stays honest). Reuses
+`asset-terrain-hebron-hills`, `asset-hebron-town-form`, `asset-terrace-walls`,
+`asset-hebron-gate-passage`, `asset-bier` (its tomb-ground portion only — this
+scene does not render the plank-and-pole bier frame or a full-body wrapped
+form again), `asset-figure-procedural`, `asset-figure-fallen`,
+`asset-david-marker`, `asset-olive-tree`, and `asset-rocks` directly — no new
+records for these. This scene's status stays `in-progress`
+(`docs/design/hebron-reckoning-brief.md` is a genuine Fable world-director
+brief, 2026-08-03) pending a Fable M5 sign-off review (`docs/next-run.md`)
+before it can ship `released` — in particular the open researcher gap on
+`claim-ish-bosheth-assassination`'s 4:6 MT/LXX `scholarlyViews` (hedged
+pending an `mccarter-1984-ii-samuel` extension to 2 Samuel 4, the same open
+gap `claim-public-response` already carries for 2 Samuel 3) and the live-ESV-
+wording check on this scene's two keyExcerpts (4:10, 4:11a) — recalled from
+training knowledge in a sandbox session with no web access (all Bible-text
+hosts returned proxy 403s), not live-verified per the #19b lesson; flagged
+for a follow-up pass with web access, the same way #19b's own wording error
+was caught and fixed.
+
 ## Upcoming needs by milestone
 
 - **M2 (Besor/recovery):** both scenes built 2026-07-08 (`besor-crossing`,
@@ -270,12 +313,15 @@ upgrade path.
   goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
   section above) — the wider `f-overview-map` feature (Philistia/Amalekite
   fringe too) stays a separate, still-`planned` future scope.
-- **M5 (2 Sam 3–4):** `hebron-covenant` and `hebron-gate` both built
-  2026-08-08 (see tables above), both reusing hebron-anointing's Hebron
-  terrain/town/terrace assets directly; two new assets total
-  (`asset-feast-props`, plus `hebron-gate`'s `asset-hebron-gate-passage` and
-  `asset-bier`). `hebron-reckoning` still outstanding, plus the `/atlas` M5
-  phase extension (the long war's trend and the northern house's collapse).
+- **M5 (2 Sam 3–4):** all three scenes now built 2026-08-08 (see tables
+  above) — `hebron-covenant`, `hebron-gate`, and `hebron-reckoning`, all
+  reusing hebron-anointing's Hebron terrain/town/terrace assets directly;
+  six new assets total (`asset-feast-props`; `hebron-gate`'s
+  `asset-hebron-gate-passage` and `asset-bier`; `hebron-reckoning`'s
+  `asset-hebron-pool-basin`, `asset-hebron-pool-water`, and
+  `asset-head-bundle`). The `/atlas` M5 phase extension (the long war's trend
+  and the northern house's collapse) is still outstanding — a separate
+  `ui-engineer` task, not a 3D scene.
 
 ## Policy
 
