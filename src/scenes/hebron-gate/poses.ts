@@ -50,6 +50,16 @@ export function yawToward(fromX: number, fromZ: number, toX: number, toZ: number
   return Math.atan2(toX - fromX, toZ - fromZ);
 }
 
+// Shared scratch vectors for curve sampling — avoids per-frame `Vector3`
+// allocation inside `Curve.getPointAt`/`getTangentAt` (each call allocates
+// internally when no `optionalTarget` is passed). Safe to share across every
+// pose function below: each one reads the sampled x/z into its return value
+// immediately, before any other curve call can happen (single-threaded, no
+// calls held across another curve sample). See hebron-reckoning/poses.ts's
+// `roadPoint` for the pattern this mirrors.
+const tmpVec = new THREE.Vector3();
+const tmpTan = new THREE.Vector3();
+
 /** Duration (seconds) of an animated fall/collapse transition — standard is
  * gradual, reduced elides it, reaching the same eventual pose almost at
  * once (gibeon-pool's `fallDuration` convention: same fact, faster cut). */
@@ -130,28 +140,30 @@ function travelThenSettle(
 ): RoutePose {
   const travelEnd = startAt + travelDur;
   if (t <= startAt) {
-    const pos = curve.getPointAt(0);
-    const tan = curve.getTangentAt(0.001);
-    return { x: pos.x + laneOffset, z: pos.z, yaw: Math.atan2(tan.x, tan.z) };
+    curve.getPointAt(0, tmpVec);
+    curve.getTangentAt(0.001, tmpTan);
+    return { x: tmpVec.x + laneOffset, z: tmpVec.z, yaw: Math.atan2(tmpTan.x, tmpTan.z) };
   }
   if (t < travelEnd) {
     const u = clamp01((t - startAt) / travelDur);
-    const pos = curve.getPointAt(u);
-    const tan = curve.getTangentAt(Math.max(0.001, u));
-    return { x: pos.x + laneOffset, z: pos.z, yaw: Math.atan2(tan.x, tan.z) };
+    curve.getPointAt(u, tmpVec);
+    curve.getTangentAt(Math.max(0.001, u), tmpTan);
+    return { x: tmpVec.x + laneOffset, z: tmpVec.z, yaw: Math.atan2(tmpTan.x, tmpTan.z) };
   }
-  const end = curve.getPointAt(1);
+  curve.getPointAt(1, tmpVec);
+  const endX = tmpVec.x;
+  const endZ = tmpVec.z;
   const settleEnd = travelEnd + settleDur;
   if (t < settleEnd) {
     const p = smoothstep((t - travelEnd) / settleDur);
-    const x = lerp(end.x + laneOffset, destSlot[0], p);
-    const z = lerp(end.z, destSlot[1], p);
+    const x = lerp(endX + laneOffset, destSlot[0], p);
+    const z = lerp(endZ, destSlot[1], p);
     return { x, z, yaw: yawToward(x, z, destSlot[0], destSlot[1]) };
   }
   return {
     x: destSlot[0],
     z: destSlot[1],
-    yaw: yawToward(destSlot[0], destSlot[1], end.x, end.z),
+    yaw: yawToward(destSlot[0], destSlot[1], endX, endZ),
   };
 }
 
@@ -270,15 +282,23 @@ export function abnerGatePose(t: number, mode: ViolenceMode): PrincipalPose {
   }
   if (t < T_GATE_ASIDE + 4) {
     const u = lerp(NORTH_ROAD_TAIL_U, 1, smoothstep((t - T_GATE_ASIDE) / 4));
-    const pos = NORTH_ROAD_CURVE.getPointAt(u);
-    const tan = NORTH_ROAD_CURVE.getTangentAt(Math.max(0.001, u));
-    return { x: pos.x, z: pos.z, yaw: Math.atan2(tan.x, tan.z), fallen: 0, visible: true };
+    NORTH_ROAD_CURVE.getPointAt(u, tmpVec);
+    NORTH_ROAD_CURVE.getTangentAt(Math.max(0.001, u), tmpTan);
+    return {
+      x: tmpVec.x,
+      z: tmpVec.z,
+      yaw: Math.atan2(tmpTan.x, tmpTan.z),
+      fallen: 0,
+      visible: true,
+    };
   }
   if (t < ABNER_ROAD_ARRIVE_AT) {
-    const end = NORTH_ROAD_CURVE.getPointAt(1);
+    NORTH_ROAD_CURVE.getPointAt(1, tmpVec);
+    const endX = tmpVec.x;
+    const endZ = tmpVec.z;
     const p = smoothstep((t - (T_GATE_ASIDE + 4)) / (ABNER_ROAD_ARRIVE_AT - (T_GATE_ASIDE + 4)));
-    const x = lerp(end.x, GATE_SOUTH_MOUTH[0], p);
-    const z = lerp(end.z, GATE_SOUTH_MOUTH[1], p);
+    const x = lerp(endX, GATE_SOUTH_MOUTH[0], p);
+    const z = lerp(endZ, GATE_SOUTH_MOUTH[1], p);
     return {
       x,
       z,
@@ -393,9 +413,16 @@ export function joabGatePose(t: number, mode: ViolenceMode): JoabPose {
   if (t < travelEnd) {
     const uBier = clamp01((t - departAt) / PROCESSION_TRAVEL_DUR);
     const uJoab = Math.min(1, uBier + JOAB_LEAD_U);
-    const pos = PROCESSION_CURVE.getPointAt(uJoab);
-    const tan = PROCESSION_CURVE.getTangentAt(Math.max(0.001, uJoab));
-    return { x: pos.x, z: pos.z, yaw: Math.atan2(tan.x, tan.z), fallen: 0, visible: true, tear: 0 };
+    PROCESSION_CURVE.getPointAt(uJoab, tmpVec);
+    PROCESSION_CURVE.getTangentAt(Math.max(0.001, uJoab), tmpTan);
+    return {
+      x: tmpVec.x,
+      z: tmpVec.z,
+      yaw: Math.atan2(tmpTan.x, tmpTan.z),
+      fallen: 0,
+      visible: true,
+      tear: 0,
+    };
   }
   const tombFront: [number, number] = [TOMB_POS[0] + 2.2, TOMB_POS[1] + 1.4];
   return {
@@ -455,9 +482,14 @@ export function davidGatePose(t: number): DavidPose {
   if (t < travelEnd) {
     const uBier = clamp01((t - T_PROCESSION) / PROCESSION_TRAVEL_DUR);
     const uDavid = Math.max(0, uBier - DAVID_LAG_U);
-    const pos = PROCESSION_CURVE.getPointAt(uDavid);
-    const tan = PROCESSION_CURVE.getTangentAt(Math.max(0.001, uDavid));
-    return { x: pos.x, z: pos.z, yaw: Math.atan2(tan.x, tan.z), address: clamp01(address) };
+    PROCESSION_CURVE.getPointAt(uDavid, tmpVec);
+    PROCESSION_CURVE.getTangentAt(Math.max(0.001, uDavid), tmpTan);
+    return {
+      x: tmpVec.x,
+      z: tmpVec.z,
+      yaw: Math.atan2(tmpTan.x, tmpTan.z),
+      address: clamp01(address),
+    };
   }
   const tombDavid: [number, number] = [TOMB_POS[0] + 3.4, TOMB_POS[1] - 0.6];
   return {
@@ -511,12 +543,12 @@ export function bierPose(t: number): BierPose {
   const travelEnd = T_PROCESSION + PROCESSION_TRAVEL_DUR;
   if (t < travelEnd) {
     const u = clamp01((t - T_PROCESSION) / PROCESSION_TRAVEL_DUR);
-    const pos = PROCESSION_CURVE.getPointAt(u);
-    const tan = PROCESSION_CURVE.getTangentAt(Math.max(0.001, u));
+    PROCESSION_CURVE.getPointAt(u, tmpVec);
+    PROCESSION_CURVE.getTangentAt(Math.max(0.001, u), tmpTan);
     return {
-      x: pos.x,
-      z: pos.z,
-      yaw: Math.atan2(tan.x, tan.z),
+      x: tmpVec.x,
+      z: tmpVec.z,
+      yaw: Math.atan2(tmpTan.x, tmpTan.z),
       carried: 1,
       buried: 0,
       visible: true,

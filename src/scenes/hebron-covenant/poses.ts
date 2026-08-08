@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { ABNER_SEAT_POS, DAVID_SEAT_POS, NORTH_ROAD_CURVE } from './layout';
 
 /**
@@ -56,6 +57,14 @@ export const DEPART_DUR = 20;
 const CURVE_ROAD_END = NORTH_ROAD_CURVE.getPointAt(1);
 const CURVE_ROAD_START = NORTH_ROAD_CURVE.getPointAt(0);
 
+// Shared scratch vectors for per-frame curve sampling in `roadPresencePose`
+// (called once per figure per frame for Abner + the twenty during the
+// arrival/departure legs) — avoids the internal `Vector3` allocation
+// `Curve.getPointAt`/`getTangentAt` makes when called with no
+// `optionalTarget`. Mirrors hebron-reckoning/poses.ts's `roadPoint` pattern.
+const tmpVec = new THREE.Vector3();
+const tmpTan = new THREE.Vector3();
+
 /** Fraction of the arrival/departure envelope spent literally traveling
  * `NORTH_ROAD_CURVE`; the remainder is a short fan-out from the curve's end
  * to each figure's own feast-ground slot — the same two-phase pattern
@@ -103,9 +112,9 @@ export function roadPresencePose(
   const cp = clamp01(p);
   if (cp <= CURVE_ROAD_FRAC) {
     const u = clamp01(cp / CURVE_ROAD_FRAC);
-    const pos = NORTH_ROAD_CURVE.getPointAt(u);
-    const tan = NORTH_ROAD_CURVE.getTangentAt(Math.max(0.001, u));
-    return { x: pos.x + laneOffset, z: pos.z, yaw: Math.atan2(tan.x, tan.z) };
+    NORTH_ROAD_CURVE.getPointAt(u, tmpVec);
+    NORTH_ROAD_CURVE.getTangentAt(Math.max(0.001, u), tmpTan);
+    return { x: tmpVec.x + laneOffset, z: tmpVec.z, yaw: Math.atan2(tmpTan.x, tmpTan.z) };
   }
   const q = clamp01((cp - CURVE_ROAD_FRAC) / (1 - CURVE_ROAD_FRAC));
   const x = lerp(CURVE_ROAD_END.x + laneOffset, destSlot[0], q);
