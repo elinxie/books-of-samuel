@@ -1331,3 +1331,41 @@ pass, recorded in briefs. Docs synced: next-run.md (new top state + build
 order: covenant → gate → reckoning → atlas), progress.md M5 section. No
 code/scene/claim changes; no verify run (data edit is one additive
 milestone entry; orchestrating session gates before merge).
+
+**2026-08-09 — Sonnet 5 — `hebron-covenant` built (M5, scene 1 of 3)**
+Dispatched to `threejs-engineer` per `docs/design/hebron-covenant-brief.md`;
+scoped continuation session (`npm install` was actually needed — the earlier
+"node_modules exists" check in the session start was a shell-pipeline false
+positive, `ls | head` exits 0 on empty input). Full gate run and green before
+and after the build (format/lint/373→395 vitest/build/9-9 e2e), independently
+re-verified by the orchestrating session, not just taken from the build
+agent's report. New scene `src/scenes/hebron-covenant/` reuses
+`hebron-anointing`'s `HEBRON_TERRAIN` object and `TownAndPlaza`/
+`TerraceWalls`/`Vegetation` components directly (imported, not
+re-implemented); only new landform is the northern approach/departure road.
+9 beats (`b-long-war` through `b-close`), 4 viewpoints
+(`vp-north-road`/`vp-feast`/`vp-gate-plaza`/`vp-departure`), `depictsDeath:
+false`. ≈67 high-tier figures: Abner's twenty rendered literally 1:1 (21
+incl. Abner), David's ~20-figure escort and ~25-figure ambient town
+background both disclosed design counts — deliberately the
+smallest/cheapest crowd yet (a closed political meal vs. hebron-anointing's
+150–200-figure civic assembly). 3:1–19 (long war, Rizpah accusation,
+Michal/Paltiel's transfer, the elders) is entirely context-card/caption
+material, verified by grep to have zero Michal/Paltiel/Rizpah/Mahanaim/
+Bahurim/Joab geometry anywhere in the scene files. The Rizpah accusation is
+carried narrated-not-adjudicated (Ish-bosheth's claim, never confirmed or
+denied). The `b-peace` beat (3:21b, "he went in peace") is held straight —
+public, unhurried, no dread staging — since `hebron-gate` is what subverts
+it. One ESV quote spent (3:21a, 52 chars), leaving the rest of the shared
+`2sam-3` excerpt budget for `hebron-gate`, which needs it more. 6 new claims
+(`claim-long-war`, `claim-abner-break`, `claim-abner-overture`,
+`claim-covenant-feast`, `claim-feast-form`, `claim-covenant-cast-scale`), 3
+new referenced-only characters (`michal`, `paltiel`, `rizpah`, no geometry
+anywhere), new `2sam-3` passage entry (`in-progress`), 1 new placeholder
+asset (`asset-feast-props`). `claim-abner-break`'s political-reading gloss
+stays hedged "commonly noted by commentators" pending the already-tracked
+McCarter 2 Sam 3–4 researcher-pass extension — no new fable-review-queue
+item needed. M5 milestone stays `planned` (1 of 3 scenes built). Docs
+synced: progress.md, next-run.md (next: `hebron-gate` build), asset-roadmap
+(already done by the build agent, re-verified). Branch
+`claude/focused-mccarthy-vxbsqj`, starting from `main` at `8b12234`.

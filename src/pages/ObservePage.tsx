@@ -24,6 +24,8 @@ import { HebronAnointingScene } from '../scenes/hebron-anointing/HebronAnointing
 import { HEBRON_TERRAIN } from '../scenes/hebron-anointing/terrain';
 import { GibeonPoolScene } from '../scenes/gibeon-pool/GibeonPoolScene';
 import { GIBEON_POOL_TERRAIN } from '../scenes/gibeon-pool/terrain';
+import { HebronCovenantScene } from '../scenes/hebron-covenant/HebronCovenantScene';
+import { HEBRON_COVENANT_TERRAIN } from '../scenes/hebron-covenant/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -43,6 +45,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'ziklag-lament': { component: ZiklagLamentScene, terrain: ZIKLAG_LAMENT_TERRAIN },
   'hebron-anointing': { component: HebronAnointingScene, terrain: HEBRON_TERRAIN },
   'gibeon-pool': { component: GibeonPoolScene, terrain: GIBEON_POOL_TERRAIN },
+  'hebron-covenant': { component: HebronCovenantScene, terrain: HEBRON_COVENANT_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

@@ -70,6 +70,22 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M4',
     status: 'released',
   },
+  {
+    id: '2sam-3',
+    book: '2 Samuel',
+    chapter: 3,
+    reference: '2 Samuel 3',
+    translationAnchor: 'ESV',
+    summary:
+      'A long war between the houses of Saul and David; David grows stronger, and sons are born to him at Hebron. Abner, accused by Ish-bosheth over Rizpah, breaks with the house of Saul and negotiates a covenant with David, securing Michal’s return and the elders’ support. He brings twenty men to Hebron, is received at a feast, pledges to gather all Israel to David, and departs in peace — before Joab kills him at the gate.',
+    // Scene id committed at build time (hebron-covenant), mirroring the M3/M4
+    // pattern: passage status bumps to in-progress as soon as its first scene
+    // leaves planned. The killing at the gate and everything after (3:22-39)
+    // belongs to hebron-gate, not yet built.
+    sceneIds: ['hebron-covenant'],
+    milestoneId: 'M5',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

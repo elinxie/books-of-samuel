@@ -194,7 +194,7 @@ export const LOCATIONS: LocationEntry[] = [
     altNames: ['Tell Rumeida / Tel Hevron'],
     region: 'Southern Judean highlands',
     summary:
-      'Where David is anointed king over Judah (2 Samuel 2). Identified with Tell Rumeida above the modern city.',
+      'Where David is anointed king over Judah (2 Samuel 2), and later receives Abner’s covenant delegation (2 Samuel 3:20–21). Identified with Tell Rumeida above the modern city.',
     identification: {
       disputed: false,
       views: [
@@ -208,7 +208,7 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.52, lon: 35.1, confidence: 'high' },
-    sceneIds: ['hebron-anointing'],
+    sceneIds: ['hebron-anointing', 'hebron-covenant'],
     claimIds: [],
     // 2026-08-02 Fable M4 release pass: hebron-anointing → released (queue
     // #19c closed as "checked, permanently thin" — the Tell Rumeida town-form

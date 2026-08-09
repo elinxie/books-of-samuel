@@ -3,7 +3,68 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+## State right now (2026-08-09, M5 IN PROGRESS — `hebron-covenant` built, 1 of 3 scenes)
+
+**`hebron-covenant` (2 Sam 3:1–21, staged from 3:20) is built** (Sonnet,
+`threejs-engineer`, per `docs/design/hebron-covenant-brief.md`): `status:
+'in-progress'`, `depictsDeath: false`, 9 beats, 4 viewpoints. Reuses
+`hebron-anointing`'s terrain/town/terrace/vegetation directly; only new
+landform is the northern approach/departure road. ≈67 figures at high tier
+(Abner's twenty literal 1:1, David's ~20-figure escort, ~25 ambient
+townsfolk) — deliberately the smallest M5 crowd. 3:1–19 is context-card-only
+(no Michal/Paltiel/Rizpah/Mahanaim/Bahurim/Joab geometry anywhere — verified
+by grep). One ESV quote (3:21a, 52 chars) spent, leaving the rest of the
+shared `2sam-3` budget for `hebron-gate`. 6 new claims, 3 new referenced-only
+characters, new `2sam-3` passage (`in-progress`), 1 new placeholder asset.
+Full gate independently re-verified by the orchestrating session:
+format/lint/typecheck/395 vitest/build/9-9 e2e all green. Full detail:
+`docs/progress.md` M5 section, `docs/run-log.md` 2026-08-09 entry.
+
+**Judgment calls the build agent flagged, worth a look (none blocking, all
+disclosed in claim notes already):**
+
+- `claim-abner-break`'s "commonly noted by commentators" political-reading
+  gloss (concubine-claim-as-throne-claim) has no named citation yet — folds
+  into the already-tracked McCarter 2 Sam 3–4 researcher-pass extension
+  below, not a new queue item.
+- `claim-feast-form`: feast figures stand/gather around the mats rather than
+  a literal seated pose (crowd-tier rig limitation, disclosed in the claim's
+  notes, not asserted as accurate).
+- The northern road's exact course is the build agent's own placeholder
+  routing (brief explicitly allows this); verified programmatically clear of
+  `hebron-anointing`'s town-house belt/terrace rings.
+- Abner's pledge gesture (lean-forward rig rotation, `b-pledge`) is ordinary
+  staging under `claim-covenant-feast`, not a separate claim — flag only if
+  a reviewer thinks it needs its own `design-placeholder` record.
+- ESV wording for the one 3:21a quote is from model knowledge, not a live
+  source check (same standing sandbox limitation as prior M4 quotes — no
+  outbound access to Bible-text sites from here).
+
+**What's next (Sonnet), in priority order:**
+
+1. **Build `hebron-gate`** (2 Sam 3:22–39) per
+   `docs/design/hebron-gate-brief.md` — the milestone's load-bearing scene:
+   the recall, the killing in the midst of the gate (2nd application of
+   ADR-009 §Named-character killings), David's disavowal/curse, funeral
+   procession, lament, fast. Reuse `hebron-covenant`'s Hebron
+   terrain/town/terrace/vegetation the same way `hebron-covenant` reused
+   `hebron-anointing`'s. This scene owns most of the shared `2sam-3` ESV
+   quote budget (`hebron-covenant` only spent 52 of ~500 chars on it).
+2. Then build `hebron-reckoning` (2 Sam 4) per
+   `docs/design/hebron-reckoning-brief.md` — murder narrated by cards only
+   (no Mahanaim geometry), David's judgment, execution, burial of the head
+   (covered bundle only, ADR-009 dismemberment bar).
+3. Atlas `/atlas` M5 phase extension (`ui-engineer`, small).
+4. `researcher` pass on the four gap clusters below (parallelizable, doesn't
+   block builds) — extend `mccarter-1984-ii-samuel` to 2 Sam 3–4 (now also
+   covers `claim-abner-break`'s hedge above), `herzog-1997` gate typology,
+   `king-stager-2001` feasting/mourning material, Hebron water installations.
+5. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + Pages-live check — see Environment notes.
+6. Then a Fable M5 sign-off review before any status flips past
+   `in-progress` (M5 milestone stays `planned` until all three scenes exist).
+
+## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
 **M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
 (reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`

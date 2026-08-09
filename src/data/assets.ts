@@ -579,6 +579,18 @@ export const ASSETS: AssetRecord[] = [
       'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-feast-props',
+    name: 'Feast dressing (mats and vessels)',
+    represents:
+      'Low mats and shared vessels dressing the open-air covenant feast at Hebron — see claim-feast-form',
+    placeholder: true,
+    whyTemporary:
+      'Primitive flat-box mats and cylinder vessels (src/scenes/hebron-covenant/FeastGround.tsx), a single small instanced prop family — 2 Samuel 3:20b narrates only that a feast was made, with no hall, vessel form, or seating detail given.',
+    historicalRequirements:
+      'Upgrade path to comparative-ane material culture only if a future researcher pass finds citable feasting/meal material in king-stager-2001 or another source worth citing; until then this stays a disclosed design placeholder.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

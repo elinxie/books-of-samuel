@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; no build yet)
+## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03; `hebron-covenant` built 2026-08-09, first of three scenes)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
@@ -289,6 +289,37 @@ before release) listed in `docs/next-run.md`: McCarter coverage extension to
 Hebron water installations. No new fable-review-queue items — the contested
 staging calls were resolved in the 2026-08-03 Fable pass and recorded in the
 briefs; release gates open at the M5 review per M3/M4 precedent.
+
+`hebron-covenant` built 2026-08-09 (Sonnet, `threejs-engineer`): `status:
+'in-progress'`, `depictsDeath: false`, 9 beats, 4 viewpoints
+(`vp-north-road` default, `vp-feast`, `vp-gate-plaza`, `vp-departure`).
+Reuses `hebron-anointing`'s `HEBRON_TERRAIN` object and its
+`TownAndPlaza`/`TerraceWalls`/`Vegetation` components directly (imported, not
+re-implemented) — same Hebron, a few years later; the only new landform
+addition is the northern approach/departure road (deliberate inverse of
+`hebron-anointing`'s southern column). Abner's twenty render literally 1:1
+(21 figures incl. Abner); David's escort (~20) and town ambient (~25) are
+disclosed design counts — ≈67 figures at high tier, the smallest/cheapest
+crowd of the project so far by design (a closed political meal, not a civic
+assembly). 3:1–19 (long war, the Rizpah accusation, Michal/Paltiel's return,
+the elders) is entirely context-card/caption material per the brief — no
+Michal, Paltiel, Rizpah, Mahanaim, Bahurim, or Joab geometry anywhere in the
+scene (verified by grep, not just trusted from the build report); the
+Rizpah accusation is carried narrated-not-adjudicated. The "he went in peace"
+beat (3:21b) is held straight, unhurried, public — no dread staging, since
+`hebron-gate` is what subverts it. One ESV quote only (3:21a, 52 chars),
+leaving the rest of the shared `2sam-3` excerpt budget for `hebron-gate`.
+6 new claims (`claim-long-war`, `claim-abner-break`, `claim-abner-overture`,
+`claim-covenant-feast`, `claim-feast-form`, `claim-covenant-cast-scale`), 3
+new referenced-only characters (`michal`, `paltiel`, `rizpah`, no geometry),
+new `2sam-3` passage (`status: 'in-progress'`), 1 new placeholder asset
+(`asset-feast-props`). Full gate independently re-verified by the
+orchestrating session (not just taken from the build agent's report):
+format/lint/typecheck/395 vitest/build/9-9 e2e, all green. `claim-abner-break`'s
+political-reading gloss stays hedged "commonly noted by commentators" pending
+the McCarter 2 Sam 3–4 researcher-pass extension already tracked in
+`docs/next-run.md` — no new fable-review-queue item needed. M5 milestone
+stays `planned` until all three scenes exist (only one of three built).
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
