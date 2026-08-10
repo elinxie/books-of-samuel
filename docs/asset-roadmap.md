@@ -163,6 +163,36 @@ provisional brief, Fable-unavailable fallback, tracked at
 excavated pool/tunnel predate or postdate the early Iron IIA setting of
 2 Samuel 2?), already tracked in `docs/next-run.md`.
 
+## Current placeholders (hebron-covenant scene, Milestone 5, built 2026-08-10)
+
+First M5 scene, deliberately the cheapest: the same Hebron terrain/town/
+terrace assets hebron-anointing built are reused directly (no new terrain
+spec, no new town-form asset — see `src/scenes/hebron-covenant/terrain.ts`
+and `layout.ts`, which import hebron-anointing's `HEBRON_TERRAIN_SPEC` and
+town/plaza/terrace layout constants rather than re-generating them). Abner's
+twenty rendered literally 1:1 (2 Sam 3:20's own count); a small
+David's-side feast presence and ambient town background at disclosed
+design counts (~15-25 / ~20-30 at high tier); total cast ≈70 figures at
+high tier, the smallest of any scene so far. One genuinely new asset:
+
+| Asset               | Represents                                                                            | Why temporary                                                                                                                                                                 | Replace at |
+| ------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-feast-props` | The open-air meal David lays for Abner and his men (2 Sam 3:20b) — `claim-feast-form` | A single small instanced prop family (mats at every seating slot, a handful of shared low vessels); the text names only the fact of a feast, no physical/architectural detail | M5         |
+
+Reuses `asset-terrain-hebron-hills`, `asset-hebron-town-form`,
+`asset-terrace-walls`, `asset-figure-procedural`, `asset-david-marker`,
+`asset-olive-tree`, and `asset-rocks` — no new records for these (all
+imported/re-instantiated from hebron-anointing's own spec/layout data, per
+ADR-006). The seated posture for both feast-side crowds and the two named
+principals (David, Abner) is a rigid-body squash-and-lower transform on the
+existing ADR-010 rig — the same kind of stylized device already used for
+the fallen pose at gibeon-pool/gilboa-battle (`asset-figure-fallen`), not a
+new asset record of its own. This scene's status stays `in-progress`
+pending a Fable M5 sign-off review (`docs/next-run.md`), and its shared
+passage (`2sam-3`, also used by the not-yet-built `hebron-gate`) carries
+only one short ESV quote (3:21a) — the remaining shared excerpt budget is
+reserved for `hebron-gate`'s lament, per the brief.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the
@@ -204,6 +234,10 @@ gate, per ADR-011.
   goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
   section above) — the wider `f-overview-map` feature (Philistia/Amalekite
   fringe too) stays a separate, still-`planned` future scope.
+- **M5 (2 Sam 3–4):** `hebron-covenant` built 2026-08-10, first of three
+  scenes, all at the already-built Hebron (see table above). `hebron-gate`
+  (3:22–39) and `hebron-reckoning` (ch. 4) remain `planned`; briefs exist at
+  `docs/design/hebron-gate-brief.md` and `docs/design/hebron-reckoning-brief.md`.
 
 ## Policy
 

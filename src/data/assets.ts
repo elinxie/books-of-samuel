@@ -579,6 +579,18 @@ export const ASSETS: AssetRecord[] = [
       'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-feast-props',
+    name: 'Feast dressing (mats and vessels)',
+    represents:
+      'The open-air meal David lays for Abner and his men at Hebron (2 Samuel 3:20b) — see claim-feast-form',
+    placeholder: true,
+    whyTemporary:
+      'A single small instanced prop family (flat woven mats at every seating slot, a handful of shared low vessels) — the text names only the fact of a feast, not its physical form, so this is a disclosed design placeholder, not a reconstruction of any specific excavated or comparative feasting assemblage.',
+    historicalRequirements:
+      'A citable meal/feasting material-culture source (king-stager-2001 checked and not yet page-verified for this content, per docs/next-run.md) could move vessel/seating form past design-placeholder; until then this stays generic.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));
