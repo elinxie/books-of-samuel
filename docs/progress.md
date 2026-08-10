@@ -351,9 +351,60 @@ same standing caveat as every scene's quotes since `ziklag-lament`). A new
 e2e test confirms the ADR-009 first-visit advisory fires for `hebron-gate`
 specifically, mirroring the existing `gilboa-battle` coverage. Full gate
 green: format, lint, typecheck, 444 vitest, build, 10/10 e2e (independently
-re-verified after the build). `hebron-reckoning` remains `planned`; its brief
-already exists (`docs/design/hebron-reckoning-brief.md`). See
-`docs/run-log.md`'s 2026-08-10 entry.
+re-verified after the build). See `docs/run-log.md`'s 2026-08-10 entry.
+
+**`hebron-reckoning` built 2026-08-10 (Sonnet, commit `9fa2784`, branch
+`claude/focused-mccarthy-97j7ef`, PR #55 draft):** third and last of the
+three M5 scenes, closing the milestone, `status: 'in-progress'`,
+`depictsDeath: true`. Third application of ADR-009's named-killing template,
+and the strictest yet — the hands-and-feet display (4:12a) renders not at
+all, caption-only; a grep of the whole scene folder confirms no
+geometry-producing code anywhere references hands/feet/dismemberment, only
+comments and captions, and `AssassinPose` deliberately has no
+strike/gesture field at all (unlike `gibeon-pool`'s `reverseGrip`/
+`strikeExtend` or `hebron-gate`'s `strikeLean`), since 4:12a gives no method
+to invent. The head renders only as a small covered/wrapped bundle
+(`buildWrappedFormGeometry`, the Jabesh-bone-bundle device at small scale).
+Ish-bosheth's murder (4:5–7) is cards-only — no Mahanaim geometry anywhere —
+and the 4:6 MT/LXX entry divergence (MT: fetching-wheat pretext; LXX: a
+drowsing wheat-cleaning doorkeeper) is surfaced honestly as `scholarlyViews`,
+hedged pending a researcher pass extending `mccarter-1984-ii-samuel` to
+2 Sam 4. This scene is `ziklag-lament`'s deliberate textual twin — David
+retells the Ziklag episode himself (4:10) — cross-linked in claim notes
+rather than restated. Reuses `hebron-anointing`/`hebron-gate`'s Hebron/tomb
+continuity directly (the burial in Abner's tomb is the compositional echo of
+`hebron-gate`'s burial, same ground, days apart — the milestone's closing
+image); one new feature, the pool of Hebron (basin + flat unlit water plane,
+no shader, modeled exactly on `gibeon-pool`'s convention,
+`claim-hebron-pool-feature`, Birket es-Sultan explicitly not adopted). ~33
+figures at high tier (attendants ~12, ambient ~18, David/Rechab/Baanah as
+principals), by far the smallest and cheapest M5 scene, conversation-scale
+like `ziklag-lament` — the execution is attributed to "the young men" at
+David's command, kept as the small textual detail it is (David commands,
+attendants act). New passage `2sam-4` (`in-progress`, first M5 scene under
+it — M5's second new passage after `2sam-3`). New claims:
+`claim-ish-bosheth-assassination`, `claim-david-judgment`,
+`claim-hebron-pool-feature` (design-placeholder), `claim-reckoning-cast-scale`
+(design-placeholder). New characters: `rechab`, `baanah` (staged persons, the
+assassins — not villain-cartooned beyond what the text states),
+`mephibosheth` (referenced-only, confined strictly to 2 Sam 4:4's own
+parenthesis, no forward pointer to 2 Sam 9). `2sam-4`'s fresh ESV budget:
+4:11a ("wicked men have killed a righteous man in his own house on his
+bed...") plus the 4:10 Ziklag retelling fragment — again entered from
+memory, not live-source-verified. The closing card states only what 4:12
+states (the house of Saul's last king dead and buried at Hebron) — no
+2 Sam 5+ content anywhere, checked directly against the literal caption
+string, not just trusted from the build report. A new e2e test confirms the
+ADR-009 advisory fires for `hebron-reckoning` specifically, completing
+first-visit-advisory coverage for all three M5 scenes. Full gate green:
+format, lint, typecheck, 478 vitest, build, 11/11 e2e (independently
+re-verified after the build).
+
+**All three M5 scenes are now built.** M5's remaining work is the `/atlas`
+phase extension (not a 4th scene, per the M4 precedent), a researcher pass
+on five open gap clusters, and a Fable M5 sign-off review before any status
+flips past `in-progress`. See `docs/next-run.md`'s current state block for
+the full priority order.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

@@ -1402,3 +1402,35 @@ rider — performance-reviewer pass on hebron-gate's ~79-figure procession
 crowd, un-bucketed InstancedMesh per-frame updates, not yet confirmed to
 scale cleanly), progress.md M5 section. No src/ or docs/design/ changes
 this pass.
+
+**2026-08-10 (cont.) — Sonnet — hebron-reckoning built (M5 scene 3/3, closes milestone, branch `claude/focused-mccarthy-97j7ef`)**
+Built per docs/design/hebron-reckoning-brief.md, 3rd and strictest
+application of ADR-009's named-killing template: hands-and-feet display
+(4:12a) renders not at all, caption-only (grep-confirmed: no
+geometry-producing code references hands/feet/dismemberment anywhere in
+the scene folder; AssassinPose has no strike/gesture field at all, since
+the text gives no method to invent). Head renders only as a small
+covered/wrapped bundle. Murder (4:5-7) cards-only, no Mahanaim geometry;
+4:6 MT/LXX entry divergence surfaced as scholarlyViews, hedged pending a
+researcher pass. Deliberate textual twin of ziklag-lament (David retells
+the Ziklag episode himself, 4:10) — cross-linked in claim notes. Reuses
+hebron-anointing/hebron-gate's Hebron/tomb continuity; one new feature,
+the pool of Hebron (gibeon-pool's exact basin convention, no shader,
+Birket es-Sultan not adopted). ~33 figures high tier (attendants ~12,
+ambient ~18, 3 principals), cheapest M5 scene by a wide margin. New
+passage 2sam-4 (in-progress). New claims: claim-ish-bosheth-assassination,
+claim-david-judgment, claim-hebron-pool-feature (design-placeholder),
+claim-reckoning-cast-scale (design-placeholder). New characters: rechab,
+baanah (staged), mephibosheth (referenced-only, confined to 4:4). Fresh
+2sam-4 ESV budget: 4:11a + 4:10 fragment. Closing card checked directly
+against its literal string: states only 4:12's fact, no 2 Sam 5+ content
+anywhere. New e2e test for the ADR-009 advisory, completing coverage for
+all three M5 scenes. Gate green: format, lint, typecheck, 478 vitest,
+build, 11/11 e2e — independently re-run by the orchestrating session, not
+just taken from the build report. Commit `9fa2784`, pushed to PR #55
+(still draft).
+
+**All three M5 scenes are now built.** Doc sync this pass: next-run.md
+(new top state block covering all three scenes, what's-next now: atlas
+extension → researcher pass → Fable M5 sign-off), progress.md M5 section.
+No src/ or docs/design/ changes this pass.

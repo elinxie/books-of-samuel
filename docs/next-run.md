@@ -3,7 +3,39 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, `hebron-covenant` + `hebron-gate` built, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-10, all three M5 scenes built, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+
+**`hebron-reckoning` (2 Sam 4) is built** — third and last of M5's three
+scenes, closing the milestone, `status: 'in-progress'` (provisional, pending
+Fable M5 sign-off). Commit `9fa2784`. Third application of ADR-009's
+named-killing template, the strictest yet: the hands-and-feet display (4:12a)
+renders not at all, caption-only — confirmed by grep that no
+geometry-producing code anywhere in the scene references
+hands/feet/dismemberment, only comments/captions; `AssassinPose` has only
+`presented`/`fallen` fields, no strike/gesture field (unlike `gibeon-pool`'s
+`reverseGrip`/`strikeExtend` or `hebron-gate`'s `strikeLean`) since 4:12a
+gives no method to invent. The head renders only as a small covered/wrapped
+bundle (`buildWrappedFormGeometry`). No Mahanaim geometry anywhere; the 4:6
+MT/LXX entry divergence surfaced as `scholarlyViews`, hedged pending a
+researcher pass. This scene is `ziklag-lament`'s deliberate textual twin
+(David retells the Ziklag episode himself, 4:10) — cross-linked in claim
+notes. Reuses `hebron-anointing`/`hebron-gate`'s Hebron/tomb continuity
+directly; one new feature, the pool of Hebron (basin + flat water plane, no
+shader, `gibeon-pool`'s exact convention, `claim-hebron-pool-feature`,
+Birket es-Sultan not adopted). ~33 figures at high tier (attendants ~12,
+ambient ~18, 3 principals — David, Rechab, Baanah), by far the smallest and
+cheapest M5 scene, conversation-scale like `ziklag-lament`. New passage
+`2sam-4` (`in-progress`, first M5 scene under it). New claims:
+`claim-ish-bosheth-assassination` (scholarlyViews on the 4:6 divergence),
+`claim-david-judgment`, `claim-hebron-pool-feature` (design-placeholder),
+`claim-reckoning-cast-scale` (design-placeholder). New characters: `rechab`,
+`baanah` (staged), `mephibosheth` (referenced-only, confined to 4:4, no
+forward pointer to 2 Sam 9). `2sam-4`'s fresh ESV budget: 4:11a + the 4:10
+Ziklag retelling fragment. Closing card states only what 4:12 states — no
+2 Sam 5+ content anywhere, confirmed by checking the literal caption string.
+New e2e test confirms the ADR-009 advisory fires for `hebron-reckoning`
+specifically. Full gate green: format, lint, typecheck, 478 vitest, build,
+11/11 e2e (independently re-verified).
 
 **`hebron-gate` (2 Sam 3:22–39) is built** — second of M5's three scenes,
 the milestone's load-bearing one, `status: 'in-progress'` (provisional,
@@ -48,42 +80,48 @@ referenced-only-by-card characters `michal`/`paltiel`/`rizpah` (never
 staged). New passage `2sam-3` (`in-progress`); `hebron` location's
 `sceneIds` extended. New asset `asset-feast-props`.
 
-Both were build-only slices — no new scope/creative decisions. The Fable
-world-director pass that approved M5's scope and all three briefs already
-happened 2026-08-03 (see below and `docs/run-log.md`).
+All three were build-only slices — no new scope/creative decisions. The
+Fable world-director pass that approved M5's scope and all three briefs
+already happened 2026-08-03 (see below and `docs/run-log.md`). **All three
+M5 scenes are now built** (`hebron-covenant`, `hebron-gate`,
+`hebron-reckoning`), each `status: 'in-progress'`, each provisional pending
+a Fable M5 sign-off.
 
 **What's next (Sonnet), in priority order — check `git log`/working tree
-first, a `hebron-reckoning` build may already be underway in parallel on
-this or another branch:**
+first, the atlas extension may already be underway in parallel on this or
+another branch:**
 
-1. Build `hebron-reckoning` (2 Sam 4) per
-   `docs/design/hebron-reckoning-brief.md` — narrated-only murder (no
-   Mahanaim geometry), covered-bundle head display only (ADR-009
-   dismemberment bar), last of M5's three scenes.
-2. Atlas `/atlas` M5 phase extension (`ui-engineer`) — the 2 Sam 3–4 long-war
+1. Atlas `/atlas` M5 phase extension (`ui-engineer`) — the 2 Sam 3–4 long-war
    trend + northern-house collapse, same soft-region/no-borders constraints
-   as the M4 overlay.
-3. Researcher pass on the four gap clusters (parallelizable, doesn't block
-   builds): extend `mccarter-1984-ii-samuel` to 2 Sam 3–4 (Davidic-apologia
-   reading, 4:6 MT/LXX divergence, refuge-city irony, Abner-killing motive
-   views — this would let `claim-abner-killing`/`claim-public-response`
-   attach named citations instead of their current hedged "e.g., scholars
-   following..." language); extend `herzog-1997` with a checkable
-   gate-typology citation for `claim-hebron-gate-form`; check
-   `king-stager-2001` for feasting/mourning material culture —
-   `claim-feast-form` specifically still needs this check; Iron Age water
-   installations at Hebron for `claim-hebron-pool-feature` (likely
-   permanently thin).
-4. Then a Fable M5 sign-off review before any status flips past
-   `in-progress`.
-5. Non-blocking, worth a look before sign-off: `performance-reviewer` pass on
+   as the M4 overlay. This is M5's last build item (per
+   `docs/design/hebron-covenant-brief.md`'s Resolved design calls: the
+   4th-goal pattern from M4, not a 4th scene).
+2. Researcher pass on the five gap clusters (parallelizable, doesn't block
+   the atlas item): extend `mccarter-1984-ii-samuel` to 2 Sam 3–4
+   (Davidic-apologia reading, 4:6 MT/LXX divergence, refuge-city irony,
+   Abner-killing motive views — this would let
+   `claim-abner-killing`/`claim-public-response`/
+   `claim-ish-bosheth-assassination` attach named citations instead of their
+   current hedged "e.g., scholars following..." language); extend
+   `herzog-1997` with a checkable gate-typology citation for
+   `claim-hebron-gate-form`; check `king-stager-2001` for feasting/mourning
+   material culture — `claim-feast-form` specifically still needs this
+   check; Iron Age water installations at Hebron for
+   `claim-hebron-pool-feature` (likely permanently thin, same evidentiary
+   state as `claim-gibeon-pool-form`).
+3. Then a Fable M5 sign-off review before any status flips past
+   `in-progress` — all three scenes, the atlas extension, `M5`, `f-2sam`
+   (if shared with M4's feature or its own), `2sam-3`/`2sam-4` passages.
+4. Non-blocking, worth a look before sign-off: `performance-reviewer` pass on
    `hebron-gate`'s ~79-figure procession crowd (`MourningAssembly.tsx` uses
    per-frame position updates on a single un-bucketed `InstancedMesh`,
    mirroring `hebron-covenant/AbnerParty.tsx`'s cost precedent at a smaller
-   scale — not yet confirmed to scale cleanly at 79-90 figures). Also: live
-   ESV wording verification for both built M5 scenes' quotes, when an
-   environment with outbound access to Bible-text sites is available.
-6. (Carried forward, still open, non-blocking) real-hardware perf check of
+   scale — not yet confirmed to scale cleanly at 79-90 figures;
+   `hebron-reckoning` is the cheapest scene built so far and not expected to
+   be a risk). Also: live ESV wording verification for all three built M5
+   scenes' quotes, when an environment with outbound access to Bible-text
+   sites is available.
+5. (Carried forward, still open, non-blocking) real-hardware perf check of
    `gilboa-battle` at high tier + the Pages-live check — see Environment
    notes below, unchanged.
 
