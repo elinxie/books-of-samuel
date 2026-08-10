@@ -1331,3 +1331,36 @@ pass, recorded in briefs. Docs synced: next-run.md (new top state + build
 order: covenant → gate → reckoning → atlas), progress.md M5 section. No
 code/scene/claim changes; no verify run (data edit is one additive
 milestone entry; orchestrating session gates before merge).
+
+**2026-08-10 — Sonnet — build hebron-covenant (2 Sam 3:1-21, first M5 scene)**
+Branch claude/focused-mccarthy-97j7ef, commit 5e735e6, PR #55 draft
+(against main, not yet merged). Build-only, per the already-approved
+2026-08-03 Fable brief — no scope/creative decisions this pass. New scene
+src/scenes/hebron-covenant/, status in-progress, depictsDeath: false,
+~71 figures high-tier (Abner's 20 literal 1:1 + ~15-25 feast-side +
+~20-30 ambient town). Reuses hebron-anointing's Hebron terrain/town-form
+constants directly, no new terrain spec (hard continuity rule held).
+New claims: claim-long-war, claim-abner-break, claim-abner-overture,
+claim-covenant-feast, claim-feast-form (design-placeholder),
+claim-covenant-cast-scale (design-placeholder). New referenced-only
+characters michal/paltiel/rizpah (text-only per brief, no geometry). New
+passage 2sam-3 (in-progress); hebron location sceneIds extended. New
+asset asset-feast-props. 2sam-3 ESV budget: one quote used (3:21a),
+rest reserved for hebron-gate's lament. Gate green: format, lint,
+typecheck, 400 vitest, build, 9/9 e2e (orchestrating doc-sync session
+independently re-ran full npm run verify + e2e with
+PLAYWRIGHT_CHROMIUM_PATH set — confirmed, not just taken from build
+report; plain `npm run verify`'s 9 e2e "failures" in this sandbox are
+only the missing env var, a known pre-existing quirk, not a regression).
+Doc sync this pass: next-run.md (new top state block + reordered
+what's-next: hebron-gate next, then hebron-reckoning, atlas extension,
+researcher pass, Fable M5 sign-off), progress.md M5 section. Checked
+asset-roadmap.md (build agent's own hebron-covenant table already
+adequate, no edit needed) and uncertainty-register.md (claim-feast-form/
+claim-covenant-cast-scale are routine design-placeholder scale/form
+claims, same category as claim-hebron-town-form/claim-anointing-rite-form/
+claim-judah-assembly-scale which never got register rows either — register
+convention reserves rows for genuine scholarly disagreement or unresolved
+identification, not asset/design placeholders; no new row added, correctly
+per the register's own "how to update" note). No src/ or docs/design/
+changes this pass.

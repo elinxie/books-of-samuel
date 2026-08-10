@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; no build yet)
+## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; first scene built 2026-08-10)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
@@ -289,6 +289,31 @@ before release) listed in `docs/next-run.md`: McCarter coverage extension to
 Hebron water installations. No new fable-review-queue items — the contested
 staging calls were resolved in the 2026-08-03 Fable pass and recorded in the
 briefs; release gates open at the M5 review per M3/M4 precedent.
+
+**`hebron-covenant` built 2026-08-10 (Sonnet, commit `5e735e6`, branch
+`claude/focused-mccarthy-97j7ef`, PR #55 draft):** first of the three M5
+scenes, `status: 'in-progress'`, `depictsDeath: false`. Reuses
+`hebron-anointing`'s Hebron terrain/town-form/terrace constants directly — no
+new terrain spec, continuing the hard continuity rule. Abner's twenty
+delegation rendered literally 1:1 (3:20a's own count); David's-side feast
+presence and ambient town background at disclosed design counts (~15–25 /
+~20–30 high-tier); ≈71 figures total, the smallest cast of any scene built so
+far (a closed diplomatic meal, not a crowd event). The threefold "he went in
+peace" formula's first occurrence (3:21b) is staged straight, no ominous
+framing — the brief's central instruction. New claims: `claim-long-war`,
+`claim-abner-break`, `claim-abner-overture`, `claim-covenant-feast`,
+`claim-feast-form` (design-placeholder), `claim-covenant-cast-scale`
+(design-placeholder). Michal, Paltiel, and the Rizpah accusation stay
+text-only per the brief — three new referenced-only characters
+(`michal`/`paltiel`/`rizpah`), no geometry for any of them. New passage
+`2sam-3` (`in-progress`); `hebron` location's `sceneIds` extended. One new
+asset (`asset-feast-props`, table in `docs/asset-roadmap.md`). `2sam-3`'s ESV
+excerpt budget used one quote (3:21a), deliberately reserving the rest for
+`hebron-gate`'s lament. Full gate green: format, lint, typecheck, 400 vitest,
+build, 9/9 e2e. `hebron-gate` and `hebron-reckoning` remain `planned`; both
+briefs already exist (`docs/design/hebron-gate-brief.md`,
+`docs/design/hebron-reckoning-brief.md`). See `docs/run-log.md`'s 2026-08-10
+entry.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
