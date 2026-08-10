@@ -1434,3 +1434,40 @@ just taken from the build report. Commit `9fa2784`, pushed to PR #55
 (new top state block covering all three scenes, what's-next now: atlas
 extension → researcher pass → Fable M5 sign-off), progress.md M5 section.
 No src/ or docs/design/ changes this pass.
+
+**2026-08-10 (cont.) — Sonnet — atlas M5 phase extension built, checkpointed mid-slice at critical context, then finished (branch `claude/focused-mccarthy-97j7ef`)**
+Built per next-run.md's top item, the last M5 build task. ui-engineer
+agent added an M5 phase toggle to /atlas (AtlasPage.tsx, reusing
+DividedKingdomMap): Judah's region unchanged from M4; Israel-writ region
+gets a headless variant (fainter fill, no stroke/outline, "no king"
+sub-label, never removed/reassigned/merged) for the house of Saul's ended
+kingship (4:12), without asserting who holds the north next — 2 Sam 5
+stays entirely out of scope, verified by dedicated structural test
+assertions (exactly two regions, no stroke on the headless ellipse, "out
+of scope" disclosure present). New claim claim-atlas-m5-phase
+(design-placeholder, cross-references rather than re-derives
+claim-long-war/claim-abner-break/claim-abner-killing/
+claim-public-response/claim-ish-bosheth-assassination);
+claim-divided-kingdom-atlas-overlay's notes updated to scope itself to M4
+only. New AtlasPhase store state; DividedKingdomMap gained
+regions/emphasizedIds/ariaLabel props (default to M4 values, M4 phase
+pixel-unchanged).
+
+Session hit critical context (96%) mid-build, while the ui-engineer agent
+was still actively writing files concurrently in the working tree —
+checkpointed in five small commits as files landed (30d1ea2 atlasRegions
+data, a8734eb store/map/claim plumbing, 0e5f446 AtlasPage.tsx with 2
+known-failing tests explicitly flagged, c9fa57c doc note, aba27e6 test
+fix once the agent's own iteration resolved the false-positive regex,
+37cee59 e2e coverage). Each commit was independently re-verified
+(typecheck/lint/format at minimum) before committing, even the
+known-broken 0e5f446 checkpoint (committed anyway per checkpoint-protocol
+"never lose work" — clearly labeled, not claimed as gate-green). Final
+state re-verified in full after the agent's last file landed: format,
+lint, typecheck, 484 vitest, build, 12/12 e2e (new atlas-M5-phase e2e
+test included) — all green.
+
+**All M5 build work is now done: three scenes + the atlas extension.**
+Doc sync: next-run.md (atlas item marked done, resume point now the
+researcher pass), progress.md, this entry. Remaining M5 work: researcher
+pass on five gap clusters, then Fable M5 sign-off.

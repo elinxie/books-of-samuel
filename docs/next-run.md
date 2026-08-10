@@ -3,51 +3,41 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, all three M5 scenes built + atlas extension WIP, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-10, all M5 build work done — 3 scenes + atlas extension, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
 
-**Atlas M5 phase extension is IN PROGRESS, checkpointed mid-slice at
-critical context usage — commit `30d1ea2` is a partial, deliberately
-incomplete step, not a finished feature.** A `ui-engineer` agent pass added
-`ALLEGIANCE_REGIONS_M5` and `M5_LOCATION_IDS` to `src/ui/atlasRegions.ts`:
-Judah's region carried over unchanged from the M4 phase; the Israel-writ
-region gets a new `headless` variant (fainter, dashed outline, "no king"
-sub-label — never removed, reassigned, or merged toward Judah's shading)
-reflecting Ish-bosheth's assassination and the house of Saul's kingship
-ending at 4:12, without asserting who (if anyone) holds the north next —
-that question is 2 Samuel 5's all-Israel anointing, explicitly out of scope
-for this overlay. This file's changes are additive/inert on their own (new
-exports, one new optional field on `AllegianceRegionConfig`) — typecheck,
-lint, and the full 478-test vitest suite all pass unchanged with just this
-file. **Not done yet, in priority order for whoever resumes:**
+**The atlas M5 phase extension is DONE and gate-green** (commits
+`30d1ea2`/`a8734eb`/`0e5f446`/`c9fa57c`/`aba27e6`/`37cee59`; this section
+previously described it as in-progress mid-checkpoint — it finished shortly
+after). A `ui-engineer` pass added an M5 phase toggle to `/atlas`
+(`src/pages/AtlasPage.tsx`, reusing `DividedKingdomMap`): Judah's region
+carried over unchanged from M4; the Israel-writ region gets a `headless`
+variant (fainter fill only, no stroke/dashed outline, "no king" sub-label —
+never removed, reassigned, or merged toward Judah's shading) reflecting
+Abner's break/death and Ish-bosheth's assassination with no heir positioned
+to rule. New claim `claim-atlas-m5-phase` (design-placeholder/speculative,
+cross-referencing rather than re-deriving `claim-long-war`,
+`claim-abner-break`, `claim-abner-killing`, `claim-public-response`,
+`claim-ish-bosheth-assassination`); `claim-divided-kingdom-atlas-overlay`'s
+notes updated to say it covers the M4 phase only. New store state
+(`AtlasPhase`, `src/state/store.ts`), extended `DividedKingdomMap` props
+(`regions`/`emphasizedIds`/`ariaLabel`, all defaulting to the existing M4
+values so the M4 phase is pixel-unchanged). Hard scope guard held: no
+unified/merged kingdom drawn, shaded, or captioned anywhere — 2 Samuel 5
+stays entirely out, verified by dedicated test assertions (structural
+guards: exactly two regions, no stroke on the headless ellipse, "2 Samuel
+5 ... out of scope" disclosure present). One test-fix round was needed
+(an overly brittle regex assertion false-positived; replaced with the
+structural guards above, see `aba27e6`). Full gate green: format, lint,
+typecheck, 484 vitest, build, 12/12 e2e (new atlas-M5-phase e2e test
+included) — independently re-verified by the orchestrating session, not
+just taken from the build agent's report.
 
-1. Wire `ALLEGIANCE_REGIONS_M5`/`M5_LOCATION_IDS` into `src/pages/AtlasPage.tsx`
-   — a phase toggle/tab ("M4: the divided kingdom" vs "M5: the long war and
-   Ish-bosheth's fall") reusing `DividedKingdomMap` rather than rebuilding it.
-   Add the long-war-trend (3:1) content as page text/caption, not new map
-   geometry (it's a narrated trend, not a territorial claim — do not redraw
-   or expand Judah's region for it).
-2. Create the claim `claim-atlas-m5-phase` in `src/data/claims.ts` (the
-   `atlasRegions.ts` file comments already reference this id but it does not
-   exist yet) — model it on `claim-divided-kingdom-atlas-overlay`'s
-   design-placeholder/speculative structure; cross-reference the existing
-   M5 claims (`claim-long-war`, `claim-abner-break`, `claim-abner-killing`,
-   `claim-ish-bosheth-assassination`, `claim-public-response`) rather than
-   re-deriving their content.
-3. Extend `src/pages/AtlasPage.test.tsx` for the new phase toggle.
-4. Run the full verify gate (format, lint, typecheck, vitest, build, e2e with
-   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`)
-   and fix anything that fails before committing.
-5. **Hard scope guard, carried from the original brief:** do not show a
-   unified/merged kingdom, do not extend Judah's region over the former
-   Israel-writ area, do not draw or imply David now rules the north — that
-   assertion is 2 Samuel 5 and stays out of this milestone entirely, in the
-   map, captions, and claim text alike.
-
-Once the atlas extension is finished and gate-green, the remaining M5 items
-are unchanged: the researcher pass on five open gap clusters, then a Fable
-M5 sign-off review before any status flips past `in-progress`. See the
-priority list further down this section (still accurate for what comes
-after the atlas item).
+**This closes out all M5 build work.** Remaining M5 items: the researcher
+pass on five open gap clusters, then a Fable M5 sign-off review before any
+status flips past `in-progress`. See the priority list further down this
+section (still accurate for what comes after the atlas item — item 1 there,
+the atlas extension itself, is now done; start from item 2, the researcher
+pass).
 
 **`hebron-reckoning` (2 Sam 4) is built** — third and last of M5's three
 scenes, closing the milestone, `status: 'in-progress'` (provisional, pending
@@ -131,17 +121,13 @@ M5 scenes are now built** (`hebron-covenant`, `hebron-gate`,
 `hebron-reckoning`), each `status: 'in-progress'`, each provisional pending
 a Fable M5 sign-off.
 
-**What's next (Sonnet), in priority order — check `git log`/working tree
-first, the atlas extension may already be underway in parallel on this or
-another branch:**
+**What's next (Sonnet), in priority order — item 1 is DONE, see the state
+block above; start from item 2:**
 
-1. Atlas `/atlas` M5 phase extension (`ui-engineer`) — the 2 Sam 3–4 long-war
-   trend + northern-house collapse, same soft-region/no-borders constraints
-   as the M4 overlay. This is M5's last build item (per
-   `docs/design/hebron-covenant-brief.md`'s Resolved design calls: the
-   4th-goal pattern from M4, not a 4th scene).
-2. Researcher pass on the five gap clusters (parallelizable, doesn't block
-   the atlas item): extend `mccarter-1984-ii-samuel` to 2 Sam 3–4
+1. ~~Atlas `/atlas` M5 phase extension~~ — **done**, see the state block
+   above (commits `30d1ea2` through `37cee59`).
+2. Researcher pass on the five gap clusters (parallelizable): extend
+   `mccarter-1984-ii-samuel` to 2 Sam 3–4
    (Davidic-apologia reading, 4:6 MT/LXX divergence, refuge-city irony,
    Abner-killing motive views — this would let
    `claim-abner-killing`/`claim-public-response`/

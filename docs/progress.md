@@ -400,9 +400,17 @@ first-visit-advisory coverage for all three M5 scenes. Full gate green:
 format, lint, typecheck, 478 vitest, build, 11/11 e2e (independently
 re-verified after the build).
 
-**All three M5 scenes are now built.** M5's remaining work is the `/atlas`
-phase extension (not a 4th scene, per the M4 precedent), a researcher pass
-on five open gap clusters, and a Fable M5 sign-off review before any status
+**All three M5 scenes are built, and the `/atlas` M5 phase extension is
+also now done** (not a 4th scene, per the M4 precedent): a phase toggle on
+`/atlas` adds the 2 Sam 3–4 long-war trend and renders the Israel-writ
+region as `headless` ("no king," fainter fill, no stroke — never removed,
+reassigned, or merged toward Judah's region) once Ish-bosheth is dead with
+no heir positioned to rule, without asserting a unified kingdom or that
+David now rules the north (2 Samuel 5 stays entirely out of scope, held by
+dedicated structural tests). New claim `claim-atlas-m5-phase`. Full gate
+green: format, lint, typecheck, 484 vitest, build, 12/12 e2e. **All M5
+build work is now complete.** M5's remaining work is a researcher pass on
+five open gap clusters and a Fable M5 sign-off review before any status
 flips past `in-progress`. See `docs/next-run.md`'s current state block for
 the full priority order.
 
