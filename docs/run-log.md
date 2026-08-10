@@ -1364,3 +1364,41 @@ convention reserves rows for genuine scholarly disagreement or unresolved
 identification, not asset/design placeholders; no new row added, correctly
 per the register's own "how to update" note). No src/ or docs/design/
 changes this pass.
+
+**2026-08-10 (cont.) — Sonnet — hebron-gate built (M5 scene 2/3, branch `claude/focused-mccarthy-97j7ef`)**
+Built per docs/design/hebron-gate-brief.md, 2nd application of ADR-009's
+named-character-killing template (1st: Asahel, gibeon-pool). Documentary
+distance throughout, no wound/blood geometry in any mode, drawing-aside
+gesture (3:27) the one staged specific detail, reduced mode elides the
+strike entirely (poses.test.ts confirms: reduced-mode strikeLean stays 0
+through the strike window, fallen lands measurably earlier than standard).
+Curse content (3:29) stated plainly in caption, never visualized.
+Refuge-city irony (Josh 20:7) deliberately omitted, no citation yet. Gate
+= modest two-chamber passage, disclosed placeholder, not a monumental
+six-chamber type. Reuses hebron-anointing/hebron-covenant's gate-plaza
+continuity; one new structure (asset-hebron-gate-passage). ~127 figures
+high tier (raid party ~22, mourning assembly ~79, ambient ~22, 4
+principals), largest M5 scene, within the brief's 100-140 band. New
+claims: claim-joab-return-protest, claim-abner-killing (scholarlyViews:
+blood-vengeance-for-Asahel w/ legal complication noted, vs. political
+rival-elimination, both hedged pending named citations),
+claim-david-disavowal, claim-abner-funeral, claim-public-response
+(scholarlyViews: apologia vs. plain-report, hedged pending
+mccarter-1984-ii-samuel's extension to 2 Sam 3), claim-hebron-gate-form,
+claim-abner-tomb-form (rock-cut entry, medieval Tomb-of-Abner tradition
+explicitly not adopted), claim-gate-cast-scale. No new characters (reuses
+david/joab/abner/abishai). 2sam-3 ESV budget: this scene spent the two
+quotes reserved for it (3:33b-34a lament core, 3:38), shared-passage total
+now three (the cap). New e2e test confirms the ADR-009 advisory fires for
+hebron-gate specifically. Gate green: format, lint, typecheck, 444 vitest,
+build, 10/10 e2e — independently re-run by the orchestrating session after
+the build agent's own pass (not just taken from its report). Commit
+`50f4253`, pushed to PR #55 (still draft).
+
+Doc sync this pass: next-run.md (new top state block covering both built
+M5 scenes, reordered what's-next: hebron-reckoning next, then atlas
+extension, researcher pass, Fable M5 sign-off, plus a new non-blocking
+rider — performance-reviewer pass on hebron-gate's ~79-figure procession
+crowd, un-bucketed InstancedMesh per-frame updates, not yet confirmed to
+scale cleanly), progress.md M5 section. No src/ or docs/design/ changes
+this pass.

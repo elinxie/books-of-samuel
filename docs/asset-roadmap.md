@@ -269,10 +269,10 @@ gate, per ADR-011.
   goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
   section above) — the wider `f-overview-map` feature (Philistia/Amalekite
   fringe too) stays a separate, still-`planned` future scope.
-- **M5 (2 Sam 3–4):** `hebron-covenant` built 2026-08-10, first of three
-  scenes, all at the already-built Hebron (see table above). `hebron-gate`
-  (3:22–39) and `hebron-reckoning` (ch. 4) remain `planned`; briefs exist at
-  `docs/design/hebron-gate-brief.md` and `docs/design/hebron-reckoning-brief.md`.
+- **M5 (2 Sam 3–4):** `hebron-covenant` and `hebron-gate` built 2026-08-10,
+  first two of three scenes, all at the already-built Hebron (see tables
+  above). `hebron-reckoning` (ch. 4) remains `planned`; brief exists at
+  `docs/design/hebron-reckoning-brief.md`.
 
 ## Policy
 

@@ -310,10 +310,50 @@ text-only per the brief — three new referenced-only characters
 asset (`asset-feast-props`, table in `docs/asset-roadmap.md`). `2sam-3`'s ESV
 excerpt budget used one quote (3:21a), deliberately reserving the rest for
 `hebron-gate`'s lament. Full gate green: format, lint, typecheck, 400 vitest,
-build, 9/9 e2e. `hebron-gate` and `hebron-reckoning` remain `planned`; both
-briefs already exist (`docs/design/hebron-gate-brief.md`,
-`docs/design/hebron-reckoning-brief.md`). See `docs/run-log.md`'s 2026-08-10
-entry.
+build, 9/9 e2e. See `docs/run-log.md`'s 2026-08-10 entry.
+
+**`hebron-gate` built 2026-08-10 (Sonnet, commit `50f4253`, branch
+`claude/focused-mccarthy-97j7ef`, PR #55 draft):** second of the three M5
+scenes and the milestone's load-bearing one, `status: 'in-progress'`,
+`depictsDeath: true`. Second application of ADR-009's named-character-killing
+template (first was Asahel, `gibeon-pool`): documentary distance throughout,
+no wound/blood geometry in any mode, the drawing-aside gesture (3:27) staged
+as the one specific gesture, reduced mode elides the strike entirely (cuts
+from the aside straight to the aftermath card — verified by a pose test, not
+just asserted). David's curse (3:29) is stated plainly in caption, in the
+text's own harshness, never visualized. The refuge-city irony (Josh 20:7) is
+deliberately omitted — no named citation exists yet, per the brief's
+no-uncited-editorial rule. The gate itself is a modest two-chamber passage,
+disclosed `design-placeholder`, explicitly not a monumental six-chamber type.
+Reuses `hebron-anointing`/`hebron-covenant`'s Hebron continuity (same
+gate-plaza that hosted the anointing and received Abner in peace); the one
+new structure is the gate-passage interior (`asset-hebron-gate-passage`).
+~127 figures at high tier (raid party ~22, mourning assembly ~79, ambient
+~22, 4 principals — David/Joab/Abner/Abishai; the strike is staged as Joab's
+alone, per 3:27, though Abishai is present per 3:30's shared culpability),
+the largest M5 scene. New claims: `claim-joab-return-protest`,
+`claim-abner-killing` (the milestone's most important claim —
+`scholarlyViews` carrying blood-vengeance-for-Asahel with the
+battlefield-killing legal complication noted, and political
+rival-elimination as a separate reading, both hedged "e.g., scholars
+following..." pending a researcher pass), `claim-david-disavowal`,
+`claim-abner-funeral`, `claim-public-response` (`scholarlyViews`: Davidic-
+apologia reading vs. plain-report reading, hedged pending
+`mccarter-1984-ii-samuel`'s coverage extension to 2 Sam 3), `claim-hebron-
+gate-form` (design-placeholder), `claim-abner-tomb-form` (design-placeholder,
+simple rock-cut entry — the medieval "Tomb of Abner" tradition explicitly not
+adopted), `claim-gate-cast-scale` (design-placeholder). No new characters
+(reuses `david`/`joab`/`abner`/`abishai`). `2sam-3`'s ESV budget: this scene
+spent the two quotes `hebron-covenant` reserved for it (3:33b–34a's lament
+core, 3:38), for a shared passage total of three — both entered from memory,
+not live-source-verified (no outbound Bible-text access in this sandbox, the
+same standing caveat as every scene's quotes since `ziklag-lament`). A new
+e2e test confirms the ADR-009 first-visit advisory fires for `hebron-gate`
+specifically, mirroring the existing `gilboa-battle` coverage. Full gate
+green: format, lint, typecheck, 444 vitest, build, 10/10 e2e (independently
+re-verified after the build). `hebron-reckoning` remains `planned`; its brief
+already exists (`docs/design/hebron-reckoning-brief.md`). See
+`docs/run-log.md`'s 2026-08-10 entry.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

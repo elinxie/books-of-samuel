@@ -3,58 +3,86 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, `hebron-covenant` built, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-10, `hebron-covenant` + `hebron-gate` built, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+
+**`hebron-gate` (2 Sam 3:22–39) is built** — second of M5's three scenes,
+the milestone's load-bearing one, `status: 'in-progress'` (provisional,
+pending Fable M5 sign-off). Commit `50f4253`. Second application of ADR-009's
+named-character-killing template (first was Asahel, `gibeon-pool`):
+documentary distance throughout, no wound/blood geometry in any mode, the
+drawing-aside gesture staged as the one specific gesture, reduced mode elides
+the strike entirely (verified by `poses.test.ts`: reduced-mode `strikeLean`
+stays 0 through the strike window, `fallen` lands measurably earlier).
+David's curse (3:29) stated plainly in caption, never visualized. Refuge-city
+irony (Josh 20:7) deliberately omitted — no named citation exists yet. Gate
+rendered as a modest two-chamber passage, not a monumental six-chamber type.
+Reuses `hebron-anointing`/`hebron-covenant`'s Hebron continuity (same
+gate-plaza); one new structure, the gate-passage interior
+(`asset-hebron-gate-passage`). ~127 figures at high tier (raid party ~22,
+mourning assembly ~79, ambient ~22, 4 principals — David/Joab/Abner/Abishai,
+strike staged as Joab's alone), largest M5 scene. New claims:
+`claim-joab-return-protest`, `claim-abner-killing` (scholarlyViews:
+blood-vengeance-for-Asahel w/ legal complication noted, vs. political
+rival-elimination, both hedged pending named citations),
+`claim-david-disavowal`, `claim-abner-funeral`, `claim-public-response`
+(scholarlyViews: apologia vs. plain-report, hedged pending
+`mccarter-1984-ii-samuel`'s extension to 2 Sam 3), `claim-hebron-gate-form`,
+`claim-abner-tomb-form` (rock-cut entry, medieval "Tomb of Abner" tradition
+explicitly not adopted), `claim-gate-cast-scale`. No new characters (reuses
+`david`/`joab`/`abner`/`abishai`). `2sam-3`'s ESV budget: `hebron-covenant`
+spent one quote, this scene spent the remaining two (3:33b–34a lament core,
+3:38) — both entered from memory, not live-source-verified (this sandbox has
+no outbound access to Bible-text sites, same standing caveat as every prior
+scene's quotes). New e2e test confirms the ADR-009 advisory fires on first
+visit to `hebron-gate` specifically. Full gate green: format, lint,
+typecheck, 444 vitest, build, 10/10 e2e (independently re-verified).
 
 **`hebron-covenant` (2 Sam 3:1–21, staged from 3:20) is built** — first of
-M5's three scenes, `status: 'in-progress'` (provisional, pending Fable M5
-sign-off — same pattern as every other M4/M5 scene). Commit `5e735e6`. Reuses
-`hebron-anointing`'s Hebron terrain/town-form/terrace constants directly (no
-new terrain spec). Abner's twenty rendered literally 1:1; feast-side/ambient
-town crowds at disclosed design counts (~15–25 / ~20–30 high-tier); ≈71
-figures total, the smallest cast of any scene so far. New claims:
-`claim-long-war`, `claim-abner-break`, `claim-abner-overture`,
-`claim-covenant-feast`, `claim-feast-form` (design-placeholder),
-`claim-covenant-cast-scale` (design-placeholder). New referenced-only-by-card
-characters `michal`/`paltiel`/`rizpah` (per the brief: never staged — Michal
-at the feast or Paltiel's grief would assert what the text doesn't say). New
-passage `2sam-3` (`in-progress`); `hebron` location's `sceneIds` extended.
-New asset `asset-feast-props` (table in `docs/asset-roadmap.md`, already
-adequate — no edit needed this pass). `2sam-3`'s ESV budget used one quote
-(3:21a); the rest is deliberately reserved for `hebron-gate`'s lament. Full
-gate green: format, lint, typecheck, 400 vitest, build, 9/9 e2e (independently
-re-verified, not just taken from the build report — sandboxed e2e needs
-`PLAYWRIGHT_CHROMIUM_PATH` set, see Environment notes; plain `npm run verify`
-shows 9 e2e "failures" that are only this missing env var, not real).
+M5's three scenes, `status: 'in-progress'`. Commit `5e735e6`. Reuses
+`hebron-anointing`'s Hebron terrain/town-form/terrace constants directly.
+Abner's twenty rendered literally 1:1; ≈71 figures total, the smallest cast
+of any scene so far. New claims: `claim-long-war`, `claim-abner-break`,
+`claim-abner-overture`, `claim-covenant-feast`, `claim-feast-form`
+(design-placeholder), `claim-covenant-cast-scale` (design-placeholder). New
+referenced-only-by-card characters `michal`/`paltiel`/`rizpah` (never
+staged). New passage `2sam-3` (`in-progress`); `hebron` location's
+`sceneIds` extended. New asset `asset-feast-props`.
 
-This was a build-only slice — no new scope/creative decisions. The Fable
-world-director pass that approved this scope and all three briefs already
+Both were build-only slices — no new scope/creative decisions. The Fable
+world-director pass that approved M5's scope and all three briefs already
 happened 2026-08-03 (see below and `docs/run-log.md`).
 
 **What's next (Sonnet), in priority order — check `git log`/working tree
-first, a `hebron-gate` build may already be underway in parallel on this or
-another branch:**
+first, a `hebron-reckoning` build may already be underway in parallel on
+this or another branch:**
 
-1. Build `hebron-gate` (2 Sam 3:22–39) per `docs/design/hebron-gate-brief.md`
-   — the milestone's load-bearing scene, 2nd application of ADR-009's
-   named-character-killing template.
-2. Build `hebron-reckoning` (2 Sam 4) per
+1. Build `hebron-reckoning` (2 Sam 4) per
    `docs/design/hebron-reckoning-brief.md` — narrated-only murder (no
    Mahanaim geometry), covered-bundle head display only (ADR-009
-   dismemberment bar).
-3. Atlas `/atlas` M5 phase extension (`ui-engineer`) — the 2 Sam 3–4 long-war
+   dismemberment bar), last of M5's three scenes.
+2. Atlas `/atlas` M5 phase extension (`ui-engineer`) — the 2 Sam 3–4 long-war
    trend + northern-house collapse, same soft-region/no-borders constraints
    as the M4 overlay.
-4. Researcher pass on the four gap clusters (parallelizable, doesn't block
+3. Researcher pass on the four gap clusters (parallelizable, doesn't block
    builds): extend `mccarter-1984-ii-samuel` to 2 Sam 3–4 (Davidic-apologia
    reading, 4:6 MT/LXX divergence, refuge-city irony, Abner-killing motive
-   views); extend `herzog-1997` with a checkable gate-typology citation for
-   `claim-hebron-gate-form`; check `king-stager-2001` for feasting/mourning
-   material culture — `claim-feast-form` specifically still needs this check
-   (page-level feasting/hospitality content not yet page-verified for it);
-   Iron Age water installations at Hebron for `claim-hebron-pool-feature`
-   (likely permanently thin).
-5. Then a Fable M5 sign-off review before any status flips past
+   views — this would let `claim-abner-killing`/`claim-public-response`
+   attach named citations instead of their current hedged "e.g., scholars
+   following..." language); extend `herzog-1997` with a checkable
+   gate-typology citation for `claim-hebron-gate-form`; check
+   `king-stager-2001` for feasting/mourning material culture —
+   `claim-feast-form` specifically still needs this check; Iron Age water
+   installations at Hebron for `claim-hebron-pool-feature` (likely
+   permanently thin).
+4. Then a Fable M5 sign-off review before any status flips past
    `in-progress`.
+5. Non-blocking, worth a look before sign-off: `performance-reviewer` pass on
+   `hebron-gate`'s ~79-figure procession crowd (`MourningAssembly.tsx` uses
+   per-frame position updates on a single un-bucketed `InstancedMesh`,
+   mirroring `hebron-covenant/AbnerParty.tsx`'s cost precedent at a smaller
+   scale — not yet confirmed to scale cleanly at 79-90 figures). Also: live
+   ESV wording verification for both built M5 scenes' quotes, when an
+   environment with outbound access to Bible-text sites is available.
 6. (Carried forward, still open, non-blocking) real-hardware perf check of
    `gilboa-battle` at high tier + the Pages-live check — see Environment
    notes below, unchanged.
