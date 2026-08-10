@@ -134,6 +134,41 @@ test('divided-kingdom atlas overlay loads, shows the map, and the shading toggle
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
 
+test('atlas M5 phase (2 Samuel 3–4 long war + northern collapse) switches in without asserting a unified kingdom', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/atlas');
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+
+  await page.getByTestId('atlas-phase-m5').click();
+  await expect(page.getByTestId('atlas-phase-m5')).toHaveAttribute('aria-selected', 'true');
+
+  // Both regions still render — the headless Israel-writ region, faded and
+  // labeled "no king," alongside Judah's region, unchanged.
+  await expect(page.getByTestId('region-shading-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-headless-note-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-shading-judah')).toBeVisible();
+
+  // Hebron and Mahanaim carry the M5 phase's emphasis; Mahanaim's disputed
+  // identification note still surfaces.
+  await expect(page.getByTestId('atlas-point-hebron')).toBeVisible();
+  await expect(page.getByTestId('location-dispute-mahanaim')).toBeVisible();
+
+  // Switching back to M4 restores the original phase cleanly.
+  await page.getByTestId('atlas-phase-m4').click();
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByTestId('region-shading-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-headless-note-israel-writ')).toHaveCount(0);
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {
