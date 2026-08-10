@@ -622,3 +622,17 @@ significant budget; prioritize visual realism. Keep tests focused.
   `/opt/pw-browsers/chromium` also worked directly.
 - `claude/amalekite-camp-7h2pjc` was restarted from `main` post-merge per the
   checkpoint protocol; the M2 sign-off commit rides on it.
+
+**2026-08-10 late checkpoint (critical context usage):** atlas M5 extension
+is now fully wired (store.ts, DividedKingdomMap.tsx, app.css, claims.ts,
+atlasRegions.ts, AtlasPage.tsx, AtlasPage.test.tsx all touched — commits
+30d1ea2/a8734eb/0e5f446) but **2 vitest assertions in AtlasPage.test.tsx
+currently fail** (a regex expecting the page never says "David
+rules/controls..." is matching current page text — not yet diagnosed).
+The `ui-engineer` background agent that did this work may still be running
+or may have finished and fixed it — check `ListAgents`/git log for a later
+commit before re-diagnosing from scratch. If not fixed: read the failing
+assertions at `AtlasPage.test.tsx` (search "David (now )?(rules...", "out
+of scope"), find what text in `AtlasPage.tsx` trips them, fix, then run
+the full verify gate (format, lint, typecheck, vitest, build, e2e) before
+this is done. This is the very last M5 build item once fixed.
