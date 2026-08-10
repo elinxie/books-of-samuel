@@ -603,6 +603,18 @@ export const ASSETS: AssetRecord[] = [
       'Revise only if a researcher pass extends herzog-1997’s urban-form monograph with a checkable citation for early Iron II gate typology generally (a comparative-ane upgrade, not an excavated-at-Hebron claim); until then this stays a disclosed generic placeholder.',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-hebron-pool-basin',
+    name: 'Pool of Hebron basin depression',
+    represents:
+      'The pool named at 2 Samuel 4:12, beside which Rechab and Baanah are hanged (the display itself is never rendered — see claim-hebron-pool-feature, claim-david-judgment)',
+    placeholder: true,
+    whyTemporary:
+      'A shallow, flat-floored basin depression (engine/terrain.ts’s `basin` TerrainFeature kind, the same device as asset-gibeon-pool-basin) plus a flat, minimally-lit water plane (reusing the asset-water-plane technique) — modest and disclosed dimensions, not any specific excavated form. Explicitly not the extant Birket es-Sultan pool/site in modern Hebron, which postdates this scene’s Iron IIA setting by roughly two millennia and would be an anachronism dressed as corroboration.',
+    historicalRequirements:
+      'A researcher pass finding a citable published treatment of Iron Age water installations specifically at Hebron/Tell Rumeida, if one exists, could move claim-hebron-pool-feature’s form/placement half past design-placeholder; none is known currently.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

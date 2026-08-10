@@ -28,6 +28,8 @@ import { HebronCovenantScene } from '../scenes/hebron-covenant/HebronCovenantSce
 import { HEBRON_COVENANT_TERRAIN } from '../scenes/hebron-covenant/terrain';
 import { HebronGateScene } from '../scenes/hebron-gate/HebronGateScene';
 import { HEBRON_GATE_TERRAIN } from '../scenes/hebron-gate/terrain';
+import { HebronReckoningScene } from '../scenes/hebron-reckoning/HebronReckoningScene';
+import { HEBRON_RECKONING_TERRAIN } from '../scenes/hebron-reckoning/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -49,6 +51,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'gibeon-pool': { component: GibeonPoolScene, terrain: GIBEON_POOL_TERRAIN },
   'hebron-covenant': { component: HebronCovenantScene, terrain: HEBRON_COVENANT_TERRAIN },
   'hebron-gate': { component: HebronGateScene, terrain: HEBRON_GATE_TERRAIN },
+  'hebron-reckoning': { component: HebronReckoningScene, terrain: HEBRON_RECKONING_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

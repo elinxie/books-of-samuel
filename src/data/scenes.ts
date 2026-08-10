@@ -1608,6 +1608,152 @@ export const SCENES: SceneDef[] = [
       'asset-figure-fallen',
     ],
   },
+  {
+    id: 'hebron-reckoning',
+    title: 'The tomb of Abner, again — Rechab and Baanah',
+    passageIds: ['2sam-4'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    // Built 2026-08-10 (Sonnet/threejs-engineer) per docs/design/
+    // hebron-reckoning-brief.md (Fable world-director pass, 2026-08-03).
+    // Third and last scene of M5, closing the milestone. ADR-009's
+    // named-character-killing template's third application, and its first
+    // judicial one — stricter than gibeon-pool/hebron-gate: no gesture is
+    // ever invented for the execution, and the hands-and-feet display
+    // (4:12a) is caption-only, absolutely, in every mode. Provisional:
+    // pending Fable M5 sign-off before any status flip past in-progress.
+    status: 'in-progress',
+    synopsis:
+      "Ish-bosheth's courage fails at the news of Abner's death; two of his own captains, Rechab and Baanah, murder him defenseless in his own house at noon, behead him, and carry the head to David at Hebron expecting reward — this scene's deliberate textual twin with ziklag-lament, where a man who merely claimed to have killed Saul met the same judgment. David answers by retelling that earlier execution, pronounces the two 'wicked men' who killed 'a righteous man in his own house on his bed,' has them executed and their bodies displayed beside the pool of Hebron (narrated, never rendered), and buries Ish-bosheth's head in the tomb of Abner — the house of Saul's last king, dead by murder and buried at Hebron, closing the chapter and the milestone.",
+    depictsDeath: true,
+    durationSec: 162,
+    beats: [
+      {
+        id: 'b-courage-fails',
+        timeSec: 0,
+        title: "Ish-bosheth's courage fails",
+        caption:
+          'News reaches Ish-bosheth that Abner is dead at Hebron: his courage fails, and all Israel is dismayed. Two of his own captains are introduced — Baanah and Rechab, sons of Rimmon the Beerothite, of the people of Benjamin, commanders of raiding bands under him. No violence yet; no geometry. (2 Samuel 4:1-3)',
+        passageRef: '2 Samuel 4:1-3',
+      },
+      {
+        id: 'b-mephibosheth',
+        timeSec: 14,
+        title: 'A lame five-year-old',
+        caption:
+          "The narrative's own aside on what remains of the house of Saul: Jonathan had a son, Mephibosheth, five years old when the news of Saul and Jonathan's deaths came from Jezreel. His nurse fled with him; he fell and became lame in both feet. Carried exactly where the text places it — no forward pointer to his later story. (2 Samuel 4:4)",
+        passageRef: '2 Samuel 4:4',
+      },
+      {
+        id: 'b-murder-card',
+        timeSec: 28,
+        title: 'At noon, in his own house',
+        caption:
+          'Cards only — Mahanaim is disputed and never built. At the heat of the day, as Ish-bosheth lies on his bed at noon, Rechab and Baanah enter his house: the Hebrew text, difficult at this exact point, reads them coming as if to fetch wheat; the Greek text instead describes a doorkeeper who had been cleaning wheat and grew drowsy and slept. They kill him in his bed, behead him, and flee all night by way of the Arabah. (2 Samuel 4:5-7)',
+        passageRef: '2 Samuel 4:5-7',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 48,
+        title: 'Up the Arabah road',
+        caption:
+          'The two arrive at Hebron up the Arabah road at first light, carrying a small covered bundle low — not raised, not brandished. (2 Samuel 4:8a)',
+        passageRef: '2 Samuel 4:8a',
+      },
+      {
+        id: 'b-presentation',
+        timeSec: 66,
+        title: 'The LORD has avenged my lord the king',
+        caption:
+          "Rechab and Baanah present their claim as their own words: they have brought the head of Ish-bosheth, Saul's son and David's enemy who sought his life — the LORD, they say, has avenged him this day on Saul and his offspring. Carried as their words, petitioners before David expecting reward, the bundle held low, never raised. (2 Samuel 4:8b)",
+        passageRef: '2 Samuel 4:8b',
+      },
+      {
+        id: 'b-verdict',
+        timeSec: 84,
+        title: 'A righteous man, in his own house, on his bed',
+        caption:
+          'David answers by retelling his own judgment at Ziklag (ziklag-lament) — "when one told me, \'Behold, Saul is dead,\' and thought he was bringing good news, I seized him and killed him at Ziklag" (4:10) — then asks: "How much more, when wicked men have killed a righteous man in his own house on his bed..." (4:11a, ESV) — and commands their execution. (2 Samuel 4:9-11)',
+        passageRef: '2 Samuel 4:9-11',
+      },
+      {
+        id: 'b-execution',
+        timeSec: 106,
+        title: 'Beside the pool of Hebron',
+        caption:
+          "At David's command, the young men execute Rechab and Baanah — held at documentary distance near the pool of Hebron; the text gives no method to invent, so none is shown, in either mode. Their hands and feet are cut off, and their bodies hung beside the pool — stated here exactly as the text states it; this display is never rendered as geometry, in any mode, an absolute bar under ADR-009. (2 Samuel 4:12a)",
+        passageRef: '2 Samuel 4:12a',
+      },
+      {
+        id: 'b-burial',
+        timeSec: 128,
+        title: 'In the tomb of Abner',
+        caption:
+          "The covered bundle is carried to the tomb of Abner at Hebron and buried there — the same tomb, the same ground hebron-gate's own burial used, days apart. The milestone's closing image. (2 Samuel 4:12b)",
+        passageRef: '2 Samuel 4:12b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 150,
+        title: 'The house of Saul, ended',
+        caption: 'The house of Saul’s last king is dead, and buried at Hebron. (2 Samuel 4:12)',
+        passageRef: '2 Samuel 4:12',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-receiving-ground',
+        label: "David's receiving ground (default)",
+        position: [24, 10, -6],
+        lookAt: [4, 3, -20],
+      },
+      {
+        id: 'vp-arabah-road',
+        label: 'The Arabah road',
+        position: [170, 14, -50],
+        lookAt: [110, 4, -34],
+      },
+      {
+        id: 'vp-hebron-pool',
+        label: 'The pool of Hebron, at a distance',
+        position: [115, 12, -32],
+        lookAt: [80, 3, -10],
+      },
+      {
+        id: 'vp-tomb-close',
+        label: 'The tomb ground',
+        position: [-70, 8, -34],
+        lookAt: [-58, 4, -50],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-ish-bosheth-assassination',
+      'claim-david-judgment',
+      'claim-hebron-pool-feature',
+      'claim-reckoning-cast-scale',
+      'claim-abner-tomb-form',
+      'claim-execution-messenger',
+      'claim-public-response',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+      'asset-hebron-pool-basin',
+      'asset-water-plane',
+      'asset-figure-fallen',
+      'asset-display-forms',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

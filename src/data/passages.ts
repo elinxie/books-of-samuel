@@ -91,6 +91,26 @@ export const PASSAGES: Passage[] = [
     // 2026-07-22 note).
     status: 'in-progress',
   },
+  {
+    id: '2sam-4',
+    book: '2 Samuel',
+    chapter: 4,
+    reference: '2 Samuel 4',
+    translationAnchor: 'ESV',
+    summary:
+      'Ish-bosheth’s courage fails at the news of Abner’s death. Two of his own captains, Rechab and Baanah, murder him defenseless in his own house at noon, behead him, and carry the head to David at Hebron expecting reward — the same pattern as the Amalekite messenger at Ziklag, but this time the killing is real. David answers by retelling that earlier judgment, pronounces the two "wicked men" who killed "a righteous man in his own house on his bed," has them executed and their bodies displayed beside the pool of Hebron, and buries Ish-bosheth’s head in the tomb of Abner — the house of Saul’s last king, dead by murder and buried at Hebron, ending the chapter and the milestone.',
+    // Fresh passage, hebron-reckoning's own (third and last M5 scene). ESV
+    // excerpt budget: one primary quote (4:11a, the verdict) spent in the
+    // b-verdict beat caption; the 4:10 Ziklag-retelling fragment is the
+    // budget's optional second spend, per the brief. Live-source wording
+    // check not possible in this sandbox (no outbound access at build
+    // time) — wording is carried as given in the brief/from memory and
+    // flagged for a follow-up verification pass, per the project's standing
+    // #19b lesson.
+    sceneIds: ['hebron-reckoning'],
+    milestoneId: 'M5',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

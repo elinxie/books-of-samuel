@@ -228,6 +228,43 @@ sign-off review (`docs/next-run.md`); its shared passage (`2sam-3`) now
 carries its full three-quote ESV budget: one from hebron-covenant (3:21a)
 and two here (the 3:33b-34a lament core and 3:38).
 
+## Current placeholders (hebron-reckoning scene, Milestone 5, built 2026-08-10)
+
+Third and last M5 scene, closing the milestone — ADR-009's named-character-
+killing template's third application, and its first judicial one (the
+execution of Rechab and Baanah, 2 Sam 4:12a). Stricter than gibeon-pool's
+reversed-spear-grip and hebron-gate's strike lean: 4:12a gives no method
+detail to invent, so no gesture at all precedes the collapse in either mode
+(`src/scenes/hebron-reckoning/poses.ts`). The hands-and-feet display itself
+is an absolute bar — it renders in no mode, caption-only, not even a
+shrouded/wrapped-form stand-in (unlike Beth-shan's whole-body display, there
+is no honest non-anatomical way to render a severed-limb display). Same
+Hebron terrain/town/terrace assets reused directly again
+(`src/scenes/hebron-reckoning/terrain.ts` extends `HEBRON_TERRAIN_SPEC` from
+hebron-anointing with one added landform), and the tomb ground is the
+literal same ground `hebron-gate` built (`TombGround` imported directly, no
+new component). David's attendants (~8-14, "the young men" of 4:12a) and
+ambient town background (~10-20) are disclosed design counts
+(`claim-reckoning-cast-scale`); with the three named principals (David,
+Rechab, Baanah) the high-tier total is ≈20-35 figures — by far the smallest
+M5 scene, conversation-scale like `ziklag-lament` (its structural twin). One
+genuinely new asset:
+
+| Asset                     | Represents                                                    | Why temporary                                                                                                                                                                                                                                              | Replace at |
+| ------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-hebron-pool-basin` | The pool of Hebron (2 Sam 4:12) — `claim-hebron-pool-feature` | A shallow basin depression + flat water plane, same device as `asset-gibeon-pool-basin`/`asset-water-plane`; explicitly not the extant Birket es-Sultan pool/site in modern Hebron, which postdates this scene's Iron IIA setting by roughly two millennia | M5         |
+
+The head of Ish-bosheth (4:8, 4:12b) reuses `asset-display-forms`'s
+`buildWrappedFormGeometry` builder at a short length scale — the same device
+already used for Jabesh's bone bundle — rather than a new asset record; the
+fallen/collapse transform at the execution reuses `asset-figure-fallen`. The
+murder itself (4:5-7) is cards-only: Mahanaim is disputed and never built
+(the standing rule since gibeon-pool), so no geometry, no new asset, exists
+for it. This scene's status stays `in-progress` pending a Fable M5 sign-off
+review (`docs/next-run.md`); its own fresh passage (`2sam-4`) carries two
+ESV quotes (the 4:11a verdict core and the 4:10 Ziklag-retelling fragment),
+under its own 3-quote budget.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the
@@ -269,10 +306,11 @@ gate, per ADR-011.
   goal's divided-kingdom atlas overlay (`/atlas`) also built 2026-08-02 (see
   section above) — the wider `f-overview-map` feature (Philistia/Amalekite
   fringe too) stays a separate, still-`planned` future scope.
-- **M5 (2 Sam 3–4):** `hebron-covenant` and `hebron-gate` built 2026-08-10,
-  first two of three scenes, all at the already-built Hebron (see tables
-  above). `hebron-reckoning` (ch. 4) remains `planned`; brief exists at
-  `docs/design/hebron-reckoning-brief.md`.
+- **M5 (2 Sam 3–4):** all three scenes now built 2026-08-10 —
+  `hebron-covenant`, `hebron-gate`, and `hebron-reckoning`, all at the
+  already-built Hebron (see tables above). `hebron-reckoning` closes the
+  milestone at the tomb of Abner; all three remain `in-progress` pending a
+  Fable M5 sign-off review.
 
 ## Policy
 

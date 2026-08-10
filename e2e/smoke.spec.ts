@@ -179,3 +179,36 @@ test('violence advisory (ADR-009) also gates hebron-gate — the second named-ch
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
+
+test('violence advisory (ADR-009) also gates hebron-reckoning — the third named-character-killing scene, and closes M5', async ({
+  page,
+}) => {
+  // hebron-reckoning is ADR-009's named-killing template's third
+  // application and its first judicial one (the execution of Rechab and
+  // Baanah); it is also the milestone's closing scene, so worth its own
+  // explicit coverage same as hebron-gate's.
+  await page.goto('/#/observe/hebron-reckoning');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (courage fails, Mephibosheth, the
+  // murder card, the arrival, the presentation, the verdict, the execution,
+  // the burial, the close) checking for runtime errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 28, 48, 66, 84, 106, 128, 150]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});

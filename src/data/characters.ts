@@ -176,9 +176,40 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Ish-bosheth',
     kind: 'person',
     summary:
-      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool.',
-    passageRefs: ['2 Samuel 2:8–10'],
-    claimIds: ['claim-ish-bosheth-installed'],
+      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool. His courage fails at the news of Abner’s death (4:1); two of his own captains kill him defenseless in his own house at noon rest and carry his head to David (4:5–8) — the house of Saul’s last king, dead by murder rather than battle. Never staged as a figure anywhere in this project (referenced-only throughout, including in hebron-reckoning, where his death is entirely narrated).',
+    passageRefs: ['2 Samuel 2:8–10', '2 Samuel 4:1–12'],
+    claimIds: [
+      'claim-ish-bosheth-installed',
+      'claim-ish-bosheth-assassination',
+      'claim-david-judgment',
+    ],
+  },
+  {
+    id: 'rechab',
+    name: 'Rechab son of Rimmon',
+    kind: 'person',
+    summary:
+      'A captain of one of Ish-bosheth’s raiding bands, a Beerothite of the people of Benjamin (2 Samuel 4:2–3). With his brother Baanah, kills Ish-bosheth in his own house at noon rest, beheads him, and carries the head to David at Hebron expecting reward for avenging him (4:5–8) — a report David treats as confession to murder, not a service. Executed at David’s command; the narrative supplies no further interior life for him beyond his acts and David’s verdict, and this project does not invent any.',
+    passageRefs: ['2 Samuel 4:2–3', '2 Samuel 4:5–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'baanah',
+    name: 'Baanah son of Rimmon',
+    kind: 'person',
+    summary:
+      'Rechab’s brother, named alongside him in every verse that mentions either of them (2 Samuel 4:2–3, 5–9, 12) — the two act as a pair throughout, and this project stages them that way, without differentiating their individual roles beyond what the text states.',
+    passageRefs: ['2 Samuel 4:2–3', '2 Samuel 4:5–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'mephibosheth',
+    name: 'Mephibosheth son of Jonathan',
+    kind: 'person',
+    summary:
+      'Jonathan’s son, five years old when the news of Saul and Jonathan’s deaths came from Jezreel; his nurse fled with him and he fell and became lame in both feet (2 Samuel 4:4) — the text’s own aside on what remains of the house of Saul, carried by caption exactly where the text places it, referenced-only, with no forward pointer to his later appearance in 2 Samuel 9.',
+    passageRefs: ['2 Samuel 4:4'],
+    claimIds: ['claim-ish-bosheth-assassination'],
   },
   {
     id: 'joab',
