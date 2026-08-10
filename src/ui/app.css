@@ -526,6 +526,14 @@ h3 {
   font-size: 13px;
   font-style: italic;
 }
+.atlas-region-headless .atlas-region-label {
+  fill: var(--faint);
+}
+.atlas-region-label-sub {
+  fill: var(--faint);
+  font-size: 10.5px;
+  font-style: italic;
+}
 .atlas-point-label {
   fill: var(--ink);
   font-size: 11px;
@@ -672,6 +680,36 @@ h3 {
 }
 .panel-close:hover {
   color: var(--ink);
+}
+
+.phase-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+.phase-tab {
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  max-width: 320px;
+}
+.phase-tab strong {
+  display: block;
+  color: var(--ink);
+  font-size: 13.5px;
+}
+.phase-tab[aria-selected='true'] {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.phase-tab[aria-selected='true'] strong {
+  color: var(--accent);
 }
 
 .toggle-row {

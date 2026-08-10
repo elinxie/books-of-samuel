@@ -1038,7 +1038,257 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'speculative',
     sourceIds: ['esv-bible'],
     notes:
-      'Mixed-provenance claim, parallel in form to claim-gibeon-terrain-form and claim-battle-scale: the allegiance split itself is high-confidence biblical text, already carried by claim-ish-bosheth-installed (2:8–10, the Gilead/Ashurites/Jezreel/Ephraim/Benjamin/all-Israel writ at Mahanaim) and claim-judah-anointing (2:4, the house of Judah alone) — this claim does not re-assert that split and stays out of its way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choices: soft-shaded, deliberately hard-edge-free region shapes (no polygon boundary is drawn, because no Iron IIA source establishes a literal line on the ground — see CLAUDE.md’s anachronism-discipline rule), the plain equirectangular-ish projection used to place points, and which locations are clustered into which region (e.g. grouping Mount Gilboa/Beth-shan/Jabesh-gilead under the "Israel-writ" region reflects their being within Jezreel/Gilead per 2:9, not a separately sourced boundary claim). Mahanaim is plotted at its own low-confidence, disputed coordinates (see the mahanaim LocationEntry’s two candidate identifications, both surfaced on the page, not just in data) rather than a firmer point standing in for it. Gibeon sits in the unshaded gap between the two soft regions on the map, which is a deliberate rendering choice reflecting its role as the contested meeting-ground of Abner’s and Joab’s men (2:12–17), not an assertion that Gibeon itself changed hands. Kingdom-scale is a separate, disputed question the overlay does not resolve — see claim-david-historical. The overlay is dismissible: a page-level toggle hides the shaded regions entirely, leaving only the plotted points, and the page itself is reached only by choosing to visit /atlas (ADR-011’s "can still ignore it" test).',
+      'Mixed-provenance claim, parallel in form to claim-gibeon-terrain-form and claim-battle-scale: the allegiance split itself is high-confidence biblical text, already carried by claim-ish-bosheth-installed (2:8–10, the Gilead/Ashurites/Jezreel/Ephraim/Benjamin/all-Israel writ at Mahanaim) and claim-judah-anointing (2:4, the house of Judah alone) — this claim does not re-assert that split and stays out of its way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choices: soft-shaded, deliberately hard-edge-free region shapes (no polygon boundary is drawn, because no Iron IIA source establishes a literal line on the ground — see CLAUDE.md’s anachronism-discipline rule), the plain equirectangular-ish projection used to place points, and which locations are clustered into which region (e.g. grouping Mount Gilboa/Beth-shan/Jabesh-gilead under the "Israel-writ" region reflects their being within Jezreel/Gilead per 2:9, not a separately sourced boundary claim). Mahanaim is plotted at its own low-confidence, disputed coordinates (see the mahanaim LocationEntry’s two candidate identifications, both surfaced on the page, not just in data) rather than a firmer point standing in for it. Gibeon sits in the unshaded gap between the two soft regions on the map, which is a deliberate rendering choice reflecting its role as the contested meeting-ground of Abner’s and Joab’s men (2:12–17), not an assertion that Gibeon itself changed hands. Kingdom-scale is a separate, disputed question the overlay does not resolve — see claim-david-historical. The overlay is dismissible: a page-level toggle hides the shaded regions entirely, leaving only the plotted points, and the page itself is reached only by choosing to visit /atlas (ADR-011’s "can still ignore it" test). This claim covers the overlay’s default M4 phase (2:8–11) only; the M5 phase (2 Samuel 3–4, the long-war trend and the Israel-writ region’s "no king" collapse) is covered by its own claim, claim-atlas-m5-phase, added as this overlay’s own M5 extension rather than silently expanding this claim’s scope past 2:8–11.',
+  },
+  {
+    id: 'claim-long-war',
+    statement:
+      'The narrative states that the war between the house of Saul and the house of David was long, David growing steadily stronger and the house of Saul steadily weaker (2 Samuel 3:1); the sons born to David at Hebron are listed across the same span (3:2–5).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Delivered as a context card only (b-long-war, hebron-covenant’s brief) — no geometry stages this beat; the trend it names is also mapped on the /atlas overlay’s M5 phase (see claim-atlas-m5-phase, this overlay’s own M5 extension). The sons listed at 3:2–5 (including Amnon and Absalom) are named as the text names them, with no forward commentary on their later roles — those chapters are far outside this milestone.',
+  },
+  {
+    id: 'claim-abner-break',
+    statement:
+      'The narrative places in Ish-bosheth’s mouth an accusation that Abner went in to Rizpah, Saul’s concubine, and reports Abner’s indignant reply and his oath to transfer the kingdom from the house of Saul to David, "from Dan to Beersheba" (2 Samuel 3:6–11); the text does not state whether the accusation was true.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Narrated-not-adjudicated discipline, carried exactly as hebron-covenant’s brief requires: the accusation is what Ish-bosheth says, not a fact the narrative confirms, and Abner’s reply is indignation, not a denial or confession that resolves the question either way. The political meaning of taking a king’s concubine (a claim on the throne) is commonly noted by commentators, hedged here without a named citation until a researcher pass attaches one (e.g. McCarter, flagged docs/next-run.md) — mccarter-1984-ii-samuel’s current source-card coverage does not yet extend to 2 Samuel 3. Delivered as a context card only (b-break); no Rizpah geometry, Mahanaim geometry, or visualization of the accusation appears anywhere in this scene. `rizpah` gets a light, referenced-only character entry.',
+  },
+  {
+    id: 'claim-abner-overture',
+    statement:
+      'The narrative reports Abner’s messengers proposing a covenant to David, David’s condition that Michal, Saul’s daughter, be returned to him first, the transfer of Michal from Paltiel (who follows her weeping to Bahurim before Abner sends him back), and Abner’s own word to the elders of Israel and to Benjamin securing the north’s consent (2 Samuel 3:12–19).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Text-only in this scene (b-overture, b-elders context cards): Michal and Paltiel are carried by caption, never staged — placing Michal at the Hebron feast or in Abner’s arriving party would assert something the text doesn’t say, and staging Paltiel’s grief would require inventing an entire route/setting for a two-verse vignette at an unlocated site. The human weight of 3:16 ("weeping after her all the way") is carried in a caption, not a render. `michal` and `paltiel` get light, referenced-only character entries; no geometry for either appears in this scene.',
+  },
+  {
+    id: 'claim-covenant-feast',
+    statement:
+      'The narrative states that Abner came to David at Hebron with twenty men, that David made a feast for Abner and his men, that Abner pledged to gather all Israel to a covenant with David so that he might reign over all that his heart desired, and that David then sent Abner away, and he went in peace — the first of three repetitions of the peace formula across 3:21–23 ("he went in peace" / "he had gone in peace" / "he has gone in peace") (2 Samuel 3:20–21).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This scene stages the first occurrence of the threefold peace formula (3:21b) and holds it straight — no dread staging, no ominous framing (brief’s historical intent #2; the irony only works if the peace is staged straight). The twenty men are the text’s own exact count (3:20a), rendered literally 1:1, the same register as gibeon-pool’s twelve-a-side champions. The man received at this table is the same Abner who killed Asahel at the pool of Gibeon (claim-asahel-death) — David receives him anyway; that tension, statecraft over vendetta, is this scene’s whole subject, and it is what hebron-gate (2 Samuel 3:22–39, a separate scene) then shatters.',
+  },
+  {
+    id: 'claim-feast-form',
+    statement:
+      'The scene stages the feast (3:20b) as a prepared open-air meal in a courtyard/plaza space — mats, shared vessels, seated groups — rather than a hall or palace interior; the text says only that "David made Abner and the men who were with him a feast," with no physical or architectural detail.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Hebron’s own town form stays the released design-placeholder claim-hebron-town-form established at hebron-anointing ("a modest highland hill town") — inventing banquet-hall architecture now would silently upgrade it, which this scene deliberately avoids (brief’s Resolved design calls). king-stager-2001’s summary covers general Israelite food production and household material culture, but no page-level feasting/hospitality-ritual content specific to this claim has been page-verified in this build pass (no outbound source access in this sandbox) — the upgrade path to comparative-ane stays open for a future researcher pass, per docs/next-run.md, not claimed here. The seated posture rendered for the crowd is a rigid-body squash-and-lower transform on the existing ADR-010 rig (new asset-feast-props for the mats/vessels themselves), not a modeled sitting pose.',
+  },
+  {
+    id: 'claim-covenant-cast-scale',
+    statement:
+      'This scene renders roughly 15–25 figures for David’s-side feast presence and roughly 20–30 figures for the ambient town background at high quality tier, alongside Abner’s literal twenty-one — disclosed design counts, not headcounts the text gives, deliberately the smallest cast of any M4/M5 scene so far (a closed diplomatic meal, not a crowd event).',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-judah-assembly-scale and claim-gibeon-battle-scale: 3:20 narrates no headcount for who else was present at the feast or in the town that day, so no ratio applies. Deliberately far below hebron-anointing’s 150–200-figure civic assembly — that scene staged a public founding; this one stages a closed political meal, and the contrast in scale is itself meaningful (brief’s "Scale assumptions").',
+  },
+  {
+    id: 'claim-joab-return-protest',
+    statement:
+      'The narrative states that Joab and his army returned from a raid bringing much spoil, that he was told Abner had come to the king and been sent away in peace, and that Joab went to David to protest — telling him that Abner came to deceive him, to know his movements and his plans (2 Samuel 3:22–25).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Joab’s stated reading (deception/espionage) is carried as his own words to David, not adopted by the app as the narrative’s verdict — the narrative reports the protest without endorsing it. No violence in this claim’s scope; it covers only the return and the confrontation, before the recall (claim-abner-killing).',
+  },
+  {
+    id: 'claim-abner-killing',
+    statement:
+      'The narrative states that Joab sent messengers who recalled Abner without David’s knowledge, that Joab drew Abner aside into the midst of the gate as if to speak with him privately, and that there he struck him in the stomach so that he died — for the blood of Asahel his brother (2 Samuel 3:26–27).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-abner-killing-blood-vengeance',
+        label: 'Blood vengeance for Asahel',
+        summary:
+          'The text’s own stated motive (3:27b, echoed at 3:30): Joab and Abishai killed Abner because he had killed their brother Asahel at Gibeon (claim-asahel-death, gibeon-pool). This reading is itself legally complicated inside the narrative’s own world — Asahel died in open battle after two warnings to turn aside, which is precisely why David’s curse (3:28–29) and, much later, Solomon’s own verdict on Joab (1 Kings 2:5, outside this scene’s scope) treat the killing as murder rather than lawful blood vengeance for a war death.',
+        confidence: 'high',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-abner-killing-rival-elimination',
+        label: 'Political rival-elimination',
+        proponents: [
+          'e.g., scholars following the Anchor Bible/critical-commentary tradition on 2 Samuel',
+        ],
+        summary:
+          'A widely held scholarly reading treats Abner — Israel’s ablest military commander, and Joab’s obvious rival for command of any united army under David — as removed for reasons of power as much as (or instead of) grief; the text itself never states this motive, leaving it as an inference from Abner’s position and timing rather than a narrated fact.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The milestone’s most important claim (M5, hebron-gate). Per the brief: what the captions may assert as fact is what the text asserts — the recall, the aside, the strike, the stated Asahel connection, and David’s verdict as David’s verdict; the motive question stays open here as scholarlyViews rather than a single adjudicated answer, and neither Joab nor Abner is editorialized into a simple villain or a simple avenger (the same discipline claim-asahel-death already applies to Abner’s own killing of Asahel). Named proponent attribution for the rival-elimination reading is hedged ("e.g., scholars following...") because no researcher pass has yet attached a specific, page-verified citation to 2 Samuel 3 — mccarter-1984-ii-samuel’s current source-card coverage is scoped to 2 Samuel 1 only. Cross-references claim-asahel-death (gibeon-pool): that claim is this killing’s own stated motive, and the two scenes link both ways — gibeon-pool is where Asahel dies, hebron-gate is where his death is avenged (or used as pretext). ADR-009’s named-character-killing template (documentary distance, no wound/blood geometry in any mode, the drawing-aside itself as the one specific non-graphic detail shown as gesture) governs how this claim is staged; see src/scenes/hebron-gate/poses.ts.',
+  },
+  {
+    id: 'claim-david-disavowal',
+    statement:
+      'The narrative states that when David heard of Abner’s death he declared himself and his kingdom forever guiltless before the LORD for his blood, pronounced a curse on Joab’s own house (that it never lack one with a discharge, or leprosy, or who leans on a crutch, or falls by the sword, or lacks bread), and that the text names Abishai alongside Joab as sharing responsibility (2 Samuel 3:28–30).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The curse’s content is stated honestly in beat captions and never softened, per the brief — reduction (ADR-009) abstracts depiction, never facts, and no mode of this scene ever visualizes any part of the curse’s content. This claim covers David’s own words and verdict; whether the narrative’s insistence on David’s innocence reflects accurate reporting or apologetic shaping is a separate scholarly question, carried on claim-public-response rather than here.',
+  },
+  {
+    id: 'claim-abner-funeral',
+    statement:
+      'The narrative states that David commanded Joab and all the people with him to tear their clothes, put on sackcloth, and mourn before Abner; that Joab did so; that David himself walked behind the bier to Hebron, where Abner was buried; that the king wept aloud at the grave and all the people wept with him; and that David then swore to taste no food until sundown (2 Samuel 3:31–35).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The funeral is staged as this scene’s gravitational center, not an epilogue (the brief: the text spends more verses on the mourning than the murder). Joab tearing his own clothes and mourning before his victim’s bier is staged exactly as narrated, without caption commentary on his interior state, which the text does not supply. Funeral props follow the text’s own list and nothing more: torn clothes, sackcloth, a bier (a wrapped, anatomically unresolved form per buildWrappedFormGeometry, the ADR-009 funerary standard — see claim-abner-tomb-form for the grave itself), weeping, and the fast. The sundown fast is this scene’s one text-fixed lighting cue (3:35), used the same way gibeon-pool used 2:24’s sundown.',
+  },
+  {
+    id: 'claim-public-response',
+    statement:
+      'The narrative states that everything the king did pleased all the people watching, and that all the people and all Israel understood that day that it had not been the king’s will to put Abner to death (2 Samuel 3:36–37).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-public-response-apologia',
+        label: 'Davidic apologia',
+        proponents: [
+          'e.g., scholars following the "apology of David" reading (McCarter and others)',
+        ],
+        summary:
+          'Reads 3:26b ("but David did not know it"), the curse, the commanded public mourning, the lament, the fast, and this verse’s explicit insistence together as one of the clearest examples of a narrative visibly concerned to clear David of a politically convenient death — the pattern often called the "apology of David" in modern scholarship.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-public-response-plain-report',
+        label: 'Plain report',
+        summary:
+          'Reads the verse as a straightforward report of the public’s actual perception at the time, without treating the narrative’s repeated insistence as evidence of a shaping agenda — the text may simply be recording that Hebron’s people were, in fact, persuaded by David’s visible mourning.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The scene stages what the text narrates (David’s mourning, the people’s resulting perception); the dispute about why the text narrates it so emphatically lives here, in the claim layer, per the brief’s "never-fake-consensus rule" — the beat caption itself states the people’s conclusion as the narrative’s own insistence, not as this app’s adjudicated historical fact. Named attribution for the apologia reading requires mccarter-1984-ii-samuel’s coverage to be extended to 2 Samuel 3 by a future researcher pass (its current source-card scope is 2 Samuel 1 only) — hedged with "e.g." until then, per docs/next-run.md’s standing convention for this exact situation (see also claim-abner-break, claim-abner-killing).',
+  },
+  {
+    id: 'claim-hebron-gate-form',
+    statement:
+      'The scene renders "the midst of the gate" (3:27) as a modest, two-chamber gate passage built on hebron-anointing’s own gate-post line — no wall plan, chamber count, or gate-tower form is asserted as excavated at Tell Rumeida.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Tell Rumeida’s 11th–10th century BCE town form stays the permanently thin, citably-confirmed gap established at claim-hebron-town-form (queue #19c) — no gate is attested there specifically. This claim deliberately renders a modest two-chamber gateway rather than a monumental six-chamber Solomonic-type gate, which would both overclaim for Hebron and risk an anachronism for the period (the six-chamber gate type is best attested at sites like Gezer/Hazor/Megiddo in later Iron IIA/IIB royal-building contexts). Upgradeable to comparative-ane (a generic early Iron II chambered-gate typology) only if a future researcher pass extends herzog-1997’s urban-form monograph — which covers gate types generally but has not yet been checked specifically against this claim — with a checkable citation; not claimed here.',
+  },
+  {
+    id: 'claim-abner-tomb-form',
+    statement:
+      'The scene renders Abner’s grave ("they buried Abner in Hebron," 3:32) as a simple, undressed rock-cut entry on the town hill’s flank — a disclosed placeholder location and form, not a claim about any specific excavated tomb.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The text gives no tomb form, marker, or precise location beyond "in Hebron." This project deliberately does not adopt the medieval tradition identifying a "Tomb of Abner" site/structure in modern Hebron, which has no claim to Iron Age authenticity and postdates the biblical setting by roughly two millennia — rendering it here would misrepresent a much later devotional tradition as historical reconstruction.',
+  },
+  {
+    id: 'claim-gate-cast-scale',
+    statement:
+      'This scene renders roughly 15–25 figures for Joab’s returning raid party, roughly 60–90 figures for the mourning assembly, and roughly 15–25 figures for the ambient town background at high quality tier, alongside the four named principals (David, Joab, Abner, Abishai) — disclosed design counts, not headcounts the text gives.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-judah-assembly-scale, claim-gibeon-battle-scale, and claim-covenant-cast-scale: none of 3:22–39’s beats narrate a headcount for the raid party, the crowd who mourns, or the town on an ordinary day, so no ratio applies. The mourning assembly ("all the people," 3:31–32, 35–36) is deliberately smaller than hebron-anointing’s 150–200-figure civic assembly — a funeral, not a tribal founding — and, together with the raid party, ambient town, and four principals, brings this scene’s high-tier total to roughly 100–140 figures, the largest of the M5 scenes so far but still at or below gilboa-battle’s band, and cheaper to render (funeral-pace procession movement, no combat choreography).',
+  },
+  {
+    id: 'claim-ish-bosheth-assassination',
+    statement:
+      'The narrative states that when Ish-bosheth heard Abner was dead his courage failed and all Israel was dismayed (4:1); names two captains of raiding bands, Baanah and Rechab, sons of Rimmon the Beerothite, of the people of Benjamin (4:2–3); gives the aside that Jonathan had a son named Mephibosheth, lame in both feet from a fall at five years old, when the news of Saul and Jonathan came from Jezreel (4:4); and reports that the two captains came to Ish-bosheth’s house at the heat of the day as he lay on his bed at noon, killed him, beheaded him, and fled all night by way of the Arabah before presenting the head to David at Hebron (4:5–8).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-assassination-entry-mt',
+        label: 'Masoretic text: entering as if to fetch wheat',
+        summary:
+          'The Hebrew text of 4:6, widely regarded by commentators as textually difficult at this exact point, reads the two captains entering the interior of the house as though they were coming to take wheat.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-assassination-entry-lxx',
+        label: 'Septuagint: a drowsy doorkeeper',
+        summary:
+          'The Greek text instead describes a woman doorkeeper who had been cleaning/sifting wheat and grew drowsy and slept, letting Rechab and Baanah slip past her into the house — a different, fuller account of the same moment rather than a mere translation variant.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The murder itself (4:5–7) is rendered as cards only in hebron-reckoning: Mahanaim is disputed and never built (the standing rule since gibeon-pool), so no geometry stages the noon entry, the killing, the beheading, or the night flight — the events are narrated by caption text alone, at the same register the project uses for anything at an unbuildable site. The 4:6 MT/LXX divergence above is a genuine textual-critical dispute, not a harmonization problem, and both readings are surfaced honestly rather than adjudicated; named scholarly attribution (e.g., extending mccarter-1984-ii-samuel, whose current source-card coverage is scoped to 2 Samuel 1 only) awaits a future researcher pass, per the standing convention already used at claim-abner-break/claim-abner-killing/claim-public-response. The Mephibosheth parenthesis (4:4) is carried here exactly where the text places it, as a card with no staging and no forward pointer to 2 Samuel 9 — his summary in the character record stays confined to what this verse says. Ish-bosheth is never rendered as a figure anywhere in this project (referenced-only, per gibeon-pool’s own precedent); his death and beheading are narrated facts, and the beheading itself falls in the same "no anatomy, ever" bar as the rest of this claim’s violent content — see claim-david-judgment for how the head is (and is not) rendered once it reaches Hebron.',
+  },
+  {
+    id: 'claim-david-judgment',
+    statement:
+      'The narrative states that David answered Rechab and Baanah by retelling his own execution of the man who brought news of Saul’s death at Ziklag (4:9–10, cross-referencing claim-execution-messenger), pronounced them "wicked men" who had killed "a righteous man in his own house on his bed" (4:11), commanded his young men to kill them, cut off their hands and feet, and hang the bodies beside the pool of Hebron (4:12a); and reports that Ish-bosheth’s head was taken and buried in the tomb of Abner at Hebron (4:12b).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This scene is ziklag-lament’s deliberate textual twin — 4:10 is David’s own retelling of that scene’s events, cross-referenced here rather than restaged: the observer has already seen the Ziklag execution (claim-execution-messenger), and David’s own words now treat what Rechab and Baanah did as far worse, since (unlike the Amalekite’s claim) their killing is real and theirs. The verdict/execution is staged as ADR-009’s named-killing template’s third application and its first judicial one (src/scenes/hebron-reckoning/poses.ts): documentary distance, no wound/blood geometry in any mode, and — because 4:12a gives no method detail to invent — no strike gesture of any kind is rendered in either mode, a stricter application than gibeon-pool’s reversed-spear-grip or hebron-gate’s strike lean (both of which had a specific, non-graphic textual detail to show; this claim has none). The hands-and-feet display (4:12a) is an absolute ADR-009 bar: it renders in no mode, as caption text only — not even a shrouded/wrapped-form stand-in, since (unlike Beth-shan’s whole-body display) there is no honest non-anatomical way to render a severed-limb display. The head (4:8, 4:12b) renders only as a small covered/wrapped bundle via the same buildWrappedFormGeometry short-length-scale treatment already used for Jabesh’s bone bundle (asset-display-forms) — identifiable by caption alone, never by geometry, and carried low throughout (no trophy framing). Cross-references hebron-gate’s claim-public-response for the shared apologia-vs-plain-report dispute about the narrative’s repeated insistence on David’s innocence of house-of-Saul deaths; this claim does not restate a second, divergent version of that dispute.',
+  },
+  {
+    id: 'claim-hebron-pool-feature',
+    statement:
+      'The pool of Hebron (2 Samuel 4:12) is rendered as a shallow, flat-floored basin depression with a flat, unlit water plane — a modest, disclosed placeholder for a landmark the text names but whose physical form and location do not survive in any usable way.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The pool’s existence as a named Hebron landmark is high-confidence biblical text (4:12b); its form and placement are not — modeled on claim-gibeon-pool-form/claim-gibeon-terrain-form’s split, folded into a single claim here since (unlike Gibeon) no excavated candidate pool is adopted at all. The extant Birket es-Sultan pool in modern Hebron is deliberately not adopted as this pool’s site or form: it is a much later installation, and treating it as corroboration would dress an anachronism as reconstruction. No reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh/gibeon-pool. If a future researcher pass finds a citable published treatment of Iron Age water installations specifically at Hebron/Tell Rumeida, this claim’s form/placement half can be revisited; none is known currently.',
+  },
+  {
+    id: 'claim-reckoning-cast-scale',
+    statement:
+      'This scene renders roughly 8–14 figures for David’s attendants/guard and roughly 10–20 figures for the ambient town background at high quality tier, alongside the three named principals (David, Rechab, Baanah) — disclosed design counts, not headcounts the text gives, for a high-tier total of roughly 20–35 figures.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-gate-cast-scale, claim-covenant-cast-scale, claim-gibeon-battle-scale, and claim-judah-assembly-scale: chapter 4 narrates no headcount for who else was present at Ish-bosheth’s house, on the Arabah road, or in Hebron on the day of the presentation, so no ratio applies. This is a judgment scene, not a crowd event — the ziklag-lament small-cast convention applies (its structural twin, per the brief), by far the smallest cast of any M5 scene, well below hebron-gate’s ~100–140-figure funeral-crowd scale. "The young men" who carry out the execution (4:12a) are represented by the disclosed attendant presence near David rather than by a separately modeled executioner gesture — see claim-david-judgment’s notes on the ADR-009 no-invented-method constraint.',
+  },
+  {
+    id: 'claim-atlas-m5-phase',
+    statement:
+      'The /atlas page’s M5 phase toggle (2 Samuel 3–4) adds a text section naming the long-war trend — David growing steadily stronger, the house of Saul steadily weaker (3:1) — and renders the Israel-writ region fainter, labeled "no king," reflecting Abner’s break with Ish-bosheth (3:6–21), Abner’s death (3:22–39), and Ish-bosheth’s assassination with no heir positioned to rule (4:1–12: Mephibosheth, 4:4, is lame and a child, not a throne claimant). The house of Judah’s region is carried over unchanged. This phase draws, shades, or captions no unified/merged kingdom and no territory transfer to David — that assertion belongs to 2 Samuel 5 and stays entirely out of this overlay.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This overlay’s own M5 extension of claim-divided-kingdom-atlas-overlay (the M4 default phase, 2:8–11), added as a second page-level phase rather than by silently broadening that claim’s scope — see its notes for the cross-reference back. Cross-references, rather than re-derives, already-built M5 claim text: claim-long-war (3:1, the trend statement itself, delivered as a hebron-covenant context card and now also captioned here), claim-abner-break (3:6–11, Abner’s break with Ish-bosheth), claim-abner-overture and claim-covenant-feast (3:12–21, Abner’s defection to David), claim-abner-killing (3:26–27, hebron-gate), claim-public-response (3:36–37, the people’s understanding David was not responsible for Abner’s death), and claim-ish-bosheth-assassination (4:1–12, hebron-reckoning). The "no king" treatment is a disclosed design choice, not textual certainty dressed up as fact: 4:12 ends the house of Saul’s kingship as this project has staged it, but the text does not itself say the north was annexed, absorbed, or left entirely without any local authority — only that the king this project has scenes for is dead with no heir shown taking the throne. The region keeps the exact soft/unbordered/no-hard-edge form claim-divided-kingdom-atlas-overlay already establishes — no stroke, no dashed outline, no polygon boundary is added; only the gradient’s fill opacity is lowered and a small "no king (2 Samuel 4:1–12)" sub-label is added beneath the region label, deliberately the more conservative of the visual options considered (a hatched-fill or dashed-boundary treatment was set aside as reading too much like an asserted edge). No color is reused from, blended toward, or merged with Judah’s region, and Judah’s region/caption is otherwise unchanged from the M4 phase — the long war (3:1) is a narrated trend, not a territorial gain, so it is not represented as a redrawn or expanded region. Same dismissible-toggle/optional-visit ADR-011 discipline as the M4 phase; the phase toggle itself defaults to M4 so a first-time visitor sees the already-reviewed 2:8–11 map unless they choose to look further. Mahanaim’s disputed-identification note (both candidate sites) carries forward unchanged in both phases, since it is where Ish-bosheth was both installed and killed — narrated only, never built as a scene, per the standing rule since gibeon-pool.',
   },
 ];
 

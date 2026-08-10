@@ -1283,6 +1283,503 @@ export const SCENES: SceneDef[] = [
       'asset-rocks',
     ],
   },
+  {
+    id: 'hebron-covenant',
+    title: "Hebron — Abner's covenant, and the peace",
+    passageIds: ['2sam-3'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    // Built 2026-08-10 (Sonnet/threejs-engineer) per docs/design/
+    // hebron-covenant-brief.md (Fable world-director pass, 2026-08-03).
+    // 2026-08-10 M5 sign-off review (Opus standing in for Fable, user-directed
+    // substitution): approved as built — no longer provisional. Stays
+    // in-progress; `released` gates on queue #20. Specifically endorsed: the
+    // threefold peace formula staged straight with no ominous framing; Abner's
+    // twenty rendered literally 1:1; Michal/Paltiel/Rizpah text-only. The
+    // "northern road" staged from the west (-x) is approved as a disclosed
+    // legibility choice — layout.ts states it is not a compass claim, and the
+    // b-arrival caption says "from the direction of Israel and Benjamin"
+    // rather than naming a bearing, which is the honest phrasing.
+    status: 'in-progress',
+    synopsis:
+      "After a long civil war, Abner breaks with Ish-bosheth and brings the north's allegiance to David. He comes to Hebron with twenty men, is received and feasted, pledges to gather all Israel to a covenant with David — and is sent away in peace, the first of three times the text says so.",
+    depictsDeath: false,
+    durationSec: 158,
+    beats: [
+      {
+        id: 'b-long-war',
+        timeSec: 0,
+        title: 'A long war',
+        caption:
+          'The war between the house of Saul and the house of David is long; David grows steadily stronger, the house of Saul steadily weaker. Sons are born to David at Hebron across this span, listed as the text lists them. (2 Samuel 3:1–5)',
+        passageRef: '2 Samuel 3:1–5',
+      },
+      {
+        id: 'b-break',
+        timeSec: 16,
+        title: 'The break with Ish-bosheth',
+        caption:
+          "Ish-bosheth accuses Abner of going in to Rizpah, Saul's concubine — a charge with royal-claim overtones the narrative reports without confirming. Abner answers with indignation, not denial, and swears to transfer the kingdom from Saul's house to David, across the whole land from Dan to Beersheba. Not shown: Mahanaim, where this happens, has no confident site identification. (2 Samuel 3:6–11)",
+        passageRef: '2 Samuel 3:6–11',
+      },
+      {
+        id: 'b-overture',
+        timeSec: 32,
+        title: "Abner's overture",
+        caption:
+          "Abner sends messengers to David proposing a covenant. David's condition: Michal, Saul's daughter, must be returned to him first. She is taken from Paltiel, who follows her weeping as far as Bahurim before Abner sends him back. Text only — none of this is staged. (2 Samuel 3:12–16)",
+        passageRef: '2 Samuel 3:12–16',
+      },
+      {
+        id: 'b-elders',
+        timeSec: 48,
+        title: 'Word to the elders',
+        caption:
+          "Before coming to Hebron, Abner speaks to the elders of Israel and to Benjamin — the north's own consent gathered ahead of the visit. (2 Samuel 3:17–19)",
+        passageRef: '2 Samuel 3:17–19',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 64,
+        title: 'Twenty men, up the northern road',
+        caption:
+          "Abner comes to David at Hebron with twenty men — the text's own exact count, rendered literally. The column climbs from the direction of Israel and Benjamin, the deliberate inverse of hebron-anointing's approach from the south, and is received. (2 Samuel 3:20a)",
+        passageRef: '2 Samuel 3:20a',
+      },
+      {
+        id: 'b-feast',
+        timeSec: 100,
+        title: 'A feast, not a celebration',
+        caption:
+          'David makes Abner and his men a feast — an open-air meal on mats in a courtyard, not a banquet hall. Quiet, formal, watchful: the man seated here killed Asahel at the pool of Gibeon, and David receives him anyway. (2 Samuel 3:20b)',
+        passageRef: '2 Samuel 3:20b',
+      },
+      {
+        id: 'b-pledge',
+        timeSec: 120,
+        title: '"That you may reign over all that your heart desires"',
+        caption:
+          'Abner pledges to gather all Israel to a covenant with David, "that you may reign over all that your heart desires." (2 Samuel 3:21a, ESV)',
+        passageRef: '2 Samuel 3:21a',
+      },
+      {
+        id: 'b-peace',
+        timeSec: 134,
+        title: 'He went in peace',
+        caption:
+          'David sends Abner away, and he goes in peace — a settled, public, unhurried dismissal, held on the same road he arrived by. The narrative will repeat this formula twice more before saying what happens next. (2 Samuel 3:21b)',
+        passageRef: '2 Samuel 3:21b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 150,
+        title: 'Not yet shown',
+        caption:
+          "What follows at Hebron's gate — Joab's return and what he does — belongs to the next scene, hebron-gate. Not previewed here. (2 Samuel 3:22–39)",
+        passageRef: '2 Samuel 3:22–39',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-north-road',
+        label: 'The northern road (default)',
+        position: [-180, 40, 60],
+        lookAt: [-30, 12, -32],
+      },
+      {
+        id: 'vp-feast',
+        label: 'The feast ground',
+        position: [44, 3, -6],
+        lookAt: [28, 2, -21],
+      },
+      {
+        id: 'vp-gate-plaza',
+        label: 'The gate plaza',
+        position: [18, 2, -30],
+        lookAt: [0, 3, -16],
+      },
+      {
+        id: 'vp-departure',
+        label: 'The peace departure',
+        position: [40, 8, -10],
+        lookAt: [-220, 6, -50],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-judah-anointing',
+      'claim-long-war',
+      'claim-abner-break',
+      'claim-abner-overture',
+      'claim-covenant-feast',
+      'claim-feast-form',
+      'claim-covenant-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+      'asset-feast-props',
+    ],
+  },
+  {
+    id: 'hebron-gate',
+    title: 'Hebron’s gate — the killing of Abner',
+    passageIds: ['2sam-3'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    // Built 2026-08-10 (Sonnet/threejs-engineer) per docs/design/
+    // hebron-gate-brief.md (Fable world-director pass, 2026-08-03). Second
+    // scene of M5, and its load-bearing one — the second application of
+    // ADR-009's named-character-killing template. 2026-08-10 M5 sign-off
+    // review (Opus standing in for Fable, user-directed substitution):
+    // approved as built — no longer provisional. Stays in-progress;
+    // `released` gates on queue #20. Verified in code, not just captions:
+    // poses.ts's `strikeLean` is zero throughout the strike window in reduced
+    // mode and the fall lands earlier (poses.test.ts), no wound/blood geometry
+    // exists in any component, the curse (3:29) is caption-only, and the
+    // motive/apologia disputes are carried as non-adjudicating scholarlyViews.
+    // Reusing `asset-bier-props` rather than minting a new `asset-bier` is
+    // approved — the bier is the wrapped-form + prop convention ADR-009 already
+    // ratified, and a duplicate asset id would assert a distinction that
+    // doesn't exist.
+    status: 'in-progress',
+    synopsis:
+      "Joab returns from a raid and protests David's reception of Abner. He recalls Abner under a false pretext and kills him alone inside the gate passage, for the blood of Asahel his brother — a killing the narrative insists David had no part in and did not want. David publicly disavows the act, curses Joab's own house, and commands citywide mourning: Joab himself tears his clothes and mourns before Abner's bier, and David walks behind it to the grave, laments, and fasts until sundown.",
+    depictsDeath: true,
+    durationSec: 224,
+    beats: [
+      {
+        id: 'b-joab-returns',
+        timeSec: 0,
+        title: 'From a raid, with much spoil',
+        caption:
+          'Joab and all his army come in from a raid, bringing much spoil. Joab is told that Abner son of Ner came to the king, was received, and has gone in peace — the third time the narrative repeats that formula. No violence yet. (2 Samuel 3:22-23)',
+        passageRef: '2 Samuel 3:22-23',
+      },
+      {
+        id: 'b-protest',
+        timeSec: 16,
+        title: "Joab's protest",
+        caption:
+          'Joab confronts David: why send Abner away, when Abner came only to deceive him — to learn his movements and his plans? His own stated reading, carried as his words; the narrative neither confirms nor denies it. (2 Samuel 3:24-25)',
+        passageRef: '2 Samuel 3:24-25',
+      },
+      {
+        id: 'b-recall',
+        timeSec: 32,
+        title: 'The recall',
+        caption:
+          'Without David’s knowledge, Joab sends messengers after Abner; they overtake him at the cistern of Sirah and bring him back — an unidentified site, never staged. But David did not know it. (2 Samuel 3:26)',
+        passageRef: '2 Samuel 3:26',
+      },
+      {
+        id: 'b-gate-aside',
+        timeSec: 48,
+        title: 'Into the midst of the gate',
+        caption:
+          'Abner returns through the gate. Joab draws him aside into the passage’s interior, as if for a private word — the drawing-aside itself is the killing’s method, staged literally, with no invented dialogue. (2 Samuel 3:27a)',
+        passageRef: '2 Samuel 3:27a',
+      },
+      {
+        id: 'b-abner-death',
+        timeSec: 60,
+        title: 'For the blood of Asahel',
+        caption:
+          'There Joab strikes him in the stomach, and he dies — for the blood of Asahel his brother, killed at the pool of Gibeon (gibeon-pool). Rendered at documentary distance in every mode, with no wound or blood geometry; reduced mode elides the strike itself, cutting straight to the aftermath. (2 Samuel 3:27b)',
+        passageRef: '2 Samuel 3:27b',
+      },
+      {
+        id: 'b-david-hears',
+        timeSec: 76,
+        title: 'Guiltless before the LORD',
+        caption:
+          "When David hears of it, he publicly declares himself and his kingdom forever guiltless before the LORD for Abner's blood, and curses Joab's own house: that it never lack one with a discharge, or leprosy, or who leans on a crutch, or falls by the sword, or lacks bread — stated plainly, in the text's own harshness, and never visualized. Abishai is named alongside Joab as sharing responsibility. (2 Samuel 3:28-30)",
+        passageRef: '2 Samuel 3:28-30',
+      },
+      {
+        id: 'b-mourning-cmd',
+        timeSec: 98,
+        title: 'Tear your clothes',
+        caption:
+          'David commands Joab and all the people with him: tear your clothes, put on sackcloth, and mourn before Abner. Joab himself tears his clothes and mourns — the killer made a public mourner at his victim’s funeral. David takes his place behind the bier. (2 Samuel 3:31)',
+        passageRef: '2 Samuel 3:31',
+      },
+      {
+        id: 'b-procession',
+        timeSec: 116,
+        title: 'The bier',
+        caption:
+          'The bier is carried to the grave at funeral pace; the mourning crowd follows. King David walks behind it, as the text itself specifies. (2 Samuel 3:31b-32a)',
+        passageRef: '2 Samuel 3:31b-32a',
+      },
+      {
+        id: 'b-burial-weep',
+        timeSec: 150,
+        title: 'Buried at Hebron',
+        caption:
+          'Abner is buried at Hebron. The king weeps aloud at the grave, and all the people weep with him. Held, unhurried — the funeral is this scene’s gravitational center, not an epilogue. (2 Samuel 3:32b)',
+        passageRef: '2 Samuel 3:32b',
+      },
+      {
+        id: 'b-lament',
+        timeSec: 168,
+        title: "David's lament",
+        caption:
+          '"Should Abner die as a fool dies? Your hands were not bound; your feet were not fettered; as one falls before the wicked you have fallen." All the people weep again over him. No invented melody. (2 Samuel 3:33-34, ESV)',
+        passageRef: '2 Samuel 3:33-34',
+      },
+      {
+        id: 'b-fast',
+        timeSec: 186,
+        title: 'Until the sun goes down',
+        caption:
+          'The people come to urge David to eat while it is still day, but he swears he will taste nothing until the sun goes down. Sundown light begins here — the one hour the narrative itself fixes. (2 Samuel 3:35)',
+        passageRef: '2 Samuel 3:35',
+      },
+      {
+        id: 'b-people-note',
+        timeSec: 200,
+        title: 'Not the king’s will',
+        caption:
+          "Everything the king does pleases all the people watching. That day, all the people and all Israel understand that it was not the king's will to put Abner to death — the narrative's own insistence, stated as it states it. (2 Samuel 3:36-37)",
+        passageRef: '2 Samuel 3:36-37',
+      },
+      {
+        id: 'b-close',
+        timeSec: 212,
+        title: 'A prince and a great man',
+        caption:
+          '"Do you not know that a prince and a great man has fallen this day in Israel?" David calls the sons of Zeruiah more severe than himself, though he is the anointed king. What follows belongs to the next scene, hebron-reckoning — not previewed here. (2 Samuel 3:38-39, ESV)',
+        passageRef: '2 Samuel 3:38-39',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-gate-plaza',
+        label: 'The gate plaza (default)',
+        position: [26, 9, -2],
+        lookAt: [0, 4, -30],
+      },
+      {
+        id: 'vp-gate-shadow',
+        label: 'The gate passage, at a distance',
+        position: [15, 5, -28],
+        lookAt: [4, 3, -43],
+      },
+      {
+        id: 'vp-procession',
+        label: 'The procession route',
+        position: [-32, 10, -18],
+        lookAt: [-55, 4, -38],
+      },
+      {
+        id: 'vp-tomb',
+        label: 'The tomb ground',
+        position: [-70, 8, -34],
+        lookAt: [-58, 4, -50],
+      },
+      {
+        id: 'vp-kings-response',
+        label: "The king's ground",
+        position: [12, 6, -30],
+        lookAt: [0, 3, -18],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-asahel-death',
+      'claim-joab-return-protest',
+      'claim-abner-killing',
+      'claim-david-disavowal',
+      'claim-abner-funeral',
+      'claim-public-response',
+      'claim-hebron-gate-form',
+      'claim-abner-tomb-form',
+      'claim-gate-cast-scale',
+      'claim-mourning-dress',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+      'asset-hebron-gate-passage',
+      'asset-bier-props',
+      'asset-figure-fallen',
+    ],
+  },
+  {
+    id: 'hebron-reckoning',
+    title: 'The tomb of Abner, again — Rechab and Baanah',
+    passageIds: ['2sam-4'],
+    locationId: 'hebron',
+    periodId: 'iron-iia',
+    milestoneId: 'M5',
+    // Built 2026-08-10 (Sonnet/threejs-engineer) per docs/design/
+    // hebron-reckoning-brief.md (Fable world-director pass, 2026-08-03).
+    // Third and last scene of M5, closing the milestone. ADR-009's
+    // named-character-killing template's third application, and its first
+    // judicial one — stricter than gibeon-pool/hebron-gate: no gesture is
+    // ever invented for the execution, and the hands-and-feet display
+    // (4:12a) is caption-only, absolutely, in every mode. 2026-08-10 M5
+    // sign-off review (Opus standing in for Fable, user-directed
+    // substitution): approved as built — no longer provisional. Stays
+    // in-progress; `released` gates on queue #20. The ADR-009 dismemberment
+    // bar was re-verified directly against the code at this review, not taken
+    // from the build report: `AssassinPose` carries only `presented`/`fallen`,
+    // with no strike/gesture field of any kind, and the only occurrences of
+    // hands/feet/dismemberment anywhere in the scene folder are comments and
+    // beat-caption text. The no-invented-method restraint (stricter than
+    // gibeon-pool's reversed grip and hebron-gate's strike lean, because 4:12a
+    // supplies no method) is ratified as the correct reading of ADR-009 for
+    // any future killing the text narrates without method detail.
+    status: 'in-progress',
+    synopsis:
+      "Ish-bosheth's courage fails at the news of Abner's death; two of his own captains, Rechab and Baanah, murder him defenseless in his own house at noon, behead him, and carry the head to David at Hebron expecting reward — this scene's deliberate textual twin with ziklag-lament, where a man who merely claimed to have killed Saul met the same judgment. David answers by retelling that earlier execution, pronounces the two 'wicked men' who killed 'a righteous man in his own house on his bed,' has them executed and their bodies displayed beside the pool of Hebron (narrated, never rendered), and buries Ish-bosheth's head in the tomb of Abner — the house of Saul's last king, dead by murder and buried at Hebron, closing the chapter and the milestone.",
+    depictsDeath: true,
+    durationSec: 162,
+    beats: [
+      {
+        id: 'b-courage-fails',
+        timeSec: 0,
+        title: "Ish-bosheth's courage fails",
+        caption:
+          'News reaches Ish-bosheth that Abner is dead at Hebron: his courage fails, and all Israel is dismayed. Two of his own captains are introduced — Baanah and Rechab, sons of Rimmon the Beerothite, of the people of Benjamin, commanders of raiding bands under him. No violence yet; no geometry. (2 Samuel 4:1-3)',
+        passageRef: '2 Samuel 4:1-3',
+      },
+      {
+        id: 'b-mephibosheth',
+        timeSec: 14,
+        title: 'A lame five-year-old',
+        caption:
+          "The narrative's own aside on what remains of the house of Saul: Jonathan had a son, Mephibosheth, five years old when the news of Saul and Jonathan's deaths came from Jezreel. His nurse fled with him; he fell and became lame in both feet. Carried exactly where the text places it — no forward pointer to his later story. (2 Samuel 4:4)",
+        passageRef: '2 Samuel 4:4',
+      },
+      {
+        id: 'b-murder-card',
+        timeSec: 28,
+        title: 'At noon, in his own house',
+        caption:
+          'Cards only — Mahanaim is disputed and never built. At the heat of the day, as Ish-bosheth lies on his bed at noon, Rechab and Baanah enter his house: the Hebrew text, difficult at this exact point, reads them coming as if to fetch wheat; the Greek text instead describes a doorkeeper who had been cleaning wheat and grew drowsy and slept. They kill him in his bed, behead him, and flee all night by way of the Arabah. (2 Samuel 4:5-7)',
+        passageRef: '2 Samuel 4:5-7',
+      },
+      {
+        id: 'b-arrival',
+        timeSec: 48,
+        title: 'Up the Arabah road',
+        caption:
+          'The two arrive at Hebron up the Arabah road at first light, carrying a small covered bundle low — not raised, not brandished. (2 Samuel 4:8a)',
+        passageRef: '2 Samuel 4:8a',
+      },
+      {
+        id: 'b-presentation',
+        timeSec: 66,
+        title: 'The LORD has avenged my lord the king',
+        caption:
+          "Rechab and Baanah present their claim as their own words: they have brought the head of Ish-bosheth, Saul's son and David's enemy who sought his life — the LORD, they say, has avenged him this day on Saul and his offspring. Carried as their words, petitioners before David expecting reward, the bundle held low, never raised. (2 Samuel 4:8b)",
+        passageRef: '2 Samuel 4:8b',
+      },
+      {
+        id: 'b-verdict',
+        timeSec: 84,
+        title: 'A righteous man, in his own house, on his bed',
+        caption:
+          'David answers by retelling his own judgment at Ziklag (ziklag-lament) — "when one told me, \'Behold, Saul is dead,\' and thought he was bringing good news, I seized him and killed him at Ziklag" (4:10) — then asks: "How much more, when wicked men have killed a righteous man in his own house on his bed..." (4:11a, ESV) — and commands their execution. (2 Samuel 4:9-11)',
+        passageRef: '2 Samuel 4:9-11',
+      },
+      {
+        id: 'b-execution',
+        timeSec: 106,
+        title: 'Beside the pool of Hebron',
+        caption:
+          "At David's command, the young men execute Rechab and Baanah — held at documentary distance near the pool of Hebron; the text gives no method to invent, so none is shown, in either mode. Their hands and feet are cut off, and their bodies hung beside the pool — stated here exactly as the text states it; this display is never rendered as geometry, in any mode, an absolute bar under ADR-009. (2 Samuel 4:12a)",
+        passageRef: '2 Samuel 4:12a',
+      },
+      {
+        id: 'b-burial',
+        timeSec: 128,
+        title: 'In the tomb of Abner',
+        caption:
+          "The covered bundle is carried to the tomb of Abner at Hebron and buried there — the same tomb, the same ground hebron-gate's own burial used, days apart. The milestone's closing image. (2 Samuel 4:12b)",
+        passageRef: '2 Samuel 4:12b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 150,
+        title: 'The house of Saul, ended',
+        caption: 'The house of Saul’s last king is dead, and buried at Hebron. (2 Samuel 4:12)',
+        passageRef: '2 Samuel 4:12',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-receiving-ground',
+        label: "David's receiving ground (default)",
+        position: [24, 10, -6],
+        lookAt: [4, 3, -20],
+      },
+      {
+        id: 'vp-arabah-road',
+        label: 'The Arabah road',
+        position: [170, 14, -50],
+        lookAt: [110, 4, -34],
+      },
+      {
+        id: 'vp-hebron-pool',
+        label: 'The pool of Hebron, at a distance',
+        position: [115, 12, -32],
+        lookAt: [80, 3, -10],
+      },
+      {
+        id: 'vp-tomb-close',
+        label: 'The tomb ground',
+        position: [-70, 8, -34],
+        lookAt: [-58, 4, -50],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-hebron-town-form',
+      'claim-dress',
+      'claim-david-historical',
+      'claim-ish-bosheth-assassination',
+      'claim-david-judgment',
+      'claim-hebron-pool-feature',
+      'claim-reckoning-cast-scale',
+      'claim-abner-tomb-form',
+      'claim-execution-messenger',
+      'claim-public-response',
+    ],
+    assetIds: [
+      'asset-terrain-hebron-hills',
+      'asset-hebron-town-form',
+      'asset-terrace-walls',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+      'asset-hebron-pool-basin',
+      'asset-water-plane',
+      'asset-figure-fallen',
+      'asset-display-forms',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

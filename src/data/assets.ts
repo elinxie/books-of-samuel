@@ -579,6 +579,42 @@ export const ASSETS: AssetRecord[] = [
       'Modeled weapon/shield forms sourced from a specific comparative-ANE assemblage or excavated Iron I–IIA highland find, once the character/kit pipeline moves beyond primitive attachment geometry.',
     replacementMilestoneId: 'M4',
   },
+  {
+    id: 'asset-feast-props',
+    name: 'Feast dressing (mats and vessels)',
+    represents:
+      'The open-air meal David lays for Abner and his men at Hebron (2 Samuel 3:20b) — see claim-feast-form',
+    placeholder: true,
+    whyTemporary:
+      'A single small instanced prop family (flat woven mats at every seating slot, a handful of shared low vessels) — the text names only the fact of a feast, not its physical form, so this is a disclosed design placeholder, not a reconstruction of any specific excavated or comparative feasting assemblage.',
+    historicalRequirements:
+      'A citable meal/feasting material-culture source (king-stager-2001 checked and not yet page-verified for this content, per docs/next-run.md) could move vessel/seating form past design-placeholder; until then this stays generic.',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-hebron-gate-passage',
+    name: 'Gate-passage interior (Hebron)',
+    represents:
+      '"The midst of the gate" (2 Samuel 3:27) — the modest two-chamber gateway Joab draws Abner into — see claim-hebron-gate-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple box-massed piers, corridor walls, and a roof slab (src/scenes/hebron-gate/GatePassage.tsx) built on hebron-anointing’s own gate-post line, not a reproduction of any excavated Tell Rumeida gate — no gate is attested there for this period (claim-hebron-town-form’s permanently thin gap). Deliberately not a monumental six-chamber Solomonic-type gate. No walkable/hollow interior is modeled — the observer is held at documentary distance (ADR-009, vp-gate-shadow) and never enters, so only exterior massing plus a darkened floor patch are needed to read as an interior deep enough to draw someone aside into.',
+    historicalRequirements:
+      'Revise only if a researcher pass extends herzog-1997’s urban-form monograph with a checkable citation for early Iron II gate typology generally (a comparative-ane upgrade, not an excavated-at-Hebron claim); until then this stays a disclosed generic placeholder.',
+    replacementMilestoneId: 'M5',
+  },
+  {
+    id: 'asset-hebron-pool-basin',
+    name: 'Pool of Hebron basin depression',
+    represents:
+      'The pool named at 2 Samuel 4:12, beside which Rechab and Baanah are hanged (the display itself is never rendered — see claim-hebron-pool-feature, claim-david-judgment)',
+    placeholder: true,
+    whyTemporary:
+      'A shallow, flat-floored basin depression (engine/terrain.ts’s `basin` TerrainFeature kind, the same device as asset-gibeon-pool-basin) plus a flat, minimally-lit water plane (reusing the asset-water-plane technique) — modest and disclosed dimensions, not any specific excavated form. Explicitly not the extant Birket es-Sultan pool/site in modern Hebron, which postdates this scene’s Iron IIA setting by roughly two millennia and would be an anachronism dressed as corroboration.',
+    historicalRequirements:
+      'A researcher pass finding a citable published treatment of Iron Age water installations specifically at Hebron/Tell Rumeida, if one exists, could move claim-hebron-pool-feature’s form/placement half past design-placeholder; none is known currently.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

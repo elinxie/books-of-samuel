@@ -40,15 +40,24 @@ function project(lat: number, lon: number): [number, number] {
 export function DividedKingdomMap({
   locations,
   showShading,
+  regions = ALLEGIANCE_REGIONS,
+  emphasizedIds = M4_LOCATION_IDS,
+  ariaLabel = "Schematic map of the divided kingdom after Saul's death, 2 Samuel 2",
 }: {
   locations: LocationEntry[];
   showShading: boolean;
+  /** Region set to render — defaults to the M4 (2 Sam 2:8–11) split. */
+  regions?: AllegianceRegionConfig[];
+  /** Location ids shown at full emphasis — defaults to the M4 built-scene set. */
+  emphasizedIds?: string[];
+  /** Overrides the SVG's accessible name — defaults to the M4 phase's label. */
+  ariaLabel?: string;
 }) {
   const byId = useMemo(() => new Map(locations.map((l) => [l.id, l])), [locations]);
 
   const regionGeometry = useMemo<RegionGeometry[]>(() => {
     const geometries: RegionGeometry[] = [];
-    for (const region of ALLEGIANCE_REGIONS) {
+    for (const region of regions) {
       const points = region.locationIds
         .map((id) => byId.get(id))
         .filter((l): l is LocationEntry => Boolean(l?.approxCoordinates))
@@ -60,7 +69,7 @@ export function DividedKingdomMap({
       geometries.push({ region, cx, cy, rx: spread, ry: spread * 0.78 });
     }
     return geometries;
-  }, [byId]);
+  }, [byId, regions]);
 
   return (
     <svg
@@ -68,15 +77,19 @@ export function DividedKingdomMap({
       data-testid="atlas-map"
       viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
       role="img"
-      aria-label="Schematic map of the divided kingdom after Saul's death, 2 Samuel 2"
+      aria-label={ariaLabel}
     >
       <defs>
         <filter id="atlas-soft-blur" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="26" />
         </filter>
-        {ALLEGIANCE_REGIONS.map((region) => (
+        {regions.map((region) => (
           <radialGradient key={region.id} id={`atlas-gradient-${region.id}`}>
-            <stop offset="0%" stopColor={`var(${region.colorVar})`} stopOpacity="0.4" />
+            <stop
+              offset="0%"
+              stopColor={`var(${region.colorVar})`}
+              stopOpacity={region.headless ? '0.22' : '0.4'}
+            />
             <stop offset="100%" stopColor={`var(${region.colorVar})`} stopOpacity="0" />
           </radialGradient>
         ))}
@@ -86,7 +99,18 @@ export function DividedKingdomMap({
 
       {showShading &&
         regionGeometry.map(({ region, cx, cy, rx, ry }) => (
-          <g key={region.id} data-testid={`region-shading-${region.id}`}>
+          <g
+            key={region.id}
+            data-testid={`region-shading-${region.id}`}
+            className={region.headless ? 'atlas-region atlas-region-headless' : 'atlas-region'}
+          >
+            {/*
+              No stroke/outline on either variant — the M4 no-hard-edge, no-border
+              discipline carries over unchanged. The headless variant is fainter
+              only (see the gradient's lower stop-opacity above) plus the caption
+              text below; drawing any edge around it would read as a boundary this
+              overlay does not have textual grounds to assert.
+            */}
             <ellipse
               cx={cx}
               cy={cy}
@@ -99,6 +123,17 @@ export function DividedKingdomMap({
             <text x={cx} y={cy - ry * 0.55} textAnchor="middle" className="atlas-region-label">
               {region.label}
             </text>
+            {region.headless && (
+              <text
+                x={cx}
+                y={cy - ry * 0.55 + 15}
+                textAnchor="middle"
+                className="atlas-region-label-sub"
+                data-testid={`region-headless-note-${region.id}`}
+              >
+                no king (2 Samuel 4:1–12)
+              </text>
+            )}
           </g>
         ))}
 
@@ -107,7 +142,7 @@ export function DividedKingdomMap({
         .map((loc) => {
           const { lat, lon, confidence } = loc.approxCoordinates!;
           const [x, y] = project(lat, lon);
-          const emphasized = M4_LOCATION_IDS.includes(loc.id);
+          const emphasized = emphasizedIds.includes(loc.id);
           const r = MARKER_RADIUS[confidence];
           return (
             <g

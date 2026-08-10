@@ -3,7 +3,235 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
+## State right now (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+
+**The M5 sign-off review is done.** It ran on **Opus standing in for Fable**
+at the user's explicit direction, Fable's monthly spend limit still being
+hit — a deliberate, authorized model substitution and a full
+`docs/fable-review-checklist.md` pass. **It is not provisional in the
+2026-07-22 sense and does NOT need a Fable re-review.** Full reasoning in
+`docs/run-log.md`'s 2026-08-10 sign-off entry.
+
+**Verdict: all three scenes and the `/atlas` M5 phase approved as built.**
+Flips landed: `M5` `planned` → `in-progress`; new feature `f-2sam-3-4`
+(`in-progress`, M5 had no feature entry at all). The three scenes and
+`2sam-3`/`2sam-4` correctly stay `in-progress`; `hebron` is already
+`released` from M4. Every checklist section passed. ADR-009's dismemberment
+bar was re-verified against the code (not the build reports):
+`hebron-reckoning`'s `AssassinPose` has only `presented`/`fallen`, no
+strike/gesture field, and hands/feet occur only in comments and captions —
+the no-invented-method restraint is now **ratified** as ADR-009's reading for
+any future killing the text narrates without method detail.
+
+**Two rider items were closed, not carried:** (a) the ~79-figure
+`MourningAssembly` perf worry is **cleared** — one draw call, 79 matrix
+updates/frame, no walk cycle, an order of magnitude under `gilboa-battle`'s
+measured precedent; the `performance-reviewer` pass is optional, not a gate.
+(b) The two build-agent staging calls (west-staged "northern road";
+`asset-bier-props` reuse) are both **approved as shipped**.
+
+**Two real defects were found and fixed at the review** — neither appeared in
+any doc summary: `/atlas`'s M5 lede presented a _paraphrase_ of 2 Samuel 3:1
+inside quotation marks with a verse citation (ESV actually reads "There was a
+long war… And David grew stronger and stronger, while the house of Saul
+became weaker and weaker"); and `atlasRegions.ts`'s user-visible legend
+caption advertised a "dashed outline" on the headless region that
+`DividedKingdomMap` deliberately renders as `stroke="none"`. Both fixed.
+**ADR-003 was amended** as a result: quoted-means-verbatim, and page/UI copy
+is now a third budgeted ESV surface (budgeted per page, not pooled per
+passage — pooling would retroactively break released M4 content), manually
+enforced for now.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Queue #20 — the M5 release citation gates.** Five closable
+   `researcher` items, parallelizable, gating only `released`: (a) extend
+   `mccarter-1984-ii-samuel` to 2 Sam 3–4 (unblocks named attributions on
+   `claim-abner-killing`/`claim-public-response`/`claim-abner-break`/
+   `claim-ish-bosheth-assassination`); (b) `herzog-1997` gate typology for
+   `claim-hebron-gate-form`; (c) `king-stager-2001` feasting/mourning for
+   `claim-feast-form`/`claim-abner-funeral`/`claim-mourning-dress`; (d)
+   Hebron water installations for `claim-hebron-pool-feature` (expect the
+   #13/#19c "checked, permanently thin" closure); (e) live-source ESV wording
+   check on all five M5 quoted spans (3:21a, 3:33b–34a, 3:38, the 4:10
+   fragment, 4:11a) — needs outbound access to Bible-text sites, which this
+   sandbox lacks. Read #20's row for the exact instructions, including the
+   standing rule that the refuge-city (Josh 20:7) irony stays omitted unless a
+   named citation lands.
+2. **Then the M5 release flip** — once #20 clears, one short confirmation pass
+   flips the three scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4` → `done`, and M5 →
+   `released` together, per the M3/M4 cascade.
+3. Non-blocking, from the ADR-003 amendment: decide whether/how to automate
+   the page/UI-copy ESV budget check without false-positiving on ordinary
+   quoted strings in `.tsx` (tracked inside #20, not itself a gate).
+4. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — see Environment
+   notes below, unchanged.
+
+## State before this slice (2026-08-10, all M5 build work done — 3 scenes + atlas extension, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+
+**The atlas M5 phase extension is DONE and gate-green** (commits
+`30d1ea2`/`a8734eb`/`0e5f446`/`c9fa57c`/`aba27e6`/`37cee59`; this section
+previously described it as in-progress mid-checkpoint — it finished shortly
+after). A `ui-engineer` pass added an M5 phase toggle to `/atlas`
+(`src/pages/AtlasPage.tsx`, reusing `DividedKingdomMap`): Judah's region
+carried over unchanged from M4; the Israel-writ region gets a `headless`
+variant (fainter fill only, no stroke/dashed outline, "no king" sub-label —
+never removed, reassigned, or merged toward Judah's shading) reflecting
+Abner's break/death and Ish-bosheth's assassination with no heir positioned
+to rule. New claim `claim-atlas-m5-phase` (design-placeholder/speculative,
+cross-referencing rather than re-deriving `claim-long-war`,
+`claim-abner-break`, `claim-abner-killing`, `claim-public-response`,
+`claim-ish-bosheth-assassination`); `claim-divided-kingdom-atlas-overlay`'s
+notes updated to say it covers the M4 phase only. New store state
+(`AtlasPhase`, `src/state/store.ts`), extended `DividedKingdomMap` props
+(`regions`/`emphasizedIds`/`ariaLabel`, all defaulting to the existing M4
+values so the M4 phase is pixel-unchanged). Hard scope guard held: no
+unified/merged kingdom drawn, shaded, or captioned anywhere — 2 Samuel 5
+stays entirely out, verified by dedicated test assertions (structural
+guards: exactly two regions, no stroke on the headless ellipse, "2 Samuel
+5 ... out of scope" disclosure present). One test-fix round was needed
+(an overly brittle regex assertion false-positived; replaced with the
+structural guards above, see `aba27e6`). Full gate green: format, lint,
+typecheck, 484 vitest, build, 12/12 e2e (new atlas-M5-phase e2e test
+included) — independently re-verified by the orchestrating session, not
+just taken from the build agent's report.
+
+**This closes out all M5 build work.** A Fable M5 sign-off review was
+attempted immediately after and **failed on the first call: "You've hit
+your monthly spend limit."** Same recurring constraint as the 2026-07-22 M4
+incident. Unlike that one, M5's three briefs were already Fable-authored
+(2026-08-03) and all three builds are plain implementation of those
+already-approved briefs — no Sonnet-fallback scope/creative judgment was
+attempted or needed here, only the sign-off review itself, which needs an
+actual Fable pass and was not substituted. **Next session's first priority:
+retry the Fable M5 sign-off** (`fable-architect`, full
+`docs/fable-review-checklist.md` pass) once the spend limit has reset —
+batch it, don't burn a partial session chasing it if it's still hit. The
+researcher pass on five open gap clusters (non-blocking, can run before or
+after the sign-off) is priority two. See the priority list further down
+this section for the researcher-gap detail (still accurate — item 1 there,
+the atlas extension itself, is done; item 2, the researcher pass, and item
+3, the Fable sign-off, are both still open, sign-off now blocked on the
+spend limit rather than on unbuilt work).
+
+**`hebron-reckoning` (2 Sam 4) is built** — third and last of M5's three
+scenes, closing the milestone, `status: 'in-progress'` (provisional, pending
+Fable M5 sign-off). Commit `9fa2784`. Third application of ADR-009's
+named-killing template, the strictest yet: the hands-and-feet display (4:12a)
+renders not at all, caption-only — confirmed by grep that no
+geometry-producing code anywhere in the scene references
+hands/feet/dismemberment, only comments/captions; `AssassinPose` has only
+`presented`/`fallen` fields, no strike/gesture field (unlike `gibeon-pool`'s
+`reverseGrip`/`strikeExtend` or `hebron-gate`'s `strikeLean`) since 4:12a
+gives no method to invent. The head renders only as a small covered/wrapped
+bundle (`buildWrappedFormGeometry`). No Mahanaim geometry anywhere; the 4:6
+MT/LXX entry divergence surfaced as `scholarlyViews`, hedged pending a
+researcher pass. This scene is `ziklag-lament`'s deliberate textual twin
+(David retells the Ziklag episode himself, 4:10) — cross-linked in claim
+notes. Reuses `hebron-anointing`/`hebron-gate`'s Hebron/tomb continuity
+directly; one new feature, the pool of Hebron (basin + flat water plane, no
+shader, `gibeon-pool`'s exact convention, `claim-hebron-pool-feature`,
+Birket es-Sultan not adopted). ~33 figures at high tier (attendants ~12,
+ambient ~18, 3 principals — David, Rechab, Baanah), by far the smallest and
+cheapest M5 scene, conversation-scale like `ziklag-lament`. New passage
+`2sam-4` (`in-progress`, first M5 scene under it). New claims:
+`claim-ish-bosheth-assassination` (scholarlyViews on the 4:6 divergence),
+`claim-david-judgment`, `claim-hebron-pool-feature` (design-placeholder),
+`claim-reckoning-cast-scale` (design-placeholder). New characters: `rechab`,
+`baanah` (staged), `mephibosheth` (referenced-only, confined to 4:4, no
+forward pointer to 2 Sam 9). `2sam-4`'s fresh ESV budget: 4:11a + the 4:10
+Ziklag retelling fragment. Closing card states only what 4:12 states — no
+2 Sam 5+ content anywhere, confirmed by checking the literal caption string.
+New e2e test confirms the ADR-009 advisory fires for `hebron-reckoning`
+specifically. Full gate green: format, lint, typecheck, 478 vitest, build,
+11/11 e2e (independently re-verified).
+
+**`hebron-gate` (2 Sam 3:22–39) is built** — second of M5's three scenes,
+the milestone's load-bearing one, `status: 'in-progress'` (provisional,
+pending Fable M5 sign-off). Commit `50f4253`. Second application of ADR-009's
+named-character-killing template (first was Asahel, `gibeon-pool`):
+documentary distance throughout, no wound/blood geometry in any mode, the
+drawing-aside gesture staged as the one specific gesture, reduced mode elides
+the strike entirely (verified by `poses.test.ts`: reduced-mode `strikeLean`
+stays 0 through the strike window, `fallen` lands measurably earlier).
+David's curse (3:29) stated plainly in caption, never visualized. Refuge-city
+irony (Josh 20:7) deliberately omitted — no named citation exists yet. Gate
+rendered as a modest two-chamber passage, not a monumental six-chamber type.
+Reuses `hebron-anointing`/`hebron-covenant`'s Hebron continuity (same
+gate-plaza); one new structure, the gate-passage interior
+(`asset-hebron-gate-passage`). ~127 figures at high tier (raid party ~22,
+mourning assembly ~79, ambient ~22, 4 principals — David/Joab/Abner/Abishai,
+strike staged as Joab's alone), largest M5 scene. New claims:
+`claim-joab-return-protest`, `claim-abner-killing` (scholarlyViews:
+blood-vengeance-for-Asahel w/ legal complication noted, vs. political
+rival-elimination, both hedged pending named citations),
+`claim-david-disavowal`, `claim-abner-funeral`, `claim-public-response`
+(scholarlyViews: apologia vs. plain-report, hedged pending
+`mccarter-1984-ii-samuel`'s extension to 2 Sam 3), `claim-hebron-gate-form`,
+`claim-abner-tomb-form` (rock-cut entry, medieval "Tomb of Abner" tradition
+explicitly not adopted), `claim-gate-cast-scale`. No new characters (reuses
+`david`/`joab`/`abner`/`abishai`). `2sam-3`'s ESV budget: `hebron-covenant`
+spent one quote, this scene spent the remaining two (3:33b–34a lament core,
+3:38) — both entered from memory, not live-source-verified (this sandbox has
+no outbound access to Bible-text sites, same standing caveat as every prior
+scene's quotes). New e2e test confirms the ADR-009 advisory fires on first
+visit to `hebron-gate` specifically. Full gate green: format, lint,
+typecheck, 444 vitest, build, 10/10 e2e (independently re-verified).
+
+**`hebron-covenant` (2 Sam 3:1–21, staged from 3:20) is built** — first of
+M5's three scenes, `status: 'in-progress'`. Commit `5e735e6`. Reuses
+`hebron-anointing`'s Hebron terrain/town-form/terrace constants directly.
+Abner's twenty rendered literally 1:1; ≈71 figures total, the smallest cast
+of any scene so far. New claims: `claim-long-war`, `claim-abner-break`,
+`claim-abner-overture`, `claim-covenant-feast`, `claim-feast-form`
+(design-placeholder), `claim-covenant-cast-scale` (design-placeholder). New
+referenced-only-by-card characters `michal`/`paltiel`/`rizpah` (never
+staged). New passage `2sam-3` (`in-progress`); `hebron` location's
+`sceneIds` extended. New asset `asset-feast-props`.
+
+All three were build-only slices — no new scope/creative decisions. The
+Fable world-director pass that approved M5's scope and all three briefs
+already happened 2026-08-03 (see below and `docs/run-log.md`). **All three
+M5 scenes are now built** (`hebron-covenant`, `hebron-gate`,
+`hebron-reckoning`), each `status: 'in-progress'`, each provisional pending
+a Fable M5 sign-off.
+
+**What's next (Sonnet), in priority order — item 1 is DONE, see the state
+block above; start from item 2:**
+
+1. ~~Atlas `/atlas` M5 phase extension~~ — **done**, see the state block
+   above (commits `30d1ea2` through `37cee59`).
+2. Researcher pass on the five gap clusters (parallelizable): extend
+   `mccarter-1984-ii-samuel` to 2 Sam 3–4
+   (Davidic-apologia reading, 4:6 MT/LXX divergence, refuge-city irony,
+   Abner-killing motive views — this would let
+   `claim-abner-killing`/`claim-public-response`/
+   `claim-ish-bosheth-assassination` attach named citations instead of their
+   current hedged "e.g., scholars following..." language); extend
+   `herzog-1997` with a checkable gate-typology citation for
+   `claim-hebron-gate-form`; check `king-stager-2001` for feasting/mourning
+   material culture — `claim-feast-form` specifically still needs this
+   check; Iron Age water installations at Hebron for
+   `claim-hebron-pool-feature` (likely permanently thin, same evidentiary
+   state as `claim-gibeon-pool-form`).
+3. Then a Fable M5 sign-off review before any status flips past
+   `in-progress` — all three scenes, the atlas extension, `M5`, `f-2sam`
+   (if shared with M4's feature or its own), `2sam-3`/`2sam-4` passages.
+4. Non-blocking, worth a look before sign-off: `performance-reviewer` pass on
+   `hebron-gate`'s ~79-figure procession crowd (`MourningAssembly.tsx` uses
+   per-frame position updates on a single un-bucketed `InstancedMesh`,
+   mirroring `hebron-covenant/AbnerParty.tsx`'s cost precedent at a smaller
+   scale — not yet confirmed to scale cleanly at 79-90 figures;
+   `hebron-reckoning` is the cheapest scene built so far and not expected to
+   be a risk). Also: live ESV wording verification for all three built M5
+   scenes' quotes, when an environment with outbound access to Bible-text
+   sites is available.
+5. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — see Environment
+   notes below, unchanged.
+
+## State before this slice (2026-08-03, M5 SCOPED — Fable world-director pass, briefs done, no build yet)
 
 **M5 (2 Samuel 3–4) is defined and fully briefed.** Fable scope decision
 (reasoning in `src/data/milestones.ts` M5 comment + `docs/run-log.md`
@@ -456,3 +684,17 @@ significant budget; prioritize visual realism. Keep tests focused.
   `/opt/pw-browsers/chromium` also worked directly.
 - `claude/amalekite-camp-7h2pjc` was restarted from `main` post-merge per the
   checkpoint protocol; the M2 sign-off commit rides on it.
+
+**2026-08-10 late checkpoint (critical context usage):** atlas M5 extension
+is now fully wired (store.ts, DividedKingdomMap.tsx, app.css, claims.ts,
+atlasRegions.ts, AtlasPage.tsx, AtlasPage.test.tsx all touched — commits
+30d1ea2/a8734eb/0e5f446) but **2 vitest assertions in AtlasPage.test.tsx
+currently fail** (a regex expecting the page never says "David
+rules/controls..." is matching current page text — not yet diagnosed).
+The `ui-engineer` background agent that did this work may still be running
+or may have finished and fixed it — check `ListAgents`/git log for a later
+commit before re-diagnosing from scratch. If not fixed: read the failing
+assertions at `AtlasPage.test.tsx` (search "David (now )?(rules...", "out
+of scope"), find what text in `AtlasPage.tsx` trips them, fix, then run
+the full verify gate (format, lint, typecheck, vitest, build, e2e) before
+this is done. This is the very last M5 build item once fixed.

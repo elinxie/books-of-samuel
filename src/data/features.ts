@@ -190,6 +190,20 @@ export const FEATURES: FeatureEntry[] = [
     milestoneId: 'M4',
   },
   {
+    id: 'f-2sam-3-4',
+    title: '2 Samuel 3–4 scenes',
+    description:
+      'The Hebron covenant feast, the killing of Abner at the gate, and the reckoning with Rechab and Baanah — plus the /atlas overlay’s 2 Samuel 3–4 phase.',
+    // Added at the 2026-08-10 M5 sign-off review. M5 had no feature entry at
+    // all (M3 used three per-scene features, M4 one shared `f-2sam` scoped to
+    // "2 Samuel 1–2 scenes" and now `done`), so M5's scene work was invisible
+    // on the Features page. All three scenes plus the atlas phase are built and
+    // approved as built; `done` gates on queue #20, per the M4 `f-2sam`
+    // precedent.
+    status: 'in-progress',
+    milestoneId: 'M5',
+  },
+  {
     id: 'f-dem-terrain',
     title: 'Real-elevation terrain',
     description:

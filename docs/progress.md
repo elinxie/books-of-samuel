@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; no build yet)
+## Milestone 5 — 2 Samuel 3–4: **in-progress** (scoped + briefed 2026-08-03; all three scenes + the atlas phase built 2026-08-10; sign-off review 2026-08-10, approved as built, `released` gated on queue #20)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
@@ -289,6 +289,163 @@ before release) listed in `docs/next-run.md`: McCarter coverage extension to
 Hebron water installations. No new fable-review-queue items — the contested
 staging calls were resolved in the 2026-08-03 Fable pass and recorded in the
 briefs; release gates open at the M5 review per M3/M4 precedent.
+
+**`hebron-covenant` built 2026-08-10 (Sonnet, commit `5e735e6`, branch
+`claude/focused-mccarthy-97j7ef`, PR #55 draft):** first of the three M5
+scenes, `status: 'in-progress'`, `depictsDeath: false`. Reuses
+`hebron-anointing`'s Hebron terrain/town-form/terrace constants directly — no
+new terrain spec, continuing the hard continuity rule. Abner's twenty
+delegation rendered literally 1:1 (3:20a's own count); David's-side feast
+presence and ambient town background at disclosed design counts (~15–25 /
+~20–30 high-tier); ≈71 figures total, the smallest cast of any scene built so
+far (a closed diplomatic meal, not a crowd event). The threefold "he went in
+peace" formula's first occurrence (3:21b) is staged straight, no ominous
+framing — the brief's central instruction. New claims: `claim-long-war`,
+`claim-abner-break`, `claim-abner-overture`, `claim-covenant-feast`,
+`claim-feast-form` (design-placeholder), `claim-covenant-cast-scale`
+(design-placeholder). Michal, Paltiel, and the Rizpah accusation stay
+text-only per the brief — three new referenced-only characters
+(`michal`/`paltiel`/`rizpah`), no geometry for any of them. New passage
+`2sam-3` (`in-progress`); `hebron` location's `sceneIds` extended. One new
+asset (`asset-feast-props`, table in `docs/asset-roadmap.md`). `2sam-3`'s ESV
+excerpt budget used one quote (3:21a), deliberately reserving the rest for
+`hebron-gate`'s lament. Full gate green: format, lint, typecheck, 400 vitest,
+build, 9/9 e2e. See `docs/run-log.md`'s 2026-08-10 entry.
+
+**`hebron-gate` built 2026-08-10 (Sonnet, commit `50f4253`, branch
+`claude/focused-mccarthy-97j7ef`, PR #55 draft):** second of the three M5
+scenes and the milestone's load-bearing one, `status: 'in-progress'`,
+`depictsDeath: true`. Second application of ADR-009's named-character-killing
+template (first was Asahel, `gibeon-pool`): documentary distance throughout,
+no wound/blood geometry in any mode, the drawing-aside gesture (3:27) staged
+as the one specific gesture, reduced mode elides the strike entirely (cuts
+from the aside straight to the aftermath card — verified by a pose test, not
+just asserted). David's curse (3:29) is stated plainly in caption, in the
+text's own harshness, never visualized. The refuge-city irony (Josh 20:7) is
+deliberately omitted — no named citation exists yet, per the brief's
+no-uncited-editorial rule. The gate itself is a modest two-chamber passage,
+disclosed `design-placeholder`, explicitly not a monumental six-chamber type.
+Reuses `hebron-anointing`/`hebron-covenant`'s Hebron continuity (same
+gate-plaza that hosted the anointing and received Abner in peace); the one
+new structure is the gate-passage interior (`asset-hebron-gate-passage`).
+~127 figures at high tier (raid party ~22, mourning assembly ~79, ambient
+~22, 4 principals — David/Joab/Abner/Abishai; the strike is staged as Joab's
+alone, per 3:27, though Abishai is present per 3:30's shared culpability),
+the largest M5 scene. New claims: `claim-joab-return-protest`,
+`claim-abner-killing` (the milestone's most important claim —
+`scholarlyViews` carrying blood-vengeance-for-Asahel with the
+battlefield-killing legal complication noted, and political
+rival-elimination as a separate reading, both hedged "e.g., scholars
+following..." pending a researcher pass), `claim-david-disavowal`,
+`claim-abner-funeral`, `claim-public-response` (`scholarlyViews`: Davidic-
+apologia reading vs. plain-report reading, hedged pending
+`mccarter-1984-ii-samuel`'s coverage extension to 2 Sam 3), `claim-hebron-
+gate-form` (design-placeholder), `claim-abner-tomb-form` (design-placeholder,
+simple rock-cut entry — the medieval "Tomb of Abner" tradition explicitly not
+adopted), `claim-gate-cast-scale` (design-placeholder). No new characters
+(reuses `david`/`joab`/`abner`/`abishai`). `2sam-3`'s ESV budget: this scene
+spent the two quotes `hebron-covenant` reserved for it (3:33b–34a's lament
+core, 3:38), for a shared passage total of three — both entered from memory,
+not live-source-verified (no outbound Bible-text access in this sandbox, the
+same standing caveat as every scene's quotes since `ziklag-lament`). A new
+e2e test confirms the ADR-009 first-visit advisory fires for `hebron-gate`
+specifically, mirroring the existing `gilboa-battle` coverage. Full gate
+green: format, lint, typecheck, 444 vitest, build, 10/10 e2e (independently
+re-verified after the build). See `docs/run-log.md`'s 2026-08-10 entry.
+
+**`hebron-reckoning` built 2026-08-10 (Sonnet, commit `9fa2784`, branch
+`claude/focused-mccarthy-97j7ef`, PR #55 draft):** third and last of the
+three M5 scenes, closing the milestone, `status: 'in-progress'`,
+`depictsDeath: true`. Third application of ADR-009's named-killing template,
+and the strictest yet — the hands-and-feet display (4:12a) renders not at
+all, caption-only; a grep of the whole scene folder confirms no
+geometry-producing code anywhere references hands/feet/dismemberment, only
+comments and captions, and `AssassinPose` deliberately has no
+strike/gesture field at all (unlike `gibeon-pool`'s `reverseGrip`/
+`strikeExtend` or `hebron-gate`'s `strikeLean`), since 4:12a gives no method
+to invent. The head renders only as a small covered/wrapped bundle
+(`buildWrappedFormGeometry`, the Jabesh-bone-bundle device at small scale).
+Ish-bosheth's murder (4:5–7) is cards-only — no Mahanaim geometry anywhere —
+and the 4:6 MT/LXX entry divergence (MT: fetching-wheat pretext; LXX: a
+drowsing wheat-cleaning doorkeeper) is surfaced honestly as `scholarlyViews`,
+hedged pending a researcher pass extending `mccarter-1984-ii-samuel` to
+2 Sam 4. This scene is `ziklag-lament`'s deliberate textual twin — David
+retells the Ziklag episode himself (4:10) — cross-linked in claim notes
+rather than restated. Reuses `hebron-anointing`/`hebron-gate`'s Hebron/tomb
+continuity directly (the burial in Abner's tomb is the compositional echo of
+`hebron-gate`'s burial, same ground, days apart — the milestone's closing
+image); one new feature, the pool of Hebron (basin + flat unlit water plane,
+no shader, modeled exactly on `gibeon-pool`'s convention,
+`claim-hebron-pool-feature`, Birket es-Sultan explicitly not adopted). ~33
+figures at high tier (attendants ~12, ambient ~18, David/Rechab/Baanah as
+principals), by far the smallest and cheapest M5 scene, conversation-scale
+like `ziklag-lament` — the execution is attributed to "the young men" at
+David's command, kept as the small textual detail it is (David commands,
+attendants act). New passage `2sam-4` (`in-progress`, first M5 scene under
+it — M5's second new passage after `2sam-3`). New claims:
+`claim-ish-bosheth-assassination`, `claim-david-judgment`,
+`claim-hebron-pool-feature` (design-placeholder), `claim-reckoning-cast-scale`
+(design-placeholder). New characters: `rechab`, `baanah` (staged persons, the
+assassins — not villain-cartooned beyond what the text states),
+`mephibosheth` (referenced-only, confined strictly to 2 Sam 4:4's own
+parenthesis, no forward pointer to 2 Sam 9). `2sam-4`'s fresh ESV budget:
+4:11a ("wicked men have killed a righteous man in his own house on his
+bed...") plus the 4:10 Ziklag retelling fragment — again entered from
+memory, not live-source-verified. The closing card states only what 4:12
+states (the house of Saul's last king dead and buried at Hebron) — no
+2 Sam 5+ content anywhere, checked directly against the literal caption
+string, not just trusted from the build report. A new e2e test confirms the
+ADR-009 advisory fires for `hebron-reckoning` specifically, completing
+first-visit-advisory coverage for all three M5 scenes. Full gate green:
+format, lint, typecheck, 478 vitest, build, 11/11 e2e (independently
+re-verified after the build).
+
+**All three M5 scenes are built, and the `/atlas` M5 phase extension is
+also now done** (not a 4th scene, per the M4 precedent): a phase toggle on
+`/atlas` adds the 2 Sam 3–4 long-war trend and renders the Israel-writ
+region as `headless` ("no king," fainter fill, no stroke — never removed,
+reassigned, or merged toward Judah's region) once Ish-bosheth is dead with
+no heir positioned to rule, without asserting a unified kingdom or that
+David now rules the north (2 Samuel 5 stays entirely out of scope, held by
+dedicated structural tests). New claim `claim-atlas-m5-phase`. Full gate
+green: format, lint, typecheck, 484 vitest, build, 12/12 e2e. **All M5
+build work is now complete.**
+
+**M5 sign-off review done 2026-08-10 — approved as built; M5 is now
+`in-progress`.** The review ran on **Opus standing in for Fable** at the
+user's explicit direction (Fable's monthly spend limit was still hit); this
+was a deliberate, authorized model substitution and a full Fable-tier
+`docs/fable-review-checklist.md` pass, not a provisional one, so it needs no
+Fable re-review. Every checklist section passed: historical plausibility
+(both contested questions carried as genuinely non-adjudicating
+`scholarlyViews` — Joab's motive, and apologia-vs-plain-report), anachronism
+(two-chamber not six-chamber gate; the medieval "Tomb of Abner" tradition and
+Birket es-Sultan both explicitly not adopted; no invented banquet-hall
+architecture), visual coherence, performance, tests, source traceability with
+its known hedges, and ADR-011. ADR-009's dismemberment bar was verified
+against the code rather than the build reports: `hebron-reckoning`'s
+`AssassinPose` has no strike/gesture field at all, and hands/feet appear only
+in comments and captions. The `~79`-figure `MourningAssembly` perf worry was
+**cleared, not carried** — one draw call, 79 matrix updates per frame, an
+order of magnitude under `gilboa-battle`'s measured precedent.
+
+Two real defects were found and fixed at the review, both only visible in the
+code: `/atlas`'s M5 lede presented a _paraphrase_ of 2 Samuel 3:1 inside
+quotation marks with a verse citation (now unquoted narration — and ADR-003
+gained a "quoted means verbatim" rule plus page/UI copy as a third budgeted
+surface, since the enforced test never scanned page prose); and
+`atlasRegions.ts`'s user-visible legend caption claimed the headless region
+carried a "dashed outline" that `DividedKingdomMap` deliberately does not
+draw. New feature entry `f-2sam-3-4` (`in-progress`) was added — M5 had none,
+so its scene work was invisible on the Features page. Uncertainty-register
+rows #16/#17 added for M5's two genuine disputes.
+
+**Remaining M5 work before `released`:** queue **#20**'s five closable
+citation/verification items (McCarter extended to 2 Sam 3–4; Herzog gate
+typology; King & Stager feasting/mourning; Hebron water installations; a
+live-source ESV wording check for all five M5 quoted spans). Then the three
+scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4`, and M5 flip together per the M3/M4
+cascade. See `docs/next-run.md`'s current state block.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

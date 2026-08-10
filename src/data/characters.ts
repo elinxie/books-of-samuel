@@ -6,18 +6,29 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David',
     kind: 'person',
     summary:
-      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives.',
-    passageRefs: ['1 Samuel 27', '1 Samuel 30', '2 Samuel 2'],
-    claimIds: ['claim-david-historical'],
+      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35).',
+    passageRefs: [
+      '1 Samuel 27',
+      '1 Samuel 30',
+      '2 Samuel 2',
+      '2 Samuel 3:20–21',
+      '2 Samuel 3:28–35',
+    ],
+    claimIds: [
+      'claim-david-historical',
+      'claim-covenant-feast',
+      'claim-david-disavowal',
+      'claim-abner-funeral',
+    ],
   },
   {
     id: 'davids-band',
     name: 'David’s six hundred',
     kind: 'group',
     summary:
-      'The narrative gives David’s force as six hundred men, with families, based at Ziklag. Two hundred stay exhausted at the brook Besor while four hundred pursue.',
-    passageRefs: ['1 Samuel 30:9–10'],
-    claimIds: ['claim-600-men', 'claim-dress'],
+      'The narrative gives David’s force as six hundred men, with families, based at Ziklag. Two hundred stay exhausted at the brook Besor while four hundred pursue. Later, an escort/household presence drawn from this same following attends David at the Hebron covenant feast with Abner (2 Samuel 3:20) — no count is narrated for that presence.',
+    passageRefs: ['1 Samuel 30:9–10', '2 Samuel 3:20'],
+    claimIds: ['claim-600-men', 'claim-dress', 'claim-covenant-cast-scale'],
   },
   {
     id: 'abiathar',
@@ -145,14 +156,19 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Abner son of Ner',
     kind: 'person',
     summary:
-      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside.',
-    passageRefs: ['2 Samuel 2:8–32'],
+      'Saul’s army commander, who installs Ish-bosheth as king over Israel at Mahanaim and leads Israel’s force to Gibeon. Proposes the champions’ contest at the pool, and kills Asahel in the pursuit that follows — staged as reluctant, per his two on-record warnings to Asahel to turn aside. Later breaks with Ish-bosheth over Rizpah and brings the north’s allegiance to David at Hebron, feasted there and dismissed "in peace" (2 Samuel 3:6–21). Recalled to Hebron under a false privacy pretext and killed by Joab alone inside the gate passage, for the blood of Asahel his brother (3:26–27) — a killing David publicly disavows, mourns, and buries him for at Hebron (3:28–35).',
+    passageRefs: ['2 Samuel 2:8–32', '2 Samuel 3:6–21', '2 Samuel 3:26–35'],
     claimIds: [
       'claim-ish-bosheth-installed',
       'claim-gibeon-contest',
       'claim-asahel-death',
       'claim-abner-pursuit-halted',
       'claim-gibeon-battle-scale',
+      'claim-abner-break',
+      'claim-abner-overture',
+      'claim-covenant-feast',
+      'claim-abner-killing',
+      'claim-abner-funeral',
     ],
   },
   {
@@ -160,27 +176,65 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'Ish-bosheth',
     kind: 'person',
     summary:
-      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool.',
-    passageRefs: ['2 Samuel 2:8–10'],
-    claimIds: ['claim-ish-bosheth-installed'],
+      'Saul’s surviving son, installed by Abner as king over Israel at Mahanaim — a rival, Benjamin-based kingship set against David’s at Hebron. Not himself present at Gibeon; referenced, not depicted in action, in gibeon-pool. His courage fails at the news of Abner’s death (4:1); two of his own captains kill him defenseless in his own house at noon rest and carry his head to David (4:5–8) — the house of Saul’s last king, dead by murder rather than battle. Never staged as a figure anywhere in this project (referenced-only throughout, including in hebron-reckoning, where his death is entirely narrated).',
+    passageRefs: ['2 Samuel 2:8–10', '2 Samuel 4:1–12'],
+    claimIds: [
+      'claim-ish-bosheth-installed',
+      'claim-ish-bosheth-assassination',
+      'claim-david-judgment',
+    ],
+  },
+  {
+    id: 'rechab',
+    name: 'Rechab son of Rimmon',
+    kind: 'person',
+    summary:
+      'A captain of one of Ish-bosheth’s raiding bands, a Beerothite of the people of Benjamin (2 Samuel 4:2–3). With his brother Baanah, kills Ish-bosheth in his own house at noon rest, beheads him, and carries the head to David at Hebron expecting reward for avenging him (4:5–8) — a report David treats as confession to murder, not a service. Executed at David’s command; the narrative supplies no further interior life for him beyond his acts and David’s verdict, and this project does not invent any.',
+    passageRefs: ['2 Samuel 4:2–3', '2 Samuel 4:5–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'baanah',
+    name: 'Baanah son of Rimmon',
+    kind: 'person',
+    summary:
+      'Rechab’s brother, named alongside him in every verse that mentions either of them (2 Samuel 4:2–3, 5–9, 12) — the two act as a pair throughout, and this project stages them that way, without differentiating their individual roles beyond what the text states.',
+    passageRefs: ['2 Samuel 4:2–3', '2 Samuel 4:5–12'],
+    claimIds: ['claim-ish-bosheth-assassination', 'claim-david-judgment'],
+  },
+  {
+    id: 'mephibosheth',
+    name: 'Mephibosheth son of Jonathan',
+    kind: 'person',
+    summary:
+      'Jonathan’s son, five years old when the news of Saul and Jonathan’s deaths came from Jezreel; his nurse fled with him and he fell and became lame in both feet (2 Samuel 4:4) — the text’s own aside on what remains of the house of Saul, carried by caption exactly where the text places it, referenced-only, with no forward pointer to his later appearance in 2 Samuel 9.',
+    passageRefs: ['2 Samuel 4:4'],
+    claimIds: ['claim-ish-bosheth-assassination'],
   },
   {
     id: 'joab',
     name: 'Joab son of Zeruiah',
     kind: 'person',
     summary:
-      'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back.',
-    passageRefs: ['2 Samuel 2:13–32'],
-    claimIds: ['claim-gibeon-contest', 'claim-abner-pursuit-halted', 'claim-gibeon-battle-scale'],
+      'David’s army commander at Gibeon, brother of Abishai and Asahel. Halts the pursuit of Abner at the hill of Ammah on Abner’s appeal, sounding the trumpet to call his men back. Returns from a raid to protest David’s reception of Abner (3:22–25), recalls him under a false privacy pretext, and kills him alone inside the Hebron gate passage, for the blood of Asahel his brother (3:27) — then is himself commanded to tear his clothes and mourn before Abner’s bier (3:31), the killer made a public mourner at his victim’s funeral.',
+    passageRefs: ['2 Samuel 2:13–32', '2 Samuel 3:22–31'],
+    claimIds: [
+      'claim-gibeon-contest',
+      'claim-abner-pursuit-halted',
+      'claim-gibeon-battle-scale',
+      'claim-joab-return-protest',
+      'claim-abner-killing',
+      'claim-abner-funeral',
+    ],
   },
   {
     id: 'abishai',
     name: 'Abishai son of Zeruiah',
     kind: 'person',
     summary:
-      'Joab’s brother, Asahel’s brother, who joins Joab in the pursuit of Abner to the hill of Ammah.',
-    passageRefs: ['2 Samuel 2:24'],
-    claimIds: ['claim-abner-pursuit-halted'],
+      'Joab’s brother, Asahel’s brother, who joins Joab in the pursuit of Abner to the hill of Ammah. Named alongside Joab as sharing responsibility for Abner’s death at Hebron’s gate (3:30) — present near the gate, though the text attributes the strike to Joab alone.',
+    passageRefs: ['2 Samuel 2:24', '2 Samuel 3:30'],
+    claimIds: ['claim-abner-pursuit-halted', 'claim-abner-killing'],
   },
   {
     id: 'asahel',
@@ -190,6 +244,33 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'Joab’s youngest brother, described as swift-footed. Pursues Abner despite being twice warned to turn aside, and is killed by a backward thrust of Abner’s spear — the project’s first named-character-kills-named-character death, rendered at documentary distance with no wound geometry, per ADR-009. Buried at Bethlehem, in his father’s tomb (2 Samuel 2:32).',
     passageRefs: ['2 Samuel 2:18–23', '2 Samuel 2:32'],
     claimIds: ['claim-asahel-death'],
+  },
+  {
+    id: 'michal',
+    name: 'Michal',
+    kind: 'person',
+    summary:
+      'Saul’s daughter, David’s first wife (1 Samuel 18:20–27), given by Saul to Palti son of Laish during David’s exile. David makes her return the condition of his covenant with Abner; she is taken from Paltiel and brought back to David (2 Samuel 3:13–16). Referenced-only: the transfer is carried by caption in hebron-covenant, never staged — placing her at the Hebron feast or in Abner’s party would assert something the text doesn’t say.',
+    passageRefs: ['1 Samuel 18:20–27', '2 Samuel 3:13–16'],
+    claimIds: ['claim-abner-overture'],
+  },
+  {
+    id: 'paltiel',
+    name: 'Paltiel (Palti) son of Laish',
+    kind: 'person',
+    summary:
+      'The man to whom Saul had given Michal; follows her weeping as far as Bahurim before Abner sends him back (2 Samuel 3:15–16). Referenced-only: no geometry, no Bahurim setting, is staged anywhere in the project for him — the human weight of his grief is carried by caption alone.',
+    passageRefs: ['2 Samuel 3:15–16'],
+    claimIds: ['claim-abner-overture'],
+  },
+  {
+    id: 'rizpah',
+    name: 'Rizpah daughter of Aiah',
+    kind: 'person',
+    summary:
+      'Saul’s concubine; Ish-bosheth accuses Abner of going in to her, a charge the narrative reports without adjudicating (2 Samuel 3:7). Referenced-only here: no visualization of Rizpah or the accusation is staged in hebron-covenant. She reappears later in the narrative (2 Samuel 21), far outside this milestone.',
+    passageRefs: ['2 Samuel 3:7'],
+    claimIds: ['claim-abner-break'],
   },
 ];
 

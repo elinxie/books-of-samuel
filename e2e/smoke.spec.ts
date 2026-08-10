@@ -134,6 +134,41 @@ test('divided-kingdom atlas overlay loads, shows the map, and the shading toggle
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
 
+test('atlas M5 phase (2 Samuel 3–4 long war + northern collapse) switches in without asserting a unified kingdom', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/atlas');
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+
+  await page.getByTestId('atlas-phase-m5').click();
+  await expect(page.getByTestId('atlas-phase-m5')).toHaveAttribute('aria-selected', 'true');
+
+  // Both regions still render — the headless Israel-writ region, faded and
+  // labeled "no king," alongside Judah's region, unchanged.
+  await expect(page.getByTestId('region-shading-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-headless-note-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-shading-judah')).toBeVisible();
+
+  // Hebron and Mahanaim carry the M5 phase's emphasis; Mahanaim's disputed
+  // identification note still surfaces.
+  await expect(page.getByTestId('atlas-point-hebron')).toBeVisible();
+  await expect(page.getByTestId('location-dispute-mahanaim')).toBeVisible();
+
+  // Switching back to M4 restores the original phase cleanly.
+  await page.getByTestId('atlas-phase-m4').click();
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByTestId('region-shading-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-headless-note-israel-writ')).toHaveCount(0);
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {
@@ -143,6 +178,72 @@ test('no console errors on the basic observer route', async ({ page }) => {
 
   await page.goto('/#/observe/ziklag-aftermath');
   await page.waitForTimeout(1500);
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
+test('violence advisory (ADR-009) also gates hebron-gate — the second named-character-killing scene', async ({
+  page,
+}) => {
+  // The advisory itself is scene-agnostic (driven by SceneDef.depictsDeath,
+  // see the gilboa-battle test above); this confirms it actually fires for
+  // hebron-gate specifically, since this scene is M5's load-bearing ADR-009
+  // application and worth its own explicit coverage.
+  await page.goto('/#/observe/hebron-gate');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (the strike, the disavowal, the
+  // procession, the burial, the lament, the sundown fast) checking for
+  // runtime errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 48, 60, 76, 98, 116, 150, 168, 186, 212]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
+test('violence advisory (ADR-009) also gates hebron-reckoning — the third named-character-killing scene, and closes M5', async ({
+  page,
+}) => {
+  // hebron-reckoning is ADR-009's named-killing template's third
+  // application and its first judicial one (the execution of Rechab and
+  // Baanah); it is also the milestone's closing scene, so worth its own
+  // explicit coverage same as hebron-gate's.
+  await page.goto('/#/observe/hebron-reckoning');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (courage fails, Mephibosheth, the
+  // murder card, the arrival, the presentation, the verdict, the execution,
+  // the burial, the close) checking for runtime errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 28, 48, 66, 84, 106, 128, 150]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });

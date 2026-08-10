@@ -15,6 +15,14 @@ export type PanelId = 'none' | 'settings' | 'teleport' | 'inspector' | 'certaint
  * the default (fable-review-queue register #6).
  */
 export type ViolenceMode = 'standard' | 'reduced';
+/**
+ * Which phase of the /atlas divided-kingdom overlay is shown: `m4` is the
+ * original 2 Samuel 2:8–11 writ-split (claim-divided-kingdom-atlas-overlay);
+ * `m5` is the 2 Samuel 3–4 extension (claim-atlas-m5-phase) — the long-war
+ * trend caption plus the Israel-writ region's "no king" treatment. Defaults
+ * to `m4` so a first-time visitor sees the already-reviewed map first.
+ */
+export type AtlasPhase = 'm4' | 'm5';
 
 export interface TeleportTarget {
   position: [number, number, number];
@@ -36,6 +44,8 @@ interface AppState {
    * either way.
    */
   showAllegianceShading: boolean;
+  /** Which phase of the divided-kingdom overlay is displayed — see AtlasPhase. */
+  atlasPhase: AtlasPhase;
 
   quality: QualityMode;
   navMode: NavMode;
@@ -70,6 +80,7 @@ interface AppState {
   /** Answers the first-visit violence advisory: sets the mode and marks it seen. */
   acknowledgeViolenceAdvisory: (m: ViolenceMode) => void;
   toggleAllegianceShading: () => void;
+  setAtlasPhase: (p: AtlasPhase) => void;
 
   setScene: (id: string) => void;
   setTerrain: (terrain: Terrain) => void;
@@ -93,6 +104,7 @@ export const useAppStore = create<AppState>()(
       showLabels: true,
       theologicalCommentary: false,
       showAllegianceShading: true,
+      atlasPhase: 'm4',
 
       quality: 'balanced',
       navMode: 'inspect',
@@ -121,6 +133,7 @@ export const useAppStore = create<AppState>()(
         set({ violenceMode, violenceAdvisorySeen: true }),
       toggleAllegianceShading: () =>
         set((s) => ({ showAllegianceShading: !s.showAllegianceShading })),
+      setAtlasPhase: (atlasPhase) => set({ atlasPhase }),
 
       setScene: (sceneId) =>
         set({ sceneId, timeSec: 0, playing: true, selectedEntityId: null, pendingTeleport: null }),
@@ -149,6 +162,7 @@ export const useAppStore = create<AppState>()(
         showScholarlyNotes: s.showScholarlyNotes,
         showLabels: s.showLabels,
         showAllegianceShading: s.showAllegianceShading,
+        atlasPhase: s.atlasPhase,
         quality: s.quality,
         violenceMode: s.violenceMode,
         violenceAdvisorySeen: s.violenceAdvisorySeen,

@@ -70,6 +70,47 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M4',
     status: 'released',
   },
+  {
+    id: '2sam-3',
+    book: '2 Samuel',
+    chapter: 3,
+    reference: '2 Samuel 3',
+    translationAnchor: 'ESV',
+    summary:
+      "A long war between the houses of Saul and David, David growing stronger; Abner breaks with Ish-bosheth over an accusation touching Rizpah and brings the north's allegiance to David, on the condition that Michal is returned to him. Abner comes to Hebron with twenty men, is feasted, pledges to gather all Israel to a covenant, and departs in peace — before Joab kills him at the gate, and David publicly disavows the killing.",
+    // Shared between hebron-covenant (3:1-21) and hebron-gate (3:22-39) —
+    // see docs/design/hebron-covenant-brief.md and
+    // docs/design/hebron-gate-brief.md. ESV excerpt budget: hebron-covenant
+    // used one quote (3:21a); hebron-gate spends the remaining two (the
+    // 3:33b-34a lament core and 3:38), for a shared passage total of three.
+    sceneIds: ['hebron-covenant', 'hebron-gate'],
+    milestoneId: 'M5',
+    // 2026-08-10: hebron-covenant was this passage's first scene to leave
+    // `planned`; hebron-gate (built the same day) is its second — status
+    // follows the scene, per the M4 in-progress convention (docs/next-run.md
+    // 2026-07-22 note).
+    status: 'in-progress',
+  },
+  {
+    id: '2sam-4',
+    book: '2 Samuel',
+    chapter: 4,
+    reference: '2 Samuel 4',
+    translationAnchor: 'ESV',
+    summary:
+      'Ish-bosheth’s courage fails at the news of Abner’s death. Two of his own captains, Rechab and Baanah, murder him defenseless in his own house at noon, behead him, and carry the head to David at Hebron expecting reward — the same pattern as the Amalekite messenger at Ziklag, but this time the killing is real. David answers by retelling that earlier judgment, pronounces the two "wicked men" who killed "a righteous man in his own house on his bed," has them executed and their bodies displayed beside the pool of Hebron, and buries Ish-bosheth’s head in the tomb of Abner — the house of Saul’s last king, dead by murder and buried at Hebron, ending the chapter and the milestone.',
+    // Fresh passage, hebron-reckoning's own (third and last M5 scene). ESV
+    // excerpt budget: one primary quote (4:11a, the verdict) spent in the
+    // b-verdict beat caption; the 4:10 Ziklag-retelling fragment is the
+    // budget's optional second spend, per the brief. Live-source wording
+    // check not possible in this sandbox (no outbound access at build
+    // time) — wording is carried as given in the brief/from memory and
+    // flagged for a follow-up verification pass, per the project's standing
+    // #19b lesson.
+    sceneIds: ['hebron-reckoning'],
+    milestoneId: 'M5',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));
