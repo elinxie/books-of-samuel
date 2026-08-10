@@ -1292,8 +1292,15 @@ export const SCENES: SceneDef[] = [
     milestoneId: 'M5',
     // Built 2026-08-10 (Sonnet/threejs-engineer) per docs/design/
     // hebron-covenant-brief.md (Fable world-director pass, 2026-08-03).
-    // Provisional: pending Fable M5 sign-off before any status flip past
-    // in-progress, same pattern as every prior milestone.
+    // 2026-08-10 M5 sign-off review (Opus standing in for Fable, user-directed
+    // substitution): approved as built — no longer provisional. Stays
+    // in-progress; `released` gates on queue #20. Specifically endorsed: the
+    // threefold peace formula staged straight with no ominous framing; Abner's
+    // twenty rendered literally 1:1; Michal/Paltiel/Rizpah text-only. The
+    // "northern road" staged from the west (-x) is approved as a disclosed
+    // legibility choice — layout.ts states it is not a compass claim, and the
+    // b-arrival caption says "from the direction of Israel and Benjamin"
+    // rather than naming a bearing, which is the honest phrasing.
     status: 'in-progress',
     synopsis:
       "After a long civil war, Abner breaks with Ish-bosheth and brings the north's allegiance to David. He comes to Hebron with twenty men, is received and feasted, pledges to gather all Israel to a covenant with David — and is sent away in peace, the first of three times the text says so.",
@@ -1433,9 +1440,18 @@ export const SCENES: SceneDef[] = [
     // Built 2026-08-10 (Sonnet/threejs-engineer) per docs/design/
     // hebron-gate-brief.md (Fable world-director pass, 2026-08-03). Second
     // scene of M5, and its load-bearing one — the second application of
-    // ADR-009's named-character-killing template. Provisional: pending
-    // Fable M5 sign-off before any status flip past in-progress, same
-    // pattern as every prior milestone.
+    // ADR-009's named-character-killing template. 2026-08-10 M5 sign-off
+    // review (Opus standing in for Fable, user-directed substitution):
+    // approved as built — no longer provisional. Stays in-progress;
+    // `released` gates on queue #20. Verified in code, not just captions:
+    // poses.ts's `strikeLean` is zero throughout the strike window in reduced
+    // mode and the fall lands earlier (poses.test.ts), no wound/blood geometry
+    // exists in any component, the curse (3:29) is caption-only, and the
+    // motive/apologia disputes are carried as non-adjudicating scholarlyViews.
+    // Reusing `asset-bier-props` rather than minting a new `asset-bier` is
+    // approved — the bier is the wrapped-form + prop convention ADR-009 already
+    // ratified, and a duplicate asset id would assert a distinction that
+    // doesn't exist.
     status: 'in-progress',
     synopsis:
       "Joab returns from a raid and protests David's reception of Abner. He recalls Abner under a false pretext and kills him alone inside the gate passage, for the blood of Asahel his brother — a killing the narrative insists David had no part in and did not want. David publicly disavows the act, curses Joab's own house, and commands citywide mourning: Joab himself tears his clothes and mourns before Abner's bier, and David walks behind it to the grave, laments, and fasts until sundown.",
@@ -1621,8 +1637,18 @@ export const SCENES: SceneDef[] = [
     // named-character-killing template's third application, and its first
     // judicial one — stricter than gibeon-pool/hebron-gate: no gesture is
     // ever invented for the execution, and the hands-and-feet display
-    // (4:12a) is caption-only, absolutely, in every mode. Provisional:
-    // pending Fable M5 sign-off before any status flip past in-progress.
+    // (4:12a) is caption-only, absolutely, in every mode. 2026-08-10 M5
+    // sign-off review (Opus standing in for Fable, user-directed
+    // substitution): approved as built — no longer provisional. Stays
+    // in-progress; `released` gates on queue #20. The ADR-009 dismemberment
+    // bar was re-verified directly against the code at this review, not taken
+    // from the build report: `AssassinPose` carries only `presented`/`fallen`,
+    // with no strike/gesture field of any kind, and the only occurrences of
+    // hands/feet/dismemberment anywhere in the scene folder are comments and
+    // beat-caption text. The no-invented-method restraint (stricter than
+    // gibeon-pool's reversed grip and hebron-gate's strike lean, because 4:12a
+    // supplies no method) is ratified as the correct reading of ADR-009 for
+    // any future killing the text narrates without method detail.
     status: 'in-progress',
     synopsis:
       "Ish-bosheth's courage fails at the news of Abner's death; two of his own captains, Rechab and Baanah, murder him defenseless in his own house at noon, behead him, and carry the head to David at Hebron expecting reward — this scene's deliberate textual twin with ziklag-lament, where a man who merely claimed to have killed Saul met the same judgment. David answers by retelling that earlier execution, pronounces the two 'wicked men' who killed 'a righteous man in his own house on his bed,' has them executed and their bodies displayed beside the pool of Hebron (narrated, never rendered), and buries Ish-bosheth's head in the tomb of Abner — the house of Saul's last king, dead by murder and buried at Hebron, closing the chapter and the milestone.",

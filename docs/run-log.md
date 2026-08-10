@@ -1488,3 +1488,121 @@ stay `in-progress` (their correct default status regardless of sign-off
 timing, same as every prior milestone's builds before their own sign-off
 passes). Next session: retry the Fable M5 sign-off once the spend limit
 resets — see docs/next-run.md.
+
+**2026-08-10 (cont.) — Opus 5 (standing in for Fable, user-directed) — M5
+sign-off review (branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)**
+Full `docs/fable-review-checklist.md` pass over `hebron-covenant`,
+`hebron-gate`, `hebron-reckoning`, and the `/atlas` M5 phase. **Model note:
+Fable's monthly spend limit was still hit (see the entry above), and the
+user explicitly directed that this review run on Opus in Fable's place.
+This is a deliberate, authorized model substitution — a full Fable-tier
+pass, NOT provisional in the 2026-07-22 sense, and it does not create a
+follow-up "needs a real Fable re-review" item.** Reviewed against the
+actual data and code, not the doc summaries: all 18 new M5 claims in
+`claims.ts`, all three scenes' beat captions in `scenes.ts`,
+`hebron-reckoning/poses.ts`, `hebron-gate/poses.ts` + `poses.test.ts`,
+`MourningAssembly.tsx`, all three `entities.ts`, `AtlasPage.tsx`,
+`atlasRegions.ts`, `DividedKingdomMap.tsx`, the new character entries, and
+ADR-003/ADR-009's own text.
+
+**Verdict: milestone approved as built. M5 flips `planned` → `in-progress`,
+not `released`** — release gates on new queue **#20**'s five closable
+citation/verification items, exactly the M3 #16/#17 and M4 #19 pattern. All
+three scenes and both passages stay `in-progress`; `hebron` is already
+`released` from M4 and needs no flip.
+
+Checklist findings. **Historical plausibility PASS** — every rendered
+element claim-traced; `biblical-text` claims consistently phrased as what
+the narrative states, not as fact (spot-checked the hardest cases:
+`claim-abner-break` explicitly says the text does not state whether
+Ish-bosheth's accusation was true; `claim-public-response` states the
+people's conclusion as the narrative's own insistence). Both genuinely
+contested questions are non-adjudicating `scholarlyViews` — Joab's motive
+(`claim-abner-killing`, with the legal complication that Asahel died in
+open battle noted inside the vengeance view rather than smuggled in as
+editorial), and apologia-vs-plain-report (`claim-public-response`).
+Confidence ratings survive a second read; the design-placeholder/speculative
+pairs (`claim-feast-form`, `claim-hebron-gate-form`, `claim-abner-tomb-form`,
+`claim-hebron-pool-feature`, three cast-scale claims, `claim-atlas-m5-phase`)
+are all correctly rated and none is dressed up. **Anachronism PASS** — the
+modest two-chamber gate deliberately not a six-chamber Solomonic type; the
+medieval "Tomb of Abner" tradition and Birket es-Sultan both explicitly
+not adopted, with the reason stated in each claim; no banquet-hall
+architecture invented, which would have silently upgraded the released
+`claim-hebron-town-form`; no Mahanaim geometry anywhere. **Visual coherence
+PASS** — all three scenes scale figure counts off `profile.figureCount`
+(ADR-004), so quality modes reduce cast rather than only shading; beat times
+in `poses.ts` match `scenes.ts` exactly. **Performance PASS, rider
+downgraded** — `MourningAssembly.tsx`'s ~79-figure un-bucketed
+`InstancedMesh` is one draw call updating 79 matrices per frame with no
+per-figure walk cycle; that is an order of magnitude under `gilboa-battle`'s
+~325 animated figures across 6–8 buckets, which is the measured precedent.
+The mourners genuinely move (gather → procession → tomb), so baking them the
+way `hebron-anointing`'s static `JudahAssembly` is baked isn't available.
+Ruled **not a concern and not a release rider**; the flagged
+`performance-reviewer` pass is optional, not required. Bundle re-checked:
+`ObservePage` chunk 302.79 kB / 79.40 kB gzip, no concern. **Tests PASS** —
+484 vitest green at review start, 48 files. **Source traceability PASS with
+the known hedges**, which queue #20 now tracks. **ADR-011 PASS** — the only
+new affordance is the `/atlas` phase toggle: orientation/learning, on the
+allow-list, defaults to the already-reviewed M4 phase, and the shading is
+independently dismissible. No fantasy systems, no win/loss framing, no
+player-driven combat; both killings stay scripted reenactment.
+
+**ADR-009 bar verified in code, not from the build report.**
+`hebron-reckoning`'s `AssassinPose` carries only `presented`/`fallen` — no
+strike/gesture field at all — and the only hands/feet/dismemberment strings
+anywhere in the scene folder are comments and captions. The
+no-invented-method restraint (stricter than `gibeon-pool`'s reversed grip
+and `hebron-gate`'s strike lean, because 4:12a supplies no method) is
+**ratified as the correct reading of ADR-009** for any future killing the
+text narrates without method detail. `hebron-gate`'s reduced mode confirmed
+by `poses.test.ts`: `strikeLean` stays 0 through the strike window and the
+fall lands measurably earlier. David's curse (3:29) is caption-only in both
+modes.
+
+**Two real defects found and fixed at this review** (neither was in any doc
+summary — both required reading the code): **(1)** `/atlas`'s M5 lede
+presented a paraphrase of 2 Samuel 3:1 inside quotation marks with a verse
+citation. The wording ("grew steadily stronger… grew steadily weaker")
+matches no translation — ESV reads "There was a long war… And David grew
+stronger and stronger, while the house of Saul became weaker and weaker."
+Rewritten as unquoted narration. It had also slipped the ESV budget entirely,
+because `integrity.test.ts` scans passage `keyExcerpts` and scene beat
+captions but never page copy — so **ADR-003 amended** (quoted-means-verbatim;
+page/UI copy is a third budgeted surface, budgeted per page rather than
+pooled per passage, since pooling would retroactively break released M4
+content; automation deferred as an explicit manual-review responsibility,
+same standing as the existing summary-paraphrase note, and folded into #20).
+**(2)** `atlasRegions.ts`'s user-visible M5 legend caption and two doc
+comments described the headless region as "shown fainter with a dashed
+outline," but `DividedKingdomMap.tsx` renders `stroke="none"` on both
+variants deliberately, and a test asserts it — the caption was advertising a
+border-like encoding the no-hard-edge discipline specifically forbids.
+Corrected to "a fainter fill and no outline added."
+
+Build-agent-flagged judgment calls, both **approved as shipped**:
+`hebron-covenant`'s northern approach staged from the west (-x) is a
+disclosed legibility choice — `layout.ts` states it asserts no compass
+bearing, and the caption says "from the direction of Israel and Benjamin"
+rather than naming one, which is the honest phrasing; `hebron-gate` reusing
+`asset-bier-props` instead of minting `asset-bier` is right, since the bier
+is the wrapped-form + prop convention ADR-009 already ratified and a
+duplicate id would assert a distinction that doesn't exist.
+
+Other changes made at this review: **`f-2sam-3-4` feature added**
+(`in-progress`, M5) — M5 had no feature entry at all, so its scene work was
+invisible on the Features page; M4's `f-2sam` is scoped "2 Samuel 1–2
+scenes" and already `done`, so it could not be reused. **Register rows #16
+(Joab's motive + the apologia question) and #17 (the 4:6 MT/LXX
+divergence)** added — both meet the register's own "genuine scholarly
+disagreement" criterion and neither had a row. Scene comments in `scenes.ts`
+updated to record the verdict and drop the "provisional" wording. Docs
+synced: queue (#20 opened), progress.md, next-run.md, ADR-003, register.
+Gate re-run after all edits: format, lint, typecheck, 484 vitest, build —
+green. No commit/push (the orchestrating session re-verifies and handles
+git).
+
+**Path to `released`:** clear queue #20's five items via a `researcher`
+pass, then a short confirmation flip of the three scenes, `2sam-3`/`2sam-4`,
+`f-2sam-3-4` → `done`, and M5 → `released` together, per the M3/M4 cascade.

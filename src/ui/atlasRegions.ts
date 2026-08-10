@@ -9,9 +9,10 @@
  * M5 extension (2 Samuel 3–4, per claim-atlas-m5-phase): the same overlay gets
  * a second phase. Judah's region is reused unchanged. The Israel-writ region
  * gets a `headless` variant reflecting Ish-bosheth's assassination and the
- * house of Saul's kingship ending (4:1–12) — rendered fainter, with a dashed
- * outline and a "no king" sub-label, never removed, reassigned, or merged into
- * Judah's region. This deliberately stops short of 2 Samuel 5's all-Israel
+ * house of Saul's kingship ending (4:1–12) — rendered with a fainter fill and a
+ * "no king" sub-label, and with no outline of any kind added (the M4
+ * no-hard-edge discipline carries over unchanged), never removed, reassigned,
+ * or merged into Judah's region. This deliberately stops short of 2 Samuel 5's all-Israel
  * anointing of David, which is out of scope for this overlay entirely.
  */
 
@@ -31,8 +32,8 @@ export interface AllegianceRegionConfig {
   colorVar: string;
   /**
    * M5-only variant: the region's king is gone and no heir is shown taking
-   * the throne (2 Samuel 4:1–12). Rendered fainter with a dashed outline and
-   * a "no king" sub-label — never removed, reassigned to another region, or
+   * the throne (2 Samuel 4:1–12). Rendered with a fainter fill and a "no king"
+   * sub-label, with no outline added — never removed, reassigned to another region, or
    * merged/blended toward Judah's shading, since the text does not say who
    * (if anyone) holds this territory once Ish-bosheth is dead.
    */
@@ -71,7 +72,7 @@ export const ALLEGIANCE_REGIONS_M5: AllegianceRegionConfig[] = [
     id: 'israel-writ',
     label: 'Ish-bosheth’s former writ',
     caption:
-      'Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel (2 Samuel 2:9): by 4:12 the house of Saul’s kingship has ended — Ish-bosheth assassinated (4:1–8), Mephibosheth (4:4) lame and a child, not a throne claimant. Shown fainter with a dashed outline, not removed or reassigned: the text does not say who, if anyone, holds this territory next. That question — 2 Samuel 5’s all-Israel anointing of David — is out of scope for this map.',
+      'Gilead, the Ashurites, Jezreel, Ephraim, Benjamin, and all Israel (2 Samuel 2:9): by 4:12 the house of Saul’s kingship has ended — Ish-bosheth assassinated (4:1–8), Mephibosheth (4:4) lame and a child, not a throne claimant. Shown with a fainter fill and no outline added, not removed or reassigned: the text does not say who, if anyone, holds this territory next. That question — 2 Samuel 5’s all-Israel anointing of David — is out of scope for this map.',
     locationIds: ['mahanaim', 'mount-gilboa', 'beth-shan', 'jabesh-gilead'],
     colorVar: '--region-israel',
     headless: true,

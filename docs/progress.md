@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **planned** (scoped + briefed 2026-08-03, Fable world-director pass; first scene built 2026-08-10)
+## Milestone 5 — 2 Samuel 3–4: **in-progress** (scoped + briefed 2026-08-03; all three scenes + the atlas phase built 2026-08-10; sign-off review 2026-08-10, approved as built, `released` gated on queue #20)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
@@ -409,10 +409,43 @@ no heir positioned to rule, without asserting a unified kingdom or that
 David now rules the north (2 Samuel 5 stays entirely out of scope, held by
 dedicated structural tests). New claim `claim-atlas-m5-phase`. Full gate
 green: format, lint, typecheck, 484 vitest, build, 12/12 e2e. **All M5
-build work is now complete.** M5's remaining work is a researcher pass on
-five open gap clusters and a Fable M5 sign-off review before any status
-flips past `in-progress`. See `docs/next-run.md`'s current state block for
-the full priority order.
+build work is now complete.**
+
+**M5 sign-off review done 2026-08-10 — approved as built; M5 is now
+`in-progress`.** The review ran on **Opus standing in for Fable** at the
+user's explicit direction (Fable's monthly spend limit was still hit); this
+was a deliberate, authorized model substitution and a full Fable-tier
+`docs/fable-review-checklist.md` pass, not a provisional one, so it needs no
+Fable re-review. Every checklist section passed: historical plausibility
+(both contested questions carried as genuinely non-adjudicating
+`scholarlyViews` — Joab's motive, and apologia-vs-plain-report), anachronism
+(two-chamber not six-chamber gate; the medieval "Tomb of Abner" tradition and
+Birket es-Sultan both explicitly not adopted; no invented banquet-hall
+architecture), visual coherence, performance, tests, source traceability with
+its known hedges, and ADR-011. ADR-009's dismemberment bar was verified
+against the code rather than the build reports: `hebron-reckoning`'s
+`AssassinPose` has no strike/gesture field at all, and hands/feet appear only
+in comments and captions. The `~79`-figure `MourningAssembly` perf worry was
+**cleared, not carried** — one draw call, 79 matrix updates per frame, an
+order of magnitude under `gilboa-battle`'s measured precedent.
+
+Two real defects were found and fixed at the review, both only visible in the
+code: `/atlas`'s M5 lede presented a _paraphrase_ of 2 Samuel 3:1 inside
+quotation marks with a verse citation (now unquoted narration — and ADR-003
+gained a "quoted means verbatim" rule plus page/UI copy as a third budgeted
+surface, since the enforced test never scanned page prose); and
+`atlasRegions.ts`'s user-visible legend caption claimed the headless region
+carried a "dashed outline" that `DividedKingdomMap` deliberately does not
+draw. New feature entry `f-2sam-3-4` (`in-progress`) was added — M5 had none,
+so its scene work was invisible on the Features page. Uncertainty-register
+rows #16/#17 added for M5's two genuine disputes.
+
+**Remaining M5 work before `released`:** queue **#20**'s five closable
+citation/verification items (McCarter extended to 2 Sam 3–4; Herzog gate
+typology; King & Stager feasting/mourning; Hebron water installations; a
+live-source ESV wording check for all five M5 quoted spans). Then the three
+scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4`, and M5 flip together per the M3/M4
+cascade. See `docs/next-run.md`'s current state block.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

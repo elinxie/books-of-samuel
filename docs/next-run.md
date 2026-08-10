@@ -3,7 +3,72 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, all M5 build work done — 3 scenes + atlas extension, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+
+**The M5 sign-off review is done.** It ran on **Opus standing in for Fable**
+at the user's explicit direction, Fable's monthly spend limit still being
+hit — a deliberate, authorized model substitution and a full
+`docs/fable-review-checklist.md` pass. **It is not provisional in the
+2026-07-22 sense and does NOT need a Fable re-review.** Full reasoning in
+`docs/run-log.md`'s 2026-08-10 sign-off entry.
+
+**Verdict: all three scenes and the `/atlas` M5 phase approved as built.**
+Flips landed: `M5` `planned` → `in-progress`; new feature `f-2sam-3-4`
+(`in-progress`, M5 had no feature entry at all). The three scenes and
+`2sam-3`/`2sam-4` correctly stay `in-progress`; `hebron` is already
+`released` from M4. Every checklist section passed. ADR-009's dismemberment
+bar was re-verified against the code (not the build reports):
+`hebron-reckoning`'s `AssassinPose` has only `presented`/`fallen`, no
+strike/gesture field, and hands/feet occur only in comments and captions —
+the no-invented-method restraint is now **ratified** as ADR-009's reading for
+any future killing the text narrates without method detail.
+
+**Two rider items were closed, not carried:** (a) the ~79-figure
+`MourningAssembly` perf worry is **cleared** — one draw call, 79 matrix
+updates/frame, no walk cycle, an order of magnitude under `gilboa-battle`'s
+measured precedent; the `performance-reviewer` pass is optional, not a gate.
+(b) The two build-agent staging calls (west-staged "northern road";
+`asset-bier-props` reuse) are both **approved as shipped**.
+
+**Two real defects were found and fixed at the review** — neither appeared in
+any doc summary: `/atlas`'s M5 lede presented a _paraphrase_ of 2 Samuel 3:1
+inside quotation marks with a verse citation (ESV actually reads "There was a
+long war… And David grew stronger and stronger, while the house of Saul
+became weaker and weaker"); and `atlasRegions.ts`'s user-visible legend
+caption advertised a "dashed outline" on the headless region that
+`DividedKingdomMap` deliberately renders as `stroke="none"`. Both fixed.
+**ADR-003 was amended** as a result: quoted-means-verbatim, and page/UI copy
+is now a third budgeted ESV surface (budgeted per page, not pooled per
+passage — pooling would retroactively break released M4 content), manually
+enforced for now.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Queue #20 — the M5 release citation gates.** Five closable
+   `researcher` items, parallelizable, gating only `released`: (a) extend
+   `mccarter-1984-ii-samuel` to 2 Sam 3–4 (unblocks named attributions on
+   `claim-abner-killing`/`claim-public-response`/`claim-abner-break`/
+   `claim-ish-bosheth-assassination`); (b) `herzog-1997` gate typology for
+   `claim-hebron-gate-form`; (c) `king-stager-2001` feasting/mourning for
+   `claim-feast-form`/`claim-abner-funeral`/`claim-mourning-dress`; (d)
+   Hebron water installations for `claim-hebron-pool-feature` (expect the
+   #13/#19c "checked, permanently thin" closure); (e) live-source ESV wording
+   check on all five M5 quoted spans (3:21a, 3:33b–34a, 3:38, the 4:10
+   fragment, 4:11a) — needs outbound access to Bible-text sites, which this
+   sandbox lacks. Read #20's row for the exact instructions, including the
+   standing rule that the refuge-city (Josh 20:7) irony stays omitted unless a
+   named citation lands.
+2. **Then the M5 release flip** — once #20 clears, one short confirmation pass
+   flips the three scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4` → `done`, and M5 →
+   `released` together, per the M3/M4 cascade.
+3. Non-blocking, from the ADR-003 amendment: decide whether/how to automate
+   the page/UI-copy ESV budget check without false-positiving on ordinary
+   quoted strings in `.tsx` (tracked inside #20, not itself a gate).
+4. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — see Environment
+   notes below, unchanged.
+
+## State before this slice (2026-08-10, all M5 build work done — 3 scenes + atlas extension, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
 
 **The atlas M5 phase extension is DONE and gate-green** (commits
 `30d1ea2`/`a8734eb`/`0e5f446`/`c9fa57c`/`aba27e6`/`37cee59`; this section

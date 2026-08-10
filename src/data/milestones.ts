@@ -99,7 +99,19 @@ export const MILESTONES: Milestone[] = [
     // of Saul, closing at 4:12) with all staged action at the already-built
     // Hebron. Three scenes + an atlas extension; briefs in docs/design/
     // (hebron-covenant, hebron-gate, hebron-reckoning). M6 starts at 2 Sam 5.
-    status: 'planned',
+    // 2026-08-10 M5 sign-off review (run on Opus standing in for Fable at the
+    // user's explicit direction, Fable's monthly spend limit being hit — a
+    // deliberate, authorized model substitution, not a provisional pass needing
+    // a Fable re-review): all three scenes and the /atlas M5 phase reviewed
+    // against docs/fable-review-checklist.md and APPROVED AS BUILT. M5 flips
+    // planned → in-progress, not released; `released` gates on queue #20's
+    // five closable citation/verification items, per the M3 #16/#17 and M4 #19
+    // precedent. Two real defects found and fixed at the review (an ESV
+    // paraphrase presented as a verbatim 3:1 quotation in the /atlas M5 lede;
+    // atlasRegions' user-visible caption claiming a dashed outline the
+    // renderer deliberately does not draw). ADR-009's dismemberment bar
+    // verified holding in code, not just in captions.
+    status: 'in-progress',
     passageRefs: ['2 Samuel 3', '2 Samuel 4'],
     goals: [
       'Abner’s overture and the covenant feast at Hebron (`hebron-covenant`)',

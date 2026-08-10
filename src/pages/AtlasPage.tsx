@@ -99,14 +99,15 @@ export function AtlasPage() {
         <>
           <h2>The long war, and a house without a king</h2>
           <p className="page-lede">
-            “The war between the house of Saul and the house of David was long. And David grew
-            steadily stronger, while the house of Saul grew steadily weaker” (2 Samuel 3:1). This is
-            a trend the text states, not a territory it redraws — no new border or region is added
-            to the map for it. What the map does add is the outcome of that trend by 2 Samuel 4:
-            Abner broke with Ish-bosheth and defected to David (3:6–21), Abner was killed at
-            Hebron’s gate (3:22–27), and Ish-bosheth was assassinated in his own house with no heir
-            positioned to rule — Jonathan’s son Mephibosheth (4:4) was lame in both feet and a
-            child, not a throne claimant. By 4:12 the house of Saul’s kingship has ended.
+            The narrative opens these chapters by reporting a long war between the house of Saul and
+            the house of David, with David growing steadily stronger and the house of Saul steadily
+            weaker (2 Samuel 3:1). This is a trend the text states, not a territory it redraws — no
+            new border or region is added to the map for it. What the map does add is the outcome of
+            that trend by 2 Samuel 4: Abner broke with Ish-bosheth and defected to David (3:6–21),
+            Abner was killed at Hebron’s gate (3:22–27), and Ish-bosheth was assassinated in his own
+            house with no heir positioned to rule — Jonathan’s son Mephibosheth (4:4) was lame in
+            both feet and a child, not a throne claimant. By 4:12 the house of Saul’s kingship has
+            ended.
           </p>
           <p className="page-lede">
             This map does not make the further claim that the north is now part of David’s domain,
