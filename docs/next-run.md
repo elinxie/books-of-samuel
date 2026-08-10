@@ -32,12 +32,23 @@ typecheck, 484 vitest, build, 12/12 e2e (new atlas-M5-phase e2e test
 included) — independently re-verified by the orchestrating session, not
 just taken from the build agent's report.
 
-**This closes out all M5 build work.** Remaining M5 items: the researcher
-pass on five open gap clusters, then a Fable M5 sign-off review before any
-status flips past `in-progress`. See the priority list further down this
-section (still accurate for what comes after the atlas item — item 1 there,
-the atlas extension itself, is now done; start from item 2, the researcher
-pass).
+**This closes out all M5 build work.** A Fable M5 sign-off review was
+attempted immediately after and **failed on the first call: "You've hit
+your monthly spend limit."** Same recurring constraint as the 2026-07-22 M4
+incident. Unlike that one, M5's three briefs were already Fable-authored
+(2026-08-03) and all three builds are plain implementation of those
+already-approved briefs — no Sonnet-fallback scope/creative judgment was
+attempted or needed here, only the sign-off review itself, which needs an
+actual Fable pass and was not substituted. **Next session's first priority:
+retry the Fable M5 sign-off** (`fable-architect`, full
+`docs/fable-review-checklist.md` pass) once the spend limit has reset —
+batch it, don't burn a partial session chasing it if it's still hit. The
+researcher pass on five open gap clusters (non-blocking, can run before or
+after the sign-off) is priority two. See the priority list further down
+this section for the researcher-gap detail (still accurate — item 1 there,
+the atlas extension itself, is done; item 2, the researcher pass, and item
+3, the Fable sign-off, are both still open, sign-off now blocked on the
+spend limit rather than on unbuilt work).
 
 **`hebron-reckoning` (2 Sam 4) is built** — third and last of M5's three
 scenes, closing the milestone, `status: 'in-progress'` (provisional, pending

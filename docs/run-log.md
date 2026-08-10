@@ -1471,3 +1471,20 @@ test included) — all green.
 Doc sync: next-run.md (atlas item marked done, resume point now the
 researcher pass), progress.md, this entry. Remaining M5 work: researcher
 pass on five gap clusters, then Fable M5 sign-off.
+
+**2026-08-10 (cont.) — Fable M5 sign-off attempted, hit monthly spend limit**
+Launched a fable-architect review for M5's sign-off (all 3 scenes + atlas
+extension built and gate-green, per the entries above). First call failed:
+"You've hit your monthly spend limit." Same recurring constraint as the
+2026-07-22 M4 precedent (docs/next-run.md's then-current entry, model-
+handoff.md's documented fallback policy: batch the Fable pass, don't spend
+a partial session chasing it once the limit is hit). Unlike that prior
+incident, M5's three briefs were already Fable-authored (2026-08-03, before
+any spend-limit issue) and all three builds are plain implementation of
+those already-approved briefs — so no Sonnet-fallback scope/creative
+judgment is needed here, only the sign-off review itself. Not attempting a
+Sonnet-authored substitute for that review. All M5 scenes/atlas extension
+stay `in-progress` (their correct default status regardless of sign-off
+timing, same as every prior milestone's builds before their own sign-off
+passes). Next session: retry the Fable M5 sign-off once the spend limit
+resets — see docs/next-run.md.
