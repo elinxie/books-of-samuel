@@ -193,6 +193,41 @@ passage (`2sam-3`, also used by the not-yet-built `hebron-gate`) carries
 only one short ESV quote (3:21a) — the remaining shared excerpt budget is
 reserved for `hebron-gate`'s lament, per the brief.
 
+## Current placeholders (hebron-gate scene, Milestone 5, built 2026-08-10)
+
+Second, load-bearing M5 scene — the second application of ADR-009's
+named-character-killing template (`gibeon-pool`'s Asahel death set the
+template). Same Hebron terrain/town/terrace/ambient-town assets reused
+directly again (`src/scenes/hebron-gate/terrain.ts` and `layout.ts` import
+`HEBRON_TERRAIN_SPEC` from hebron-anointing and `NORTH_ROAD_CURVE`/
+`TOWN_AMBIENT_SLOTS` from hebron-covenant, rather than re-generating them).
+Joab's raid party (~15-25), the mourning assembly (~60-90, the scene's one
+crowd that moves, at funeral pace along a single shared route curve), and
+ambient town background (~15-25) are all disclosed design counts
+(`claim-gate-cast-scale`); with the four named principals (David, Joab,
+Abner, Abishai) the high-tier total is ≈100-140 figures, the largest M5
+scene by figure count but cheaper than a combat scene (no fight
+choreography). One genuinely new asset:
+
+| Asset                       | Represents                                                      | Why temporary                                                                                                                                                                                                                   | Replace at |
+| --------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-hebron-gate-passage` | "The midst of the gate" (2 Sam 3:27) — `claim-hebron-gate-form` | Simple box-massed piers/corridor/roof built on hebron-anointing's own gate-post line; deliberately not a monumental six-chamber gate; no walkable interior modeled since the camera never enters (ADR-009 documentary distance) | M5         |
+
+Abner's bier reuses `asset-bier-props` (jabesh-burial's existing plank-and-pole
+carrying frame record) rather than a new asset — the same
+`buildWrappedFormGeometry` wrapped-cloth silhouette Beth-shan/Jabesh already
+established for the ADR-009 funerary standard, at full-length scale, with no
+new record needed (jabesh-burial's own `Biers.tsx` also uses this builder
+without a dedicated asset entry of its own). The fallen/collapse transform at
+the strike reuses `asset-figure-fallen`. The tomb ground (a simple rock-cut
+entry, `claim-abner-tomb-form` — explicitly not the medieval "Tomb of Abner"
+tradition/site) is built from the same generic primitive-geometry vocabulary
+already used everywhere else in the project and does not warrant its own
+asset record. This scene's status stays `in-progress` pending a Fable M5
+sign-off review (`docs/next-run.md`); its shared passage (`2sam-3`) now
+carries its full three-quote ESV budget: one from hebron-covenant (3:21a)
+and two here (the 3:33b-34a lament core and 3:38).
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the

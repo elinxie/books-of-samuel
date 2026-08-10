@@ -591,6 +591,18 @@ export const ASSETS: AssetRecord[] = [
       'A citable meal/feasting material-culture source (king-stager-2001 checked and not yet page-verified for this content, per docs/next-run.md) could move vessel/seating form past design-placeholder; until then this stays generic.',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-hebron-gate-passage',
+    name: 'Gate-passage interior (Hebron)',
+    represents:
+      '"The midst of the gate" (2 Samuel 3:27) — the modest two-chamber gateway Joab draws Abner into — see claim-hebron-gate-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple box-massed piers, corridor walls, and a roof slab (src/scenes/hebron-gate/GatePassage.tsx) built on hebron-anointing’s own gate-post line, not a reproduction of any excavated Tell Rumeida gate — no gate is attested there for this period (claim-hebron-town-form’s permanently thin gap). Deliberately not a monumental six-chamber Solomonic-type gate. No walkable/hollow interior is modeled — the observer is held at documentary distance (ADR-009, vp-gate-shadow) and never enters, so only exterior massing plus a darkened floor patch are needed to read as an interior deep enough to draw someone aside into.',
+    historicalRequirements:
+      'Revise only if a researcher pass extends herzog-1997’s urban-form monograph with a checkable citation for early Iron II gate typology generally (a comparative-ane upgrade, not an excavated-at-Hebron claim); until then this stays a disclosed generic placeholder.',
+    replacementMilestoneId: 'M5',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));
