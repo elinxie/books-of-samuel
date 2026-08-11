@@ -440,12 +440,35 @@ draw. New feature entry `f-2sam-3-4` (`in-progress`) was added — M5 had none,
 so its scene work was invisible on the Features page. Uncertainty-register
 rows #16/#17 added for M5's two genuine disputes.
 
-**Remaining M5 work before `released`:** queue **#20**'s five closable
-citation/verification items (McCarter extended to 2 Sam 3–4; Herzog gate
-typology; King & Stager feasting/mourning; Hebron water installations; a
-live-source ESV wording check for all five M5 quoted spans). Then the three
-scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4`, and M5 flip together per the M3/M4
-cascade. See `docs/next-run.md`'s current state block.
+**M5 release close-out, 2026-08-11 (Fable):** queue #20's five citation
+gates, all closed the same day by a Sonnet researcher pass, ruled sufficient
+for release. (a) Named attributions landed honestly — Matthew Henry
+(`henry-commentary-1710`, new card) for the rival-elimination view on
+`claim-abner-killing`, McCarter's own 1980 JBL "Apology of David" article
+(`mccarter-1980-apology-of-david`, new card) for the apologia view on
+`claim-public-response`, and Keil & Delitzsch (coverage extended to
+2 Sam 3–4) for `claim-abner-break` and both `claim-ish-bosheth-assassination`
+views; a McCarter-specific quotation could not be page-verified for the three
+narrower points, so other verifiable sources were cited rather than forcing
+an attribution — the discipline working, not a gap. (b)
+`claim-hebron-gate-form` upgraded `design-placeholder` → `comparative-ane`
+(confidence `low`) on Herzog 1997's regional two-/four-/six-chamber gate
+chronology; geometry unchanged. (c) `claim-feast-form` stays
+`design-placeholder` per the M4 `claim-anointing-rite-form`
+checked-and-declined precedent; `king-stager-2001` added only where it
+genuinely corroborates (general mourning conventions on
+`claim-abner-funeral`/`claim-mourning-dress`). (d) `claim-hebron-pool-feature`
+closed "permanently thin" per the #13/#19c standard — no Iron Age water
+installation published at Tell Rumeida, gap now citably confirmed. (e) All
+five M5 ESV quoted spans live-verified verbatim-correct (same WebSearch
+cross-corroboration method that caught the real 1:26 error at M4). Cascade
+per the M3/M4 precedent: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` →
+`released`; `2sam-3`/`2sam-4` → `released`; `f-2sam-3-4` → `done`; `M5` →
+`released`. `hebron` location already `released` from M4 — no change. Full
+gate re-verified green after the flips (format/lint/484 vitest/build/12-12
+e2e). Non-blocking riders carried forward: real-hardware perf check,
+`TO VERIFY` pagination hedges, ADR-003 page/UI-copy budget-scan test
+(routine, tracked in `docs/next-run.md`).
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

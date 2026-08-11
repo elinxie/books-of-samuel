@@ -46,6 +46,17 @@ precedent used (#13, #19) -- this pass only closes the citation gates, per #19's
 own instruction not to flip status directly; see the follow-up entry immediately
 below if a Fable pass has run.
 
+Flip executed (2026-08-11, Fable M5 release pass): all five #20 closures ruled
+sufficient — (a) honestly hedged named attributions per the #17 standard,
+including the correctly _declined_ McCarter attributions; (b) a properly
+bounded `comparative-ane`/`low` upgrade; (c) checked-and-declined per the M4
+anointing-rite precedent; (d) permanently-thin per the #13/#19c standard; (e)
+a genuine live check by the same method that caught M4's real 1:26 error.
+Cascade executed: `hebron-covenant`/`hebron-gate`/`hebron-reckoning`,
+`2sam-3`/`2sam-4`, `M5` -> `released`; `f-2sam-3-4` -> `done`; `hebron`
+location already `released` (M4), unchanged. Full gate re-verified green after
+the flips (format/lint/484 vitest/build/12-12 e2e). #20 fully closed.
+
 Status-flip note (2026-08-02, Fable M4 release pass): the cascade #19 flagged as
 needing Fable judgment was confirmed and executed. Ruling: all four #19 closures
 are sufficient for release. (a)/(b)/(d) closed affirmatively (named Gill/Keil

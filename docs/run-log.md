@@ -1606,3 +1606,17 @@ git).
 **Path to `released`:** clear queue #20's five items via a `researcher`
 pass, then a short confirmation flip of the three scenes, `2sam-3`/`2sam-4`,
 `f-2sam-3-4` → `done`, and M5 → `released` together, per the M3/M4 cascade.
+
+**2026-08-11 — Fable 5 — M5 release-gate confirmation**
+Confirmed the 2026-08-11 Sonnet researcher closures of queue #20 (all five
+items) by direct spot-check of `claims.ts` edits and the 8 new/extended source
+cards — real, honestly hedged, matching the #13/#17/#19 standards; the
+declined McCarter attributions on the three unverifiable points are the
+discipline working. Ruling: sufficient for release. Cascade executed per
+M3/M4: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`
+(scenes.ts), `2sam-3`/`2sam-4` → `released` (passages.ts), `f-2sam-3-4` →
+`done` (features.ts), `M5` → `released` (milestones.ts); `hebron` location
+already `released` (M4), unchanged. Full gate re-verified after flips:
+format/lint/484 vitest/build/12-12 e2e green. Docs: progress.md M5 heading +
+close-out paragraph, queue #20 "flip executed" note appended to its Resolved
+entry. M5 is fully closed; next scope is M6 (2 Sam 5+), untouched.
