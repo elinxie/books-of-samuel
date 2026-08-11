@@ -1,5 +1,5 @@
 {
-  "count": 31,
+  "count": 33,
   "cards": [
     {
       "id": "biran-naveh-1993",
@@ -62,6 +62,12 @@
       "copyrightStatus": "public-domain"
     },
     {
+      "id": "henry-commentary-1710",
+      "title": "An Exposition of the Old and New Testament (Commentary on the Whole Bible), Volume II: Joshua to Esther",
+      "sourceType": "reference",
+      "copyrightStatus": "public-domain"
+    },
+    {
       "id": "herzog-1997",
       "title": "Archaeology of the City: Urban Planning in Ancient Israel and Its Social Implications",
       "sourceType": "archaeology",
@@ -119,6 +125,12 @@
       "id": "mazar-panitz-cohen-2009-beth-shean-vol3",
       "title": "Excavations at Tel Beth-Shean 1989-1996, Volume III: The 13th-11th Century BCE Strata in Areas N and S",
       "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "mccarter-1980-apology-of-david",
+      "title": "The Apology of David",
+      "sourceType": "reference",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {

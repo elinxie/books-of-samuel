@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **in-progress** (scoped + briefed 2026-08-03; all three scenes + the atlas phase built 2026-08-10; sign-off review 2026-08-10, approved as built, `released` gated on queue #20)
+## Milestone 5 — 2 Samuel 3–4: **released** (2026-08-11 Fable release pass; built and approved 2026-08-10, queue #20 since cleared)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —

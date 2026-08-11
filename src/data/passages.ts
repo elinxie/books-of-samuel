@@ -88,8 +88,9 @@ export const PASSAGES: Passage[] = [
     // 2026-08-10: hebron-covenant was this passage's first scene to leave
     // `planned`; hebron-gate (built the same day) is its second — status
     // follows the scene, per the M4 in-progress convention (docs/next-run.md
-    // 2026-07-22 note).
-    status: 'in-progress',
+    // 2026-07-22 note). 2026-08-11: released at the M5 release pass (queue
+    // #20 closed; both scenes released).
+    status: 'released',
   },
   {
     id: '2sam-4',
@@ -109,7 +110,10 @@ export const PASSAGES: Passage[] = [
     // #19b lesson.
     sceneIds: ['hebron-reckoning'],
     milestoneId: 'M5',
-    status: 'in-progress',
+    // 2026-08-11: released at the M5 release pass — the #20e live-source ESV
+    // wording check the comment above called for ran and passed (all five M5
+    // quoted spans verbatim-correct via WebSearch cross-corroboration).
+    status: 'released',
   },
 ];
 

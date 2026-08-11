@@ -111,7 +111,14 @@ export const MILESTONES: Milestone[] = [
     // atlasRegions' user-visible caption claiming a dashed outline the
     // renderer deliberately does not draw). ADR-009's dismemberment bar
     // verified holding in code, not just in captions.
-    status: 'in-progress',
+    // 2026-08-11 M5 release pass (Fable): queue #20's five citation gates all
+    // ruled sufficient (named Henry/McCarter-1980/Keil-Delitzsch attributions;
+    // Herzog gate-typology upgrade to comparative-ane/low; feast-form honestly
+    // kept design-placeholder per the checked-and-declined M4 precedent;
+    // Hebron pool closed "permanently thin" per the #13/#19c standard; all
+    // five ESV quoted spans live-verified correct). Cascade per M3/M4: three
+    // scenes + 2sam-3/2sam-4 → released, f-2sam-3-4 → done, M5 → released.
+    status: 'released',
     passageRefs: ['2 Samuel 3', '2 Samuel 4'],
     goals: [
       'Abner’s overture and the covenant feast at Hebron (`hebron-covenant`)',

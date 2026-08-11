@@ -8,8 +8,13 @@
   "sourceType": "archaeology",
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
-  "summary": "Urban-form study covering, among much else, the early Iron Age 'enclosed settlement' plan (dwellings ringing an open center, e.g. Beersheba VII) used as the comparative model for the Ziklag placeholder layout.",
-  "relevantPassages": ["1 Samuel 30"],
-  "extractedClaims": ["claim-oval-plan", "claim-ziklag-scale", "claim-wall-gate"],
-  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+  "summary": "Urban-form study covering, among much else, the early Iron Age 'enclosed settlement' plan (dwellings ringing an open center, e.g. Beersheba VII) used as the comparative model for the Ziklag placeholder layout. Also includes a regional gate-typology synthesis (pp. 231-291, gate discussion concentrated at pp. 287-291 per secondary citation) tracking Iron Age city-gate chamber counts across excavated Israelite/Levantine sites over time: two-chamber gates are the prevalent form in the 11th and early 10th centuries BCE (with a few four-chamber examples appearing at the very end of that span), before larger four- and six-chamber gates become common from the mid-10th century BCE onward (the type most associated, rightly or on a disputed 'Solomonic' dating, with monumental sites like Hazor, Megiddo, and Gezer).",
+  "relevantPassages": ["1 Samuel 30", "2 Samuel 3"],
+  "extractedClaims": [
+    "claim-oval-plan",
+    "claim-ziklag-scale",
+    "claim-wall-gate",
+    "claim-hebron-gate-form"
+  ],
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1). 2026-08-11 citation-verification pass (fable-review-queue #20b, claim-hebron-gate-form): the two-/four-/six-chamber gate chronology above, and the 'Herzog 1997: 287-91' page attribution, are drawn from a secondary specialist bibliography (the Karak Resources Project's Iron Age II city-gates summary, an archaeology-research-project resource citing Herzog 1997 by name and page range for exactly this typological claim), not from direct page-by-page inspection of the 1997 Tel Aviv University monograph itself. This is a regional/typological synthesis across many excavated sites, not evidence excavated at Hebron/Tell Rumeida specifically — no gate of any period is excavated there for the 11th-10th century BCE window (see claim-hebron-town-form). TO VERIFY: exact page range and the typology's precise chronological boundaries against a primary copy of the monograph."
 }

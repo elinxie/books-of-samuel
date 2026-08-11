@@ -198,9 +198,9 @@ export const FEATURES: FeatureEntry[] = [
     // all (M3 used three per-scene features, M4 one shared `f-2sam` scoped to
     // "2 Samuel 1–2 scenes" and now `done`), so M5's scene work was invisible
     // on the Features page. All three scenes plus the atlas phase are built and
-    // approved as built; `done` gates on queue #20, per the M4 `f-2sam`
-    // precedent.
-    status: 'in-progress',
+    // approved as built; `done` gated on queue #20, closed 2026-08-11 at the
+    // M5 release pass, per the M4 `f-2sam` precedent.
+    status: 'done',
     milestoneId: 'M5',
   },
   {

@@ -853,7 +853,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'high',
     sourceIds: ['esv-bible', 'king-stager-2001'],
     notes:
-      'Torn garments and dust/ashes on the head recur across the Hebrew Bible and the wider ANE as conventional mourning gestures (comparative-ane corroboration; king-stager-2001 anchors general Israelite mourning-ritual context, the same source reused for claim-dress and claim-seven-day-fast). The "fasted until evening" detail (1:12) is folded into this claim rather than opened as a separate one; it is also the textual anchor for this scene’s dusk lighting arc (see claim-lament-evening).',
+      'Torn garments and dust/ashes on the head recur across the Hebrew Bible and the wider ANE as conventional mourning gestures (comparative-ane corroboration; king-stager-2001 anchors general Israelite mourning-ritual context, the same source reused for claim-dress and claim-seven-day-fast). The "fasted until evening" detail (1:12) is folded into this claim rather than opened as a separate one; it is also the textual anchor for this scene’s dusk lighting arc (see claim-lament-evening). Queue #20c (2026-08-11 researcher pass, prompted by claim-abner-funeral/claim-feast-form): re-checked king-stager-2001 for this claim; its death/afterlife chapter’s general coverage of communal mourning performance (professional mourners, weeping, conventional mourning spans) is consistent with and further corroborates the general-convention framing already used here — no basis/confidence change, since this remains general comparative-ane background rather than a page-verified citation of the specific gestures 1:2/1:11-12 narrate.',
   },
   {
     id: 'claim-song-of-the-bow',
@@ -1056,9 +1056,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The narrative places in Ish-bosheth’s mouth an accusation that Abner went in to Rizpah, Saul’s concubine, and reports Abner’s indignant reply and his oath to transfer the kingdom from the house of Saul to David, "from Dan to Beersheba" (2 Samuel 3:6–11); the text does not state whether the accusation was true.',
     basis: 'biblical-text',
     confidence: 'high',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'keil-delitzsch-1866'],
     notes:
-      'Narrated-not-adjudicated discipline, carried exactly as hebron-covenant’s brief requires: the accusation is what Ish-bosheth says, not a fact the narrative confirms, and Abner’s reply is indignation, not a denial or confession that resolves the question either way. The political meaning of taking a king’s concubine (a claim on the throne) is commonly noted by commentators, hedged here without a named citation until a researcher pass attaches one (e.g. McCarter, flagged docs/next-run.md) — mccarter-1984-ii-samuel’s current source-card coverage does not yet extend to 2 Samuel 3. Delivered as a context card only (b-break); no Rizpah geometry, Mahanaim geometry, or visualization of the accusation appears anywhere in this scene. `rizpah` gets a light, referenced-only character entry.',
+      'Narrated-not-adjudicated discipline, carried exactly as hebron-covenant’s brief requires: the accusation is what Ish-bosheth says, not a fact the narrative confirms, and Abner’s reply is indignation, not a denial or confession that resolves the question either way. The political meaning of taking a king’s concubine (a claim on the throne) is now named and checkable (queue #20a, 2026-08-11 researcher pass): Keil & Delitzsch’s commentary (source card keil-delitzsch-1866, coverage extended from 1 Samuel 31/2 Samuel 1 to 2 Samuel 3-4 in this pass) reads the accusation against the wider ancient Near Eastern custom that "it was the exclusive right of the successor to the throne to cohabit with the concubine of the deceased king" — i.e., true or not, Ish-bosheth’s accusation reads Abner’s act as an assertion of a claim to the throne itself, which is the same political stake this claim’s statement already carries without naming a source for it. Delivered as a context card only (b-break); no Rizpah geometry, Mahanaim geometry, or visualization of the accusation appears anywhere in this scene. `rizpah` gets a light, referenced-only character entry.',
   },
   {
     id: 'claim-abner-overture',
@@ -1088,7 +1088,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'speculative',
     sourceIds: ['esv-bible'],
     notes:
-      'Hebron’s own town form stays the released design-placeholder claim-hebron-town-form established at hebron-anointing ("a modest highland hill town") — inventing banquet-hall architecture now would silently upgrade it, which this scene deliberately avoids (brief’s Resolved design calls). king-stager-2001’s summary covers general Israelite food production and household material culture, but no page-level feasting/hospitality-ritual content specific to this claim has been page-verified in this build pass (no outbound source access in this sandbox) — the upgrade path to comparative-ane stays open for a future researcher pass, per docs/next-run.md, not claimed here. The seated posture rendered for the crowd is a rigid-body squash-and-lower transform on the existing ADR-010 rig (new asset-feast-props for the mats/vessels themselves), not a modeled sitting pose.',
+      'Hebron’s own town form stays the released design-placeholder claim-hebron-town-form established at hebron-anointing ("a modest highland hill town") — inventing banquet-hall architecture now would silently upgrade it, which this scene deliberately avoids (brief’s Resolved design calls). Queue #20c (2026-08-11 researcher pass): checked king-stager-2001 specifically for diplomatic/political feast-hosting material culture (hall vs. courtyard architecture, seating, vessels). Finding: the book’s "meals" content sits within its household/family chapter, covering ordinary household food production and consumption rather than state or covenant-meal hosting protocol; a separate chapter section on "The Marzeah" (a funerary/commemorative feasting institution, per independent chapter-level summaries) is adjacent but not on point either, since 3:20’s feast is diplomatic, not funerary. No page-level citation was found — this repeats, for this claim, the exact "checked and doesn’t cover it" outcome this same source card already recorded for claim-anointing-rite-form at M4. Basis/confidence stay design-placeholder/speculative; king-stager-2001 is deliberately not added to sourceIds, since it would misrepresent a checked-and-declined source as a supporting citation. The seated posture rendered for the crowd is a rigid-body squash-and-lower transform on the existing ADR-010 rig (new asset-feast-props for the mats/vessels themselves), not a modeled sitting pose.',
   },
   {
     id: 'claim-covenant-cast-scale',
@@ -1129,17 +1129,15 @@ export const CLAIMS: ReconstructionClaim[] = [
       {
         id: 'view-abner-killing-rival-elimination',
         label: 'Political rival-elimination',
-        proponents: [
-          'e.g., scholars following the Anchor Bible/critical-commentary tradition on 2 Samuel',
-        ],
+        proponents: ['Matthew Henry, Commentary on the Whole Bible (ad loc. 2 Samuel 3:22-30)'],
         summary:
-          'A widely held scholarly reading treats Abner — Israel’s ablest military commander, and Joab’s obvious rival for command of any united army under David — as removed for reasons of power as much as (or instead of) grief; the text itself never states this motive, leaving it as an inference from Abner’s position and timing rather than a narrated fact.',
+          'A widely held reading treats Abner — Israel’s ablest military commander, and Joab’s obvious rival for command of any united army under David — as removed for reasons of power as much as (or instead of) grief; the text itself never states this motive, leaving it as an inference from Abner’s position and timing rather than a narrated fact. Henry’s commentary reads Joab’s stated blood-vengeance motive (3:27b, 30) as real but not exhaustive: had Abner been received into David’s service, he might have been preferred above Joab as commander, and Joab, in Henry’s words, "could better bear the guilt of blood than the thoughts of a rival."',
         confidence: 'moderate',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['esv-bible', 'henry-commentary-1710'],
       },
     ],
     notes:
-      'The milestone’s most important claim (M5, hebron-gate). Per the brief: what the captions may assert as fact is what the text asserts — the recall, the aside, the strike, the stated Asahel connection, and David’s verdict as David’s verdict; the motive question stays open here as scholarlyViews rather than a single adjudicated answer, and neither Joab nor Abner is editorialized into a simple villain or a simple avenger (the same discipline claim-asahel-death already applies to Abner’s own killing of Asahel). Named proponent attribution for the rival-elimination reading is hedged ("e.g., scholars following...") because no researcher pass has yet attached a specific, page-verified citation to 2 Samuel 3 — mccarter-1984-ii-samuel’s current source-card coverage is scoped to 2 Samuel 1 only. Cross-references claim-asahel-death (gibeon-pool): that claim is this killing’s own stated motive, and the two scenes link both ways — gibeon-pool is where Asahel dies, hebron-gate is where his death is avenged (or used as pretext). ADR-009’s named-character-killing template (documentary distance, no wound/blood geometry in any mode, the drawing-aside itself as the one specific non-graphic detail shown as gesture) governs how this claim is staged; see src/scenes/hebron-gate/poses.ts.',
+      'The milestone’s most important claim (M5, hebron-gate). Per the brief: what the captions may assert as fact is what the text asserts — the recall, the aside, the strike, the stated Asahel connection, and David’s verdict as David’s verdict; the motive question stays open here as scholarlyViews rather than a single adjudicated answer, and neither Joab nor Abner is editorialized into a simple villain or a simple avenger (the same discipline claim-asahel-death already applies to Abner’s own killing of Asahel). Named proponent attribution for the rival-elimination reading (queue #20a, 2026-08-11 researcher pass) is Matthew Henry’s public-domain commentary (new source card henry-commentary-1710), found via secondary/web-search cross-corroboration rather than primary-copy inspection — mccarter-1984-ii-samuel’s source-card coverage was extended to 2 Samuel 3-4 in the same pass, but a specific McCarter quotation naming this motive could not be page-verified, so the project cites the source it could actually verify rather than forcing an unconfirmed McCarter attribution here (see that card’s confidenceNotes). Cross-references claim-asahel-death (gibeon-pool): that claim is this killing’s own stated motive, and the two scenes link both ways — gibeon-pool is where Asahel dies, hebron-gate is where his death is avenged (or used as pretext). ADR-009’s named-character-killing template (documentary distance, no wound/blood geometry in any mode, the drawing-aside itself as the one specific non-graphic detail shown as gesture) governs how this claim is staged; see src/scenes/hebron-gate/poses.ts.',
   },
   {
     id: 'claim-david-disavowal',
@@ -1157,9 +1155,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The narrative states that David commanded Joab and all the people with him to tear their clothes, put on sackcloth, and mourn before Abner; that Joab did so; that David himself walked behind the bier to Hebron, where Abner was buried; that the king wept aloud at the grave and all the people wept with him; and that David then swore to taste no food until sundown (2 Samuel 3:31–35).',
     basis: 'biblical-text',
     confidence: 'high',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'king-stager-2001'],
     notes:
-      'The funeral is staged as this scene’s gravitational center, not an epilogue (the brief: the text spends more verses on the mourning than the murder). Joab tearing his own clothes and mourning before his victim’s bier is staged exactly as narrated, without caption commentary on his interior state, which the text does not supply. Funeral props follow the text’s own list and nothing more: torn clothes, sackcloth, a bier (a wrapped, anatomically unresolved form per buildWrappedFormGeometry, the ADR-009 funerary standard — see claim-abner-tomb-form for the grave itself), weeping, and the fast. The sundown fast is this scene’s one text-fixed lighting cue (3:35), used the same way gibeon-pool used 2:24’s sundown.',
+      'The funeral is staged as this scene’s gravitational center, not an epilogue (the brief: the text spends more verses on the mourning than the murder). Joab tearing his own clothes and mourning before his victim’s bier is staged exactly as narrated, without caption commentary on his interior state, which the text does not supply. Funeral props follow the text’s own list and nothing more: torn clothes, sackcloth, a bier (a wrapped, anatomically unresolved form per buildWrappedFormGeometry, the ADR-009 funerary standard — see claim-abner-tomb-form for the grave itself), weeping, and the fast. The sundown fast is this scene’s one text-fixed lighting cue (3:35), used the same way gibeon-pool used 2:24’s sundown. Queue #20c (2026-08-11 researcher pass): king-stager-2001 added to sourceIds on the strength of its death/afterlife chapter’s general coverage of Israelite communal mourning performance (professional mourners/keening, public weeping, conventional mourning spans) as comparative-ANE background for this claim’s mourning framing — this corroborates the general convention, not the specific staged sequence (bier form, walking behind the bier to Hebron), which stays sourced to the text itself and to design-placeholder choices tracked separately (claim-abner-tomb-form).',
   },
   {
     id: 'claim-public-response',
@@ -1173,12 +1171,12 @@ export const CLAIMS: ReconstructionClaim[] = [
         id: 'view-public-response-apologia',
         label: 'Davidic apologia',
         proponents: [
-          'e.g., scholars following the "apology of David" reading (McCarter and others)',
+          'P. Kyle McCarter Jr., "The Apology of David," Journal of Biblical Literature 99/4 (1980): 489-504',
         ],
         summary:
-          'Reads 3:26b ("but David did not know it"), the curse, the commanded public mourning, the lament, the fast, and this verse’s explicit insistence together as one of the clearest examples of a narrative visibly concerned to clear David of a politically convenient death — the pattern often called the "apology of David" in modern scholarship.',
+          'Reads 3:26b ("but David did not know it"), the curse, the commanded public mourning, the lament, the fast, and this verse’s explicit insistence together as one of the clearest examples of a narrative visibly concerned to clear David of a politically convenient death — the pattern McCarter’s own article names and argues for at length as "the apology of David," reading the whole "History of David’s Rise" (roughly 1 Samuel 16 through 2 Samuel 5) as answering specific charges against David’s legitimacy, including complicity in Abner’s death.',
         confidence: 'moderate',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['esv-bible', 'mccarter-1980-apology-of-david'],
       },
       {
         id: 'view-public-response-plain-report',
@@ -1190,17 +1188,17 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'The scene stages what the text narrates (David’s mourning, the people’s resulting perception); the dispute about why the text narrates it so emphatically lives here, in the claim layer, per the brief’s "never-fake-consensus rule" — the beat caption itself states the people’s conclusion as the narrative’s own insistence, not as this app’s adjudicated historical fact. Named attribution for the apologia reading requires mccarter-1984-ii-samuel’s coverage to be extended to 2 Samuel 3 by a future researcher pass (its current source-card scope is 2 Samuel 1 only) — hedged with "e.g." until then, per docs/next-run.md’s standing convention for this exact situation (see also claim-abner-break, claim-abner-killing).',
+      'The scene stages what the text narrates (David’s mourning, the people’s resulting perception); the dispute about why the text narrates it so emphatically lives here, in the claim layer, per the brief’s "never-fake-consensus rule" — the beat caption itself states the people’s conclusion as the narrative’s own insistence, not as this app’s adjudicated historical fact. Named attribution for the apologia reading (queue #20a, 2026-08-11 researcher pass) is McCarter’s own 1980 JBL article, which coined the "apology of David" term this scholarlyView’s label uses — a new source card, mccarter-1980-apology-of-david, cites it directly rather than hedging with "e.g." mccarter-1984-ii-samuel’s source-card coverage was also extended to 2 Samuel 3-4 in the same pass and corroborates that his commentary treats this chapter within the same apologetic framework (see also claim-abner-break, claim-abner-killing, both closed via other named sources in the same pass since a McCarter-specific quotation could not be page-verified for those narrower points).',
   },
   {
     id: 'claim-hebron-gate-form',
     statement:
       'The scene renders "the midst of the gate" (3:27) as a modest, two-chamber gate passage built on hebron-anointing’s own gate-post line — no wall plan, chamber count, or gate-tower form is asserted as excavated at Tell Rumeida.',
-    basis: 'design-placeholder',
-    confidence: 'speculative',
-    sourceIds: ['esv-bible'],
+    basis: 'comparative-ane',
+    confidence: 'low',
+    sourceIds: ['esv-bible', 'herzog-1997'],
     notes:
-      'Tell Rumeida’s 11th–10th century BCE town form stays the permanently thin, citably-confirmed gap established at claim-hebron-town-form (queue #19c) — no gate is attested there specifically. This claim deliberately renders a modest two-chamber gateway rather than a monumental six-chamber Solomonic-type gate, which would both overclaim for Hebron and risk an anachronism for the period (the six-chamber gate type is best attested at sites like Gezer/Hazor/Megiddo in later Iron IIA/IIB royal-building contexts). Upgradeable to comparative-ane (a generic early Iron II chambered-gate typology) only if a future researcher pass extends herzog-1997’s urban-form monograph — which covers gate types generally but has not yet been checked specifically against this claim — with a checkable citation; not claimed here.',
+      'Tell Rumeida’s 11th–10th century BCE town form stays the permanently thin, citably-confirmed gap established at claim-hebron-town-form (queue #19c) — no gate of any period is excavated there specifically, so this claim’s basis is regional-typological inference, not site-specific evidence. Queue #20b (2026-08-11 researcher pass): checked herzog-1997’s urban-form monograph specifically for a citable early Iron II gate-chamber typology, and found one — a regional chronology (cross-site synthesis, secondary-corroborated citation "Herzog 1997: 287-91") showing two-chamber gates as the prevalent Israelite/Levantine gate form in the 11th and early 10th centuries BCE, before four- and six-chamber gates become common from the mid-10th century BCE onward. This is the basis for moving this claim from design-placeholder to comparative-ane (basis moved, confidence set to low rather than moderate/high because the typology is a cross-site regional synthesis applied to a site with zero excavated gate evidence of its own, not a confirmed Hebron-specific fact) — herzog-1997 now added to sourceIds. The rendered geometry itself is unchanged either way: a modest two-chamber gateway rather than a monumental six-chamber Solomonic-type gate, which the typology above now affirmatively supports as the period-appropriate choice for an early Iron IIA highland town like Hebron circa 2 Samuel 3, rather than merely avoiding an anachronism by default as this claim previously framed it.',
   },
   {
     id: 'claim-abner-tomb-form',
@@ -1233,22 +1231,28 @@ export const CLAIMS: ReconstructionClaim[] = [
       {
         id: 'view-assassination-entry-mt',
         label: 'Masoretic text: entering as if to fetch wheat',
+        proponents: [
+          'Keil & Delitzsch, Biblical Commentary on the Books of Samuel (ad loc. 2 Samuel 4:6)',
+        ],
         summary:
-          'The Hebrew text of 4:6, widely regarded by commentators as textually difficult at this exact point, reads the two captains entering the interior of the house as though they were coming to take wheat.',
+          'The Hebrew text of 4:6, widely regarded by commentators as textually difficult at this exact point, reads the two captains entering the interior of the house as though they were coming to take wheat. Keil & Delitzsch read this Masoretic wording as the base text and the Septuagint’s fuller account (below) as a later explanatory paraphrase built on it, not as an independently more original reading.',
         confidence: 'low',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['esv-bible', 'keil-delitzsch-1866'],
       },
       {
         id: 'view-assassination-entry-lxx',
         label: 'Septuagint: a drowsy doorkeeper',
+        proponents: [
+          'Reported and translated (though not preferred) by Keil & Delitzsch, ad loc. 2 Samuel 4:6',
+        ],
         summary:
-          'The Greek text instead describes a woman doorkeeper who had been cleaning/sifting wheat and grew drowsy and slept, letting Rechab and Baanah slip past her into the house — a different, fuller account of the same moment rather than a mere translation variant.',
+          'The Greek text instead describes a woman doorkeeper who had been cleaning/sifting wheat and grew drowsy and slept, letting Rechab and Baanah slip past her into the house — a different, fuller account of the same moment rather than a mere translation variant. Keil & Delitzsch quote and translate this reading directly, while arguing it is the Greek translator’s own explanatory expansion of the Hebrew rather than a separately original account — the dispute is surfaced honestly here without adopting Keil’s own preference for the MT as this project’s verdict.',
         confidence: 'low',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['esv-bible', 'keil-delitzsch-1866'],
       },
     ],
     notes:
-      'The murder itself (4:5–7) is rendered as cards only in hebron-reckoning: Mahanaim is disputed and never built (the standing rule since gibeon-pool), so no geometry stages the noon entry, the killing, the beheading, or the night flight — the events are narrated by caption text alone, at the same register the project uses for anything at an unbuildable site. The 4:6 MT/LXX divergence above is a genuine textual-critical dispute, not a harmonization problem, and both readings are surfaced honestly rather than adjudicated; named scholarly attribution (e.g., extending mccarter-1984-ii-samuel, whose current source-card coverage is scoped to 2 Samuel 1 only) awaits a future researcher pass, per the standing convention already used at claim-abner-break/claim-abner-killing/claim-public-response. The Mephibosheth parenthesis (4:4) is carried here exactly where the text places it, as a card with no staging and no forward pointer to 2 Samuel 9 — his summary in the character record stays confined to what this verse says. Ish-bosheth is never rendered as a figure anywhere in this project (referenced-only, per gibeon-pool’s own precedent); his death and beheading are narrated facts, and the beheading itself falls in the same "no anatomy, ever" bar as the rest of this claim’s violent content — see claim-david-judgment for how the head is (and is not) rendered once it reaches Hebron.',
+      'The murder itself (4:5–7) is rendered as cards only in hebron-reckoning: Mahanaim is disputed and never built (the standing rule since gibeon-pool), so no geometry stages the noon entry, the killing, the beheading, or the night flight — the events are narrated by caption text alone, at the same register the project uses for anything at an unbuildable site. The 4:6 MT/LXX divergence above is a genuine textual-critical dispute, not a harmonization problem, and both readings are surfaced honestly rather than adjudicated; named scholarly attribution (queue #20a, 2026-08-11 researcher pass) is Keil & Delitzsch’s commentary (source card keil-delitzsch-1866, coverage extended from 1 Samuel 31/2 Samuel 1 to 2 Samuel 3-4 in this pass), which quotes and discusses both readings directly, found via secondary/web-search cross-corroboration rather than primary-copy inspection. mccarter-1984-ii-samuel’s source-card coverage was extended to 2 Samuel 3-4 in the same pass, but a specific McCarter textual-note quotation on 4:6 could not be page-verified, so this claim cites the source that could actually be verified. The Mephibosheth parenthesis (4:4) is carried here exactly where the text places it, as a card with no staging and no forward pointer to 2 Samuel 9 — his summary in the character record stays confined to what this verse says. Ish-bosheth is never rendered as a figure anywhere in this project (referenced-only, per gibeon-pool’s own precedent); his death and beheading are narrated facts, and the beheading itself falls in the same "no anatomy, ever" bar as the rest of this claim’s violent content — see claim-david-judgment for how the head is (and is not) rendered once it reaches Hebron.',
   },
   {
     id: 'claim-david-judgment',
@@ -1266,9 +1270,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The pool of Hebron (2 Samuel 4:12) is rendered as a shallow, flat-floored basin depression with a flat, unlit water plane — a modest, disclosed placeholder for a landmark the text names but whose physical form and location do not survive in any usable way.',
     basis: 'design-placeholder',
     confidence: 'speculative',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'ofer-1993-hebron-neaehl', 'eisenberg-ben-shlomo-2017-tel-hevron'],
     notes:
-      'The pool’s existence as a named Hebron landmark is high-confidence biblical text (4:12b); its form and placement are not — modeled on claim-gibeon-pool-form/claim-gibeon-terrain-form’s split, folded into a single claim here since (unlike Gibeon) no excavated candidate pool is adopted at all. The extant Birket es-Sultan pool in modern Hebron is deliberately not adopted as this pool’s site or form: it is a much later installation, and treating it as corroboration would dress an anachronism as reconstruction. No reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh/gibeon-pool. If a future researcher pass finds a citable published treatment of Iron Age water installations specifically at Hebron/Tell Rumeida, this claim’s form/placement half can be revisited; none is known currently.',
+      'The pool’s existence as a named Hebron landmark is high-confidence biblical text (4:12b); its form and placement are not — modeled on claim-gibeon-pool-form/claim-gibeon-terrain-form’s split, folded into a single claim here since (unlike Gibeon) no excavated candidate pool is adopted at all. The extant Birket es-Sultan pool in modern Hebron is deliberately not adopted as this pool’s site or form: it is a much later medieval/Ottoman-period installation, and treating it as corroboration would dress an anachronism as reconstruction. Queue #20d (2026-08-11 researcher pass): checked the same Tell Rumeida excavation literature already cited at claim-hebron-town-form (ofer-1993-hebron-neaehl; eisenberg-ben-shlomo-2017-tel-hevron, the 2014-season final report, which does document cisterns and water channels at the site) specifically for an Iron Age water installation. Finding: the site’s published water features are either undated with Iron Age precision or belong to later periods — a published ritual-bath/mikveh complex is Second Temple-era, and the excavation literature’s water-system discussion otherwise centers on Roman/Byzantine-period industrial installations and later cisterns, not an Iron Age pool. This is the same "permanently thin" evidentiary state already reached for claim-hebron-town-form (queue #19c) and for claim-gibeon-pool-form’s now-resolved form half (queue #19d) before that dating question closed affirmatively — here the underlying evidence itself, not just the dating, stays thin: no Iron Age water installation of any kind is published at Tell Rumeida. Both excavation sources are added to sourceIds to reflect that this gap is now citably confirmed rather than merely unchecked, matching the beth-shan-wall/hebron-town-form precedent where citation strengthens a disclosed gap without closing it with a positive attribution. No reflection/refraction water shader, matching the declined-water-shader precedent from Gilboa/Jabesh/gibeon-pool. Basis/confidence stay design-placeholder/speculative.',
   },
   {
     id: 'claim-reckoning-cast-scale',
