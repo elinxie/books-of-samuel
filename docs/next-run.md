@@ -3,7 +3,47 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-11, M5 RELEASED — queue #20 closed, cascade flipped, branch `claude/focused-mccarthy-i6i77o`)
+
+**M5 is released.** Queue #20's five citation gates (McCarter/Henry/Keil &
+Delitzsch attributions; Herzog gate-typology upgrade; feast-form honestly
+kept design-placeholder; Hebron pool closed "permanently thin"; live ESV
+wording check, no errors found) were closed by a Sonnet `researcher` pass
+this session, then a `fable-architect` pass ruled the closures sufficient
+and executed the M3/M4-style cascade: `hebron-covenant`/`hebron-gate`/
+`hebron-reckoning`, `2sam-3`/`2sam-4` → `released`; `f-2sam-3-4` → `done`;
+`M5` → `released`. Commit `60027e7`, pushed to
+`claude/focused-mccarthy-i6i77o` (no PR opened yet — do that first if not
+already done). Full gate was green after the researcher pass (format, lint,
+typecheck, 484 vitest, build, 12/12 e2e); **re-confirm the gate one more
+time after the fable-architect pass's own edits** (it was still running —
+possibly re-running verify and updating `docs/progress.md`'s M5 close-out
+paragraph — when this session had to checkpoint on a critical context
+warning). Check `git log` / `docs/fable-review-queue.md`'s #20 entry for a
+"flip executed" follow-up note before assuming this is fully wrapped.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Confirm the fable-architect pass finished cleanly** — re-run
+   `npm run verify` (or the individual gate commands), check
+   `docs/progress.md`'s M5 section got its close-out paragraph, and open/
+   update the draft PR for `claude/focused-mccarthy-i6i77o` if not already
+   done.
+2. M6 (2 Samuel 5 — all-Israel anointing, Jerusalem) needs a Fable/
+   world-director scene-direction pass before any build work, same pattern
+   as every prior milestone. Genuinely new scope (first scene not at
+   Hebron since M3). Do not start M6 build work without briefs.
+3. Non-blocking, worth a look before M6: `performance-reviewer` pass on
+   `hebron-gate`'s ~79-figure `MourningAssembly` was ruled non-blocking at
+   the M5 sign-off (cleared, not carried) — no action needed.
+4. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — see Environment
+   notes below, unchanged.
+5. Housekeeping (low priority, non-blocking): five stale draft PRs (#50-54)
+   on GitHub duplicate work already merged via PR #55 — safe to close as
+   cleanup whenever convenient.
+
+## State before this slice (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
 
 **The M5 sign-off review is done.** It ran on **Opus standing in for Fable**
 at the user's explicit direction, Fable's monthly spend limit still being
