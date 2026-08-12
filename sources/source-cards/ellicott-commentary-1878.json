@@ -1,0 +1,15 @@
+{
+  "id": "ellicott-commentary-1878",
+  "title": "Ellicott's Commentary for English Readers",
+  "author": "Charles John Ellicott (ed.)",
+  "publisher": "Cassell and Company, London",
+  "datePublished": "1878-1879",
+  "dateAccessed": "2026-08-12",
+  "sourceType": "reference",
+  "copyrightStatus": "public-domain",
+  "allowedUseNotes": "Public-domain 19th-century commentary (published 1878-1879, long pre-1928, editor died 1905). May be cited, quoted in short excerpt, or paraphrased freely with attribution; no full-chapter reproduction needed per this project's own tighter internal policy regardless.",
+  "summary": "A Victorian-era verse-by-verse commentary for a general English readership, edited by Charles John Ellicott (Bishop of Gloucester and Bristol) with contributions from multiple named clergy-scholars of the period. On 2 Samuel 3:7, the commentary reads Ish-bosheth's accusation against Abner (going in to Rizpah, Saul's concubine) through the ancient Near Eastern convention that a king's harem was considered the property of his successor, so that taking a woman from it functioned as an assertion of a claim to the throne — a reading the commentary cross-references against the same convention elsewhere in the David narrative (2 Samuel 12:8, 16:21-22; 1 Kings 2:13-25). The commentary also notes, on the same verse, that the accusation's political weight does not itself establish that Abner intended such a claim, since he was at the time actively working to maintain Ish-bosheth on the throne rather than to displace him — a caution consistent with this project's own narrated-not-adjudicated framing of claim-abner-break, that the text does not itself confirm whether the accusation was true.",
+  "relevantPassages": ["2 Samuel 3"],
+  "extractedClaims": ["claim-abner-break"],
+  "confidenceNotes": "Content verified via web-search cross-checking multiple independent digital reproductions of this public-domain text (commentary-aggregator mirrors, including kingjamesbibleonline.org and studylight.org copies of Ellicott's Commentary on 2 Samuel 3), not by direct page-by-page inspection of an original 1878-1879 print volume. TO VERIFY: exact original volume/page citation, and which named contributor within the multi-author Ellicott commentary wrote the Samuel volume specifically (Ellicott himself is the general editor; individual OT volumes were typically written by other named contributors, not always specified in secondary mirrors)."
+}
