@@ -1664,3 +1664,24 @@ itself was done by a **Fable release pass** both prior times, not a bare
 Sonnet confirmation, even after Sonnet closed the citation gates feeding it
 — so this is handed to `fable-architect` next in this same session rather
 than flipped directly.
+
+**2026-08-12 — Fable — M5 release pass: queue #20 closures confirmed, M5
+released**
+Confirmation pass per the M3 (2026-07-19)/M4 (2026-08-02) release-pass form.
+Spot-checked the queue-#20 claim edits directly in `claims.ts` (not just the
+queue row): apologia view cites McCarter 1980 by name; rival-elimination view
+cites McKenzie/Halpern rather than forcing McCarter onto an unfound
+statement; `claim-hebron-gate-form`/`claim-feast-form` land at
+`comparative-ane`/`low` with regional-not-site-specific limits disclosed and
+renderings unchanged (no forced upgrades); the two "checked, permanently
+thin" closures (Hebron pool, 4:6 attribution) are genuine negative findings
+per the #13/#19c standard. Ruling: sufficient for release. Cascade executed:
+`hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`;
+`2sam-3`/`2sam-4` → `released`; `f-2sam-3-4` → `done`; `M5` → `released`.
+`hebron` location unchanged (already `released` from M4, comment already
+covers per-scene independence). Status-flip note added to
+`docs/fable-review-queue.md`; `docs/next-run.md` top block updated (next:
+carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
+check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
+re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
+(push + PR #57 update left to the orchestrating session).

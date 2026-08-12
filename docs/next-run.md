@@ -3,7 +3,39 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+
+**M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
+#20's closures as sufficient (spot-checked in `claims.ts`, not just from the
+queue row: no forced basis/confidence upgrades — `claim-hebron-gate-form`/
+`claim-feast-form` land at `comparative-ane`/`low` with the
+regional-not-site-specific limit disclosed, renderings unchanged; the two
+"checked, permanently thin" closures are genuine negative findings per the
+#13/#19c standard; all five ESV quoted spans live-verified) and executed the
+cascade per M3/M4 precedent: `hebron-covenant`/`hebron-gate`/
+`hebron-reckoning` → `released`; `2sam-3`/`2sam-4` → `released`;
+`f-2sam-3-4` → `done`; `M5` → `released`. `hebron` location unchanged
+(already `released` from M4). Full reasoning in
+`docs/fable-review-queue.md`'s 2026-08-12 status-flip note and
+`docs/run-log.md`. Full verify gate green after the flips.
+
+**What's next (Sonnet), in priority order:**
+
+1. **(Top, still open, non-blocking to any release) Real-hardware perf
+   check** of `gilboa-battle` at high tier + the Pages-live check — both
+   still need a non-sandboxed environment; see Environment notes below,
+   unchanged. Carried forward from M3 onward; do not re-litigate, just do
+   them when an environment with real hardware/outbound access exists.
+2. **M6 (2 Samuel 5+) needs a Fable/world-director scope pass before any
+   build work** — same pattern as M3/M4/M5: no M6 milestone entry exists yet
+   in `src/data/milestones.ts` (M5's comment already notes "M6 starts at
+   2 Sam 5"); defining it is itself Fable-tier scope work. Do not start M6
+   scene geometry without briefs.
+3. Optional, non-gating: `TO VERIFY` pagination hedges on source cards if
+   primary copies become accessible; DEM refinement under ADR-012;
+   `f-overview-map`'s wider scope beyond the shipped `/atlas` overlay.
+
+## State before this slice (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
 
 **The M5 sign-off review is done.** It ran on **Opus standing in for Fable**
 at the user's explicit direction, Fable's monthly spend limit still being

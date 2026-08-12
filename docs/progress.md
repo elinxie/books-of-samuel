@@ -247,7 +247,7 @@ across all three briefs are filled (`amalekite-messenger`, `abner`,
 `ish-bosheth`, `joab`, `abishai`, `asahel`, `men-of-judah` + their claims).
 See `docs/run-log.md`'s 2026-07-22 entries for full detail.
 
-## Milestone 5 — 2 Samuel 3–4: **in-progress** (scoped + briefed 2026-08-03; all three scenes + the atlas phase built 2026-08-10; sign-off review 2026-08-10, approved as built, `released` gated on queue #20)
+## Milestone 5 — 2 Samuel 3–4: **released** (scoped + briefed 2026-08-03; all three scenes + the atlas phase built 2026-08-10; sign-off review 2026-08-10, approved as built; queue #20 closed 2026-08-12; Fable release pass 2026-08-12)
 
 Scope decision (Fable, 2026-08-03): chapters 3 and 4 bundled into one
 milestone, M4-style. Reasoning: 2 Sam 4 alone cannot sustain a milestone —
@@ -440,12 +440,15 @@ draw. New feature entry `f-2sam-3-4` (`in-progress`) was added — M5 had none,
 so its scene work was invisible on the Features page. Uncertainty-register
 rows #16/#17 added for M5's two genuine disputes.
 
-**Remaining M5 work before `released`:** queue **#20**'s five closable
-citation/verification items (McCarter extended to 2 Sam 3–4; Herzog gate
-typology; King & Stager feasting/mourning; Hebron water installations; a
-live-source ESV wording check for all five M5 quoted spans). Then the three
-scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4`, and M5 flip together per the M3/M4
-cascade. See `docs/next-run.md`'s current state block.
+**M5 released 2026-08-12 (Fable release pass):** queue #20's five
+citation/verification items + the ADR-003 automation rider all closed
+2026-08-12 (researcher pass on McCarter/Herzog/King & Stager; Hebron water
+installations closed "checked, permanently thin"; all five M5 quoted spans
+live-verified verbatim against ESV text). The Fable release pass spot-checked
+the claim edits (no forced upgrades; genuine dead-end closures) and executed
+the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
+`2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
+Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

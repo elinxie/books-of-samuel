@@ -1301,7 +1301,10 @@ export const SCENES: SceneDef[] = [
     // legibility choice — layout.ts states it is not a compass claim, and the
     // b-arrival caption says "from the direction of Israel and Benjamin"
     // rather than naming a bearing, which is the honest phrasing.
-    status: 'in-progress',
+    // 2026-08-12 Fable M5 release pass: queue #20 fully closed (feast-form
+    // citation landed via king-stager-2001; 3:21a ESV wording live-verified)
+    // — released per the M3/M4 cascade.
+    status: 'released',
     synopsis:
       "After a long civil war, Abner breaks with Ish-bosheth and brings the north's allegiance to David. He comes to Hebron with twenty men, is received and feasted, pledges to gather all Israel to a covenant with David — and is sent away in peace, the first of three times the text says so.",
     depictsDeath: false,
@@ -1452,7 +1455,12 @@ export const SCENES: SceneDef[] = [
     // approved — the bier is the wrapped-form + prop convention ADR-009 already
     // ratified, and a duplicate asset id would assert a distinction that
     // doesn't exist.
-    status: 'in-progress',
+    // 2026-08-12 Fable M5 release pass: queue #20 fully closed (McKenzie/
+    // Halpern named on the rival-elimination view, McCarter 1980 on the
+    // apologia view, herzog-1997 gate typology landed, king-stager-2001
+    // mourning corroboration, 3:33b-34a + 3:38 ESV wording live-verified)
+    // — released per the M3/M4 cascade.
+    status: 'released',
     synopsis:
       "Joab returns from a raid and protests David's reception of Abner. He recalls Abner under a false pretext and kills him alone inside the gate passage, for the blood of Asahel his brother — a killing the narrative insists David had no part in and did not want. David publicly disavows the act, curses Joab's own house, and commands citywide mourning: Joab himself tears his clothes and mourns before Abner's bier, and David walks behind it to the grave, laments, and fasts until sundown.",
     depictsDeath: true,
@@ -1649,7 +1657,11 @@ export const SCENES: SceneDef[] = [
     // gibeon-pool's reversed grip and hebron-gate's strike lean, because 4:12a
     // supplies no method) is ratified as the correct reading of ADR-009 for
     // any future killing the text narrates without method detail.
-    status: 'in-progress',
+    // 2026-08-12 Fable M5 release pass: queue #20 fully closed (4:6 MT/LXX
+    // attribution and the Hebron-pool check both closed "checked, permanently
+    // thin" per the #13/#19c standard; 4:10 fragment + 4:11a ESV wording
+    // live-verified) — released per the M3/M4 cascade.
+    status: 'released',
     synopsis:
       "Ish-bosheth's courage fails at the news of Abner's death; two of his own captains, Rechab and Baanah, murder him defenseless in his own house at noon, behead him, and carry the head to David at Hebron expecting reward — this scene's deliberate textual twin with ziklag-lament, where a man who merely claimed to have killed Saul met the same judgment. David answers by retelling that earlier execution, pronounces the two 'wicked men' who killed 'a righteous man in his own house on his bed,' has them executed and their bodies displayed beside the pool of Hebron (narrated, never rendered), and buries Ish-bosheth's head in the tomb of Abner — the house of Saul's last king, dead by murder and buried at Hebron, closing the chapter and the milestone.",
     depictsDeath: true,
