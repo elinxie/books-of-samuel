@@ -129,6 +129,69 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-13 SCOPE PASS — done by Sonnet under docs/model-handoff.md's
+    // documented Fable-unavailable fallback policy (fable-architect's first
+    // call this session hit the monthly spend limit, same recurring
+    // constraint as the 2026-07-22 M4 and 2026-08-10 M5 sessions).
+    // PROVISIONAL: needs a real Fable pass before any part of this scope is
+    // treated as final; tracked in docs/fable-review-queue.md.
+    //
+    // Scene-breakdown reasoning: 5:1-5 (all-Israel's covenant/anointing of
+    // David — his third, over the whole kingdom) happens at Hebron, already
+    // fully built across three M4/M5 scenes; five verses of assembly action
+    // is thinner even than hebron-covenant's M5 precedent and would
+    // duplicate hebron-covenant's/hebron-anointing's own visual argument
+    // (a gathered assembly ratifying David) for no new payoff — folded into
+    // an opening context card on the first M6 scene rather than a fourth
+    // Hebron scene. 5:13-16 (the wives/sons list) is likewise a context
+    // card, not a scene: no site-specific action, no violence. That leaves
+    // two genuine staged-action clusters, at two distinct sites: the
+    // capture of Jerusalem and the building of David's house (5:6-12,
+    // `jerusalem-capture` — the project's first wholly new major location
+    // since Beth-shan, and its most archaeologically contested one) and the
+    // two Philistine engagements (5:17-25, `rephaim-valley` — bundled into
+    // one scene rather than two: they share one broad geography, one brief
+    // span of narrated text, and one organizing idea, the contrast between
+    // the two divine-inquiry answers, that only reads clearly held
+    // together). Two scenes, not three or four. Plus an atlas extension:
+    // /atlas gains an M6 phase showing the united kingdom (Judah + the
+    // now-headless Israel-writ region from the M5 phase merge into one,
+    // unbordered region under one king) — the M5 phase's own AtlasPage.tsx
+    // lede already explicitly defers this exact question to 2 Samuel 5
+    // ("out of scope for this milestone" — see AtlasPage.test.tsx), so this
+    // extension resolves a forward pointer the app itself already made, not
+    // a new invention. No 4th 3D scene for the political-geography content,
+    // same reasoning as M4/M5's own atlas-overlay calls (ADR-011: a map can
+    // carry uncertainty a scene cannot).
+    //
+    // Jerusalem's own identification is NOT disputed (unlike Ziklag/
+    // Mahanaim) — what's genuinely, actively contested is the size and
+    // character of the 10th-century BCE settlement itself (the Eilat Mazar
+    // "Large Stone Structure"/"Palace of David" proposal vs. Finkelstein's
+    // minimalist critique vs. Cahill/Na'aman middle-ground readings). The
+    // brief explicitly forbids adopting Mazar's palace identification as
+    // settled fact and mandates a conservative, disclosed-as-such render —
+    // this is the single most load-bearing judgment call in this scope pass
+    // and the one most worth a real Fable re-review (see
+    // docs/fable-review-queue.md).
+    //
+    // Build order for Sonnet: `jerusalem-capture` first (new location,
+    // establishes the ridge terrain/palette `rephaim-valley` then reuses as
+    // an adjacent regional variant), then `rephaim-valley`, then the atlas
+    // extension.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All Israel anoints David king over the whole kingdom at Hebron (5:1–5) — carried as a context card, not a fourth Hebron scene',
+      'David and his men take Jerusalem from the Jebusites and build the City of David inward from the Millo (5:6–10) (`jerusalem-capture`)',
+      'Hiram of Tyre builds David a house; David perceives the LORD has established his kingdom (5:11–12) (`jerusalem-capture`); sons born to David in Jerusalem (5:13–16) carried as a context card',
+      'The Philistines are defeated at Baal-perazim and again in the Valley of Rephaim, on two different divine instructions (5:17–25) (`rephaim-valley`)',
+      'Atlas overlay extension: the united kingdom under one king — a `/atlas` M6 phase per ADR-011, not a 4th 3D scene',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

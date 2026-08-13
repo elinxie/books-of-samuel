@@ -450,6 +450,53 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
+## Milestone 6 — 2 Samuel 5: **planned** (scope pass 2026-08-13, PROVISIONAL — Sonnet fallback, Fable spend limit hit)
+
+**Scope decision (Sonnet, under `docs/model-handoff.md`'s Fable-unavailable
+fallback — not yet confirmed by a real Fable pass; see
+`docs/fable-review-queue.md`).** Two scenes, not three or four, plus an atlas
+extension:
+
+- 5:1–5 (all Israel's covenant/anointing of David — his third, over the whole
+  kingdom) is folded into an opening context card on the first M6 scene, not
+  staged as a fourth Hebron scene — Hebron is already built across three
+  M4/M5 scenes and five verses of assembly action would duplicate
+  `hebron-covenant`'s/`hebron-anointing`'s own visual argument.
+- `jerusalem-capture` (5:6–16) — David and his men take Jerusalem from the
+  Jebusites, build the City of David inward from the Millo, Hiram of Tyre
+  builds David's house; the sons-born list (5:13–16) closes the scene as a
+  context card. `depictsDeath: false` (the capture itself is narrated with
+  no combat detail). The project's first wholly new major location since
+  Beth-shan, and its most archaeologically contested: Jerusalem's site
+  identification is not disputed, but the size/character of the 10th-century
+  BCE settlement is a live scholarly fight (Eilat Mazar's "Large Stone
+  Structure"/"Palace of David" proposal vs. Finkelstein's minimalist
+  critique vs. Cahill/Na'aman middle-ground readings) — the brief explicitly
+  forbids adopting Mazar's palace identification as settled fact and mandates
+  a disclosed, conservative render. `docs/design/jerusalem-capture-brief.md`.
+- `rephaim-valley` (5:17–25) — both Philistine engagements (Baal-perazim and
+  the Valley of Rephaim) bundled into one scene: they share one geography, a
+  brief span of text, and one organizing idea (two different divine-inquiry
+  answers to two outwardly similar situations) that only reads clearly held
+  together. The project's first clean narrated military victory — held to
+  the same documentary, no-triumph restraint as every prior battle scene.
+  `docs/design/rephaim-valley-brief.md`.
+- Atlas extension: `/atlas` gains an M6 phase showing the united kingdom
+  (Judah + the now-headless Israel-writ region from M5 merge under one
+  king) — resolving a forward pointer the M5 phase's own lede already made
+  ("out of scope for this milestone" pending 2 Samuel 5). UI work per
+  ADR-011, not a 4th 3D scene.
+
+New `jerusalem`/`valley-of-rephaim` `LocationEntry` records added to
+`src/data/locations.ts` (identification not disputed for Jerusalem itself;
+`valley-of-rephaim` disputed only on Baal-perazim's precise site within it),
+both `status: 'planned'`, empty `sceneIds`/`claimIds` pending scene builds.
+Build order: `jerusalem-capture` → `rephaim-valley` → atlas extension. Full
+reasoning in `src/data/milestones.ts`'s M6 comment and
+`docs/run-log.md`'s 2026-08-13 entry. Flagged for a real Fable re-review in
+`docs/fable-review-queue.md`, particularly the Jerusalem settlement-extent
+judgment call.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

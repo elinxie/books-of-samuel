@@ -287,6 +287,73 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'planned',
   },
+  {
+    id: 'jerusalem',
+    name: 'Jerusalem',
+    altNames: ['City of David', 'Zion', 'Jebus'],
+    region: 'Judean highlands, the City of David ridge above the Kidron valley',
+    summary:
+      'The Jebusite stronghold David and his men take by force, making it his capital and building David’s house there with cedar and craftsmen from Hiram of Tyre (2 Samuel 5:6–12). Unlike Ziklag or Mahanaim, WHERE this site is has never been seriously in dispute — excavation on the City of David ridge has been continuous since the 19th century. What is genuinely, actively disputed is the SIZE and CHARACTER of the 10th-century BCE settlement itself: whether 2 Samuel 5’s Jerusalem was a substantial early capital (Eilat Mazar’s proposed “Large Stone Structure”/“Palace of David” and adjoining Stepped Stone Structure, read as monumental Davidic-era construction) or a small, thinly settled hill town later retrojected into a capital (Finkelstein’s minimalist critique; Margreet Steiner’s independent skepticism from the earlier Kenyon-era excavations), with middle-ground readings (Cahill’s pottery-based defense of an earlier Stepped Stone Structure date; Na’aman’s “cow town or royal capital” framing of a real but modest administrative center) also in play. This project does not adopt any one side — see `claim-jerusalem-10th-c-settlement` and `docs/design/jerusalem-capture-brief.md`.',
+    identification: {
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-jerusalem-city-of-david',
+          label: 'The City of David ridge (Ir David)',
+          summary:
+            'The narrow spur south of the later Temple Mount, above the Gihon spring; secured by unbroken toponymic continuity and more than a century of excavation (Warren, Weill, Kenyon, Shiloh, Eilat Mazar, and others). The site identification itself is not contested — only the extent/character of its Iron IIA occupation is (see summary).',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.7767, lon: 35.2345, confidence: 'high' },
+    // sceneIds stays empty until `jerusalem-capture` actually exists in
+    // scenes.ts (docs/design/jerusalem-capture-brief.md) — populated at
+    // scene-build time, per the hebron/gibeon precedent.
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
+  {
+    id: 'valley-of-rephaim',
+    name: 'Valley of Rephaim',
+    altNames: ['Emek Refaim', 'Baal-perazim (engagement site within/adjacent to the valley)'],
+    region: 'Southwest of Jerusalem, along the Bethlehem/Judean hill-country road',
+    summary:
+      'The broad valley where the Philistines twice mustered against the newly all-Israel-anointed David, and where he twice inquired of the LORD before striking them — the first time on a direct assurance (5:19–20, at Baal-perazim), the second on a specific tactical sign, the sound of marching in the treetops (5:22–25). The valley’s general location southwest of Jerusalem is well secured by toponymic continuity (the name survives in the modern Emek Refaim/German Colony district). Baal-perazim itself, the first engagement’s named site, has no independently fixed location beyond “within or adjacent to the Valley of Rephaim” — no specific hill or ruin is adopted here.',
+    identification: {
+      disputed: true,
+      views: [
+        {
+          id: 'loc-view-rephaim-valley',
+          label: 'The Valley of Rephaim (Emek Refaim / Wadi el-Werd)',
+          summary:
+            'Standard identification in historical-geography reference works, secured by direct toponymic survival southwest of the Old City along the Bethlehem road.',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+        {
+          id: 'loc-view-baal-perazim-site',
+          label: 'Baal-perazim (precise site within/adjacent to the valley)',
+          proponents: [
+            'e.g., discussed in general historical-geography surveys (specific proposals not yet page-verified)',
+          ],
+          summary:
+            'No excavated or independently confirmed site is adopted; conventionally placed within or at the edge of the Valley of Rephaim on the text’s own narrative proximity alone, not on independent toponymic or archaeological grounds.',
+          confidence: 'low',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.756, lon: 35.22, confidence: 'moderate' },
+    // sceneIds stays empty until `rephaim-valley` actually exists in
+    // scenes.ts (docs/design/rephaim-valley-brief.md) — populated at
+    // scene-build time, per the hebron/gibeon precedent.
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

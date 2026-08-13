@@ -1685,3 +1685,99 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-13 — Sonnet (Fable-unavailable fallback) — M6 (2 Samuel 5) scope
+pass + two world-director briefs, PROVISIONAL**
+
+`fable-architect`'s first call this session errored with the monthly spend
+limit (same recurring constraint as 2026-07-22/M4 and 2026-08-10/M5's
+sign-off attempt). Proceeded under `docs/model-handoff.md`'s documented
+fallback: implement the most defensible option, mark it provisional, keep
+moving, flag it for a real Fable pass.
+
+**Scope decided: two 3D scenes + an atlas extension, no third/fourth scene.**
+5:1–5 (all-Israel's covenant and third anointing of David, over the whole
+kingdom) is judged too thin for its own scene — five verses of assembly
+action at Hebron, a location already fully built across three M4/M5 scenes —
+and is folded into an opening context card on the first M6 scene instead of a
+fourth Hebron scene (extending the `hebron-covenant` precedent, which was
+already the thinnest M5 scene, one step further). 5:13–16 (the sons-born
+list) is likewise a context card, not a scene: no site, no action. That
+leaves two genuine staged clusters: `jerusalem-capture` (5:6–12, the capture
+and the house-building, plus the 5:13–16 card) and `rephaim-valley`
+(5:17–25, both Philistine engagements bundled into one scene — they share
+one geography, nine verses of text, and one organizing idea, the contrast
+between two different divine-inquiry answers, that only reads clearly held
+together; splitting them would duplicate terrain work for a second site the
+text itself treats as "the same place, again," 5:22). Plus an atlas M6 phase
+extension (not built this session, no separate brief file, same convention
+as M4/M5): `/atlas` gains a united-kingdom phase, resolving the exact forward
+pointer the M5 phase's own lede already made ("2 Samuel 5 ... out of scope
+for this milestone").
+
+**Jerusalem is the most archaeologically load-bearing site the project has
+scoped yet.** Unlike Ziklag/Mahanaim, the _site_ isn't disputed — the
+10th-century BCE _settlement's_ size and character is a genuinely live fight
+(Eilat Mazar's "Large Stone Structure"/"Palace of David" proposal vs.
+Finkelstein's minimalist critique vs. Cahill/Na'aman middle-ground readings).
+`docs/design/jerusalem-capture-brief.md` explicitly bars adopting Mazar's
+palace identification as settled fact anywhere (geometry, caption, or claim
+`statement`) and mandates a deliberately conservative, disclosed render, with
+the restraint rationale required in the claim's own `notes` — not a silent
+verdict for minimalism, a documented middle path pending citation. The
+"blind and lame" taunt (5:6b, 5:8b) is ruled caption-only, never visualized
+(no disabled figures, real or symbolic, in any form) given how textually
+obscure and disputed its content is. The Joab-up-the-water-shaft detail
+(1 Chron 11:6) and idol-burning (1 Chron 14:12) are both ruled out as staged
+or captioned fact — Chronicles-only additions, not 2 Samuel 5 content; may
+appear only as hedged cross-references in claim `notes`.
+
+`rephaim-valley` is the project's first _clean_ narrated military victory
+(Gilboa was a loss, Gibeon a civil war with losses on the "winning" side
+too) — ADR-011's no-distorting-win/loss-states constraint applies at full
+strength: no triumphal staging, no trophies, documentary tone held exactly
+as in every prior battle scene. `depictsDeath: true` (ADR-009 rout-level
+treatment, no named individual Philistine deaths — none are narrated);
+`jerusalem-capture` is `depictsDeath: false` (the capture itself has zero
+narrated combat detail, categorically different from every prior
+battle/killing scene).
+
+Two new `LocationEntry` records added to `src/data/locations.ts`:
+`jerusalem` (identification NOT disputed, high confidence, `rainey-notley-2006`;
+the settlement-extent dispute lives in a future claim's `scholarlyViews`, not
+in `identification`) and `valley-of-rephaim` (disputed only on Baal-perazim's
+precise site within/adjacent to the valley — the valley itself is high
+confidence via toponymic continuity). Both `status: 'planned'`, `sceneIds: []`
+(populated at scene-build time per the hebron/gibeon precedent — a first
+draft briefly pre-filled these and broke `integrity.test.ts`'s
+location-scene-resolution check; caught and fixed before commit, not shipped
+broken). New `M6` entry in `src/data/milestones.ts`, `status: 'planned'`,
+comment recording the full bundling reasoning and explicitly marking the
+pass as Sonnet-fallback/provisional. No `scenes.ts`/`claims.ts`/
+`characters.ts`/`passages.ts` changes this pass — per-brief "Required source
+basis" sections list the claims/characters each scene build will create, but
+creating them now would be build-time work, not scope work, per standing
+convention (mirrors how `hebron`'s `LocationEntry` existed with empty
+`sceneIds` before `hebron-anointing` was built).
+
+Verified before committing: `npm install` (missing `node_modules`),
+`npx tsc --noEmit` clean, `npx eslint` clean on both changed data files,
+`npx prettier --check`/`--write` on all four new/changed files (two briefs +
+`next-run.md` needed a pass — asterisk-italics normalized to underscore),
+`npx vitest run` full suite green (48 files, 484 tests, including
+`integrity.test.ts`'s location/scene/claim cross-reference checks). Did not
+run `npm run verify`'s build/e2e legs per this task's own instruction — a
+data-file-and-markdown-only diff, no scene code touched.
+
+Synced `docs/progress.md` (new M6 stub section), `docs/next-run.md` (new top
+state block), `docs/fable-review-queue.md` (new open item, mirroring #18's
+2026-07-22 M4-fallback form — see below). Did not touch
+`docs/uncertainty-register.md`: no claim exists yet to carry a register row
+against (claims are build-time), so the genuinely contested calls this pass
+made (Jerusalem settlement-extent framing, the "blind and lame" non-staging
+rule, the Chronicles-exclusion rulings) are recorded in the two briefs and
+the queue item instead, to be promoted to register rows when the
+corresponding claims are created at scene-build time.
+
+Committed on `claude/focused-mccarthy-h3vq3b`; pushed. No PR opened this
+session (left to the orchestrating session per the task instructions).

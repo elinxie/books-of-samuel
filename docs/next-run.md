@@ -3,7 +3,83 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-13, M6 SCOPED — PROVISIONAL, Sonnet fallback, branch `claude/focused-mccarthy-h3vq3b`)
+
+**M6 (2 Samuel 5) is scoped and briefed, but PROVISIONAL.** `fable-architect`'s
+first call this session hit the monthly spend limit (same recurring
+constraint as 2026-07-22/M4 and 2026-08-10/M5) — everything below was done by
+Sonnet under `docs/model-handoff.md`'s documented fallback policy and needs a
+real Fable pass before any of it is treated as settled creative direction.
+Flagged in `docs/fable-review-queue.md` (new item, mirroring #18's form).
+
+**Scope: two scenes + an atlas extension**, no 3rd/4th scene:
+
+1. 5:1–5 (all-Israel's covenant/third anointing of David) folded into an
+   opening context card, not a fourth Hebron scene — Hebron is already fully
+   built (M4/M5) and five verses of assembly action would duplicate
+   `hebron-covenant`'s/`hebron-anointing`'s own argument.
+2. `jerusalem-capture` (5:6–16, `depictsDeath: false`) — the capture, the
+   City of David/Millo building, Hiram's house, the sons-born list as a
+   closing context card. `docs/design/jerusalem-capture-brief.md`. The
+   project's first wholly new major location since Beth-shan and its most
+   archaeologically contested — the brief explicitly bars adopting Eilat
+   Mazar's "Large Stone Structure"/"Palace of David" identification as
+   settled fact and mandates a disclosed, deliberately conservative render
+   given the live maximalist/minimalist/middle-ground dispute over the
+   10th-century BCE settlement's size and character. Jerusalem's own site
+   _identification_ is not disputed (unlike Ziklag/Mahanaim) — only the
+   settlement's extent is.
+3. `rephaim-valley` (5:17–25, `depictsDeath: true`) — both Philistine
+   engagements (Baal-perazim + the Valley of Rephaim) bundled into one
+   scene: shared geography, brief text, one organizing idea (two different
+   divine-inquiry answers). The project's first clean narrated military
+   victory, held to the same no-triumph restraint as every prior battle
+   scene. `docs/design/rephaim-valley-brief.md`.
+4. Atlas extension (not yet built, no separate brief file — same convention
+   as M4/M5): `/atlas` gains an M6 phase showing the united kingdom (Judah +
+   the now-headless Israel-writ region from the M5 phase merge under one
+   king), resolving the forward pointer the M5 phase's own lede already made
+   ("2 Samuel 5 ... out of scope for this milestone" — see `AtlasPage.tsx`).
+
+New `jerusalem`/`valley-of-rephaim` `LocationEntry` records added to
+`src/data/locations.ts`, both `status: 'planned'`, `sceneIds: []`/
+`claimIds: []` (populated at scene-build time per the hebron/gibeon
+precedent — do not pre-fill). New `M6` entry in `src/data/milestones.ts`,
+`status: 'planned'`. No `scenes.ts`/`claims.ts`/`characters.ts`/`passages.ts`
+changes this pass — those are build-time work per each brief's "Required
+source basis" section, per standing convention. `npx tsc --noEmit`, lint, and
+the full `npm test` data-integrity suite (484 tests) all pass with these
+changes; full `npm run verify` (build/e2e) not run this slice per the task's
+own instruction (data/docs-only diff).
+
+**What's next, in priority order:**
+
+1. **A real Fable scope-confirmation pass** on this M6 package (scene
+   breakdown, both briefs, the two new location entries) before any Sonnet
+   build work starts — batch it, don't spend a partial Fable session. The
+   Jerusalem settlement-extent judgment call (bar on adopting Mazar's
+   "Palace of David" identification, the deliberately conservative render)
+   is the one most worth double-checking.
+2. If Fable remains unavailable and the project needs to keep moving: build
+   `jerusalem-capture` first (`threejs-engineer`, per its brief — establishes
+   the ridge terrain `rephaim-valley` then reuses as an adjacent regional
+   variant), then `rephaim-valley`, then the atlas M6 extension
+   (`ui-engineer`). Treat both scene builds as provisional-on-provisional
+   (the M4 2026-07-22 precedent) until the scope itself is confirmed.
+3. `researcher` pass on the candidate sources both M6 briefs name but don't
+   cite yet (none are confirmed as attached to any claim): Eilat Mazar's City
+   of David excavation reports, Finkelstein's Jerusalem-focused critiques,
+   Margreet Steiner's excavation-based skepticism, Jane Cahill's Stepped
+   Stone Structure dating defense, Nadav Na'aman's "cow town or royal
+   capital" framing, `rainey-notley-2006`'s treatment of Baal-perazim
+   specifically, and a Phoenician-trade source for the Hiram-alliance
+   `comparative-ane` upgrade path. Non-blocking to build, gates named
+   attribution before release, same pattern as every prior milestone.
+4. **(Carried forward, still open, non-blocking)** Real-hardware perf check
+   of `gilboa-battle` at high tier + the Pages-live check — see Environment
+   notes below, unchanged.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the
