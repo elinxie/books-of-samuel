@@ -1,7 +1,7 @@
 ---
 name: fable-architect
 description: Use for architecture decisions, data-model taxonomy changes, milestone scope calls, resolving conflicts between historical/archaeological/performance constraints, and final review of large milestones. Not for routine implementation.
-model: fable
+model: opus
 tools: Read, Grep, Glob, Write, Edit, Bash
 ---
 

@@ -4,6 +4,22 @@ This is the single most important doc for continuing this project across chats a
 models. Read this before starting work if you are not sure whether a task needs
 Fable.
 
+## Routing change (2026-08-13, user-directed): Fable-tier work now runs on Opus 5
+
+**As of 2026-08-13, `fable-architect` and `world-director` are routed to Opus 5
+(`model: opus` in `.claude/agents/*.md`), not the Fable model.** This is a
+standing policy change for the scheduled/looped continuation of this project,
+not a one-off fallback — it replaces the ad hoc per-session "Opus standing in
+for Fable" substitutions used earlier (2026-08-10 M5 sign-off) with a durable
+default. Everywhere below and elsewhere in this project's docs that says
+"Fable" or "Fable-tier," read it as **the senior/orchestrator judgment tier**,
+now executed by Opus 5 rather than the Fable model — the tier's
+responsibilities, checklist (`docs/fable-review-checklist.md`), and queue
+(`docs/fable-review-queue.md`) are unchanged, only the underlying model is
+different. If a future session is explicitly told to route this tier back to
+the Fable model, update this section and the two agent files accordingly
+rather than silently reverting.
+
 ## A note on how this doc was produced
 
 I (Sonnet 5) do not have any tool that reads your Claude account's Fable 5 usage
@@ -137,9 +153,10 @@ the subagent's conclusion and rules on it; it does not re-derive the work itself
 
 The agent roster already encodes this: every file in `.claude/agents/` declares a
 `model:` field, and all of them say `model: sonnet` except `fable-architect` and
-`world-director`, which say `model: fable`. Routing a task to a sonnet-model agent
-spends Sonnet budget, not Fable budget, even when the orchestrating session itself
-is Fable.
+`world-director`, which say `model: opus` (Fable-tier work, routed to Opus 5 as
+of the 2026-08-13 change above — historically `model: fable`). Routing a task to
+a sonnet-model agent spends Sonnet budget, not Fable-tier/Opus budget, even when
+the orchestrating session itself is running the Fable-tier role.
 
 The same rule runs the other way in Sonnet sessions: don't escalate upward for
 anything this doc already marks as Sonnet-tier — batch genuine Fable-tier
@@ -150,7 +167,7 @@ The same tiering applies to non-Claude implementation agents (e.g. Codex): see
 `AGENTS.md`'s "Your role tier" section, which places them at the
 implementation/execution tier, not the judgment tier.
 
-## How to continue if Fable usage runs out
+## How to continue if Fable-tier (Opus) usage runs out
 
 **If it happens mid-session, in a chat that's still open:** switch models in
 that same chat — `/model claude-sonnet-5` (or whatever model is available).
@@ -178,8 +195,9 @@ most the one in-progress item, not the whole session.
 ## Model commands
 
 ```bash
-# Baseline architecture / major review
-claude --model claude-fable-5
+# Baseline architecture / major review (Fable-tier work, routed to Opus 5
+# as of 2026-08-13 — see the routing-change note near the top of this doc)
+claude --model claude-opus-5
 
 # Normal day-to-day development
 claude --model claude-sonnet-5
@@ -190,6 +208,6 @@ claude --model claude-sonnet-5
 ```
 
 Model switches do not persist automatically across sessions — set explicitly each
-time via `--model` or `/model`. If neither Sonnet nor Fable is available, any
+time via `--model` or `/model`. If neither Sonnet nor Opus is available, any
 competent coding-capable model should follow `docs/sonnet-continuation.md`
 unmodified; record which model actually ran in `docs/run-log.md`.
