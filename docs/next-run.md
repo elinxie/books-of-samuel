@@ -3,7 +3,39 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
+## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+
+**M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
+#20's closures as sufficient (spot-checked in `claims.ts`, not just from the
+queue row: no forced basis/confidence upgrades — `claim-hebron-gate-form`/
+`claim-feast-form` land at `comparative-ane`/`low` with the
+regional-not-site-specific limit disclosed, renderings unchanged; the two
+"checked, permanently thin" closures are genuine negative findings per the
+#13/#19c standard; all five ESV quoted spans live-verified) and executed the
+cascade per M3/M4 precedent: `hebron-covenant`/`hebron-gate`/
+`hebron-reckoning` → `released`; `2sam-3`/`2sam-4` → `released`;
+`f-2sam-3-4` → `done`; `M5` → `released`. `hebron` location unchanged
+(already `released` from M4). Full reasoning in
+`docs/fable-review-queue.md`'s 2026-08-12 status-flip note and
+`docs/run-log.md`. Full verify gate green after the flips.
+
+**What's next (Sonnet), in priority order:**
+
+1. **(Top, still open, non-blocking to any release) Real-hardware perf
+   check** of `gilboa-battle` at high tier + the Pages-live check — both
+   still need a non-sandboxed environment; see Environment notes below,
+   unchanged. Carried forward from M3 onward; do not re-litigate, just do
+   them when an environment with real hardware/outbound access exists.
+2. **M6 (2 Samuel 5+) needs a Fable/world-director scope pass before any
+   build work** — same pattern as M3/M4/M5: no M6 milestone entry exists yet
+   in `src/data/milestones.ts` (M5's comment already notes "M6 starts at
+   2 Sam 5"); defining it is itself Fable-tier scope work. Do not start M6
+   scene geometry without briefs.
+3. Optional, non-gating: `TO VERIFY` pagination hedges on source cards if
+   primary copies become accessible; DEM refinement under ADR-012;
+   `f-overview-map`'s wider scope beyond the shipped `/atlas` overlay.
+
+## State before this slice (2026-08-10, M5 SIGNED OFF — approved as built, M5 → `in-progress`, branch `claude/focused-mccarthy-97j7ef`, PR #55 draft)
 
 **The M5 sign-off review is done.** It ran on **Opus standing in for Fable**
 at the user's explicit direction, Fable's monthly spend limit still being
@@ -44,27 +76,48 @@ enforced for now.
 
 **What's next (Sonnet), in priority order:**
 
-1. **Queue #20 — the M5 release citation gates.** Five closable
-   `researcher` items, parallelizable, gating only `released`: (a) extend
-   `mccarter-1984-ii-samuel` to 2 Sam 3–4 (unblocks named attributions on
-   `claim-abner-killing`/`claim-public-response`/`claim-abner-break`/
-   `claim-ish-bosheth-assassination`); (b) `herzog-1997` gate typology for
-   `claim-hebron-gate-form`; (c) `king-stager-2001` feasting/mourning for
-   `claim-feast-form`/`claim-abner-funeral`/`claim-mourning-dress`; (d)
-   Hebron water installations for `claim-hebron-pool-feature` (expect the
-   #13/#19c "checked, permanently thin" closure); (e) live-source ESV wording
-   check on all five M5 quoted spans (3:21a, 3:33b–34a, 3:38, the 4:10
-   fragment, 4:11a) — needs outbound access to Bible-text sites, which this
-   sandbox lacks. Read #20's row for the exact instructions, including the
-   standing rule that the refuge-city (Josh 20:7) irony stays omitted unless a
-   named citation lands.
-2. **Then the M5 release flip** — once #20 clears, one short confirmation pass
-   flips the three scenes, `2sam-3`/`2sam-4`, `f-2sam-3-4` → `done`, and M5 →
-   `released` together, per the M3/M4 cascade.
-3. Non-blocking, from the ADR-003 amendment: decide whether/how to automate
-   the page/UI-copy ESV budget check without false-positiving on ordinary
-   quoted strings in `.tsx` (tracked inside #20, not itself a gate).
-4. (Carried forward, still open, non-blocking) real-hardware perf check of
+1. ~~Queue #20 (all five items + the ADR-003 rider)~~ — **fully resolved
+   2026-08-12 (Sonnet).** `mccarter-1984-ii-samuel` extended to 2 Sam 3–4;
+   `claim-abner-killing`'s rival-elimination view now cites McKenzie
+   (2000)/Halpern (2001) by name, `claim-public-response`'s apologia view
+   cites McCarter's own 1980 "Apology of David" article directly (new card
+   `mccarter-1980-apology-of-david`), `claim-abner-break`'s
+   concubine-as-throne-claim note cites a new public-domain card
+   (`ellicott-commentary-1878`), and `claim-ish-bosheth-assassination`'s 4:6
+   MT/LXX divergence closed **checked, permanently thin** for named
+   attribution (both views stay unattributed). `herzog-1997` landed a real
+   gate-typology citation for `claim-hebron-gate-form` (→
+   `comparative-ane`/`low`, rendering unchanged). `king-stager-2001` landed
+   real coverage for `claim-feast-form` (→ `comparative-ane`/`low`) and
+   corroborates `claim-abner-funeral`/`claim-mourning-dress` (basis/confidence
+   unchanged on those two). `claim-hebron-pool-feature` closed **checked,
+   permanently thin** (the expected #13/#19c outcome) — Birket es-Sultan
+   stays not adoptable. **Item (e)**, the live ESV wording check that had
+   been stuck since 2026-07-14 on this sandbox's outbound-network block: this
+   session found `WebSearch` (unlike direct `WebFetch`/`curl`) actually
+   reaches live Bible-text sites via search-result snippets — all five M5
+   quoted spans (3:21a, 3:33b–34a, 3:38, the 4:10 fragment, 4:11a) checked
+   and matched the live ESV text verbatim, no errors found. **ADR-003
+   automation rider**: decided, not automated — kept manually enforced (risk
+   of false positives on ordinary `.tsx` quoted strings outweighs the benefit
+   for a non-blocking rider, per the 2026-07-07 priority note). Four new
+   source cards; `sources/source-index.json` regenerated via
+   `npm run build:sources` and the full `npm run verify` gate independently
+   re-run green by the orchestrating session (format, lint, 484 vitest,
+   build, 12/12 e2e — two prettier issues from the researcher pass fixed
+   first; needed `npm install` since `node_modules` was missing, and
+   `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+   for e2e per the standing Environment note). See `docs/fable-review-queue.md`
+   #20 (moved to Resolved) and `docs/uncertainty-register.md` #16/#17 for the
+   full writeup.
+2. **The M5 release flip** — nothing under queue #20 gates it any longer.
+   Per the M3/M4 precedent (`docs/fable-review-queue.md`'s 2026-07-19/
+   2026-08-02 status-flip notes), this flip itself was done by a **Fable
+   release pass** both prior times, not a bare Sonnet confirmation — run
+   `fable-architect` to confirm and execute: flip the three scenes
+   (`hebron-covenant`, `hebron-gate`, `hebron-reckoning`), `2sam-3`/`2sam-4`,
+   `f-2sam-3-4` → `done`, and `M5` → `released` together.
+3. (Carried forward, still open, non-blocking) real-hardware perf check of
    `gilboa-battle` at high tier + the Pages-live check — see Environment
    notes below, unchanged.
 

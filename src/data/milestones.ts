@@ -111,7 +111,16 @@ export const MILESTONES: Milestone[] = [
     // atlasRegions' user-visible caption claiming a dashed outline the
     // renderer deliberately does not draw). ADR-009's dismemberment bar
     // verified holding in code, not just in captions.
-    status: 'in-progress',
+    // 2026-08-12 Fable M5 release pass: queue #20's five citation gates + the
+    // ADR-003 automation rider all closed (see docs/fable-review-queue.md #20
+    // Resolved) — spot-checked at this pass: no forced basis/confidence
+    // upgrades (herzog-1997 and king-stager-2001 both land at comparative-ane/
+    // low with the regional-not-site-specific limit disclosed), and both
+    // "checked, permanently thin" closures are genuine negative findings, not
+    // shortcuts. Cascade executed per M3/M4 precedent: three scenes +
+    // 2sam-3/2sam-4 → released, f-2sam-3-4 → done, M5 → released. hebron
+    // location already released from M4, unchanged.
+    status: 'released',
     passageRefs: ['2 Samuel 3', '2 Samuel 4'],
     goals: [
       'Abner’s overture and the covenant feast at Hebron (`hebron-covenant`)',

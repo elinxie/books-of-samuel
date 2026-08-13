@@ -1606,3 +1606,82 @@ git).
 **Path to `released`:** clear queue #20's five items via a `researcher`
 pass, then a short confirmation flip of the three scenes, `2sam-3`/`2sam-4`,
 `f-2sam-3-4` → `done`, and M5 → `released` together, per the M3/M4 cascade.
+
+**2026-08-12 — Sonnet 5 — queue #20 fully closed (researcher pass + live ESV
+check + ADR-003 decision); M5 release flip handed to Fable**
+Scheduled continuation session. Dispatched a `researcher` agent for queue
+#20(a)-(d): `mccarter-1984-ii-samuel` extended to 2 Sam 3–4 (new card
+`mccarter-1980-apology-of-david` cited directly on `claim-public-response`'s
+apologia view; `claim-abner-killing`'s rival-elimination view cites McKenzie
+2000/Halpern 2001 instead, since no page-verifiable McCarter statement on
+that specific motive was found; `claim-abner-break` cites a new public-domain
+card `ellicott-commentary-1878`; `claim-ish-bosheth-assassination`'s 4:6
+MT/LXX divergence closed **checked, permanently thin** for attribution).
+`herzog-1997` and `king-stager-2001` both landed real, previously-unchecked
+coverage: `claim-hebron-gate-form` and `claim-feast-form` both moved
+`design-placeholder` → `comparative-ane`/`low` (renderings unchanged either
+way, per the queue's own instruction). `claim-hebron-pool-feature` closed
+**checked, permanently thin** — no Iron Age water installation is reported
+anywhere at Tell Rumeida/Hebron; Birket es-Sultan independently reconfirmed
+as 1283 CE Mamluk, stays not adoptable. Four new source cards total.
+
+That agent had no shell tool, so its `sources/source-index.json` update was
+hand-built and its `npm run build:sources`/`npm run verify` were unrun — the
+orchestrating session ran both directly: `npm install` first (missing
+`node_modules`), then `build:sources` (regenerated index differed slightly
+from the hand-built one), then `npm run verify` — caught two real Prettier
+violations in the researcher's own edits (`docs/fable-review-queue.md`,
+`sources/source-cards/mccarter-1984-ii-samuel.json`), fixed, then full gate
+green: format, lint, 484 vitest, build, 12/12 e2e (needed
+`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`,
+the standing sandbox note — the pinned Playwright build number had drifted
+again). Spot-checked the actual diffs against `claims.ts`/the new source
+cards before trusting the agent's self-report, per this project's standing
+practice — reasoning held up: hedges only where genuinely unattributed,
+"checked, permanently thin" only where the search pass came up empty, no
+forced upgrades.
+
+Also closed **queue #20(e)**, open since 2026-07-14: this session's
+`WebSearch` tool reached live Bible-text sites via search-result snippets
+even though direct `WebFetch`/`curl` to biblegateway.com/esv.org still 403s
+from this sandbox (confirmed again) — the same asymmetry the #19b pass
+noticed once before. Checked all five M5 quoted spans (3:21a, 3:33b–34a,
+3:38, the 4:10 fragment, 4:11a) against live ESV text: all five matched
+verbatim, including the two fragments' truncation points. No wording errors
+this time (unlike #19b, which found a real one). Decided the ADR-003
+automation rider without building anything: keep it manually enforced —
+an automated `.tsx` quoted-string scanner risks false positives without a
+disproportionate amount of tooling for a non-blocking rider, per the
+2026-07-07 standing priority note to deprioritize heavy test-writing.
+
+Moved queue #20 from Open to Resolved in `docs/fable-review-queue.md` (all
+five items + the ADR-003 rider closed, nothing left open under it); synced
+`docs/next-run.md` and `docs/uncertainty-register.md` #16/#17.
+
+**Did not flip M5 → `released` this session.** Per the M3 (2026-07-19) and
+M4 (2026-08-02) precedent recorded in this same queue file, the release flip
+itself was done by a **Fable release pass** both prior times, not a bare
+Sonnet confirmation, even after Sonnet closed the citation gates feeding it
+— so this is handed to `fable-architect` next in this same session rather
+than flipped directly.
+
+**2026-08-12 — Fable — M5 release pass: queue #20 closures confirmed, M5
+released**
+Confirmation pass per the M3 (2026-07-19)/M4 (2026-08-02) release-pass form.
+Spot-checked the queue-#20 claim edits directly in `claims.ts` (not just the
+queue row): apologia view cites McCarter 1980 by name; rival-elimination view
+cites McKenzie/Halpern rather than forcing McCarter onto an unfound
+statement; `claim-hebron-gate-form`/`claim-feast-form` land at
+`comparative-ane`/`low` with regional-not-site-specific limits disclosed and
+renderings unchanged (no forced upgrades); the two "checked, permanently
+thin" closures (Hebron pool, 4:6 attribution) are genuine negative findings
+per the #13/#19c standard. Ruling: sufficient for release. Cascade executed:
+`hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`;
+`2sam-3`/`2sam-4` → `released`; `f-2sam-3-4` → `done`; `M5` → `released`.
+`hebron` location unchanged (already `released` from M4, comment already
+covers per-scene independence). Status-flip note added to
+`docs/fable-review-queue.md`; `docs/next-run.md` top block updated (next:
+carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
+check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
+re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
+(push + PR #57 update left to the orchestrating session).

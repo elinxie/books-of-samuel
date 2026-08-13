@@ -1,5 +1,5 @@
 {
-  "count": 31,
+  "count": 35,
   "cards": [
     {
       "id": "biran-naveh-1993",
@@ -24,6 +24,12 @@
       "title": "The Tel Ḥevron 2014 Excavations: Final Report (Ariel University Institute of Archaeology Monograph Series No. 1)",
       "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "ellicott-commentary-1878",
+      "title": "Ellicott's Commentary for English Readers",
+      "sourceType": "reference",
+      "copyrightStatus": "public-domain"
     },
     {
       "id": "esv-bible",
@@ -60,6 +66,12 @@
       "title": "An Exposition of the Old Testament",
       "sourceType": "reference",
       "copyrightStatus": "public-domain"
+    },
+    {
+      "id": "halpern-2001-davids-secret-demons",
+      "title": "David's Secret Demons: Messiah, Murderer, Traitor, King",
+      "sourceType": "reference",
+      "copyrightStatus": "copyrighted-limited-use"
     },
     {
       "id": "herzog-1997",
@@ -122,8 +134,20 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "mccarter-1980-apology-of-david",
+      "title": "The Apology of David",
+      "sourceType": "reference",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "mccarter-1984-ii-samuel",
       "title": "II Samuel: A New Translation with Introduction, Notes, and Commentary (The Anchor Bible, vol. 9)",
+      "sourceType": "reference",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "mckenzie-2000-king-david",
+      "title": "King David: A Biography",
       "sourceType": "reference",
       "copyrightStatus": "copyrighted-limited-use"
     },

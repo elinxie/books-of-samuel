@@ -88,8 +88,9 @@ export const PASSAGES: Passage[] = [
     // 2026-08-10: hebron-covenant was this passage's first scene to leave
     // `planned`; hebron-gate (built the same day) is its second — status
     // follows the scene, per the M4 in-progress convention (docs/next-run.md
-    // 2026-07-22 note).
-    status: 'in-progress',
+    // 2026-07-22 note). 2026-08-12 Fable M5 release pass: both scenes
+    // released, all three quoted spans live-verified (queue #20e) — released.
+    status: 'released',
   },
   {
     id: '2sam-4',
@@ -106,10 +107,12 @@ export const PASSAGES: Passage[] = [
     // check not possible in this sandbox (no outbound access at build
     // time) — wording is carried as given in the brief/from memory and
     // flagged for a follow-up verification pass, per the project's standing
-    // #19b lesson.
+    // #19b lesson. That verification landed 2026-08-12 (queue #20e): both
+    // quoted spans matched live ESV text verbatim, truncation points included.
+    // 2026-08-12 Fable M5 release pass: hebron-reckoning released — released.
     sceneIds: ['hebron-reckoning'],
     milestoneId: 'M5',
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

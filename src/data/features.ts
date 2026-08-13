@@ -199,8 +199,9 @@ export const FEATURES: FeatureEntry[] = [
     // "2 Samuel 1–2 scenes" and now `done`), so M5's scene work was invisible
     // on the Features page. All three scenes plus the atlas phase are built and
     // approved as built; `done` gates on queue #20, per the M4 `f-2sam`
-    // precedent.
-    status: 'in-progress',
+    // precedent. 2026-08-12 Fable M5 release pass: queue #20 fully closed —
+    // done.
+    status: 'done',
     milestoneId: 'M5',
   },
   {

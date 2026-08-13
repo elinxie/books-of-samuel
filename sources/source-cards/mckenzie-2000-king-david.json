@@ -1,0 +1,15 @@
+{
+  "id": "mckenzie-2000-king-david",
+  "title": "King David: A Biography",
+  "author": "Steven L. McKenzie",
+  "publisher": "Oxford University Press",
+  "datePublished": "2000",
+  "dateAccessed": "2026-08-12",
+  "sourceType": "reference",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Modern copyrighted scholarly biography. Project stores only its own summary/paraphrase of the book's argument, drawn from secondary description; no reproduction of its text.",
+  "summary": "A critical scholarly biography of David that reads the History of David's Rise and the Succession Narrative against the grain of their own apologetic shaping. McKenzie argues, as consistently described across independent secondary sources discussing the book, that David's consolidation of power involved the elimination of political rivals and Saulide claimants — including Abner and, later, Ish-bosheth and Amasa — with the biblical narrative's insistence on David's innocence read as the mark of a text working to distance him from killings that in fact served his interests. This project cites McKenzie specifically as a named, checkable proponent of the political rival-elimination reading of Joab and Abishai's killing of Abner (claim-abner-killing's view-abner-killing-rival-elimination): Abner, as Israel's ablest commander and Joab's obvious rival for command of any army uniting Israel and Judah under David, is read on this account as removed for reasons of power as much as, or instead of, grief for Asahel.",
+  "relevantPassages": ["2 Samuel 3"],
+  "extractedClaims": ["claim-abner-killing"],
+  "confidenceNotes": "Verified via secondary/web-search cross-corroboration only (not primary-copy inspection): the book's existence, author, publisher, and 2000 publication date are independently corroborated across Oxford University Press's own listing, Amazon, Barnes & Noble, and multiple review/citation sources describing its 'rivals eliminated on the path to power' argument, including its treatment of Abner and Ish-bosheth by name. TO VERIFY: exact print pagination for the Abner-killing discussion specifically, against a physical or full-digital copy."
+}
