@@ -1685,3 +1685,55 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-06 — Sonnet 5 — `hebron-covenant` rebuild, superseded (no lasting
+effect)**
+Built `hebron-covenant` independently on `claude/focused-mccarthy-u0d9p9`
+(PR #51 draft), not knowing a parallel `claude/focused-mccarthy-97j7ef`
+session had already built and merged the real M5 package (PR #55, landed
+2026-08-10) covering the same scene plus `hebron-gate`/`hebron-reckoning`/
+the atlas extension. PR #51 was closed without merging (superseded, not
+defective) once the parallel work landed on `main`. No lasting effect: the
+branch was reset to `main` (`git checkout -B ... origin/main`, then
+force-pushed) once this was discovered on 2026-08-13, discarding the
+redundant commit. Noted here only so a future session doesn't wonder where
+PR #51 went. Lesson for future scheduled/automated sessions: check for
+other in-flight branches/PRs touching the same milestone before starting a
+build, not just `docs/next-run.md`'s top item (which can go stale within a
+single milestone if two sessions run concurrently).
+
+**2026-08-13 — Fable — M6 scope pass (cut short by monthly spend limit)**
+`fable-architect` scoped M6: **2 Sam 5 alone**, not bundled — the reverse of
+the M4/M5 chapter-bundling precedent, since ch. 5 has three independently
+stageable events at two buildable sites (Hebron reused for the all-Israel
+anointing; a new Jerusalem site; the identifiable Valley of Rephaim for both
+Philistine engagements), while 2 Sam 6 (the ark) is left to start M7 on its
+own narrative unit. Three scenes (`hebron-kingship`, `jerusalem-stronghold`,
+`rephaim-valley`) + an atlas phase extension, M4/M5 pattern. Landed a dense
+`milestones.ts` M6 comment with binding scope constraints for the not-yet-
+written `jerusalem-stronghold` brief (Warren's Shaft capture-route dispute
+never staged as method, per ADR-009's ratified no-invented-method reading;
+Stepped Stone Structure dating dispute — Kenyon/Steiner vs. E. Mazar/Faust —
+surfaced as `scholarlyViews`; E. Mazar's "Large Stone Structure = David's
+palace" not adopted as fact; "Millo" and the "blind and lame" taunt both
+`scholarlyViews`-only, never staged literally; Baal-perazim un-identified on
+its own, restrained inside the Rephaim-valley scene rather than omitted).
+**Session then hit the account's monthly spend limit** (same failure mode
+as 2026-07-22 and 2026-08-10) immediately after the `milestones.ts` edit,
+before writing any of the three briefs or doing its own doc sync.
+
+**2026-08-13 — Sonnet 5 — M6 doc sync (mechanical, no new creative calls)**
+Picked up where the cut-short Fable session left off. Verified the partial
+`milestones.ts` edit didn't break anything (typecheck clean, format/lint
+clean, 484/484 vitest green — additive data only). Completed the doc sync
+the Fable session didn't reach: `docs/progress.md` (new M6 section,
+mirroring the scope decision + constraints verbatim rather than
+re-deciding anything), `docs/next-run.md` (top state block: M6 scoped,
+next action is the three world-director briefs, with the Fable-unavailable
+fallback path spelled out in case `world-director` also hits the spend
+limit). No queue item opened — the scope content itself is genuine Fable
+output, not a Sonnet provisional call, so it doesn't carry the
+2026-07-22-style "needs later re-confirmation" flag. Also reset and
+force-pushed `claude/focused-mccarthy-u0d9p9` to `main` this session (see
+the entry above) before starting this work — the branch had a stale,
+superseded commit on it from earlier in the day.

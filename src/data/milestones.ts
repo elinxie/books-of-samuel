@@ -129,6 +129,49 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-13 Fable scope pass: M6 = 2 Sam 5 ALONE — the M4/M5 bundling
+    // precedent triggers only when a lone chapter is too thin, and ch. 5 is
+    // the opposite case: three stageable events at two buildable sites
+    // (all-Israel anointing at the already-built Hebron; the capture and
+    // occupation of Jerusalem — the project's first Jerusalem content and
+    // first identified-site archaeology-heavy scene since Beth-shan/Gibeon;
+    // both Philistine engagements in the identifiable Valley of Rephaim).
+    // 2 Sam 6 (the ark) is deliberately NOT bundled in: its own narrative
+    // unit (the three-month Obed-edom gap breaks continuity) with its own
+    // hard Fable-tier calls (Uzzah's death, Michal) — it starts M7.
+    // Three scenes + an atlas phase extension (M4/M5 pattern). Briefs are
+    // DEFERRED to a follow-up world-director pass (deliberate deviation from
+    // M5's same-session briefs: Jerusalem needs new location + source-card
+    // groundwork first). Binding scope constraints set now, at milestone
+    // level, for the Jerusalem brief: the tsinnor/Warren's Shaft
+    // capture-route dispute is NEVER staged as the method (scholarlyViews
+    // only; no invented assault, per ADR-009's ratified no-invented-method
+    // reading — the text gives no battle description); the Stepped Stone
+    // Structure may inform terrace geometry only with the Kenyon/Steiner vs.
+    // E. Mazar/Faust dating dispute surfaced as scholarlyViews; the "Large
+    // Stone Structure = David's palace" identification (E. Mazar) is NOT
+    // adopted — card/label only; "Millo" rendered only as the disclosed
+    // terracing reading behind a scholarlyViews label; the "blind and lame"
+    // taunt (5:6, 8) is a genuine text crux — caption-only, scholarlyViews,
+    // never staged literally. Baal-perazim has no confident identification —
+    // it stays a named spot within the Rephaim valley scene (Mahanaim-style
+    // restraint applied inside the scene, not by omitting the battles, since
+    // the valley itself is an identifiable geographic setting). Hiram's
+    // builders (5:11-12) fold into `jerusalem-stronghold`'s closing beats
+    // (besor-crossing spoil-statute precedent); 5:13-16 (wives/sons) is
+    // cards-only, never staged.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All Israel comes to David at Hebron; the elders’ covenant and the all-Israel anointing (`hebron-kingship`, 2 Sam 5:1–5) — resolves `claim-judah-anointing`’s "house of Judah only" qualifier into all-Israel kingship; the callback carried explicitly in captions',
+      'The stronghold of Zion taken; David occupies and builds the City of David (`jerusalem-stronghold`, 2 Sam 5:6–12, Hiram’s builders folded in as closing beats; new `jerusalem` location — the project’s first Jerusalem content, contested archaeology carried as scholarlyViews per the scope constraints above)',
+      'Both Philistine engagements in the Valley of Rephaim — Baal-perazim and the balsam-trees advance (`rephaim-valley`, 2 Sam 5:17–25); the abandoned idols (5:21) staged honestly; divine-sign staging (5:23–24) resolved at the brief',
+      'Atlas overlay extension: the M6 phase — the headless northern region resolves into all-Israel kingship and Jerusalem is plotted as the new capital (`/atlas` phase update per ADR-011, not a 4th 3D scene; M5’s "2 Samuel 5 out of scope" structural test guards get deliberately superseded by the new phase, not weakened)',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

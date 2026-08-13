@@ -450,6 +450,72 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
+## Milestone 6 — 2 Samuel 5: **planned** (scoped 2026-08-13, Fable pass — session cut short by monthly spend limit after the scope call landed; briefs not yet written)
+
+Scope decision (Fable, 2026-08-13, `src/data/milestones.ts` M6 comment):
+**M6 = 2 Samuel 5 alone** — the opposite call from M4/M5's chapter-bundling.
+Those milestones bundled because a lone chapter was too thin to stand; ch. 5
+is the reverse case, with three independently stageable events across two
+buildable sites: the all-Israel anointing (reuses the already-built Hebron),
+the capture and occupation of Jerusalem (a genuinely new, never-built site),
+and both Philistine engagements in the identifiable Valley of Rephaim. 2 Sam
+6 (the ark's arrival) is deliberately **not** folded in — its own narrative
+unit (the three-month Obed-edom gap breaks continuity) with its own
+Fable-tier calls (Uzzah's death, Michal's contempt) — it starts M7.
+
+Three scenes + an atlas phase extension (M4/M5 pattern):
+
+- `hebron-kingship` (2 Sam 5:1–5) — the elders' covenant and all-Israel
+  anointing at Hebron. Resolves `claim-judah-anointing`'s "house of Judah
+  only" qualifier into all-Israel kingship — the callback is meant to be
+  carried explicitly in captions, not just implied by geography.
+- `jerusalem-stronghold` (2 Sam 5:6–12, Hiram's builders folded into the
+  closing beats per the `besor-crossing` spoil-statute precedent for folding
+  short trailing material into an existing scene) — the project's first
+  Jerusalem content and its first identified-site archaeology-heavy scene
+  since Beth-shan/Gibeon; new `jerusalem` location. 5:13–16 (wives/sons)
+  stays cards-only, never staged.
+- `rephaim-valley` (2 Sam 5:17–25) — Baal-perazim and the balsam-trees
+  advance; the abandoned idols (5:21) staged honestly; divine-sign staging
+  (5:23–24) left for the brief to resolve.
+- Atlas extension: the M6 phase resolves the headless northern region into
+  all-Israel kingship and plots Jerusalem as the new capital — `/atlas` work
+  per ADR-011, not a 4th scene. Note this deliberately supersedes M5's
+  "2 Samuel 5 out of scope" atlas structural test guards; that's a build-time
+  task for whoever implements the phase, not touched by this scope pass.
+
+**Binding scope constraints set at the milestone level** (for whichever
+session writes `jerusalem-stronghold`'s brief — flagged now because
+Jerusalem's archaeology carries real, live scholarly disputes that
+shouldn't be silently resolved by whoever happens to build the scene):
+the tsinnor/Warren's Shaft capture-route dispute is never staged as the
+method David's men actually used (`scholarlyViews` only — the text gives no
+battle description, and ADR-009's ratified no-invented-method reading
+applies); the Stepped Stone Structure may inform terrace geometry only with
+the Kenyon/Steiner vs. E. Mazar/Faust dating dispute surfaced as
+`scholarlyViews`; the "Large Stone Structure = David's palace"
+identification (E. Mazar) is **not** adopted as fact — card/label only;
+"Millo" renders only as a disclosed terracing reading behind a
+`scholarlyViews` label; the "blind and lame" taunt (5:6, 8) is a genuine
+textual crux — caption-only, `scholarlyViews`, never staged literally.
+Baal-perazim has no confident identification of its own — it stays a named
+spot within the Rephaim-valley scene (Mahanaim-style restraint applied
+inside the scene, not by omitting the battles, since the valley itself is
+an identifiable geographic setting).
+
+**Not yet done:** world-director briefs for all three scenes (none written
+— the Fable session that made this scope call was cut short by the
+account's monthly spend limit immediately after landing the `milestones.ts`
+entry, before it could write briefs or do its own doc sync; this session
+(Sonnet) completed the doc sync mechanically from the already-decided scope
+and re-verified the gate, but did not make any new creative/historical
+calls). No `f-2sam-5` feature exists yet — following the M5-not-M4 timing
+precedent (M5's feature was created at build time, not scope time), it will
+be added when the first M6 scene build lands. No queue items opened — the
+scope call and its binding constraints came from a genuine Fable pass, not
+a Sonnet provisional fallback, so nothing here needs a later Fable
+re-confirmation the way the 2026-07-22 M4 fallback did.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

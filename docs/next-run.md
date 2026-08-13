@@ -3,7 +3,55 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-13, M6 SCOPED — Fable scope pass cut short by monthly spend limit, branch `claude/focused-mccarthy-u0d9p9`)
+
+**M6 (2 Samuel 5) is scoped, no build yet.** `fable-architect` made the
+scope call — **M6 = 2 Sam 5 alone**, the opposite of M4/M5's bundling (ch.
+5 has three independently stageable events at two buildable sites; ch. 6
+starts M7 instead of folding in). Full reasoning + binding scope
+constraints for the Jerusalem brief (Warren's Shaft dispute never staged as
+method; Stepped Stone Structure dating dispute surfaced; "Large Stone
+Structure = palace" not adopted; "Millo"/the "blind and lame" taunt both
+`scholarlyViews`-only) are in the `M6` entry's comment in
+`src/data/milestones.ts` and `docs/progress.md`'s new M6 section — read the
+milestones.ts comment in full before writing any M6 brief, it's dense and
+load-bearing. **The Fable session hit the account's monthly spend limit
+immediately after landing the `milestones.ts` entry** — same failure mode as
+2026-07-22 and 2026-08-10 — and never got to write any of the three scene
+briefs or do its own doc sync. This session (Sonnet) completed the doc
+sync mechanically from the already-decided scope (re-verified: typecheck,
+lint, format, 484 vitest all green — the milestone entry is additive data
+only, no test broke) but made no new creative/historical calls of its own.
+**No queue item opened** — the scope decision itself came from real Fable
+reasoning, not a Sonnet fallback, so nothing here needs a later
+re-confirmation the way the 2026-07-22 M4 provisional pass did.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Write the three M6 world-director briefs** (`hebron-kingship`,
+   `jerusalem-stronghold`, `rephaim-valley`) — this is squarely
+   `world-director`-tier (model: fable) work per the M3/M4/M5 precedent, not
+   routine Sonnet implementation. Try `world-director` first; if it also
+   hits the spend limit, this is exactly the documented Fable-unavailable
+   fallback case (`docs/model-handoff.md`) — implement with Sonnet, honor
+   every binding constraint already set in the `milestones.ts` M6 comment
+   (do not relitigate them), mark the resulting briefs **provisional** in
+   `docs/fable-review-queue.md`, and keep moving. `jerusalem-stronghold`
+   needs a new `jerusalem` `LocationEntry` and real source-card groundwork
+   (Kenyon, Steiner, E. Mazar, Faust — the dispute is real, don't invent a
+   synthesis) before its brief can responsibly commit to geometry.
+2. Build order once briefs exist: `hebron-kingship` first (cheapest, reuses
+   Hebron, no new site) → `jerusalem-stronghold` → `rephaim-valley` → atlas
+   phase extension — mirrors the M4/M5 "easiest/most-reused site first"
+   pattern.
+3. (Still carried forward, still open, non-blocking) real-hardware perf
+   check of `gilboa-battle` at high tier + Pages-live check — see
+   Environment notes below, unchanged.
+4. Optional, non-gating: `TO VERIFY` pagination hedges on source cards if
+   primary copies become accessible; DEM refinement under ADR-012;
+   `f-overview-map`'s wider scope beyond the shipped `/atlas` overlay.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the
