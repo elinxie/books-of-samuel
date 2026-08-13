@@ -1685,3 +1685,36 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-13 — Sonnet fallback — M6 (2 Samuel 5) scope pass, provisional**
+Fable hit its monthly spend limit mid-attempt on this exact task
+(`fable-architect` call errored immediately, no partial work attempted).
+Proceeded under `docs/model-handoff.md`'s documented fallback: implemented
+the most defensible scope decision, marked provisional throughout, logged
+`docs/fable-review-queue.md` #21. Two scenes proposed: `hebron-all-israel`
+(5:1-5, covenant + anointing, reuses `hebron-anointing`'s Hebron continuity,
+new `elders-of-israel`-style collective character contrasted against M4's
+Judah-only anointing) and `jerusalem-stronghold` (5:6-25, the project's first
+Jerusalem scene — new terrain, the capture held to a strict
+design-placeholder/scholarlyViews standard given the live Large Stone
+Structure/Stepped Stone Structure/Warren's-shaft dispute, no monumental
+palace rendered, the "blind and the lame" taunt caption-only per the
+project's harsh-speech convention, Hiram's alliance/family list/both
+Philistine battles folded as narrated cards rather than staged action since
+neither Baal-perazim nor the Valley of Rephaim is site-confident to this
+project's standard — the Mahanaim precedent). Briefs:
+`docs/design/hebron-all-israel-brief.md`,
+`docs/design/jerusalem-stronghold-brief.md`. `M6` added to
+`src/data/milestones.ts`, `status: 'planned'` — no scenes/passages/features/
+characters created (scope-and-briefs-only, per the M3-M5 workflow). No
+scene geometry started. Full verify gate re-run green (format/lint/
+typecheck/484 vitest/build) — doc/design-only + one data-file addition, no
+runtime code touched, e2e unaffected.
+
+**Next:** a real Fable pass must confirm this scope (queue #21) before any
+M6 build work starts — same gate the 2026-07-22 M4 fallback needed (queue
+#18, confirmed 2026-08-02). Do not build `hebron-all-israel` or
+`jerusalem-stronghold` from these briefs until that review lands. Real-
+hardware `gilboa-battle` perf check + Pages-live check remain open,
+non-blocking, carried forward unchanged (see Environment notes in
+`docs/next-run.md`).

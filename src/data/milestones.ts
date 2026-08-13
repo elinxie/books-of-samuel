@@ -129,6 +129,45 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-13 PROVISIONAL Sonnet scope pass under the model-handoff.md
+    // Fable-unavailable fallback — Fable hit its monthly spend limit mid-
+    // attempt on this exact task (docs/fable-review-queue.md, new item).
+    // NOT a Fable-confirmed scope decision; treat as provisional until a real
+    // Fable pass reviews it, same standing as the 2026-07-22 M4 fallback
+    // (queue #18, later confirmed 2026-08-02). Two scenes proposed, both at
+    // the text's own natural seams: `hebron-all-israel` (5:1-5, the covenant/
+    // anointing that closes the gap M3-M5 built toward) and
+    // `jerusalem-stronghold` (5:6-25, the capture, folding the thin/list-like
+    // material after it — Hiram's alliance, the family list, both Philistine
+    // battles — as narrated cards rather than staged action, mirroring the
+    // M4 precedent of folding 2:8-11 into a card rather than a 4th scene).
+    // Jerusalem is the project's first scene at the single most
+    // archaeologically contested site it will touch (the Large Stone
+    // Structure/Stepped Stone Structure dispute, Warren's Shaft, the
+    // maximalist/minimalist debate over Iron IIA Jerusalem's scale) — the
+    // brief holds this to the same design-placeholder/scholarlyViews
+    // discipline as claim-hebron-town-form, explicitly bars a monumental
+    // palace render, and defers the two Philistine battles (5:17-25) to
+    // narrated-only treatment since neither Baal-perazim nor the Valley of
+    // Rephaim is yet confidently site-verified to this project's standard
+    // (the standing Mahanaim precedent). Briefs:
+    // docs/design/hebron-all-israel-brief.md,
+    // docs/design/jerusalem-stronghold-brief.md. No scenes/passages/features/
+    // characters created yet — scope-and-briefs-only pass, per the M3-M5
+    // workflow; those get populated at build time. Do not start M6 scene
+    // geometry until a real Fable pass confirms this scope, per the M4
+    // fallback precedent.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All Israel makes covenant with David and anoints him king at Hebron (`hebron-all-israel`) — closes the gap opened at hebron-anointing (Judah-only)',
+      'The capture of the Jebusite stronghold of Zion and its establishment as the city of David (`jerusalem-stronghold`) — the project’s first Jerusalem scene, held to a disclosed design-placeholder/scholarlyViews standard given the scale of ongoing archaeological dispute',
+      'Hiram’s alliance, the household list, and the two Philistine battles at Baal-perazim and the Valley of Rephaim — folded as narrated cards within `jerusalem-stronghold`, not staged action',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

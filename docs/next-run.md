@@ -3,7 +3,49 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-13, M6 SCOPED — provisional Sonnet fallback pass, branch `claude/focused-mccarthy-i6i77o`)
+
+**M6 (2 Samuel 5) has a scope decision and two briefs, but they are
+PROVISIONAL — not Fable-confirmed.** Fable hit its monthly spend limit
+mid-attempt on this exact scope task (same recurring constraint as
+2026-07-22 and 2026-08-10). Proceeded under `docs/model-handoff.md`'s
+documented fallback: `M6` added to `src/data/milestones.ts` (`status:
+'planned'`), two scenes proposed — `hebron-all-israel` (5:1-5) and
+`jerusalem-stronghold` (5:6-25, folding Hiram's alliance/family list/both
+Philistine battles as narrated cards). Briefs:
+`docs/design/hebron-all-israel-brief.md`,
+`docs/design/jerusalem-stronghold-brief.md`. `jerusalem-stronghold` is the
+project's first Jerusalem scene and its most historically contested one yet
+(Large Stone Structure/Stepped Stone Structure/Warren's-shaft dispute) —
+held to a strict design-placeholder/scholarlyViews standard, no monumental
+palace, per the brief. Logged `docs/fable-review-queue.md` #21. No
+scenes/passages/features/characters created — scope-and-briefs only, no
+geometry started. Full reasoning in `docs/run-log.md`'s 2026-08-13 entry.
+
+**Do not start M6 build work (either scene) until a real Fable pass reviews
+queue #21** — same gate the 2026-07-22 M4 fallback needed (queue #18,
+confirmed 2026-08-02 before any M4 scene shipped `released`, though M4's
+build work itself did proceed provisionally under Sonnet — M6 has not even
+reached that point yet, this is scope-only).
+
+**What's next, in priority order:**
+
+1. **Retry the Fable M6 scope confirmation** (`fable-architect`, review
+   queue #21 + both briefs) once the spend limit has reset — batch it, don't
+   burn a partial session chasing it if it's still hit. This gates all M6
+   build work, not just release.
+2. **(Still open, non-blocking to any release) Real-hardware perf
+   check** of `gilboa-battle` at high tier + the Pages-live check — both
+   still need a non-sandboxed environment; see Environment notes below,
+   unchanged. Carried forward from M3 onward; do not re-litigate, just do
+   them when an environment with real hardware/outbound access exists.
+3. Once queue #21 is confirmed (or revised) by a real Fable pass: build
+   `hebron-all-israel` first (cheapest, no new terrain, establishes the
+   "all Israel" contrast), then `jerusalem-stronghold` (new terrain, the
+   milestone's load-bearing scene) — `threejs-engineer` per the confirmed
+   briefs, same workflow as M3-M5.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the
@@ -19,7 +61,8 @@ cascade per M3/M4 precedent: `hebron-covenant`/`hebron-gate`/
 `docs/fable-review-queue.md`'s 2026-08-12 status-flip note and
 `docs/run-log.md`. Full verify gate green after the flips.
 
-**What's next (Sonnet), in priority order:**
+**What's next (Sonnet), in priority order — superseded by the 2026-08-13
+state block above, kept for history:**
 
 1. **(Top, still open, non-blocking to any release) Real-hardware perf
    check** of `gilboa-battle` at high tier + the Pages-live check — both
