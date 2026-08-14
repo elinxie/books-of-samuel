@@ -3,7 +3,125 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-14, M6 SCOPED — Fable world-director pass, briefs done, no build yet, branch `claude/focused-mccarthy-4h8flt`)
+
+**M6 (2 Samuel 5) is defined and fully briefed.** Scope reasoning in
+`src/data/milestones.ts`'s M6 comment + `docs/run-log.md` 2026-08-14.
+**Boundary: 2 Sam 5 only (5:1–25), NOT bundled with ch. 6.** The M4/M5
+bundling test inverts here — M5 bundled 3+4 because ch. 4 alone was too thin
+(unbuildable Mahanaim); ch. 5 is the heaviest single-chapter build yet: first
+wholly new major site since M3 (Jerusalem/City of David spur — new landform,
+new settlement form, **no continuity reuse available**, and every later
+milestone inherits its geometry) plus a second new battlefield geography
+(Valley of Rephaim). Single-chapter milestones have precedent (M3 = 1 Sam 31;
+M1/M2 both = 1 Sam 30). **M7 starts at 2 Sam 6** (ark + Nathan oracle, one
+unit, reuses M6's Jerusalem). **Three scenes + one atlas phase (no 4th
+scene):**
+
+1. `hebron-all-israel` — 2 Sam 5:1–5: the tribes come to Hebron, the elders'
+   covenant, the anointing over Israel, regnal summary (card-only).
+   `depictsDeath: false`. Full Hebron reuse, ideally **zero new geometry
+   families**. Brief: `docs/design/hebron-all-israel-brief.md`.
+2. `jerusalem-stronghold` — 2 Sam 5:6–16: approach, taunt, the tsinnor card,
+   the held gap, city of David/Millo, Hiram's embassy and house, 5:12,
+   5:13–16 card. **`depictsDeath: false`** (no death, casualty, or method is
+   narrated). The milestone's load-bearing scene; cost driver is **static
+   geometry, not crowd** — a project first. Brief:
+   `docs/design/jerusalem-stronghold-brief.md`.
+3. `rephaim-valley` — 2 Sam 5:17–25: two engagements, two inquiries, two
+   different answers; Baal-perazim; the covered images; the balsam-grove
+   flank; the pursuit. `depictsDeath: true`, ADR-009 **crowd-battle**
+   template (`gilboa-battle` precedent, _not_ §Named-character-killings — the
+   text names no combatant). ~120–170 figures, deliberately ~half Gilboa.
+   Brief: `docs/design/rephaim-valley-brief.md`.
+4. Atlas phase (`ui-engineer`, small): `/atlas` gains an M6 phase. **Ruling:
+   carry BOTH existing allegiance regions under one king with new captions —
+   do NOT merge them into a single shape, draw a border, or expand either.**
+   Merging would assert exactly the contested territorial united-monarchy
+   claim `claim-david-historical` keeps open; the M5 headless variant already
+   established that refusing to merge is the honest rendering. Constraints:
+   same no-hard-edge/soft-region/disclosed-schematic rules as the M4/M5
+   phases; Jerusalem plotted as a new securely-identified location (the M5
+   phase's "2 Sam 5 out of scope" disclosure and its test assertions must be
+   updated, not silently broken); the Geba→Gezer extent (5:25) may appear
+   only as a disclosed campaign notice, never a border, and needs no new
+   location records; cross-reference `claim-david-historical` so kingdom
+   scale stays open.
+
+**Build order for Sonnet: `hebron-all-israel` first** (cheapest, no death, no
+new terrain, re-establishes the Hebron continuity pattern), then
+`jerusalem-stronghold` (load-bearing — benchmark the terracing instancing
+_before_ the rest of the settlement lands), then `rephaim-valley`, then the
+atlas phase. Same discipline as M3/M4/M5: scenes stay out of `scenes.ts`
+until built; claims/characters/passages (`2sam-5`) and the new locations
+(`jerusalem`, `valley-of-rephaim`) get created at build time per each brief's
+Required source basis; passage status → `in-progress` when its first scene
+leaves `planned`. **ESV budget: `2sam-5` is one passage shared by all three
+scenes — ≤3 quotes total, allocated one per scene** (5:1b or 5:3; 5:6b taunt;
+5:20b), each live-verified at build time via the queue-#20(e) `WebSearch`
+pattern.
+
+**Contested calls resolved in this pass (recorded in the briefs — do not
+re-litigate at build time):** 5:8's tsinnor stays **unstaged** (no shaft,
+tunnel, or entry route in any mode — the philological _and_ Warren's-Shaft
+disputes are both live; `scholarlyViews` + caption only, per ADR-009's
+ratified no-invented-method restraint); "the blind and the lame" caption-only
+with no staged figures; the City of David's 10th-c. archaeology rendered as a
+modest fortified spur, **explicitly not a portrait** of the Large Stone
+Structure / Stepped Stone Structure and **not a palace**, dispute as
+`scholarlyViews`; the reused Middle Bronze Gihon fortifications are a
+**conditionally approved** rendering, `TO VERIFY` — ships only if the
+researcher pass lands its citation; Hiram never dated against Tyrian regnal
+years, no ashlar/proto-Aeolic (later Iron II) masonry; 5:17's sequencing crux
+carried as `scholarlyViews` with **no geometry answering it** (no Jerusalem
+in `rephaim-valley` at all); no narrated force numbers → disclosed design
+counts; 5:21's images as covered bundles only, MT / 1 Chr 14:12 divergence as
+`scholarlyViews`, no burning; **no supernatural effect at 5:24**; the higher
+ground north of the Jerusalem spur stays **empty in every frame** (hard scope
+guard, check it at review). No new `fable-review-queue` items opened — the
+Open table stays empty; release-gate items get opened at the M6 review, per
+the M3/M4/M5 pattern.
+
+**Known researcher gaps flagged by the briefs (fold into a `researcher` pass;
+none block the builds, all gate named attributions before release):**
+
+- **Largest bibliographic gap in the project to date: `sources/source-cards/`
+  contains no card touching Jerusalem at all.** Needs cards for the City of
+  David excavation history (Kenyon; Shiloh; Reich & Shukron; E. Mazar's Large
+  Stone Structure publications) **and** the published critique of the
+  Davidic-palace identification (Finkelstein, Herzog, Ussishkin,
+  Singer-Avitz); the Warren's Shaft question and the Gihon fortifications'
+  dating (this one gates the conditional MB-fortification rendering); the
+  tsinnor philology; Tyrian/Phoenician chronology for 5:11. Scholars are
+  named here at the "literature a researcher pass should verify" level only —
+  **no page numbers, venues, or dates are asserted by the briefs, and none
+  may be invented at build time.**
+- Confirm `rainey-notley-2006` actually covers the Valley of Rephaim's
+  identification; new card if not.
+- Named attributions for the 5:17 sequencing views and for the MT / 1 Chr
+  14:12 divergence at 5:21 (a "checked, permanently thin" negative finding is
+  an acceptable outcome here, per the 2 Sam 4:6 precedent).
+- A citable treatment of the _bekaim_ species question if
+  `claim-balsam-grove-form` is to move past `design-placeholder`.
+
+**What's next (Sonnet), in priority order:**
+
+1. Build `hebron-all-israel` per its brief (`threejs-engineer`).
+2. Build `jerusalem-stronghold`, then `rephaim-valley`, per their briefs.
+3. Atlas `/atlas` M6 phase extension (`ui-engineer`), per the constraints
+   above.
+4. `researcher` pass on the citation gaps above (parallelizable; doesn't
+   block builds).
+5. **(Carried forward, still open, non-blocking to any release) Real-hardware
+   perf check** of `gilboa-battle` at high tier + the Pages-live check — both
+   still need a non-sandboxed environment. **Re-confirmed blocked this
+   session:** direct `curl` to `esv.org` and `elinxie.github.io` both return
+   proxy `CONNECT tunnel failed, response 403`. Do not re-litigate; just do
+   them when a real-hardware/outbound environment exists.
+6. Then a Fable M6 sign-off review before any status flips past
+   `in-progress`.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the

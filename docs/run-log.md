@@ -1685,3 +1685,73 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-14 — Fable — M6 scope pass (2 Samuel 5): boundary, 3 scenes, atlas
+ruling, briefs**
+World-director/scope pass on the M5-precedent form; no build work. **M6 =
+2 Sam 5 only (5:1-25), not bundled with ch. 6** — the M4/M5 bundling test
+inverts: M5 bundled 3+4 because 4 alone was too thin, whereas 5 is the
+heaviest single-chapter build yet (first wholly new major site since M3 —
+Jerusalem/City of David spur, no continuity reuse, every later milestone
+inherits its geometry — plus a second new battlefield geography, Rephaim).
+Single-chapter precedent: M3 = 1 Sam 31, M1/M2 = 1 Sam 30. M7 starts at
+2 Sam 6 (ark + Nathan oracle, one unit, reuses M6's Jerusalem).
+
+Three scenes + one atlas phase, briefs written: `hebron-all-israel` (5:1-5,
+`depictsDeath: false`, full Hebron reuse, target zero new geometry families),
+`jerusalem-stronghold` (5:6-16, load-bearing, cost driver is static geometry
+not crowd — a project first), `rephaim-valley` (5:17-25, `depictsDeath: true`,
+ADR-009 **crowd-battle** template per `gilboa-battle`, explicitly NOT
+§Named-character-killings since the text names no combatant; ~120-170 figures,
+~half Gilboa). Build order: cheapest/lowest-risk first, per M5.
+
+Contested calls resolved here, not deferred: **5:8's tsinnor stays unstaged**
+(no shaft/tunnel/entry route in any mode — philological _and_ Warren's-Shaft
+disputes both live; `scholarlyViews` + caption only, applying ADR-009's
+no-invented-method restraint ratified at the M5 sign-off), which makes
+`jerusalem-stronghold` **`depictsDeath: false`** — 5:6-10 narrates no death,
+casualty, or method, and inventing an assault is ADR-011's "unsourced invented
+certainty" exactly; "the blind and the lame" caption-only, no staged figures,
+not adopted in the project's voice; City of David rendered as a modest
+fortified spur, explicitly not a portrait of the Large Stone / Stepped Stone
+Structure and not a palace (E. Mazar vs. Finkelstein et al. as
+`scholarlyViews`) — the inverse of Tell Rumeida's vacuum problem: abundant
+evidence, contested reading; reused Middle Bronze Gihon fortifications
+**conditionally approved, `TO VERIFY`** (ships only with a citation, disclosed
+as reused earlier construction, never as Davidic); Hiram never dated against
+Tyrian regnal years, no ashlar/proto-Aeolic masonry; 5:17's sequencing crux as
+`scholarlyViews` with **no geometry answering it** (zero Jerusalem in
+`rephaim-valley` — the Mahanaim precedent); no narrated force numbers →
+disclosed counts (`claim-judah-assembly-scale` pattern); 5:21's images as
+covered bundles only, MT / 1 Chr 14:12 as `scholarlyViews`, no burning; **no
+supernatural effect at 5:24**; hard scope guard that the higher ground north
+of the Jerusalem spur stays empty in every frame.
+
+**Atlas ruling:** the M6 phase carries **both** allegiance regions under one
+king with new captions — no merged shape, no border, no expansion. Merging
+would assert the contested territorial united-monarchy claim
+`claim-david-historical` deliberately keeps open; the M5 headless variant
+already set the precedent that refusing to merge is the honest rendering.
+Jerusalem plotted (securely identified); the M5 phase's "2 Sam 5 out of scope"
+disclosure + its test assertions must be updated, not silently broken;
+Geba→Gezer only as a disclosed campaign notice, never a border.
+
+Touched: `src/data/milestones.ts` (M6 `planned` + scope comment), three new
+briefs in `docs/design/`, `docs/next-run.md` (new top state block, riders
+carried), this log. **No scenes/passages/locations/claims created** — that
+happens at build time, confirmed against the 2026-08-03 M5 scope pass, which
+also touched only `milestones.ts` + briefs. No new `fable-review-queue` items
+(contested calls resolved here; the Open table stays empty — release-gate
+items get opened at the M6 review, per M3/M4/M5). Researcher gaps flagged in
+`next-run.md`: **the project has no source card touching Jerusalem at all**,
+the largest bibliographic gap to date (City of David excavation history + the
+published palace-identification critique; Warren's Shaft/Gihon fortification
+dating, which gates the conditional MB rendering; tsinnor philology; Tyrian
+chronology), plus Rephaim identification coverage, 5:17/5:21 attributions, and
+the _bekaim_ species question. Scholars named at the
+"literature-to-verify" level only — no page numbers or venues asserted, none
+to be invented at build time. Non-blocking riders carried forward unchanged
+(real-hardware `gilboa-battle` perf check, Pages-live check); sandbox outbound
+access re-confirmed blocked this session (`curl` to esv.org and
+elinxie.github.io both return proxy `CONNECT tunnel failed, response 403`).
+Verify gate + commit left to the orchestrating session.

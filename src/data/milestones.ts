@@ -129,6 +129,64 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-14 Fable scope pass: M6 = 2 Samuel 5 ONLY (5:1-25), deliberately
+    // NOT bundled with ch. 6. The M4/M5 bundling test cuts the other way here:
+    // M5 bundled 3+4 because ch. 4 alone was too thin (its murder site is the
+    // unbuildable Mahanaim); ch. 5 has the opposite problem — it is the
+    // heaviest single-chapter build attempted so far, carrying the project's
+    // first wholly new major site since M3 (Jerusalem / the City of David
+    // spur: new landform, new settlement form, no continuity reuse available,
+    // and every milestone after this one depends on its geometry) plus a
+    // second new battlefield geography (the Valley of Rephaim). One chapter
+    // standing alone has precedent (M3 = 1 Sam 31; M1 and M2 both = 1 Sam 30).
+    // 2 Sam 6-7 (the ark brought up + Nathan's dynastic oracle) is the next
+    // coherent unit and reuses this milestone's Jerusalem — M7 starts at
+    // 2 Sam 6.
+    // Three scenes + an atlas phase; briefs in docs/design/
+    // (hebron-all-israel, jerusalem-stronghold, rephaim-valley). Build order:
+    // hebron-all-israel first (full Hebron reuse, no new terrain, no death),
+    // then jerusalem-stronghold (load-bearing), then rephaim-valley, then the
+    // atlas phase — the M5 cheapest/lowest-risk-first convention.
+    // Contested calls resolved at this pass, recorded in the briefs:
+    // (a) 5:8's tsinnor ("water shaft") stays UNSTAGED — no infiltration route,
+    // shaft, or tunnel is depicted anywhere; the philological and Warren's-Shaft
+    // disputes are scholarlyViews + caption only, per the no-invented-method
+    // restraint ADR-009 ratified at the M5 sign-off (hebron-reckoning, 4:12a).
+    // (b) jerusalem-stronghold is therefore `depictsDeath: false`: 5:6-10
+    // narrates no death, no casualty, and no assault method, and inventing one
+    // would be precisely ADR-011's "unsourced invented certainty." (c) "The
+    // blind and the lame" is caption-only with no staged figures, both readings
+    // surfaced. (d) The City of David's 10th-century archaeology (Large Stone
+    // Structure / Stepped Stone Structure / Millo) renders as a modest
+    // fortified spur — explicitly not a portrait of any excavated structure and
+    // explicitly not a palace — with the E. Mazar vs. Finkelstein-et-al. dispute
+    // as scholarlyViews. (e) Hiram (5:11) is carried as scholarlyViews and never
+    // dated against Tyrian regnal years; no ashlar or proto-Aeolic (later Iron
+    // II) masonry. (f) 5:17-25's sequencing relative to the capture is
+    // scholarlyViews; scenes run in canonical order and no Jerusalem geometry
+    // appears in rephaim-valley, so no geometry answers the question. (g) No
+    // force numbers are narrated at Rephaim, so all counts are disclosed design
+    // choices (the claim-judah-assembly-scale pattern). (h) The captured
+    // Philistine images (5:21 MT vs. 1 Chr 14:12) render only as covered carried
+    // bundles, divergence as scholarlyViews. (i) 5:24's sound in the balsam tops
+    // gets no supernatural visual effect of any kind.
+    // Atlas ruling: the M6 phase carries BOTH existing allegiance regions under
+    // one king with new captions — it does NOT merge them into a single shape,
+    // draw a border, or expand either one. Merging would assert exactly the
+    // contested territorial united-monarchy claim that claim-david-historical
+    // keeps open. Jerusalem is plotted as a new, securely identified location.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All the tribes of Israel come to Hebron; the elders’ covenant before the LORD and the anointing of David king over Israel (`hebron-all-israel`) — the M4 “house of Judah only” qualifier finally unwound by the text itself',
+      'The taking of the stronghold of Zion from the Jebusites, the city of David and the Millo, and Hiram of Tyre’s embassy and house-building (`jerusalem-stronghold`) — the first wholly new major site since M3; no assault method is staged, 5:8’s tsinnor stays caption-only',
+      'The two Philistine engagements in the Valley of Rephaim — Baal-perazim, then the flanking approach opposite the balsam trees (`rephaim-valley`) — the third ADR-009 battle scene, and the smallest, since the chapter narrates no numbers',
+      'Atlas phase extension: both allegiance regions carried under one king and Jerusalem plotted — a `/atlas` phase update per ADR-011, not a 3D scene; no merged shape, no borders, no invented extent',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

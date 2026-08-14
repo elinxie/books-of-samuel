@@ -450,6 +450,69 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
+## Milestone 6 — 2 Samuel 5: **planned** (scoped + briefed 2026-08-14; no build yet)
+
+Scope decision (Fable, 2026-08-14): **2 Samuel 5 alone (5:1–25)**, deliberately
+not bundled with chapter 6. The M4/M5 bundling test inverts here — M5 bundled
+3–4 because chapter 4 alone was too thin to stand, whereas chapter 5 is the
+heaviest single-chapter build the project has attempted: it carries the first
+wholly new major site since M3 (Jerusalem, the City of David spur — a new
+landform and a new settlement form with no continuity reuse available, and
+geometry every later milestone inherits) plus a second new battlefield
+geography (the Valley of Rephaim). Single-chapter milestones already have
+precedent (M3 = 1 Samuel 31; M1 and M2 both = 1 Samuel 30). M7 will start at
+2 Samuel 6 (the ark brought up and Nathan's dynastic oracle — one unit, and it
+reuses M6's Jerusalem).
+
+Three scenes plus an atlas phase; briefs in `docs/design/`. Build order,
+cheapest and lowest-risk first per the M5 convention:
+
+1. `hebron-all-israel` — 5:1–5: the tribes come to Hebron, the elders'
+   covenant before the LORD, the anointing over Israel, the regnal summary as
+   a card. `depictsDeath: false`. Full Hebron continuity reuse, targeting no
+   new geometry families at all.
+2. `jerusalem-stronghold` — 5:6–16: the approach, the Jebusite taunt, the
+   tsinnor card, the held gap where the text narrates no method, the city of
+   David and the Millo, Hiram of Tyre's embassy and house, and 5:13–16 as a
+   card. `depictsDeath: false` — the passage narrates no death, no casualty,
+   and no assault method. The milestone's load-bearing scene, and the first in
+   the project whose cost driver is static geometry rather than crowd size.
+3. `rephaim-valley` — 5:17–25: two Philistine occupations of the valley, two
+   inquiries with two different answers, Baal-perazim, the covered images, the
+   balsam-grove flank, and the pursuit. `depictsDeath: true`, under ADR-009's
+   crowd-battle treatment (the `gilboa-battle` precedent, not the
+   named-character-killing template — the chapter names no combatant).
+   Deliberately about half `gilboa-battle`'s figure count, because the chapter
+   narrates no numbers.
+4. Atlas phase (`/atlas`, a `ui-engineer` extension, not a 3D scene): both
+   allegiance regions carried under one king with new captions, and Jerusalem
+   plotted. **The regions are not merged into a single shape, given a border,
+   or expanded** — merging would assert exactly the contested territorial
+   united-monarchy claim that `claim-david-historical` deliberately keeps open,
+   and the M5 headless variant already established that refusing to merge is
+   the honest rendering.
+
+Contested calls resolved in that pass and recorded in the briefs: 5:8's
+tsinnor stays entirely unstaged (no shaft, tunnel, or entry route in any mode
+— both the philological dispute and the Warren's Shaft dispute are live, and
+this applies the no-invented-method restraint ADR-009 ratified at the M5
+sign-off); "the blind and the lame" is caption-only with no staged figures;
+the City of David's tenth-century archaeology renders as a modest fortified
+spur, explicitly not a portrait of the Large Stone Structure or the Stepped
+Stone Structure and explicitly not a palace, with the dating dispute carried
+as `scholarlyViews`; the reused Middle Bronze fortifications at the Gihon are
+conditionally approved and ship only if a researcher pass lands their
+citation; Hiram is never dated against Tyrian regnal years and no ashlar or
+proto-Aeolic masonry appears; the 5:17 sequencing crux is carried as
+`scholarlyViews` with no geometry answering it; force counts are disclosed
+design choices, since none is narrated; the captured images render as covered
+bundles with the MT / 1 Chronicles 14:12 divergence as `scholarlyViews`; and
+5:24 gets no supernatural visual effect of any kind. No new
+`fable-review-queue` items were opened; release gates open at the M6 review,
+per the M3/M4/M5 pattern. Researcher gaps are listed in `docs/next-run.md` —
+the largest is that `sources/source-cards/` currently contains no card
+touching Jerusalem at all.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:
