@@ -3,7 +3,100 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-15, M6 SCOPED — Sonnet fallback, provisional, branch `claude/focused-mccarthy-kf7a0j`, PR #62 draft)
+
+**M6 (2 Samuel 5) is scoped, all marked PROVISIONAL** (fable-review-queue #21):
+`fable-architect` hit its monthly spend limit on the first call this
+session, same recurring constraint as 2026-07-22/2026-08-10 — proceeded
+under `docs/model-handoff.md`'s documented Sonnet-fallback rather than
+blocking. M6 = 2 Sam 5 alone (three distinct stageable episodes, not thin
+like ch. 4 was for M4 — no bundling); ch. 6 (the ark) becomes M7; ch. 7
+(Nathan's oracle) deferred, unscoped. Full reasoning in
+`src/data/milestones.ts`'s M6 comment.
+
+Landed this session (gate green after each: format/lint/typecheck/484
+vitest — e2e not re-run, no component code touched):
+
+1. **Jerusalem/City of David research pass** (`researcher` agent): 5 new
+   source cards (`mazar-2009-palace-of-david`,
+   `finkelstein-herzog-singer-avitz-ussishkin-2007`,
+   `cahill-2003-jerusalem-united-monarchy`, `steiner-2003-kenyon-response`,
+   `reich-shukron-1999-warrens-shaft`); new `jerusalem` location entry
+   carrying the maximalist (Mazar, Cahill) vs. minimalist
+   (Finkelstein/Herzog/Singer-Avitz/Ussishkin, Steiner) 10th-century-scale
+   dispute as `scholarlyViews`, resolving neither. `sources/source-index.json`
+   regenerated via `npm run build:sources`.
+2. **Scope + data scaffolding** (Sonnet, this orchestrating session): M6
+   milestone entry (`planned`); `2sam-5` passage; three `planned` `SceneDef`
+   stubs (`hebron-unification`, `jerusalem-conquest`,
+   `baal-perazim-rephaim`) wired into `scenes.ts`/`locations.ts`/
+   `passages.ts`; new `valley-of-rephaim` placeholder location (general
+   region attested via extended `rainey-notley-2006` coverage, Baal-perazim's
+   precise site disclosed undetermined).
+3. **`hebron-unification` brief DONE** — `docs/design/hebron-unification-brief.md`
+   (`world-director`, model overridden to `sonnet`, same fallback policy).
+   2 Sam 5:1-5. ~230-290 figures, ~80s duration. New claims recommended:
+   `claim-all-israel-covenant`, `claim-david-reign-length`,
+   `claim-covenant-rite-form` (design-placeholder), `claim-unification-cast-scale`
+   (design-placeholder). New group character `elders-of-israel` (not a reuse
+   of M4's `men-of-judah` — wrong scope). ESV spend candidate: 5:2b. Reuses
+   `claim-anointing-rite-form` from `hebron-anointing` directly for the oil
+   gesture.
+
+**Two briefs were dispatched in parallel and were still running when this
+session hit its context limit and had to checkpoint** (98% context,
+stop-hook forced an immediate commit/push mid-flight):
+
+- `jerusalem-conquest` brief (2 Sam 5:6-12) — the milestone's load-bearing
+  scene, first Jerusalem geometry in the project. Agent id `ae9c9098c2890cccd`
+  (background task) — check `ListAgents`/task notifications first; it may
+  have already finished and just not been picked up before this session
+  ended. If so, its output was written to
+  `docs/design/jerusalem-conquest-brief.md` — read it, verify it against the
+  task-notification result (or the `abfc8c23e5b0e9db8`/`ae9c9098c2890cccd`
+  transcripts if needed), and commit it following the same pattern as the
+  `hebron-unification` commit above. If it's not done, resume it via
+  `SendMessage` to that agent id if still listed in `ListAgents`, or
+  re-dispatch fresh per the prompt shape used in this session's transcript
+  (git log `15a1b3d`'s parent commits have the full context if the prompt
+  itself is needed — or just re-derive from `docs/design/hebron-unification-brief.md`'s
+  sibling-brief cross-references and this note's summary of what it needed to
+  cover: the maximalist/minimalist staging call — lean minimalist/modest per
+  the M6 scope comment's own stated preference — "the blind and the lame"
+  caption-only-never-visualized, the tsinnor/Warren's-Shaft water-system
+  detail via `reich-shukron-1999-warrens-shaft`, Hiram's house-building kept
+  brief/narrated not elaborately staged).
+- `baal-perazim-rephaim` brief (2 Sam 5:17-25) — agent id
+  `a48b9f7121ea70c0a`. Same check-first-then-resume-or-redo approach. Needed
+  to cover: one scene for both Philistine campaigns (not two), figure count
+  well under Gilboa's ~325 ceiling, `depictsDeath` call stated explicitly
+  with reasoning, the balsam/mulberry-trees sign as the scene's one
+  distinctive sensory beat.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Recover/verify the two in-flight briefs above** — check first via
+   `ListAgents`/notifications before re-spending tokens on a redo.
+2. Once all three M6 briefs exist: fill data-layer gaps each brief flags
+   (new claims/characters, per the M4 2026-07-22 fallback-session pattern of
+   "fill every gap flagged across all three briefs myself, execution-tier,
+   no Fable needed") — wire `claimIds` into the three scene stubs.
+3. Build order per `milestones.ts`'s M6 comment: `hebron-unification` first
+   (cheapest, reuses Hebron directly), then `jerusalem-conquest` (load-bearing,
+   new location), then `baal-perazim-rephaim`, then the atlas-unification
+   extension (`ui-engineer`, lifts the M5 "no unified kingdom" guard).
+4. Run full `npm run verify` (format/lint/typecheck/vitest/build/e2e) before
+   considering any scene build done — not yet run this session past vitest.
+5. **A real Fable pass** to confirm/revise the whole M6 scope+briefs package
+   (fable-review-queue #21) once Fable's spend limit resets — batch it,
+   don't spend a partial Fable session on it. Do this before flipping any M6
+   scene past `in-progress`.
+6. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + Pages-live check — still blocked from this
+   sandbox's network policy (confirmed again this session: `connect_rejected`
+   403 on `elinxie.github.io`). See Environment notes below, unchanged.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the
