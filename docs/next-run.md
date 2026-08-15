@@ -33,65 +33,82 @@ vitest — e2e not re-run, no component code touched):
    `passages.ts`; new `valley-of-rephaim` placeholder location (general
    region attested via extended `rainey-notley-2006` coverage, Baal-perazim's
    precise site disclosed undetermined).
-3. **`hebron-unification` brief DONE** — `docs/design/hebron-unification-brief.md`
-   (`world-director`, model overridden to `sonnet`, same fallback policy).
-   2 Sam 5:1-5. ~230-290 figures, ~80s duration. New claims recommended:
-   `claim-all-israel-covenant`, `claim-david-reign-length`,
-   `claim-covenant-rite-form` (design-placeholder), `claim-unification-cast-scale`
-   (design-placeholder). New group character `elders-of-israel` (not a reuse
-   of M4's `men-of-judah` — wrong scope). ESV spend candidate: 5:2b. Reuses
-   `claim-anointing-rite-form` from `hebron-anointing` directly for the oil
-   gesture.
+3. **All three M6 briefs are now DONE** (`world-director`, model overridden
+   to `sonnet`, same fallback policy — all three landed after the context-limit
+   checkpoint note previously in this section; that recovery note is now
+   obsolete and removed):
+   - `docs/design/hebron-unification-brief.md` (2 Sam 5:1-5). ~230-290
+     figures, ~80s duration. New claims: `claim-all-israel-covenant`,
+     `claim-david-reign-length`, `claim-covenant-rite-form`
+     (design-placeholder), `claim-unification-cast-scale`
+     (design-placeholder). New group character `elders-of-israel` (not a
+     reuse of M4's `men-of-judah` — wrong scope). ESV spend candidate: 5:2b.
+     Reuses `claim-anointing-rite-form` from `hebron-anointing` directly.
+   - `docs/design/jerusalem-conquest-brief.md` (2 Sam 5:6-12), the
+     milestone's load-bearing scene and first Jerusalem geometry in the
+     project. **Key call**: renders Jerusalem at the modest, minimalist-leaning
+     end — no fortification wall/gate asserted (topographic "stronghold"
+     quality, not architectural), no rendering of Mazar's "Large Stone
+     Structure" as a coherent building, reasoned as "the smallest claim
+     consistent with both" the maximalist and minimalist `scholarlyViews`
+     (same logic as `claim-ziklag-location`'s multi-candidate treatment).
+     "The blind and the lame" (5:6/5:8) and the tsinnor/water-shaft route
+     both stay caption-only, never staged/visualized. `depictsDeath: false`
+     (no combat killing narrated in 5:6-12; 1 Chron 11:6's detail explicitly
+     out of scope). ~65-95 figures, ~150s across 9 beats. New claims:
+     `claim-jerusalem-identification`, `claim-jerusalem-town-form`
+     (scholarlyViews), `claim-tsinnor-route` (scholarlyViews),
+     `claim-jerusalem-conquest`, `claim-jebusite-taunt` (scholarlyViews),
+     `claim-jerusalem-millo-buildup`, `claim-hiram-alliance`,
+     `claim-jerusalem-sons-daughters`, `claim-jerusalem-cast-scale`. One new
+     light character: `hiram-king-of-tyre`. ESV spend candidate: 5:12.
+   - `docs/design/baal-perazim-rephaim-brief.md` (2 Sam 5:17-25). One scene,
+     two beat-groups (14 beats, ~110-130s), a **shared figure pool restaged
+     across both campaigns** rather than doubled instances — ~60-80 figures
+     total, well under Gilboa's ~325 ceiling and even below `gibeon-pool`'s
+     ~90-115. `depictsDeath: true` (implied fatalities from the routs/strikes
+     even with no named-individual on-screen killing — the alternate `false`
+     reading is stated as legitimate but rejected). The balsam-trees sign is
+     the scene's one non-combat centerpiece. New claims:
+     `claim-baal-perazim-victory`, `claim-rephaim-second-campaign`,
+     `claim-valley-of-rephaim-terrain-form` (design-placeholder),
+     `claim-rephaim-battle-scale` (design-placeholder),
+     `claim-philistine-idols-captured` (flagged for a researcher check
+     against existing Philistine material-culture cards),
+     `claim-balsam-trees-sign` (scholarlyViews on the בְּכָאִים species
+     identification). Reuses `claim-hebron-inquiry` and Gilboa's
+     `claim-israelite-muster-kit`/`claim-philistine-kit` rather than
+     minting new dress claims. Also recommends (non-blocking) a
+     `route-baal-perazim-geba-gezer` entry in `src/data/routes.ts`.
 
-**Two briefs were dispatched in parallel and were still running when this
-session hit its context limit and had to checkpoint** (98% context,
-stop-hook forced an immediate commit/push mid-flight):
-
-- `jerusalem-conquest` brief (2 Sam 5:6-12) — the milestone's load-bearing
-  scene, first Jerusalem geometry in the project. Agent id `ae9c9098c2890cccd`
-  (background task) — check `ListAgents`/task notifications first; it may
-  have already finished and just not been picked up before this session
-  ended. If so, its output was written to
-  `docs/design/jerusalem-conquest-brief.md` — read it, verify it against the
-  task-notification result (or the `abfc8c23e5b0e9db8`/`ae9c9098c2890cccd`
-  transcripts if needed), and commit it following the same pattern as the
-  `hebron-unification` commit above. If it's not done, resume it via
-  `SendMessage` to that agent id if still listed in `ListAgents`, or
-  re-dispatch fresh per the prompt shape used in this session's transcript
-  (git log `15a1b3d`'s parent commits have the full context if the prompt
-  itself is needed — or just re-derive from `docs/design/hebron-unification-brief.md`'s
-  sibling-brief cross-references and this note's summary of what it needed to
-  cover: the maximalist/minimalist staging call — lean minimalist/modest per
-  the M6 scope comment's own stated preference — "the blind and the lame"
-  caption-only-never-visualized, the tsinnor/Warren's-Shaft water-system
-  detail via `reich-shukron-1999-warrens-shaft`, Hiram's house-building kept
-  brief/narrated not elaborately staged).
-- `baal-perazim-rephaim` brief (2 Sam 5:17-25) — agent id
-  `a48b9f7121ea70c0a`. Same check-first-then-resume-or-redo approach. Needed
-  to cover: one scene for both Philistine campaigns (not two), figure count
-  well under Gilboa's ~325 ceiling, `depictsDeath` call stated explicitly
-  with reasoning, the balsam/mulberry-trees sign as the scene's one
-  distinctive sensory beat.
+   All three briefs read/cross-referenced each other's siblings and the
+   relevant ADRs; none edited `src/data/*.ts` or
+   `docs/fable-review-queue.md` themselves, per instructions — that data-layer
+   wiring is next.
 
 **What's next (Sonnet), in priority order:**
 
-1. **Recover/verify the two in-flight briefs above** — check first via
-   `ListAgents`/notifications before re-spending tokens on a redo.
-2. Once all three M6 briefs exist: fill data-layer gaps each brief flags
-   (new claims/characters, per the M4 2026-07-22 fallback-session pattern of
-   "fill every gap flagged across all three briefs myself, execution-tier,
-   no Fable needed") — wire `claimIds` into the three scene stubs.
-3. Build order per `milestones.ts`'s M6 comment: `hebron-unification` first
+1. **Fill the data-layer gaps all three briefs flag** — new claims (listed
+   above, ~20 total across the three briefs) in `claims.ts`, new characters
+   (`elders-of-israel`, `hiram-king-of-tyre`) in `characters.ts`, wire
+   `claimIds` into the three scene stubs in `scenes.ts` and into
+   `jerusalem`/`valley-of-rephaim`/`hebron` in `locations.ts`. Execution-tier,
+   no Fable needed — mirrors the M4 2026-07-22 fallback-session pattern
+   ("fill every gap flagged across all three briefs myself").
+2. Build order per `milestones.ts`'s M6 comment: `hebron-unification` first
    (cheapest, reuses Hebron directly), then `jerusalem-conquest` (load-bearing,
    new location), then `baal-perazim-rephaim`, then the atlas-unification
    extension (`ui-engineer`, lifts the M5 "no unified kingdom" guard).
-4. Run full `npm run verify` (format/lint/typecheck/vitest/build/e2e) before
-   considering any scene build done — not yet run this session past vitest.
-5. **A real Fable pass** to confirm/revise the whole M6 scope+briefs package
+3. Run full `npm run verify` (format/lint/typecheck/vitest/build/e2e) before
+   considering any scene build done — only vitest/format/lint/typecheck run
+   this session (all green), not build/e2e.
+4. **A real Fable pass** to confirm/revise the whole M6 scope+briefs package
    (fable-review-queue #21) once Fable's spend limit resets — batch it,
    don't spend a partial Fable session on it. Do this before flipping any M6
-   scene past `in-progress`.
-6. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   scene past `in-progress`. `jerusalem-conquest`'s minimalist-leaning
+   staging call is the single most consequential thing in that pass to
+   re-check.
+5. (Carried forward, still open, non-blocking) Real-hardware perf check of
    `gilboa-battle` at high tier + Pages-live check — still blocked from this
    sandbox's network policy (confirmed again this session: `connect_rejected`
    403 on `elinxie.github.io`). See Environment notes below, unchanged.
