@@ -51,7 +51,7 @@ The observer should come away understanding four things:
    assumed — see "Resolved design calls."
 3. **Two of the most obscure verses in the Hebrew Bible sit right at the
    center of this scene, and the honest move is to say so, not resolve
-   them.** "The blind and the lame" (5:6, 5:8) and the *tsinnor* (5:8a) are
+   them.** "The blind and the lame" (5:6, 5:8) and the _tsinnor_ (5:8a) are
    both notoriously difficult; scholars have proposed several genuinely
    different readings of each without consensus. The scene's design
    discipline here is restraint: caption the difficulty, do not visualize
@@ -73,7 +73,7 @@ The observer should come away understanding four things:
   built environment renders as: a small cluster of modest stone dwellings
   along the ridge crest; a stepped-terrace retaining system on the eastern
   slope (the least-disputed physical feature between the two views — both
-  sides agree *some* Iron Age terracing exists there; they dispute its date,
+  sides agree _some_ Iron Age terracing exists there; they dispute its date,
   coherence, and relationship to any specific monumental building above
   it); and **no** rendering of Eilat Mazar's "Large Stone Structure" as a
   single coherent monumental building, and **no** structure labeled or
@@ -82,11 +82,11 @@ The observer should come away understanding four things:
   `claim-jerusalem-town-form` (basis `design-placeholder`, confidence
   `low`, both `loc-view-jerusalem-maximalist` and
   `loc-view-jerusalem-minimalist` cited by their source cards). The
-  reasoning for leaning minimalist in the *render* while disclosing both
-  in the *claim*: (a) inventing monumental Solomonic-looking construction
+  reasoning for leaning minimalist in the _render_ while disclosing both
+  in the _claim_: (a) inventing monumental Solomonic-looking construction
   the excavators themselves dispute is a much larger anachronism risk than
   under-building a modest hill settlement; (b) a modest render is
-  trivially compatible with *both* readings (the maximalist view does not
+  trivially compatible with _both_ readings (the maximalist view does not
   claim the whole ridge was monumental, only the summit structure; the
   minimalist view is fully satisfied by a modest render) — this is the
   same "smallest claim consistent with all disclosed views" logic
@@ -100,7 +100,7 @@ The observer should come away understanding four things:
   the Beth-shan thin-fortification precedent.** 2 Samuel 5:7's "stronghold
   of Zion" is defensible largely because of the ridge's own terrain: steep
   valleys close on both the east (Kidron) and west (Tyropoeon), narrowing
-  to a defensible spur. Rather than asserting a fortification *wall* either
+  to a defensible spur. Rather than asserting a fortification _wall_ either
   view would dispute, the perimeter reads as **conjoined dwelling walls
   along the crest edge** — the identical device `beth-shan-walls` used
   when fortification evidence was thin (register #11): a legible boundary
@@ -129,19 +129,19 @@ The observer should come away understanding four things:
   this session's source-card pass; flag as "checked, permanently thin"
   per the project's existing convention (register #17's precedent) rather
   than inventing attributions.
-- **The *tsinnor* (5:8a) is caption-only, not staged as a specific
+- **The _tsinnor_ (5:8a) is caption-only, not staged as a specific
   physical route.** Reich and Shukron's own excavation (their named
   argument, cited via `reich-shukron-1999-warrens-shaft`) concludes Warren's
   Shaft was not usable as an access route until centuries after David's
   traditional date — the most famous popular staging of this verse
   (soldiers climbing a shaft into the city) is the position its own
-  excavators argue against. Staging *any* specific route as "the tsinnor"
+  excavators argue against. Staging _any_ specific route as "the tsinnor"
   would assert an answer this project cannot support. Resolution: David's
   force is shown approaching generically from the Kidron valley near the
   (uncontested-location) Gihon Spring and entering the stronghold from the
   slope — geography that is not disputed — without depicting a shaft,
   tunnel, or crawl as the entry mechanism. A caption at the spring
-  viewpoint carries the *tsinnor* debate itself (word meaning disputed:
+  viewpoint carries the _tsinnor_ debate itself (word meaning disputed:
   water shaft/conduit, a weapon/grappling-hook reading, or a body-part
   idiom reading have all been proposed) and names Reich & Shukron's
   Warren's-Shaft-rejection specifically, without asserting a winner. New
@@ -179,7 +179,7 @@ The observer should come away understanding four things:
     meters long, tens of meters wide at the crest, not a broad hilltop.
   - Two flanking `channel` features (the Kidron valley to the east, the
     Tyropoeon/Central Valley to the west) cut deeper and steeper than any
-    prior scene's valley work — the steepness *is* the "stronghold" claim,
+    prior scene's valley work — the steepness _is_ the "stronghold" claim,
     and should read clearly from the default viewpoint.
   - A `basin` + flat water-plane at the Gihon Spring, directly reusing the
     `gibeon-pool` technique (`asset-gibeon-pool-basin`/`asset-water-plane`
@@ -187,12 +187,12 @@ The observer should come away understanding four things:
     real-time water shader) — the spring's location is not disputed and is
     the scene's one confidently-placed water feature.
   - Terrace retaining walls on the eastern slope, adapting `hebron-
-    anointing`'s `TerraceWalls.tsx` pattern to a steeper, narrower context
-    — this is new *layout* work (the geometry technique is reused, the
+anointing`'s `TerraceWalls.tsx` pattern to a steeper, narrower context
+    — this is new _layout_ work (the geometry technique is reused, the
     placement/scale is new and specific to this contested feature; see
     "Resolved design calls").
   - Palette: reuse the Judean-highland palette established by `hebron-
-    anointing`'s `terrain.ts` (the `#c3ae85`/`#7c8256`/`#ad9a72` family) —
+anointing`'s `terrain.ts` (the `#c3ae85`/`#7c8256`/`#ad9a72` family) —
     same regional geology, no new palette needed. Rockier and more exposed
     at the crest than Hebron's terraced hillsides, since the City of David
     ridge is narrower and steeper.
@@ -211,7 +211,7 @@ The observer should come away understanding four things:
   Millo/terrace work and Hiram's small construction scene, near the crest
   edge.
 - **Sightlines:** the default approach viewpoint should let the observer
-  register the ridge's *smallness* against the depth of the flanking
+  register the ridge's _smallness_ against the depth of the flanking
   valleys — the "stronghold" reads as defensible terrain, not defensible
   architecture. A crest-top viewpoint looking out over both valleys is the
   scene's "reset your expectations" money shot, deliberately un-grand.
@@ -261,7 +261,7 @@ where a number exists, disclosed design counts where none does):
 - Additional viewpoints: **the crest overlook** (`vp-crest-overlook`,
   looking out over both flanking valleys — the scale-reset shot,
   inspect emphasis); **the Gihon Spring** (`vp-gihon-spring`, where the
-  *tsinnor* caption lives, inspect emphasis — a strong candidate for
+  _tsinnor_ caption lives, inspect emphasis — a strong candidate for
   ADR-011's interactable-label affordance rather than a walked beat);
   **the building-up ground** (`vp-millo-terrace`, the terrace/Hiram
   vignette, walk emphasis at a slow pace during the montage beat).
@@ -270,17 +270,17 @@ where a number exists, disclosed design counts where none does):
   180s — this is a march/taking/naming/building sequence, not a
   procession):
 
-  | Beat             | Text     | Treatment                                                                                                                                                                                    |
-  | ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | `b-context`       | —        | Brief recap card: David now anointed king over all Israel at Hebron (`hebron-unification`); forward pointer into this scene only, no new content.                                             |
-  | `b-march`          | 5:6a     | David and his men move up from the Kidron/spring side toward the ridge. No violence.                                                                                                          |
-  | `b-taunt`          | 5:6b, 5:8b | Jebusite figures line the crest, gesturing/jeering (staged); the "blind and the lame" line delivered as caption text only, no disabled figures. `claim-jebusite-taunt`'s hedge surfaced here. |
-  | `b-taking`         | 5:7, 5:8a | David's force reaches and holds the crest; Jebusite figures disperse/step back — no depicted strike, no fall, no wound geometry (no combat is narrated). Tsinnor caption available at `vp-gihon-spring` in parallel. |
-  | `b-naming`         | 5:9a     | Caption: the stronghold is called the City of David.                                                                                                                                            |
-  | `b-buildup`        | 5:9b     | Montage: terrace/building activity from the Millo inward; ambient population present, unharmed, going about the settlement. Slow walk-pace at `vp-millo-terrace`.                             |
-  | `b-hiram`          | 5:11     | Hiram's cedar and craftsmen arrive; the small under-construction vignette. No finished building shown.                                                                                         |
-  | `b-establishment`  | 5:12     | Closing narratorial beat: David perceives the LORD has established him as king "for the sake of his people Israel" — ESV excerpt candidate (see below). No triumphal imagery.                 |
-  | `b-close`          | 5:13–16  | Closing text card only: more sons and daughters born to David at Jerusalem (list, not staged). Forward pointer to `baal-perazim-rephaim` only. No 2 Samuel 6+ content.                         |
+  | Beat              | Text       | Treatment                                                                                                                                                                                                            |
+  | ----------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `b-context`       | —          | Brief recap card: David now anointed king over all Israel at Hebron (`hebron-unification`); forward pointer into this scene only, no new content.                                                                    |
+  | `b-march`         | 5:6a       | David and his men move up from the Kidron/spring side toward the ridge. No violence.                                                                                                                                 |
+  | `b-taunt`         | 5:6b, 5:8b | Jebusite figures line the crest, gesturing/jeering (staged); the "blind and the lame" line delivered as caption text only, no disabled figures. `claim-jebusite-taunt`'s hedge surfaced here.                        |
+  | `b-taking`        | 5:7, 5:8a  | David's force reaches and holds the crest; Jebusite figures disperse/step back — no depicted strike, no fall, no wound geometry (no combat is narrated). Tsinnor caption available at `vp-gihon-spring` in parallel. |
+  | `b-naming`        | 5:9a       | Caption: the stronghold is called the City of David.                                                                                                                                                                 |
+  | `b-buildup`       | 5:9b       | Montage: terrace/building activity from the Millo inward; ambient population present, unharmed, going about the settlement. Slow walk-pace at `vp-millo-terrace`.                                                    |
+  | `b-hiram`         | 5:11       | Hiram's cedar and craftsmen arrive; the small under-construction vignette. No finished building shown.                                                                                                               |
+  | `b-establishment` | 5:12       | Closing narratorial beat: David perceives the LORD has established him as king "for the sake of his people Israel" — ESV excerpt candidate (see below). No triumphal imagery.                                        |
+  | `b-close`         | 5:13–16    | Closing text card only: more sons and daughters born to David at Jerusalem (list, not staged). Forward pointer to `baal-perazim-rephaim` only. No 2 Samuel 6+ content.                                               |
 
 ## Performance target
 
@@ -310,7 +310,7 @@ where a number exists, disclosed design counts where none does):
   `high` for site location only):** `claim-jerusalem-identification` —
   the City of David ridge as the site, citing `rainey-notley-2006` and
   `mazar-2009-palace-of-david` per `loc-view-jerusalem-city-of-david-
-  ridge`; explicitly does **not** carry the town-form dispute (that's
+ridge`; explicitly does **not** carry the town-form dispute (that's
   `claim-jerusalem-town-form`, below).
 - **New, disputed/design (basis `design-placeholder`, confidence `low`):**
   `claim-jerusalem-town-form` — the settlement scale/fortification
@@ -321,7 +321,7 @@ where a number exists, disclosed design counts where none does):
   `steiner-2003-kenyon-response`) as `scholarlyViews`, with the render
   disclosed as the minimalist-leaning conservative choice in `notes` (see
   "Resolved design calls" for the full reasoning to carry forward
-  verbatim); `claim-tsinnor-route` — the 5:8a *tsinnor* crux, citing
+  verbatim); `claim-tsinnor-route` — the 5:8a _tsinnor_ crux, citing
   `reich-shukron-1999-warrens-shaft` as one named position within a wider
   unresolved debate, confidence `low`.
 - **New, narrated (basis `biblical-text`):** `claim-jerusalem-conquest`
@@ -330,7 +330,7 @@ where a number exists, disclosed design counts where none does):
   taunt and its obscure content; confidence `high` for the fact of a
   taunt, `low` for its meaning; `scholarlyViews` hedged per "checked,
   permanently thin" — no named proponents invented); `claim-jerusalem-
-  millo-buildup` (5:9b — the building-up from the Millo inward; confidence
+millo-buildup` (5:9b — the building-up from the Millo inward; confidence
   `high` for the narrated fact, but the Millo's own physical form/
   identification stays undetermined in the sources this session gathered
   — note honestly as an open gap rather than linking it to the Stepped
@@ -384,7 +384,7 @@ where a number exists, disclosed design counts where none does):
   Solomonic-scale city, wall circuit, or gate structure; any structure
   built, labeled, or composed to resemble Mazar's "Large Stone Structure"
   or presented as "David's palace"; staging Warren's Shaft or any other
-  specific route as a confident answer to the *tsinnor* crux; any depicted
+  specific route as a confident answer to the _tsinnor_ crux; any depicted
   combat death, wound, or blood geometry (none is narrated — `depictsDeath`
   stays `false`); staging 1 Chronicles 11:6's Joab-first-to-strike detail
   or naming Joab as present in this scene; any 2 Samuel 5:17+ or 2 Samuel

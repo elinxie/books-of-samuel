@@ -34,7 +34,7 @@ The observer should come away understanding three things:
    balsam trees" — as confirmation that the LORD has already gone out ahead
    to strike (5:23–24). The text closes the loop explicitly: "David did as
    the LORD commanded him" (5:25a) — the same verb of compliance both times.
-   The composition should make the *contrast in instructions* legible, not
+   The composition should make the _contrast in instructions_ legible, not
    just render two similar routs back to back; that contrast is the scene's
    real content. David is shown consulting before acting both times, not
    improvising.
@@ -94,7 +94,7 @@ not merely smaller:
   instance count. The second muster (5:22, "yet again") should read as a
   clearly distinct event in staging/camera/caption, not as a distinct crowd.
 - **"The stronghold" (5:17b) is referenced, not rebuilt.** The Hebrew
-  *metsudah* echoes 5:7's "stronghold of Zion" — the most natural reading is
+  _metsudah_ echoes 5:7's "stronghold of Zion" — the most natural reading is
   that David goes down from the newly-taken Jerusalem heights to a
   defensible position, plausibly the same stronghold — but this project has
   not adopted that identification as certain, and some readings connect the
@@ -113,14 +113,14 @@ not merely smaller:
   iconography, no destruction, no march-past display — restraint matches
   the "no triumphal staging" rule carried forward from Gilboa and Gibeon.
 - **The balsam/mulberry trees get the scene's one dedicated atmospheric
-  beat.** 5:23–24's בְּכָאִים (*bekaim*) is a genuine, longstanding
+  beat.** 5:23–24's בְּכָאִים (_bekaim_) is a genuine, longstanding
   translation dispute (ESV "balsam trees," KJV "mulberry trees," other
   renderings "poplar/aspen," a "weeping trees" reading tied to the root
-  *bakah*) — see Required source basis. Render a generic stand of
+  _bakah_) — see Required source basis. Render a generic stand of
   narrow-leaved trees (species left deliberately non-specific, disclosed
   placeholder) with an animated canopy (vertex sway / rustle) as the visual
   carrier of "the sound of marching" — the scene's one Hebron-gate-style
-  fixed sensory cue, except here the text fixes a *sound*, not a light
+  fixed sensory cue, except here the text fixes a _sound_, not a light
   condition, and the engine has no established spatial-audio system, so the
   primary carrier is visual motion plus the beat caption stating the sound
   explicitly. An ambient audio cue is a legitimate optional enhancement
@@ -142,7 +142,7 @@ not merely smaller:
   The two inquiries' contrasting instructions are a genuinely good fit for
   a light "what would you expect the answer to be?" interactable-label
   affordance before each reveal (passes the ADR-011 test: deepens scene
-  comprehension of *why* the tactics differ; fully ignorable — the scripted
+  comprehension of _why_ the tactics differ; fully ignorable — the scripted
   reenactment plays either way; never rewards guessing anything the text
   doesn't itself state, since the "reveal" is always the text's own answer).
   This is flagged as a **v1.1 polish candidate**, not part of this build's
@@ -156,7 +156,7 @@ not merely smaller:
   basin (Gibeon) — the Valley of Rephaim is the fertile lowland immediately
   southwest of the City of David ridge. Use gentle `flatten`/`ramp`
   `TerrainSpec` features rather than `mound`/`ridge`/`basin` — the terrain's
-  flatness *is* the point of contrast with the project's prior two
+  flatness _is_ the point of contrast with the project's prior two
   battlefields, and should read that way from the default viewpoint. Keep
   dressing modest: open grass/light scrub with a few cultivated-looking
   patches at most, disclosed as an undocumented but plausible lowland-plain
@@ -173,8 +173,8 @@ not merely smaller:
   3. **The circling route** — the ground David's force crosses to get
      behind the Philistine line in the second campaign, distinct from and
      roughly perpendicular to the first campaign's direct approach — the
-     one place this scene should let the observer feel the *difference in
-     tactics* geometrically, not just hear it in a caption.
+     one place this scene should let the observer feel the _difference in
+     tactics_ geometrically, not just hear it in a caption.
   4. **The abandoned camp** — a modest cluster of dropped gear and the
      idol-figurine props, at the edge of the routed ground after the first
      campaign's strike.
@@ -241,28 +241,28 @@ not merely smaller:
   reasoning below; standard is the default per ADR-009, gated by the
   one-time advisory):
 
-  | Beat               | Text        | Standard                                                                                                                                                                                                 | Reduced                                                                                    |
-  | ------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-  | `b-seek`           | 5:17a       | Opening card: the Philistines hear a king now rules a united Israel and come up to seek David. No geometry beyond the card; no violence.                                                                    | identical                                                                                     |
-  | `b-stronghold`     | 5:17b       | Brief transition: David goes down to "the stronghold" (referenced, not built — see Resolved design calls). Camera move only; no violence.                                                                   | identical                                                                                     |
-  | `b-spread-1`       | 5:18        | Establishing shot at `vp-valley-overlook`: the Philistines spread out across the valley. No violence.                                                                                                       | identical                                                                                     |
-  | `b-inquiry-1`      | 5:19        | Dialogue/prayer beat: David inquires of the LORD ("Shall I go up… will you give them into my hand?"); the answer, "Go up." Inferred ephod practice, no new object modeled (see Required source basis). No violence. | identical                                                                                     |
-  | `b-rout-1`         | 5:20a       | The engagement and rout at distance, dust/motion carrying the collapse — same register as Gilboa's `b-rout`/Gibeon's `b-battle-spreads`; no wound/blood/gore geometry, no melee choreography.                | Wider distance still; the crowd thins and drains, falls elided entirely.                     |
-  | `b-naming`         | 5:20b       | David names the place Baal-perazim; dialogue/caption beat carries the "breaking flood" line (candidate ESV quote — see below). No violence.                                                                  | identical                                                                                     |
-  | `b-idols`          | 5:21        | `vp-abandoned-camp`: a handful of David's men calmly gather generic cult-figurine props among abandoned gear at the routed camp's edge. No violence; no triumphal framing.                                  | identical                                                                                     |
-  | `b-spread-2`       | 5:22        | Establishing shot, `vp-valley-overlook` reused: the Philistines come up "yet again" and spread out. Caption marks this explicitly as a second, distinct muster. No violence.                                | identical                                                                                     |
-  | `b-inquiry-2`      | 5:23        | Dialogue/prayer beat: David inquires again; this time told **not** to go up directly, but to circle around behind them, opposite the balsam trees. Held beat — the contrast with `b-inquiry-1` is the point. No violence. | identical                                                                                     |
-  | `b-circle`         | 5:23b–24a   | `vp-flank-circle`, walk/follow-emphasis: David's force moves quietly behind the Philistine line toward the balsam grove. No violence.                                                                        | identical                                                                                     |
-  | `b-sign`           | 5:24        | `vp-balsam-grove`, held and quiet: the canopy stirs; caption states the sound of marching in the treetops as the LORD's own sign that He has gone out ahead. The scene's one non-combat centerpiece beat. No violence. | identical (this beat carries no violence in either mode and should not be shortened in reduced mode) |
-  | `b-strike-2`       | 5:25        | Brief rout/pursuit at documentary distance (dust/motion, no gore), widening to a receding shot; caption states David struck the Philistines "from Geba to Gezer" and points to the atlas route. No melee choreography. | Wider distance only; pursuit read by the crowd draining off-frame, no individual falls shown. |
-  | `b-obedience`      | 5:19b, 5:25a | Closing caption threading both campaigns: "David did as the LORD commanded him" — stated once as the scene's throughline, not re-litigated per beat.                                                        | identical                                                                                     |
-  | `b-close`          | —           | Closing card: forward pointer to M7 (2 Samuel 6, the ark's arrival) stated as a pointer only, **not depicted or previewed**.                                                                                 | identical                                                                                     |
+  | Beat           | Text         | Standard                                                                                                                                                                                                                  | Reduced                                                                                              |
+  | -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+  | `b-seek`       | 5:17a        | Opening card: the Philistines hear a king now rules a united Israel and come up to seek David. No geometry beyond the card; no violence.                                                                                  | identical                                                                                            |
+  | `b-stronghold` | 5:17b        | Brief transition: David goes down to "the stronghold" (referenced, not built — see Resolved design calls). Camera move only; no violence.                                                                                 | identical                                                                                            |
+  | `b-spread-1`   | 5:18         | Establishing shot at `vp-valley-overlook`: the Philistines spread out across the valley. No violence.                                                                                                                     | identical                                                                                            |
+  | `b-inquiry-1`  | 5:19         | Dialogue/prayer beat: David inquires of the LORD ("Shall I go up… will you give them into my hand?"); the answer, "Go up." Inferred ephod practice, no new object modeled (see Required source basis). No violence.       | identical                                                                                            |
+  | `b-rout-1`     | 5:20a        | The engagement and rout at distance, dust/motion carrying the collapse — same register as Gilboa's `b-rout`/Gibeon's `b-battle-spreads`; no wound/blood/gore geometry, no melee choreography.                             | Wider distance still; the crowd thins and drains, falls elided entirely.                             |
+  | `b-naming`     | 5:20b        | David names the place Baal-perazim; dialogue/caption beat carries the "breaking flood" line (candidate ESV quote — see below). No violence.                                                                               | identical                                                                                            |
+  | `b-idols`      | 5:21         | `vp-abandoned-camp`: a handful of David's men calmly gather generic cult-figurine props among abandoned gear at the routed camp's edge. No violence; no triumphal framing.                                                | identical                                                                                            |
+  | `b-spread-2`   | 5:22         | Establishing shot, `vp-valley-overlook` reused: the Philistines come up "yet again" and spread out. Caption marks this explicitly as a second, distinct muster. No violence.                                              | identical                                                                                            |
+  | `b-inquiry-2`  | 5:23         | Dialogue/prayer beat: David inquires again; this time told **not** to go up directly, but to circle around behind them, opposite the balsam trees. Held beat — the contrast with `b-inquiry-1` is the point. No violence. | identical                                                                                            |
+  | `b-circle`     | 5:23b–24a    | `vp-flank-circle`, walk/follow-emphasis: David's force moves quietly behind the Philistine line toward the balsam grove. No violence.                                                                                     | identical                                                                                            |
+  | `b-sign`       | 5:24         | `vp-balsam-grove`, held and quiet: the canopy stirs; caption states the sound of marching in the treetops as the LORD's own sign that He has gone out ahead. The scene's one non-combat centerpiece beat. No violence.    | identical (this beat carries no violence in either mode and should not be shortened in reduced mode) |
+  | `b-strike-2`   | 5:25         | Brief rout/pursuit at documentary distance (dust/motion, no gore), widening to a receding shot; caption states David struck the Philistines "from Geba to Gezer" and points to the atlas route. No melee choreography.    | Wider distance only; pursuit read by the crowd draining off-frame, no individual falls shown.        |
+  | `b-obedience`  | 5:19b, 5:25a | Closing caption threading both campaigns: "David did as the LORD commanded him" — stated once as the scene's throughline, not re-litigated per beat.                                                                      | identical                                                                                            |
+  | `b-close`      | —            | Closing card: forward pointer to M7 (2 Samuel 6, the ark's arrival) stated as a pointer only, **not depicted or previewed**.                                                                                              | identical                                                                                            |
 
   Explicitly, matching Gilboa/Gibeon's precedent: **no dismemberment or
   blood/gore geometry in any mode**, no close or lingering framing on any
   falling figure, no melee choreography rivaling Gilboa's line-clash or
   Gibeon's champions' contest. Both rout beats (`b-rout-1`, `b-strike-2`)
-  should be the *shortest* violence beats this project has built — a
+  should be the _shortest_ violence beats this project has built — a
   collapse read by motion and dust, not a fight.
 
 ### `depictsDeath` call and reasoning
@@ -272,7 +272,7 @@ casualty is narrated on either side (unlike Gilboa's Saul/sons or Gibeon's
 Asahel), both campaigns describe an armed force being routed and struck down
 ("the LORD has broken through my enemies... like a breaking flood," 5:20;
 "David struck down the Philistines from Geba to Gezer," 5:25, using the same
-lethal-strike verb — *nakah* — used elsewhere in Samuel for killing in
+lethal-strike verb — _nakah_ — used elsewhere in Samuel for killing in
 battle, not mere pursuit). A "breach of waters" rout and a strike extending
 across a wide geographic corridor both imply real casualties among an
 engaged military force, even though the text declines to count or name them.
@@ -281,8 +281,8 @@ ADR-009's standard restraint (falls-at-distance, dust/motion, no wound
 geometry), which is exactly the category the advisory exists to flag. The
 alternate reading — `false`, because no specific death is narrated the way
 Gilboa's or Asahel's are — is legitimate and was seriously considered; it is
-rejected here because the advisory's purpose is to flag *combat content*,
-not only *named-individual* death, and both rout beats are unambiguously
+rejected here because the advisory's purpose is to flag _combat content_,
+not only _named-individual_ death, and both rout beats are unambiguously
 combat with implied fatalities, however restrained the treatment.
 
 ## Performance target
@@ -366,7 +366,7 @@ victory` as the contrasting first instance, not a duplicate claim).
     confidence "the text says this"; the species identification of בְּכָאִים
     is genuinely disputed — ESV "balsam trees," KJV "mulberry trees," and
     other renderings including "poplar/aspen" or a "weeping trees" reading
-    tied to the root *bakah* — carry at least two views with a `TO VERIFY`
+    tied to the root _bakah_ — carry at least two views with a `TO VERIFY`
     hedge on named proponents until a researcher pass attaches citable
     sources; the rendered tree form stays a generic, non-species-committed
     placeholder pending that pass, per `asset-balsam-grove`'s

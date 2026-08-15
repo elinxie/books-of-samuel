@@ -37,8 +37,8 @@ The observer should come away understanding three things:
    grief and disavowal. This scene is where those threads resolve: the other
    tribes now come to David, not the reverse. The observer who has walked the
    earlier Hebron scenes should feel this as a hinge closing, not a fresh
-   beginning — the composition's whole job is to make the *culmination* read
-   as distinct from the *founding*.
+   beginning — the composition's whole job is to make the _culmination_ read
+   as distinct from the _founding_.
 2. **The text supplies its own legitimation, and it is worth surfacing
    directly.** 5:1b–2 has the assembled elders recite David's record
    themselves: "we are your bone and flesh," his prior field leadership of
@@ -53,7 +53,7 @@ The observer should come away understanding three things:
    5:3 gives two distinct acts in order: first "King David made a covenant
    with them at Hebron before the LORD," then "they anointed David king over
    Israel." `hebron-anointing` staged only an anointing (2:4 names no
-   covenant for Judah alone). This scene stages a covenant *and* an
+   covenant for Judah alone). This scene stages a covenant _and_ an
    anointing — a formal, mutual, oath-bound compact this time, not a purely
    ceremonial installation. The observer should be able to tell the two
    moments apart on screen.
@@ -66,7 +66,7 @@ not as the same event with a bigger crowd:
 - **Who is present.** `hebron-anointing`'s cast was "the men of Judah" — one
   tribe's own townspeople and elders, installing David over themselves. This
   scene's cast is "all the tribes of Israel" (5:1) and "all the elders of
-  Israel" (5:3) — representatives arriving *from outside Judah*, not Hebron's
+  Israel" (5:3) — representatives arriving _from outside Judah_, not Hebron's
   own people. The `men-of-judah` character (M4) does not appear as this
   scene's principal cast; see Required source basis for the new group
   character this requires.
@@ -83,7 +83,7 @@ not as the same event with a bigger crowd:
   biggest compositional differentiator from `hebron-anointing` and should be
   designed first.
 - **What is added to the ceremony.** 2:4 names a bare anointing. 5:3 names a
-  covenant *before* the anointing. The covenant-making is its own beat with
+  covenant _before_ the anointing. The covenant-making is its own beat with
   its own (placeholder) physical form — see Resolved design calls — not
   folded silently into the anointing gesture.
 - **What the caption says.** `hebron-anointing`'s every caption touching 2:4
@@ -97,7 +97,7 @@ not as the same event with a bigger crowd:
 - **Register.** `hebron-anointing` was staged as a "first, local, incomplete
   step" (that brief's words) — deliberately bounded, inward-facing sightlines,
   no view toward the rest of the kingdom. This scene is the opposite: the
-  whole point is that the rest of the kingdom is now *in the frame*, arriving.
+  whole point is that the rest of the kingdom is now _in the frame_, arriving.
   Where `hebron-anointing` used one deliberately outward sightline only for
   the Jabesh-messenger beat, this scene's default vantage is itself the
   outward-turned one throughout.
@@ -148,7 +148,7 @@ not as the same event with a bigger crowd:
   a formulaic regnal notice (age at accession, total reign length, split
   between the Hebron-over-Judah years and the Jerusalem-over-all-Israel-
   and-Judah years) — the same kind of annalistic convention that recurs
-  through Kings for other monarchs, not part of the narrated *scene* action.
+  through Kings for other monarchs, not part of the narrated _scene_ action.
   It closes this scene as a numeric card (not staged, no geometry) precisely
   because it is the natural close of the Hebron era before the milestone
   moves to Jerusalem — see Camera/timeline beats. Kept as its own claim
@@ -170,7 +170,7 @@ not as the same event with a bigger crowd:
   distinct delegation clusters arriving along different approach roads from
   different directions (not literal, geographically precise per-tribe
   routing — a disclosed design choice, see Scale assumptions — but
-  legibly *plural*, several streams meeting at one point, the scene's core
+  legibly _plural_, several streams meeting at one point, the scene's core
   visual argument); (b) **the gate plaza** — same siting as every prior
   Hebron scene, now dressed as the covenant/anointing ground, the scene's
   ceremonial center; (c) **David's receiving household/escort** — a
@@ -182,7 +182,7 @@ not as the same event with a bigger crowd:
   an additive headcount.
 - **Sightlines:** the default vantage is elevated and outward-turned — unlike
   `hebron-anointing`'s deliberately bounded, inward-facing frame, this scene
-  should hold the town *and* multiple approaching roads in view at once, so
+  should hold the town _and_ multiple approaching roads in view at once, so
   the "whole kingdom converging" reading is available at a glance. The
   covenant/anointing vantage is close, plaza-level, ceremonial — sequenced so
   the covenant gesture and the anointing gesture are visibly two distinct
@@ -207,7 +207,7 @@ assembly" convention (`claim-judah-assembly-scale` in `hebron-anointing`,
   at high quality tier, staged as three to four distinguishable converging
   clusters (not one homogeneous crowd) — larger than `hebron-anointing`'s
   single-tribe 150–200-figure assembly would be if it were literally one
-  cluster, but organized so the *composition*, not a blunt headcount jump,
+  cluster, but organized so the _composition_, not a blunt headcount jump,
   carries the "all Israel, not just Judah" reading. This is still a
   representative body of elders/delegates, not a literal national muster —
   any literal per-tribe count at Iron Age regional population estimates
@@ -223,8 +223,8 @@ assembly" convention (`claim-judah-assembly-scale` in `hebron-anointing`,
 - **David's Hebron household/court presence receiving them: ~30–40 figures**
   — a disclosed design count, deliberately smaller than `hebron-anointing`'s
   ~60-figure arriving retinue (that scene rendered the standard ~1:10
-  narrated ratio off the 600 fighting men for a column *arriving*; here
-  David's side is a stationary court/household presence *receiving*, not a
+  narrated ratio off the 600 fighting men for a column _arriving_; here
+  David's side is a stationary court/household presence _receiving_, not a
   fresh muster, so the 1:10 ratio is not reapplied — `davids-band` is
   referenced by continuity, not re-ratioed).
 - **Ambient Hebron town background: ~20–30 figures**, same convention as
@@ -258,17 +258,17 @@ assembly" convention (`claim-judah-assembly-scale` in `hebron-anointing`,
   advisory; suggested duration **~80s**, inside the brief's 60–100s target —
   shorter than every M5 Hebron scene and shorter than `hebron-anointing`
   itself, because this scene has no pre-history context cards to carry: 5:1–5
-  *is* the staged content, start to finish, with nothing before it to
+  _is_ the staged content, start to finish, with nothing before it to
   summarize):
 
-  | Beat             | Text  | Treatment                                                                                                                                                                                                             |
-  | ---------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | `b-convergence`  | 5:1a  | Staged: delegation clusters converge on Hebron from multiple directions. Default viewpoint holds the town and the roads together.                                                                                    |
-  | `b-recitation`   | 5:1b–2 | Staged dialogue/caption beat at `vp-recitation`: the elders recite David's prior field leadership and the LORD's word ("shepherd... prince over Israel"). ESV excerpt candidate (see Required source basis).         |
-  | `b-covenant`     | 5:3a  | Staged: David and the elders make a covenant "before the LORD" — the disclosed oath/hand-clasp gesture at `vp-covenant-plaza`. A visibly distinct beat from the anointing that follows.                              |
-  | `b-anointing`    | 5:3b  | Staged: the elders anoint David king over Israel, reusing `hebron-anointing`'s oil-horn gesture. Caption states explicitly: over **Israel**, no longer Judah alone — contrast with `claim-judah-anointing` named directly. |
-  | `b-reign-summary`| 5:4–5 | Closing numeric card, not staged/no geometry: age 30 at accession; 7 years 6 months at Hebron over Judah; 33 years at Jerusalem over all Israel and Judah; 40 years total (the text's own rounding, disclosed).       |
-  | `b-close`        | —     | Closing card: forward pointer to `jerusalem-conquest` only (the Jebusite conquest and City of David) — stated as a pointer, not previewed. **No 2 Samuel 5:6+ content.**                                            |
+  | Beat              | Text   | Treatment                                                                                                                                                                                                                  |
+  | ----------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `b-convergence`   | 5:1a   | Staged: delegation clusters converge on Hebron from multiple directions. Default viewpoint holds the town and the roads together.                                                                                          |
+  | `b-recitation`    | 5:1b–2 | Staged dialogue/caption beat at `vp-recitation`: the elders recite David's prior field leadership and the LORD's word ("shepherd... prince over Israel"). ESV excerpt candidate (see Required source basis).               |
+  | `b-covenant`      | 5:3a   | Staged: David and the elders make a covenant "before the LORD" — the disclosed oath/hand-clasp gesture at `vp-covenant-plaza`. A visibly distinct beat from the anointing that follows.                                    |
+  | `b-anointing`     | 5:3b   | Staged: the elders anoint David king over Israel, reusing `hebron-anointing`'s oil-horn gesture. Caption states explicitly: over **Israel**, no longer Judah alone — contrast with `claim-judah-anointing` named directly. |
+  | `b-reign-summary` | 5:4–5  | Closing numeric card, not staged/no geometry: age 30 at accession; 7 years 6 months at Hebron over Judah; 33 years at Jerusalem over all Israel and Judah; 40 years total (the text's own rounding, disclosed).            |
+  | `b-close`         | —      | Closing card: forward pointer to `jerusalem-conquest` only (the Jebusite conquest and City of David) — stated as a pointer, not previewed. **No 2 Samuel 5:6+ content.**                                                   |
 
 - Walk mode should let the observer cross from one converging delegation
   cluster to another before reaching the plaza — a short, legible traversal,
