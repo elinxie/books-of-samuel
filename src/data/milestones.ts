@@ -129,6 +129,80 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-15 scope pass — Sonnet, PROVISIONAL (fable-review-queue #21):
+    // Fable's fable-architect call errored on the monthly spend limit before
+    // any work started (same recurring constraint as 2026-07-22/2026-08-10);
+    // proceeded under docs/model-handoff.md's documented fallback rather than
+    // blocking. Unlike M4/M5, chapter 5 alone is NOT thin — it holds three
+    // distinct stageable episodes (all-Israel covenant at Hebron 5:1-5; the
+    // Jebusite conquest and City of David founding 5:6-12; two Philistine
+    // campaigns 5:17-25) plus a thin genealogical list (5:13-16, folded as a
+    // closing caption, no separate scene) — so M6 = 2 Sam 5 alone, no
+    // bundling. Chapter 6 (the ark's arrival, Uzzah's death, David's dance)
+    // is its own clear narrative unit and becomes M7; chapter 7 (Nathan's
+    // oracle/Davidic covenant) has no stageable physical action and is
+    // deferred past M7 without a build commitment yet — likely a
+    // captions/study-page treatment rather than a scene, a call for a real
+    // Fable pass once M7 is scoped, not decided here.
+    //
+    // Three scenes, one new location (`jerusalem`, first Jerusalem geometry
+    // in the project) plus one new placeholder location
+    // (`valley-of-rephaim`), and an atlas extension:
+    // 1. `hebron-unification` (5:1-5) — all Israel's elders come to David at
+    //    Hebron; distinct from M4's `hebron-anointing` (Judah only) — this is
+    //    the reunification the M4/M5 atlas's divided-kingdom regions have
+    //    been tracking toward. Reuses Hebron terrain/town-form directly.
+    // 2. `jerusalem-conquest` (5:6-12) — the Jebusite stronghold taken, "the
+    //    blind and the lame" taunt (5:6, 5:8 — one of Samuel's most textually
+    //    obscure verses; caption-only with scholarlyViews, never visualized,
+    //    no disabled figures staged), the City of David naming, the Millo,
+    //    and Hiram of Tyre's cedar/craftsmen folded in as a closing beat
+    //    (5:11-12) rather than a separate scene. First use of the new
+    //    `jerusalem` location (researched this session: 5 new source cards,
+    //    the maximalist-vs-minimalist 10th-century-scale dispute carried as
+    //    the location's own scholarlyViews, resolved by neither this pass nor
+    //    the brief — render at the modest, disclosed-placeholder end of the
+    //    range per the project's anachronism discipline, not the monumental
+    //    end). 5:13-16's sons/daughters list folds into this scene's closing
+    //    card as text only — no new named characters, no genealogy geometry.
+    // 3. A Philistine-battle scene covering both campaigns (5:17-21
+    //    Baal-perazim, 5:22-25 Valley of Rephaim) — one scene, not two
+    //    (each campaign is brief in the text; splitting would thin both).
+    //    Uses the new `valley-of-rephaim` placeholder location — the general
+    //    region (the plain southwest of the City of David) is reasonably
+    //    placed, but Baal-perazim's precise site is not independently fixed;
+    //    disclosed as `design-placeholder`. Scale should stay well under
+    //    `gilboa-battle`'s ~325-figure ceiling — the text describes a rout
+    //    ("breach of waters") and a divinely-signaled advance, not sustained
+    //    mutual combat; no new named-character killing, so ADR-009's
+    //    named-killing template does not apply here.
+    // 4. Atlas extension: M6 is where the M4/M5 divided-kingdom regions
+    //    finally unify — the M5 atlas's hard "no unified/merged kingdom
+    //    drawn" guard is explicitly lifted here, not before. `ui-engineer`
+    //    work once the three scenes are built.
+    //
+    // Build order recommendation (docs/next-run.md carries the authoritative
+    // copy): `hebron-unification` first (cheapest, reuses Hebron directly,
+    // no new location risk), then `jerusalem-conquest` (the milestone's
+    // load-bearing scene — new location, most historically contested), then
+    // the Philistine-battle scene, then the atlas extension.
+    //
+    // Provisional flag: this scope call, the location's maximalist/
+    // minimalist framing, and the "blind and the lame" caption-only call all
+    // need a real Fable pass before any M6 scene ships past `in-progress`
+    // (fable-review-queue #21) — same discipline as M4's 2026-07-22 fallback.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All Israel anoints David king at Hebron, ending the Judah/Israel split (`hebron-unification`)',
+      'The Jebusite conquest of Jerusalem and the founding of the City of David (`jerusalem-conquest`)',
+      'The Philistine campaigns at Baal-perazim and the Valley of Rephaim',
+      'Atlas extension: the divided-kingdom regions unify',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

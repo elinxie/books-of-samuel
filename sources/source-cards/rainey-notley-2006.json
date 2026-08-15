@@ -8,13 +8,13 @@
   "sourceType": "historical-geography",
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted reference atlas. Project stores its own summaries of identifications and routes only; no map reproductions.",
-  "summary": "Standard scholarly atlas of biblical historical geography. Used here for site identifications (Besor, Gilboa, Beth-shan, Hebron, Jabesh-gilead candidates, Ziklag candidates) and for regional route reasoning.",
-  "relevantPassages": ["1 Samuel 30", "1 Samuel 31", "2 Samuel 2"],
+  "summary": "Standard scholarly atlas of biblical historical geography. Used here for site identifications (Besor, Gilboa, Beth-shan, Hebron, Jabesh-gilead candidates, Ziklag candidates), regional route reasoning, and the general Jerusalem-vicinity topography for the Valley of Rephaim/Baal-perazim (2 Samuel 5) — the valley's general location southwest of the City of David is standard atlas material; Baal-perazim's precise site within/near it is not independently fixed by this or any other card in this project's bibliography.",
+  "relevantPassages": ["1 Samuel 30", "1 Samuel 31", "2 Samuel 2", "2 Samuel 5"],
   "extractedClaims": [
     "claim-besor",
     "claim-ziklag-location",
     "claim-negev-terrain",
     "claim-besor-channel-form"
   ],
-  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1). 2026-08-15: relevantPassages extended to 2 Samuel 5 for the Valley of Rephaim's general topography ahead of the M6 scope pass — page-level citation for this specific coverage not yet verified, flagged for a future researcher pass before claim-valley-of-rephaim-location (if created) can move past design-placeholder confidence."
 }

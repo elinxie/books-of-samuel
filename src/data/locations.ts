@@ -208,7 +208,13 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.52, lon: 35.1, confidence: 'high' },
-    sceneIds: ['hebron-anointing', 'hebron-covenant', 'hebron-gate', 'hebron-reckoning'],
+    sceneIds: [
+      'hebron-anointing',
+      'hebron-covenant',
+      'hebron-gate',
+      'hebron-reckoning',
+      'hebron-unification',
+    ],
     claimIds: [],
     // 2026-08-02 Fable M4 release pass: hebron-anointing → released (queue
     // #19c closed as "checked, permanently thin" — the Tell Rumeida town-form
@@ -333,7 +339,32 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.7739, lon: 35.2354, confidence: 'high' },
-    sceneIds: [],
+    sceneIds: ['jerusalem-conquest'],
+    claimIds: [],
+    status: 'planned',
+  },
+  {
+    id: 'valley-of-rephaim',
+    name: 'Valley of Rephaim',
+    altNames: ['Emek Refaim', 'Baal-perazim vicinity'],
+    region: 'Judean highlands, the plain southwest of the City of David',
+    summary:
+      'The setting for both Philistine campaigns against the newly-united kingdom (2 Samuel 5:17-25): David’s forces rout the Philistines at Baal-perazim (5:17-21) and again, on a different tactic, in the Valley of Rephaim itself (5:22-25). The valley’s general location — the plain immediately southwest of the City of David ridge, later known as Emek Refaim — is standard, uncontroversial biblical-geography material. Baal-perazim’s precise site is not independently fixed by any source in this project’s bibliography; this project stages the general valley terrain and discloses the exact battle ground as a placeholder rather than inventing a specific location for it.',
+    identification: {
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-rephaim-valley-region',
+          label: 'Valley of Rephaim — general region (plain southwest of the City of David)',
+          summary:
+            'The broad, fertile plain southwest of the City of David ridge, on the Bethlehem road, is the standard identification for the biblical Valley of Rephaim — uncontested in the geography this project has consulted. This locates the general terrain both 2 Samuel 5 campaigns occur in or near; it does not fix Baal-perazim’s precise site, which stays undetermined.',
+          confidence: 'moderate',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.755, lon: 35.205, confidence: 'low' },
+    sceneIds: ['baal-perazim-rephaim'],
     claimIds: [],
     status: 'planned',
   },

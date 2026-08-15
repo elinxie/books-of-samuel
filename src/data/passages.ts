@@ -114,6 +114,25 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M5',
     status: 'released',
   },
+  {
+    id: '2sam-5',
+    book: '2 Samuel',
+    chapter: 5,
+    reference: '2 Samuel 5',
+    translationAnchor: 'ESV',
+    summary:
+      'All the tribes of Israel come to David at Hebron and anoint him king over all Israel, ending the split M4/M5 tracked — he is thirty when he begins to reign, thirty-three years over a united Israel and Judah after seven and a half at Hebron over Judah alone. David and his men take the Jebusite stronghold of Zion by a route the defenders taunted as unnecessary ("the blind and the lame will turn you back"), renames it the City of David, and builds up the surrounding area from the Millo inward; Hiram of Tyre sends cedar, carpenters, and masons to build him a house, and David perceives the LORD has established his kingdom. More sons and daughters are born to him in Jerusalem. When the Philistines hear a king now rules a united Israel, they come up twice seeking him — at Baal-perazim, where David inquires of the LORD and routs them "as a breach of waters," and again at the Valley of Rephaim, where he is told to circle behind and wait for "the sound of marching in the tops of the balsam trees" as the LORD’s own sign to attack.',
+    // First M6 scene stub for hebron-unification/jerusalem-conquest/the
+    // Philistine-battle scene, all planned. 2026-08-15 Sonnet scope pass
+    // (provisional, fable-review-queue #21) — see src/data/milestones.ts's M6
+    // comment for the full chapter-bundling reasoning. ESV excerpt budget:
+    // unspent — reserved for whichever scene builds first; likely candidates
+    // are 5:2b/5:3's covenant language and 5:8b/5:12's naming/perception
+    // beats, but not yet chosen.
+    sceneIds: ['hebron-unification', 'jerusalem-conquest', 'baal-perazim-rephaim'],
+    milestoneId: 'M6',
+    status: 'planned',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));
