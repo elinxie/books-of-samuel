@@ -1685,3 +1685,74 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-15 — Sonnet 5 — M6 (2 Samuel 5) scope pass + all three scene briefs
+(Fable spend limit hit; Sonnet fallback, all provisional)**
+Scheduled continuation session. First action — spawning `fable-architect` for
+the M6 scope call — errored immediately: "You've hit your monthly spend
+limit." Same recurring constraint as 2026-07-22/2026-08-10. Proceeded under
+`docs/model-handoff.md`'s documented fallback (Sonnet does the call, marks it
+provisional, keeps moving) rather than blocking; opened
+`docs/fable-review-queue.md` #21 to track it.
+
+Dispatched a `researcher` agent first, ahead of any scope decision: Jerusalem/
+City of David is a brand-new location for this project and one of the most
+contested topics in biblical archaeology (maximalist-vs-minimalist 10th-century
+scale debate). Five new source cards landed (`mazar-2009-palace-of-david`,
+`finkelstein-herzog-singer-avitz-ussishkin-2007`, `cahill-2003-jerusalem-united-
+monarchy`, `steiner-2003-kenyon-response`, `reich-shukron-1999-warrens-shaft`),
+plus a new `jerusalem` `LocationEntry` carrying the maximalist (Mazar, Cahill)
+vs. minimalist (Finkelstein/Herzog/Singer-Avitz/Ussishkin, Steiner) dispute as
+`scholarlyViews`, resolving neither — the honest state per the project's
+never-fake-consensus rule. `finkelstein-silberman-2001` (already in the
+bibliography) extended to cover this. `sources/source-index.json` regenerated.
+
+Decided M6's scope myself (queue #21, provisional): 2 Sam 5 alone — unlike
+M4/M5, ch. 5 is NOT thin (three distinct stageable episodes: all-Israel
+covenant at Hebron 5:1-5, the Jerusalem conquest 5:6-12, two Philistine
+campaigns 5:17-25), so no chapter bundling. Ch. 6 (the ark) becomes M7; ch. 7
+(Nathan's oracle, no stageable action) deferred unscoped. Wrote the full
+reasoning into `src/data/milestones.ts`'s M6 comment, added the `2sam-5`
+passage, three `planned` `SceneDef` stubs (`hebron-unification`,
+`jerusalem-conquest`, `baal-perazim-rephaim`), and a new `valley-of-rephaim`
+placeholder location (general region attested via extending
+`rainey-notley-2006`'s coverage; Baal-perazim's precise site disclosed
+undetermined, no invented proponents).
+
+Dispatched three `world-director` agents in parallel (model overridden to
+`sonnet`, same role-documented fallback as the M4 2026-07-22 precedent) for
+the three scene briefs. All three landed cleanly, no file conflicts:
+
+- `hebron-unification-brief.md` (5:1-5): ~230-290 figures, ~80s. New claims
+  `claim-all-israel-covenant`, `claim-david-reign-length`,
+  `claim-covenant-rite-form`/`claim-unification-cast-scale`
+  (design-placeholder). New group character `elders-of-israel`.
+- `jerusalem-conquest-brief.md` (5:6-12), the milestone's load-bearing scene:
+  stages Jerusalem at the modest, minimalist-leaning end — "the smallest claim
+  consistent with both" scholarlyViews, no fortification wall/gate asserted, no
+  rendering of the disputed "Large Stone Structure" as a coherent building.
+  "The blind and the lame" and the tsinnor route both caption-only, never
+  visualized — no disabled figures staged. `depictsDeath: false` (no combat
+  killing narrated in this span). ~65-95 figures, ~150s, 9 beats. Nine new
+  claims, one new character (`hiram-king-of-tyre`).
+- `baal-perazim-rephaim-brief.md` (5:17-25): one scene, two beat-groups, a
+  shared figure pool restaged across both campaigns (~60-80 total — below even
+  `gibeon-pool`'s scale, well under Gilboa's ~325 ceiling). `depictsDeath: true`
+  (implied fatalities from routs/strikes, argued explicitly even though no
+  named individual is killed on-screen — ADR-009's named-killing template
+  doesn't apply here). Balsam-trees sign is the one non-combat centerpiece. Six
+  new claims, one flagged for a Philistine-material-culture researcher check.
+
+None of the three briefs touched `src/data/*.ts` or the queue file themselves
+(role only has Write, not Edit) — that data-layer wiring (new claims/
+characters, `claimIds` on the three scene stubs) is the next session's first
+task, not done this session.
+
+Gate green throughout (format:check, lint, typecheck, 484 vitest — e2e and
+build not re-run, no component code touched this session). One prettier
+formatting pass needed on the three brief files + the queue table after
+writing them. Committed in six slices on `claude/focused-mccarthy-kf7a0j`
+(research pass; scope+scaffolding; queue flag; each brief individually, per
+mid-session checkpoint discipline — this session hit 98% context mid-flight
+on the two parallel briefs and had to checkpoint before they'd both returned,
+per `docs/checkpoint-protocol.md`); pushed; draft PR #62 opened.
