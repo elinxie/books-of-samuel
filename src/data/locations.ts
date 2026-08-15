@@ -287,6 +287,56 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'planned',
   },
+  {
+    id: 'jerusalem',
+    name: 'Jerusalem (City of David)',
+    altNames: ['City of David', 'Zion', 'Jebus', 'Ir David'],
+    region: 'Judean central highlands — the Ophel/Silwan ridge south of the later Temple Mount',
+    summary:
+      'The Jebusite stronghold the narrative presents David’s forces as capturing and making his own capital, afterward called “the City of David” (2 Samuel 5:6–10), where he is said to have built up the surrounding area “from the Millo inward” (5:9) and to have received cedar, craftsmen, and masons from Hiram of Tyre to build “a house” for him (5:11–12). Universally located on the narrow spur immediately south of the later Temple Mount, beside the Gihon Spring — a small ridge, not the much larger area later Jerusalem would come to occupy. Verse 8’s taunt about “the blind and the lame” and its reference to a tsinnor (“water shaft”/“watercourse”) is one of the most textually difficult verses in Samuel; one long-debated but unproven reading connects it to the Gihon Spring water system (see identification.views and reich-shukron-1999-warrens-shaft), though several other readings of the obscure Hebrew have been proposed and none commands consensus. What Iron Age IIA building actually stood on the ridge in David’s traditional 10th-century BCE horizon — a substantial fortified town or a modest highland hill settlement — is one of the most contested questions in biblical archaeology; see identification.views for both readings, neither of which this project adopts as settled.',
+    identification: {
+      disputed: true,
+      views: [
+        {
+          id: 'loc-view-jerusalem-city-of-david-ridge',
+          label: 'City of David ridge (Ophel/Silwan spur) — the site itself',
+          summary:
+            'The Jebusite-and-early-Davidic city is identified, without serious dispute among any of the scholars cited on this entry, with the narrow ridge running south from the later Temple Mount platform toward the Gihon Spring and the Kidron/Tyropoeon valley confluence — a small spur, on the order of a few hectares, far smaller than the area later Jerusalem would occupy. This project’s Jerusalem/City of David location sits on this ridge; the two views below concern what Iron Age IIA (10th-century BCE) construction actually existed on it, not where the site was.',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006', 'mazar-2009-palace-of-david'],
+        },
+        {
+          id: 'loc-view-jerusalem-maximalist',
+          label: 'Maximalist reading: a genuine fortified town',
+          proponents: ['Eilat Mazar (excavator, 2005–2007 seasons)', 'Jane M. Cahill (2003)'],
+          summary:
+            'Reads the Stepped Stone Structure (excavated in stages by R. A. S. Macalister in the 1920s, Kathleen Kenyon in the 1960s, and Yigal Shiloh’s Area G project of 1978–1985) together with Eilat Mazar’s “Large Stone Structure,” excavated 2005–2007 immediately above it and tentatively dated by her to the 10th–9th century BCE, as evidence of substantial monumental construction consistent with a functioning fortified town — and, on Mazar’s own cautious proposal, plausibly the remains of a royal building she suggests may be David’s palace, built with Hiram of Tyre’s materials and craftsmen per 2 Samuel 5:11.',
+          confidence: 'low',
+          sourceIds: ['cahill-2003-jerusalem-united-monarchy', 'mazar-2009-palace-of-david'],
+        },
+        {
+          id: 'loc-view-jerusalem-minimalist',
+          label: 'Minimalist reading: a modest highland hill settlement',
+          proponents: [
+            'Israel Finkelstein, Ze’ev Herzog, Lily Singer-Avitz, and David Ussishkin (2007)',
+            'Margreet L. Steiner (2003)',
+          ],
+          summary:
+            'Reads the same excavated remains skeptically: the Large Stone Structure’s walls are poorly preserved and not demonstrably one coherent building, the pottery recovered does not securely date the complex to the 10th century BCE specifically, and Kenyon’s own excavation data (re-examined by Steiner) supports at most a sparse, largely unfortified hill settlement in David’s traditional period rather than a monumental capital city.',
+          confidence: 'low',
+          sourceIds: [
+            'finkelstein-herzog-singer-avitz-ussishkin-2007',
+            'steiner-2003-kenyon-response',
+            'finkelstein-silberman-2001',
+          ],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.7739, lon: 35.2354, confidence: 'high' },
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

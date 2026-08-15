@@ -8,8 +8,8 @@
   "sourceType": "archaeology",
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted trade monograph. Summaries in project's own words only.",
-  "summary": "Influential statement of the low-chronology / minimalist-leaning reading: David as a modest highland chieftain, with state formation later than the conventional picture. Used to represent one pole of the early-monarchy debate.",
-  "relevantPassages": ["1 Samuel 31", "2 Samuel 2"],
+  "summary": "Influential statement of the low-chronology / minimalist-leaning reading: David as a modest highland chieftain, with state formation later than the conventional picture. Used to represent one pole of the early-monarchy debate. The book also contains a specific chapter-level argument (Chapter 4, 'A Great United Monarchy?') that 10th-century BCE Jerusalem itself lacked monumental architecture and was, on the authors' reading of the available excavation record at the time of writing, more consistent with a small, sparsely occupied hill town than a genuine capital city — the same general position elaborated later and in more targeted, technical form in finkelstein-herzog-singer-avitz-ussishkin-2007, which this project cites directly for the Large Stone Structure dating dispute specifically.",
+  "relevantPassages": ["1 Samuel 31", "2 Samuel 2", "2 Samuel 5:6-10"],
   "extractedClaims": ["claim-david-historical", "claim-chronology"],
-  "confidenceNotes": "Represents one scholarly pole; must always be paired with alternative views (e.g., Mazar) in the UI."
+  "confidenceNotes": "Represents one scholarly pole; must always be paired with alternative views (e.g., Mazar) in the UI. 2026-08-15 Jerusalem/City-of-David research pass: the 'Jerusalem as modest hill town' chapter-level claim is corroborated via general secondary description/reception of the book's argument (widely and consistently summarized this way across independent secondary sources), not page-verified against the print text directly. TO VERIFY: exact chapter/page citation for the Jerusalem-specific argument."
 }
