@@ -450,6 +450,25 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
+## Milestone 6 — 2 Samuel 5: **planned** (scoped 2026-08-22, PROVISIONAL — Sonnet fallback, Fable spend limit hit; queue #21)
+
+Scope decision (Sonnet, 2026-08-22, fallback pass — see queue #21 for the
+Fable-confirmation gate): chapter 5 alone, not bundled — unlike M4's thin
+ch. 4, ch. 5 is not thin (all-Israel anointing, the Jebusite-stronghold
+capture, the City of David founding, Hiram's alliance, and two Philistine
+battles at Rephaim). Three scenes: `hebron-unification` (5:1–5, reuses
+Hebron), `jerusalem-city-of-david` (5:6–12, first Jerusalem geometry in the
+project — the milestone's load-bearing and most historically contested
+scene; water-system/Millo/"Davidic palace" identifications all land
+`scholarly-reconstruction`/`low` with mandatory `scholarlyViews`, no
+invented certainty), `rephaim-valley` (5:17–25, two battles, reuses
+`gilboa-battle`'s combat-pose conventions at a smaller scale). Plus an
+`/atlas` extension: the first point where a fully unified-kingdom shading
+is textually true. Briefs: `docs/design/hebron-unification-brief.md`,
+`jerusalem-city-of-david-brief.md`, `rephaim-valley-brief.md`. No build
+work yet — `scenes.ts`/claims/characters untouched, per the M3/M4/M5
+scope-then-build pattern. M7 starts at 2 Samuel 6.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

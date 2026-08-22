@@ -3,7 +3,70 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-22, M6 SCOPED — Sonnet fallback pass, branch `claude/focused-mccarthy-hhg78v`)
+
+**M6 (2 Samuel 5) is scoped, but PROVISIONALLY** — Fable hit its monthly
+spend limit on the first call this scheduled/automated session (same
+recurring constraint as 2026-07-22/2026-08-10). Per `docs/model-handoff.md`'s
+fallback policy, Sonnet made the scope call directly rather than blocking:
+logged `docs/fable-review-queue.md` #21 (mirrors #18's M4 form — build work
+is not blocked by this, only `released` status is).
+
+**Scope decision:** chapter 5 alone (not bundled forward — unlike M4's thin
+ch. 4, ch. 5 is not thin). Three scenes, same cadence as M3/M4/M5:
+
+1. `hebron-unification` (5:1–5) — all Israel anoints David at Hebron, the
+   third and final anointing in the text. Short, reuses Hebron's established
+   massing/palette directly, cheapest M6 scene. Brief:
+   `docs/design/hebron-unification-brief.md`. **Build this first.**
+2. `jerusalem-city-of-david` (5:6–12) — capture of the Jebusite stronghold,
+   the City of David, the Millo, Hiram's alliance and building coda. **The
+   milestone's load-bearing scene and the single most historically
+   contested claim-set the project has taken on** — first Jerusalem
+   geometry ever. The general site location is not seriously disputed
+   (lands `moderate`/`high`), but the water-system/ṣinnôr-Warren's-Shaft
+   question, the Millo's identity, and the "Davidic palace" (Eilat Mazar's
+   Large Stone Structure, disputed by Finkelstein/Ussishkin) all must land
+   `scholarly-reconstruction`/`low` with mandatory `scholarlyViews` — read
+   the brief's Historical intent and Resolved design calls sections closely
+   before building, the placeholder discipline is stricter here than any
+   prior scene. Brief: `docs/design/jerusalem-city-of-david-brief.md`.
+3. `rephaim-valley` (5:17–25) — two Philistine battles responding to the
+   unification, the balsam-canopy sign, reuses `gilboa-battle`'s combat-pose
+   conventions at a smaller ~130–200-figure scale (not a new Gilboa-scale
+   set piece). Brief: `docs/design/rephaim-valley-brief.md`.
+
+Plus an atlas `/atlas` extension (4th goal, `ui-engineer`, not a 4th 3D
+scene): the first point in the project where a fully unified-kingdom
+shading is textually true (5:1–5 resolves the M5 headless-Israel state).
+
+**What's next (Sonnet), in priority order:**
+
+1. Build `hebron-unification` per its brief (`threejs-engineer`) — cheapest,
+   establishes nothing new (pure Hebron reuse), good first M6 build.
+2. Build `jerusalem-city-of-david` per its brief — the highest-risk build in
+   the milestone; its `scholarlyViews`/`design-placeholder` claims need
+   real care, not just geometry. A `researcher` pass to add a dedicated
+   Jerusalem/City of David archaeology source card (covering the general
+   site ID, the Reich-and-Shukron water-system re-survey, and the Mazar
+   Large Stone Structure publication + at least one named critic) would
+   strengthen this scene's citations and can run before or in parallel with
+   the build — see the brief's "Required source basis" section for exactly
+   what's missing.
+3. Build `rephaim-valley` per its brief, closing the milestone.
+4. Atlas M6 unified-kingdom extension (`ui-engineer`), after the three
+   scenes or in parallel once Jerusalem's terrain exists.
+5. **A real Fable pass to confirm/revise the whole M6 scope+briefs package**
+   (queue #21) once Fable's spend limit resets — batch it, don't spend a
+   partial Fable session on it. Do this before flipping any M6 scene past
+   `in-progress`. Given the Jerusalem scene's stakes, this confirmation
+   matters more than the equivalent M3/M4/M5 passes did — don't skip it.
+6. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — confirmed still
+   blocked this session (sandbox proxy 403s `elinxie.github.io`); needs a
+   non-sandboxed environment. See Environment notes below, unchanged.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the

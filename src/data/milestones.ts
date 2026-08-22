@@ -129,6 +129,42 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-22 Sonnet-fallback scope pass (Fable hit its monthly spend
+    // limit on the first call this session, same recurring constraint as
+    // 2026-07-22/2026-08-10 — this scope decision and the three briefs below
+    // are PROVISIONAL per docs/model-handoff.md's fallback policy; see
+    // docs/fable-review-queue.md #21). Chapter 5 alone (not bundled forward)
+    // — unlike M4's thin ch.4, ch.5 is not thin: it contains the
+    // all-Israel anointing (5:1-5), the capture of the Jebusite stronghold
+    // and founding of the City of David (5:6-10, a genuinely new major
+    // location — first Jerusalem geometry in the project), Hiram's alliance
+    // (5:11-12, folded as a coda), the Jerusalem-born-children list
+    // (5:13-16, card-only, same discipline as M5's Michal treatment), and
+    // two Philistine battles at the Valley of Rephaim (5:17-25). Three
+    // scenes, same cadence as M3/M4/M5: `hebron-unification` (short, reuses
+    // Hebron), `jerusalem-city-of-david` (the milestone's load-bearing and
+    // most historically contested scene — Jebusite-stronghold location,
+    // Warren's Shaft/water-system function, and the millo's identity all
+    // stay scholarlyViews/design-placeholder, no invented certainty), and
+    // `rephaim-valley` (reuses `gilboa-battle`'s combat-pose template at a
+    // much smaller scale). Atlas gets a 4th-goal extension: this is the
+    // first point in the project where a single unified-kingdom shading is
+    // textually true (5:1-5 resolves the M5 headless-Israel state) — briefs
+    // in docs/design/ (hebron-unification, jerusalem-city-of-david,
+    // rephaim-valley). M7 starts at 2 Samuel 6 (the ark's return to
+    // Jerusalem).
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All Israel anoints David king at Hebron; the elders’ covenant (`hebron-unification`)',
+      'Capture of the Jebusite stronghold; the City of David and the Millo; Hiram’s alliance and palace (`jerusalem-city-of-david`) — first Jerusalem geometry in the project',
+      'Two Philistine battles at the Valley of Rephaim, the balsam-tree sign, and the burned idols (`rephaim-valley`)',
+      'Atlas overlay extension: the kingdom shown fully unified for the first time — a `/atlas` phase update per ADR-011, not a 4th 3D scene',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

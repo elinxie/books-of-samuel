@@ -1685,3 +1685,32 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-22 — Sonnet 5 — M6 scope pass (Fable fallback), scheduled/automated session**
+Confirmed real-hardware `gilboa-battle` perf check and the Pages-live check
+both stay blocked (sandbox proxy still 403s `elinxie.github.io`, confirmed
+again). `npm run verify` green (`format`/lint/typecheck/vitest/build; e2e
+needed the standing `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`
+workaround, 12/12 pass — no regression, just the known sandbox path issue).
+Attempted `fable-architect` for the M6 scope pass per `docs/next-run.md`'s
+top priority; **hit Fable's monthly spend limit on the first call** (same
+recurring constraint as 2026-07-22/2026-08-10). Proceeded under
+`docs/model-handoff.md`'s documented fallback policy: scoped M6 (2 Samuel 5
+alone, not bundled — ch. 5 is not thin, unlike M4's ch. 4) as Sonnet,
+marked provisional, logged `docs/fable-review-queue.md` #21 (mirrors #18's
+M4 form). Three scenes: `hebron-unification` (5:1–5, short, reuses Hebron),
+`jerusalem-city-of-david` (5:6–12, the milestone's load-bearing and most
+historically contested scene — first Jerusalem geometry in the project;
+the Jebusite-stronghold general location lands `moderate`/`high` but the
+water-system/ṣinnôr dispute, the Millo's identity, and the "Davidic
+palace" [Eilat Mazar's Large Stone Structure] all land
+`scholarly-reconstruction`/`low` with mandatory `scholarlyViews`, not a
+single silently-chosen answer), and `rephaim-valley` (5:17–25, two
+Philistine battles, reuses `gilboa-battle`'s combat-pose conventions at a
+smaller ~130–200-figure scale). Atlas gets a 4th-goal extension flagged for
+`ui-engineer`: the first point in the project where a unified-kingdom
+shading is textually true. Added M6 to `src/data/milestones.ts` (`planned`,
+provisional comment), wrote all three briefs under `docs/design/`, updated
+`docs/fable-review-queue.md` and `docs/next-run.md`. No build work done —
+scope/briefs only, per the M3/M4/M5 pattern; `scenes.ts`/claims/characters
+untouched. Committed on `claude/focused-mccarthy-hhg78v`.
