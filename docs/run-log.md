@@ -1685,3 +1685,49 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+**2026-08-22 — Sonnet (scheduled/automated session) — M6 scope pass,
+Fable fallback, provisional**
+Confirmed the two carried-forward riders (real-hardware `gilboa-battle` perf
+check, Pages-live check) are still environment-blocked — this sandbox's
+proxy still 403s `elinxie.github.io` (`connect_rejected`), same as every
+prior session; not retried further, nothing changed. Dispatched the M6
+world-director scope pass to `fable-architect`; it errored immediately with
+"You've hit your monthly spend limit" (same recurring constraint as
+2026-07-09/2026-07-22/2026-08-10) and made no file changes before failing.
+Per `docs/model-handoff.md`'s documented fallback policy, did the scope pass
+as Sonnet instead, marked provisional throughout, logged as
+`docs/fable-review-queue.md` #21.
+
+**Scope decided:** 2 Samuel 5 stands alone as `M6` (`src/data/milestones.ts`,
+`status: 'planned'`) — unlike M4/M5's multi-chapter bundling, ch. 5 alone is
+dense enough for three full scenes; ch. 6 (the ark) is a distinct narrative
+unit, deliberately left to open M7. Three scenes briefed in `docs/design/`:
+`hebron-all-israel-brief.md` (5:1–5, third anointing, closes the Hebron era,
+~25–45 figures); `jerusalem-capture-brief.md` (5:6–16, the milestone
+centerpiece, first-ever Jerusalem scene — Jebusite stronghold/water shaft,
+the Millo, the Hiram alliance, the wives/sons list, ~30–55 figures);
+`baal-perazim-rephaim-brief.md` (5:17–25, two Philistine battles fought only
+after David inquires of the LORD, ~130–210 figures, well under
+`gilboa-battle`'s precedent). New location stubs `jerusalem` and
+`valley-of-rephaim` in `src/data/locations.ts` (both `planned`, empty
+`sceneIds`/`claimIds`).
+
+**The one genuinely load-bearing call, deliberately not resolved:**
+10th-century-BCE Jerusalem's material/fortification scale is a live,
+two-camp scholarly dispute (Finkelstein-style "low chronology"
+small-village reading vs. the traditionalist substantial-fortified-city
+reading tied to the Stepped Stone Structure) — `jerusalem-capture-brief.md`
+stages a conservative modest-scale default rather than picking a side and
+flags this as the item most needing a real Fable ruling before any geometry
+commits to a specific scale (queue #21). No source card yet exists for
+either side of this dispute or for City-of-David archaeology generally —
+flagged as the milestone's most important researcher gap.
+
+No scene geometry was built — briefs and data stubs only, per standing
+convention (scenes stay out of active building until `threejs-engineer`
+builds against an approved brief). `npm install` was needed (fresh sandbox,
+`node_modules` missing); full gate green after: format, lint, typecheck,
+484 vitest (unchanged — no test-affecting code touched), build, 12/12 e2e.
+`docs/progress.md`, `docs/next-run.md`, `docs/fable-review-queue.md` #21
+updated. Committed and pushed on `claude/focused-mccarthy-vyvsu1`.

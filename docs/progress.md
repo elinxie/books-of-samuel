@@ -450,6 +450,33 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
+## Milestone 6 — 2 Samuel 5: **planned** (2026-08-22 Sonnet scope pass, provisional — needs Fable confirmation, queue #21)
+
+The scheduled Fable world-director pass errored on the monthly spend limit
+before deciding anything; Sonnet made the scope call and wrote all three
+briefs instead, per `docs/model-handoff.md`'s fallback policy. Scope: ch. 5
+stands alone (not bundled with ch. 6, which is a distinct narrative unit and
+opens M7). Three scenes briefed, none built yet:
+
+- `hebron-all-israel` (5:1–5) — third and last anointing, all Israel this
+  time; closes the Hebron era. Brief: `docs/design/hebron-all-israel-brief.md`.
+- `jerusalem-capture` (5:6–16) — the milestone centerpiece: the Jebusite
+  stronghold taken via the water shaft, the Millo, the Hiram of Tyre
+  alliance, the Jerusalem wives/sons list. First-ever Jerusalem scene; new
+  `jerusalem` location stub. Brief: `docs/design/jerusalem-capture-brief.md`
+  — **carries a load-bearing open call not yet resolved**: 10th-century
+  Jerusalem's material/fortification scale is a genuine, live two-camp
+  scholarly dispute (minimalist vs. traditionalist), staged at a
+  deliberately conservative default pending a real Fable ruling (queue #21).
+- `baal-perazim-rephaim` (5:17–25) — two Philistine battles, both fought
+  only after David inquires of the LORD; new `valley-of-rephaim` location
+  stub. Brief: `docs/design/baal-perazim-rephaim-brief.md`.
+
+Nothing built past briefs/data stubs — per standing convention, scenes stay
+out of active building until a `threejs-engineer` builds against an
+approved brief. Full gate green after this pass (data/doc-only diff): format,
+lint, typecheck, 484 vitest, build, 12/12 e2e.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:
@@ -485,12 +512,12 @@ and now covers the whole repo's code.
 
 ## Build/test status as of last run
 
-- `npm run format:check` — pass (Fable session, 2026-07-19)
-- `npm run lint` — pass (Fable session, 2026-07-19)
-- `npm run test` (vitest) — pass (Fable session, 2026-07-19)
-- `npm run build` — pass (Fable session, 2026-07-19)
-- `npm run e2e` (playwright) — 8/8 pass (Fable session, 2026-07-19, sandboxed
-  with `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`)
+- `npm run format:check` — pass (Sonnet, 2026-08-22)
+- `npm run lint` — pass (Sonnet, 2026-08-22)
+- `npm run test` (vitest) — 484/484 pass (Sonnet, 2026-08-22)
+- `npm run build` — pass (Sonnet, 2026-08-22)
+- `npm run e2e` (playwright) — 12/12 pass (Sonnet, 2026-08-22, sandboxed with
+  `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium`)
 - PR #30 (both remaining M3 scene builds) merged into `main` (`bebb88e`);
   `main` at `3d72f3d` at the time of the M3 sign-off.
 - PR #13 (besor-crossing) merged into `main` as `5fceb3f` 2026-07-08.

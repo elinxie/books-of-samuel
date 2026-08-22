@@ -287,6 +287,64 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'planned',
   },
+  {
+    id: 'jerusalem',
+    name: 'Jerusalem (City of David)',
+    altNames: ['Jebus', 'the stronghold of Zion'],
+    region: 'Central Judean highlands, on the Ophel/City of David ridge',
+    summary:
+      'The Jebusite stronghold David captures and makes his capital (2 Samuel 5:6–10), afterward called the City of David. Site identification with the Ophel ridge south of the present Old City is essentially undisputed; the material scale and fortification level of the 10th-century-BCE occupation are NOT — see notes.',
+    identification: {
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-jerusalem-city-of-david',
+          label: 'City of David ridge (Ophel, south of the Temple Mount)',
+          summary:
+            'Standard identification of the pre-exilic Jebusite/Israelite city; not seriously contested as a site. What IS genuinely and actively disputed among excavators is the scale and monumentality of the specific 10th-century-BCE (traditional United Monarchy) occupation layer — the "low chronology" reading (e.g., Israel Finkelstein) argues for a small, largely unfortified hill village at this date, against readings (e.g., Eilat Mazar, Jane Cahill) that identify substantial fortification and public building already in the 10th century. This project has not yet picked a source card for either side; do not build `jerusalem-capture`\'s scale/fortification design past a disclosed placeholder until one is chosen and the dispute is carried as `scholarlyViews` (docs/fable-review-queue.md #21).',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.7739, lon: 35.2352, confidence: 'high' },
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
+  {
+    id: 'valley-of-rephaim',
+    name: 'Valley of Rephaim',
+    altNames: ['Baal-perazim (battle site, precise location less secure)'],
+    region: 'Southwest of Jerusalem, on the Judah/Benjamin watershed route toward Bethlehem',
+    summary:
+      'Where the Philistines twice mustered against David after his anointing over all Israel, and where he defeated them at Baal-perazim and again after circling to attack from the balsam trees (2 Samuel 5:17–25). The Rephaim valley itself is reasonably well located southwest of Jerusalem; Baal-perazim, named as the specific first battle site, is not independently pinpointed and is treated here as within or adjacent to the same valley, not a separately secured site.',
+    identification: {
+      disputed: true,
+      views: [
+        {
+          id: 'loc-view-rephaim-valley',
+          label: 'Rephaim valley, southwest of Jerusalem',
+          summary:
+            'Regional identification of the valley itself from its recurring biblical use as a landmark near Jerusalem on the road toward Bethlehem; not seriously disputed as a general area.',
+          confidence: 'moderate',
+          sourceIds: ['rainey-notley-2006'],
+        },
+        {
+          id: 'loc-view-baal-perazim-unlocated',
+          label: 'Baal-perazim — no secure independent site',
+          summary:
+            'No excavated site is identified with Baal-perazim by name; it is known only as this narrative\'s naming of the first battle ("the LORD has broken through my enemies before me," 5:20) within or near the Rephaim valley. Treated here as a design-placeholder siting inside the same valley rather than a distinct located site.',
+          confidence: 'low',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.755, lon: 35.19, confidence: 'low' },
+    sceneIds: [],
+    claimIds: [],
+    status: 'planned',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

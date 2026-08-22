@@ -129,6 +129,62 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-22 scope pass — SONNET FALLBACK, PROVISIONAL, NOT YET FABLE-
+    // REVIEWED. The scheduled Fable world-director pass for M6 errored on
+    // "You've hit your monthly spend limit" before making any decision (same
+    // recurring constraint as 2026-07-09/2026-07-22/2026-08-10, see
+    // docs/run-log.md). Per docs/model-handoff.md's documented fallback
+    // policy ("implement the most defensible option, mark it provisional,
+    // don't block the project"), this scope + the three new briefs in
+    // docs/design/ were made by Sonnet instead. Flagged in
+    // docs/fable-review-queue.md (#21) for a real Fable pass before any M6
+    // scene goes past `in-progress` — same non-blocking-to-build gate as
+    // M4's 2026-07-22 precedent.
+    //
+    // Scope: 2 Samuel 5 stands alone as its own milestone, unlike M4/M5's
+    // multi-chapter bundling — ch. 5 alone is dense enough (third anointing,
+    // Jerusalem's capture, the Hiram alliance, the wives/sons list, two
+    // Philistine battles) to support three full scenes without padding, and
+    // it is one coherent narrative unit (the united kingdom established,
+    // its capital taken, its enemies put down) distinct from ch. 6's ark
+    // narrative, which stays out of scope for M6 and starts M7 instead.
+    // Three scenes, all new locations except the opening beat's Hebron
+    // continuity:
+    // 1. `hebron-all-israel` (5:1-5) — the third anointing, closing the
+    //    Hebron era; small conversation/covenant-scale scene reusing
+    //    Hebron continuity one last time.
+    // 2. `jerusalem-capture` (5:6-16) — the Jebusite stronghold taken via
+    //    the water shaft, the Millo, Hiram's cedar-and-craftsmen alliance,
+    //    David's house built, the Jerusalem wives/sons list. First-ever
+    //    Jerusalem scene; new `jerusalem` location.
+    // 3. `baal-perazim-rephaim` (5:17-25) — the two Philistine battles at
+    //    Baal-perazim and the Valley of Rephaim, both fought only after
+    //    David inquires of the LORD; new `valley-of-rephaim` location
+    //    (covers both battle sites — Baal-perazim's precise siting is not
+    //    independently secure, see the location record).
+    //
+    // Load-bearing open call, NOT resolved by this pass: 10th-century-BCE
+    // Jerusalem's material scale is one of the most genuinely contested
+    // questions in Israelite archaeology (the "low chronology"
+    // small-unfortified-village reading vs. the traditional
+    // substantial-fortified-city reading) — this bears directly on
+    // `jerusalem-capture`'s whole visual composition, not just a citation
+    // detail. The brief deliberately does NOT pick a side: both readings
+    // are required to surface as `scholarlyViews`, and the brief's own
+    // scale/fortification-level design call is marked provisional pending
+    // Fable confirmation specifically on this point — do not let a builder
+    // silently default to one camp's picture. See the brief and queue #21.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'David anointed king over all Israel at Hebron — the third anointing (`hebron-all-israel`)',
+      'The Jebusite stronghold taken and made the City of David; the Millo; the Hiram of Tyre alliance and David’s house; the Jerusalem wives and sons list (`jerusalem-capture`)',
+      'Two Philistine battles fought only after David inquires of the LORD, at Baal-perazim and the Valley of Rephaim (`baal-perazim-rephaim`)',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

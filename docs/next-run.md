@@ -3,7 +3,91 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
+## State right now (2026-08-22, M6 SCOPED — Sonnet fallback scope pass, provisional, branch `claude/focused-mccarthy-vyvsu1`)
+
+**M5 stays fully released, unchanged.** This was a scheduled/automated
+session. The two carried-forward riders (real-hardware `gilboa-battle` perf
+check, Pages-live check) were re-checked and are still environment-blocked —
+this sandbox's proxy still 403s `elinxie.github.io`; nothing new to try, not
+touched further, see Environment notes below.
+
+**M6 (2 Samuel 5) is now scoped, but PROVISIONALLY — needs a real Fable
+pass before any scene goes past `in-progress`.** The scheduled Fable
+world-director pass errored immediately on "You've hit your monthly spend
+limit" (same recurring constraint as 2026-07-09/2026-07-22/2026-08-10; the
+launched agent made no file changes before failing). Per
+`docs/model-handoff.md`'s documented fallback policy, Sonnet made the scope
+decision and wrote all three briefs itself; logged as
+`docs/fable-review-queue.md` #21.
+
+**Scope:** 2 Samuel 5 stands alone as `M6` (`src/data/milestones.ts`,
+`status: 'planned'`) — unlike M4/M5's multi-chapter bundling, ch. 5 alone is
+dense enough for three full scenes; ch. 6 (the ark) is a distinct narrative
+unit, deliberately left to open M7. Three scenes briefed in `docs/design/`,
+none built:
+
+1. `hebron-all-israel` (5:1–5) — third and last anointing, all Israel;
+   closes the Hebron era. Smallest M6 scene (~25–45 figures), full Hebron-
+   continuity reuse. Brief: `docs/design/hebron-all-israel-brief.md`.
+2. `jerusalem-capture` (5:6–16) — the milestone centerpiece: the Jebusite
+   stronghold taken via the water shaft, the Millo, the Hiram of Tyre
+   alliance, David's house, the wives/sons list. First-ever Jerusalem
+   scene; new `jerusalem` location stub (`status: 'planned'`). Brief:
+   `docs/design/jerusalem-capture-brief.md`. **Carries the milestone's one
+   genuinely load-bearing open call**: 10th-century-BCE Jerusalem's
+   material/fortification scale is a live, two-camp scholarly dispute
+   (Finkelstein-style "low chronology" small-village reading vs. the
+   traditionalist substantial-fortified-city reading tied to the Stepped
+   Stone Structure) — the brief deliberately stages a conservative
+   modest-scale default rather than picking a side. **Do not build this
+   scene's terrain/scale past the brief's disclosed placeholder without
+   either a Fable ruling confirming the modest-scale approach or a Fable
+   ruling to build the other reading instead.**
+3. `baal-perazim-rephaim` (5:17–25) — two Philistine battles, both fought
+   only after David inquires of the LORD; moderate scale (~130–210 figures,
+   well under `gilboa-battle`'s ~325). New `valley-of-rephaim` location
+   stub (`status: 'planned'`, disclosed uncertainty on Baal-perazim's exact
+   siting). Brief: `docs/design/baal-perazim-rephaim-brief.md`.
+
+No scene geometry was built this session — briefs and location/milestone
+data stubs only, per standing convention (scenes stay out of active
+building until a `threejs-engineer` builds against an approved brief). Full
+gate green after `npm install` (fresh sandbox, `node_modules` was missing):
+format, lint, typecheck, 484 vitest (unchanged), build, 12/12 e2e.
+
+**What's next, in priority order:**
+
+1. **Get a real Fable pass on the M6 scope + all three briefs** as soon as
+   Fable's spend limit resets — batch it, don't spend a partial session
+   chasing it. This is the single most important next step: it needs to
+   either confirm or revise everything in `docs/fable-review-queue.md` #21,
+   above all `jerusalem-capture`'s load-bearing scale/fortification call
+   (a genuine two-camp scholarly dispute, not a routine citation gap).
+2. **If Fable still isn't available**, Sonnet may still build
+   `hebron-all-israel` (the smallest, least contested scene — pure Hebron-
+   continuity reuse, no new terrain, no disputed archaeology) as
+   `in-progress` per its brief, same as M4's 2026-07-22 precedent of
+   building provisional briefs before a Fable review lands. Do **not** build
+   `jerusalem-capture` before a Fable ruling on the scale dispute — building
+   the wrong scale would be expensive to unwind (new terrain, new figure
+   counts, new claims all keyed to whichever scale is picked). `baal-
+perazim-rephaim` is safer to build provisionally than `jerusalem-capture`
+   but should still wait for the Fable confirmation of the overall M6 scope
+   if a session has the choice.
+3. A `researcher` pass on the milestone's flagged gaps (parallelizable, does
+   not block builds): a City-of-David archaeology source card (Stepped
+   Stone Structure / Gihon Spring water-system excavations — the single most
+   important gap, feeds the load-bearing call above directly); a Phoenician/
+   Tyre-alliance source for `claim-hiram-alliance`; whether existing
+   Philistine material-culture claims (`gilboa-battle`-era) still hold this
+   many chapters later, for `baal-perazim-rephaim`; a named commentary on
+   the burned-vs-carried-away captured-idols variant (5:21 vs. 1 Chron
+   14:12) — likely permanently thin.
+4. (Carried forward, still open, non-blocking, unchanged) real-hardware perf
+   check of `gilboa-battle` at high tier + the Pages-live check — see
+   Environment notes below.
+
+## State before this slice (2026-08-12, M5 RELEASED — Fable release pass, branch `claude/focused-mccarthy-hwagel`, PR #57 draft)
 
 **M5 is fully released.** The 2026-08-12 Fable release pass confirmed queue
 #20's closures as sufficient (spot-checked in `claims.ts`, not just from the
