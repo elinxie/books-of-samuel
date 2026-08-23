@@ -1685,3 +1685,71 @@ carried-forward non-blocking riders — real-hardware `gilboa-battle` perf
 check + Pages-live check — then M6 scoping, a Fable pass). Full verify gate
 re-run green after the flips. Committed on `claude/focused-mccarthy-hwagel`
 (push + PR #57 update left to the orchestrating session).
+
+---
+
+**2026-08-23 — Fable (world-director) — M6 scope pass, briefs written, no
+build yet**
+Scheduled/automated session. Baseline verified clean first (`npm install` +
+full `npm run verify`: format, lint, 484 vitest, build, 12/12 e2e, all green)
+before any new work, per the M5-release starting state. Dispatched
+`world-director` (Fable-tier) to scope M6 (2 Samuel 5), following the
+M2–M5 scope-pass pattern. Result: **M6 resolves to two scenes + an atlas
+extension**, entered `planned` in `src/data/milestones.ts`:
+
+- `jerusalem-stronghold` (2 Sam 5:6–16) — the milestone's load-bearing scene:
+  Jebusite stronghold capture, the _tsinnor_ crux (rendered as a genuine
+  unresolved crux — no capture-route/water-shaft geometry in any mode, ever),
+  the Millo (named as a question, never labeled in geometry), City of David
+  naming, Hiram's cedar/craftsmen folded in as a construction-not-palace
+  closing beat. `depictsDeath: false`. Brief:
+  `docs/design/jerusalem-stronghold-brief.md`.
+- `rephaim-valley` (2 Sam 5:17–25) — both Philistine engagements as one
+  two-phase scene (contrast is the point), deliberately lighter violence
+  than `gilboa-battle` (no melee choreography, no fight-stance pose buckets,
+  no invented divination apparatus, no visualized divine sign at 5:24 — the
+  sign is stated on-screen, never rendered). `depictsDeath: true`, ADR-009
+  advisory wired. Brief: `docs/design/rephaim-valley-brief.md`.
+- 5:1–5 (all-Israel covenant/anointing at Hebron) gets **no fourth Hebron
+  scene** — cards + a `/atlas` M6 phase instead (Hebron→Jerusalem capital
+  shift, two regions unify), per the 2026-08-02 M4 ruling that this kind of
+  political-geography change is atlas work. Logged as queue #21 for
+  confirmation at the M6 review; cheaply reversible since Hebron geometry
+  already exists.
+
+Four new fable-review-queue items opened (none block build work): **#21**
+the 5:1–5 treatment above; **#22** a source-card gap cluster (the project
+has no Jerusalem/Jebusite-period card at all — Millo, _tsinnor_ philology,
+Rephaim/Baal-perazim geography, Phoenician cedar trade, the unidentified
+_bĕkā'îm_ tree — folds into a future `researcher` pass, gates named
+attributions only, not the builds); **#23** the _tsinnor_ identification +
+the no-invented-capture-route rendering bar, extending the M5-ratified
+no-invented-method restraint from killing-method to assault-method; **#24**
+a new precedent needing ratification — narrated divine signs (5:24) are
+disclosed by caption/stillness, never visualized, escalated since this is
+the first time the project has faced this exact call.
+
+Neither scene may render any 2 Samuel 6+ content (ark, dynastic oracle,
+Bathsheba, temple), and neither asserts a chronological order relative to
+the other (5:17's topical-arrangement possibility is disclosed, not
+resolved) — both hard guards stated explicitly in both briefs and the M6
+milestone comment. `docs/design/{jerusalem-stronghold,rephaim-valley}-brief.md`
+follow the M5 briefs' structural format exactly (historical intent, visual
+composition, scale assumptions — both scenes state explicitly that no
+figure ratio is claimed since 2 Sam 5 narrates no counts, same as
+`gilboa-battle` — camera/observer experience, performance target with a
+hard cap at `gilboa-battle`'s high-tier instance count while its
+real-hardware check stays open, required source basis, placeholder policy).
+No code touched; `src/data/scenes.ts`/`claims.ts` untouched, per every prior
+milestone's convention (scenes stay out of `scenes.ts` until a
+`threejs-engineer` build pass). `npm run format` applied to the three
+touched/new files (docs table padding), full `npm run verify` re-run green
+after. Next: `researcher` pass on queue #22 (non-blocking, parallelizable),
+then build `jerusalem-stronghold` first (per its brief, the milestone's
+load-bearing scene — same build-hardest-scene-with-established-continuity-
+first pattern is not applicable here since neither scene reuses existing
+terrain, so order is per the brief's own read: Jerusalem's contested
+citation load makes it worth building and reviewing first), then
+`rephaim-valley`, then the `/atlas` M6 phase. Real-hardware `gilboa-battle`
+perf check and the Pages-live check remain open, unchanged, still blocked
+from this sandbox.

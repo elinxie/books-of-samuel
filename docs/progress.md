@@ -450,6 +450,40 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
+## Milestone 6 — 2 Samuel 5: **planned** (scoped + briefed 2026-08-23)
+
+Scope decision (Fable/`world-director`, 2026-08-23): unlike M4/M5, no
+bundling needed — 2 Sam 5 contains two full, distinct, buildable settings the
+project has never rendered. Two scenes + an atlas extension:
+
+- `jerusalem-stronghold` (2 Sam 5:6–16) — the milestone's load-bearing scene:
+  the Jebusite stronghold's capture, the _tsinnor_ crux (rendered as a
+  genuine unresolved crux, no capture-route geometry in any mode), the Millo
+  (named as a question, never labeled in geometry), the City of David
+  naming, Hiram's cedar/craftsmen folded in as a construction-not-palace
+  closing beat, 5:13–16 card-only. `depictsDeath: false`.
+  `docs/design/jerusalem-stronghold-brief.md`.
+- `rephaim-valley` (2 Sam 5:17–25) — both Philistine engagements as one
+  two-phase scene, deliberately lighter violence than `gilboa-battle` (no
+  melee choreography, no invented divination apparatus, the divine sign at
+  5:24 stated on-screen but never visualized). `depictsDeath: true`, ADR-009
+  advisory wired. `docs/design/rephaim-valley-brief.md`.
+- 5:1–5 (all-Israel covenant/anointing at Hebron) gets no fourth Hebron
+  scene — cards + a `/atlas` M6 phase instead (capital shift Hebron →
+  Jerusalem, the two regions unify), per the 2026-08-02 M4 precedent that
+  this kind of political-geography change is atlas work. Logged as
+  fable-review-queue #21 for confirmation at the M6 review.
+
+Four new fable-review-queue items (#21–#24, none block build work): #21 the
+5:1–5 treatment above; #22 a Jerusalem/Jebusite-period source-card gap
+cluster (folds into a future `researcher` pass); #23 the _tsinnor_
+identification + no-invented-capture-route bar; #24 the new narrated-
+divine-sign depiction policy, escalated for ratification. Neither scene may
+render any 2 Samuel 6+ content, and neither asserts a chronological order
+relative to the other. No code touched yet — `scenes.ts`/`claims.ts` stay
+untouched until a `threejs-engineer` build pass, per every prior milestone's
+convention. Full detail: `docs/run-log.md`'s 2026-08-23 entry.
+
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
 See `docs/visual-fidelity-roadmap.md`. Slices landed 2026-07-07:

@@ -129,6 +129,67 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the long war’s trend (2 Sam 3:1) and the collapse of the northern house — a `/atlas` phase update per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M6',
+    label: 'Milestone 6 — 2 Samuel 5',
+    // 2026-08-23 Fable/world-director scope pass. 2 Samuel 5 stands alone as
+    // one milestone — unlike M4/M5 it needs no bundling, because it contains
+    // two full, distinct, buildable settings that the project has never
+    // rendered (Jerusalem; the Valley of Rephaim). It resolves to **two
+    // scenes plus an atlas extension**, the smallest coherent set:
+    //   • 5:6–16 → `jerusalem-stronghold`. The milestone's load-bearing and
+    //     most contested scene: the Jebusite stronghold on the southeastern
+    //     ridge, the "you will not come in here" taunt, the *tsinnor* crux,
+    //     the Millo, and the City of David naming — with Hiram's cedar and
+    //     Tyrian craftsmen (5:11–12) folded in as closing beats rather than
+    //     given a scene, since they are the same site and the same subject
+    //     (the stronghold becoming a capital), and with 5:13–16's wives/sons
+    //     list carried card-only, exactly as M5 handled 3:2–5.
+    //   • 5:17–25 → `rephaim-valley`. Both Philistine engagements as one
+    //     two-phase timeline, not two scenes and not narrated-only: each is
+    //     two verses of action and neither stands alone (the M4/M5 bundling
+    //     logic), and the text's own point is the contrast between the two
+    //     answers David is given on the same ground. Deliberately a lighter
+    //     violence treatment than `gilboa-battle` — the text gives one verb
+    //     ("struck them"), no casualties and no named deaths, so no melee
+    //     choreography is staged.
+    //   • 5:1–5 (all Israel's covenant and the anointing over the united
+    //     kingdom, at Hebron) gets **no fourth Hebron plaza scene**. It is
+    //     compositionally a third repeat of the already-built
+    //     `hebron-anointing`/`hebron-covenant` delegation-and-rite staging,
+    //     while everything genuinely new about it is political geography —
+    //     which the 2026-08-02 M4 review already ruled is atlas work, not
+    //     scene work. Carried as `jerusalem-stronghold`'s opening cards plus
+    //     a `/atlas` M6 phase (the two regions finally unify; the capital
+    //     shifts Hebron → Jerusalem). This is the milestone's one genuinely
+    //     contested call and is deliberately reversible — the Hebron geometry
+    //     already exists, so adding the scene later is cheap — logged for
+    //     confirmation as fable-review-queue #21.
+    // Hard scope guard for the whole milestone: nothing from 2 Samuel 6
+    // onward — no ark, no dynastic oracle, no Bathsheba, no temple — is
+    // depicted or foreshadowed anywhere, including any gloss on the Solomon
+    // and Nathan named in 5:14. Neither scene asserts a chronological order
+    // relative to the other: 5:17's "stronghold" and the chapter's possibly
+    // topical arrangement are disclosed, not resolved.
+    // Briefs: docs/design/jerusalem-stronghold-brief.md,
+    // docs/design/rephaim-valley-brief.md. Researcher gap cluster (Jerusalem/
+    // Jebusite material culture and the extent-of-10th-century-Jerusalem
+    // dispute, tsinnor philology, the Millo identification, Rephaim/
+    // Baal-perazim geography, Phoenician cedar and craftsmen, the bakaim
+    // species) opened as queue #22 — it gates named attributions and any move
+    // past `design-placeholder`, not the builds. The tsinnor rendering bar is
+    // queue #23; the never-yet-decided depiction policy for narrated divine
+    // signs is queue #24. M7 starts at 2 Samuel 6.
+    status: 'planned',
+    passageRefs: ['2 Samuel 5'],
+    goals: [
+      'All Israel’s covenant with David and the anointing over the united kingdom at Hebron (2 Sam 5:1–5) — carried as context cards and a `/atlas` phase update, not a fourth Hebron scene (queue #21)',
+      'The capture of the Jebusite stronghold and the founding of the City of David (`jerusalem-stronghold`) — the tsinnor crux, the Millo, and the extent of 10th-century Jerusalem all carried as `scholarlyViews`; no capture-route geometry rendered in any mode',
+      'Hiram of Tyre’s cedar, carpenters, and masons, and David’s house shown under construction rather than finished — folded into `jerusalem-stronghold`, not a scene of its own',
+      'The two Philistine engagements in the Valley of Rephaim as one two-phase scene (`rephaim-valley`) — a deliberately lighter battle treatment than `gilboa-battle`, with no invented divination apparatus and no visualized divine sign',
+      'Atlas overlay extension: the two regions unify and the capital shifts from Hebron to Jerusalem — a `/atlas` M6 phase per ADR-011, not a 3D scene',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(
