@@ -7,9 +7,82 @@ to a "Resolved" section below if the history is worth keeping).
 
 ## Open
 
-| #   | Item               | Notes | When / where |
-| --- | ------------------ | ----- | ------------ |
-| —   | _(none currently)_ |       |              |
+| #   | Item                                                                           | Notes                             | When / where                    |
+| --- | ------------------------------------------------------------------------------ | --------------------------------- | ------------------------------- |
+| 21  | M6 scope: 5:1–5 as cards + atlas, no 4th Hebron scene                          | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
+| 22  | M6 source-card gap cluster (Jerusalem, tsinnor, Millo, Rephaim, cedar, bakaim) | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
+| 23  | tsinnor identification + the no-capture-route rendering bar                    | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
+| 24  | Depiction policy for narrated divine signs (2 Sam 5:24)                        | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
+
+M6 scope note (2026-08-23, Fable world-director pass — detail for #21–#24 above).
+Opened alongside the M6 entry in `src/data/milestones.ts` and the two scene briefs
+(`docs/design/jerusalem-stronghold-brief.md`,
+`docs/design/rephaim-valley-brief.md`). None of these block build work; they follow
+the M4 #18/#19 and M5 #20 pattern, where scope confirmation and citation gates are
+settled at the milestone review rather than before the builds.
+
+**#21 — the 2 Samuel 5:1–5 treatment.** This pass decided that the all-Israel
+covenant and anointing at Hebron gets no fourth Hebron plaza scene: it is
+compositionally a third repeat of the already-built `hebron-anointing` and
+`hebron-covenant` delegation-and-rite staging, and everything genuinely new about
+it — two political regions becoming one, the capital moving — is cartographic,
+which the 2026-08-02 M4 review already ruled is atlas work rather than scene work.
+It is therefore carried as `jerusalem-stronghold`'s opening context cards plus a
+`/atlas` M6 phase. This is a real judgment call against a real alternative (the
+event is arguably the most significant in the chapter), and it is the one place in
+M6 where a reasonable reviewer could land the other way. It is deliberately
+reversible: the Hebron geometry, palette, and layout constants all already exist,
+so adding the scene later costs a build pass, not a redesign. **Confirm or reverse
+at the M6 review**, the same way #18 confirmed M4's atlas-overlay call.
+
+**#22 — M6 source-card gap cluster (researcher pass).** Batched work, gates named
+attributions and any move off `design-placeholder`, blocks no build: (a) Jerusalem
+/ City of David material culture and the extent-of-10th-century-Jerusalem dispute —
+the project currently has **no source card for Jerusalem at all**, and this claim
+surface needs both a maximal and a minimal published reading so
+`claim-jebusite-stronghold-form` can carry a real `scholarlyViews` rather than a
+hedge; (b) _tsinnôr_ philology and the archaeological status of the traditional
+water-shaft identification — extending the existing `mccarter-1984-ii-samuel` card
+to 2 Samuel 5 is the cheapest route to a named attribution, as it was for 2 Samuel
+3–4 under #20(a); (c) the Millo identification and the dating of the eastern-slope
+terrace structures; (d) the Valley of Rephaim identification and whether
+Baal-perazim has any serious proposed location (expected outcome: none — likely a
+"checked, permanently thin" closure per the #13/#19c standard); (e) Phoenician
+cedar/timber supply and craftsmen in this period, for `claim-hiram-building`
+(`king-stager-2001` is the first place to look, as it was for `claim-feast-form`);
+(f) the _bĕkā'îm_ species question, for `claim-bakaim-grove` (`borowski-1987`).
+Expect several of these to close as honest negative findings rather than upgrades;
+that is a valid release state under the #13 precedent and should not be forced.
+
+**#23 — the _tsinnôr_ identification and the no-capture-route rendering bar.**
+Decided for now, recorded here because the decision is contested elsewhere in the
+field and because a future researcher finding could tempt a reversal:
+`jerusalem-stronghold` renders **no capture mechanism of any kind** — no water
+shaft, tunnel, conduit, infiltration route, scaling, or siege equipment, in any
+mode — and stages only the approach and the aftermath, leaving the assault in the
+gap the narrative itself leaves at 5:7 ("nevertheless David took the stronghold").
+This extends the restraint the 2026-08-10 M5 sign-off ratified for killings the
+text narrates without method detail (`hebron-reckoning`'s `AssassinPose` having no
+strike field) from killing-method to assault-method. The _tsinnôr_ crux itself is
+carried as `scholarlyViews` on its own claim. **Escalate before any change**: even
+if #22 lands a strong citation for one reading, rendering a mechanism would make
+the project's most-viewed new scene assert a resolution to one of the book's open
+cruxes.
+
+**#24 — depiction policy for narrated divine signs.** Genuinely new ground: the
+project has never had to decide how to render a narrated divine sign, and 2 Samuel
+5:24's sound of marching in the tops of the balsam trees is the first case that
+sits inside a scene rather than inside a card. Default set by the
+`rephaim-valley` brief: **the sign is stated, never visualized** — no wind effect,
+light, canopy figures, timed or intensified foliage motion, or camera language
+implying a presence; the beat is a held wait among ordinary trees and the caption
+carries the text's claim as the text's claim. The reasoning is the same one behind
+the anachronism rule: rendering it would assert as observed fact something for
+which no observational basis exists, and would move the project toward the
+sanitized-illustration genre it defines itself against. Flagged for Fable
+ratification because this will recur constantly from 2 Samuel 6 onward (the ark
+narratives, 2 Samuel 7, 2 Samuel 24) and may deserve its own ADR rather than a
+per-scene claim. Interim disclosure lives on `claim-divine-sign-depiction`.
 
 ## Resolved
 
