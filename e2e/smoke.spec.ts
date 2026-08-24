@@ -169,6 +169,45 @@ test('atlas M5 phase (2 Samuel 3–4 long war + northern collapse) switches in w
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
 
+test('atlas M6 phase (2 Samuel 5, the united kingdom) merges the regions and moves the capital marker', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/atlas');
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+
+  await page.getByTestId('atlas-phase-m6').click();
+  await expect(page.getByTestId('atlas-phase-m6')).toHaveAttribute('aria-selected', 'true');
+
+  // The two prior regions are gone, replaced by exactly one merged region.
+  await expect(page.getByTestId('region-shading-united-kingdom')).toBeVisible();
+  await expect(page.getByTestId('region-shading-israel-writ')).toHaveCount(0);
+  await expect(page.getByTestId('region-shading-judah')).toHaveCount(0);
+
+  // The capital marker moves to Jerusalem; the point's own label discloses it.
+  await expect(page.getByTestId('atlas-capital-marker')).toBeVisible();
+  await expect(page.getByTestId('atlas-point-jerusalem')).toContainText('capital');
+  await expect(page.getByTestId('atlas-point-valley-of-rephaim')).toBeVisible();
+
+  // The merge is captioned as allegiance, not a mapped territorial extent.
+  await expect(page.getByText(/change of allegiance/i).first()).toBeVisible();
+
+  // Switching back to M4 restores the original two-region phase cleanly.
+  await page.getByTestId('atlas-phase-m4').click();
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByTestId('region-shading-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-shading-judah')).toBeVisible();
+  await expect(page.getByTestId('region-shading-united-kingdom')).toHaveCount(0);
+  await expect(page.getByTestId('atlas-capital-marker')).toHaveCount(0);
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {

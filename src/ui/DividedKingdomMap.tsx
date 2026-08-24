@@ -43,6 +43,7 @@ export function DividedKingdomMap({
   regions = ALLEGIANCE_REGIONS,
   emphasizedIds = M4_LOCATION_IDS,
   ariaLabel = "Schematic map of the divided kingdom after Saul's death, 2 Samuel 2",
+  capitalId,
 }: {
   locations: LocationEntry[];
   showShading: boolean;
@@ -52,6 +53,15 @@ export function DividedKingdomMap({
   emphasizedIds?: string[];
   /** Overrides the SVG's accessible name — defaults to the M4 phase's label. */
   ariaLabel?: string;
+  /**
+   * Location id marked as the current capital (M6 only — the capital moves
+   * from Hebron to Jerusalem, claim-atlas-m6-phase). Rendered as a ring
+   * around that point's marker and a "(capital)" suffix on its label — no
+   * extent geometry, no shading of its own. Left `undefined` for the M4/M5
+   * phases (two rival, un-ringed capitals; see the page's own prose), which
+   * keeps their rendering pixel-unchanged.
+   */
+  capitalId?: string;
 }) {
   const byId = useMemo(() => new Map(locations.map((l) => [l.id, l])), [locations]);
 
@@ -143,6 +153,7 @@ export function DividedKingdomMap({
           const { lat, lon, confidence } = loc.approxCoordinates!;
           const [x, y] = project(lat, lon);
           const emphasized = emphasizedIds.includes(loc.id);
+          const isCapital = capitalId === loc.id;
           const r = MARKER_RADIUS[confidence];
           return (
             <g
@@ -150,6 +161,22 @@ export function DividedKingdomMap({
               className={emphasized ? 'atlas-point atlas-point-emphasized' : 'atlas-point'}
               data-testid={`atlas-point-${loc.id}`}
             >
+              {isCapital && (
+                /*
+                  The capital marker (M6 only): a ring around the point and
+                  nothing else — no fill, no extent geometry — per the
+                  brief's guard that Jerusalem's marker uses only its secure
+                  identification coordinates, never an asserted territory.
+                */
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={r + 5}
+                  className="atlas-capital-ring"
+                  data-testid="atlas-capital-marker"
+                  fill="none"
+                />
+              )}
               <circle
                 cx={x}
                 cy={y}
@@ -159,9 +186,17 @@ export function DividedKingdomMap({
                 strokeDasharray={loc.identification.disputed ? '3 2' : undefined}
                 strokeWidth={loc.identification.disputed ? 1.5 : 0}
               />
-              <text x={x} y={y - r - 6} textAnchor="middle" className="atlas-point-label">
+              <text
+                x={x}
+                y={y - r - 6}
+                textAnchor="middle"
+                className={
+                  isCapital ? 'atlas-point-label atlas-point-label-capital' : 'atlas-point-label'
+                }
+              >
                 {loc.name}
                 {loc.identification.disputed ? ' *' : ''}
+                {isCapital ? ' (capital)' : ''}
               </text>
             </g>
           );

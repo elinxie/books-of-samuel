@@ -5,8 +5,11 @@ import { ClaimCard } from '../ui/ClaimCard';
 import {
   ALLEGIANCE_REGIONS,
   ALLEGIANCE_REGIONS_M5,
+  ALLEGIANCE_REGIONS_M6,
   M4_LOCATION_IDS,
   M5_LOCATION_IDS,
+  M6_LOCATION_IDS,
+  M6_CAPITAL_ID,
 } from '../ui/atlasRegions';
 import { LOCATIONS, resolveClaims } from '../data';
 import { useAppStore } from '../state/store';
@@ -28,18 +31,32 @@ const M5_OVERLAY_CLAIM_IDS = [
   'claim-atlas-m5-phase',
 ];
 
+/** M6 phase (2 Samuel 5, claim-atlas-m6-phase) — this overlay's own M6 extension. */
+const M6_OVERLAY_CLAIM_IDS = [
+  'claim-all-israel-covenant',
+  'claim-jerusalem-capture',
+  'claim-city-of-david-naming',
+  'claim-jerusalem-terrain-form',
+  'claim-jebusite-stronghold-form',
+  'claim-atlas-m6-phase',
+];
+
 const M4_ARIA_LABEL = "Schematic map of the divided kingdom after Saul's death, 2 Samuel 2";
 const M5_ARIA_LABEL =
   "Schematic map of the long war and Ish-bosheth's fall, 2 Samuel 3-4, with the Israel-writ region shown fainter and labeled no king";
+const M6_ARIA_LABEL =
+  'Schematic map of the united kingdom, 2 Samuel 5, with the two former regions merged into one and the capital marker moved from Hebron to Jerusalem';
 
 /**
  * The divided-kingdom political-geography overlay (2 Samuel 2:8–11, M4's
  * fourth goal — docs/fable-review-queue.md #18, resolved 2026-08-02), extended
  * with an M5 phase (2 Samuel 3–4, claim-atlas-m5-phase) covering the long-war
- * trend and Ish-bosheth's collapse. A schematic study map, not an in-scene
- * device: allegiance is shown only as soft, unbordered region shading keyed to
- * the text's own name-lists, never hard border lines, in either phase.
- * Optional and dismissible per ADR-011.
+ * trend and Ish-bosheth's collapse, and an M6 phase (2 Samuel 5,
+ * claim-atlas-m6-phase) where the two regions merge under one king and the
+ * capital marker moves from Hebron to Jerusalem. A schematic study map, not
+ * an in-scene device: allegiance is shown only as soft, unbordered region
+ * shading keyed to the text's own name-lists, never hard border lines, in
+ * any phase. Optional and dismissible per ADR-011.
  */
 export function AtlasPage() {
   const showShading = useAppStore((s) => s.showAllegianceShading);
@@ -47,20 +64,27 @@ export function AtlasPage() {
   const atlasPhase = useAppStore((s) => s.atlasPhase);
   const setAtlasPhase = useAppStore((s) => s.setAtlasPhase);
   const isM5 = atlasPhase === 'm5';
+  const isM6 = atlasPhase === 'm6';
+  const isM4 = !isM5 && !isM6;
 
   const claims = resolveClaims(OVERLAY_CLAIM_IDS);
   const m5Claims = resolveClaims(M5_OVERLAY_CLAIM_IDS);
+  const m6Claims = resolveClaims(M6_OVERLAY_CLAIM_IDS);
   const disputedShown = LOCATIONS.filter((l) => l.approxCoordinates && l.identification.disputed);
 
-  const regions = isM5 ? ALLEGIANCE_REGIONS_M5 : ALLEGIANCE_REGIONS;
-  const emphasizedIds = isM5 ? M5_LOCATION_IDS : M4_LOCATION_IDS;
+  const regions = isM6 ? ALLEGIANCE_REGIONS_M6 : isM5 ? ALLEGIANCE_REGIONS_M5 : ALLEGIANCE_REGIONS;
+  const emphasizedIds = isM6 ? M6_LOCATION_IDS : isM5 ? M5_LOCATION_IDS : M4_LOCATION_IDS;
+  const capitalId = isM6 ? M6_CAPITAL_ID : undefined;
+  const ariaLabel = isM6 ? M6_ARIA_LABEL : isM5 ? M5_ARIA_LABEL : M4_ARIA_LABEL;
 
   return (
     <Page>
       <h1>
-        {isM5
-          ? 'The long war and Ish-bosheth’s fall — 2 Samuel 3–4'
-          : 'The divided kingdom — 2 Samuel 2:8–11'}
+        {isM6
+          ? 'The united kingdom — 2 Samuel 5'
+          : isM5
+            ? 'The long war and Ish-bosheth’s fall — 2 Samuel 3–4'
+            : 'The divided kingdom — 2 Samuel 2:8–11'}
       </h1>
       <p className="page-lede">
         After Saul’s death, the narrative reports a political split: Abner installs Ish-bosheth as
@@ -77,7 +101,7 @@ export function AtlasPage() {
           type="button"
           role="tab"
           className="phase-tab"
-          aria-selected={!isM5}
+          aria-selected={isM4}
           data-testid="atlas-phase-m4"
           onClick={() => setAtlasPhase('m4')}
         >
@@ -93,7 +117,52 @@ export function AtlasPage() {
         >
           <strong>M5 — the long war and Ish-bosheth’s fall</strong>2 Samuel 3–4
         </button>
+        <button
+          type="button"
+          role="tab"
+          className="phase-tab"
+          aria-selected={isM6}
+          data-testid="atlas-phase-m6"
+          onClick={() => setAtlasPhase('m6')}
+        >
+          <strong>M6 — the united kingdom</strong>2 Samuel 5
+        </button>
       </div>
+
+      {isM6 && (
+        <>
+          <h2>One king, one capital</h2>
+          <p className="page-lede">
+            All the tribes of Israel came to David at Hebron; the elders made a covenant with him
+            before the LORD and anointed him king over Israel (2 Samuel 5:1–3), lifting the “house
+            of Judah only” qualifier of his first anointing (2:4). The two regions this map has
+            carried since M4 and M5 — the house of Judah, and the former Israel-writ, headless since
+            Ish-bosheth’s assassination — are shown here merged into one soft region under a single
+            king. This is a change of allegiance the text states plainly, not a territorial extent
+            this map measures: 2 Samuel 5:1–3 gives a covenant and an anointing, not a border, so no
+            new region outline or boundary is drawn — only the region label and caption change.
+          </p>
+          <p className="page-lede">
+            David then went to Jerusalem and took the Jebusite stronghold, renaming it the city of
+            David (5:6–9); the capital marker on the map below moves from Hebron to Jerusalem to
+            match. Jerusalem’s marker is plotted at its own secure identification coordinates — the
+            site itself is one of the more securely located places in Samuel — and the ring around
+            it marks only that this is now the capital, nothing more: no shading, fill, or extent
+            geometry of any kind attaches to it. This map takes no position on how large or built-up
+            tenth-century Jerusalem actually was; that dispute belongs to the claim layer below
+            (claim-jebusite-stronghold-form), not to anything drawn here.
+          </p>
+          <p className="page-lede">
+            The Valley of Rephaim, southwest of Jerusalem, is also plotted at full emphasis — where
+            the Philistines twice engaged David after his anointing over all Israel (5:17–25). It
+            sits outside the merged region’s shading, the same treatment Gibeon gets in the unshaded
+            gap between M4’s two regions: contested ground, not a claimed side. This map does not
+            assert that the capture of Jerusalem (5:6–16) happened before or after those engagements
+            (5:17–25) — the chapter’s own arrangement may be topical rather than strictly
+            chronological, and neither this map nor either scene’s closing card picks a side.
+          </p>
+        </>
+      )}
 
       {isM5 && (
         <>
@@ -124,9 +193,11 @@ export function AtlasPage() {
         <span>
           Allegiance shading
           <span className="toggle-hint">
-            {isM5
-              ? 'Soft regions for the house of Judah vs. the now-headless Israel-writ.'
-              : 'Soft regions for Ish-bosheth’s writ vs. house of Judah.'}
+            {isM6
+              ? 'One soft region for the united kingdom, replacing the M4/M5 split.'
+              : isM5
+                ? 'Soft regions for the house of Judah vs. the now-headless Israel-writ.'
+                : 'Soft regions for Ish-bosheth’s writ vs. house of Judah.'}
           </span>
         </span>
         <button
@@ -146,14 +217,23 @@ export function AtlasPage() {
         showShading={showShading}
         regions={regions}
         emphasizedIds={emphasizedIds}
-        ariaLabel={isM5 ? M5_ARIA_LABEL : M4_ARIA_LABEL}
+        ariaLabel={ariaLabel}
+        capitalId={capitalId}
       />
 
       <p style={{ color: 'var(--muted)', fontSize: 12.5 }}>
         Marker size follows the coordinate confidence rating in <code>src/data/locations.ts</code>{' '}
         (larger = higher confidence). A dashed ring marks a location whose site identification is
         disputed.{' '}
-        {isM5 ? (
+        {isM6 ? (
+          <>
+            Jerusalem and the Valley of Rephaim — this milestone’s own scenes (jerusalem-stronghold,
+            rephaim-valley) — are shown at full emphasis, with a solid ring marking Jerusalem as the
+            capital; Hebron, Gibeon, Ziklag, and Mahanaim (M4/M5’s scenes), plus Gilboa, Beth-shan,
+            Jabesh-gilead, and Gath, are shown for orientation only in this phase. The Valley of
+            Rephaim sits outside the shaded region, the same unshaded-gap treatment M4 gives Gibeon.
+          </>
+        ) : isM5 ? (
           <>
             Hebron and Mahanaim — this phase’s own scenes (hebron-covenant, hebron-gate,
             hebron-reckoning; Mahanaim narrated only) — are shown at full emphasis; Gibeon and
@@ -171,13 +251,25 @@ export function AtlasPage() {
         )}
       </p>
 
-      <h2>Two rival capitals, one unlocatable</h2>
+      <h2>
+        {isM6 ? 'One capital, secure; one extent, disputed' : 'Two rival capitals, one unlocatable'}
+      </h2>
       <p className="page-lede">
         Hebron’s identification with Tell Rumeida is secure. Mahanaim’s is not: no site in the
         Jabbok valley commands scholarly consensus, so it is plotted here at its own low-confidence
         coordinates, with both published candidates disclosed rather than a single answer chosen for
         convenience.
       </p>
+      {isM6 && (
+        <p className="page-lede">
+          Jerusalem’s identification with the southeastern ridge (the City of David) is itself
+          secure — one of the more securely located places in Samuel, plotted at high-confidence
+          coordinates. What is genuinely disputed is not the site but its extent: how large and how
+          developed tenth-century Jerusalem was is a live archaeological question
+          (claim-jebusite-stronghold-form, below), and this map’s capital ring takes no position on
+          it — it marks a location and a political role, not a footprint.
+        </p>
+      )}
       {disputedShown.map((loc) => (
         <LocationDisputeNote key={loc.id} location={loc} />
       ))}
@@ -202,6 +294,21 @@ export function AtlasPage() {
             re-deriving new claim text.
           </p>
           {m5Claims.map((c) => (
+            <ClaimCard key={c.id} claim={c} />
+          ))}
+        </>
+      )}
+      {isM6 && (
+        <>
+          <p className="page-lede">
+            The M6 phase merges the two prior regions and moves the capital marker; it draws no new
+            border, outline, or extent geometry of any kind. It cross-references, rather than
+            re-derives, the claims already built for the two M6 scenes below — the covenant and
+            anointing that is the merge’s entire textual basis, the capture and naming that move the
+            capital, and the terrain-form/extent-dispute claims that keep Jerusalem’s actual size
+            off this map.
+          </p>
+          {m6Claims.map((c) => (
             <ClaimCard key={c.id} claim={c} />
           ))}
         </>
