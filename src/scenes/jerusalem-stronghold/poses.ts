@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import { APPROACH_CURVE, CONSTRUCTION_GROUND_CENTER } from './layout';
 
 /**
@@ -58,6 +59,14 @@ function facePerpendicular(tanX: number, tanZ: number, offset: number): [number,
 
 const CURVE_END = APPROACH_CURVE.getPointAt(1);
 
+// Hoisted scratch vectors for per-frame curve sampling in `davidsForcePose`
+// (called once per figure per frame across David's force during the
+// approach — the tmpVec/tmpTan pattern established by
+// ziklag/ReturningMen.tsx and ziklag-lament/poses.ts) — avoids allocating
+// two new THREE.Vector3 instances per figure per frame.
+const tmpPos = new THREE.Vector3();
+const tmpTan = new THREE.Vector3();
+
 // ---------------------------------------------------------------------------
 // David's force: an approach column at the capture beats, redistributed as
 // an occupying presence inside the enclosure afterward
@@ -87,10 +96,10 @@ export function davidsForcePose(t: number, fig: ForceFigureParams): ForcePose {
 
   if (t < arriveAt) {
     const u = clamp01(smoothstep(t / arriveAt));
-    const pos = APPROACH_CURVE.getPointAt(u);
-    const tan = APPROACH_CURVE.getTangentAt(Math.max(0.001, u));
-    const [ox, oz] = facePerpendicular(tan.x, tan.z, fig.laneOffset);
-    return { x: pos.x + ox, z: pos.z + oz, yaw: Math.atan2(tan.x, tan.z), settled: 0 };
+    APPROACH_CURVE.getPointAt(u, tmpPos);
+    APPROACH_CURVE.getTangentAt(Math.max(0.001, u), tmpTan);
+    const [ox, oz] = facePerpendicular(tmpTan.x, tmpTan.z, fig.laneOffset);
+    return { x: tmpPos.x + ox, z: tmpPos.z + oz, yaw: Math.atan2(tmpTan.x, tmpTan.z), settled: 0 };
   }
 
   const settleEnd = arriveAt + SETTLE_DUR;

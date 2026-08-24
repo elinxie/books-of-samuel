@@ -8,6 +8,15 @@ import {
   RIM_EDGE,
 } from './layout';
 
+// Hoisted scratch vectors for per-frame curve sampling in `sampleCurvePose`
+// (called once per figure per frame across David's force during every
+// travel leg, most sustained during the phase-two flanking march — the
+// brief's own "one real risk in this scene") — avoids allocating two new
+// THREE.Vector3 instances per figure per frame, the tmpVec/tmpTan pattern
+// established by ziklag/ReturningMen.tsx and ziklag-lament/poses.ts.
+const tmpPos = new THREE.Vector3();
+const tmpTan = new THREE.Vector3();
+
 /**
  * Pure, beat-driven pose/timing choreography for rephaim-valley (ADR-007
  * convention, mirroring hebron-gate/jerusalem-stronghold's poses.ts). Beat
@@ -121,10 +130,10 @@ function sampleCurvePose(
   laneOffset: number,
 ): DavidForcePose {
   const uu = clamp01(u);
-  const pos = curve.getPointAt(uu);
-  const tan = curve.getTangentAt(Math.max(0.001, Math.min(0.999, uu)));
-  const [ox, oz] = facePerpendicular(tan.x, tan.z, laneOffset);
-  return { x: pos.x + ox, z: pos.z + oz, yaw: Math.atan2(tan.x, tan.z) };
+  curve.getPointAt(uu, tmpPos);
+  curve.getTangentAt(Math.max(0.001, Math.min(0.999, uu)), tmpTan);
+  const [ox, oz] = facePerpendicular(tmpTan.x, tmpTan.z, laneOffset);
+  return { x: tmpPos.x + ox, z: tmpPos.z + oz, yaw: Math.atan2(tmpTan.x, tmpTan.z) };
 }
 
 function offsetPos(p: [number, number], o: [number, number]): [number, number] {
