@@ -1818,6 +1818,23 @@ status. Full detail and reasoning: `docs/fable-review-queue.md`'s
 build agent ran one, though both briefs asked for one) was dispatched
 immediately after and is the last item this session did — see below.
 
+**`performance-reviewer` pass (`28f517b`), dispatched after the sign-off
+note above was written: found and fixed one real issue in each scene** —
+`jerusalem-stronghold/poses.ts`'s `davidsForcePose` and
+`rephaim-valley/poses.ts`'s `sampleCurvePose` both called
+`curve.getPointAt`/`getTangentAt` with no `optionalTarget`, allocating two
+throwaway `Vector3`s per figure per frame. Real GC pressure during exactly
+the beat `rephaim-valley`'s brief flagged as "the only real risk in this
+scene" (the flanking march, ~45-60 figures, sustained multi-second window).
+Fixed by hoisting scratch vectors to module scope — the same
+`tmpVec`/`tmpTan` pattern already used in `ziklag/ReturningMen.tsx` and
+`ziklag-lament/poses.ts`. No behavior change (existing `poses.test.ts`
+covers the pure functions); independently re-verified by this session:
+546 vitest, 16/16 e2e, clean build, bundle size unaffected. Everything else
+checked out clean (terrain budgets, instancing, static-crowd baking,
+quality-tier scaling, no fight-stance buckets) — full detail in the
+agent's own report if needed later.
+
 Draft PR #67 tracks all of this on `claude/focused-mccarthy-m17xzl`.
 User notified via push notification of the Fable outage and the fallback
 plan mid-session.

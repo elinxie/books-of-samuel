@@ -52,11 +52,15 @@ atlas M6 phase, `2sam-5`, `jerusalem`, `valley-of-rephaim`, `M6` all stay
 provisional decision holds release status. Full reasoning:
 `docs/fable-review-queue.md`'s 2026-08-24 note.
 
-A `performance-reviewer` pass on both new scenes was also dispatched this
-session (neither build agent ran one, though both briefs asked for one) —
-check `docs/run-log.md`'s 2026-08-24 entry or a later entry for its
-outcome if it's not reflected here yet; this session may have
-checkpointed before that agent's result landed.
+A `performance-reviewer` pass on both new scenes ran this session (commit
+`28f517b`) and found/fixed one real issue in each: an unhoisted
+`Vector3` allocation per figure per frame in the curve-sampling pose
+functions, most consequential in `rephaim-valley`'s flanking-march beat
+(the brief's own flagged risk). Fixed via the established
+`tmpVec`/`tmpTan` hoisting pattern; no behavior change; independently
+re-verified (546 vitest, 16/16 e2e, clean build). Everything else
+(terrain budgets, instancing, static-crowd baking, quality-tier scaling)
+checked out clean.
 
 **What's next (Sonnet or Fable), in priority order:**
 
