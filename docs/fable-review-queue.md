@@ -7,11 +7,11 @@ to a "Resolved" section below if the history is worth keeping).
 
 ## Open
 
-| #   | Item                                                        | Notes                             | When / where                    |
-| --- | ----------------------------------------------------------- | --------------------------------- | ------------------------------- |
-| 21  | M6 scope: 5:1–5 as cards + atlas, no 4th Hebron scene       | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
-| 23  | tsinnor identification + the no-capture-route rendering bar | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
-| 24  | Depiction policy for narrated divine signs (2 Sam 5:24)     | See the 2026-08-23 M6 note below. | 2026-08-23 Fable, M6 scope pass |
+| #   | Item                                                        | Notes                                                                                                | When / where                    |
+| --- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------- |
+| 21  | M6 scope: 5:1–5 as cards + atlas, no 4th Hebron scene       | **Sonnet-fallback-confirmed as built; needs a real Fable ratification** — see 2026-08-24 note below. | 2026-08-23 Fable, M6 scope pass |
+| 23  | tsinnor identification + the no-capture-route rendering bar | **Sonnet-fallback-confirmed as held; needs a real Fable ratification** — see 2026-08-24 note below.  | 2026-08-23 Fable, M6 scope pass |
+| 24  | Depiction policy for narrated divine signs (2 Sam 5:24)     | **Still open — genuinely Fable-tier, not decided by the fallback pass.** See 2026-08-24 note below.  | 2026-08-23 Fable, M6 scope pass |
 
 M6 scope note (2026-08-23, Fable world-director pass — detail for #21–#24 above).
 Opened alongside the M6 entry in `src/data/milestones.ts` and the two scene briefs
@@ -82,6 +82,63 @@ sanitized-illustration genre it defines itself against. Flagged for Fable
 ratification because this will recur constantly from 2 Samuel 6 onward (the ark
 narratives, 2 Samuel 7, 2 Samuel 24) and may deserve its own ADR rather than a
 per-scene claim. Interim disclosure lives on `claim-divine-sign-depiction`.
+
+**2026-08-24 M6 sign-off — Sonnet fallback, provisional, NOT a Fable review.**
+`fable-architect` errored on its first call this session ("You've hit your
+monthly spend limit") — the same recurring constraint as 2026-07-22/
+2026-08-10. Per `docs/model-handoff.md`'s documented fallback ("implement
+the most defensible option, mark it clearly as provisional... don't block
+the whole project on Fable availability"), this orchestrating session ran
+the sign-off review itself rather than waiting. **No milestone/scene/
+passage/location status flips were made** — `jerusalem-stronghold`,
+`rephaim-valley`, the atlas M6 phase, `2sam-5`, `jerusalem`,
+`valley-of-rephaim`, and `M6` all stay `in-progress`/`planned` as built,
+per the model-handoff rule that status stays short of `released` while a
+flagged provisional decision (here, #24) is still open.
+
+- **#21 confirmed as built** — independently re-checked, not just trusted
+  from the build report: `jerusalem-stronghold`'s `b-all-israel`/`b-regnal`
+  beats (`src/data/scenes.ts`) carry the 5:1–5 material as cards only,
+  explicitly cross-reference `hebron-anointing`/`hebron-covenant`, and point
+  at the `/atlas` M6 phase for the territorial-change context — exactly the
+  brief's design. This is Sonnet's own confirmation, not Fable's; the queue
+  row explicitly says this was "the one place in M6 where a reasonable
+  reviewer could land the other way," so it stays open for an actual Fable
+  read when the budget resets, even though nothing here suggests reversing
+  it.
+- **#23 confirmed as held** — independently grepped both scenes'
+  `src/scenes/jerusalem-stronghold/` and `src/scenes/rephaim-valley/` source
+  for shaft/tunnel/conduit/infiltration/hook, six-chamber/casemate/glacis,
+  finished-palace/royal-architecture vocabulary, divination apparatus, named
+  commanders (Joab/Abishai), triumphal/win-state language, and any
+  2 Samuel 6+ term (ark/oracle/Bathsheba/temple/Solomon/Nathan) across both
+  scenes — every hit was a negation comment or reuse-attribution, never
+  actual geometry or copy. The queue #22 researcher pass's citation upgrade
+  to `claim-jebusite-stronghold-form` (design-placeholder/speculative →
+  scholarly-reconstruction/low) does not touch this bar and its own notes
+  say so explicitly — checked and confirmed true.
+- **#24 left open, deliberately not decided by this pass.** The brief itself
+  flags this as possibly deserving its own ADR, and `docs/model-handoff.md`
+  places data-model/policy-level decisions and anything in "Fixed for now"
+  squarely in Fable's tier — writing a new ADR under a budget-outage
+  fallback would be exactly the kind of judgment call the fallback policy
+  says to escalate, not absorb. The interim disclosure already built
+  (`claim-divine-sign-depiction`, stated-never-visualized) stays the
+  project's working default per the brief, but is not ratified. **Next
+  Fable session: rule on #24 first** (ratify as-is, revise, or promote to a
+  dedicated ADR — it will recur from 2 Samuel 6 onward), then re-run this
+  same sign-off checklist to confirm #21/#23 with real Fable judgment and
+  execute the release cascade if everything still holds.
+- **Performance**: no dedicated `performance-reviewer` pass had run on
+  either scene mid-session (both build agents self-checked only, contrary
+  to what their briefs asked for). A `performance-reviewer` pass was
+  dispatched by this same session immediately after this note was written —
+  see `docs/run-log.md`'s 2026-08-24 entry for the outcome. Treated as
+  Sonnet-tier execution work, not a Fable-gated decision.
+- **Everything else spot-checked clean**: figure counts at or under both
+  briefs' targets and `gilboa-battle`'s hard cap; full verify gate green
+  after every commit, independently re-run by this session (not just taken
+  from build-agent reports).
 
 ## Resolved
 

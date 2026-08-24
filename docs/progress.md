@@ -450,7 +450,7 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
-## Milestone 6 — 2 Samuel 5: **planned** (scoped + briefed 2026-08-23)
+## Milestone 6 — 2 Samuel 5: **in-progress** (scoped + briefed 2026-08-23; both scenes + atlas phase built 2026-08-24; Sonnet-fallback sign-off 2026-08-24, real Fable sign-off still pending)
 
 Scope decision (Fable/`world-director`, 2026-08-23): unlike M4/M5, no
 bundling needed — 2 Sam 5 contains two full, distinct, buildable settings the
@@ -480,9 +480,18 @@ cluster (folds into a future `researcher` pass); #23 the _tsinnor_
 identification + no-invented-capture-route bar; #24 the new narrated-
 divine-sign depiction policy, escalated for ratification. Neither scene may
 render any 2 Samuel 6+ content, and neither asserts a chronological order
-relative to the other. No code touched yet — `scenes.ts`/`claims.ts` stay
-untouched until a `threejs-engineer` build pass, per every prior milestone's
-convention. Full detail: `docs/run-log.md`'s 2026-08-23 entry.
+relative to the other. Full detail: `docs/run-log.md`'s 2026-08-23 entry.
+
+**Build 2026-08-24 (scheduled/automated Sonnet session):** both scenes and
+the atlas M6 phase are built and gate-green — `jerusalem-stronghold` (~120
+figures), `rephaim-valley` (~131 figures, standard/reduced-mode fork), the
+merged-region/moved-capital atlas phase. Queue #22's researcher pass closed
+(7 new source cards). `fable-architect` hit its monthly spend limit;
+Sonnet-fallback sign-off confirmed #21/#23 as built but left #24 (narrated
+divine-sign depiction policy) open as genuinely Fable-tier — **no status
+flips made**, everything stays `in-progress`/`planned` pending a real Fable
+pass. Full detail: `docs/run-log.md`'s 2026-08-24 entry,
+`docs/fable-review-queue.md`'s #21/#23/#24 rows.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 
