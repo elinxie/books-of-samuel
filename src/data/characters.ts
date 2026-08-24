@@ -6,19 +6,24 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David',
     kind: 'person',
     summary:
-      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35).',
+      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12).',
     passageRefs: [
       '1 Samuel 27',
       '1 Samuel 30',
       '2 Samuel 2',
       '2 Samuel 3:20–21',
       '2 Samuel 3:28–35',
+      '2 Samuel 5:1–12',
     ],
     claimIds: [
       'claim-david-historical',
       'claim-covenant-feast',
       'claim-david-disavowal',
       'claim-abner-funeral',
+      'claim-all-israel-covenant',
+      'claim-jerusalem-capture',
+      'claim-city-of-david-naming',
+      'claim-hiram-building',
     ],
   },
   {
@@ -26,9 +31,15 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David’s six hundred',
     kind: 'group',
     summary:
-      'The narrative gives David’s force as six hundred men, with families, based at Ziklag. Two hundred stay exhausted at the brook Besor while four hundred pursue. Later, an escort/household presence drawn from this same following attends David at the Hebron covenant feast with Abner (2 Samuel 3:20) — no count is narrated for that presence.',
-    passageRefs: ['1 Samuel 30:9–10', '2 Samuel 3:20'],
-    claimIds: ['claim-600-men', 'claim-dress', 'claim-covenant-cast-scale'],
+      'The narrative gives David’s force as six hundred men, with families, based at Ziklag. Two hundred stay exhausted at the brook Besor while four hundred pursue. Later, an escort/household presence drawn from this same following attends David at the Hebron covenant feast with Abner (2 Samuel 3:20) — no count is narrated for that presence. At Jerusalem, the same following forms the approach column against the Jebusite stronghold and then the occupying presence inside it (2 Samuel 5:6–9) — again, no count is narrated.',
+    passageRefs: ['1 Samuel 30:9–10', '2 Samuel 3:20', '2 Samuel 5:6–9'],
+    claimIds: [
+      'claim-600-men',
+      'claim-dress',
+      'claim-covenant-cast-scale',
+      'claim-jerusalem-capture',
+      'claim-stronghold-cast-scale',
+    ],
   },
   {
     id: 'abiathar',
@@ -271,6 +282,37 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'Saul’s concubine; Ish-bosheth accuses Abner of going in to her, a charge the narrative reports without adjudicating (2 Samuel 3:7). Referenced-only here: no visualization of Rizpah or the accusation is staged in hebron-covenant. She reappears later in the narrative (2 Samuel 21), far outside this milestone.',
     passageRefs: ['2 Samuel 3:7'],
     claimIds: ['claim-abner-break'],
+  },
+  {
+    id: 'jebusites',
+    name: 'The Jebusites',
+    kind: 'group',
+    summary:
+      'The inhabitants of the stronghold David takes, unnamed as individuals in the text. They tell David he will not come in, taunting that the blind and the lame would keep him out — nevertheless David takes the stronghold (2 Samuel 5:6–7). The narrative does not say what becomes of them afterward, and this project does not invent an answer; no named Jebusite is staged, and no figure is staged performing the taunt itself.',
+    passageRefs: ['2 Samuel 5:6–8'],
+    claimIds: [
+      'claim-jerusalem-capture',
+      'claim-jebusite-stronghold-form',
+      'claim-stronghold-cast-scale',
+    ],
+  },
+  {
+    id: 'hiram',
+    name: 'Hiram king of Tyre',
+    kind: 'person',
+    summary:
+      'King of Tyre, who sends messengers, cedar trees, carpenters, and masons to build David a house (2 Samuel 5:11). The text says nothing about his appearing in person, and this project never stages him as a figure — only his messengers, materials, and craftsmen appear.',
+    passageRefs: ['2 Samuel 5:11'],
+    claimIds: ['claim-hiram-building'],
+  },
+  {
+    id: 'tyrian-craftsmen',
+    name: 'Tyrian carpenters and masons',
+    kind: 'group',
+    summary:
+      'Unnamed craftsmen Hiram sends with cedar trees to build David’s house (2 Samuel 5:11) — rendered with the same undifferentiated dress as every other group in this project (claim-dress), distinguished only by the tools, timber, and stone they are shown handling, per the same no-invented-side-uniforms rule already applied at gibeon-pool.',
+    passageRefs: ['2 Samuel 5:11'],
+    claimIds: ['claim-hiram-building', 'claim-dress'],
   },
 ];
 

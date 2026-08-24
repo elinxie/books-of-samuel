@@ -114,6 +114,24 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M5',
     status: 'released',
   },
+  {
+    id: '2sam-5',
+    book: '2 Samuel',
+    chapter: 5,
+    reference: '2 Samuel 5',
+    translationAnchor: 'ESV',
+    summary:
+      'All Israel comes to David at Hebron and anoints him king over the united kingdom; the reign is divided between Hebron and Jerusalem. David and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it the city of David, building from the Millo inward. Hiram of Tyre sends cedar, carpenters, and masons to build him a house; more sons are born to him there; and the chapter closes with the Philistines’ response to his kingship in the Valley of Rephaim.',
+    // Shared between jerusalem-stronghold (5:1-16) and rephaim-valley
+    // (5:17-25, not yet built) — see docs/design/jerusalem-stronghold-brief.md
+    // and docs/design/rephaim-valley-brief.md. ESV excerpt budget: this
+    // scene spends two of the shared 3-quote handful (5:6b's taunt, 5:8a's
+    // tsinnôr clause); the third (5:24's sound in the balsam trees) is
+    // reserved for rephaim-valley.
+    sceneIds: ['jerusalem-stronghold'],
+    milestoneId: 'M6',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

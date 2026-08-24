@@ -9,7 +9,11 @@
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted trade monograph. Summaries in project's own words only.",
   "summary": "Influential statement of the low-chronology / minimalist-leaning reading: David as a modest highland chieftain, with state formation later than the conventional picture. Used to represent one pole of the early-monarchy debate.",
-  "relevantPassages": ["1 Samuel 31", "2 Samuel 2"],
-  "extractedClaims": ["claim-david-historical", "claim-chronology"],
-  "confidenceNotes": "Represents one scholarly pole; must always be paired with alternative views (e.g., Mazar) in the UI."
+  "relevantPassages": ["1 Samuel 31", "2 Samuel 2", "2 Samuel 5"],
+  "extractedClaims": [
+    "claim-david-historical",
+    "claim-chronology",
+    "claim-jebusite-stronghold-form"
+  ],
+  "confidenceNotes": "Represents one scholarly pole; must always be paired with alternative views (e.g., Mazar) in the UI. 2026-08-24 (jerusalem-stronghold build): cited again for the same low/minimalist pole applied to tenth-century Jerusalem's extent specifically (claim-jebusite-stronghold-form's 'modest fortified stronghold' scholarlyView) — this is the same kingdom-scale poles this card already represents on claim-david-historical, not a new Jerusalem-specific excavation finding."
 }

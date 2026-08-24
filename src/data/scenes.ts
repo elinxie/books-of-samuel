@@ -1792,6 +1792,191 @@ export const SCENES: SceneDef[] = [
       'asset-display-forms',
     ],
   },
+  {
+    id: 'jerusalem-stronghold',
+    title: 'The Jebusite stronghold — Jerusalem becomes the city of David',
+    passageIds: ['2sam-5'],
+    locationId: 'jerusalem',
+    periodId: 'iron-iia',
+    milestoneId: 'M6',
+    // Built 2026-08-24 (Sonnet/threejs-engineer) per docs/design/
+    // jerusalem-stronghold-brief.md (Fable world-director pass, 2026-08-23).
+    // Milestone 6's load-bearing and most contested scene, and the
+    // project's first geometry at Jerusalem. Provisional, `in-progress`,
+    // pending a Fable M6 sign-off review (fable-review-queue #21-#24).
+    status: 'in-progress',
+    synopsis:
+      "David, now anointed king over all Israel rather than Judah alone, takes the Jebusite stronghold of Jerusalem — a city belonging to no tribe on the seam between Judah and Benjamin. How the stronghold was taken is not narrated and is not staged; the scene holds on the ridge at the narrative's own gap. Renamed the city of David, it becomes a capital by being built: Hiram of Tyre sends cedar, carpenters, and masons, and a house goes up.",
+    depictsDeath: false,
+    durationSec: 178,
+    beats: [
+      {
+        id: 'b-all-israel',
+        timeSec: 0,
+        title: 'All Israel comes to David',
+        caption:
+          'All the tribes of Israel come to David at Hebron, recall his earlier leadership, and make a covenant with him before the LORD; the elders anoint him king over Israel — lifting the house-of-Judah-only qualifier of his first anointing (2 Samuel 2:4). Not staged: the same ground already rendered twice at Hebron (hebron-anointing, hebron-covenant); see the /atlas M6 phase for the territorial change. (2 Samuel 5:1–3)',
+        passageRef: '2 Samuel 5:1–3',
+      },
+      {
+        id: 'b-regnal',
+        timeSec: 14,
+        title: 'Thirty years old, and two capitals',
+        caption:
+          "David was thirty years old when he began to reign, and reigned forty years: seven and a half years over Judah at Hebron, thirty-three years over all Israel and Judah at Jerusalem — the narrative's own figures, reported as such, with no attempt to fix them to absolute dates. (2 Samuel 5:4–5)",
+        passageRef: '2 Samuel 5:4–5',
+      },
+      {
+        id: 'b-approach',
+        timeSec: 26,
+        title: 'The king and his men go up',
+        caption:
+          "The king and his men go up to Jerusalem against the Jebusites, the land's inhabitants. The city is intact, inhabited, and clearly held by someone else — the default vantage is from outside and below, across the eastern valley, which is what makes the site's defensibility legible. (2 Samuel 5:6a)",
+        passageRef: '2 Samuel 5:6a',
+      },
+      {
+        id: 'b-taunt',
+        timeSec: 54,
+        title: '"The blind and the lame"',
+        caption:
+          'The Jebusites answer from the wall, at a distance: "You will not come in here, but the blind and the lame will ward you off" — thinking David could not enter. The saying\'s meaning is genuinely disputed (a boast about the ground, a possible ritual act, or a later etiology for the proverb 5:8c itself reports); no figure is staged performing it, on either side. (2 Samuel 5:6b, ESV)',
+        passageRef: '2 Samuel 5:6b',
+      },
+      {
+        id: 'b-taking',
+        timeSec: 80,
+        title: "The narrative's own gap",
+        caption:
+          "Nevertheless, David takes the stronghold of Zion — that is, the city of David. The text does not say how, or who went up; no assault, water shaft, or siege equipment renders, in any mode. The scene holds on the ridge, where the narrative's own camera falls silent. (2 Samuel 5:7)",
+        passageRef: '2 Samuel 5:7',
+      },
+      {
+        id: 'b-tsinnor',
+        timeSec: 98,
+        title: 'At the Gihon',
+        caption:
+          'At the spring, the foot of the eastern slope: David said whoever would strike the Jebusites should "get up the water shaft" to attack the lame and the blind. What tsinnôr names is disputed — a water shaft or conduit, a hook or grappling implement, or a meaning no longer recoverable — and the traditional identification with the excavated Warren\'s Shaft has been challenged on archaeological grounds. The project renders no mechanism, in any mode. (2 Samuel 5:8, ESV)',
+        passageRef: '2 Samuel 5:8',
+      },
+      {
+        id: 'b-dwelling',
+        timeSec: 118,
+        title: 'The city of David',
+        caption:
+          'David dwells in the stronghold, and it is called the city of David. The before/after pair closes here: the same ridge, framed from outside and below at the approach, now from inside at the dwelling — the taking itself unrendered between them. (2 Samuel 5:9a)',
+        passageRef: '2 Samuel 5:9a',
+      },
+      {
+        id: 'b-millo',
+        timeSec: 132,
+        title: 'From the Millo inward',
+        caption:
+          'David built the city all around, from the Millo inward. The word probably means something like the filling; what has been proposed — an identification with excavated terrace and stepped-stone structures on this slope, itself disputed on dating — is carried here as a named question, not a rendered answer. No element in this scene is labeled the Millo. (2 Samuel 5:9b)',
+        passageRef: '2 Samuel 5:9b',
+      },
+      {
+        id: 'b-greater',
+        timeSec: 144,
+        title: 'Greater and greater',
+        caption:
+          "David became greater and greater, for the LORD, the God of hosts, was with him — the narrative's own summary of his rise, reported as its framing, not as a measured historical trajectory (see claim-david-historical for the separate, disputed question of scale). (2 Samuel 5:10)",
+        passageRef: '2 Samuel 5:10',
+      },
+      {
+        id: 'b-hiram',
+        timeSec: 152,
+        title: "Hiram's cedar",
+        caption:
+          'Hiram king of Tyre sends messengers, cedar trees, carpenters, and masons, and they build David a house. A construction site, not a palace: timber, dressed-stone courses, and a structure still going up. Hiram himself is not staged — only his messengers, materials, and craftsmen. (2 Samuel 5:11)',
+        passageRef: '2 Samuel 5:11',
+      },
+      {
+        id: 'b-perceived',
+        timeSec: 160,
+        title: 'David perceived',
+        caption:
+          "David perceived that the LORD had established him king over Israel, and that his kingdom was exalted for the sake of his people Israel — the narrative's own statement about David's own perception. (2 Samuel 5:12)",
+        passageRef: '2 Samuel 5:12',
+      },
+      {
+        id: 'b-household',
+        timeSec: 168,
+        title: 'More sons, in Jerusalem',
+        caption:
+          'David takes more concubines and wives from Jerusalem, and more sons and daughters are born to him there — Shammua, Shobab, Nathan, Solomon, Ibhar, Elishua, Nepheg, Japhia, Elishama, Eliada, and Eliphelet, listed as the text lists them, with no forward commentary on any name. (2 Samuel 5:13–16)',
+        passageRef: '2 Samuel 5:13–16',
+      },
+      {
+        id: 'b-close',
+        timeSec: 176,
+        title: 'Not yet resolved',
+        caption:
+          "2 Samuel 5:1–16 states the covenant, the capture, the naming, the building, and the household list — nothing more. The chapter's own arrangement may be topical rather than strictly chronological: this scene does not assert that these events precede or follow the Philistine engagements of 5:17–25 (rephaim-valley). Nothing from 2 Samuel 6 onward appears here.",
+        passageRef: '2 Samuel 5:1–16',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-kidron-east',
+        label: 'Across the Kidron (default)',
+        position: [140, 34, 8],
+        lookAt: [0, 18, 30],
+      },
+      {
+        id: 'vp-gihon',
+        label: 'The Gihon spring',
+        position: [72, 8, -14],
+        lookAt: [48, 3, -6],
+      },
+      {
+        id: 'vp-stronghold',
+        label: 'Inside the enclosure',
+        position: [8, 7, 58],
+        lookAt: [-4, 4, 72],
+      },
+      {
+        id: 'vp-terraces',
+        label: 'The terraced slope',
+        position: [48, 15, 18],
+        lookAt: [18, 6, 20],
+      },
+      {
+        id: 'vp-building-ground',
+        label: "Hiram's building ground",
+        position: [32, 8, 54],
+        lookAt: [16, 4, 66],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-david-historical',
+      'claim-dress',
+      'claim-judah-anointing',
+      'claim-all-israel-covenant',
+      'claim-jerusalem-capture',
+      'claim-tsinnor-crux',
+      'claim-city-of-david-naming',
+      'claim-hiram-building',
+      'claim-jerusalem-household',
+      'claim-jebusite-stronghold-form',
+      'claim-millo-identification',
+      'claim-gihon-spring',
+      'claim-jerusalem-terrain-form',
+      'claim-stronghold-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-jerusalem-ridge',
+      'asset-jerusalem-stronghold-form',
+      'asset-jerusalem-terrace-walls',
+      'asset-gihon-spring-basin',
+      'asset-water-plane',
+      'asset-jerusalem-construction-ground',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

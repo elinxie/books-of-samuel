@@ -215,6 +215,40 @@ test('violence advisory (ADR-009) also gates hebron-gate — the second named-ch
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
 
+test('jerusalem-stronghold (M6, depictsDeath: false) loads directly, lists its beats/viewpoints, and shows no violence advisory', async ({
+  page,
+}) => {
+  // Unlike gilboa-battle/hebron-gate/hebron-reckoning, this scene stages no
+  // death or fighting (2 Samuel 5:1-16's capture is the narrative's own
+  // unrendered gap) — the ADR-009 advisory must never fire here.
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/observe/jerusalem-stronghold');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText(
+    'The Jebusite stronghold — Jerusalem becomes the city of David',
+  );
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (all-Israel/regnal cards, the
+  // approach, the taunt, the taking's own gap, the tsinnôr card, dwelling,
+  // the Millo card, greater-and-greater, Hiram's building, perceived, the
+  // household card, close) checking for runtime errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 26, 54, 80, 98, 118, 132, 144, 152, 160, 168, 176]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('violence advisory (ADR-009) also gates hebron-reckoning — the third named-character-killing scene, and closes M5', async ({
   page,
 }) => {

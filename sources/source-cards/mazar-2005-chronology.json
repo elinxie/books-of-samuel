@@ -9,7 +9,12 @@
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted chapter. Summaries in project's own words only.",
   "summary": "Statement of the 'modified conventional chronology' and survey of the high/low chronology debate that governs absolute dating of early-monarchy strata. Anchor for the project's refusal to hard-date disputed material.",
-  "relevantPassages": ["1 Samuel 31", "2 Samuel 2"],
-  "extractedClaims": ["claim-chronology", "claim-david-historical"],
-  "confidenceNotes": "Card seeded from team knowledge; exact chapter pagination to verify (M1)."
+  "relevantPassages": ["1 Samuel 31", "2 Samuel 2", "2 Samuel 5"],
+  "extractedClaims": [
+    "claim-chronology",
+    "claim-david-historical",
+    "claim-jebusite-stronghold-form",
+    "claim-millo-identification"
+  ],
+  "confidenceNotes": "Card seeded from team knowledge; exact chapter pagination to verify (M1). 2026-08-24 (jerusalem-stronghold build): cited again for the higher-chronology/more-substantial-early-state pole applied to tenth-century Jerusalem specifically (claim-jebusite-stronghold-form's 'administrative center' scholarlyView) and for the open dating question on the City of David's excavated terrace/stepped-stone structures some propose identifying with the Millo (claim-millo-identification) — both uses extend this card's existing chronology-debate coverage rather than adding a new Jerusalem-excavation-specific finding; a dedicated Jerusalem source card is still needed (fable-review-queue #22)."
 }

@@ -287,6 +287,35 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'planned',
   },
+  {
+    id: 'jerusalem',
+    name: 'Jerusalem',
+    altNames: ['Jebus', 'stronghold of Zion', 'City of David'],
+    region: 'Southeastern ridge above the Kidron valley, on the Judah-Benjamin boundary',
+    summary:
+      'The Jebusite stronghold David takes and makes his capital (2 Samuel 5:6-9) — a narrow ridge belonging to no tribe, with its water source, the Gihon, at the foot of its eastern slope. Identified with the southeastern ridge (the City of David) south of the later Temple Mount.',
+    identification: {
+      // The site itself is secure; the character and extent of the
+      // 10th-century settlement on it is disputed, and that dispute is
+      // carried in the claim layer (claim-jebusite-stronghold-form), not
+      // here, per the brief's explicit instruction.
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-jerusalem',
+          label: 'The southeastern ridge (City of David)',
+          summary:
+            'Standard identification of the Jebusite stronghold and earliest Jerusalem with the narrow ridge south of the present Temple Mount, above the Kidron valley and the Gihon spring — one of the more securely located sites in Samuel.',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.7739, lon: 35.2358, confidence: 'high' },
+    sceneIds: ['jerusalem-stronghold'],
+    claimIds: [],
+    status: 'in-progress',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

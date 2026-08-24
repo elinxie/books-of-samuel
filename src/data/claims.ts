@@ -1289,6 +1289,204 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'This overlay’s own M5 extension of claim-divided-kingdom-atlas-overlay (the M4 default phase, 2:8–11), added as a second page-level phase rather than by silently broadening that claim’s scope — see its notes for the cross-reference back. Cross-references, rather than re-derives, already-built M5 claim text: claim-long-war (3:1, the trend statement itself, delivered as a hebron-covenant context card and now also captioned here), claim-abner-break (3:6–11, Abner’s break with Ish-bosheth), claim-abner-overture and claim-covenant-feast (3:12–21, Abner’s defection to David), claim-abner-killing (3:26–27, hebron-gate), claim-public-response (3:36–37, the people’s understanding David was not responsible for Abner’s death), and claim-ish-bosheth-assassination (4:1–12, hebron-reckoning). The "no king" treatment is a disclosed design choice, not textual certainty dressed up as fact: 4:12 ends the house of Saul’s kingship as this project has staged it, but the text does not itself say the north was annexed, absorbed, or left entirely without any local authority — only that the king this project has scenes for is dead with no heir shown taking the throne. The region keeps the exact soft/unbordered/no-hard-edge form claim-divided-kingdom-atlas-overlay already establishes — no stroke, no dashed outline, no polygon boundary is added; only the gradient’s fill opacity is lowered and a small "no king (2 Samuel 4:1–12)" sub-label is added beneath the region label, deliberately the more conservative of the visual options considered (a hatched-fill or dashed-boundary treatment was set aside as reading too much like an asserted edge). No color is reused from, blended toward, or merged with Judah’s region, and Judah’s region/caption is otherwise unchanged from the M4 phase — the long war (3:1) is a narrated trend, not a territorial gain, so it is not represented as a redrawn or expanded region. Same dismissible-toggle/optional-visit ADR-011 discipline as the M4 phase; the phase toggle itself defaults to M4 so a first-time visitor sees the already-reviewed 2:8–11 map unless they choose to look further. Mahanaim’s disputed-identification note (both candidate sites) carries forward unchanged in both phases, since it is where Ish-bosheth was both installed and killed — narrated only, never built as a scene, per the standing rule since gibeon-pool.',
   },
+  {
+    id: 'claim-all-israel-covenant',
+    statement:
+      'The narrative states that all the tribes of Israel came to David at Hebron, recalled his earlier leadership and the LORD’s word that he would shepherd and be prince over Israel, and that the elders of Israel made a covenant with David before the LORD and anointed him king over Israel — lifting the “house of Judah only” qualifier of his first anointing (2 Samuel 2:4). The chapter then gives his age at accession (thirty) and the length of his reign: seven and a half years at Hebron, thirty-three years at Jerusalem (2 Samuel 5:1–5).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Delivered as opening context cards only (b-all-israel, b-regnal) — no Hebron geometry is staged in this scene (the queue #21 resolved design call). The observer who has walked hebron-anointing and hebron-covenant should feel this as the same covenant-and-anointing pattern completed a third time, now over the whole kingdom, and is pointed to those two scenes and the /atlas M6 phase for the cartographic side of the change. Cross-references claim-judah-anointing (2:4), which this covenant explicitly widens, and claim-david-historical for the separate, disputed question of how large a kingdom either anointing controlled on the ground. The regnal figures (5:4–5) are reported in the narrated-not-asserted register (register #5) — no attempt is made to fix them to absolute calendar dates.',
+  },
+  {
+    id: 'claim-jerusalem-capture',
+    statement:
+      'The narrative states that the king and his men went to Jerusalem against the Jebusites, the land’s inhabitants, who told David he would not come in, taunting that the blind and the lame would keep him out — thinking David could not enter; nevertheless David took the stronghold of Zion, that is, the city of David (2 Samuel 5:6–7).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-taunt-strength-boast',
+        label: 'A boast about the strength of the position',
+        summary:
+          'Reads the Jebusites’ words as bravado grounded in the site’s real defensibility — the ridge’s steep flanks and narrow approach meant even minimal defenders could hold it.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-taunt-ritual',
+        label: 'A ritual or apotropaic act',
+        summary:
+          'Some readings take the reference to the blind and the lame as pointing to a ritual practice at the site (possibly figures or images posted at the gate) rather than a plain figure of speech, though the text supplies no description of any such practice.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-taunt-etiology',
+        label: 'An etiology attached to the exclusion proverb',
+        summary:
+          '5:8c’s proverb, that the blind and the lame shall not come into “the house,” may be a later saying the narrative attaches to this episode to explain its origin, rather than a report of what the Jebusites themselves said.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The taunt is spoken and captioned only — no figures are staged performing it, on either side (Resolved design calls): not Jebusite defenders posed as disabled, not David’s men mocking them. The three readings above are carried without a chosen winner and are hedged pending a named commentator from the queue #22 researcher pass. 5:8c’s proverb is reported as the text’s own aside, without endorsing it or extending it to any later practice. Cross-references claim-tsinnor-crux for 5:8’s own separate crux, and claim-jebusite-stronghold-form for how the site’s real defensibility is rendered as terrain rather than asserted as an unambiguous historical fact.',
+  },
+  {
+    id: 'claim-tsinnor-crux',
+    statement:
+      'The narrative states that on that day David said whoever would strike the Jebusites should reach the tsinnôr to attack “the lame and the blind, who are hated by David’s soul,” and adds the saying that the blind and the lame shall not come into the house (2 Samuel 5:8). What tsinnôr names is not established by the text itself, and 2 Samuel 5 does not name who went up; 1 Chronicles 11:6 names Joab, a separate text with a different emphasis.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-tsinnor-water-shaft',
+        label: 'Water shaft or conduit',
+        summary:
+          'The traditional reading (reflected in many English translations’ “water shaft”) ties the word to a water-access route, historically associated by some with the Warren’s Shaft system later excavated in the City of David — an identification since challenged on archaeological grounds (the shaft’s date and usability in this period are themselves disputed).',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-tsinnor-hook',
+        label: 'Hook or grappling implement',
+        summary:
+          'Other proposals connect tsinnôr to a hook, pipe, or grappling device used to scale or breach the defenses, reading it as a tool rather than a route.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-tsinnor-unrecoverable',
+        label: 'Meaning not recoverable',
+        summary:
+          'A position, held by a substantial number of critical commentators, that the word’s precise sense in this verse simply cannot be recovered with confidence from the available evidence.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The milestone’s single most important claim surface. Hedged pending queue #22’s researcher pass, which is expected to extend mccarter-1984-ii-samuel’s coverage to 2 Samuel 5 for a named tsinnôr attribution — none of the scholarlyViews above yet carry a named proponent. The traditional identification of tsinnôr with the excavated Warren’s Shaft water system has been challenged on archaeological grounds; this project adopts neither that identification nor any alternative. 2 Samuel 5 names no one who went up — 1 Chronicles 11:6 credits Joab, but that is a different text with a different emphasis, and harmonizing the two here would silently import a detail this chapter does not give (the same discipline already applied to the refuge-city note at hebron-gate); Joab is not staged in this scene at all. Per fable-review-queue #23, the project renders no capture mechanism of any kind in any mode — no water shaft, tunnel, conduit, hook, scaling, or siege equipment — regardless of what future research finds; any change to that rendering bar requires escalation, not a routine researcher-pass update.',
+  },
+  {
+    id: 'claim-city-of-david-naming',
+    statement:
+      'The narrative states that David took the stronghold of Zion, called it the city of David, and built up the city all around from the Millo inward (2 Samuel 5:7, 9).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Covers only the naming and the bare fact of building “from the Millo inward” — what the Millo itself was is a separate design question, carried on claim-millo-identification, and no rendered element in this scene is labeled “the Millo” (Resolved design calls). The “stronghold of Zion” identification with the excavated southeastern ridge is carried by the jerusalem LocationEntry’s identification.views, not restated here.',
+  },
+  {
+    id: 'claim-hiram-building',
+    statement:
+      'The narrative states that Hiram king of Tyre sent messengers to David with cedar trees, carpenters, and masons, who built David a house, and that David perceived that the LORD had established him king over Israel and exalted his kingdom for the sake of his people Israel (2 Samuel 5:11–12).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Staged as construction, not architecture (Resolved design calls): timber baulks, dressed stone courses, carpenters and masons at work, a partially raised structure — never a finished cedar palace and never any 9th–8th century royal-architecture vocabulary, and no rendered structure is identified with any excavated building proposed as David’s palace. Hiram himself is never staged; the text says nothing about his appearing in person, only that he sent messengers. Tyrian craftsmen are rendered with the same undifferentiated claim-dress treatment as every other group in this project, distinguished only by the tools, timber, and stone they are handling — no invented Phoenician dress or iconography. David’s perception (5:12) is carried in the narrated-not-asserted register, cross-referencing claim-david-historical for the separate, disputed question of how large a kingdom he actually held; this claim does not adjudicate that dispute.',
+  },
+  {
+    id: 'claim-jerusalem-household',
+    statement:
+      'The narrative states that David took more concubines and wives from Jerusalem after he came from Hebron, and lists the sons born to him there: Shammua, Shobab, Nathan, Solomon, Ibhar, Elishua, Nepheg, Japhia, Elishama, Eliada, and Eliphelet (2 Samuel 5:13–16).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Card-only, listed exactly as the text lists it — the hebron-covenant 3:2–5 treatment. No household geometry, no forward commentary on any name, and specifically no gloss on Solomon or Nathan pointing toward 2 Samuel 7 or later chapters, per the brief’s hard scope guard (nothing from 2 Samuel 6 onward appears in this scene, depicted or foreshadowed). This claim’s notes record only that the narrative presents royal polygyny as ordinary practice here without comment; nothing more is inferred.',
+  },
+  {
+    id: 'claim-jebusite-stronghold-form',
+    statement:
+      'The scene renders the Jebusite stronghold as a modest stone circuit enclosing a small summit area at the ridge’s high end, with a simple gateway — no monumental six-chamber gate, no casemate system, no glacis, and no towers, deliberately at the conservative end of what tenth-century-BCE Jerusalem’s fortification and extent could have been.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'herzog-1997'],
+    scholarlyViews: [
+      {
+        id: 'view-jerusalem-modest-stronghold',
+        label: 'A modest fortified stronghold',
+        summary:
+          'Reads the tenth-century site as a small, defensible hilltop enclave with limited monumental construction, consistent with the low/minimalist end of the early-monarchy chronology debate.',
+        confidence: 'moderate',
+        sourceIds: ['finkelstein-silberman-2001'],
+      },
+      {
+        id: 'view-jerusalem-administrative-center',
+        label: 'A more substantial administrative center',
+        summary:
+          'Reads excavated terrace systems and structures some excavators identify as monumental on the eastern slope as evidence of a more developed administrative center already in this period.',
+        confidence: 'moderate',
+        sourceIds: ['mazar-2005-chronology'],
+      },
+    ],
+    notes:
+      'This is itself a historical statement, disclosed as one: the render sits deliberately at the conservative end of the dispute rather than hedging in a caption while rendering large (Historical intent #4) — under-rendering is recoverable, over-rendering silently picks a side. herzog-1997’s gate typology (already cited for claim-hebron-gate-form) applies with even more force here, since Jerusalem is exactly the site where an over-built rendering would be read as taking a position in the extent dispute; the modest two-post gateway rendered here is, if anything, more conservative than that claim’s two-chamber Hebron gate. Cross-references claim-david-historical, the kingdom-scale dispute this claim’s own site-extent dispute sits inside — finkelstein-silberman-2001 and mazar-2005-chronology are cited here for the same two poles they already represent there, not for Jerusalem-specific excavation findings, which the project does not yet have a dedicated source card for. Pending queue #22’s researcher pass for a dedicated Jerusalem source card and stronger citations on both sides of this dispute.',
+  },
+  {
+    id: 'claim-millo-identification',
+    statement:
+      'The scene renders no element labeled “the Millo.” 5:9 names it as part of what David built (“from the Millo inward”) and explains nothing further; the eastern slope’s need for terracing to be built on is rendered as terrain form only.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-millo-terrace-structure',
+        label: 'The excavated stepped-stone/terrace structure',
+        summary:
+          'A named proposal identifies the Millo with excavated terrace and stepped-stone support systems on the City of David’s eastern slope, though the dating of those structures (which building phase, and whether any phase is as early as the tenth century BCE) is itself contested.',
+        confidence: 'low',
+        sourceIds: ['mazar-2005-chronology'],
+      },
+      {
+        id: 'view-millo-other-unknown',
+        label: 'Another or unrecoverable referent',
+        summary:
+          'Other readings take “Millo” (from a root meaning “to fill”) as referring to some other fill/terrace/rampart construction, possibly reused as a term at other sites and periods (2 Kings 12:20 names a “Millo” at a much later date), or regard the precise structure it names here as no longer recoverable.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The terrace geometry this scene does render (TerraceWalls.tsx, the eastern-slope ground the Millo question is about) is explicitly not adopted as an identification — see the render policy above and the b-millo card, which states what the word probably means (something like the filling), what has been proposed, and that the project has not chosen. Pending queue #22 for a dedicated citation on the terrace structures’ dating.',
+  },
+  {
+    id: 'claim-gihon-spring',
+    statement:
+      'The Gihon, Jerusalem’s principal water source, is located at the foot of the City of David ridge’s eastern slope, outside the line of any stronghold circuit rendered in this scene.',
+    basis: 'archaeology',
+    confidence: 'high',
+    sourceIds: ['rainey-notley-2006'],
+    notes:
+      'The spring’s existence and general location are well established archaeologically; its rendered form here is a disclosed placeholder — a modest outflow basin and flat water plane, using gibeon-pool’s exact convention (shallow depression, minimally-lit water plane, no shader). No water system of any kind renders: no shaft, tunnel, channel, or monumental spring fortification. The excavated spring defenses at the Gihon are real archaeological features, but their standing state and use in this specific window (the early tenth century BCE) is a question this project has not researched (queue #22); until that changes, nothing monumental renders at the spring, and this claim does not adopt any specific excavated spring-defense structure. Cross-references claim-tsinnor-crux — the spring is the tsinnôr card’s home precisely because it is the one place the dispute is about, and nothing rendered here resolves it.',
+  },
+  {
+    id: 'claim-jerusalem-terrain-form',
+    statement:
+      'The scene renders a narrow, steep-sided ridge between two valleys (the Kidron falling away to the east, a shallower valley to the west), rising to a saddle at its north end — a disclosed terrain approximation, not a survey, modeled on the same disclosure claim-gibeon-terrain-form already establishes.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'The landform’s broad shape (narrow ridge, valley on each side, water source at the eastern foot, rising north) is well established by historical geography (rainey-notley-2006) and is the argument the scene exists to make (Historical intent #2); its exact profile, dimensions, and vegetation distribution are this project’s own disclosed approximation, not DEM-derived or surveyed. Palette and vegetation vocabulary are carried over from hebron-anointing’s Judean-highland material language (limestone, terracing, olive) rather than inventing a new one for this scene — the landform is new, the region is not.',
+  },
+  {
+    id: 'claim-stronghold-cast-scale',
+    statement:
+      'This scene renders roughly 40–60 figures for David’s force (an approach column at the capture beats, redistributed as an occupying presence afterward), roughly 25–40 for the Jebusite stronghold population, roughly 10–15 for Hiram’s craftsmen, and roughly 20–30 for the ambient settlement after the occupation — disclosed design counts, not headcounts the text gives, at a high-tier total below gilboa-battle’s measured band.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-covenant-cast-scale and claim-gate-cast-scale: 2 Samuel 5 narrates no count for David’s force, the Jebusites, or Hiram’s workmen, so — as at gilboa-battle and claim-judah-assembly-scale — no ratio is claimed. The Jebusite population figure is itself a historical statement and is disclosed as one: rendering a populous city would silently take the maximalist side of the extent dispute this scene carries openly (see claim-jebusite-stronghold-form). Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s high-tier instance count while that scene’s real-hardware performance check remains open (docs/next-run.md).',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

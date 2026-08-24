@@ -265,6 +265,39 @@ review (`docs/next-run.md`); its own fresh passage (`2sam-4`) carries two
 ESV quotes (the 4:11a verdict core and the 4:10 Ziklag-retelling fragment),
 under its own 3-quote budget.
 
+## Current placeholders (jerusalem-stronghold scene, Milestone 6, built 2026-08-24)
+
+The project's first geometry at Jerusalem, and M6's load-bearing scene. A
+new, fresh Judean-highland-palette terrain (the ridge/valley landform is new;
+the palette values are carried directly from `asset-terrain-hebron-hills`,
+not reinvented). No capture-mechanism geometry of any kind renders in any
+mode (no water shaft, tunnel, hook, scaling, or siege equipment) — the
+capture itself (5:7) is staged as the narrative's own unrendered gap. Cast:
+David's force (~40-60, approach column then occupying presence), the
+Jebusite stronghold population (~25-40, static wall presence, never enacting
+the "blind and the lame" taunt), Tyrian craftsmen (~10-15, static, at the
+construction ground), and an ambient settlement presence after the
+occupation (~20-30, static, deliberately not asserting continuity or
+replacement of the Jebusite population) — plus David as the one
+principal-detail rig. High-tier total ≈120 figures, within the brief's
+100-130 target and well below `gilboa-battle`'s measured band.
+
+| Asset                                 | Represents                                                                                                                     | Why temporary                                                                                                                                                                                               | Replace at |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-jerusalem-ridge`       | The narrow, steep-sided City of David ridge, the Kidron/western valleys, and the Gihon spring — `claim-jerusalem-terrain-form` | Procedural hills + hand-tuned ridge/channel/flatten/mound/basin features (ADR-005), not DEM-derived; palette carried directly from `asset-terrain-hebron-hills`                                             | M6         |
+| `asset-jerusalem-stronghold-form`     | The stone circuit and simple two-post gateway at the ridge's high end — `claim-jebusite-stronghold-form`                       | Simple instanced wall-segment ring, deliberately not a monumental six-chamber gate, casemate system, glacis, or towers — the render sits at the conservative end of the extent dispute by deliberate policy | M6         |
+| `asset-jerusalem-terrace-walls`       | Terracing on the eastern (Kidron-facing) slope, the Millo question's own ground — `claim-millo-identification`                 | Generic instanced wall segments in bands parallel to the ridge axis — no rendered element is labeled "the Millo"                                                                                            | M6         |
+| `asset-gihon-spring-basin`            | The Gihon spring's outflow at the foot of the eastern slope — `claim-gihon-spring`                                             | Shallow basin depression (`engine/terrain.ts`'s `basin` feature) + flat water plane (`asset-water-plane`'s technique) — no shaft, tunnel, channel, or monumental spring fortification in any mode           | M6         |
+| `asset-jerusalem-construction-ground` | Timber baulks, dressed-stone courses, and a partially raised structure — `claim-hiram-building`                                | Simple primitive cylinder/box geometry standing for cedar timber and dressed stone; deliberately not a finished cedar palace and not any 9th-8th century royal-architecture vocabulary                      | M6         |
+
+Reuses `asset-figure-procedural`, `asset-david-marker`, `asset-olive-tree`,
+`asset-rocks`, and `asset-water-plane` — no new records for these. This
+scene's status stays `in-progress`, pending a Fable M6 sign-off review
+(`docs/next-run.md`, `docs/fable-review-queue.md` #21-#24). Its fresh
+passage (`2sam-5`, shared with the not-yet-built `rephaim-valley`) carries
+two of its shared 3-quote ESV budget (5:6b's taunt, 5:8a's tsinnôr clause);
+the third (5:24) is reserved for `rephaim-valley`.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the
@@ -311,6 +344,9 @@ gate, per ADR-011.
   already-built Hebron (see tables above). `hebron-reckoning` closes the
   milestone at the tomb of Abner; all three remain `in-progress` pending a
   Fable M5 sign-off review.
+- **M6 (2 Sam 5):** `jerusalem-stronghold` built 2026-08-24 (see table
+  above), the project's first geometry at Jerusalem; `rephaim-valley`
+  (5:17-25) and the `/atlas` M6 phase extension are still outstanding.
 
 ## Policy
 

@@ -9,12 +9,14 @@
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted reference atlas. Project stores its own summaries of identifications and routes only; no map reproductions.",
   "summary": "Standard scholarly atlas of biblical historical geography. Used here for site identifications (Besor, Gilboa, Beth-shan, Hebron, Jabesh-gilead candidates, Ziklag candidates) and for regional route reasoning.",
-  "relevantPassages": ["1 Samuel 30", "1 Samuel 31", "2 Samuel 2"],
+  "relevantPassages": ["1 Samuel 30", "1 Samuel 31", "2 Samuel 2", "2 Samuel 5"],
   "extractedClaims": [
     "claim-besor",
     "claim-ziklag-location",
     "claim-negev-terrain",
-    "claim-besor-channel-form"
+    "claim-besor-channel-form",
+    "claim-gihon-spring",
+    "claim-jerusalem-terrain-form"
   ],
-  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1)."
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1). 2026-08-24 (jerusalem-stronghold build): cited for the Gihon spring's location and the City of David ridge's general landform, both standard historical-geography content this atlas covers; not for Jerusalem-specific archaeological extent/fortification findings, which the project does not yet have a dedicated source card for (fable-review-queue #22)."
 }
