@@ -324,7 +324,13 @@ export const LOCATIONS: LocationEntry[] = [
     summary:
       "Where the Philistines twice deployed after David was anointed king over all Israel, and where he twice inquired of the LORD and struck them (2 Samuel 5:17-25). Identified with the broad plain/valley southwest of Jerusalem — the standard historical-geography reading, and a corridor that runs up toward the city's western approaches. Baal-perazim, the place David names after the first engagement, is not separately located (see claim-rephaim-first-engagement) and has no location entry of its own.",
     identification: {
-      disputed: false,
+      // Queue #22 researcher pass (2026-08-24): a genuine, recent named
+      // challenge to the standard identification was found (Kleiman 2024),
+      // so this now carries disputed: true with a second, low-confidence
+      // view. The standard identification stays the project's default and
+      // the scene's setting/coordinates are unchanged by this citation
+      // upgrade alone — see claim-rephaim-terrain-form's notes.
+      disputed: true,
       views: [
         {
           id: 'loc-view-rephaim',
@@ -333,6 +339,18 @@ export const LOCATIONS: LocationEntry[] = [
             "Standard identification with the open valley/plain southwest of the City of David (modern Emek Refaim), on the natural route between the coastal plain and Jerusalem's western approaches — consistent with the narrative's own logic (a force striking at the new center).",
           confidence: 'high',
           sourceIds: ['rainey-notley-2006'],
+        },
+        {
+          id: 'loc-view-rephaim-gath-adjacent',
+          label: 'A valley near Gath, farther southwest in the Shephelah',
+          proponents: [
+            'Sabine Kleiman (2024, Scandinavian Journal of the Old Testament 39/1: 45-59)',
+            'e.g., reviving a 19th-century proposal by Claude Conder',
+          ],
+          summary:
+            "Kleiman argues the valley the Philistines deployed in may lie much farther southwest than the traditional Jerusalem-adjacent location, closer to the Philistine city of Gath near the Elah Valley — reviving and defending Conder's older proposal placing the related site Baal-perazim near the spring 'Ain Faris, west of modern Nahalin. A newly published (2024-2025), not-yet-widely-adjudicated minority position; the traditional identification remains the field's standard reading.",
+          confidence: 'low',
+          sourceIds: ['kleiman-2024-valley-of-rapha'],
         },
       ],
     },

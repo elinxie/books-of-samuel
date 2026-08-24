@@ -1341,21 +1341,26 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The narrative states that on that day David said whoever would strike the Jebusites should reach the tsinnôr to attack “the lame and the blind, who are hated by David’s soul,” and adds the saying that the blind and the lame shall not come into the house (2 Samuel 5:8). What tsinnôr names is not established by the text itself, and 2 Samuel 5 does not name who went up; 1 Chronicles 11:6 names Joab, a separate text with a different emphasis.',
     basis: 'biblical-text',
     confidence: 'high',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'reich-shukron-2000-gihon-tunnels', 'mccarter-1984-ii-samuel'],
     scholarlyViews: [
       {
         id: 'view-tsinnor-water-shaft',
-        label: 'Water shaft or conduit',
+        label:
+          'Water shaft or conduit (identified with Warren’s Shaft, now archaeologically challenged)',
         summary:
-          'The traditional reading (reflected in many English translations’ “water shaft”) ties the word to a water-access route, historically associated by some with the Warren’s Shaft system later excavated in the City of David — an identification since challenged on archaeological grounds (the shaft’s date and usability in this period are themselves disputed).',
-        confidence: 'low',
-        sourceIds: ['esv-bible'],
+          'The traditional reading (reflected in many English translations’ “water shaft”) ties the word to a water-access route, historically associated by some with the Warren’s Shaft system later excavated in the City of David. Yigal Shiloh’s 1978-1985 City of David excavations first raised doubts about the shaft’s usability in David’s time, and Ronny Reich and Eli Shukron’s subsequent reassessment (Revue biblique 107 [2000]: 5-17) argues that the stepped tunnel giving access to the top of the natural karstic shaft did not reach that point until an Iron Age II floor-cutting — centuries after David’s conquest — so the shaft was very likely not a usable route into the city at all in the tenth century BCE. This is the named, checkable archaeological basis for calling the identification “challenged,” not disproven outright (the shaft itself, as a natural feature, may be older; what is disputed is whether it was accessible and usable at this date).',
+        confidence: 'moderate',
+        proponents: [
+          'Yigal Shiloh (excavator, 1978-1985)',
+          'Ronny Reich and Eli Shukron (2000, Revue biblique 107: 5-17)',
+        ],
+        sourceIds: ['reich-shukron-2000-gihon-tunnels'],
       },
       {
         id: 'view-tsinnor-hook',
         label: 'Hook or grappling implement',
         summary:
-          'Other proposals connect tsinnôr to a hook, pipe, or grappling device used to scale or breach the defenses, reading it as a tool rather than a route.',
+          'Other proposals connect tsinnôr to a hook, pipe, or grappling device used to scale or breach the defenses, reading it as a tool rather than a route. This reading is reflected in the New English Bible’s (1970) rendering of the phrase as attacking “with a grappling-iron,” on a proposed Akkadian cognate; some secondary literature attributes the underlying philological suggestion to W. F. Albright, though this project has not independently cross-corroborated that specific attribution this pass (flagged TO VERIFY) and does not adopt the reading either way.',
         confidence: 'low',
         sourceIds: ['esv-bible'],
       },
@@ -1363,13 +1368,13 @@ export const CLAIMS: ReconstructionClaim[] = [
         id: 'view-tsinnor-unrecoverable',
         label: 'Meaning not recoverable',
         summary:
-          'A position, held by a substantial number of critical commentators, that the word’s precise sense in this verse simply cannot be recovered with confidence from the available evidence.',
+          'A position, held by a substantial number of critical commentators, that the word’s precise sense in this verse simply cannot be recovered with confidence from the available evidence — the term occurs only here and at Psalm 42:7 (where it plainly means a water channel or cataract, which is part of why the “water” family of readings remains the most commonly adopted default even without a secure link to any specific excavated feature). McCarter’s Anchor Bible commentary is representative of this general critical-commentary caution; a specific, page-verified McCarter statement on the word itself was searched for and not found this pass (checked, permanently thin for that specific point — see mccarter-1984-ii-samuel’s confidenceNotes).',
         confidence: 'low',
-        sourceIds: ['esv-bible'],
+        sourceIds: ['mccarter-1984-ii-samuel'],
       },
     ],
     notes:
-      'The milestone’s single most important claim surface. Hedged pending queue #22’s researcher pass, which is expected to extend mccarter-1984-ii-samuel’s coverage to 2 Samuel 5 for a named tsinnôr attribution — none of the scholarlyViews above yet carry a named proponent. The traditional identification of tsinnôr with the excavated Warren’s Shaft water system has been challenged on archaeological grounds; this project adopts neither that identification nor any alternative. 2 Samuel 5 names no one who went up — 1 Chronicles 11:6 credits Joab, but that is a different text with a different emphasis, and harmonizing the two here would silently import a detail this chapter does not give (the same discipline already applied to the refuge-city note at hebron-gate); Joab is not staged in this scene at all. Per fable-review-queue #23, the project renders no capture mechanism of any kind in any mode — no water shaft, tunnel, conduit, hook, scaling, or siege equipment — regardless of what future research finds; any change to that rendering bar requires escalation, not a routine researcher-pass update.',
+      'The milestone’s single most important claim surface. Queue #22 researcher pass (2026-08-24): the water-shaft/Warren’s-Shaft view now carries a real, named, checkable archaeological citation for the “challenged on archaeological grounds” language already in this claim’s statement (Shiloh’s excavations; Reich and Shukron 2000) — this is the strongest attribution win of the pass and is exactly what the claim’s own statement already asserted, now sourced rather than asserted from general knowledge. The hook/grappling-implement view gained a real named translation (the New English Bible) but its proposed philological grounding (an Akkadian cognate, associated in some literature with W. F. Albright) could not be independently cross-corroborated this pass and stays hedged. The “meaning not recoverable” view was checked against mccarter-1984-ii-samuel specifically, as the brief anticipated as “the cheapest route” — general critical-commentary coverage of the crux is confirmed, but a specific, quotable McCarter statement on tsinnôr itself was not found and this is disclosed as checked, permanently thin for that narrow point, not left silently unresolved. None of this changes what the traditional identification claim already said or moves the needle on any of the three views’ rankings relative to one another — the crux remains genuinely open. 2 Samuel 5 names no one who went up — 1 Chronicles 11:6 credits Joab, but that is a different text with a different emphasis, and harmonizing the two here would silently import a detail this chapter does not give (the same discipline already applied to the refuge-city note at hebron-gate); Joab is not staged in this scene at all. Per fable-review-queue #23, the project renders no capture mechanism of any kind in any mode — no water shaft, tunnel, conduit, hook, scaling, or siege equipment — regardless of what future research finds; any change to that rendering bar requires escalation, not a routine researcher-pass update. This citation upgrade does not itself justify revisiting queue #23’s no-render bar — if anything, the Reich/Shukron finding reinforces it, since it shows the most commonly assumed mechanism was very likely not even the historical one.',
   },
   {
     id: 'claim-city-of-david-naming',
@@ -1387,9 +1392,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The narrative states that Hiram king of Tyre sent messengers to David with cedar trees, carpenters, and masons, who built David a house, and that David perceived that the LORD had established him king over Israel and exalted his kingdom for the sake of his people Israel (2 Samuel 5:11–12).',
     basis: 'biblical-text',
     confidence: 'high',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'aubet-2001-phoenicians-and-the-west'],
     notes:
-      'Staged as construction, not architecture (Resolved design calls): timber baulks, dressed stone courses, carpenters and masons at work, a partially raised structure — never a finished cedar palace and never any 9th–8th century royal-architecture vocabulary, and no rendered structure is identified with any excavated building proposed as David’s palace. Hiram himself is never staged; the text says nothing about his appearing in person, only that he sent messengers. Tyrian craftsmen are rendered with the same undifferentiated claim-dress treatment as every other group in this project, distinguished only by the tools, timber, and stone they are handling — no invented Phoenician dress or iconography. David’s perception (5:12) is carried in the narrated-not-asserted register, cross-referencing claim-david-historical for the separate, disputed question of how large a kingdom he actually held; this claim does not adjudicate that dispute.',
+      'Staged as construction, not architecture (Resolved design calls): timber baulks, dressed stone courses, carpenters and masons at work, a partially raised structure — never a finished cedar palace and never any 9th–8th century royal-architecture vocabulary, and no rendered structure is identified with any excavated building proposed as David’s palace. Hiram himself is never staged; the text says nothing about his appearing in person, only that he sent messengers. Tyrian craftsmen are rendered with the same undifferentiated claim-dress treatment as every other group in this project, distinguished only by the tools, timber, and stone they are handling — no invented Phoenician dress or iconography. David’s perception (5:12) is carried in the narrated-not-asserted register, cross-referencing claim-david-historical for the separate, disputed question of how large a kingdom he actually held; this claim does not adjudicate that dispute. Queue #22 researcher pass (2026-08-24): aubet-2001-phoenicians-and-the-west added as comparative-ane corroboration — Aubet’s standard synthesis of Phoenician trade discusses this exact episode (cedar, carpenters, and masons sent from Tyre, with timber floated as rafts to a coastal port and then moved overland) as consistent with independently attested Phoenician timber-export and craft-labor practice in this period, generally: coastal city-states with limited arable land and controlled cedar-forest access routinely exported both raw timber and skilled labor to inland polities. This is corroboration that the text’s account matches known trade practice, not independent evidence for the historicity of this specific transaction; basis stays biblical-text (what the text states) rather than shifting to comparative-ane or archaeology, per the narrated-vs-corroborated discipline.',
   },
   {
     id: 'claim-jerusalem-household',
@@ -1405,29 +1410,41 @@ export const CLAIMS: ReconstructionClaim[] = [
     id: 'claim-jebusite-stronghold-form',
     statement:
       'The scene renders the Jebusite stronghold as a modest stone circuit enclosing a small summit area at the ridge’s high end, with a simple gateway — no monumental six-chamber gate, no casemate system, no glacis, and no towers, deliberately at the conservative end of what tenth-century-BCE Jerusalem’s fortification and extent could have been.',
-    basis: 'design-placeholder',
-    confidence: 'speculative',
-    sourceIds: ['esv-bible', 'herzog-1997'],
+    basis: 'scholarly-reconstruction',
+    confidence: 'low',
+    sourceIds: [
+      'esv-bible',
+      'herzog-1997',
+      'finkelstein-herzog-singer-avitz-ussishkin-2007-tel-aviv',
+      'mazar-2009-palace-of-king-david',
+    ],
     scholarlyViews: [
       {
         id: 'view-jerusalem-modest-stronghold',
         label: 'A modest fortified stronghold',
         summary:
-          'Reads the tenth-century site as a small, defensible hilltop enclave with limited monumental construction, consistent with the low/minimalist end of the early-monarchy chronology debate.',
+          'Reads the tenth-century site as a small, defensible hilltop enclave with limited monumental construction, consistent with the low/minimalist end of the early-monarchy chronology debate. Finkelstein, Herzog, Singer-Avitz, and Ussishkin argue directly against Eilat Mazar’s reading of the “Large Stone Structure” (Tel Aviv 34/2 [2007]: 142-164): most of the massive walls she presents as one tenth-century monumental building, they argue, belong to several different structures from several different periods excavated decades earlier, including Hellenistic-era construction — a named, Jerusalem-specific rebuttal, not just the general low-chronology position already represented by finkelstein-silberman-2001.',
         confidence: 'moderate',
-        sourceIds: ['finkelstein-silberman-2001'],
+        proponents: [
+          'Israel Finkelstein, Ze’ev Herzog, Lily Singer-Avitz, and David Ussishkin (2007, Tel Aviv 34/2: 142-164)',
+        ],
+        sourceIds: [
+          'finkelstein-silberman-2001',
+          'finkelstein-herzog-singer-avitz-ussishkin-2007-tel-aviv',
+        ],
       },
       {
         id: 'view-jerusalem-administrative-center',
         label: 'A more substantial administrative center',
         summary:
-          'Reads excavated terrace systems and structures some excavators identify as monumental on the eastern slope as evidence of a more developed administrative center already in this period.',
+          'Reads excavated terrace systems and structures some excavators identify as monumental on the eastern slope as evidence of a more developed administrative center already in this period. Eilat Mazar’s own excavation of the “Large Stone Structure” at the City of David’s summit (preliminary report, 2009; first announced 2005-2006) is the named source of this reading: she interprets a complex of massive walls as a single tenth-century BCE monumental public building and proposes identifying it with David’s palace (2 Samuel 5:11).',
         confidence: 'moderate',
-        sourceIds: ['mazar-2005-chronology'],
+        proponents: ['Eilat Mazar (excavator, 2005-2007 seasons)'],
+        sourceIds: ['mazar-2005-chronology', 'mazar-2009-palace-of-king-david'],
       },
     ],
     notes:
-      'This is itself a historical statement, disclosed as one: the render sits deliberately at the conservative end of the dispute rather than hedging in a caption while rendering large (Historical intent #4) — under-rendering is recoverable, over-rendering silently picks a side. herzog-1997’s gate typology (already cited for claim-hebron-gate-form) applies with even more force here, since Jerusalem is exactly the site where an over-built rendering would be read as taking a position in the extent dispute; the modest two-post gateway rendered here is, if anything, more conservative than that claim’s two-chamber Hebron gate. Cross-references claim-david-historical, the kingdom-scale dispute this claim’s own site-extent dispute sits inside — finkelstein-silberman-2001 and mazar-2005-chronology are cited here for the same two poles they already represent there, not for Jerusalem-specific excavation findings, which the project does not yet have a dedicated source card for. Pending queue #22’s researcher pass for a dedicated Jerusalem source card and stronger citations on both sides of this dispute.',
+      'This is itself a historical statement, disclosed as one: the render sits deliberately at the conservative end of the dispute rather than hedging in a caption while rendering large (Historical intent #4) — under-rendering is recoverable, over-rendering silently picks a side. herzog-1997’s gate typology (already cited for claim-hebron-gate-form) applies with even more force here, since Jerusalem is exactly the site where an over-built rendering would be read as taking a position in the extent dispute; the modest two-post gateway rendered here is, if anything, more conservative than that claim’s two-chamber Hebron gate. Cross-references claim-david-historical, the kingdom-scale dispute this claim’s own site-extent dispute sits inside. Queue #22 researcher pass (2026-08-24): both poles of this dispute now carry a real, named, Jerusalem-specific excavation citation rather than only the general kingdom-scale sources this claim previously borrowed (finkelstein-silberman-2001, mazar-2005-chronology, both still cited for that general framing) — Eilat Mazar’s own “Large Stone Structure” excavation report for the maximalist pole, and Finkelstein/Herzog/Singer-Avitz/Ussishkin’s direct, peer-reviewed rebuttal of that report for the minimalist pole. Basis raised from design-placeholder/speculative to scholarly-reconstruction/low on that strength — a genuinely disputed question with two named, checkable, site-specific scholarly positions, no longer an unattributed hedge — but this citation upgrade does not by itself justify any geometry change: the scene’s deliberately conservative render already sits on the modest-stronghold side of this now-better-attested dispute, and if anything Mazar’s report (now properly cited) makes the maximalist alternative a stronger position too, which is exactly why the conservative choice stays deliberate rather than default. Any future proposal to render toward the administrative-center pole is a geometry change and must go back through Fable review, not follow automatically from this citation upgrade.',
   },
   {
     id: 'claim-millo-identification',
@@ -1435,15 +1452,20 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The scene renders no element labeled “the Millo.” 5:9 names it as part of what David built (“from the Millo inward”) and explains nothing further; the eastern slope’s need for terracing to be built on is rendered as terrain form only.',
     basis: 'design-placeholder',
     confidence: 'speculative',
-    sourceIds: ['esv-bible'],
+    sourceIds: ['esv-bible', 'naaman-2014-davids-palace-millo', 'mazar-2009-palace-of-king-david'],
     scholarlyViews: [
       {
         id: 'view-millo-terrace-structure',
         label: 'The excavated stepped-stone/terrace structure',
         summary:
-          'A named proposal identifies the Millo with excavated terrace and stepped-stone support systems on the City of David’s eastern slope, though the dating of those structures (which building phase, and whether any phase is as early as the tenth century BCE) is itself contested.',
+          'A named proposal identifies the Millo with the excavated Stepped Stone Structure — a massive stone-and-earth terrace system on the City of David’s northeastern slope, read by Eilat Mazar as a supporting substructure for her “Large Stone Structure” above it. Nadav Na’aman argues explicitly for this identification (Biblical Archaeology Review 40/1 [2014]: 57-61, 68-69), reading the name “Millo” — from a root meaning “to fill” — as a natural fit for a constructed fill/terrace system of exactly this kind. The dating of the relevant construction phase (which building phase, and whether any phase is as early as the tenth century BCE) remains contested independently of the identification question, tied to the same Large Stone Structure dating dispute carried on claim-jebusite-stronghold-form.',
         confidence: 'low',
-        sourceIds: ['mazar-2005-chronology'],
+        proponents: ['Nadav Na’aman (2014, BAR 40/1: 57-61, 68-69)', 'Eilat Mazar (excavator)'],
+        sourceIds: [
+          'mazar-2005-chronology',
+          'naaman-2014-davids-palace-millo',
+          'mazar-2009-palace-of-king-david',
+        ],
       },
       {
         id: 'view-millo-other-unknown',
@@ -1455,7 +1477,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'The terrace geometry this scene does render (TerraceWalls.tsx, the eastern-slope ground the Millo question is about) is explicitly not adopted as an identification — see the render policy above and the b-millo card, which states what the word probably means (something like the filling), what has been proposed, and that the project has not chosen. Pending queue #22 for a dedicated citation on the terrace structures’ dating.',
+      'The terrace geometry this scene does render (TerraceWalls.tsx, the eastern-slope ground the Millo question is about) is explicitly not adopted as an identification — see the render policy above and the b-millo card, which states what the word probably means (something like the filling), what has been proposed, and that the project has not chosen. Queue #22 researcher pass (2026-08-24): the stepped-stone/terrace proposal now carries a real named proponent (Na’aman 2014) rather than only the general chronology-debate source (mazar-2005-chronology) it previously borrowed, plus Eilat Mazar’s own excavation report of the structure itself (mazar-2009-palace-of-king-david, also newly cited on claim-jebusite-stronghold-form for the adjoining Large Stone Structure). Basis and confidence stay design-placeholder/speculative — this claim is fundamentally about the scene’s render policy (no element labeled “the Millo”), and a stronger citation for one identification proposal is a reason to keep that policy, not to relax it: rendering toward Na’aman’s proposal would still be adopting one contested identification over “another or unrecoverable referent,” which stays equally live.',
   },
   {
     id: 'claim-gihon-spring',
@@ -1463,9 +1485,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The Gihon, Jerusalem’s principal water source, is located at the foot of the City of David ridge’s eastern slope, outside the line of any stronghold circuit rendered in this scene.',
     basis: 'archaeology',
     confidence: 'high',
-    sourceIds: ['rainey-notley-2006'],
+    sourceIds: ['rainey-notley-2006', 'reich-shukron-2000-gihon-tunnels'],
     notes:
-      'The spring’s existence and general location are well established archaeologically; its rendered form here is a disclosed placeholder — a modest outflow basin and flat water plane, using gibeon-pool’s exact convention (shallow depression, minimally-lit water plane, no shader). No water system of any kind renders: no shaft, tunnel, channel, or monumental spring fortification. The excavated spring defenses at the Gihon are real archaeological features, but their standing state and use in this specific window (the early tenth century BCE) is a question this project has not researched (queue #22); until that changes, nothing monumental renders at the spring, and this claim does not adopt any specific excavated spring-defense structure. Cross-references claim-tsinnor-crux — the spring is the tsinnôr card’s home precisely because it is the one place the dispute is about, and nothing rendered here resolves it.',
+      'The spring’s existence and general location are well established archaeologically; its rendered form here is a disclosed placeholder — a modest outflow basin and flat water plane, using gibeon-pool’s exact convention (shallow depression, minimally-lit water plane, no shader). No water system of any kind renders: no shaft, tunnel, channel, or monumental spring fortification. The excavated spring defenses at the Gihon are real archaeological features, but their standing state and use in this specific window (the early tenth century BCE) remains a question this project has not fully researched; queue #22’s pass (2026-08-24) added reich-shukron-2000-gihon-tunnels, which does cover the Gihon rock-cut water-system complex generally (the Rock-Cut Pool, the Round Chamber, Channels II/III, and the Warren’s Shaft system) and dates the shaft’s stepped-tunnel accessibility to Iron Age II — later than this scene’s tenth-century BCE setting — but the broader question of what spring-adjacent defenses, if any, stood and were in use in David’s own time stays unresearched. Until that changes, nothing monumental renders at the spring, and this claim does not adopt any specific excavated spring-defense structure. Cross-references claim-tsinnor-crux — the spring is the tsinnôr card’s home precisely because it is the one place the dispute is about, and nothing rendered here resolves it.',
   },
   {
     id: 'claim-jerusalem-terrain-form',
@@ -1541,7 +1563,7 @@ export const CLAIMS: ReconstructionClaim[] = [
       },
     ],
     notes:
-      'Staged as formation movement read at documentary distance (`b-spread`, `b-engagement-1`) — no melee choreography, no fight-stance pose buckets, falls at silhouette distance only in standard mode, elided entirely in reduced mode (ADR-009; see claim-rephaim-cast-scale\'s performance note and poses.ts\'s `philistineBreakPose`). The inquiry (5:19) is staged as a small, still, waiting group with no apparatus (claim-inquiry-depiction). Baal-perazim’s position is a disclosed placeholder within the valley setting, not a located site — no LocationEntry, no atlas pin (Resolved design calls). No cult iconography renders for the images (5:21); if anything renders at all it is undifferentiated covered loads, per the brief’s "preferably nothing renders."',
+      'Staged as formation movement read at documentary distance (`b-spread`, `b-engagement-1`) — no melee choreography, no fight-stance pose buckets, falls at silhouette distance only in standard mode, elided entirely in reduced mode (ADR-009; see claim-rephaim-cast-scale\'s performance note and poses.ts\'s `philistineBreakPose`). The inquiry (5:19) is staged as a small, still, waiting group with no apparatus (claim-inquiry-depiction). Baal-perazim’s position is a disclosed placeholder within the valley setting, not a located site — no LocationEntry, no atlas pin (Resolved design calls). No cult iconography renders for the images (5:21); if anything renders at all it is undifferentiated covered loads, per the brief’s "preferably nothing renders." Queue #22 researcher pass (2026-08-24): checked whether Baal-perazim itself has any serious proposed location. Found only old, tertiary Bible-dictionary guesses (Sharafat, Ramat Rahel, Deir Abu Tor, a site northwest near Sheikh Bedr) with no excavation, no named academic proponent, and no peer-reviewed argument behind any of them — this confirms rather than closes the gap, and is the expected "no serious candidate" outcome per the #13/#19c permanent-evidentiary-state pattern. The no-LocationEntry/no-atlas-pin decision stands as the correct call, not merely the cautious one.',
   },
   {
     id: 'claim-rephaim-second-engagement',
@@ -1598,7 +1620,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'speculative',
     sourceIds: ['esv-bible', 'rainey-notley-2006'],
     notes:
-      'The valley’s broad identification and general orientation (a corridor running up toward Jerusalem’s western approaches, southwest of the city) is a standard historical-geography reading (rainey-notley-2006); this scene’s exact landform profile, dimensions, and vegetation distribution are this project’s own disclosed approximation, not DEM-derived. Palette and vegetation vocabulary are carried over directly from hebron-anointing/jerusalem-stronghold’s Judean-highland material language — the landform is new, the region is not. No Jerusalem geometry renders anywhere in this scene, not even an undetailed horizon ridge (stricter than the brief’s "at most" allowance), because the order-of-events disclosure (shared with jerusalem-stronghold, see claim-philistine-reaction) would be undermined by rendering the capital in any particular state here.',
+      'The valley’s broad identification and general orientation (a corridor running up toward Jerusalem’s western approaches, southwest of the city) is a standard historical-geography reading (rainey-notley-2006); this scene’s exact landform profile, dimensions, and vegetation distribution are this project’s own disclosed approximation, not DEM-derived. Palette and vegetation vocabulary are carried over directly from hebron-anointing/jerusalem-stronghold’s Judean-highland material language — the landform is new, the region is not. No Jerusalem geometry renders anywhere in this scene, not even an undetailed horizon ridge (stricter than the brief’s "at most" allowance), because the order-of-events disclosure (shared with jerusalem-stronghold, see claim-philistine-reaction) would be undermined by rendering the capital in any particular state here. Queue #22 researcher pass (2026-08-24): checked for coverage beyond rainey-notley-2006 and found a genuine, recent (2024-2025) named challenge to the standard identification itself — Sabine Kleiman (Scandinavian Journal of the Old Testament 39/1 [2024]: 45-59) argues the valley may lie much farther southwest, near the Elah Valley closer to Gath, reviving a 19th-century proposal by explorer Claude Conder. This is disclosed on the valley-of-rephaim LocationEntry’s identification.views as a genuinely contested, low-confidence minority position (identification.disputed now true) rather than folded into this claim’s own terrain-form text — the standard Jerusalem-adjacent identification stays the project’s default and this scene’s setting, unchanged, since a newly published minority proposal is not grounds for a geometry change on its own; see kleiman-2024-valley-of-rapha’s source card for why this stays disclosed rather than adopted.',
   },
   {
     id: 'claim-bakaim-grove',
@@ -1606,9 +1628,9 @@ export const CLAIMS: ReconstructionClaim[] = [
       'The scene renders the bĕkāʾim of 5:23-24 as a generic small-canopy dryland grove with no species asserted — not mulberry (Morus, a later-introduction risk) and not a distinctive resin/balsam tree form.',
     basis: 'design-placeholder',
     confidence: 'speculative',
-    sourceIds: ['esv-bible', 'borowski-1987'],
+    sourceIds: ['esv-bible', 'borowski-1987', 'zohary-1982-plants-of-the-bible'],
     notes:
-      'The bĕkāʾim are an unidentified plant; English versions render "balsam" or "mulberry," and the identification is a guess in either case (mccarter-1984-ii-samuel treats the term as obscure). borowski-1987 is the citation path for regional Iron Age flora and agriculture in general, not for a specific identification of this tree — this claim does not adopt one. The grove is deliberately small, ordinary, and visually unremarkable (Grove.tsx), on the valley’s flank rather than its middle, and is never staged, lit, or animated in a way that reads as the divine sign itself (claim-divine-sign-depiction).',
+      'The bĕkāʾim are an unidentified plant; English versions render "balsam" or "mulberry," and the identification is a guess in either case (mccarter-1984-ii-samuel treats the term as obscure). borowski-1987 is the citation path for regional Iron Age flora and agriculture in general, not for a specific identification of this tree — this claim does not adopt one. The grove is deliberately small, ordinary, and visually unremarkable (Grove.tsx), on the valley’s flank rather than its middle, and is never staged, lit, or animated in a way that reads as the divine sign itself (claim-divine-sign-depiction). Queue #22 researcher pass (2026-08-24): checked against a dedicated botanical scholarly source, Zohary’s Plants of the Bible (1982), rather than only general commentaries. Confirms the crux as genuine rather than under-researched: the name’s root (weeping/dripping) favors a resin-producing tree (the “balsam” family of readings), the King James “mulberry” rendering is weak on both botanical grounds (Morus is a later introduction to the region) and textual grounds (mulberry leaves do not rustle the way the text’s “sound of marching in the tops of the trees” implies), and a poplar identification (Populus euphratica, whose leaves do audibly rustle) has also been proposed on that same detail. This adds a third candidate to the record without resolving the crux; this project still asserts no species, and specifically does not adopt the poplar proposal either, consistent with the brief’s no-mulberry/no-distinctive-balsam-form placeholder policy.',
   },
   {
     id: 'claim-rephaim-cast-scale',

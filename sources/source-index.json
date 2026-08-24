@@ -1,6 +1,12 @@
 {
-  "count": 35,
+  "count": 42,
   "cards": [
+    {
+      "id": "aubet-2001-phoenicians-and-the-west",
+      "title": "The Phoenicians and the West: Politics, Colonies and Trade",
+      "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
     {
       "id": "biran-naveh-1993",
       "title": "An Aramaic Stele Fragment from Tel Dan (Israel Exploration Journal 43)",
@@ -41,6 +47,12 @@
       "id": "faust-2012",
       "title": "The Archaeology of Israelite Society in Iron Age II",
       "sourceType": "archaeology",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "finkelstein-herzog-singer-avitz-ussishkin-2007-tel-aviv",
+      "title": "Has King David's Palace in Jerusalem Been Found?",
+      "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
@@ -92,6 +104,12 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "kleiman-2024-valley-of-rapha",
+      "title": "The Valley of Rapha? A New Suggestion for the Identification of the Rephaim Valley",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "maeir-safi-2012",
       "title": "Tell es-Safi/Gath I: The 1996–2005 Seasons",
       "sourceType": "archaeology",
@@ -113,6 +131,12 @@
       "id": "mazar-2005-chronology",
       "title": "The Debate over the Chronology of the Iron Age in the Southern Levant (in: The Bible and Radiocarbon Dating, eds. T. E. Levy & T. Higham)",
       "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "mazar-2009-palace-of-king-david",
+      "title": "The Palace of King David: Excavations at the Summit of the City of David, Preliminary Report of Seasons 2005-2007",
+      "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
@@ -152,6 +176,12 @@
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
+      "id": "naaman-2014-davids-palace-millo",
+      "title": "The Interchange Between Bible and Archaeology: The Case of David's Palace and the Millo",
+      "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
       "id": "ofer-1993-hebron-neaehl",
       "title": "Hebron (entry), in The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2",
       "sourceType": "archaeology",
@@ -173,6 +203,12 @@
       "id": "rainey-notley-2006",
       "title": "The Sacred Bridge: Carta's Atlas of the Biblical World",
       "sourceType": "historical-geography",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "reich-shukron-2000-gihon-tunnels",
+      "title": "The System of Rock-Cut Tunnels Near Gihon in Jerusalem Reconsidered",
+      "sourceType": "scholarly-article",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
@@ -209,6 +245,12 @@
       "id": "yasur-landau-2012-feathered-helmets",
       "title": "The 'Feathered Helmets' of the Sea Peoples: Joining the Iconographic and Archaeological Evidence (Talanta 44, pp. 27–40)",
       "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "zohary-1982-plants-of-the-bible",
+      "title": "Plants of the Bible: A Complete Handbook",
+      "sourceType": "reference",
       "copyrightStatus": "copyrighted-limited-use"
     }
   ]
