@@ -294,9 +294,55 @@ Reuses `asset-figure-procedural`, `asset-david-marker`, `asset-olive-tree`,
 `asset-rocks`, and `asset-water-plane` — no new records for these. This
 scene's status stays `in-progress`, pending a Fable M6 sign-off review
 (`docs/next-run.md`, `docs/fable-review-queue.md` #21-#24). Its fresh
-passage (`2sam-5`, shared with the not-yet-built `rephaim-valley`) carries
-two of its shared 3-quote ESV budget (5:6b's taunt, 5:8a's tsinnôr clause);
-the third (5:24) is reserved for `rephaim-valley`.
+passage (`2sam-5`, shared with `rephaim-valley`) carries two of its shared
+3-quote ESV budget (5:6b's taunt, 5:8a's tsinnôr clause); the third (5:24)
+is spent by `rephaim-valley`, below.
+
+## Current placeholders (rephaim-valley scene, Milestone 6, built 2026-08-24)
+
+Milestone 6's second and last scene, and the project's second battle scene
+after `gilboa-battle` — deliberately a much lighter violence treatment: no
+fight-stance pose buckets and no melee-clash cycle anywhere (contrast
+`gilboa-battle`'s `defenderClashPose`/`clashPhase01`), both engagements read
+purely as formation movement (an advance, a formation breaking, a
+population dispersing). A new, fresh Judean-highland-palette terrain (the
+valley/rim landform is new; the palette values are carried directly from
+`asset-terrain-hebron-hills`/`asset-terrain-jerusalem-ridge`, not
+reinvented) — no Jerusalem geometry renders anywhere in this scene, not
+even an undetailed horizon ridge (stricter than the brief's "at most"
+allowance). No divination apparatus renders at either inquiry beat (no
+ephod, lots, priest, altar, or shrine), and the 5:24 sign is never
+visualized anywhere — no wind, light, or canopy motion keyed to the wait
+beat (`claim-divine-sign-depiction`, escalated as `fable-review-queue` #24,
+this scene's single most load-bearing constraint). Cast: one Philistine
+population (~55-70 at high tier) and one force for David (~45-60),
+_repositioned, never doubled_, across both phases, plus David and 3-4
+unnamed companions at the inquiry beats — measured at ~131 figures at high
+tier, below `gilboa-battle`'s measured ~330 and materially cheaper per
+figure (formation movement along two shared route curves —
+`ADVANCE_ROUTE_CURVE`/`FLANK_ROUTE_CURVE`/`ENGAGE_TWO_ROUTE_CURVE` — with
+per-figure lane offsets, the `hebron-gate` procession pattern, rather than
+per-figure pathing or pose-bucket cycling).
+
+| Asset                          | Represents                                                                                          | Why temporary                                                                                                                                                          | Replace at |
+| ------------------------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-rephaim-valley` | A broad, open valley floor with a rising highland rim along one side — `claim-rephaim-terrain-form` | Procedural hills + a `ridge` feature for the rim and a gentle `ramp` into the floor (ADR-005), not DEM-derived; palette carried directly from the Judean-highland spec | M6         |
+| `asset-bakaim-grove`           | The unidentified small-canopy trees of 5:23-24 — `claim-bakaim-grove`                               | Generic instanced tree form, no species asserted — deliberately not mulberry (Morus) and not a distinctive resin/balsam form                                           | M6         |
+
+Reuses `asset-figure-procedural`, `asset-figure-fallen`,
+`asset-military-kit-israelite`, `asset-military-kit-philistine` (both from
+`gilboa-battle`'s `kitMeshes.ts`, imported directly — the `beth-shan-walls`
+precedent for cross-scene kit reuse), and `asset-david-marker` — no new
+records for these. Baal-perazim (5:20b) is staged but never located: no
+`LocationEntry`, no atlas pin, per the same discipline that keeps Mahanaim
+unbuilt. This scene's status stays `in-progress`, pending a Fable M6
+sign-off review (`docs/next-run.md`, `docs/fable-review-queue.md`
+#21-#24). Its shared passage (`2sam-5`) spends its third and last ESV
+quote here (5:24's "the sound of marching in the tops of the balsam
+trees") — entered from the build agent's own recollection, not a live
+source check (this sandbox session had no outbound access to Bible-text
+sites and no `WebSearch` tool), flagged for a live-source verification pass
+before this passage/scene flips to `released`, per the #19(b) precedent.
 
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
@@ -344,9 +390,11 @@ gate, per ADR-011.
   already-built Hebron (see tables above). `hebron-reckoning` closes the
   milestone at the tomb of Abner; all three remain `in-progress` pending a
   Fable M5 sign-off review.
-- **M6 (2 Sam 5):** `jerusalem-stronghold` built 2026-08-24 (see table
-  above), the project's first geometry at Jerusalem; `rephaim-valley`
-  (5:17-25) and the `/atlas` M6 phase extension are still outstanding.
+- **M6 (2 Sam 5):** both scenes now built 2026-08-24 — `jerusalem-stronghold`
+  (the project's first geometry at Jerusalem) and `rephaim-valley`
+  (5:17-25, both Philistine engagements, see tables above); the `/atlas` M6
+  phase extension (the two regions unify, the capital shifts Hebron ->
+  Jerusalem) is still outstanding, along with a Fable M6 sign-off review.
 
 ## Policy
 

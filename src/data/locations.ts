@@ -316,6 +316,31 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'in-progress',
   },
+  {
+    id: 'valley-of-rephaim',
+    name: 'Valley of Rephaim',
+    altNames: ['Emek Refaim'],
+    region: 'Open plain southwest of Jerusalem, on the corridor toward the coastal plain',
+    summary:
+      "Where the Philistines twice deployed after David was anointed king over all Israel, and where he twice inquired of the LORD and struck them (2 Samuel 5:17-25). Identified with the broad plain/valley southwest of Jerusalem — the standard historical-geography reading, and a corridor that runs up toward the city's western approaches. Baal-perazim, the place David names after the first engagement, is not separately located (see claim-rephaim-first-engagement) and has no location entry of its own.",
+    identification: {
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-rephaim',
+          label: 'The plain southwest of Jerusalem',
+          summary:
+            "Standard identification with the open valley/plain southwest of the City of David (modern Emek Refaim), on the natural route between the coastal plain and Jerusalem's western approaches — consistent with the narrative's own logic (a force striking at the new center).",
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.755, lon: 35.205, confidence: 'moderate' },
+    sceneIds: ['rephaim-valley'],
+    claimIds: [],
+    status: 'in-progress',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

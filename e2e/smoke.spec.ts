@@ -281,3 +281,79 @@ test('violence advisory (ADR-009) also gates hebron-reckoning — the third name
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
+
+test("violence advisory (ADR-009) also gates rephaim-valley — M6's second and last scene, standard mode", async ({
+  page,
+}) => {
+  // rephaim-valley is the project's second battle scene after gilboa-battle,
+  // deliberately lighter (no fight-stance pose buckets, no melee clash
+  // cycle) but still `depictsDeath: true` since both engagements' formation
+  // breaks show falls at silhouette distance in standard mode.
+  await page.goto('/#/observe/rephaim-valley');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText(
+    'The Valley of Rephaim — two Philistine engagements',
+  );
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (the Philistines hear, the first
+  // spread, the first inquiry, the first engagement's break window, the
+  // naming, the images card, the second spread, the second inquiry, the
+  // flanking march, the sound/wait beat, the second engagement's break
+  // window, the pursuit card, the close) checking for runtime errors at
+  // each stop — standard mode, so the fall/disperse branch is exercised.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 30, 46, 55, 70, 84, 98, 114, 128, 145, 154, 170, 180, 188, 200]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
+test('rephaim-valley in reduced violence mode elides the falls at both engagements', async ({
+  page,
+}) => {
+  // Reduced mode's one behavioral difference from standard is entirely
+  // inside PhilistineForce.tsx's per-frame pose read (philistinePose), not
+  // a separate render path — this confirms the app tolerates scrubbing
+  // through both break windows in reduced mode without runtime errors.
+  await page.goto('/#/observe/rephaim-valley');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-reduced').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.locator('canvas')).toBeVisible();
+
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [46, 52, 60, 170, 176, 184]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+
+  // Second visit: no advisory, and the chosen mode stuck in Settings —
+  // same persistence contract as gilboa-battle's own advisory test.
+  await page.goto('/#/observe/rephaim-valley');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await page.getByTestId('open-settings').click();
+  await expect(page.getByTestId('violence-reduced')).toBeChecked();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});

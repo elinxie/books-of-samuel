@@ -1487,6 +1487,139 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Parallel in form to claim-covenant-cast-scale and claim-gate-cast-scale: 2 Samuel 5 narrates no count for David’s force, the Jebusites, or Hiram’s workmen, so — as at gilboa-battle and claim-judah-assembly-scale — no ratio is claimed. The Jebusite population figure is itself a historical statement and is disclosed as one: rendering a populous city would silently take the maximalist side of the extent dispute this scene carries openly (see claim-jebusite-stronghold-form). Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s high-tier instance count while that scene’s real-hardware performance check remains open (docs/next-run.md).',
   },
+  {
+    id: 'claim-philistine-reaction',
+    statement:
+      'The narrative states that when the Philistines heard David had been anointed king over Israel, they went up to seek him; David heard of it and went down to "the stronghold" (2 Samuel 5:17).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'master-2021-philistines-highlands'],
+    scholarlyViews: [
+      {
+        id: 'view-stronghold-unspecified',
+        label: 'Which stronghold is left unnamed',
+        summary:
+          'The text does not name which stronghold David goes down to here — a return to a wilderness stronghold from his fugitive years, or the Jerusalem stronghold just taken in 5:6-9, are both proposed readings; this scene stages neither, since the ground itself is not built here (jerusalem-stronghold covers that geometry separately).',
+        confidence: 'low',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+      {
+        id: 'view-chapter-topical-arrangement',
+        label: 'The chapter’s arrangement may be topical, not strictly chronological',
+        summary:
+          'Whether 5:17-25 follows or precedes the events of 5:1-16 in real time is disputed; the chapter may group David’s early-reign material by subject rather than sequence. This project takes no position, and the disclosure is shared verbatim with jerusalem-stronghold’s closing card.',
+        confidence: 'low',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'Card-only (b-philistines-hear); no geometry stages this beat. The anointing-as-trigger reading (Historical intent #1) is the narrative’s own logic: a Judahite kinglet at Hebron was tolerable (1 Samuel 27 has David as Achish’s client), but a king over all Israel is a strategic problem the Philistines act on immediately. Cross-references claim-jerusalem-capture (jerusalem-stronghold) without asserting a chronological relationship to it. master-2021-philistines-highlands is cited as independent comparative-archaeological support that Philistine activity reaching into the central highlands in roughly this chronological window is a defensible scholarly position — it argues for highland raiding activity generally, not for this specific campaign, and this claim does not extend it beyond that.',
+  },
+  {
+    id: 'claim-rephaim-first-engagement',
+    statement:
+      'The narrative states that the Philistines came and spread themselves in the Valley of Rephaim (5:18); David inquired of the LORD, who answered that he would give the Philistines into his hand (5:19); David came to Baal-perazim and struck them there, saying "the LORD has broken through my enemies before me, like a breaking through of water" — from which the place was named Baal-perazim (5:20); and the Philistines left their images there, which David and his men carried away (5:21).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'mccarter-1984-ii-samuel'],
+    scholarlyViews: [
+      {
+        id: 'view-images-carried-mt',
+        label: 'Masoretic text: carried away',
+        summary:
+          'The Hebrew text of 5:21 has the Philistines abandon their images and David’s men carry them off (nasaʼ, "lift, carry, take away").',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-images-burned-chronicles',
+        label: '1 Chronicles 14:12: burned',
+        summary:
+          'The parallel account in 1 Chronicles 14:12 has David order the abandoned images burned instead — a real divergence between the two accounts of the same episode, in the same register as hebron-reckoning’s 4:6 MT/LXX handling.',
+        confidence: 'moderate',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'Staged as formation movement read at documentary distance (`b-spread`, `b-engagement-1`) — no melee choreography, no fight-stance pose buckets, falls at silhouette distance only in standard mode, elided entirely in reduced mode (ADR-009; see claim-rephaim-cast-scale\'s performance note and poses.ts\'s `philistineBreakPose`). The inquiry (5:19) is staged as a small, still, waiting group with no apparatus (claim-inquiry-depiction). Baal-perazim’s position is a disclosed placeholder within the valley setting, not a located site — no LocationEntry, no atlas pin (Resolved design calls). No cult iconography renders for the images (5:21); if anything renders at all it is undifferentiated covered loads, per the brief’s "preferably nothing renders."',
+  },
+  {
+    id: 'claim-rephaim-second-engagement',
+    statement:
+      'The narrative states that the Philistines came up yet again and spread themselves in the Valley of Rephaim (5:22); David inquired of the LORD, who this time answered not to go up directly but to circle around, come at them opposite the balsam trees, and wait for the sound of marching in the tops of the trees as the signal to go out and strike, "for then the LORD has gone out before you to strike down the army of the Philistines" (5:23-24); David did as the LORD commanded and struck the Philistines from Geba (Septuagint and 1 Chronicles 14:16: Gibeon) to Gezer (5:25).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'mccarter-1984-ii-samuel'],
+    scholarlyViews: [
+      {
+        id: 'view-pursuit-geba-mt',
+        label: 'Masoretic text: from Geba',
+        summary: 'The Hebrew text of 5:25 reads the pursuit running "from Geba" to Gezer.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-pursuit-gibeon-variant',
+        label: 'Septuagint / 1 Chronicles 14:16: from Gibeon',
+        summary:
+          'The Septuagint and the parallel in 1 Chronicles 14:16 read "from Gibeon" instead — the already-released `gibeon` location this project has built — without this project asserting which reading is original.',
+        confidence: 'moderate',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'The deliberate non-repeat of the first engagement (Historical intent #2) is staged, not merely captioned: the same Philistine spread on the same valley floor, met this time by a flanking march (`b-circling`, a single shared route curve with per-figure offsets, the hebron-gate procession pattern) to a position opposite the grove, then a held wait (`b-sound`) before the converging attack (`b-engagement-2`, same restraint and distance as `b-engagement-1`). The sign itself (5:24) is stated by caption and by stillness only — see claim-divine-sign-depiction, the load-bearing constraint of this scene (fable-review-queue #24). The pursuit (5:25b) is a card, not geometry, per the Geba/Gibeon corridor being unstageable honestly at this scene’s scale; it cross-references the released `gibeon` location without asserting the variant.',
+  },
+  {
+    id: 'claim-inquiry-depiction',
+    statement:
+      'This scene renders no divination apparatus at either inquiry beat (5:19, 5:23) — no ephod, no lots, no Urim/Thummim, no priest, no altar, no shrine. Both inquiries are staged as a small, still, waiting group set apart from the wider force; the caption alone carries the question and the answer, in the text’s own words.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      '5:19 and 5:23 say only that David inquired of the LORD and that the LORD answered — no mechanism is named here. 1 Samuel 23:9 and 30:7 do mention an ephod at other inquiries; importing that apparatus into this scene, where the text does not mention it, would be exactly the harmonization-as-anachronism this project’s method rejects (docs/reconstruction-method.md). This claim’s disclosure is the policy, not a staging license: recording that other passages describe an ephod is not grounds to render one here.',
+  },
+  {
+    id: 'claim-divine-sign-depiction',
+    statement:
+      'The scene states the sign of 5:24 — the sound of marching in the tops of the balsam trees — by caption and by a held, motionless wait among ordinary trees, and renders no visual or audio effect depicting it: no wind burst, no light, no canopy motion staged as a signal, and no camera language implying a presence, at this beat or anywhere else in the scene.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This is the scene’s single most load-bearing constraint, escalated for ratification as fable-review-queue #24 (a new precedent for the project). Rendering a supernatural effect would assert as observed fact something for which no observational basis exists, and would slide the project into the sanitized-illustration genre it defines itself against (Historical intent #3). In this engine, the grove’s canopies are static instanced geometry with no foliage-sway/wind system at all (see `Grove.tsx`), so there is nothing to "freeze" for the beat beyond simply not building any such system — the absence of animation is the whole mechanism. Lighting is flat and unchanging through the entire scene timeline (no beat-driven lighting arc anywhere in this scene, unlike some others in the project) specifically so the wait beat cannot be read as staged under a dawn/dusk/dramatic cue.',
+  },
+  {
+    id: 'claim-rephaim-terrain-form',
+    statement:
+      'The scene renders a broad, open valley floor with a rising highland rim along its western side — a disclosed terrain approximation, not a survey, modeled on the same disclosure claim-gibeon-terrain-form/claim-jerusalem-terrain-form already establish.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'The valley’s broad identification and general orientation (a corridor running up toward Jerusalem’s western approaches, southwest of the city) is a standard historical-geography reading (rainey-notley-2006); this scene’s exact landform profile, dimensions, and vegetation distribution are this project’s own disclosed approximation, not DEM-derived. Palette and vegetation vocabulary are carried over directly from hebron-anointing/jerusalem-stronghold’s Judean-highland material language — the landform is new, the region is not. No Jerusalem geometry renders anywhere in this scene, not even an undetailed horizon ridge (stricter than the brief’s "at most" allowance), because the order-of-events disclosure (shared with jerusalem-stronghold, see claim-philistine-reaction) would be undermined by rendering the capital in any particular state here.',
+  },
+  {
+    id: 'claim-bakaim-grove',
+    statement:
+      'The scene renders the bĕkāʾim of 5:23-24 as a generic small-canopy dryland grove with no species asserted — not mulberry (Morus, a later-introduction risk) and not a distinctive resin/balsam tree form.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'borowski-1987'],
+    notes:
+      'The bĕkāʾim are an unidentified plant; English versions render "balsam" or "mulberry," and the identification is a guess in either case (mccarter-1984-ii-samuel treats the term as obscure). borowski-1987 is the citation path for regional Iron Age flora and agriculture in general, not for a specific identification of this tree — this claim does not adopt one. The grove is deliberately small, ordinary, and visually unremarkable (Grove.tsx), on the valley’s flank rather than its middle, and is never staged, lit, or animated in a way that reads as the divine sign itself (claim-divine-sign-depiction).',
+  },
+  {
+    id: 'claim-rephaim-cast-scale',
+    statement:
+      'This scene renders roughly 55–70 figures for the Philistine force and roughly 45–60 for David’s force at high quality tier — the same instanced population in each case, repositioned and reused across both phases, never doubled — plus David and 3–4 unnamed companions at the inquiry beats. High-tier total ≈ 110–140 figures, at or below gilboa-battle’s measured band, and materially cheaper per figure than that scene (no fight-stance pose buckets; formation movement along shared route curves instead).',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-gate-cast-scale/claim-stronghold-cast-scale: 2 Samuel 5:17-25 narrates no count for either side, so — as at gilboa-battle (claim-battle-scale, cited here only as the precedent for representative-not-complete staging, not for its derived ~3,000-combatant chain, which is specific to Gilboa and is not reused or extended here) — no ratio is claimed; the staging is disclosed as representative. Register #4 (the scale of David’s early state is genuinely contested, claim-david-historical) further forbids implying a national army on either side. Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s high-tier instance count while that scene’s real-hardware performance check remains open (docs/next-run.md) — measured at build time at roughly 131 figures (68 Philistine + 58 David’s force + 5 principals) at the high tier, well under Gilboa’s measured ~330.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

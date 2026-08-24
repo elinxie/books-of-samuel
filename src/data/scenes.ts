@@ -1977,6 +1977,180 @@ export const SCENES: SceneDef[] = [
       'asset-rocks',
     ],
   },
+  {
+    id: 'rephaim-valley',
+    title: 'The Valley of Rephaim — two Philistine engagements',
+    passageIds: ['2sam-5'],
+    locationId: 'valley-of-rephaim',
+    periodId: 'iron-iia',
+    milestoneId: 'M6',
+    // Built 2026-08-24 (Sonnet/threejs-engineer) per docs/design/
+    // rephaim-valley-brief.md (Fable world-director pass, 2026-08-23).
+    // Milestone 6's second and last scene, and the project's second battle
+    // scene after gilboa-battle — deliberately a much lighter violence
+    // treatment. Provisional, `in-progress`, pending a Fable M6 sign-off
+    // review (fable-review-queue #21-#24, especially #24: the
+    // never-visualized-sign precedent this scene establishes).
+    status: 'in-progress',
+    synopsis:
+      'The Philistines hear David has been anointed king over all Israel and twice come up against him in the Valley of Rephaim. The first time, David simply strikes them where they spread. The second time, the same enemy on the same ground gets a different answer: circle around, wait at the trees for a sign, then attack from behind. One scene, two phases, the same instanced Philistine population staged twice — the contrast is the whole point.',
+    depictsDeath: true,
+    durationSec: 210,
+    beats: [
+      {
+        id: 'b-philistines-hear',
+        timeSec: 0,
+        title: 'The Philistines hear',
+        caption:
+          'The Philistines hear that David has been anointed king over Israel and go up to seek him; David hears of it and goes down to the stronghold — unnamed here. Which stronghold, and whether this chapter’s events precede or follow 5:1–16’s (jerusalem-stronghold), the text does not say — neither is asserted here. (2 Samuel 5:17)',
+        passageRef: '2 Samuel 5:17',
+      },
+      {
+        id: 'b-spread',
+        timeSec: 14,
+        title: 'The Philistines spread themselves',
+        caption:
+          'The Philistines come and spread themselves across the Valley of Rephaim — a wide, loose deployment, not a tight block, seen from the rim above. (2 Samuel 5:18)',
+        passageRef: '2 Samuel 5:18',
+      },
+      {
+        id: 'b-inquiry-1',
+        timeSec: 30,
+        title: 'David inquires',
+        caption:
+          'David inquires of the LORD, asking whether he should go up against the Philistines and whether the LORD will give them into his hand. The LORD answers that he should go up, for the Philistines will certainly be given into his hand. A small, still, waiting group — no ephod, lots, priest, altar, or shrine is staged; the text names no apparatus here. (2 Samuel 5:19)',
+        passageRef: '2 Samuel 5:19',
+      },
+      {
+        id: 'b-engagement-1',
+        timeSec: 46,
+        title: 'David strikes them',
+        caption:
+          'David comes to Baal-perazim and strikes the Philistines there. Read at distance as formation movement — a line closing, a deployment breaking, dust — never blow-by-blow combat. In standard mode, falls appear at silhouette distance only, with no wound or blood shown; in reduced mode the falls are elided entirely, cutting straight from the advance to the emptied valley floor. Both modes end the same way: the Philistines driven from the valley. (2 Samuel 5:20a)',
+        passageRef: '2 Samuel 5:20a',
+      },
+      {
+        id: 'b-perazim',
+        timeSec: 70,
+        title: 'A breaking through of water',
+        caption:
+          'David says that the LORD has broken through his enemies before him, like a breaking through of water — therefore the place is called Baal-perazim. The site is unlocated; its position here is an openly disclosed placeholder within the valley, not a claimed identification — there is no map pin for it. (2 Samuel 5:20b)',
+        passageRef: '2 Samuel 5:20b',
+      },
+      {
+        id: 'b-images',
+        timeSec: 84,
+        title: 'The abandoned images',
+        caption:
+          'The Philistines leave their images there. The Masoretic text has David and his men carry them away; the parallel account in 1 Chronicles 14:12 has David order them burned instead — a real divergence, surfaced here rather than resolved. No cult iconography is rendered in this scene, in either case. (2 Samuel 5:21)',
+        passageRef: '2 Samuel 5:21',
+      },
+      {
+        id: 'b-return',
+        timeSec: 98,
+        title: 'The Philistines come up yet again',
+        caption:
+          "The Philistines come up yet again and spread themselves in the Valley of Rephaim — the same ground, the same framing, the same default vantage as the first time. The repetition is deliberate: it is what makes the second answer's contrast visible. (2 Samuel 5:22)",
+        passageRef: '2 Samuel 5:22',
+      },
+      {
+        id: 'b-inquiry-2',
+        timeSec: 114,
+        title: 'A different answer',
+        caption:
+          'David inquires of the LORD again, and this time the answer is not simply to go up directly: circle around behind them and come at them opposite the balsam trees. Same restraint as the first inquiry — no apparatus, no rite, only the question and the answer. (2 Samuel 5:23)',
+        passageRef: '2 Samuel 5:23',
+      },
+      {
+        id: 'b-circling',
+        timeSec: 128,
+        title: 'The flanking march',
+        caption:
+          "David's force circles around the valley's edge, at walking pace, to a position opposite the Philistines from the trees — the scene's one strong walk affordance, and the second engagement's only genuinely new staging beat. (2 Samuel 5:23b)",
+        passageRef: '2 Samuel 5:23b',
+      },
+      {
+        id: 'b-sound',
+        timeSec: 154,
+        title: 'The sign in the treetops',
+        caption:
+          'David is told to wait for "the sound of marching in the tops of the balsam trees", then rouse himself, for the LORD will have gone out before him to strike down the Philistine army. The scene does not visualize this sign — no wind, no light, no canopy motion staged as a signal. The beat is a held wait among ordinary trees; these words carry the text\'s own claim, not an effect the observer is shown. (2 Samuel 5:24, ESV)',
+        passageRef: '2 Samuel 5:24',
+      },
+      {
+        id: 'b-engagement-2',
+        timeSec: 170,
+        title: 'David strikes them again',
+        caption:
+          'David does as the LORD commanded, and the Philistines are struck from behind their own position — the same restraint and the same distance as the first engagement. Standard mode again shows falls at silhouette distance only; reduced mode again elides them, cutting to the emptied valley floor. No triumphal staging in either mode: the beat ends on an emptied valley, not a celebration. (2 Samuel 5:25a)',
+        passageRef: '2 Samuel 5:25a',
+      },
+      {
+        id: 'b-pursuit',
+        timeSec: 188,
+        title: 'From Geba to Gezer',
+        caption:
+          'The Philistines are struck from Geba to Gezer (Masoretic text; the Septuagint and 1 Chronicles 14:16 read Gibeon in place of Geba — the released gibeon location this project has already built, without this project taking a position on which reading is right). The pursuit corridor is not staged; it is stated here as a card. (2 Samuel 5:25b)',
+        passageRef: '2 Samuel 5:25b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 200,
+        title: 'Where the chapter ends',
+        caption:
+          "2 Samuel 5:17–25 states the Philistines' reaction, two engagements, a naming, and a pursuit — nothing more. As with jerusalem-stronghold's own closing card, this scene does not assert that these campaigns follow or precede the capture of Jerusalem; the chapter's arrangement may be topical. Nothing from 2 Samuel 6 onward appears here, depicted or pointed at. The milestone ends here.",
+        passageRef: '2 Samuel 5:17–25',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-valley-rim',
+        label: 'The valley rim (default)',
+        position: [-70, 26, -8],
+        lookAt: [60, 5, -8],
+      },
+      {
+        id: 'vp-grove',
+        label: 'Inside the grove',
+        position: [94, 4, 26],
+        lookAt: [25, 3, -15],
+      },
+      {
+        id: 'vp-valley-floor',
+        label: 'The valley floor (Baal-perazim)',
+        position: [8, 4, -32],
+        lookAt: [32, 3, -10],
+      },
+      {
+        id: 'vp-flank-march',
+        label: 'The flanking route',
+        position: [30, 7, -112],
+        lookAt: [80, 3, -95],
+      },
+    ],
+    claimIds: [
+      'claim-david-historical',
+      'claim-dress',
+      'claim-philistine-kit',
+      'claim-philistine-reaction',
+      'claim-rephaim-first-engagement',
+      'claim-rephaim-second-engagement',
+      'claim-inquiry-depiction',
+      'claim-divine-sign-depiction',
+      'claim-rephaim-terrain-form',
+      'claim-bakaim-grove',
+      'claim-rephaim-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-rephaim-valley',
+      'asset-bakaim-grove',
+      'asset-figure-procedural',
+      'asset-figure-fallen',
+      'asset-military-kit-israelite',
+      'asset-military-kit-philistine',
+      'asset-david-marker',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

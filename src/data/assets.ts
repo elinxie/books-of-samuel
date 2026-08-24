@@ -675,6 +675,29 @@ export const ASSETS: AssetRecord[] = [
       'A researcher pass on Phoenician cedar/timber supply and construction technique for this period (queue #22, king-stager-2001 the first place to look) could sharpen material/finish fidelity; the unfinished-state and no-palace-identification constraints are permanent, not awaiting a source.',
     replacementMilestoneId: 'M6',
   },
+  {
+    id: 'asset-terrain-rephaim-valley',
+    name: 'Valley of Rephaim landform',
+    represents:
+      'A broad, open valley floor with a rising highland rim along one side — see claim-rephaim-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'Procedural heightfield (src/scenes/rephaim-valley/terrain.ts) built from fbm hill layers plus a `ridge` feature for the rim and a gentle `ramp` into the floor — not DEM-derived, and not a survey of the valley’s real profile. No Jerusalem geometry renders anywhere in this scene, not even an undetailed horizon ridge (a stricter render than the brief’s "at most" allowance, chosen to keep the order-of-events disclosure unambiguous).',
+    historicalRequirements:
+      'A DEM-based pass for the Rephaim/Baqa-Malha corridor southwest of Jerusalem, once a specific candidate footprint is adopted; palette/vegetation stay Judean-highland regardless of that outcome.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-bakaim-grove',
+    name: 'The bekaim grove — generic dryland tree form',
+    represents: 'The unidentified small-canopy trees of 2 Samuel 5:23-24 — see claim-bakaim-grove',
+    placeholder: true,
+    whyTemporary:
+      'A generic small-canopy instanced tree form (src/scenes/rephaim-valley/Grove.tsx) — no species is asserted (English versions render "balsam" or "mulberry," and the identification is a guess in either case). Deliberately not a mulberry (Morus) canopy shape and not a distinctive resin/balsam tree.',
+    historicalRequirements:
+      'Stays a disclosed non-identification regardless of future research — the text itself does not name the species, so no future source can license asserting one.',
+    replacementMilestoneId: 'M6',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));
