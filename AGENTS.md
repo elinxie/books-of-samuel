@@ -13,7 +13,9 @@ comprehension (allow-list in
 `docs/architecture-decisions/adr-011-atlas-first-game-affordances.md`); fantasy
 systems, loot grind, leveling as power fantasy, win/loss states that distort
 the biblical/historical material, and unsourced invented certainty stay out
-without separate Fable approval. Every visual element must trace to biblical
+without a separate documented review-tier approval (`docs/fable-review-queue.md`
+— note: Fable itself is not used on this project, see `CLAUDE.md`'s "Model
+policy — do not invoke Fable"). Every visual element must trace to biblical
 text, archaeology, comparative ancient Near Eastern evidence, a named scholarly
 reconstruction, or a clearly labeled placeholder.
 
@@ -37,7 +39,8 @@ creative direction, contested historical questions, ESV/licensing policy, or
 anything `docs/model-handoff.md` lists as "Fixed for now". If a task forces
 such a call, implement the most defensible option, mark it clearly as
 **provisional** (in code comments and claim `notes`), and add a row to
-`docs/fable-review-queue.md` so a Fable-tier review can confirm or reverse it.
+`docs/fable-review-queue.md` so a later review-tier pass (Sonnet — Fable is
+not used on this project) can confirm or reverse it.
 
 ## Checkpoint protocol (manual form — you cannot see token meters)
 

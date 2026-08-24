@@ -29,7 +29,27 @@ labeled placeholder.
 Do not skip straight to writing code — `docs/next-run.md` and
 `docs/fable-review-queue.md` may change what's actually next.
 
-## Hard constraints (do not relax these without a Fable review)
+## Model policy — do not invoke Fable
+
+**Fable is not to be used on this project, by user directive (2026-08-24).**
+Do not spawn `fable-architect` or `world-director`, do not run `/model
+claude-fable-5`, and do not retry a Fable call after it errors (including
+spend-limit errors) — treat any suggestion elsewhere in this repo's docs to
+"try Fable again" or "wait for the budget to reset" as stale. Both
+`.claude/agents/fable-architect.md` and `.claude/agents/world-director.md`
+are configured `model: sonnet`; use them (or work inline) for
+architecture/taxonomy calls, milestone sign-off reviews, and new scene
+creative direction exactly as before, just without the model switch.
+
+Everything `docs/model-handoff.md` used to route to "Fable" is now Sonnet's
+(or another capable coding model's) to decide directly: implement the most
+defensible option, mark genuinely contested calls **provisional** in
+`docs/fable-review-queue.md`, and keep moving. `docs/model-handoff.md`
+carries the historical detail of what was decided when and the fixed-vs-
+changeable list is still load-bearing — only the "escalate to Fable" routing
+in it is retired.
+
+## Hard constraints (do not relax without a documented review — see above)
 
 - No proprietary game assets, trademarks, mechanics, maps, names, or UI patterns
   copied from any commercial game or franchise.
@@ -37,7 +57,7 @@ Do not skip straight to writing code — `docs/next-run.md` and
   (`docs/architecture-decisions/adr-011-atlas-first-game-affordances.md`).
   Fantasy systems, loot grind, leveling as power fantasy, win/loss states that
   distort the biblical/historical material, and unsourced invented certainty
-  stay out without a separate Fable approval.
+  stay out without a separate, documented review-tier approval.
 - No full ESV chapter text stored or displayed — references, original summaries,
   and short excerpts only (budget enforced by `src/data/integrity.test.ts`). See
   `docs/architecture-decisions/adr-003-esv-policy.md`.
@@ -60,17 +80,19 @@ all project documentation in `docs/`.
 
 ## Model routing (summary — full policy in `docs/model-handoff.md`)
 
-- **Fable**: architecture/taxonomy changes, milestone sign-off review, new major
-  scene creative direction, genuinely contested historical/design calls, stack or
-  policy changes.
-- **Sonnet** (or another capable coding model): everything else — implementation,
-  tests, docs, source-card entry, bug fixes, refactors, routine scene-building
-  within an already-set composition.
-- Model switch commands: `claude --model claude-fable-5`,
-  `claude --model claude-sonnet-5`, or `/model` inside a session. Switches do not
-  persist automatically across sessions.
-- Delegation rule: Fable orchestrates and judges; routine checks/execution go to
-  Sonnet subagents (see `docs/model-handoff.md`).
+Superseded by "Model policy — do not invoke Fable" above wherever the two
+disagree — this section is the routine-work summary, not a re-opening of
+the Fable question.
+
+- **Sonnet** (or another capable coding model) does everything: implementation,
+  tests, docs, source-card entry, bug fixes, refactors, routine scene-building,
+  _and_ architecture/taxonomy calls, milestone sign-off review, new major scene
+  creative direction, and genuinely contested historical/design calls —
+  formerly routed to Fable, now Sonnet's own judgment, marked provisional in
+  `docs/fable-review-queue.md` when genuinely contested.
+- Delegation rule unchanged: the orchestrating session judges and decides;
+  routine checks/execution go to the Sonnet-model subagents in
+  `.claude/agents/*.md`.
 
 ## Dev commands
 

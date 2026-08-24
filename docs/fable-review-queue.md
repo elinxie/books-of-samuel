@@ -1,17 +1,22 @@
 # Fable review queue
 
-Items Sonnet has flagged as needing Fable-level judgment. Sonnet continues around
-these when Fable is unavailable, marking its own choice as provisional. Clear an
-item by moving its resolution to `docs/run-log.md` and deleting the row (or move it
-to a "Resolved" section below if the history is worth keeping).
+**Fable is not used on this project (user directive, 2026-08-24) — see
+`CLAUDE.md`'s "Model policy — do not invoke Fable."** This queue keeps its
+name for continuity with existing references, but it now means: items
+flagged as needing extra-deliberate, review-tier judgment. Sonnet decides
+these directly — implement the most defensible option, mark the choice
+provisional here, and keep moving; do not wait for or invoke a different
+model. Clear an item by moving its resolution to `docs/run-log.md` and
+deleting the row (or move it to a "Resolved" section below if the history is
+worth keeping).
 
 ## Open
 
-| #   | Item                                                        | Notes                                                                                                | When / where                    |
-| --- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------- |
-| 21  | M6 scope: 5:1–5 as cards + atlas, no 4th Hebron scene       | **Sonnet-fallback-confirmed as built; needs a real Fable ratification** — see 2026-08-24 note below. | 2026-08-23 Fable, M6 scope pass |
-| 23  | tsinnor identification + the no-capture-route rendering bar | **Sonnet-fallback-confirmed as held; needs a real Fable ratification** — see 2026-08-24 note below.  | 2026-08-23 Fable, M6 scope pass |
-| 24  | Depiction policy for narrated divine signs (2 Sam 5:24)     | **Still open — genuinely Fable-tier, not decided by the fallback pass.** See 2026-08-24 note below.  | 2026-08-23 Fable, M6 scope pass |
+| #   | Item                                                        | Notes                                                                        | When / where              |
+| --- | ----------------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------- |
+| 21  | M6 scope: 5:1–5 as cards + atlas, no 4th Hebron scene       | **Confirmed as built** — see 2026-08-24 note below.                          | 2026-08-23, M6 scope pass |
+| 23  | tsinnor identification + the no-capture-route rendering bar | **Confirmed as held** — see 2026-08-24 note below.                           | 2026-08-23, M6 scope pass |
+| 24  | Depiction policy for narrated divine signs (2 Sam 5:24)     | **Still open — needs a dedicated decision pass.** See 2026-08-24 note below. | 2026-08-23, M6 scope pass |
 
 M6 scope note (2026-08-23, Fable world-director pass — detail for #21–#24 above).
 Opened alongside the M6 entry in `src/data/milestones.ts` and the two scene briefs
@@ -78,34 +83,32 @@ implying a presence; the beat is a held wait among ordinary trees and the captio
 carries the text's claim as the text's claim. The reasoning is the same one behind
 the anachronism rule: rendering it would assert as observed fact something for
 which no observational basis exists, and would move the project toward the
-sanitized-illustration genre it defines itself against. Flagged for Fable
-ratification because this will recur constantly from 2 Samuel 6 onward (the ark
-narratives, 2 Samuel 7, 2 Samuel 24) and may deserve its own ADR rather than a
-per-scene claim. Interim disclosure lives on `claim-divine-sign-depiction`.
+sanitized-illustration genre it defines itself against. Flagged for a
+dedicated ratification pass because this will recur constantly from 2 Samuel 6
+onward (the ark narratives, 2 Samuel 7, 2 Samuel 24) and may deserve its own
+ADR rather than a per-scene claim. Interim disclosure lives on
+`claim-divine-sign-depiction`.
 
-**2026-08-24 M6 sign-off — Sonnet fallback, provisional, NOT a Fable review.**
-`fable-architect` errored on its first call this session ("You've hit your
-monthly spend limit") — the same recurring constraint as 2026-07-22/
-2026-08-10. Per `docs/model-handoff.md`'s documented fallback ("implement
-the most defensible option, mark it clearly as provisional... don't block
-the whole project on Fable availability"), this orchestrating session ran
-the sign-off review itself rather than waiting. **No milestone/scene/
-passage/location status flips were made** — `jerusalem-stronghold`,
-`rephaim-valley`, the atlas M6 phase, `2sam-5`, `jerusalem`,
-`valley-of-rephaim`, and `M6` all stay `in-progress`/`planned` as built,
-per the model-handoff rule that status stays short of `released` while a
-flagged provisional decision (here, #24) is still open.
+**2026-08-24 M6 sign-off, provisional.** `fable-architect`'s first call this
+session errored ("You've hit your monthly spend limit") — the same recurring
+constraint as 2026-07-22/2026-08-10, and the last time Fable was invoked on
+this project: **later the same day, the user directed that Fable not be used
+at all going forward** (see `CLAUDE.md`'s "Model policy — do not invoke
+Fable"). This orchestrating session ran the sign-off review itself. **No
+milestone/scene/passage/location status flips were made** —
+`jerusalem-stronghold`, `rephaim-valley`, the atlas M6 phase, `2sam-5`,
+`jerusalem`, `valley-of-rephaim`, and `M6` all stay `in-progress`/`planned`
+as built, pending #24.
 
 - **#21 confirmed as built** — independently re-checked, not just trusted
   from the build report: `jerusalem-stronghold`'s `b-all-israel`/`b-regnal`
   beats (`src/data/scenes.ts`) carry the 5:1–5 material as cards only,
   explicitly cross-reference `hebron-anointing`/`hebron-covenant`, and point
   at the `/atlas` M6 phase for the territorial-change context — exactly the
-  brief's design. This is Sonnet's own confirmation, not Fable's; the queue
-  row explicitly says this was "the one place in M6 where a reasonable
-  reviewer could land the other way," so it stays open for an actual Fable
-  read when the budget resets, even though nothing here suggests reversing
-  it.
+  brief's design. The queue row explicitly says this was "the one place in
+  M6 where a reasonable reviewer could land the other way," so it's worth a
+  second, dedicated look before `released`, even though nothing here
+  suggests reversing it.
 - **#23 confirmed as held** — independently grepped both scenes'
   `src/scenes/jerusalem-stronghold/` and `src/scenes/rephaim-valley/` source
   for shaft/tunnel/conduit/infiltration/hook, six-chamber/casemate/glacis,
@@ -117,18 +120,15 @@ flagged provisional decision (here, #24) is still open.
   to `claim-jebusite-stronghold-form` (design-placeholder/speculative →
   scholarly-reconstruction/low) does not touch this bar and its own notes
   say so explicitly — checked and confirmed true.
-- **#24 left open, deliberately not decided by this pass.** The brief itself
-  flags this as possibly deserving its own ADR, and `docs/model-handoff.md`
-  places data-model/policy-level decisions and anything in "Fixed for now"
-  squarely in Fable's tier — writing a new ADR under a budget-outage
-  fallback would be exactly the kind of judgment call the fallback policy
-  says to escalate, not absorb. The interim disclosure already built
-  (`claim-divine-sign-depiction`, stated-never-visualized) stays the
-  project's working default per the brief, but is not ratified. **Next
-  Fable session: rule on #24 first** (ratify as-is, revise, or promote to a
-  dedicated ADR — it will recur from 2 Samuel 6 onward), then re-run this
-  same sign-off checklist to confirm #21/#23 with real Fable judgment and
-  execute the release cascade if everything still holds.
+- **#24 left open, deliberately not decided by this pass** — it needed a
+  dedicated pass of its own (ratify the stated-never-visualized default
+  as-is, revise it, or promote it to a dedicated ADR), not a decision folded
+  into a milestone sign-off already in progress. The interim disclosure
+  already built (`claim-divine-sign-depiction`, stated-never-visualized)
+  stays the project's working default per the brief, but is not yet
+  ratified. **Next session: rule on #24 directly** (no model to wait on),
+  then re-confirm #21/#23 and execute the release cascade if everything
+  still holds.
 - **Performance**: no dedicated `performance-reviewer` pass had run on
   either scene mid-session (both build agents self-checked only, contrary
   to what their briefs asked for). A `performance-reviewer` pass was

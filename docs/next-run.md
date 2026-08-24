@@ -3,7 +3,12 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-24, M6 BUILT, Sonnet-fallback sign-off — real Fable sign-off still pending, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
+## State right now (2026-08-24, M6 BUILT, Sonnet sign-off — queue #24 still open, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
+
+**Fable is not used on this project as of this session — see `CLAUDE.md`'s
+"Model policy — do not invoke Fable" (user directive). Everything below that
+still says "wait for Fable" or "real Fable sign-off" is superseded: Sonnet
+decides queue #24 directly, next session, no waiting.**
 
 **All M6 build work is done and gate-green.** Scheduled/automated session;
 baseline verified clean first (`npm install` + `npm run verify`, e2e needs
@@ -36,20 +41,18 @@ Full gate green after every commit: 546 vitest, 16/16 e2e, format/lint/
 build clean (independently re-run by the orchestrating session each time,
 not just taken from build-agent reports).
 
-**Fable M6 sign-off hit the spend limit** (`fable-architect`'s first call
-this session errored — same recurring constraint as 2026-07-22/2026-08-10).
-Per `docs/model-handoff.md`'s documented fallback, the orchestrating
-session ran the review itself: **confirmed queue #21 and #23 as built**
-(independently re-checked against the actual committed code — 5:1–5 stays
-cards-only per #21; no capture-mechanism geometry anywhere per #23) but
-**left #24 open** (the narrated-divine-sign depiction policy — genuinely
-Fable-tier, the brief itself flags it as possibly needing its own ADR, and
-writing one under a budget-outage fallback would be exactly the kind of
-call the fallback policy says to escalate rather than absorb). **No status
-flips were made anywhere** — `jerusalem-stronghold`, `rephaim-valley`, the
-atlas M6 phase, `2sam-5`, `jerusalem`, `valley-of-rephaim`, `M6` all stay
-`in-progress`/`planned`, per the model-handoff rule that an open flagged
-provisional decision holds release status. Full reasoning:
+**M6 sign-off review ran this session** (`fable-architect`'s first call hit
+a since-retired Fable spend limit — that model is no longer used on this
+project at all, see the notice above). The orchestrating session ran the
+review itself: **confirmed queue #21 and #23 as built** (independently
+re-checked against the actual committed code — 5:1–5 stays cards-only per
+#21; no capture-mechanism geometry anywhere per #23) but **left #24 open**
+(the narrated-divine-sign depiction policy — the brief flags it as possibly
+needing its own ADR, and this session judged that call worth a dedicated
+pass rather than deciding it inline mid-review). **No status flips were made
+anywhere** — `jerusalem-stronghold`, `rephaim-valley`, the atlas M6 phase,
+`2sam-5`, `jerusalem`, `valley-of-rephaim`, `M6` all stay
+`in-progress`/`planned` until #24 is decided. Full reasoning:
 `docs/fable-review-queue.md`'s 2026-08-24 note.
 
 A `performance-reviewer` pass on both new scenes ran this session (commit
@@ -62,19 +65,17 @@ re-verified (546 vitest, 16/16 e2e, clean build). Everything else
 (terrain budgets, instancing, static-crowd baking, quality-tier scaling)
 checked out clean.
 
-**What's next (Sonnet or Fable), in priority order:**
+**What's next (Sonnet), in priority order:**
 
-1. **A real Fable M6 sign-off**, once the spend limit resets — this is the
-   single blocking item for M6 to reach `released`. Rule on **#24 first**
-   (ratify the stated-never-visualized default as-is, revise it, or promote
-   it to a dedicated ADR — it will recur constantly from 2 Samuel 6 onward:
-   the ark narratives, 2 Samuel 7, 2 Samuel 24). Then re-confirm #21/#23 with
-   real Fable judgment (not just Sonnet's own re-check) and, if everything
-   still holds, execute the release cascade: `jerusalem-stronghold`/
-   `rephaim-valley` → `released`, `2sam-5` → `released`, `jerusalem`/
-   `valley-of-rephaim` → `released`, the M6 feature entry → `done`, `M6` →
-   `released`. Follow the M3/M4/M5 sign-off checklist
-   (`docs/fable-review-checklist.md`).
+1. **Decide queue #24 directly** — this is the single blocking item for M6
+   to reach `released`. Ratify the stated-never-visualized default as-is,
+   revise it, or promote it to a dedicated ADR (it will recur constantly
+   from 2 Samuel 6 onward: the ark narratives, 2 Samuel 7, 2 Samuel 24).
+   Then re-confirm #21/#23 hold and, if everything still holds, execute the
+   release cascade: `jerusalem-stronghold`/`rephaim-valley` → `released`,
+   `2sam-5` → `released`, `jerusalem`/`valley-of-rephaim` → `released`, the
+   M6 feature entry → `done`, `M6` → `released`. Follow the M3/M4/M5
+   sign-off checklist (`docs/fable-review-checklist.md`).
 2. (Carried forward, still open, non-blocking) real-hardware perf check of
    `gilboa-battle` at high tier + the Pages-live check — see Environment
    notes below, unchanged.

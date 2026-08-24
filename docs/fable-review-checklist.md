@@ -1,8 +1,10 @@
 # Fable review checklist
 
-Use this when Fable reviews a completed milestone, a new major scene's design, or
-an item pulled from `docs/fable-review-queue.md`. One pass per milestone/batch, not
-per commit.
+**Fable is not used on this project — see `CLAUDE.md`'s "Model policy — do not
+invoke Fable."** Use this checklist (kept under its original filename for
+continuity with existing references) when reviewing a completed milestone, a
+new major scene's design, or an item pulled from `docs/fable-review-queue.md`.
+One pass per milestone/batch, not per commit.
 
 ## Historical plausibility
 
