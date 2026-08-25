@@ -178,9 +178,21 @@ export const MILESTONES: Milestone[] = [
     // Baal-perazim geography, Phoenician cedar and craftsmen, the bakaim
     // species) opened as queue #22 — it gates named attributions and any move
     // past `design-placeholder`, not the builds. The tsinnor rendering bar is
-    // queue #23; the never-yet-decided depiction policy for narrated divine
-    // signs is queue #24. M7 starts at 2 Samuel 6.
-    status: 'planned',
+    // queue #23; the depiction policy for narrated divine signs was queue #24.
+    // M7 starts at 2 Samuel 6.
+    // 2026-08-25 M6 sign-off (Sonnet; Fable retired 2026-08-24, see
+    // CLAUDE.md's "Model policy — do not invoke Fable"): #21 and #23
+    // re-confirmed as built (independently re-checked against the committed
+    // code, not just trusted from prior notes); #24 ratified as ADR-013
+    // (docs/architecture-decisions/adr-013-narrated-supernatural-depiction.md)
+    // — narrated supernatural/divine signs are stated, never visualized,
+    // project-wide going forward, not just for this scene. All three quoted
+    // ESV spans (5:6b, 5:8a, 5:24) live-verified via WebSearch, matching
+    // verbatim. Cascade executed per the M3–M5 precedent: `jerusalem-
+    // stronghold`/`rephaim-valley` → released, `2sam-5` → released,
+    // `jerusalem`/`valley-of-rephaim` → released, `f-2sam-5` → done, M6 →
+    // released.
+    status: 'released',
     passageRefs: ['2 Samuel 5'],
     goals: [
       'All Israel’s covenant with David and the anointing over the united kingdom at Hebron (2 Sam 5:1–5) — carried as context cards and a `/atlas` phase update, not a fourth Hebron scene (queue #21)',

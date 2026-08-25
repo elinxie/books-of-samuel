@@ -1844,3 +1844,31 @@ limit resets — rule on #24 first (ratify as-is / revise / promote to its
 own ADR, since it will recur from 2 Samuel 6 onward), then re-confirm
 #21/#23 and execute the release cascade if everything still holds. See
 `docs/next-run.md` for the full next-run note.
+
+**2026-08-25 — Sonnet — M6 sign-off + release (queue #21/#23/#24, ADR-013)**
+Fable is retired project-wide (2026-08-24 user directive) — this sign-off
+ran as ordinary Sonnet review work, no model-availability constraint. Read
+the 2026-08-24 M6 build/sign-off-attempt entry first for context. Reviewed
+queue #21/#23/#24 directly: **#21** (5:1-5 as cards + atlas, no 4th Hebron
+scene) reconfirmed built — `jerusalem-stronghold`'s `b-all-israel`/
+`b-regnal` beats are cards only, cross-referencing prior Hebron scenes and
+the `/atlas` M6 phase. **#23** (tsinnôr no-capture-route bar) reconfirmed
+held — grepped `src/scenes/jerusalem-stronghold/` for shaft/tunnel/conduit/
+siege; every hit was a comment/caption disclaiming rendered geometry, none
+a geometry reference. **#24** (narrated divine-sign depiction) ratified as
+**ADR-013** (`docs/architecture-decisions/adr-013-narrated-supernatural-depiction.md`)
+rather than left per-scene: narrated supernatural/divine signs stated,
+never visualized, project-wide, binding on future scenes (2 Sam 6 ark
+narratives are the near-term case). `claim-divine-sign-depiction`'s notes
+now cite the ADR. Live-verified (WebSearch) all three `2sam-5` ESV quotes
+(5:6b, 5:8a, 5:24) — verbatim match, no errors. Added missing `f-2sam-5`
+feature entry (M6 had none, same gap M5 had). Cascade: `jerusalem-
+stronghold`/`rephaim-valley` → released, `2sam-5` → released, `jerusalem`/
+`valley-of-rephaim` → released, `f-2sam-5` → done, `M6` → released. Full
+gate green (format/lint/typecheck/546 vitest/build/16-16 e2e). **M6 is
+fully released.** Next: M7 starts at 2 Samuel 6 (ark narratives — the
+Uzzah death is this project's next application of both ADR-009's
+named-killing template and ADR-013's new divine-sign-depiction rule
+together) — needs a scope pass before any build work, same M3-M6 pattern.
+Non-blocking, carried forward unchanged: real-hardware `gilboa-battle` perf
+check + Pages-live check.

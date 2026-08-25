@@ -450,7 +450,7 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
-## Milestone 6 — 2 Samuel 5: **in-progress** (scoped + briefed 2026-08-23; both scenes + atlas phase built 2026-08-24; Sonnet-fallback sign-off 2026-08-24, real Fable sign-off still pending)
+## Milestone 6 — 2 Samuel 5: **released** (2026-08-25 Sonnet sign-off; scoped + briefed 2026-08-23; both scenes + atlas phase built 2026-08-24)
 
 Scope decision (Fable/`world-director`, 2026-08-23): unlike M4/M5, no
 bundling needed — 2 Sam 5 contains two full, distinct, buildable settings the
@@ -488,10 +488,26 @@ figures), `rephaim-valley` (~131 figures, standard/reduced-mode fork), the
 merged-region/moved-capital atlas phase. Queue #22's researcher pass closed
 (7 new source cards). `fable-architect` hit its monthly spend limit;
 Sonnet-fallback sign-off confirmed #21/#23 as built but left #24 (narrated
-divine-sign depiction policy) open as genuinely Fable-tier — **no status
-flips made**, everything stays `in-progress`/`planned` pending a real Fable
-pass. Full detail: `docs/run-log.md`'s 2026-08-24 entry,
-`docs/fable-review-queue.md`'s #21/#23/#24 rows.
+divine-sign depiction policy) open, flagged for a dedicated pass — **no
+status flips made**, everything stayed `in-progress`/`planned`.
+
+**Sign-off and release, 2026-08-25 (Sonnet — Fable retired 2026-08-24, see
+`CLAUDE.md`'s "Model policy — do not invoke Fable"):** #21 and #23
+independently re-checked against the committed code and reconfirmed as
+built/held. #24 **ratified as ADR-013**
+(`docs/architecture-decisions/adr-013-narrated-supernatural-depiction.md`):
+narrated supernatural/divine signs are stated, never visualized, as standing
+project policy (not a per-scene claim), binding on every future scene that
+touches one — flagged as the near-term precedent for the 2 Samuel 6 ark
+narratives. All three of `2sam-5`'s quoted ESV spans (5:6b, 5:8a, 5:24)
+live-verified via `WebSearch`, matching verbatim. New feature `f-2sam-5`
+added (M6 had none, same gap M5 had at its own sign-off) and flipped `done`.
+Cascade executed per the M3–M5 precedent: `jerusalem-stronghold`/
+`rephaim-valley` → `released`; `2sam-5` → `released`; `jerusalem`/
+`valley-of-rephaim` → `released`; `M6` → `released`. Full gate green after
+the flips: format/lint/typecheck/546 vitest/build/16-16 e2e. Full detail:
+`docs/run-log.md`'s 2026-08-24 and 2026-08-25 entries,
+`docs/fable-review-queue.md`'s M6 sign-off note.
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

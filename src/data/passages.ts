@@ -128,13 +128,11 @@ export const PASSAGES: Passage[] = [
     // passage's 3-quote handful is now fully spent — jerusalem-stronghold
     // used two (5:6b's taunt, 5:8a's tsinnôr clause); rephaim-valley (built
     // 2026-08-24) uses the third and last, 5:24's sound in the balsam
-    // trees, quoted below and in that scene's b-sound beat caption. Exact
-    // ESV wording could not be live-verified this session (this sandbox's
-    // outbound access does not reach Bible-text sites and no WebSearch tool
-    // was available in this session, unlike the jerusalem-stronghold build)
-    // — entered from the build agent's own recollection of a well-known
-    // verse, flagged here per the #19(b) precedent for a live-source check
-    // before this passage/scene flips to `released`.
+    // trees, quoted below and in that scene's b-sound beat caption.
+    // 2026-08-25: all three quoted spans (5:6b, 5:8a, 5:24) live-verified via
+    // WebSearch against esv.org/biblehub/biblestudytools cross-corroborated
+    // snippets — all three matched the scenes' captions verbatim, no wording
+    // errors found (the #19(b)/#20(e) precedent for this exact check).
     keyExcerpts: [
       {
         verse: '2 Samuel 5:24',
@@ -143,7 +141,7 @@ export const PASSAGES: Passage[] = [
     ],
     sceneIds: ['jerusalem-stronghold', 'rephaim-valley'],
     milestoneId: 'M6',
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

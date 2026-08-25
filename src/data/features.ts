@@ -205,6 +205,20 @@ export const FEATURES: FeatureEntry[] = [
     milestoneId: 'M5',
   },
   {
+    id: 'f-2sam-5',
+    title: '2 Samuel 5 scenes',
+    description:
+      'The Jebusite stronghold captured and made the city of David, plus Hiram’s alliance and the household list — and the two Philistine engagements in the Valley of Rephaim, with the divine sign of the balsam trees — plus the /atlas overlay’s 2 Samuel 5 phase.',
+    // Added at the 2026-08-25 M6 sign-off (Sonnet; Fable retired
+    // 2026-08-24). M6, like M5 before it, had no feature entry at all, so
+    // its scene work was invisible on the Features page. Both scenes plus
+    // the atlas phase are built and approved as built; queue #24 (narrated
+    // divine-sign depiction) ratified as ADR-013 at this same sign-off —
+    // done.
+    status: 'done',
+    milestoneId: 'M6',
+  },
+  {
     id: 'f-dem-terrain',
     title: 'Real-elevation terrain',
     description:

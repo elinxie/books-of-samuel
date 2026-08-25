@@ -314,7 +314,7 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.7739, lon: 35.2358, confidence: 'high' },
     sceneIds: ['jerusalem-stronghold'],
     claimIds: [],
-    status: 'in-progress',
+    status: 'released',
   },
   {
     id: 'valley-of-rephaim',
@@ -357,7 +357,7 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.755, lon: 35.205, confidence: 'moderate' },
     sceneIds: ['rephaim-valley'],
     claimIds: [],
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

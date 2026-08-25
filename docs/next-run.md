@@ -3,7 +3,38 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-24, M6 BUILT, Sonnet sign-off — queue #24 still open, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
+## State right now (2026-08-25, M6 RELEASED — Sonnet sign-off, branch `claude/focused-mccarthy-i6i77o`)
+
+**M6 is fully released.** Queue #21/#23 reconfirmed as built/held (independent
+re-check against committed code); #24 (narrated divine-sign depiction) ratified
+as **ADR-013** — narrated supernatural/divine signs are stated, never
+visualized, project-wide, not a per-scene claim, binding on future scenes
+(2 Samuel 6's ark narratives are next). All three `2sam-5` ESV quotes
+live-verified (WebSearch), verbatim match. New `f-2sam-5` feature entry added
+(M6 had none) and flipped `done`. Cascade: `jerusalem-stronghold`/
+`rephaim-valley`/`2sam-5`/`jerusalem`/`valley-of-rephaim` → `released`, `M6` →
+`released`. Full gate green (format/lint/typecheck/546 vitest/build/16-16 e2e).
+Full reasoning: `docs/run-log.md`'s 2026-08-25 entry,
+`docs/fable-review-queue.md`'s M6 sign-off note.
+
+**What's next (Sonnet), in priority order:**
+
+1. **M7 starts at 2 Samuel 6** (the ark's move to Jerusalem, Uzzah's death,
+   David's dance, Michal's contempt) — needs a scope pass before any build
+   work, same M3–M6 pattern (`world-director`/`fable-architect` agents, both
+   now `model: sonnet` per the Fable-retirement directive — see
+   `docs/model-handoff.md`). This chapter is the project's first case
+   applying **both** ADR-009's named-killing template and the new **ADR-013**
+   divine-sign-depiction rule to the same death (Uzzah) — read both before
+   scoping.
+2. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — see Environment notes
+   below, unchanged.
+3. Optional, non-gating: the hook/grappling-implement _tsinnôr_ view's
+   Albright attribution stays `TO VERIFY`; DEM refinement under ADR-012;
+   `f-overview-map`'s wider scope beyond the shipped `/atlas` overlay.
+
+## State before this slice (2026-08-24, M6 BUILT, Sonnet sign-off attempt — queue #24 left open, branch `claude/focused-mccarthy-m17xzl`, PR #67, since merged)
 
 **Fable is not used on this project as of this session — see `CLAUDE.md`'s
 "Model policy — do not invoke Fable" (user directive). Everything below that

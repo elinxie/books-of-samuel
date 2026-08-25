@@ -1804,7 +1804,7 @@ export const SCENES: SceneDef[] = [
     // Milestone 6's load-bearing and most contested scene, and the
     // project's first geometry at Jerusalem. Provisional, `in-progress`,
     // pending a Fable M6 sign-off review (fable-review-queue #21-#24).
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       "David, now anointed king over all Israel rather than Judah alone, takes the Jebusite stronghold of Jerusalem — a city belonging to no tribe on the seam between Judah and Benjamin. How the stronghold was taken is not narrated and is not staged; the scene holds on the ridge at the narrative's own gap. Renamed the city of David, it becomes a capital by being built: Hiram of Tyre sends cedar, carpenters, and masons, and a house goes up.",
     depictsDeath: false,
@@ -1991,7 +1991,7 @@ export const SCENES: SceneDef[] = [
     // treatment. Provisional, `in-progress`, pending a Fable M6 sign-off
     // review (fable-review-queue #21-#24, especially #24: the
     // never-visualized-sign precedent this scene establishes).
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'The Philistines hear David has been anointed king over all Israel and twice come up against him in the Valley of Rephaim. The first time, David simply strikes them where they spread. The second time, the same enemy on the same ground gets a different answer: circle around, wait at the trees for a sign, then attack from behind. One scene, two phases, the same instanced Philistine population staged twice — the contrast is the whole point.',
     depictsDeath: true,
