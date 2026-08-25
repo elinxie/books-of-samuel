@@ -143,7 +143,7 @@ export const PASSAGES: Passage[] = [
     ],
     sceneIds: ['jerusalem-stronghold', 'rephaim-valley'],
     milestoneId: 'M6',
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

@@ -1802,9 +1802,10 @@ export const SCENES: SceneDef[] = [
     // Built 2026-08-24 (Sonnet/threejs-engineer) per docs/design/
     // jerusalem-stronghold-brief.md (Fable world-director pass, 2026-08-23).
     // Milestone 6's load-bearing and most contested scene, and the
-    // project's first geometry at Jerusalem. Provisional, `in-progress`,
-    // pending a Fable M6 sign-off review (fable-review-queue #21-#24).
-    status: 'in-progress',
+    // project's first geometry at Jerusalem. Released 2026-08-25 — the M6
+    // sign-off/release pass confirmed #21/#23 as built and closed #24 via
+    // ADR-013; see fable-review-queue.md.
+    status: 'released',
     synopsis:
       "David, now anointed king over all Israel rather than Judah alone, takes the Jebusite stronghold of Jerusalem — a city belonging to no tribe on the seam between Judah and Benjamin. How the stronghold was taken is not narrated and is not staged; the scene holds on the ridge at the narrative's own gap. Renamed the city of David, it becomes a capital by being built: Hiram of Tyre sends cedar, carpenters, and masons, and a house goes up.",
     depictsDeath: false,
@@ -1988,10 +1989,10 @@ export const SCENES: SceneDef[] = [
     // rephaim-valley-brief.md (Fable world-director pass, 2026-08-23).
     // Milestone 6's second and last scene, and the project's second battle
     // scene after gilboa-battle — deliberately a much lighter violence
-    // treatment. Provisional, `in-progress`, pending a Fable M6 sign-off
-    // review (fable-review-queue #21-#24, especially #24: the
-    // never-visualized-sign precedent this scene establishes).
-    status: 'in-progress',
+    // treatment. Released 2026-08-25 — the never-visualized-sign precedent
+    // this scene established is now ratified project-wide as ADR-013
+    // (resolves fable-review-queue #24); #21/#23 also confirmed as built.
+    status: 'released',
     synopsis:
       'The Philistines hear David has been anointed king over all Israel and twice come up against him in the Valley of Rephaim. The first time, David simply strikes them where they spread. The second time, the same enemy on the same ground gets a different answer: circle around, wait at the trees for a sign, then attack from behind. One scene, two phases, the same instanced Philistine population staged twice — the contrast is the whole point.',
     depictsDeath: true,
