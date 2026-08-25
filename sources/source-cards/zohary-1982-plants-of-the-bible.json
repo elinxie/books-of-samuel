@@ -1,0 +1,15 @@
+{
+  "id": "zohary-1982-plants-of-the-bible",
+  "title": "Plants of the Bible: A Complete Handbook",
+  "author": "Michael Zohary",
+  "publisher": "Cambridge University Press",
+  "datePublished": "1982",
+  "dateAccessed": "2026-08-24",
+  "sourceType": "reference",
+  "copyrightStatus": "copyrighted-limited-use",
+  "allowedUseNotes": "Copyrighted botanical reference handbook. Summaries in project's own words only; no reproduction of the book's text or plates.",
+  "summary": "Standard botanical-identification handbook for plants named in the Bible, by a botanist specializing in the flora of Israel. Zohary's discussion of the bekaim of 2 Samuel 5:23-24 (and the parallel 1 Chronicles 14:14-15) treats the identification as genuinely unresolved: the Hebraic root behind the name is generally connected to weeping/dripping, favoring some kind of resin-producing tree (the traditional 'balsam' rendering), but the King James Version's 'mulberry' rendering is philologically and botanically weak (the mulberry, Morus, is a later introduction to the region and its leaves do not rustle in a way that fits the text's own description of a sound moving through the treetops); a poplar identification (Populus euphratica), whose leaves do produce an audible rustle in wind, has also been proposed on that same textual detail. This project cites Zohary as confirmation, from a dedicated scholarly botanical source rather than only general commentaries, that the species genuinely cannot be pinned down with confidence -- supporting the project's own decision to render a generic, species-unspecified grove (claim-bakaim-grove) rather than adopting any one candidate, including the poplar proposal this source itself adds to the record.",
+  "relevantPassages": ["2 Samuel 5:23-24"],
+  "extractedClaims": ["claim-bakaim-grove"],
+  "confidenceNotes": "Bibliographic details (Cambridge University Press, 1982) and the summary of Zohary's discussion (the weeping/dripping etymology, the case against mulberry, the poplar/Populus euphratica alternative keyed to the rustling-leaves detail) are drawn from secondary web citations describing and paraphrasing the book's content, not from direct page-by-page inspection of the volume. TO VERIFY: exact page citation against a primary copy."
+}

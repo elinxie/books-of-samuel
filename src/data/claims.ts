@@ -1038,7 +1038,7 @@ export const CLAIMS: ReconstructionClaim[] = [
     confidence: 'speculative',
     sourceIds: ['esv-bible'],
     notes:
-      'Mixed-provenance claim, parallel in form to claim-gibeon-terrain-form and claim-battle-scale: the allegiance split itself is high-confidence biblical text, already carried by claim-ish-bosheth-installed (2:8–10, the Gilead/Ashurites/Jezreel/Ephraim/Benjamin/all-Israel writ at Mahanaim) and claim-judah-anointing (2:4, the house of Judah alone) — this claim does not re-assert that split and stays out of its way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choices: soft-shaded, deliberately hard-edge-free region shapes (no polygon boundary is drawn, because no Iron IIA source establishes a literal line on the ground — see CLAUDE.md’s anachronism-discipline rule), the plain equirectangular-ish projection used to place points, and which locations are clustered into which region (e.g. grouping Mount Gilboa/Beth-shan/Jabesh-gilead under the "Israel-writ" region reflects their being within Jezreel/Gilead per 2:9, not a separately sourced boundary claim). Mahanaim is plotted at its own low-confidence, disputed coordinates (see the mahanaim LocationEntry’s two candidate identifications, both surfaced on the page, not just in data) rather than a firmer point standing in for it. Gibeon sits in the unshaded gap between the two soft regions on the map, which is a deliberate rendering choice reflecting its role as the contested meeting-ground of Abner’s and Joab’s men (2:12–17), not an assertion that Gibeon itself changed hands. Kingdom-scale is a separate, disputed question the overlay does not resolve — see claim-david-historical. The overlay is dismissible: a page-level toggle hides the shaded regions entirely, leaving only the plotted points, and the page itself is reached only by choosing to visit /atlas (ADR-011’s "can still ignore it" test). This claim covers the overlay’s default M4 phase (2:8–11) only; the M5 phase (2 Samuel 3–4, the long-war trend and the Israel-writ region’s "no king" collapse) is covered by its own claim, claim-atlas-m5-phase, added as this overlay’s own M5 extension rather than silently expanding this claim’s scope past 2:8–11.',
+      'Mixed-provenance claim, parallel in form to claim-gibeon-terrain-form and claim-battle-scale: the allegiance split itself is high-confidence biblical text, already carried by claim-ish-bosheth-installed (2:8–10, the Gilead/Ashurites/Jezreel/Ephraim/Benjamin/all-Israel writ at Mahanaim) and claim-judah-anointing (2:4, the house of Judah alone) — this claim does not re-assert that split and stays out of its way. What this claim alone covers, and what its speculative/design-placeholder rating is about, is the overlay’s own visual choices: soft-shaded, deliberately hard-edge-free region shapes (no polygon boundary is drawn, because no Iron IIA source establishes a literal line on the ground — see CLAUDE.md’s anachronism-discipline rule), the plain equirectangular-ish projection used to place points, and which locations are clustered into which region (e.g. grouping Mount Gilboa/Beth-shan/Jabesh-gilead under the "Israel-writ" region reflects their being within Jezreel/Gilead per 2:9, not a separately sourced boundary claim). Mahanaim is plotted at its own low-confidence, disputed coordinates (see the mahanaim LocationEntry’s two candidate identifications, both surfaced on the page, not just in data) rather than a firmer point standing in for it. Gibeon sits in the unshaded gap between the two soft regions on the map, which is a deliberate rendering choice reflecting its role as the contested meeting-ground of Abner’s and Joab’s men (2:12–17), not an assertion that Gibeon itself changed hands. Kingdom-scale is a separate, disputed question the overlay does not resolve — see claim-david-historical. The overlay is dismissible: a page-level toggle hides the shaded regions entirely, leaving only the plotted points, and the page itself is reached only by choosing to visit /atlas (ADR-011’s "can still ignore it" test). This claim covers the overlay’s default M4 phase (2:8–11) only; the M5 phase (2 Samuel 3–4, the long-war trend and the Israel-writ region’s "no king" collapse) is covered by its own claim, claim-atlas-m5-phase, and the M6 phase (2 Samuel 5, the two regions’ merger under one king and the capital marker’s move to Jerusalem) by claim-atlas-m6-phase — each added as this overlay’s own phase extension rather than silently expanding this claim’s scope past 2:8–11.',
   },
   {
     id: 'claim-long-war',
@@ -1288,6 +1288,369 @@ export const CLAIMS: ReconstructionClaim[] = [
     sourceIds: ['esv-bible'],
     notes:
       'This overlay’s own M5 extension of claim-divided-kingdom-atlas-overlay (the M4 default phase, 2:8–11), added as a second page-level phase rather than by silently broadening that claim’s scope — see its notes for the cross-reference back. Cross-references, rather than re-derives, already-built M5 claim text: claim-long-war (3:1, the trend statement itself, delivered as a hebron-covenant context card and now also captioned here), claim-abner-break (3:6–11, Abner’s break with Ish-bosheth), claim-abner-overture and claim-covenant-feast (3:12–21, Abner’s defection to David), claim-abner-killing (3:26–27, hebron-gate), claim-public-response (3:36–37, the people’s understanding David was not responsible for Abner’s death), and claim-ish-bosheth-assassination (4:1–12, hebron-reckoning). The "no king" treatment is a disclosed design choice, not textual certainty dressed up as fact: 4:12 ends the house of Saul’s kingship as this project has staged it, but the text does not itself say the north was annexed, absorbed, or left entirely without any local authority — only that the king this project has scenes for is dead with no heir shown taking the throne. The region keeps the exact soft/unbordered/no-hard-edge form claim-divided-kingdom-atlas-overlay already establishes — no stroke, no dashed outline, no polygon boundary is added; only the gradient’s fill opacity is lowered and a small "no king (2 Samuel 4:1–12)" sub-label is added beneath the region label, deliberately the more conservative of the visual options considered (a hatched-fill or dashed-boundary treatment was set aside as reading too much like an asserted edge). No color is reused from, blended toward, or merged with Judah’s region, and Judah’s region/caption is otherwise unchanged from the M4 phase — the long war (3:1) is a narrated trend, not a territorial gain, so it is not represented as a redrawn or expanded region. Same dismissible-toggle/optional-visit ADR-011 discipline as the M4 phase; the phase toggle itself defaults to M4 so a first-time visitor sees the already-reviewed 2:8–11 map unless they choose to look further. Mahanaim’s disputed-identification note (both candidate sites) carries forward unchanged in both phases, since it is where Ish-bosheth was both installed and killed — narrated only, never built as a scene, per the standing rule since gibeon-pool.',
+  },
+  {
+    id: 'claim-all-israel-covenant',
+    statement:
+      'The narrative states that all the tribes of Israel came to David at Hebron, recalled his earlier leadership and the LORD’s word that he would shepherd and be prince over Israel, and that the elders of Israel made a covenant with David before the LORD and anointed him king over Israel — lifting the “house of Judah only” qualifier of his first anointing (2 Samuel 2:4). The chapter then gives his age at accession (thirty) and the length of his reign: seven and a half years at Hebron, thirty-three years at Jerusalem (2 Samuel 5:1–5).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Delivered as opening context cards only (b-all-israel, b-regnal) — no Hebron geometry is staged in this scene (the queue #21 resolved design call). The observer who has walked hebron-anointing and hebron-covenant should feel this as the same covenant-and-anointing pattern completed a third time, now over the whole kingdom, and is pointed to those two scenes and the /atlas M6 phase for the cartographic side of the change. Cross-references claim-judah-anointing (2:4), which this covenant explicitly widens, and claim-david-historical for the separate, disputed question of how large a kingdom either anointing controlled on the ground. The regnal figures (5:4–5) are reported in the narrated-not-asserted register (register #5) — no attempt is made to fix them to absolute calendar dates.',
+  },
+  {
+    id: 'claim-jerusalem-capture',
+    statement:
+      'The narrative states that the king and his men went to Jerusalem against the Jebusites, the land’s inhabitants, who told David he would not come in, taunting that the blind and the lame would keep him out — thinking David could not enter; nevertheless David took the stronghold of Zion, that is, the city of David (2 Samuel 5:6–7).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-taunt-strength-boast',
+        label: 'A boast about the strength of the position',
+        summary:
+          'Reads the Jebusites’ words as bravado grounded in the site’s real defensibility — the ridge’s steep flanks and narrow approach meant even minimal defenders could hold it.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-taunt-ritual',
+        label: 'A ritual or apotropaic act',
+        summary:
+          'Some readings take the reference to the blind and the lame as pointing to a ritual practice at the site (possibly figures or images posted at the gate) rather than a plain figure of speech, though the text supplies no description of any such practice.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-taunt-etiology',
+        label: 'An etiology attached to the exclusion proverb',
+        summary:
+          '5:8c’s proverb, that the blind and the lame shall not come into “the house,” may be a later saying the narrative attaches to this episode to explain its origin, rather than a report of what the Jebusites themselves said.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The taunt is spoken and captioned only — no figures are staged performing it, on either side (Resolved design calls): not Jebusite defenders posed as disabled, not David’s men mocking them. The three readings above are carried without a chosen winner and are hedged pending a named commentator from the queue #22 researcher pass. 5:8c’s proverb is reported as the text’s own aside, without endorsing it or extending it to any later practice. Cross-references claim-tsinnor-crux for 5:8’s own separate crux, and claim-jebusite-stronghold-form for how the site’s real defensibility is rendered as terrain rather than asserted as an unambiguous historical fact.',
+  },
+  {
+    id: 'claim-tsinnor-crux',
+    statement:
+      'The narrative states that on that day David said whoever would strike the Jebusites should reach the tsinnôr to attack “the lame and the blind, who are hated by David’s soul,” and adds the saying that the blind and the lame shall not come into the house (2 Samuel 5:8). What tsinnôr names is not established by the text itself, and 2 Samuel 5 does not name who went up; 1 Chronicles 11:6 names Joab, a separate text with a different emphasis.',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'reich-shukron-2000-gihon-tunnels', 'mccarter-1984-ii-samuel'],
+    scholarlyViews: [
+      {
+        id: 'view-tsinnor-water-shaft',
+        label:
+          'Water shaft or conduit (identified with Warren’s Shaft, now archaeologically challenged)',
+        summary:
+          'The traditional reading (reflected in many English translations’ “water shaft”) ties the word to a water-access route, historically associated by some with the Warren’s Shaft system later excavated in the City of David. Yigal Shiloh’s 1978-1985 City of David excavations first raised doubts about the shaft’s usability in David’s time, and Ronny Reich and Eli Shukron’s subsequent reassessment (Revue biblique 107 [2000]: 5-17) argues that the stepped tunnel giving access to the top of the natural karstic shaft did not reach that point until an Iron Age II floor-cutting — centuries after David’s conquest — so the shaft was very likely not a usable route into the city at all in the tenth century BCE. This is the named, checkable archaeological basis for calling the identification “challenged,” not disproven outright (the shaft itself, as a natural feature, may be older; what is disputed is whether it was accessible and usable at this date).',
+        confidence: 'moderate',
+        proponents: [
+          'Yigal Shiloh (excavator, 1978-1985)',
+          'Ronny Reich and Eli Shukron (2000, Revue biblique 107: 5-17)',
+        ],
+        sourceIds: ['reich-shukron-2000-gihon-tunnels'],
+      },
+      {
+        id: 'view-tsinnor-hook',
+        label: 'Hook or grappling implement',
+        summary:
+          'Other proposals connect tsinnôr to a hook, pipe, or grappling device used to scale or breach the defenses, reading it as a tool rather than a route. This reading is reflected in the New English Bible’s (1970) rendering of the phrase as attacking “with a grappling-iron,” on a proposed Akkadian cognate; some secondary literature attributes the underlying philological suggestion to W. F. Albright, though this project has not independently cross-corroborated that specific attribution this pass (flagged TO VERIFY) and does not adopt the reading either way.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-tsinnor-unrecoverable',
+        label: 'Meaning not recoverable',
+        summary:
+          'A position, held by a substantial number of critical commentators, that the word’s precise sense in this verse simply cannot be recovered with confidence from the available evidence — the term occurs only here and at Psalm 42:7 (where it plainly means a water channel or cataract, which is part of why the “water” family of readings remains the most commonly adopted default even without a secure link to any specific excavated feature). McCarter’s Anchor Bible commentary is representative of this general critical-commentary caution; a specific, page-verified McCarter statement on the word itself was searched for and not found this pass (checked, permanently thin for that specific point — see mccarter-1984-ii-samuel’s confidenceNotes).',
+        confidence: 'low',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'The milestone’s single most important claim surface. Queue #22 researcher pass (2026-08-24): the water-shaft/Warren’s-Shaft view now carries a real, named, checkable archaeological citation for the “challenged on archaeological grounds” language already in this claim’s statement (Shiloh’s excavations; Reich and Shukron 2000) — this is the strongest attribution win of the pass and is exactly what the claim’s own statement already asserted, now sourced rather than asserted from general knowledge. The hook/grappling-implement view gained a real named translation (the New English Bible) but its proposed philological grounding (an Akkadian cognate, associated in some literature with W. F. Albright) could not be independently cross-corroborated this pass and stays hedged. The “meaning not recoverable” view was checked against mccarter-1984-ii-samuel specifically, as the brief anticipated as “the cheapest route” — general critical-commentary coverage of the crux is confirmed, but a specific, quotable McCarter statement on tsinnôr itself was not found and this is disclosed as checked, permanently thin for that narrow point, not left silently unresolved. None of this changes what the traditional identification claim already said or moves the needle on any of the three views’ rankings relative to one another — the crux remains genuinely open. 2 Samuel 5 names no one who went up — 1 Chronicles 11:6 credits Joab, but that is a different text with a different emphasis, and harmonizing the two here would silently import a detail this chapter does not give (the same discipline already applied to the refuge-city note at hebron-gate); Joab is not staged in this scene at all. Per fable-review-queue #23, the project renders no capture mechanism of any kind in any mode — no water shaft, tunnel, conduit, hook, scaling, or siege equipment — regardless of what future research finds; any change to that rendering bar requires escalation, not a routine researcher-pass update. This citation upgrade does not itself justify revisiting queue #23’s no-render bar — if anything, the Reich/Shukron finding reinforces it, since it shows the most commonly assumed mechanism was very likely not even the historical one.',
+  },
+  {
+    id: 'claim-city-of-david-naming',
+    statement:
+      'The narrative states that David took the stronghold of Zion, called it the city of David, and built up the city all around from the Millo inward (2 Samuel 5:7, 9).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Covers only the naming and the bare fact of building “from the Millo inward” — what the Millo itself was is a separate design question, carried on claim-millo-identification, and no rendered element in this scene is labeled “the Millo” (Resolved design calls). The “stronghold of Zion” identification with the excavated southeastern ridge is carried by the jerusalem LocationEntry’s identification.views, not restated here.',
+  },
+  {
+    id: 'claim-hiram-building',
+    statement:
+      'The narrative states that Hiram king of Tyre sent messengers to David with cedar trees, carpenters, and masons, who built David a house, and that David perceived that the LORD had established him king over Israel and exalted his kingdom for the sake of his people Israel (2 Samuel 5:11–12).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'aubet-2001-phoenicians-and-the-west'],
+    notes:
+      'Staged as construction, not architecture (Resolved design calls): timber baulks, dressed stone courses, carpenters and masons at work, a partially raised structure — never a finished cedar palace and never any 9th–8th century royal-architecture vocabulary, and no rendered structure is identified with any excavated building proposed as David’s palace. Hiram himself is never staged; the text says nothing about his appearing in person, only that he sent messengers. Tyrian craftsmen are rendered with the same undifferentiated claim-dress treatment as every other group in this project, distinguished only by the tools, timber, and stone they are handling — no invented Phoenician dress or iconography. David’s perception (5:12) is carried in the narrated-not-asserted register, cross-referencing claim-david-historical for the separate, disputed question of how large a kingdom he actually held; this claim does not adjudicate that dispute. Queue #22 researcher pass (2026-08-24): aubet-2001-phoenicians-and-the-west added as comparative-ane corroboration — Aubet’s standard synthesis of Phoenician trade discusses this exact episode (cedar, carpenters, and masons sent from Tyre, with timber floated as rafts to a coastal port and then moved overland) as consistent with independently attested Phoenician timber-export and craft-labor practice in this period, generally: coastal city-states with limited arable land and controlled cedar-forest access routinely exported both raw timber and skilled labor to inland polities. This is corroboration that the text’s account matches known trade practice, not independent evidence for the historicity of this specific transaction; basis stays biblical-text (what the text states) rather than shifting to comparative-ane or archaeology, per the narrated-vs-corroborated discipline.',
+  },
+  {
+    id: 'claim-jerusalem-household',
+    statement:
+      'The narrative states that David took more concubines and wives from Jerusalem after he came from Hebron, and lists the sons born to him there: Shammua, Shobab, Nathan, Solomon, Ibhar, Elishua, Nepheg, Japhia, Elishama, Eliada, and Eliphelet (2 Samuel 5:13–16).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Card-only, listed exactly as the text lists it — the hebron-covenant 3:2–5 treatment. No household geometry, no forward commentary on any name, and specifically no gloss on Solomon or Nathan pointing toward 2 Samuel 7 or later chapters, per the brief’s hard scope guard (nothing from 2 Samuel 6 onward appears in this scene, depicted or foreshadowed). This claim’s notes record only that the narrative presents royal polygyny as ordinary practice here without comment; nothing more is inferred.',
+  },
+  {
+    id: 'claim-jebusite-stronghold-form',
+    statement:
+      'The scene renders the Jebusite stronghold as a modest stone circuit enclosing a small summit area at the ridge’s high end, with a simple gateway — no monumental six-chamber gate, no casemate system, no glacis, and no towers, deliberately at the conservative end of what tenth-century-BCE Jerusalem’s fortification and extent could have been.',
+    basis: 'scholarly-reconstruction',
+    confidence: 'low',
+    sourceIds: [
+      'esv-bible',
+      'herzog-1997',
+      'finkelstein-herzog-singer-avitz-ussishkin-2007-tel-aviv',
+      'mazar-2009-palace-of-king-david',
+    ],
+    scholarlyViews: [
+      {
+        id: 'view-jerusalem-modest-stronghold',
+        label: 'A modest fortified stronghold',
+        summary:
+          'Reads the tenth-century site as a small, defensible hilltop enclave with limited monumental construction, consistent with the low/minimalist end of the early-monarchy chronology debate. Finkelstein, Herzog, Singer-Avitz, and Ussishkin argue directly against Eilat Mazar’s reading of the “Large Stone Structure” (Tel Aviv 34/2 [2007]: 142-164): most of the massive walls she presents as one tenth-century monumental building, they argue, belong to several different structures from several different periods excavated decades earlier, including Hellenistic-era construction — a named, Jerusalem-specific rebuttal, not just the general low-chronology position already represented by finkelstein-silberman-2001.',
+        confidence: 'moderate',
+        proponents: [
+          'Israel Finkelstein, Ze’ev Herzog, Lily Singer-Avitz, and David Ussishkin (2007, Tel Aviv 34/2: 142-164)',
+        ],
+        sourceIds: [
+          'finkelstein-silberman-2001',
+          'finkelstein-herzog-singer-avitz-ussishkin-2007-tel-aviv',
+        ],
+      },
+      {
+        id: 'view-jerusalem-administrative-center',
+        label: 'A more substantial administrative center',
+        summary:
+          'Reads excavated terrace systems and structures some excavators identify as monumental on the eastern slope as evidence of a more developed administrative center already in this period. Eilat Mazar’s own excavation of the “Large Stone Structure” at the City of David’s summit (preliminary report, 2009; first announced 2005-2006) is the named source of this reading: she interprets a complex of massive walls as a single tenth-century BCE monumental public building and proposes identifying it with David’s palace (2 Samuel 5:11).',
+        confidence: 'moderate',
+        proponents: ['Eilat Mazar (excavator, 2005-2007 seasons)'],
+        sourceIds: ['mazar-2005-chronology', 'mazar-2009-palace-of-king-david'],
+      },
+    ],
+    notes:
+      'This is itself a historical statement, disclosed as one: the render sits deliberately at the conservative end of the dispute rather than hedging in a caption while rendering large (Historical intent #4) — under-rendering is recoverable, over-rendering silently picks a side. herzog-1997’s gate typology (already cited for claim-hebron-gate-form) applies with even more force here, since Jerusalem is exactly the site where an over-built rendering would be read as taking a position in the extent dispute; the modest two-post gateway rendered here is, if anything, more conservative than that claim’s two-chamber Hebron gate. Cross-references claim-david-historical, the kingdom-scale dispute this claim’s own site-extent dispute sits inside. Queue #22 researcher pass (2026-08-24): both poles of this dispute now carry a real, named, Jerusalem-specific excavation citation rather than only the general kingdom-scale sources this claim previously borrowed (finkelstein-silberman-2001, mazar-2005-chronology, both still cited for that general framing) — Eilat Mazar’s own “Large Stone Structure” excavation report for the maximalist pole, and Finkelstein/Herzog/Singer-Avitz/Ussishkin’s direct, peer-reviewed rebuttal of that report for the minimalist pole. Basis raised from design-placeholder/speculative to scholarly-reconstruction/low on that strength — a genuinely disputed question with two named, checkable, site-specific scholarly positions, no longer an unattributed hedge — but this citation upgrade does not by itself justify any geometry change: the scene’s deliberately conservative render already sits on the modest-stronghold side of this now-better-attested dispute, and if anything Mazar’s report (now properly cited) makes the maximalist alternative a stronger position too, which is exactly why the conservative choice stays deliberate rather than default. Any future proposal to render toward the administrative-center pole is a geometry change and must go back through Fable review, not follow automatically from this citation upgrade.',
+  },
+  {
+    id: 'claim-millo-identification',
+    statement:
+      'The scene renders no element labeled “the Millo.” 5:9 names it as part of what David built (“from the Millo inward”) and explains nothing further; the eastern slope’s need for terracing to be built on is rendered as terrain form only.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'naaman-2014-davids-palace-millo', 'mazar-2009-palace-of-king-david'],
+    scholarlyViews: [
+      {
+        id: 'view-millo-terrace-structure',
+        label: 'The excavated stepped-stone/terrace structure',
+        summary:
+          'A named proposal identifies the Millo with the excavated Stepped Stone Structure — a massive stone-and-earth terrace system on the City of David’s northeastern slope, read by Eilat Mazar as a supporting substructure for her “Large Stone Structure” above it. Nadav Na’aman argues explicitly for this identification (Biblical Archaeology Review 40/1 [2014]: 57-61, 68-69), reading the name “Millo” — from a root meaning “to fill” — as a natural fit for a constructed fill/terrace system of exactly this kind. The dating of the relevant construction phase (which building phase, and whether any phase is as early as the tenth century BCE) remains contested independently of the identification question, tied to the same Large Stone Structure dating dispute carried on claim-jebusite-stronghold-form.',
+        confidence: 'low',
+        proponents: ['Nadav Na’aman (2014, BAR 40/1: 57-61, 68-69)', 'Eilat Mazar (excavator)'],
+        sourceIds: [
+          'mazar-2005-chronology',
+          'naaman-2014-davids-palace-millo',
+          'mazar-2009-palace-of-king-david',
+        ],
+      },
+      {
+        id: 'view-millo-other-unknown',
+        label: 'Another or unrecoverable referent',
+        summary:
+          'Other readings take “Millo” (from a root meaning “to fill”) as referring to some other fill/terrace/rampart construction, possibly reused as a term at other sites and periods (2 Kings 12:20 names a “Millo” at a much later date), or regard the precise structure it names here as no longer recoverable.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The terrace geometry this scene does render (TerraceWalls.tsx, the eastern-slope ground the Millo question is about) is explicitly not adopted as an identification — see the render policy above and the b-millo card, which states what the word probably means (something like the filling), what has been proposed, and that the project has not chosen. Queue #22 researcher pass (2026-08-24): the stepped-stone/terrace proposal now carries a real named proponent (Na’aman 2014) rather than only the general chronology-debate source (mazar-2005-chronology) it previously borrowed, plus Eilat Mazar’s own excavation report of the structure itself (mazar-2009-palace-of-king-david, also newly cited on claim-jebusite-stronghold-form for the adjoining Large Stone Structure). Basis and confidence stay design-placeholder/speculative — this claim is fundamentally about the scene’s render policy (no element labeled “the Millo”), and a stronger citation for one identification proposal is a reason to keep that policy, not to relax it: rendering toward Na’aman’s proposal would still be adopting one contested identification over “another or unrecoverable referent,” which stays equally live.',
+  },
+  {
+    id: 'claim-gihon-spring',
+    statement:
+      'The Gihon, Jerusalem’s principal water source, is located at the foot of the City of David ridge’s eastern slope, outside the line of any stronghold circuit rendered in this scene.',
+    basis: 'archaeology',
+    confidence: 'high',
+    sourceIds: ['rainey-notley-2006', 'reich-shukron-2000-gihon-tunnels'],
+    notes:
+      'The spring’s existence and general location are well established archaeologically; its rendered form here is a disclosed placeholder — a modest outflow basin and flat water plane, using gibeon-pool’s exact convention (shallow depression, minimally-lit water plane, no shader). No water system of any kind renders: no shaft, tunnel, channel, or monumental spring fortification. The excavated spring defenses at the Gihon are real archaeological features, but their standing state and use in this specific window (the early tenth century BCE) remains a question this project has not fully researched; queue #22’s pass (2026-08-24) added reich-shukron-2000-gihon-tunnels, which does cover the Gihon rock-cut water-system complex generally (the Rock-Cut Pool, the Round Chamber, Channels II/III, and the Warren’s Shaft system) and dates the shaft’s stepped-tunnel accessibility to Iron Age II — later than this scene’s tenth-century BCE setting — but the broader question of what spring-adjacent defenses, if any, stood and were in use in David’s own time stays unresearched. Until that changes, nothing monumental renders at the spring, and this claim does not adopt any specific excavated spring-defense structure. Cross-references claim-tsinnor-crux — the spring is the tsinnôr card’s home precisely because it is the one place the dispute is about, and nothing rendered here resolves it.',
+  },
+  {
+    id: 'claim-jerusalem-terrain-form',
+    statement:
+      'The scene renders a narrow, steep-sided ridge between two valleys (the Kidron falling away to the east, a shallower valley to the west), rising to a saddle at its north end — a disclosed terrain approximation, not a survey, modeled on the same disclosure claim-gibeon-terrain-form already establishes.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'The landform’s broad shape (narrow ridge, valley on each side, water source at the eastern foot, rising north) is well established by historical geography (rainey-notley-2006) and is the argument the scene exists to make (Historical intent #2); its exact profile, dimensions, and vegetation distribution are this project’s own disclosed approximation, not DEM-derived or surveyed. Palette and vegetation vocabulary are carried over from hebron-anointing’s Judean-highland material language (limestone, terracing, olive) rather than inventing a new one for this scene — the landform is new, the region is not.',
+  },
+  {
+    id: 'claim-stronghold-cast-scale',
+    statement:
+      'This scene renders roughly 40–60 figures for David’s force (an approach column at the capture beats, redistributed as an occupying presence afterward), roughly 25–40 for the Jebusite stronghold population, roughly 10–15 for Hiram’s craftsmen, and roughly 20–30 for the ambient settlement after the occupation — disclosed design counts, not headcounts the text gives, at a high-tier total below gilboa-battle’s measured band.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-covenant-cast-scale and claim-gate-cast-scale: 2 Samuel 5 narrates no count for David’s force, the Jebusites, or Hiram’s workmen, so — as at gilboa-battle and claim-judah-assembly-scale — no ratio is claimed. The Jebusite population figure is itself a historical statement and is disclosed as one: rendering a populous city would silently take the maximalist side of the extent dispute this scene carries openly (see claim-jebusite-stronghold-form). Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s high-tier instance count while that scene’s real-hardware performance check remains open (docs/next-run.md).',
+  },
+  {
+    id: 'claim-philistine-reaction',
+    statement:
+      'The narrative states that when the Philistines heard David had been anointed king over Israel, they went up to seek him; David heard of it and went down to "the stronghold" (2 Samuel 5:17).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'master-2021-philistines-highlands'],
+    scholarlyViews: [
+      {
+        id: 'view-stronghold-unspecified',
+        label: 'Which stronghold is left unnamed',
+        summary:
+          'The text does not name which stronghold David goes down to here — a return to a wilderness stronghold from his fugitive years, or the Jerusalem stronghold just taken in 5:6-9, are both proposed readings; this scene stages neither, since the ground itself is not built here (jerusalem-stronghold covers that geometry separately).',
+        confidence: 'low',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+      {
+        id: 'view-chapter-topical-arrangement',
+        label: 'The chapter’s arrangement may be topical, not strictly chronological',
+        summary:
+          'Whether 5:17-25 follows or precedes the events of 5:1-16 in real time is disputed; the chapter may group David’s early-reign material by subject rather than sequence. This project takes no position, and the disclosure is shared verbatim with jerusalem-stronghold’s closing card.',
+        confidence: 'low',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'Card-only (b-philistines-hear); no geometry stages this beat. The anointing-as-trigger reading (Historical intent #1) is the narrative’s own logic: a Judahite kinglet at Hebron was tolerable (1 Samuel 27 has David as Achish’s client), but a king over all Israel is a strategic problem the Philistines act on immediately. Cross-references claim-jerusalem-capture (jerusalem-stronghold) without asserting a chronological relationship to it. master-2021-philistines-highlands is cited as independent comparative-archaeological support that Philistine activity reaching into the central highlands in roughly this chronological window is a defensible scholarly position — it argues for highland raiding activity generally, not for this specific campaign, and this claim does not extend it beyond that.',
+  },
+  {
+    id: 'claim-rephaim-first-engagement',
+    statement:
+      'The narrative states that the Philistines came and spread themselves in the Valley of Rephaim (5:18); David inquired of the LORD, who answered that he would give the Philistines into his hand (5:19); David came to Baal-perazim and struck them there, saying "the LORD has broken through my enemies before me, like a breaking through of water" — from which the place was named Baal-perazim (5:20); and the Philistines left their images there, which David and his men carried away (5:21).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'mccarter-1984-ii-samuel'],
+    scholarlyViews: [
+      {
+        id: 'view-images-carried-mt',
+        label: 'Masoretic text: carried away',
+        summary:
+          'The Hebrew text of 5:21 has the Philistines abandon their images and David’s men carry them off (nasaʼ, "lift, carry, take away").',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-images-burned-chronicles',
+        label: '1 Chronicles 14:12: burned',
+        summary:
+          'The parallel account in 1 Chronicles 14:12 has David order the abandoned images burned instead — a real divergence between the two accounts of the same episode, in the same register as hebron-reckoning’s 4:6 MT/LXX handling.',
+        confidence: 'moderate',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'Staged as formation movement read at documentary distance (`b-spread`, `b-engagement-1`) — no melee choreography, no fight-stance pose buckets, falls at silhouette distance only in standard mode, elided entirely in reduced mode (ADR-009; see claim-rephaim-cast-scale\'s performance note and poses.ts\'s `philistineBreakPose`). The inquiry (5:19) is staged as a small, still, waiting group with no apparatus (claim-inquiry-depiction). Baal-perazim’s position is a disclosed placeholder within the valley setting, not a located site — no LocationEntry, no atlas pin (Resolved design calls). No cult iconography renders for the images (5:21); if anything renders at all it is undifferentiated covered loads, per the brief’s "preferably nothing renders." Queue #22 researcher pass (2026-08-24): checked whether Baal-perazim itself has any serious proposed location. Found only old, tertiary Bible-dictionary guesses (Sharafat, Ramat Rahel, Deir Abu Tor, a site northwest near Sheikh Bedr) with no excavation, no named academic proponent, and no peer-reviewed argument behind any of them — this confirms rather than closes the gap, and is the expected "no serious candidate" outcome per the #13/#19c permanent-evidentiary-state pattern. The no-LocationEntry/no-atlas-pin decision stands as the correct call, not merely the cautious one.',
+  },
+  {
+    id: 'claim-rephaim-second-engagement',
+    statement:
+      'The narrative states that the Philistines came up yet again and spread themselves in the Valley of Rephaim (5:22); David inquired of the LORD, who this time answered not to go up directly but to circle around, come at them opposite the balsam trees, and wait for the sound of marching in the tops of the trees as the signal to go out and strike, "for then the LORD has gone out before you to strike down the army of the Philistines" (5:23-24); David did as the LORD commanded and struck the Philistines from Geba (Septuagint and 1 Chronicles 14:16: Gibeon) to Gezer (5:25).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'mccarter-1984-ii-samuel'],
+    scholarlyViews: [
+      {
+        id: 'view-pursuit-geba-mt',
+        label: 'Masoretic text: from Geba',
+        summary: 'The Hebrew text of 5:25 reads the pursuit running "from Geba" to Gezer.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-pursuit-gibeon-variant',
+        label: 'Septuagint / 1 Chronicles 14:16: from Gibeon',
+        summary:
+          'The Septuagint and the parallel in 1 Chronicles 14:16 read "from Gibeon" instead — the already-released `gibeon` location this project has built — without this project asserting which reading is original.',
+        confidence: 'moderate',
+        sourceIds: ['mccarter-1984-ii-samuel'],
+      },
+    ],
+    notes:
+      'The deliberate non-repeat of the first engagement (Historical intent #2) is staged, not merely captioned: the same Philistine spread on the same valley floor, met this time by a flanking march (`b-circling`, a single shared route curve with per-figure offsets, the hebron-gate procession pattern) to a position opposite the grove, then a held wait (`b-sound`) before the converging attack (`b-engagement-2`, same restraint and distance as `b-engagement-1`). The sign itself (5:24) is stated by caption and by stillness only — see claim-divine-sign-depiction, the load-bearing constraint of this scene (fable-review-queue #24). The pursuit (5:25b) is a card, not geometry, per the Geba/Gibeon corridor being unstageable honestly at this scene’s scale; it cross-references the released `gibeon` location without asserting the variant.',
+  },
+  {
+    id: 'claim-inquiry-depiction',
+    statement:
+      'This scene renders no divination apparatus at either inquiry beat (5:19, 5:23) — no ephod, no lots, no Urim/Thummim, no priest, no altar, no shrine. Both inquiries are staged as a small, still, waiting group set apart from the wider force; the caption alone carries the question and the answer, in the text’s own words.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      '5:19 and 5:23 say only that David inquired of the LORD and that the LORD answered — no mechanism is named here. 1 Samuel 23:9 and 30:7 do mention an ephod at other inquiries; importing that apparatus into this scene, where the text does not mention it, would be exactly the harmonization-as-anachronism this project’s method rejects (docs/reconstruction-method.md). This claim’s disclosure is the policy, not a staging license: recording that other passages describe an ephod is not grounds to render one here.',
+  },
+  {
+    id: 'claim-divine-sign-depiction',
+    statement:
+      'The scene states the sign of 5:24 — the sound of marching in the tops of the balsam trees — by caption and by a held, motionless wait among ordinary trees, and renders no visual or audio effect depicting it: no wind burst, no light, no canopy motion staged as a signal, and no camera language implying a presence, at this beat or anywhere else in the scene.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This is the scene’s single most load-bearing constraint, escalated for ratification as fable-review-queue #24 (a new precedent for the project). Rendering a supernatural effect would assert as observed fact something for which no observational basis exists, and would slide the project into the sanitized-illustration genre it defines itself against (Historical intent #3). In this engine, the grove’s canopies are static instanced geometry with no foliage-sway/wind system at all (see `Grove.tsx`), so there is nothing to "freeze" for the beat beyond simply not building any such system — the absence of animation is the whole mechanism. Lighting is flat and unchanging through the entire scene timeline (no beat-driven lighting arc anywhere in this scene, unlike some others in the project) specifically so the wait beat cannot be read as staged under a dawn/dusk/dramatic cue.',
+  },
+  {
+    id: 'claim-rephaim-terrain-form',
+    statement:
+      'The scene renders a broad, open valley floor with a rising highland rim along its western side — a disclosed terrain approximation, not a survey, modeled on the same disclosure claim-gibeon-terrain-form/claim-jerusalem-terrain-form already establish.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006'],
+    notes:
+      'The valley’s broad identification and general orientation (a corridor running up toward Jerusalem’s western approaches, southwest of the city) is a standard historical-geography reading (rainey-notley-2006); this scene’s exact landform profile, dimensions, and vegetation distribution are this project’s own disclosed approximation, not DEM-derived. Palette and vegetation vocabulary are carried over directly from hebron-anointing/jerusalem-stronghold’s Judean-highland material language — the landform is new, the region is not. No Jerusalem geometry renders anywhere in this scene, not even an undetailed horizon ridge (stricter than the brief’s "at most" allowance), because the order-of-events disclosure (shared with jerusalem-stronghold, see claim-philistine-reaction) would be undermined by rendering the capital in any particular state here. Queue #22 researcher pass (2026-08-24): checked for coverage beyond rainey-notley-2006 and found a genuine, recent (2024-2025) named challenge to the standard identification itself — Sabine Kleiman (Scandinavian Journal of the Old Testament 39/1 [2024]: 45-59) argues the valley may lie much farther southwest, near the Elah Valley closer to Gath, reviving a 19th-century proposal by explorer Claude Conder. This is disclosed on the valley-of-rephaim LocationEntry’s identification.views as a genuinely contested, low-confidence minority position (identification.disputed now true) rather than folded into this claim’s own terrain-form text — the standard Jerusalem-adjacent identification stays the project’s default and this scene’s setting, unchanged, since a newly published minority proposal is not grounds for a geometry change on its own; see kleiman-2024-valley-of-rapha’s source card for why this stays disclosed rather than adopted.',
+  },
+  {
+    id: 'claim-bakaim-grove',
+    statement:
+      'The scene renders the bĕkāʾim of 5:23-24 as a generic small-canopy dryland grove with no species asserted — not mulberry (Morus, a later-introduction risk) and not a distinctive resin/balsam tree form.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'borowski-1987', 'zohary-1982-plants-of-the-bible'],
+    notes:
+      'The bĕkāʾim are an unidentified plant; English versions render "balsam" or "mulberry," and the identification is a guess in either case (mccarter-1984-ii-samuel treats the term as obscure). borowski-1987 is the citation path for regional Iron Age flora and agriculture in general, not for a specific identification of this tree — this claim does not adopt one. The grove is deliberately small, ordinary, and visually unremarkable (Grove.tsx), on the valley’s flank rather than its middle, and is never staged, lit, or animated in a way that reads as the divine sign itself (claim-divine-sign-depiction). Queue #22 researcher pass (2026-08-24): checked against a dedicated botanical scholarly source, Zohary’s Plants of the Bible (1982), rather than only general commentaries. Confirms the crux as genuine rather than under-researched: the name’s root (weeping/dripping) favors a resin-producing tree (the “balsam” family of readings), the King James “mulberry” rendering is weak on both botanical grounds (Morus is a later introduction to the region) and textual grounds (mulberry leaves do not rustle the way the text’s “sound of marching in the tops of the trees” implies), and a poplar identification (Populus euphratica, whose leaves do audibly rustle) has also been proposed on that same detail. This adds a third candidate to the record without resolving the crux; this project still asserts no species, and specifically does not adopt the poplar proposal either, consistent with the brief’s no-mulberry/no-distinctive-balsam-form placeholder policy.',
+  },
+  {
+    id: 'claim-rephaim-cast-scale',
+    statement:
+      'This scene renders roughly 55–70 figures for the Philistine force and roughly 45–60 for David’s force at high quality tier — the same instanced population in each case, repositioned and reused across both phases, never doubled — plus David and 3–4 unnamed companions at the inquiry beats. High-tier total ≈ 110–140 figures, at or below gilboa-battle’s measured band, and materially cheaper per figure than that scene (no fight-stance pose buckets; formation movement along shared route curves instead).',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Parallel in form to claim-gate-cast-scale/claim-stronghold-cast-scale: 2 Samuel 5:17-25 narrates no count for either side, so — as at gilboa-battle (claim-battle-scale, cited here only as the precedent for representative-not-complete staging, not for its derived ~3,000-combatant chain, which is specific to Gilboa and is not reused or extended here) — no ratio is claimed; the staging is disclosed as representative. Register #4 (the scale of David’s early state is genuinely contested, claim-david-historical) further forbids implying a national army on either side. Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s high-tier instance count while that scene’s real-hardware performance check remains open (docs/next-run.md) — measured at build time at roughly 131 figures (68 Philistine + 58 David’s force + 5 principals) at the high tier, well under Gilboa’s measured ~330.',
+  },
+  {
+    id: 'claim-atlas-m6-phase',
+    statement:
+      'The /atlas page’s M6 phase toggle (2 Samuel 5) merges the two regions carried since M4/M5 (the house of Judah; the former Israel-writ, headless since M5) into one soft-shaded region under a single king, and moves the capital marker from Hebron to Jerusalem. The merge is captioned as a change of allegiance under one king — the covenant and anointing of 5:1–3 — not as a mapped territorial extent: no new region border, outline, or extent geometry is drawn, and the merged region’s shape carries over the same soft, unbordered, blurred-ellipse form claim-divided-kingdom-atlas-overlay already establishes. Jerusalem is plotted at its own secure identification coordinates; the separate, disputed question of how large or developed tenth-century Jerusalem actually was stays in the claim layer, not on the map.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This overlay’s own M6 extension of claim-divided-kingdom-atlas-overlay, added as a third page-level phase per claim-atlas-m5-phase’s precedent — cross-references, rather than re-derives, already-built M6 scene claim text: claim-all-israel-covenant (5:1–3, the covenant and anointing that is this merge’s entire textual basis), claim-jerusalem-capture (5:6–7, the site the capital marker now points to), claim-city-of-david-naming (5:7, 9, the renaming that makes the marker’s label accurate), and claim-jerusalem-terrain-form (the secure ridge identification the marker’s coordinates use). The extent dispute this claim explicitly keeps off the map is carried instead by claim-jebusite-stronghold-form — that claim’s scholarlyViews (a modest stronghold vs. a more substantial administrative center) are not summarized, previewed, or resolved here; this page only points to where they live. The capital marker itself (M6_CAPITAL_ID, DividedKingdomMap.tsx) is a ring around Jerusalem’s existing point plus a "(capital)" label suffix — no fill, no shading, no geometry of its own, deliberately the more conservative of the visual options considered (a filled capital-city icon or a distinct larger dot were set aside as reading too much like an asserted urban footprint). The merged region’s locationIds carry over the M4/M5 phases’ anchor points unchanged (mahanaim, mount-gilboa, beth-shan, jabesh-gilead, hebron, ziklag) plus jerusalem itself, added because the new capital now shares the same allegiance the shading represents; the Valley of Rephaim (valley-of-rephaim, rephaim-valley’s setting) is deliberately excluded from that shaded region — it is a contested Philistine engagement site, not a place named in any writ-list, and is instead plotted at full emphasis outside the shaded region, the same "contested ground, not a claimed side" treatment M4 gives Gibeon. This phase also carries the order-of-events disclosure 2 Samuel 5 itself requires and shares with rephaim-valley’s closing card (claim-philistine-reaction’s topical-arrangement scholarlyView, fable-review-queue #21/#23 note the same guard): plotting both Jerusalem and the Valley of Rephaim on this map does not assert that the capture of 5:6–16 precedes the campaigns of 5:17–25 or vice versa — the chapter’s arrangement may be topical rather than strictly chronological, and this map takes no position. Same dismissible-toggle/optional-visit ADR-011 discipline as the M4/M5 phases; the phase toggle defaults to M4 so a first-time visitor sees the already-reviewed 2:8–11 map unless they choose to look further. Mahanaim’s disputed-identification note (both candidate sites) and Hebron’s secure identification carry forward unchanged in this phase too, now shown for orientation only rather than as a rival capital.',
   },
 ];
 

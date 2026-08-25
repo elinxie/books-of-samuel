@@ -58,4 +58,27 @@ describe('DividedKingdomMap (divided-kingdom atlas overlay, 2 Sam 2:8-11)', () =
     );
     expect(hebronDot?.getAttribute('stroke')).toBe('none');
   });
+
+  it('renders no capital marker when capitalId is left unset (the M4/M5 default)', () => {
+    render(<DividedKingdomMap locations={LOCATIONS} showShading />);
+    expect(screen.queryByTestId('atlas-capital-marker')).not.toBeInTheDocument();
+  });
+
+  it('renders a fill-less ring around the given capitalId, and only that location', () => {
+    const { container } = render(
+      <DividedKingdomMap locations={LOCATIONS} showShading capitalId="jerusalem" />,
+    );
+    const marker = screen.getByTestId('atlas-capital-marker');
+    expect(container.querySelector('[data-testid="atlas-point-jerusalem"]')?.contains(marker)).toBe(
+      true,
+    );
+    expect(marker.getAttribute('fill')).toBe('none');
+    // No second ring anywhere else on the map.
+    expect(container.querySelectorAll('[data-testid="atlas-capital-marker"]').length).toBe(1);
+    // The point's own label discloses the capital role in text, too.
+    expect(
+      container.querySelector('[data-testid="atlas-point-jerusalem"] .atlas-point-label')
+        ?.textContent,
+    ).toMatch(/\(capital\)/);
+  });
 });

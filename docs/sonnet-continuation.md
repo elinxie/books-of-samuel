@@ -34,10 +34,11 @@ stale or already done, pick the next smallest coherent item from:
 - `docs/progress.md` (open milestone goals), or
 - the `planned` entries in `src/data/features.ts`, ordered by milestone.
 
-**Do not require Fable** unless the task is listed in `docs/fable-review-queue.md`
-as needing Fable-level judgment, or falls under "Fixed for now" in
-`docs/model-handoff.md`. If it does and Fable isn't available, implement the most
-defensible option, mark it provisional, and add/update the queue entry.
+**Do not invoke Fable — see `CLAUDE.md`'s "Model policy — do not invoke Fable."**
+For anything listed in `docs/fable-review-queue.md` as needing review-tier
+judgment, or falling under "Fixed for now" in `docs/model-handoff.md`: implement
+the most defensible option yourself, mark it provisional, and add/update the
+queue entry. Don't wait on or retry a different model for this.
 
 ## 4. Implement
 

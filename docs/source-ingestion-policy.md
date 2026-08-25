@@ -60,8 +60,9 @@ because:
 
 If a future milestone wants full passage text in-app, implement it against
 Crossway's ESV API (https://api.esv.org) with compliant attribution, not by pasting
-static text — this is tracked as feature `f-esv-api` and should go through a Fable
-review first (changing the source-ingestion policy is on the Fable review queue).
+static text — this is tracked as feature `f-esv-api` and should go through a
+deliberate review-tier pass first (changing the source-ingestion policy is on
+the review queue, `docs/fable-review-queue.md`).
 
 ## Adding a new source: checklist
 

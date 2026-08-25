@@ -19,10 +19,13 @@ export type ViolenceMode = 'standard' | 'reduced';
  * Which phase of the /atlas divided-kingdom overlay is shown: `m4` is the
  * original 2 Samuel 2:8–11 writ-split (claim-divided-kingdom-atlas-overlay);
  * `m5` is the 2 Samuel 3–4 extension (claim-atlas-m5-phase) — the long-war
- * trend caption plus the Israel-writ region's "no king" treatment. Defaults
- * to `m4` so a first-time visitor sees the already-reviewed map first.
+ * trend caption plus the Israel-writ region's "no king" treatment; `m6` is
+ * the 2 Samuel 5 extension (claim-atlas-m6-phase) — the two regions merge
+ * into one under a single king and the capital marker moves from Hebron to
+ * Jerusalem. Defaults to `m4` so a first-time visitor sees the
+ * already-reviewed map first.
  */
-export type AtlasPhase = 'm4' | 'm5';
+export type AtlasPhase = 'm4' | 'm5' | 'm6';
 
 export interface TeleportTarget {
   position: [number, number, number];

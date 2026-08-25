@@ -25,8 +25,9 @@ Then:
 8. Commit.
 9. Leave a concise next-run note.
 
-Do not require Fable unless the task is listed in `/docs/fable-review-queue.md` as
-needing Fable-level judgment, or is listed under "Fixed for now" in
-`/docs/model-handoff.md`. If Fable is genuinely needed but unavailable, implement
-the most defensible option, mark it provisional in the relevant claim/doc, add it
-to `/docs/fable-review-queue.md` if not already there, and keep moving.
+**Do not invoke Fable — see `CLAUDE.md`'s "Model policy — do not invoke Fable."**
+For anything listed in `/docs/fable-review-queue.md` as needing review-tier
+judgment, or listed under "Fixed for now" in `/docs/model-handoff.md`: implement
+the most defensible option yourself, mark it provisional in the relevant
+claim/doc, add it to `/docs/fable-review-queue.md` if not already there, and
+keep moving.

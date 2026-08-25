@@ -91,13 +91,13 @@ different chat, with no memory of prior conversations — everything needed is
 version-controlled.
 
 ```bash
-# Baseline architecture / major review (use sparingly — see docs/model-handoff.md)
-claude --model claude-fable-5
-# then: use the /continue-samuel command
-
 # Normal day-to-day development
 claude --model claude-sonnet-5
 # then: use the /continue-samuel-sonnet command
+
+# Architecture / major-review work (still Sonnet — see CLAUDE.md's
+# "Model policy — do not invoke Fable")
+# then: use the /continue-samuel command
 
 # Inside a running session
 /model
@@ -105,13 +105,13 @@ claude --model claude-sonnet-5
 ```
 
 Model switches do not persist automatically across sessions — set explicitly each
-time. If neither Fable nor Sonnet is available, any competent coding-capable model
-can follow `docs/sonnet-continuation.md` directly.
+time. **Fable is not used on this project** (user directive, 2026-08-24; see
+`CLAUDE.md`). If Sonnet is unavailable, any competent coding-capable model can
+follow `docs/sonnet-continuation.md` directly.
 
-**Start with `docs/model-handoff.md`** for what's fixed vs. changeable, and a
-concrete policy for what to spend Fable's more limited availability on versus what
-routine coding-model work (Sonnet or otherwise) can handle. `docs/next-run.md`
-always names the next concrete task.
+**Start with `docs/model-handoff.md`** for what's fixed vs. changeable, and for
+which work deserves a slower, more deliberate review-tier pass versus routine
+coding-model work. `docs/next-run.md` always names the next concrete task.
 
 ## Scripture and permissions
 

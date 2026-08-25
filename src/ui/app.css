@@ -27,6 +27,8 @@
   /* Atlas overlay allegiance regions (soft shading only, never a border). */
   --region-israel: #5b8fc4;
   --region-judah: #c29433;
+  /* M6: the two regions above merge under one king (claim-atlas-m6-phase). */
+  --region-united: #9a7548;
 
   --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -556,6 +558,14 @@ h3 {
 }
 .atlas-point-dot.conf-speculative {
   fill: var(--conf-speculative);
+}
+.atlas-capital-ring {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+.atlas-point-label-capital {
+  fill: var(--accent);
+  font-weight: 600;
 }
 
 /* ---------- Observer HUD ---------- */

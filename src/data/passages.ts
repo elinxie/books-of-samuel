@@ -114,6 +114,37 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M5',
     status: 'released',
   },
+  {
+    id: '2sam-5',
+    book: '2 Samuel',
+    chapter: 5,
+    reference: '2 Samuel 5',
+    translationAnchor: 'ESV',
+    summary:
+      'All Israel comes to David at Hebron and anoints him king over the united kingdom; the reign is divided between Hebron and Jerusalem. David and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it the city of David, building from the Millo inward. Hiram of Tyre sends cedar, carpenters, and masons to build him a house; more sons are born to him there; and the chapter closes with the Philistines’ response to his kingship in the Valley of Rephaim.',
+    // Shared between jerusalem-stronghold (5:1-16) and rephaim-valley
+    // (5:17-25) — see docs/design/jerusalem-stronghold-brief.md and
+    // docs/design/rephaim-valley-brief.md. ESV excerpt budget: this
+    // passage's 3-quote handful is now fully spent — jerusalem-stronghold
+    // used two (5:6b's taunt, 5:8a's tsinnôr clause); rephaim-valley (built
+    // 2026-08-24) uses the third and last, 5:24's sound in the balsam
+    // trees, quoted below and in that scene's b-sound beat caption. Exact
+    // ESV wording could not be live-verified this session (this sandbox's
+    // outbound access does not reach Bible-text sites and no WebSearch tool
+    // was available in this session, unlike the jerusalem-stronghold build)
+    // — entered from the build agent's own recollection of a well-known
+    // verse, flagged here per the #19(b) precedent for a live-source check
+    // before this passage/scene flips to `released`.
+    keyExcerpts: [
+      {
+        verse: '2 Samuel 5:24',
+        text: 'the sound of marching in the tops of the balsam trees',
+      },
+    ],
+    sceneIds: ['jerusalem-stronghold', 'rephaim-valley'],
+    milestoneId: 'M6',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

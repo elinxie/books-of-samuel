@@ -1753,3 +1753,94 @@ citation load makes it worth building and reviewing first), then
 `rephaim-valley`, then the `/atlas` M6 phase. Real-hardware `gilboa-battle`
 perf check and the Pages-live check remain open, unchanged, still blocked
 from this sandbox.
+
+## 2026-08-24 — M6 build: both scenes + atlas extension + researcher pass, Sonnet-fallback sign-off (scheduled/automated session, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
+
+Baseline verified clean first (`npm install`; `npm run verify`'s e2e leg
+needed `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+— the pinned Playwright version expects a `1228` browser build not
+preinstalled here; `1194` is — 12/12 e2e green once pointed there). All four
+M6 items built by dispatched subagents, each independently re-verified by
+this orchestrating session (full gate re-run + targeted greps for every
+brief's "Not allowed" list) before pushing, not just taken from the build
+agent's own report:
+
+- **`jerusalem-stronghold`** (`e1350dd`, `threejs-engineer`) — 2 Sam 5:1–16.
+  ~120 figures high-tier (David's force ~50, Jebusites ~32, Tyrian
+  craftsmen ~12, ambient ~25, David). New location `jerusalem`; 11 new
+  claims; new characters `jebusites`/`hiram`/`tyrian-craftsmen`; new passage
+  `2sam-5` (spends 2 of its 3-quote ESV budget: 5:6b, 5:8a). `depictsDeath:
+false`. Grepped clean for shaft/tunnel/hook geometry, Joab, Hebron
+  geometry, and any 2 Sam 6+ term. Gate: 509 vitest, 13/13 e2e.
+- **`rephaim-valley`** (`994ec72`, `threejs-engineer`) — 2 Sam 5:17–25, one
+  scene/two phases. ~131 figures high-tier (Philistines ~68 reused across
+  both phases, David's force ~58, principals 5). New location
+  `valley-of-rephaim` (Baal-perazim deliberately gets no `LocationEntry`);
+  8 new claims; reuses `philistines`/`david`/`davids-band`, no new named
+  characters. Spends `2sam-5`'s third quote (5:24). `depictsDeath: true`,
+  standard/reduced-mode fork on both engagement beats, no fight-stance pose
+  buckets. Grepped clean for divination apparatus, wind/light/canopy-signal
+  language, Joab/Abishai, triumphal staging, and any 2 Sam 6+ term. Gate:
+  536 vitest, 15/15 e2e.
+- **Atlas M6 phase** (`b8e4e1c`, `ui-engineer`) — third `DividedKingdomMap`
+  phase: the M4/M5 regions merge into one under a single king, capital
+  marker moves Hebron→Jerusalem. New `claim-atlas-m6-phase`
+  (cross-references, doesn't restate, the scene claims). M4/M5 phases
+  confirmed pixel-unchanged (regression assertions in
+  `AtlasPage.test.tsx`/`DividedKingdomMap.test.tsx`). Merge captioned as
+  allegiance change, not territorial extent — grepped clean for stray
+  border/extent language. Gate: 546 vitest, 16/16 e2e.
+- **Queue #22 researcher pass** (`00d17b7`, `researcher`) — closed the
+  Jerusalem-period source-card gap cluster; 7 new source cards,
+  `mccarter-1984-ii-samuel` extended to 2 Sam 5. Full detail in
+  `docs/fable-review-queue.md`'s #22 Resolved row. Agent had no shell tool
+  this session (same limitation as the 2026-08-02 #19 pass) — hand-built
+  `source-index.json` matched exactly what `npm run build:sources` produced
+  when this session ran it for real; two prettier issues fixed before
+  commit. `claim-jebusite-stronghold-form` raised
+  design-placeholder/speculative → scholarly-reconstruction/low (no
+  geometry change; both poles of the extent dispute now real citations).
+  `valley-of-rephaim` gained `identification.disputed: true` (Kleiman 2024).
+
+**Fable M6 sign-off: `fable-architect` hit its monthly spend limit on the
+first call** (recurring — see 2026-07-22, 2026-08-10). Per
+`docs/model-handoff.md`'s fallback, this session ran the sign-off itself:
+confirmed #21 and #23 as built (independently re-checked against the actual
+committed code, not just the queue's own framing), left #24 (the narrated
+divine-sign depiction policy) open as genuinely Fable-tier — writing an ADR
+under a fallback is exactly the kind of call the policy says to escalate,
+not absorb. **No status flips made** — `jerusalem-stronghold`,
+`rephaim-valley`, the atlas M6 phase, `2sam-5`, `jerusalem`,
+`valley-of-rephaim`, `M6` all stay short of `released`, per the
+model-handoff rule that a flagged open provisional decision holds the
+status. Full detail and reasoning: `docs/fable-review-queue.md`'s
+2026-08-24 note. A `performance-reviewer` pass on both new scenes (neither
+build agent ran one, though both briefs asked for one) was dispatched
+immediately after and is the last item this session did — see below.
+
+**`performance-reviewer` pass (`28f517b`), dispatched after the sign-off
+note above was written: found and fixed one real issue in each scene** —
+`jerusalem-stronghold/poses.ts`'s `davidsForcePose` and
+`rephaim-valley/poses.ts`'s `sampleCurvePose` both called
+`curve.getPointAt`/`getTangentAt` with no `optionalTarget`, allocating two
+throwaway `Vector3`s per figure per frame. Real GC pressure during exactly
+the beat `rephaim-valley`'s brief flagged as "the only real risk in this
+scene" (the flanking march, ~45-60 figures, sustained multi-second window).
+Fixed by hoisting scratch vectors to module scope — the same
+`tmpVec`/`tmpTan` pattern already used in `ziklag/ReturningMen.tsx` and
+`ziklag-lament/poses.ts`. No behavior change (existing `poses.test.ts`
+covers the pure functions); independently re-verified by this session:
+546 vitest, 16/16 e2e, clean build, bundle size unaffected. Everything else
+checked out clean (terrain budgets, instancing, static-crowd baking,
+quality-tier scaling, no fight-stance buckets) — full detail in the
+agent's own report if needed later.
+
+Draft PR #67 tracks all of this on `claude/focused-mccarthy-m17xzl`.
+User notified via push notification of the Fable outage and the fallback
+plan mid-session.
+
+**Next session's first priority: a real Fable M6 sign-off** once the spend
+limit resets — rule on #24 first (ratify as-is / revise / promote to its
+own ADR, since it will recur from 2 Samuel 6 onward), then re-confirm
+#21/#23 and execute the release cascade if everything still holds. See
+`docs/next-run.md` for the full next-run note.

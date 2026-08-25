@@ -287,6 +287,78 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'planned',
   },
+  {
+    id: 'jerusalem',
+    name: 'Jerusalem',
+    altNames: ['Jebus', 'stronghold of Zion', 'City of David'],
+    region: 'Southeastern ridge above the Kidron valley, on the Judah-Benjamin boundary',
+    summary:
+      'The Jebusite stronghold David takes and makes his capital (2 Samuel 5:6-9) — a narrow ridge belonging to no tribe, with its water source, the Gihon, at the foot of its eastern slope. Identified with the southeastern ridge (the City of David) south of the later Temple Mount.',
+    identification: {
+      // The site itself is secure; the character and extent of the
+      // 10th-century settlement on it is disputed, and that dispute is
+      // carried in the claim layer (claim-jebusite-stronghold-form), not
+      // here, per the brief's explicit instruction.
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-jerusalem',
+          label: 'The southeastern ridge (City of David)',
+          summary:
+            'Standard identification of the Jebusite stronghold and earliest Jerusalem with the narrow ridge south of the present Temple Mount, above the Kidron valley and the Gihon spring — one of the more securely located sites in Samuel.',
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.7739, lon: 35.2358, confidence: 'high' },
+    sceneIds: ['jerusalem-stronghold'],
+    claimIds: [],
+    status: 'in-progress',
+  },
+  {
+    id: 'valley-of-rephaim',
+    name: 'Valley of Rephaim',
+    altNames: ['Emek Refaim'],
+    region: 'Open plain southwest of Jerusalem, on the corridor toward the coastal plain',
+    summary:
+      "Where the Philistines twice deployed after David was anointed king over all Israel, and where he twice inquired of the LORD and struck them (2 Samuel 5:17-25). Identified with the broad plain/valley southwest of Jerusalem — the standard historical-geography reading, and a corridor that runs up toward the city's western approaches. Baal-perazim, the place David names after the first engagement, is not separately located (see claim-rephaim-first-engagement) and has no location entry of its own.",
+    identification: {
+      // Queue #22 researcher pass (2026-08-24): a genuine, recent named
+      // challenge to the standard identification was found (Kleiman 2024),
+      // so this now carries disputed: true with a second, low-confidence
+      // view. The standard identification stays the project's default and
+      // the scene's setting/coordinates are unchanged by this citation
+      // upgrade alone — see claim-rephaim-terrain-form's notes.
+      disputed: true,
+      views: [
+        {
+          id: 'loc-view-rephaim',
+          label: 'The plain southwest of Jerusalem',
+          summary:
+            "Standard identification with the open valley/plain southwest of the City of David (modern Emek Refaim), on the natural route between the coastal plain and Jerusalem's western approaches — consistent with the narrative's own logic (a force striking at the new center).",
+          confidence: 'high',
+          sourceIds: ['rainey-notley-2006'],
+        },
+        {
+          id: 'loc-view-rephaim-gath-adjacent',
+          label: 'A valley near Gath, farther southwest in the Shephelah',
+          proponents: [
+            'Sabine Kleiman (2024, Scandinavian Journal of the Old Testament 39/1: 45-59)',
+            'e.g., reviving a 19th-century proposal by Claude Conder',
+          ],
+          summary:
+            "Kleiman argues the valley the Philistines deployed in may lie much farther southwest than the traditional Jerusalem-adjacent location, closer to the Philistine city of Gath near the Elah Valley — reviving and defending Conder's older proposal placing the related site Baal-perazim near the spring 'Ain Faris, west of modern Nahalin. A newly published (2024-2025), not-yet-widely-adjudicated minority position; the traditional identification remains the field's standard reading.",
+          confidence: 'low',
+          sourceIds: ['kleiman-2024-valley-of-rapha'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.755, lon: 35.205, confidence: 'moderate' },
+    sceneIds: ['rephaim-valley'],
+    claimIds: [],
+    status: 'in-progress',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

@@ -29,6 +29,8 @@ import { GIBEON_POOL_ENTITIES } from '../scenes/gibeon-pool/entities';
 import { HEBRON_COVENANT_ENTITIES } from '../scenes/hebron-covenant/entities';
 import { HEBRON_GATE_ENTITIES } from '../scenes/hebron-gate/entities';
 import { HEBRON_RECKONING_ENTITIES } from '../scenes/hebron-reckoning/entities';
+import { JERUSALEM_STRONGHOLD_ENTITIES } from '../scenes/jerusalem-stronghold/entities';
+import { REPHAIM_VALLEY_ENTITIES } from '../scenes/rephaim-valley/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -62,6 +64,8 @@ describe('registry id uniqueness', () => {
     uniqueIds(HEBRON_COVENANT_ENTITIES);
     uniqueIds(HEBRON_GATE_ENTITIES);
     uniqueIds(HEBRON_RECKONING_ENTITIES);
+    uniqueIds(JERUSALEM_STRONGHOLD_ENTITIES);
+    uniqueIds(REPHAIM_VALLEY_ENTITIES);
   });
 });
 
@@ -331,6 +335,22 @@ describe('features and scene entities', () => {
 
   it('Hebron-reckoning entity labels resolve to claims', () => {
     for (const e of HEBRON_RECKONING_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Jerusalem-stronghold entity labels resolve to claims', () => {
+    for (const e of JERUSALEM_STRONGHOLD_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Rephaim-valley entity labels resolve to claims', () => {
+    for (const e of REPHAIM_VALLEY_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }

@@ -9,12 +9,13 @@
   "copyrightStatus": "copyrighted-limited-use",
   "allowedUseNotes": "Copyrighted monograph. Summaries in project's own words only.",
   "summary": "Urban-form study covering, among much else, the early Iron Age 'enclosed settlement' plan (dwellings ringing an open center, e.g. Beersheba VII) used as the comparative model for the Ziklag placeholder layout. Herzog's career specialty is city-gate typology (his PhD dissertation, later published in German as Das Stadttor in Israel und in den Nachbarländern, 1986, underlies this 1997 monograph's own urban-planning synthesis); the chronological gate typology consistently attributed to his work in later citing literature runs two-chamber gates as the prevalent form through the eleventh and early tenth centuries BCE, with four-chamber gates appearing only at the very end of that window and the monumental six-chamber 'Solomonic' type (Megiddo/Hazor/Gezer) emerging only in the mid-tenth century BCE and after. Queue #20b researcher pass (2026-08-12): checked specifically for this typology as a citable basis for claim-hebron-gate-form's modest two-chamber rendering (2 Samuel 3:27, hebron-gate) — found it, via multiple independent secondary sources describing Herzog's typology and citing this 1997 book by name as its source.",
-  "relevantPassages": ["1 Samuel 30", "2 Samuel 3"],
+  "relevantPassages": ["1 Samuel 30", "2 Samuel 3", "2 Samuel 5"],
   "extractedClaims": [
     "claim-oval-plan",
     "claim-ziklag-scale",
     "claim-wall-gate",
-    "claim-hebron-gate-form"
+    "claim-hebron-gate-form",
+    "claim-jebusite-stronghold-form"
   ],
-  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1). Queue #20b pass (2026-08-12): the two-chamber/four-chamber/six-chamber chronological gate typology is corroborated via secondary/web-search cross-checking (multiple independent paraphrases of Herzog's typology, one explicitly naming this 1997 book as their source), not primary-copy inspection of the monograph itself. TO VERIFY: exact page citation within the 1997 English edition for the typology and its date ranges."
+  "confidenceNotes": "Card seeded from team knowledge; page-level citations to be added during the citation verification pass (M1). Queue #20b pass (2026-08-12): the two-chamber/four-chamber/six-chamber chronological gate typology is corroborated via secondary/web-search cross-checking (multiple independent paraphrases of Herzog's typology, one explicitly naming this 1997 book as their source), not primary-copy inspection of the monograph itself. TO VERIFY: exact page citation within the 1997 English edition for the typology and its date ranges. 2026-08-24 (jerusalem-stronghold build): the same typology cited again for claim-jebusite-stronghold-form's modest two-post gateway (no monumental six-chamber gate) — this scene's gateway is deliberately even less developed than the two-chamber form already cited for claim-hebron-gate-form, so the same period-typology reasoning applies with more force, not less."
 }

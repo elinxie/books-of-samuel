@@ -37,8 +37,9 @@ version-controlled and require no external scheduler.
 ## What NOT to automate
 
 - Do not automate git pushes to `main` outside of normal PR review.
-- Do not automate anything on the Fable review queue
-  (`docs/fable-review-queue.md`) — those need a human-in-the-loop or an explicit
-  Fable session, not a scheduled Sonnet run.
+- Do not automate anything on the review queue (`docs/fable-review-queue.md`)
+  as a rubber-stamp — those items need a deliberate, human-visible pass (they
+  can run on a scheduled session, but the session must actually reason through
+  the item and document it, not skip or auto-resolve it).
 - Do not automate ESV text ingestion beyond the excerpt budget without a human
   re-reading `docs/source-ingestion-policy.md` first.

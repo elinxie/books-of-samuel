@@ -11,21 +11,16 @@ session ended abruptly), and the open PR diff for any in-flight branch.
 1. Go to `claude.ai/code`, pick this repository (`elinxie/books-of-samuel`),
    and start a new session. The default environment works; no setup script is
    required beyond `npm install` (the session will run it itself).
-2. **Pick the model by task tier** (see `docs/model-handoff.md`):
-   - Day-to-day implementation → **Sonnet**.
-   - Items in `docs/fable-review-queue.md`, milestone sign-off, or new-scene
-     creative direction → **Fable** (spend sparingly; it should delegate
-     routine execution to Sonnet subagents rather than doing chores itself).
+2. **Use Sonnet** for everything — day-to-day implementation, milestone
+   sign-off, new-scene creative direction, and items in
+   `docs/fable-review-queue.md` alike. Fable is not used on this project (see
+   `CLAUDE.md`'s "Model policy — do not invoke Fable"); the model tier no
+   longer varies by task, only how deliberate the session is about
+   documenting review-tier calls (see `docs/model-handoff.md`).
 3. First message — paste exactly:
 
    ```
    /continue-samuel-sonnet
-   ```
-
-   or, for a Fable-tier session:
-
-   ```
-   /continue-samuel
    ```
 
    If slash commands are unavailable for any reason, paste instead:

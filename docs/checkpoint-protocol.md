@@ -48,9 +48,9 @@ defaults to 200k (override with `CLAUDE_CONTEXT_WINDOW` for 1M-window models).
 - **Plan usage limits** (5-hour/weekly windows on claude.ai plans) are
   account-level and _not visible_ to any tool in the session. The cumulative
   in/out totals are your best proxy: a session that has already pushed
-  millions of input tokens through a Fable-tier model is a session that should
-  be checkpointing aggressively. When in doubt, assume the cutoff can come at
-  any turn — which is exactly what the one rule already assumes.
+  millions of input tokens is a session that should be checkpointing
+  aggressively. When in doubt, assume the cutoff can come at any turn — which
+  is exactly what the one rule already assumes.
 
 ## Slice sizing
 

@@ -615,6 +615,89 @@ export const ASSETS: AssetRecord[] = [
       'A researcher pass finding a citable published treatment of Iron Age water installations specifically at Hebron/Tell Rumeida, if one exists, could move claim-hebron-pool-feature’s form/placement half past design-placeholder; none is known currently.',
     replacementMilestoneId: 'M5',
   },
+  {
+    id: 'asset-terrain-jerusalem-ridge',
+    name: 'Procedural Jerusalem ridge terrain',
+    represents:
+      'The narrow, steep-sided southeastern ridge (City of David), the Kidron and western valleys, and the Gihon spring at the eastern foot — see claim-jerusalem-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'Heightfield is procedural noise plus hand-tuned ridge/channel/flatten/mound/basin features (ADR-005), not derived from real elevation data for the City of David ridge. Palette values are carried over directly from asset-terrain-hebron-hills rather than a new material language.',
+    historicalRequirements:
+      'DEM-derived terrain becomes appropriate once a citable, page-verified excavation/survey source for the ridge’s 10th-century form closes the researcher gap opened at queue #22; until then this stays a disclosed procedural composite.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-jerusalem-stronghold-form',
+    name: 'Jebusite/Davidic stronghold enclosure',
+    represents:
+      'The stone circuit and simple gateway at the ridge’s high end — see claim-jebusite-stronghold-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple instanced wall-segment ring plus two plain gate posts (src/scenes/jerusalem-stronghold/Stronghold.tsx, layout.ts), not a reproduction of any excavated fortification — deliberately not a monumental six-chamber gate, casemate system, glacis, or towers. The render sits at the conservative end of the tenth-century Jerusalem extent dispute by deliberate policy, not by evidentiary default.',
+    historicalRequirements:
+      'Revise only once queue #22 lands a dedicated Jerusalem source card with a checkable citation for fortification form in this specific window; until then this stays a disclosed generic placeholder.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-jerusalem-terrace-walls',
+    name: 'Eastern-slope agricultural/support terracing',
+    represents:
+      'Terracing on the ridge’s eastern (Kidron-facing) slope, the ground the Millo question is about — see claim-millo-identification',
+    placeholder: true,
+    whyTemporary:
+      'Generic instanced low stone-wall segments in bands parallel to the ridge axis (src/scenes/jerusalem-stronghold/TerraceWalls.tsx, layout.ts), not surveyed or excavated terrace/stepped-stone remains — no rendered element is labeled "the Millo."',
+    historicalRequirements:
+      'A researcher pass on the excavated terrace/stepped-stone structures’ dating (queue #22) could sharpen claim-millo-identification’s scholarlyViews; the render itself stays a disclosed non-identification regardless of that outcome.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-gihon-spring-basin',
+    name: 'Gihon spring outflow basin',
+    represents:
+      'The Gihon spring’s outflow at the foot of the eastern slope — see claim-gihon-spring',
+    placeholder: true,
+    whyTemporary:
+      'A shallow basin depression (engine/terrain.ts’s `basin` TerrainFeature kind, the same device as asset-gibeon-pool-basin/asset-hebron-pool-basin) plus a flat, minimally-lit water plane (asset-water-plane’s technique) — modest, disclosed dimensions. No shaft, tunnel, channel, or monumental spring fortification renders in any mode (fable-review-queue #23).',
+    historicalRequirements:
+      'A researcher pass on the Gihon’s excavated spring-defense structures and their date/use in this specific window (queue #22) could inform a future, still-non-mechanism-rendering update; none is adopted currently.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-jerusalem-construction-ground',
+    name: 'Hiram’s building — construction-in-progress props',
+    represents:
+      'Timber baulks, dressed-stone courses, and a partially raised structure — see claim-hiram-building',
+    placeholder: true,
+    whyTemporary:
+      'Simple primitive cylinder/box geometry (src/scenes/jerusalem-stronghold/ConstructionGround.tsx) standing for cedar timber and dressed stone at an unfinished building site — deliberately not a finished cedar palace and not any 9th–8th century royal-architecture vocabulary; no rendered structure is identified with any excavated building proposed as David’s palace.',
+    historicalRequirements:
+      'A researcher pass on Phoenician cedar/timber supply and construction technique for this period (queue #22, king-stager-2001 the first place to look) could sharpen material/finish fidelity; the unfinished-state and no-palace-identification constraints are permanent, not awaiting a source.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-terrain-rephaim-valley',
+    name: 'Valley of Rephaim landform',
+    represents:
+      'A broad, open valley floor with a rising highland rim along one side — see claim-rephaim-terrain-form',
+    placeholder: true,
+    whyTemporary:
+      'Procedural heightfield (src/scenes/rephaim-valley/terrain.ts) built from fbm hill layers plus a `ridge` feature for the rim and a gentle `ramp` into the floor — not DEM-derived, and not a survey of the valley’s real profile. No Jerusalem geometry renders anywhere in this scene, not even an undetailed horizon ridge (a stricter render than the brief’s "at most" allowance, chosen to keep the order-of-events disclosure unambiguous).',
+    historicalRequirements:
+      'A DEM-based pass for the Rephaim/Baqa-Malha corridor southwest of Jerusalem, once a specific candidate footprint is adopted; palette/vegetation stay Judean-highland regardless of that outcome.',
+    replacementMilestoneId: 'M6',
+  },
+  {
+    id: 'asset-bakaim-grove',
+    name: 'The bekaim grove — generic dryland tree form',
+    represents: 'The unidentified small-canopy trees of 2 Samuel 5:23-24 — see claim-bakaim-grove',
+    placeholder: true,
+    whyTemporary:
+      'A generic small-canopy instanced tree form (src/scenes/rephaim-valley/Grove.tsx) — no species is asserted (English versions render "balsam" or "mulberry," and the identification is a guess in either case). Deliberately not a mulberry (Morus) canopy shape and not a distinctive resin/balsam tree.',
+    historicalRequirements:
+      'Stays a disclosed non-identification regardless of future research — the text itself does not name the species, so no future source can license asserting one.',
+    replacementMilestoneId: 'M6',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

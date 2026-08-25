@@ -1792,6 +1792,365 @@ export const SCENES: SceneDef[] = [
       'asset-display-forms',
     ],
   },
+  {
+    id: 'jerusalem-stronghold',
+    title: 'The Jebusite stronghold — Jerusalem becomes the city of David',
+    passageIds: ['2sam-5'],
+    locationId: 'jerusalem',
+    periodId: 'iron-iia',
+    milestoneId: 'M6',
+    // Built 2026-08-24 (Sonnet/threejs-engineer) per docs/design/
+    // jerusalem-stronghold-brief.md (Fable world-director pass, 2026-08-23).
+    // Milestone 6's load-bearing and most contested scene, and the
+    // project's first geometry at Jerusalem. Provisional, `in-progress`,
+    // pending a Fable M6 sign-off review (fable-review-queue #21-#24).
+    status: 'in-progress',
+    synopsis:
+      "David, now anointed king over all Israel rather than Judah alone, takes the Jebusite stronghold of Jerusalem — a city belonging to no tribe on the seam between Judah and Benjamin. How the stronghold was taken is not narrated and is not staged; the scene holds on the ridge at the narrative's own gap. Renamed the city of David, it becomes a capital by being built: Hiram of Tyre sends cedar, carpenters, and masons, and a house goes up.",
+    depictsDeath: false,
+    durationSec: 178,
+    beats: [
+      {
+        id: 'b-all-israel',
+        timeSec: 0,
+        title: 'All Israel comes to David',
+        caption:
+          'All the tribes of Israel come to David at Hebron, recall his earlier leadership, and make a covenant with him before the LORD; the elders anoint him king over Israel — lifting the house-of-Judah-only qualifier of his first anointing (2 Samuel 2:4). Not staged: the same ground already rendered twice at Hebron (hebron-anointing, hebron-covenant); see the /atlas M6 phase for the territorial change. (2 Samuel 5:1–3)',
+        passageRef: '2 Samuel 5:1–3',
+      },
+      {
+        id: 'b-regnal',
+        timeSec: 14,
+        title: 'Thirty years old, and two capitals',
+        caption:
+          "David was thirty years old when he began to reign, and reigned forty years: seven and a half years over Judah at Hebron, thirty-three years over all Israel and Judah at Jerusalem — the narrative's own figures, reported as such, with no attempt to fix them to absolute dates. (2 Samuel 5:4–5)",
+        passageRef: '2 Samuel 5:4–5',
+      },
+      {
+        id: 'b-approach',
+        timeSec: 26,
+        title: 'The king and his men go up',
+        caption:
+          "The king and his men go up to Jerusalem against the Jebusites, the land's inhabitants. The city is intact, inhabited, and clearly held by someone else — the default vantage is from outside and below, across the eastern valley, which is what makes the site's defensibility legible. (2 Samuel 5:6a)",
+        passageRef: '2 Samuel 5:6a',
+      },
+      {
+        id: 'b-taunt',
+        timeSec: 54,
+        title: '"The blind and the lame"',
+        caption:
+          'The Jebusites answer from the wall, at a distance: "You will not come in here, but the blind and the lame will ward you off" — thinking David could not enter. The saying\'s meaning is genuinely disputed (a boast about the ground, a possible ritual act, or a later etiology for the proverb 5:8c itself reports); no figure is staged performing it, on either side. (2 Samuel 5:6b, ESV)',
+        passageRef: '2 Samuel 5:6b',
+      },
+      {
+        id: 'b-taking',
+        timeSec: 80,
+        title: "The narrative's own gap",
+        caption:
+          "Nevertheless, David takes the stronghold of Zion — that is, the city of David. The text does not say how, or who went up; no assault, water shaft, or siege equipment renders, in any mode. The scene holds on the ridge, where the narrative's own camera falls silent. (2 Samuel 5:7)",
+        passageRef: '2 Samuel 5:7',
+      },
+      {
+        id: 'b-tsinnor',
+        timeSec: 98,
+        title: 'At the Gihon',
+        caption:
+          'At the spring, the foot of the eastern slope: David said whoever would strike the Jebusites should "get up the water shaft" to attack the lame and the blind. What tsinnôr names is disputed — a water shaft or conduit, a hook or grappling implement, or a meaning no longer recoverable — and the traditional identification with the excavated Warren\'s Shaft has been challenged on archaeological grounds. The project renders no mechanism, in any mode. (2 Samuel 5:8, ESV)',
+        passageRef: '2 Samuel 5:8',
+      },
+      {
+        id: 'b-dwelling',
+        timeSec: 118,
+        title: 'The city of David',
+        caption:
+          'David dwells in the stronghold, and it is called the city of David. The before/after pair closes here: the same ridge, framed from outside and below at the approach, now from inside at the dwelling — the taking itself unrendered between them. (2 Samuel 5:9a)',
+        passageRef: '2 Samuel 5:9a',
+      },
+      {
+        id: 'b-millo',
+        timeSec: 132,
+        title: 'From the Millo inward',
+        caption:
+          'David built the city all around, from the Millo inward. The word probably means something like the filling; what has been proposed — an identification with excavated terrace and stepped-stone structures on this slope, itself disputed on dating — is carried here as a named question, not a rendered answer. No element in this scene is labeled the Millo. (2 Samuel 5:9b)',
+        passageRef: '2 Samuel 5:9b',
+      },
+      {
+        id: 'b-greater',
+        timeSec: 144,
+        title: 'Greater and greater',
+        caption:
+          "David became greater and greater, for the LORD, the God of hosts, was with him — the narrative's own summary of his rise, reported as its framing, not as a measured historical trajectory (see claim-david-historical for the separate, disputed question of scale). (2 Samuel 5:10)",
+        passageRef: '2 Samuel 5:10',
+      },
+      {
+        id: 'b-hiram',
+        timeSec: 152,
+        title: "Hiram's cedar",
+        caption:
+          'Hiram king of Tyre sends messengers, cedar trees, carpenters, and masons, and they build David a house. A construction site, not a palace: timber, dressed-stone courses, and a structure still going up. Hiram himself is not staged — only his messengers, materials, and craftsmen. (2 Samuel 5:11)',
+        passageRef: '2 Samuel 5:11',
+      },
+      {
+        id: 'b-perceived',
+        timeSec: 160,
+        title: 'David perceived',
+        caption:
+          "David perceived that the LORD had established him king over Israel, and that his kingdom was exalted for the sake of his people Israel — the narrative's own statement about David's own perception. (2 Samuel 5:12)",
+        passageRef: '2 Samuel 5:12',
+      },
+      {
+        id: 'b-household',
+        timeSec: 168,
+        title: 'More sons, in Jerusalem',
+        caption:
+          'David takes more concubines and wives from Jerusalem, and more sons and daughters are born to him there — Shammua, Shobab, Nathan, Solomon, Ibhar, Elishua, Nepheg, Japhia, Elishama, Eliada, and Eliphelet, listed as the text lists them, with no forward commentary on any name. (2 Samuel 5:13–16)',
+        passageRef: '2 Samuel 5:13–16',
+      },
+      {
+        id: 'b-close',
+        timeSec: 176,
+        title: 'Not yet resolved',
+        caption:
+          "2 Samuel 5:1–16 states the covenant, the capture, the naming, the building, and the household list — nothing more. The chapter's own arrangement may be topical rather than strictly chronological: this scene does not assert that these events precede or follow the Philistine engagements of 5:17–25 (rephaim-valley). Nothing from 2 Samuel 6 onward appears here.",
+        passageRef: '2 Samuel 5:1–16',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-kidron-east',
+        label: 'Across the Kidron (default)',
+        position: [140, 34, 8],
+        lookAt: [0, 18, 30],
+      },
+      {
+        id: 'vp-gihon',
+        label: 'The Gihon spring',
+        position: [72, 8, -14],
+        lookAt: [48, 3, -6],
+      },
+      {
+        id: 'vp-stronghold',
+        label: 'Inside the enclosure',
+        position: [8, 7, 58],
+        lookAt: [-4, 4, 72],
+      },
+      {
+        id: 'vp-terraces',
+        label: 'The terraced slope',
+        position: [48, 15, 18],
+        lookAt: [18, 6, 20],
+      },
+      {
+        id: 'vp-building-ground',
+        label: "Hiram's building ground",
+        position: [32, 8, 54],
+        lookAt: [16, 4, 66],
+      },
+    ],
+    claimIds: [
+      'claim-hebron-identification',
+      'claim-david-historical',
+      'claim-dress',
+      'claim-judah-anointing',
+      'claim-all-israel-covenant',
+      'claim-jerusalem-capture',
+      'claim-tsinnor-crux',
+      'claim-city-of-david-naming',
+      'claim-hiram-building',
+      'claim-jerusalem-household',
+      'claim-jebusite-stronghold-form',
+      'claim-millo-identification',
+      'claim-gihon-spring',
+      'claim-jerusalem-terrain-form',
+      'claim-stronghold-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-jerusalem-ridge',
+      'asset-jerusalem-stronghold-form',
+      'asset-jerusalem-terrace-walls',
+      'asset-gihon-spring-basin',
+      'asset-water-plane',
+      'asset-jerusalem-construction-ground',
+      'asset-figure-procedural',
+      'asset-david-marker',
+      'asset-olive-tree',
+      'asset-rocks',
+    ],
+  },
+  {
+    id: 'rephaim-valley',
+    title: 'The Valley of Rephaim — two Philistine engagements',
+    passageIds: ['2sam-5'],
+    locationId: 'valley-of-rephaim',
+    periodId: 'iron-iia',
+    milestoneId: 'M6',
+    // Built 2026-08-24 (Sonnet/threejs-engineer) per docs/design/
+    // rephaim-valley-brief.md (Fable world-director pass, 2026-08-23).
+    // Milestone 6's second and last scene, and the project's second battle
+    // scene after gilboa-battle — deliberately a much lighter violence
+    // treatment. Provisional, `in-progress`, pending a Fable M6 sign-off
+    // review (fable-review-queue #21-#24, especially #24: the
+    // never-visualized-sign precedent this scene establishes).
+    status: 'in-progress',
+    synopsis:
+      'The Philistines hear David has been anointed king over all Israel and twice come up against him in the Valley of Rephaim. The first time, David simply strikes them where they spread. The second time, the same enemy on the same ground gets a different answer: circle around, wait at the trees for a sign, then attack from behind. One scene, two phases, the same instanced Philistine population staged twice — the contrast is the whole point.',
+    depictsDeath: true,
+    durationSec: 210,
+    beats: [
+      {
+        id: 'b-philistines-hear',
+        timeSec: 0,
+        title: 'The Philistines hear',
+        caption:
+          'The Philistines hear that David has been anointed king over Israel and go up to seek him; David hears of it and goes down to the stronghold — unnamed here. Which stronghold, and whether this chapter’s events precede or follow 5:1–16’s (jerusalem-stronghold), the text does not say — neither is asserted here. (2 Samuel 5:17)',
+        passageRef: '2 Samuel 5:17',
+      },
+      {
+        id: 'b-spread',
+        timeSec: 14,
+        title: 'The Philistines spread themselves',
+        caption:
+          'The Philistines come and spread themselves across the Valley of Rephaim — a wide, loose deployment, not a tight block, seen from the rim above. (2 Samuel 5:18)',
+        passageRef: '2 Samuel 5:18',
+      },
+      {
+        id: 'b-inquiry-1',
+        timeSec: 30,
+        title: 'David inquires',
+        caption:
+          'David inquires of the LORD, asking whether he should go up against the Philistines and whether the LORD will give them into his hand. The LORD answers that he should go up, for the Philistines will certainly be given into his hand. A small, still, waiting group — no ephod, lots, priest, altar, or shrine is staged; the text names no apparatus here. (2 Samuel 5:19)',
+        passageRef: '2 Samuel 5:19',
+      },
+      {
+        id: 'b-engagement-1',
+        timeSec: 46,
+        title: 'David strikes them',
+        caption:
+          'David comes to Baal-perazim and strikes the Philistines there. Read at distance as formation movement — a line closing, a deployment breaking, dust — never blow-by-blow combat. In standard mode, falls appear at silhouette distance only, with no wound or blood shown; in reduced mode the falls are elided entirely, cutting straight from the advance to the emptied valley floor. Both modes end the same way: the Philistines driven from the valley. (2 Samuel 5:20a)',
+        passageRef: '2 Samuel 5:20a',
+      },
+      {
+        id: 'b-perazim',
+        timeSec: 70,
+        title: 'A breaking through of water',
+        caption:
+          'David says that the LORD has broken through his enemies before him, like a breaking through of water — therefore the place is called Baal-perazim. The site is unlocated; its position here is an openly disclosed placeholder within the valley, not a claimed identification — there is no map pin for it. (2 Samuel 5:20b)',
+        passageRef: '2 Samuel 5:20b',
+      },
+      {
+        id: 'b-images',
+        timeSec: 84,
+        title: 'The abandoned images',
+        caption:
+          'The Philistines leave their images there. The Masoretic text has David and his men carry them away; the parallel account in 1 Chronicles 14:12 has David order them burned instead — a real divergence, surfaced here rather than resolved. No cult iconography is rendered in this scene, in either case. (2 Samuel 5:21)',
+        passageRef: '2 Samuel 5:21',
+      },
+      {
+        id: 'b-return',
+        timeSec: 98,
+        title: 'The Philistines come up yet again',
+        caption:
+          "The Philistines come up yet again and spread themselves in the Valley of Rephaim — the same ground, the same framing, the same default vantage as the first time. The repetition is deliberate: it is what makes the second answer's contrast visible. (2 Samuel 5:22)",
+        passageRef: '2 Samuel 5:22',
+      },
+      {
+        id: 'b-inquiry-2',
+        timeSec: 114,
+        title: 'A different answer',
+        caption:
+          'David inquires of the LORD again, and this time the answer is not simply to go up directly: circle around behind them and come at them opposite the balsam trees. Same restraint as the first inquiry — no apparatus, no rite, only the question and the answer. (2 Samuel 5:23)',
+        passageRef: '2 Samuel 5:23',
+      },
+      {
+        id: 'b-circling',
+        timeSec: 128,
+        title: 'The flanking march',
+        caption:
+          "David's force circles around the valley's edge, at walking pace, to a position opposite the Philistines from the trees — the scene's one strong walk affordance, and the second engagement's only genuinely new staging beat. (2 Samuel 5:23b)",
+        passageRef: '2 Samuel 5:23b',
+      },
+      {
+        id: 'b-sound',
+        timeSec: 154,
+        title: 'The sign in the treetops',
+        caption:
+          'David is told to wait for "the sound of marching in the tops of the balsam trees", then rouse himself, for the LORD will have gone out before him to strike down the Philistine army. The scene does not visualize this sign — no wind, no light, no canopy motion staged as a signal. The beat is a held wait among ordinary trees; these words carry the text\'s own claim, not an effect the observer is shown. (2 Samuel 5:24, ESV)',
+        passageRef: '2 Samuel 5:24',
+      },
+      {
+        id: 'b-engagement-2',
+        timeSec: 170,
+        title: 'David strikes them again',
+        caption:
+          'David does as the LORD commanded, and the Philistines are struck from behind their own position — the same restraint and the same distance as the first engagement. Standard mode again shows falls at silhouette distance only; reduced mode again elides them, cutting to the emptied valley floor. No triumphal staging in either mode: the beat ends on an emptied valley, not a celebration. (2 Samuel 5:25a)',
+        passageRef: '2 Samuel 5:25a',
+      },
+      {
+        id: 'b-pursuit',
+        timeSec: 188,
+        title: 'From Geba to Gezer',
+        caption:
+          'The Philistines are struck from Geba to Gezer (Masoretic text; the Septuagint and 1 Chronicles 14:16 read Gibeon in place of Geba — the released gibeon location this project has already built, without this project taking a position on which reading is right). The pursuit corridor is not staged; it is stated here as a card. (2 Samuel 5:25b)',
+        passageRef: '2 Samuel 5:25b',
+      },
+      {
+        id: 'b-close',
+        timeSec: 200,
+        title: 'Where the chapter ends',
+        caption:
+          "2 Samuel 5:17–25 states the Philistines' reaction, two engagements, a naming, and a pursuit — nothing more. As with jerusalem-stronghold's own closing card, this scene does not assert that these campaigns follow or precede the capture of Jerusalem; the chapter's arrangement may be topical. Nothing from 2 Samuel 6 onward appears here, depicted or pointed at. The milestone ends here.",
+        passageRef: '2 Samuel 5:17–25',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-valley-rim',
+        label: 'The valley rim (default)',
+        position: [-70, 26, -8],
+        lookAt: [60, 5, -8],
+      },
+      {
+        id: 'vp-grove',
+        label: 'Inside the grove',
+        position: [94, 4, 26],
+        lookAt: [25, 3, -15],
+      },
+      {
+        id: 'vp-valley-floor',
+        label: 'The valley floor (Baal-perazim)',
+        position: [8, 4, -32],
+        lookAt: [32, 3, -10],
+      },
+      {
+        id: 'vp-flank-march',
+        label: 'The flanking route',
+        position: [30, 7, -112],
+        lookAt: [80, 3, -95],
+      },
+    ],
+    claimIds: [
+      'claim-david-historical',
+      'claim-dress',
+      'claim-philistine-kit',
+      'claim-philistine-reaction',
+      'claim-rephaim-first-engagement',
+      'claim-rephaim-second-engagement',
+      'claim-inquiry-depiction',
+      'claim-divine-sign-depiction',
+      'claim-rephaim-terrain-form',
+      'claim-bakaim-grove',
+      'claim-rephaim-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-rephaim-valley',
+      'asset-bakaim-grove',
+      'asset-figure-procedural',
+      'asset-figure-fallen',
+      'asset-military-kit-israelite',
+      'asset-military-kit-philistine',
+      'asset-david-marker',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

@@ -1,8 +1,23 @@
 # Model handoff
 
+**2026-08-24, user directive: do not invoke Fable on this project.** Every
+"needs Fable" routing rule below is retired — `.claude/agents/fable-architect.md`
+and `.claude/agents/world-director.md` both run `model: sonnet` now. Don't run
+`/model claude-fable-5`, don't retry a Fable call after an error, and don't
+treat a Fable spend-limit error as something to wait out. Everything this doc
+used to route to Fable — milestone sign-off, scene creative direction,
+architecture/taxonomy calls, contested historical/design calls — is Sonnet's
+(or another capable coding model's) to decide directly: implement the most
+defensible option and mark genuinely contested calls **provisional** in
+`docs/fable-review-queue.md`, the same discipline the "How to continue if
+Fable usage runs out" section below already describes — that fallback path is
+now simply the only path, not a fallback. The rest of this doc (what was
+already decided, the fixed-vs-changeable list, what NOT to spend
+review-tier attention on) is still accurate and load-bearing; only the model
+name attached to "who does the reviewing" has changed.
+
 This is the single most important doc for continuing this project across chats and
-models. Read this before starting work if you are not sure whether a task needs
-Fable.
+models.
 
 ## A note on how this doc was produced
 
@@ -57,8 +72,9 @@ considered and the consequences, not just the conclusion.
 
 ## Fixed vs. changeable
 
-**Fixed for now** (treat as load-bearing; changing needs a Fable review, logged in
-`fable-review-queue.md` first):
+**Fixed for now** (treat as load-bearing; changing it is a real decision —
+implement the most defensible option and log it as **provisional** in
+`docs/fable-review-queue.md`, don't just change it inline):
 
 - The tech stack and its major dependencies.
 - The `ReconstructionClaim`/`ClaimBasis`/`Confidence` taxonomy shape.
@@ -67,7 +83,7 @@ considered and the consequences, not just the conclusion.
 - The atlas-first scope boundary (ADR-011): game-like affordances only within
   its allow-list; fantasy systems, loot grind, power-fantasy leveling, win/loss
   states that distort the material, and unsourced invented certainty stay out
-  without a separate Fable approval.
+  without a separate documented approval.
 
 **Sonnet (or any capable coding model) may change freely:**
 
@@ -78,24 +94,27 @@ considered and the consequences, not just the conclusion.
 - Tests, docs, refactors, bug fixes, CI/build config, asset-roadmap bookkeeping.
 - Minor UI layout and copy (not historical/theological content decisions).
 
-**Needs Fable specifically:** see `docs/fable-review-queue.md` for the live list.
-As a rule of thumb, a task needs Fable if getting it wrong would be expensive to
-unwind later (it's load-bearing for many future scenes) or if it's a judgment call
-about historical/creative direction rather than an execution detail.
+**Needs extra care (review-tier, not routine):** see `docs/fable-review-queue.md`
+for the live list. As a rule of thumb, a task needs this extra care if getting it
+wrong would be expensive to unwind later (it's load-bearing for many future
+scenes) or if it's a judgment call about historical/creative direction rather
+than an execution detail. This used to be "needs Fable"; it's now just work
+Sonnet should slow down and be deliberate about, documenting the reasoning in
+`docs/fable-review-queue.md` rather than deciding it silently.
 
-## What to actually spend Fable on (given limited usage)
+## What review-tier work actually looks like
 
-**Spend Fable on, roughly in priority order:**
+**Slow down and document reasoning for, roughly in priority order:**
 
-1. **Milestone sign-off review** — once a milestone's scenes are built and tested,
-   one Fable pass checking historical plausibility, anachronisms, visual coherence,
-   performance risk, source traceability, and "do the affordances serve the
-   atlas per ADR-011" (checklist: `docs/fable-review-checklist.md`). Batch this — don't
-   review scene-by-scene if a milestone has several.
+1. **Milestone sign-off review** — once a milestone's scenes are built and
+   tested, a full pass checking historical plausibility, anachronisms, visual
+   coherence, performance risk, source traceability, and "do the affordances
+   serve the atlas per ADR-011" (checklist: `docs/fable-review-checklist.md`).
+   Batch this — don't review scene-by-scene if a milestone has several.
 2. **Data-model or taxonomy changes** — adding a sixth `ClaimBasis`, changing what
    `confidence` means, restructuring `SceneDef`, etc.
-3. **New major scene creative direction** — before Sonnet builds Gilboa, Beth-shan,
-   or Jabesh-gilead, Fable should set: historical intent, visual composition, scale
+3. **New major scene creative direction** — before building Gilboa, Beth-shan,
+   or Jabesh-gilead, set historical intent, visual composition, scale
    assumptions, camera/observer experience, performance target, required source
    basis, and placeholder policy for that scene (mirroring how the Ziklag scene was
    specified) — a single upfront pass, not ongoing supervision during
@@ -105,82 +124,63 @@ about historical/creative direction rather than an execution detail.
    domestication-timing dispute, or the default violence-intensity for Gilboa.
 5. **Stack or policy changes** — anything in "Fixed for now" above.
 
-**Don't spend Fable on:**
+**Routine work, no extra deliberation needed:**
 
 - Writing/editing React or Three.js components that follow an established pattern.
 - Test writing, doc maintenance, source-card data entry, bibliography upkeep.
 - Routine bug fixes, refactors, CI/lint/build fixes.
 - Small UI additions (a new toggle, a new panel section) that don't change scope.
-- Anything `.claude/agents/*.md` already routes to a `sonnet`-model subagent — if a
-  focused subagent can do it, it doesn't need the orchestrator's Fable budget either.
+- Anything `.claude/agents/*.md` already routes to a focused subagent.
 - Running verification gates (`npm run verify`) or interpreting routine test/CI
   failures — subagent work.
 
 **Batching tip:** accumulate open questions in `fable-review-queue.md` as you hit
-them during Sonnet sessions, rather than context-switching to Fable per question.
-Clear the queue in one Fable session per milestone (or when it has 3–5 items and a
-milestone is close to done).
+them, rather than context-switching per question. Clear the queue in one focused
+pass per milestone (or when it has 3–5 items and a milestone is close to done).
 
-## Delegation rule: Fable orchestrates, Sonnet executes
+## Delegation rule: the orchestrating session judges, subagents execute
 
-A senior dev shouldn't do work a junior dev can do. Fable is the senior tier here:
-its tokens buy judgment — direction, review verdicts, contested calls — never
-routine execution.
+A senior dev shouldn't do work a junior dev can do. The orchestrating session's
+attention is the scarce resource here: spend it on judgment — direction, review
+verdicts, contested calls — never routine execution.
 
-Concretely, inside a Fable session: running `npm run verify` and interpreting
-ordinary failures, doc syncing (`docs-maintainer`), test writing
-(`test-engineer`), source-card data entry (`researcher`), scene implementation
-within already-set direction (`threejs-engineer`, `ui-engineer`), and performance
-audits (`performance-reviewer`) must be dispatched to the Sonnet-model subagents
-in `.claude/agents/*.md`, not done inline by the Fable orchestrator. Fable reads
-the subagent's conclusion and rules on it; it does not re-derive the work itself.
+Concretely: running `npm run verify` and interpreting ordinary failures, doc
+syncing (`docs-maintainer`), test writing (`test-engineer`), source-card data
+entry (`researcher`), scene implementation within already-set direction
+(`threejs-engineer`, `ui-engineer`), and performance audits
+(`performance-reviewer`) should be dispatched to the subagents in
+`.claude/agents/*.md`, not done inline by the orchestrating session. The
+orchestrating session reads the subagent's conclusion and rules on it; it does
+not re-derive the work itself.
 
-The agent roster already encodes this: every file in `.claude/agents/` declares a
-`model:` field, and all of them say `model: sonnet` except `fable-architect` and
-`world-director`, which say `model: fable`. Routing a task to a sonnet-model agent
-spends Sonnet budget, not Fable budget, even when the orchestrating session itself
-is Fable.
+Every file in `.claude/agents/` declares `model: sonnet` (including
+`fable-architect` and `world-director`, which historically ran on Fable — see
+"Model policy — do not invoke Fable" in `CLAUDE.md`).
 
-The same rule runs the other way in Sonnet sessions: don't escalate upward for
-anything this doc already marks as Sonnet-tier — batch genuine Fable-tier
-questions in `docs/fable-review-queue.md` instead of context-switching per
-question.
+The same rule runs the other way: don't over-deliberate on anything this doc
+already marks as routine — batch genuine review-tier questions in
+`docs/fable-review-queue.md` instead of context-switching per question.
 
 The same tiering applies to non-Claude implementation agents (e.g. Codex): see
 `AGENTS.md`'s "Your role tier" section, which places them at the
 implementation/execution tier, not the judgment tier.
 
-## How to continue if Fable usage runs out
+## Historical note: the old Fable/Sonnet split
 
-**If it happens mid-session, in a chat that's still open:** switch models in
-that same chat — `/model claude-sonnet-5` (or whatever model is available).
-Claude Code preserves the full conversation across a model switch; the new
-model sees everything decided so far, which is strictly better than a cold
-restart from docs. This is the smoothest path and should be tried first.
-
-**If the session itself isn't usable** (closed, expired, or starting fresh
-later in a new chat): proceed under `docs/sonnet-continuation.md`. For
-anything that would normally need Fable: implement the most defensible
-option, mark it clearly as **provisional** in code comments/claim `notes` and
-in `fable-review-queue.md`, and keep moving — don't block the whole project
-on Fable availability. Milestone `status` should stay `in-progress` (not
-`released`) until a flagged provisional decision gets reviewed, if the
-decision materially affects what's rendered.
-
-**Either way, checkpoint discipline is what makes both paths safe.** Fable
-sessions with multiple independent decisions to make (see
-`docs/next-fable-session.md` for the current example) should commit each
-decision as it's made — write it to the real file, clear it from
-`fable-review-queue.md`, log it, commit — rather than batching everything
-into one uncommitted working session. A mid-decision cutoff then loses at
-most the one in-progress item, not the whole session.
+Before 2026-08-24, this project split judgment-tier work to a separate "Fable"
+model and routine execution to Sonnet, with a documented fallback for when
+Fable's usage ran out: implement the most defensible option, mark it
+**provisional** in `docs/fable-review-queue.md`, and keep moving rather than
+blocking on availability — checkpointing each decision as it was made so a
+mid-session cutoff lost at most one in-progress item. **That fallback is now
+simply how all review-tier work happens, per the top-of-file notice** — there
+is no model to fall back from anymore. This section is kept only so old
+`docs/run-log.md`/`docs/fable-review-queue.md` entries referencing "Fable
+sign-off" or "Fable review" make sense in context.
 
 ## Model commands
 
 ```bash
-# Baseline architecture / major review
-claude --model claude-fable-5
-
 # Normal day-to-day development
 claude --model claude-sonnet-5
 
@@ -190,6 +190,7 @@ claude --model claude-sonnet-5
 ```
 
 Model switches do not persist automatically across sessions — set explicitly each
-time via `--model` or `/model`. If neither Sonnet nor Fable is available, any
-competent coding-capable model should follow `docs/sonnet-continuation.md`
-unmodified; record which model actually ran in `docs/run-log.md`.
+time via `--model` or `/model`. If Sonnet is unavailable, any competent
+coding-capable model should follow `docs/sonnet-continuation.md` unmodified
+(never fall back to Fable); record which model actually ran in
+`docs/run-log.md`.

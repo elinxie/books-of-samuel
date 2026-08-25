@@ -3,7 +3,91 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-23, M6 SCOPED — Fable world-director pass, briefs done, no build yet, branch `claude/focused-mccarthy-9ryrl9`)
+## State right now (2026-08-24, M6 BUILT, Sonnet sign-off — queue #24 still open, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
+
+**Fable is not used on this project as of this session — see `CLAUDE.md`'s
+"Model policy — do not invoke Fable" (user directive). Everything below that
+still says "wait for Fable" or "real Fable sign-off" is superseded: Sonnet
+decides queue #24 directly, next session, no waiting.**
+
+**All M6 build work is done and gate-green.** Scheduled/automated session;
+baseline verified clean first (`npm install` + `npm run verify`, e2e needs
+`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+— the pinned Playwright version wants a `1228` browser build, `1194` is
+what's preinstalled). Four items built by dispatched subagents, each
+independently re-verified by the orchestrating session (full gate re-run +
+targeted greps against every brief's "Not allowed" list) before pushing:
+
+1. `jerusalem-stronghold` (2 Sam 5:1–16, commit `e1350dd`) — ~120 figures
+   high-tier, `depictsDeath: false`. New location `jerusalem`, 11 new
+   claims, new passage `2sam-5`. Grepped clean for capture-mechanism
+   geometry, Joab, Hebron geometry, 2 Sam 6+ content.
+2. `rephaim-valley` (2 Sam 5:17–25, commit `994ec72`) — ~131 figures
+   high-tier, `depictsDeath: true`, standard/reduced-mode fork, no
+   fight-stance pose buckets. New location `valley-of-rephaim`
+   (Baal-perazim deliberately unlocated). Grepped clean for divination
+   apparatus, visualized-sign language, named commanders, triumphal
+   staging, 2 Sam 6+ content.
+3. Atlas M6 phase (commit `b8e4e1c`) — third `DividedKingdomMap` phase,
+   regions merge, capital moves Hebron→Jerusalem, captioned as allegiance
+   not territorial extent. M4/M5 phases confirmed pixel-unchanged.
+4. Queue #22 researcher pass (commit `00d17b7`) — closed the Jerusalem-
+   period source-card gap cluster, 7 new source cards,
+   `mccarter-1984-ii-samuel` extended to 2 Sam 5. `claim-jebusite-
+stronghold-form` raised design-placeholder/speculative →
+   scholarly-reconstruction/low (no geometry change).
+
+Full gate green after every commit: 546 vitest, 16/16 e2e, format/lint/
+build clean (independently re-run by the orchestrating session each time,
+not just taken from build-agent reports).
+
+**M6 sign-off review ran this session** (`fable-architect`'s first call hit
+a since-retired Fable spend limit — that model is no longer used on this
+project at all, see the notice above). The orchestrating session ran the
+review itself: **confirmed queue #21 and #23 as built** (independently
+re-checked against the actual committed code — 5:1–5 stays cards-only per
+#21; no capture-mechanism geometry anywhere per #23) but **left #24 open**
+(the narrated-divine-sign depiction policy — the brief flags it as possibly
+needing its own ADR, and this session judged that call worth a dedicated
+pass rather than deciding it inline mid-review). **No status flips were made
+anywhere** — `jerusalem-stronghold`, `rephaim-valley`, the atlas M6 phase,
+`2sam-5`, `jerusalem`, `valley-of-rephaim`, `M6` all stay
+`in-progress`/`planned` until #24 is decided. Full reasoning:
+`docs/fable-review-queue.md`'s 2026-08-24 note.
+
+A `performance-reviewer` pass on both new scenes ran this session (commit
+`28f517b`) and found/fixed one real issue in each: an unhoisted
+`Vector3` allocation per figure per frame in the curve-sampling pose
+functions, most consequential in `rephaim-valley`'s flanking-march beat
+(the brief's own flagged risk). Fixed via the established
+`tmpVec`/`tmpTan` hoisting pattern; no behavior change; independently
+re-verified (546 vitest, 16/16 e2e, clean build). Everything else
+(terrain budgets, instancing, static-crowd baking, quality-tier scaling)
+checked out clean.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Decide queue #24 directly** — this is the single blocking item for M6
+   to reach `released`. Ratify the stated-never-visualized default as-is,
+   revise it, or promote it to a dedicated ADR (it will recur constantly
+   from 2 Samuel 6 onward: the ark narratives, 2 Samuel 7, 2 Samuel 24).
+   Then re-confirm #21/#23 hold and, if everything still holds, execute the
+   release cascade: `jerusalem-stronghold`/`rephaim-valley` → `released`,
+   `2sam-5` → `released`, `jerusalem`/`valley-of-rephaim` → `released`, the
+   M6 feature entry → `done`, `M6` → `released`. Follow the M3/M4/M5
+   sign-off checklist (`docs/fable-review-checklist.md`).
+2. (Carried forward, still open, non-blocking) real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — see Environment
+   notes below, unchanged.
+3. Optional, non-gating: the hook/grappling-implement _tsinnôr_ view's
+   Albright attribution is flagged TO VERIFY (queue #22's researcher pass
+   couldn't cross-corroborate it); the M6 scenes' ESV quotes (5:6b, 5:8a,
+   5:24) were entered from careful recollection with mixed WebSearch
+   availability across the build sessions — worth a live-source check
+   before `released`, same standing caveat several prior scenes carried at
+   this stage.
+
+## State before this slice (2026-08-23, M6 SCOPED — Fable world-director pass, briefs done, no build yet, branch `claude/focused-mccarthy-9ryrl9`)
 
 **M6 (2 Samuel 5) is defined and briefed.** Automated/scheduled session;
 baseline verified clean first (`npm install` + full `npm run verify` green)

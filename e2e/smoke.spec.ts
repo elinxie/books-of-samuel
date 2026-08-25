@@ -169,6 +169,45 @@ test('atlas M5 phase (2 Samuel 3–4 long war + northern collapse) switches in w
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
 
+test('atlas M6 phase (2 Samuel 5, the united kingdom) merges the regions and moves the capital marker', async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/atlas');
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+
+  await page.getByTestId('atlas-phase-m6').click();
+  await expect(page.getByTestId('atlas-phase-m6')).toHaveAttribute('aria-selected', 'true');
+
+  // The two prior regions are gone, replaced by exactly one merged region.
+  await expect(page.getByTestId('region-shading-united-kingdom')).toBeVisible();
+  await expect(page.getByTestId('region-shading-israel-writ')).toHaveCount(0);
+  await expect(page.getByTestId('region-shading-judah')).toHaveCount(0);
+
+  // The capital marker moves to Jerusalem; the point's own label discloses it.
+  await expect(page.getByTestId('atlas-capital-marker')).toBeVisible();
+  await expect(page.getByTestId('atlas-point-jerusalem')).toContainText('capital');
+  await expect(page.getByTestId('atlas-point-valley-of-rephaim')).toBeVisible();
+
+  // The merge is captioned as allegiance, not a mapped territorial extent.
+  await expect(page.getByText(/change of allegiance/i).first()).toBeVisible();
+
+  // Switching back to M4 restores the original two-region phase cleanly.
+  await page.getByTestId('atlas-phase-m4').click();
+  await expect(page.getByTestId('atlas-phase-m4')).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByTestId('region-shading-israel-writ')).toBeVisible();
+  await expect(page.getByTestId('region-shading-judah')).toBeVisible();
+  await expect(page.getByTestId('region-shading-united-kingdom')).toHaveCount(0);
+  await expect(page.getByTestId('atlas-capital-marker')).toHaveCount(0);
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('no console errors on the basic observer route', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (msg) => {
@@ -215,6 +254,40 @@ test('violence advisory (ADR-009) also gates hebron-gate — the second named-ch
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
 
+test('jerusalem-stronghold (M6, depictsDeath: false) loads directly, lists its beats/viewpoints, and shows no violence advisory', async ({
+  page,
+}) => {
+  // Unlike gilboa-battle/hebron-gate/hebron-reckoning, this scene stages no
+  // death or fighting (2 Samuel 5:1-16's capture is the narrative's own
+  // unrendered gap) — the ADR-009 advisory must never fire here.
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/observe/jerusalem-stronghold');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText(
+    'The Jebusite stronghold — Jerusalem becomes the city of David',
+  );
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (all-Israel/regnal cards, the
+  // approach, the taunt, the taking's own gap, the tsinnôr card, dwelling,
+  // the Millo card, greater-and-greater, Hiram's building, perceived, the
+  // household card, close) checking for runtime errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 26, 54, 80, 98, 118, 132, 144, 152, 160, 168, 176]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
 test('violence advisory (ADR-009) also gates hebron-reckoning — the third named-character-killing scene, and closes M5', async ({
   page,
 }) => {
@@ -244,6 +317,82 @@ test('violence advisory (ADR-009) also gates hebron-reckoning — the third name
     await scrub.fill(String(t));
     await page.waitForTimeout(150);
   }
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
+test("violence advisory (ADR-009) also gates rephaim-valley — M6's second and last scene, standard mode", async ({
+  page,
+}) => {
+  // rephaim-valley is the project's second battle scene after gilboa-battle,
+  // deliberately lighter (no fight-stance pose buckets, no melee clash
+  // cycle) but still `depictsDeath: true` since both engagements' formation
+  // breaks show falls at silhouette distance in standard mode.
+  await page.goto('/#/observe/rephaim-valley');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText(
+    'The Valley of Rephaim — two Philistine engagements',
+  );
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (the Philistines hear, the first
+  // spread, the first inquiry, the first engagement's break window, the
+  // naming, the images card, the second spread, the second inquiry, the
+  // flanking march, the sound/wait beat, the second engagement's break
+  // window, the pursuit card, the close) checking for runtime errors at
+  // each stop — standard mode, so the fall/disperse branch is exercised.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 30, 46, 55, 70, 84, 98, 114, 128, 145, 154, 170, 180, 188, 200]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
+test('rephaim-valley in reduced violence mode elides the falls at both engagements', async ({
+  page,
+}) => {
+  // Reduced mode's one behavioral difference from standard is entirely
+  // inside PhilistineForce.tsx's per-frame pose read (philistinePose), not
+  // a separate render path — this confirms the app tolerates scrubbing
+  // through both break windows in reduced mode without runtime errors.
+  await page.goto('/#/observe/rephaim-valley');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-reduced').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.locator('canvas')).toBeVisible();
+
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [46, 52, 60, 170, 176, 184]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+
+  // Second visit: no advisory, and the chosen mode stuck in Settings —
+  // same persistence contract as gilboa-battle's own advisory test.
+  await page.goto('/#/observe/rephaim-valley');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await page.getByTestId('open-settings').click();
+  await expect(page.getByTestId('violence-reduced')).toBeChecked();
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });

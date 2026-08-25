@@ -30,6 +30,10 @@ import { HebronGateScene } from '../scenes/hebron-gate/HebronGateScene';
 import { HEBRON_GATE_TERRAIN } from '../scenes/hebron-gate/terrain';
 import { HebronReckoningScene } from '../scenes/hebron-reckoning/HebronReckoningScene';
 import { HEBRON_RECKONING_TERRAIN } from '../scenes/hebron-reckoning/terrain';
+import { JerusalemStrongholdScene } from '../scenes/jerusalem-stronghold/JerusalemStrongholdScene';
+import { JERUSALEM_TERRAIN } from '../scenes/jerusalem-stronghold/terrain';
+import { RephaimValleyScene } from '../scenes/rephaim-valley/RephaimValleyScene';
+import { REPHAIM_TERRAIN } from '../scenes/rephaim-valley/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -52,6 +56,8 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'hebron-covenant': { component: HebronCovenantScene, terrain: HEBRON_COVENANT_TERRAIN },
   'hebron-gate': { component: HebronGateScene, terrain: HEBRON_GATE_TERRAIN },
   'hebron-reckoning': { component: HebronReckoningScene, terrain: HEBRON_RECKONING_TERRAIN },
+  'jerusalem-stronghold': { component: JerusalemStrongholdScene, terrain: JERUSALEM_TERRAIN },
+  'rephaim-valley': { component: RephaimValleyScene, terrain: REPHAIM_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {
