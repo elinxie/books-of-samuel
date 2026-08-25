@@ -450,7 +450,7 @@ the cascade: `hebron-covenant`/`hebron-gate`/`hebron-reckoning` → `released`,
 `2sam-3`/`2sam-4` → `released`, `f-2sam-3-4` → `done`, `M5` → `released`.
 Full detail: `docs/fable-review-queue.md`'s 2026-08-12 status-flip note.
 
-## Milestone 6 — 2 Samuel 5: **in-progress** (scoped + briefed 2026-08-23; both scenes + atlas phase built 2026-08-24; Sonnet-fallback sign-off 2026-08-24, real Fable sign-off still pending)
+## Milestone 6 — 2 Samuel 5: **released** (scoped + briefed 2026-08-23; both scenes + atlas phase built 2026-08-24; Sonnet review-tier sign-off 2026-08-24; queue #24 closed as ADR-013 and release cascade executed 2026-08-25)
 
 Scope decision (Fable/`world-director`, 2026-08-23): unlike M4/M5, no
 bundling needed — 2 Sam 5 contains two full, distinct, buildable settings the
@@ -489,9 +489,35 @@ merged-region/moved-capital atlas phase. Queue #22's researcher pass closed
 (7 new source cards). `fable-architect` hit its monthly spend limit;
 Sonnet-fallback sign-off confirmed #21/#23 as built but left #24 (narrated
 divine-sign depiction policy) open as genuinely Fable-tier — **no status
-flips made**, everything stays `in-progress`/`planned` pending a real Fable
+flips made**, everything stayed `in-progress`/`planned` pending a dedicated
 pass. Full detail: `docs/run-log.md`'s 2026-08-24 entry,
 `docs/fable-review-queue.md`'s #21/#23/#24 rows.
+
+**Queue #24 closed / M6 released, 2026-08-25 (Sonnet, no Fable involved —
+Fable was retired project-wide by user directive 2026-08-24, see
+`docs/model-handoff.md`).** `docs/architecture-decisions/adr-013-narrated-
+supernatural-depiction.md` ratifies `rephaim-valley`'s "stated, never
+visualized" default as project-wide policy for any narrated divine/
+supernatural event with no described physical mechanism (governs the
+supernatural mechanism only — composes with, does not replace, ADR-009's
+death-depiction rules for a text's separately-stated worldly outcome, e.g.
+Uzzah's death in 2 Sam 6). `claim-divine-sign-depiction`'s notes now point
+to ADR-013 instead of carrying an open ratification question. With #21/#23
+re-confirmed unchanged since 2026-08-24 and #24 now closed, the queue's Open
+table is empty and the release cascade ran per the M3/M4/M5 precedent:
+`jerusalem-stronghold`/`rephaim-valley` → `released`; `2sam-5` → `released`;
+`jerusalem`/`valley-of-rephaim` → `released`; new feature `f-2sam-5` added
+directly as `done` (M6 had no feature entry at build time, the same gap
+M5's sign-off found and fixed for `f-2sam-3-4`); `M6` → `released`. Full
+`npm run verify` gate green after the flips (format, lint, 546 vitest,
+build, 16/16 e2e). Non-blocking riders carried forward, unchanged: live ESV
+wording verification for M6's three quotes (5:6b, 5:8a, 5:24); the
+real-hardware perf check of `gilboa-battle` at high tier + the Pages-live
+check. Full detail: `docs/fable-review-queue.md`'s 2026-08-25 status-flip
+note, `docs/run-log.md`'s 2026-08-25 entry.
+
+M7 (2 Samuel 6 onward) has no scope or briefs yet — needs a scoping pass
+before any build work, now Sonnet's to run directly (no model to wait on).
 
 ## Visual-fidelity roadmap (parallel track, not milestone-gated)
 

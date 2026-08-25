@@ -205,6 +205,20 @@ export const FEATURES: FeatureEntry[] = [
     milestoneId: 'M5',
   },
   {
+    id: 'f-2sam-5',
+    title: '2 Samuel 5 scenes',
+    description:
+      'The Jebusite stronghold and the founding of the City of David, the two Philistine engagements in the Valley of Rephaim — plus the /atlas overlay’s 2 Samuel 5 phase (capital shift, region unification).',
+    // Added 2026-08-25, same gap as f-2sam-3-4's: M6 had no feature entry at
+    // build time. Both scenes plus the atlas phase are built and released
+    // together at the 2026-08-25 M6 sign-off/release pass (queue #21/#22/#23
+    // confirmed, #24 resolved as ADR-013) — done from the start, per the
+    // f-2sam-3-4 precedent of adding the entry once the milestone's status
+    // is already settled rather than mid-build.
+    status: 'done',
+    milestoneId: 'M6',
+  },
+  {
     id: 'f-dem-terrain',
     title: 'Real-elevation terrain',
     description:

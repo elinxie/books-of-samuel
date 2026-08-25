@@ -1844,3 +1844,53 @@ limit resets — rule on #24 first (ratify as-is / revise / promote to its
 own ADR, since it will recur from 2 Samuel 6 onward), then re-confirm
 #21/#23 and execute the release cascade if everything still holds. See
 `docs/next-run.md` for the full next-run note.
+
+## 2026-08-25 — M6 release: ADR-013 (queue #24), release cascade, branch `claude/focused-mccarthy-sqz8z0`, commit `075d765`
+
+Closed the one item the 2026-08-24 build/sign-off session left open. Wrote
+`docs/architecture-decisions/adr-013-narrated-supernatural-depiction.md`:
+ratifies `rephaim-valley`'s "stated, never visualized" default (2 Sam 5:24)
+as project-wide policy for any narrated divine/supernatural event with no
+described physical mechanism. Scope note load-bearing for future milestones:
+ADR-013 governs the supernatural _mechanism_ only — a text's own separately-
+stated worldly outcome (e.g. Uzzah struck dead, 2 Sam 6:7) stays ADR-009's
+call; the two ADRs compose, neither displaces the other. `claim-divine-sign-
+depiction`'s notes updated to cite ADR-013 instead of carrying an open
+ratification question. `docs/fable-review-queue.md`: #21/#23/#24 moved Open
+→ Resolved (re-confirmed #21/#23 unchanged since 2026-08-24; #24 closed by
+the ADR); Open table now empty.
+
+Executed the M6 release cascade, same pattern as M3/M4/M5's release passes
+(no Fable involved — retired project-wide 2026-08-24, see
+`docs/model-handoff.md`; this is an ordinary Sonnet review-tier pass per
+`docs/fable-review-checklist.md`): `jerusalem-stronghold`/`rephaim-valley`
+→ `released`; `2sam-5` → `released`; `jerusalem`/`valley-of-rephaim` →
+`released`; `M6` → `released`; new feature `f-2sam-5` added directly as
+`done` (M6 had no feature entry at build time — same gap M5's sign-off
+found/fixed for `f-2sam-3-4`).
+
+Full `npm run verify` gate re-run green after the flips: format, lint, 546
+vitest, build, 16/16 e2e (`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/
+chromium-1194/chrome-linux/chrome` needed for e2e in this sandbox — pinned
+Playwright wants a `1228` browser build, only `1194` preinstalled).
+
+Carried forward, non-blocking: live ESV wording check for M6's three
+quotes (5:6b, 5:8a, 5:24); real-hardware perf check of `gilboa-battle` +
+Pages-live check (open since M3). M7 (2 Sam 6+) has no scope/briefs yet —
+top priority next session, a scoping pass Sonnet runs directly.
+
+Doc-sync pass (same session, no code changes): `docs/progress.md`,
+`docs/next-run.md`, `docs/asset-roadmap.md` updated to reflect the release
+(all three still described M6 as unreleased/pending Fable). Found and fixed
+one pre-existing drift in `docs/asset-roadmap.md`'s "Upcoming needs by
+milestone" M6 bullet: it claimed the `/atlas` M6 phase was "still
+outstanding," but that phase was actually built 2026-08-24 (commit
+`b8e4e1c`, same session as the two scenes) — a stale line that predated
+this session's release, not something this release caused.
+`docs/uncertainty-register.md` checked — its four M6-era rows (#18-21) are
+genuinely open scholarly disputes independent of release status (tsinnôr
+identification, Jerusalem's 10th-c. extent, the Millo, Rephaim's location),
+none needed a "now released" update. `docs/model-handoff.md`,
+`docs/sonnet-continuation.md`, `docs/fable-review-checklist.md` checked for
+stale "wait for Fable" language — all three already fully reflect the
+2026-08-24 Fable retirement, nothing to fix.

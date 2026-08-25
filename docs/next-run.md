@@ -3,7 +3,57 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-24, M6 BUILT, Sonnet sign-off — queue #24 still open, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
+## State right now (2026-08-25, M6 RELEASED — queue #24 closed as ADR-013, release cascade executed, branch `claude/focused-mccarthy-sqz8z0`)
+
+**M6 (2 Samuel 5) is fully released.** This session closed the one item
+`docs/fable-review-queue.md` #24 left open at the 2026-08-24 build/
+sign-off pass: wrote `docs/architecture-decisions/adr-013-narrated-
+supernatural-depiction.md`, ratifying `rephaim-valley`'s "stated, never
+visualized" default (2 Sam 5:24) as project-wide policy for any narrated
+divine/supernatural event with no described physical mechanism — it governs
+the supernatural _mechanism_ only, not a text's separately-stated worldly
+outcome, so it composes with ADR-009's death-depiction rules rather than
+replacing them (e.g. it will not itself decide how Uzzah's death at 2 Sam
+6:7 renders — that stays ADR-009's call). `claim-divine-sign-depiction`'s
+notes now point to ADR-013 instead of carrying the open ratification
+question. `docs/fable-review-queue.md` updated: #21/#23/#24 moved Open →
+Resolved, Open table now empty.
+
+With nothing left open, ran the M6 release cascade (M3/M4/M5 pattern):
+`jerusalem-stronghold`/`rephaim-valley` scenes → `released`; `2sam-5`
+passage → `released`; `jerusalem`/`valley-of-rephaim` locations →
+`released`; `M6` milestone → `released`; new feature `f-2sam-5` added
+directly as `done` (M6 had no feature entry at build time — same gap M5's
+sign-off found and fixed for `f-2sam-3-4`). Full `npm run verify` gate
+green after the flips: format, lint, 546 vitest, build, 16/16 e2e
+(`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+needed for e2e in this sandbox, same standing note as every prior session).
+
+Commits this session: `075d765` (ADR-013 + queue closure + release
+cascade), on top of `c3e686a` (PR #67, the M6 build, merged into `main`
+this session). Working tree is clean; both commits are local, not yet
+pushed as of this doc-sync pass.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Scope M7 (2 Samuel 6 onward)** — no milestone entry, briefs, or scope
+   decision exist yet in `src/data/milestones.ts`. This is genuinely
+   Sonnet's to run directly now (Fable retired project-wide, see
+   `docs/model-handoff.md`) — a `world-director`-style scoping pass
+   (`model: sonnet`) before any M7 build work. 2 Samuel 6 (the ark's
+   return to Jerusalem, Uzzah's death) is the natural start; note ADR-013
+   now governs any narrated-sign/supernatural element there, and ADR-009
+   still governs Uzzah's death depiction specifically — the two compose,
+   neither one alone.
+2. (Carried forward, still open, non-blocking) Live ESV wording
+   verification for M6's three quotes (5:6b, 5:8a, 5:24) — not yet checked
+   against a live source this session, same standing caveat as prior
+   milestones' releases.
+3. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — long-standing,
+   carried since M3.
+
+## State before this slice (2026-08-24, M6 BUILT, Sonnet sign-off — queue #24 still open, branch `claude/focused-mccarthy-m17xzl`, PR #67 draft)
 
 **Fable is not used on this project as of this session — see `CLAUDE.md`'s
 "Model policy — do not invoke Fable" (user directive). Everything below that

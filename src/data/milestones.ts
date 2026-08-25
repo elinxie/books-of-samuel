@@ -179,8 +179,12 @@ export const MILESTONES: Milestone[] = [
     // species) opened as queue #22 — it gates named attributions and any move
     // past `design-placeholder`, not the builds. The tsinnor rendering bar is
     // queue #23; the never-yet-decided depiction policy for narrated divine
-    // signs is queue #24. M7 starts at 2 Samuel 6.
-    status: 'planned',
+    // signs is queue #24, resolved 2026-08-25 as ADR-013 (docs/architecture-
+    // decisions/adr-013-narrated-supernatural-depiction.md) — stated, never
+    // visualized, project-wide. Released 2026-08-25: #21/#22/#23 already
+    // confirmed built, #24 the last open item, closed by the ADR; the M6
+    // release cascade follows the M3/M4/M5 pattern. M7 starts at 2 Samuel 6.
+    status: 'released',
     passageRefs: ['2 Samuel 5'],
     goals: [
       'All Israel’s covenant with David and the anointing over the united kingdom at Hebron (2 Sam 5:1–5) — carried as context cards and a `/atlas` phase update, not a fourth Hebron scene (queue #21)',

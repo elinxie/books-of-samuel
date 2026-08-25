@@ -291,12 +291,13 @@ principal-detail rig. High-tier total ≈120 figures, within the brief's
 | `asset-jerusalem-construction-ground` | Timber baulks, dressed-stone courses, and a partially raised structure — `claim-hiram-building`                                | Simple primitive cylinder/box geometry standing for cedar timber and dressed stone; deliberately not a finished cedar palace and not any 9th-8th century royal-architecture vocabulary                      | M6         |
 
 Reuses `asset-figure-procedural`, `asset-david-marker`, `asset-olive-tree`,
-`asset-rocks`, and `asset-water-plane` — no new records for these. This
-scene's status stays `in-progress`, pending a Fable M6 sign-off review
-(`docs/next-run.md`, `docs/fable-review-queue.md` #21-#24). Its fresh
-passage (`2sam-5`, shared with `rephaim-valley`) carries two of its shared
-3-quote ESV budget (5:6b's taunt, 5:8a's tsinnôr clause); the third (5:24)
-is spent by `rephaim-valley`, below.
+`asset-rocks`, and `asset-water-plane` — no new records for these. **Released
+2026-08-25** (`docs/fable-review-queue.md`'s #21-#24 all closed, #24 via
+ADR-013). Its fresh passage (`2sam-5`, shared with `rephaim-valley`) carries
+two of its shared 3-quote ESV budget (5:6b's taunt, 5:8a's tsinnôr clause);
+the third (5:24) is spent by `rephaim-valley`, below. Live-source ESV
+wording verification for both quotes is still open, non-blocking, carried
+forward per the standing pre-release-caveat pattern.
 
 ## Current placeholders (rephaim-valley scene, Milestone 6, built 2026-08-24)
 
@@ -335,14 +336,18 @@ Reuses `asset-figure-procedural`, `asset-figure-fallen`,
 precedent for cross-scene kit reuse), and `asset-david-marker` — no new
 records for these. Baal-perazim (5:20b) is staged but never located: no
 `LocationEntry`, no atlas pin, per the same discipline that keeps Mahanaim
-unbuilt. This scene's status stays `in-progress`, pending a Fable M6
-sign-off review (`docs/next-run.md`, `docs/fable-review-queue.md`
-#21-#24). Its shared passage (`2sam-5`) spends its third and last ESV
-quote here (5:24's "the sound of marching in the tops of the balsam
-trees") — entered from the build agent's own recollection, not a live
-source check (this sandbox session had no outbound access to Bible-text
-sites and no `WebSearch` tool), flagged for a live-source verification pass
-before this passage/scene flips to `released`, per the #19(b) precedent.
+unbuilt. **Released 2026-08-25** (`docs/fable-review-queue.md`'s #21-#24 all
+closed, #24 via `docs/architecture-decisions/adr-013-narrated-supernatural-
+depiction.md`, ratifying this scene's never-visualized-sign treatment as
+project-wide policy). Its shared passage (`2sam-5`) spends its third and
+last ESV quote here (5:24's "the sound of marching in the tops of the
+balsam trees") — entered from the build agent's own recollection, not a
+live source check (this sandbox session had no outbound access to
+Bible-text sites and no `WebSearch` tool). Live-source verification of this
+quote (and the two `jerusalem-stronghold` quotes above) is still open,
+non-blocking, carried forward — unlike M4/M5, where the equivalent ESV
+wording check was closed as part of the citation-gate pass before the
+release flip, M6's release wasn't gated on it and it stays an open rider.
 
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
@@ -390,11 +395,13 @@ gate, per ADR-011.
   already-built Hebron (see tables above). `hebron-reckoning` closes the
   milestone at the tomb of Abner; all three remain `in-progress` pending a
   Fable M5 sign-off review.
-- **M6 (2 Sam 5):** both scenes now built 2026-08-24 — `jerusalem-stronghold`
-  (the project's first geometry at Jerusalem) and `rephaim-valley`
-  (5:17-25, both Philistine engagements, see tables above); the `/atlas` M6
-  phase extension (the two regions unify, the capital shifts Hebron ->
-  Jerusalem) is still outstanding, along with a Fable M6 sign-off review.
+- **M6 (2 Sam 5): released 2026-08-25.** Both scenes built 2026-08-24 —
+  `jerusalem-stronghold` (the project's first geometry at Jerusalem) and
+  `rephaim-valley` (5:17-25, both Philistine engagements, see tables above)
+  — plus the `/atlas` M6 phase extension (the two regions unify, the
+  capital shifts Hebron -> Jerusalem), also built 2026-08-24, same session
+  as the two scenes. Queue #24 (narrated divine-sign depiction policy)
+  closed via ADR-013; release cascade executed 2026-08-25.
 
 ## Policy
 
