@@ -3,7 +3,120 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-25, M6 RELEASED — queue #24 closed as ADR-013, release cascade executed, branch `claude/focused-mccarthy-sqz8z0`)
+## State right now (2026-08-26, M7 SCOPED — Sonnet world-director pass, two ark scene briefs, no build yet, branch `claude/focused-mccarthy-yvcpud`, PR #70 draft)
+
+**M7 (2 Samuel 6) is defined and briefed.** Scheduled/automated session;
+baseline verified clean first (`npm install` + full `npm run verify` green,
+using the standing `PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/
+chrome-linux/chrome` e2e workaround). Per `CLAUDE.md`'s "Model policy — do not
+invoke Fable" (still standing, still checked first this session despite the
+scheduled prompt's offer to run Fable "if needed" — that offer is superseded
+by the repo's own binding instructions), this scope pass ran directly on
+Sonnet via the `world-director` agent (`model: sonnet`), which now carries
+the architecture/creative authority formerly routed to Fable.
+
+**Scope decision: two scenes, split at the chapter's own three-month hinge
+(6:11)** — the ark's diversion to Obed-edom's house is a stated narrative
+gap, not an invented seam like M6's topical-arrangement uncertainty:
+
+1. `perez-uzzah` (2 Sam 6:1–11) — the gathering, the departure from
+   Baale-judah/Kiriath-jearim, the new cart, Uzzah and Ahio driving it, the
+   music, Uzzah's death at the threshing floor of Nacon, the naming of
+   Perez-uzzah, David's anger and fear, the diversion to Obed-edom's house.
+   The project's first-ever staging of the ark of the covenant as a physical
+   object. `depictsDeath: true`. Brief: `docs/design/perez-uzzah-brief.md`.
+2. `ark-into-jerusalem` (2 Sam 6:12–23) — the ark brought up from
+   Obed-edom's house into the City of David with sacrifices, David's dance in
+   a linen ephod, Michal watching from the window and despising him, the
+   tent, the offerings and communal distribution, the Michal/David
+   confrontation, ending on her childlessness. **Reuses
+   `jerusalem-stronghold`'s terrain, enclosure, palette, and unfinished-house
+   asset unchanged** — the M5 Hebron-reuse discipline applied a second time,
+   and also the strongest argument for splitting here rather than building
+   one monolithic scene. `depictsDeath: false`. Brief:
+   `docs/design/ark-into-jerusalem-brief.md`.
+
+**Two genuinely new design problems resolved this pass, both logged as
+provisional `docs/fable-review-queue.md` items for a later confirmation pass
+(neither blocks the build):**
+
+- **#25 — Uzzah's death.** ADR-013 itself names 2 Sam 6:7 as "the clearest
+  future test" of the stated-never-visualized line: the death is depictable
+  under ADR-009, the divine strike the text says caused it is not. Every
+  prior ADR-009 named killing (Asahel, Abner, Rechab/Baanah) has a human
+  assailant with a gesture to render; Uzzah's death has none. Resolved as a
+  new no-assailant template variant: the reaching gesture (6:6, his own act)
+  shown, then a collapse/fall at documentary distance, no wound geometry, no
+  visual stand-in for the divine cause in any mode (no light, glow, wind, or
+  camera language implying presence). Reduced mode elides the reach-and-fall
+  entirely.
+- **#26 — the ark's physical form.** No prior scene has staged the ark and 2
+  Samuel 6 gives no construction detail; the only descriptive basis anywhere
+  is Exodus 25:10–22 — the project's first citation of a Torah passage for an
+  object's own established form (distinct from the Samuel/Chronicles
+  same-event-retold-differently pattern used elsewhere). Resolved: a plain
+  gold-toned chest with carrying poles, basis `biblical-text` (Exodus),
+  confidence `moderate`, **no cherubim geometry in any mode** (the text names
+  them, gives no visual detail, and rendering specific ANE composite-creature
+  iconography would invent an artistic program no evidence attests).
+
+**Other resolved calls worth knowing:** David's dance stages fully (vigorous,
+joyful movement); Michal's exposure accusation is carried entirely by
+caption/dialogue, never enacted, in any mode, at any distance — the
+`jerusalem-stronghold` taunt precedent ("spoken, never enacted") extended to a
+new kind of content. Sacrifice (6:13, 6:17) is depicted with the same
+restraint ADR-009 applies to human death, by reasoned extension rather than a
+new ADR: ritual activity conveys the offering, slaughter itself elided in
+every mode. `kiriath-jearim` gets a full `LocationEntry` (Deir el-Azhar/Abu
+Ghosh, reasonably confident, but **no dedicated source card exists yet** —
+flagged as a researcher gap); the threshing floor of Nacon/Perez-uzzah and
+Obed-edom's house both get **no** `LocationEntry` — staged with disclosed
+placeholder positions only, the Baal-perazim precedent, not Mahanaim's. New
+characters needed at build time: `uzzah`, `ahio`, `obed-edom` (all new);
+`michal` transitions from referenced-only to staged for the first time — her
+first appearance in the project as an active figure rather than a card
+reference. `mccarter-1984-ii-samuel` currently covers only through 2 Samuel
+5 and needs extending to 2 Samuel 6 — flagged as a researcher-pass item, same
+gap noted in both briefs, not yet done.
+
+`src/data/milestones.ts` gained the `M7` entry (`status: 'planned'`,
+`passageRefs: ['2 Samuel 6']`) with the full dated scope-decision comment,
+matching M4–M6's style. `src/data/scenes.ts`/`claims.ts`/`characters.ts`/
+`locations.ts` were **not touched** — per every prior milestone's convention,
+those get created at build time by a `threejs-engineer` pass, not at scoping
+time. Full `npm run verify` green (format, lint, 546 vitest — unchanged, this
+is a docs/scope-only change — build, 16/16 e2e). Commit `e2ff0ad`, pushed;
+PR #70 opened as draft, CI subscribed.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Build `perez-uzzah`** per its brief (`threejs-engineer`) — first of M7's
+   two scenes, and the project's first-ever staging of the ark. Read its
+   Resolved-design-calls section closely before starting: the no-assailant
+   death template (queue #25) and the ark's physical form (queue #26) are
+   both load-bearing and both new precedent, not routine application of an
+   existing template.
+2. Build `ark-into-jerusalem` per its brief (`threejs-engineer`) — reuses
+   `jerusalem-stronghold`'s terrain; read its dance/exposure and sacrifice
+   sections closely, both new kinds of restrained content for the project.
+3. `researcher` pass on the open gaps: a dedicated Kiriath-jearim source
+   card (currently none), extending `mccarter-1984-ii-samuel` to 2 Samuel 6
+   (named attribution for the cart-vs-carrying-method dispute, the
+   6:20b exposure-reading dispute, and the 6:23 causation question), and
+   `king-stager-2001`'s coverage (or lack of it) for musical instruments and
+   the distribution-beat household/courtyard conventions — parallelizable,
+   doesn't block either build.
+4. (Carried forward, still open, non-blocking) Live ESV wording verification
+   for M6's three quotes (5:6b, 5:8a, 5:24) — still not checked against a
+   live source.
+5. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — long-standing,
+   carried since M3.
+6. Then a Sonnet M7 sign-off review before any status flips past `planned`/
+   `in-progress` — confirm or revise queue #25/#26 as part of that review,
+   per their own notes, following `docs/fable-review-checklist.md`.
+
+## State before this slice (2026-08-25, M6 RELEASED — queue #24 closed as ADR-013, release cascade executed, branch `claude/focused-mccarthy-sqz8z0`)
 
 **M6 (2 Samuel 5) is fully released.** This session closed the one item
 `docs/fable-review-queue.md` #24 left open at the 2026-08-24 build/
