@@ -12,7 +12,61 @@ worth keeping).
 
 ## Open
 
-_(empty — #21/#23/#24 closed 2026-08-25, see Resolved below; M6 released)_
+M7 scope note (2026-08-26, Sonnet world-director pass — detail for #25/#26
+below). Opened alongside the M7 entry in `src/data/milestones.ts` and the two
+scene briefs (`docs/design/perez-uzzah-brief.md`,
+`docs/design/ark-into-jerusalem-brief.md`). Neither item blocks build work;
+both follow the M6 #21/#23/#24 pattern, where genuinely new judgment calls are
+logged at the scope pass and confirmed or reversed at the milestone review.
+
+**#25 — Uzzah's death: a new, no-assailant variant of the ADR-009
+named-killing template, and ADR-013's own named test case worked through.**
+2 Samuel 6:7 is the event ADR-013 itself calls "the clearest future test" of
+the stated-never-visualized line for narrated supernatural events: the death
+is depictable under ADR-009, the divine strike the text says caused it is
+not. Every prior ADR-009 named killing (Asahel, Abner, Rechab and Baanah) has
+a human assailant with some gesture to render, even if elided; Uzzah's death
+has none — only a reaching gesture (his own act, per 6:6) and a death, with
+no method, no striker, and no wound to invent even if the project wanted to.
+`perez-uzzah`'s resolution: show the reach (the text's own specific,
+non-graphic detail, per the established gesture precedent), then a collapse
+and fall at documentary distance, no wound geometry, and no visual effect of
+any kind standing in for the strike itself (no light, glow, wind, or camera
+language implying presence, per ADR-013's own bar). The caption carries the
+text's full causal claim in both modes; reduced mode elides the reach-and-fall
+entirely and cuts to a held aftermath frame. This is a reasoned, tightly
+constrained application of two already-decided policies (ADR-009 and
+ADR-013), not a new principle — but it is the first time either policy has
+had to handle a death with literally nothing human to stage, and is logged
+for a second look before being treated as the template for the next such
+case (candidates recur through 2 Samuel: the plague deaths at 2 Sam 24, for
+one). **Confirm or revise at the M7 review.**
+
+**#26 — Citing Exodus 25 for the ark's physical form: a new cross-book
+sourcing precedent.** The project has never before staged the ark, and
+2 Samuel 6 itself gives no construction detail for it. The only descriptive
+basis anywhere in the biblical text is Exodus 25:10–22 (and Deuteronomy
+10:1–5) — a Torah passage, not a Samuel/Chronicles same-event-retold-
+differently case like every prior cross-canonical decision this project has
+made (Joab at Jerusalem's capture, the 4:6 MT/LXX divergence, 1 Chronicles
+15's carrying-method correction). `perez-uzzah`'s resolution: cite Exodus for
+the object's own established general form (a gold-overlaid wooden chest
+carried on poles) as `biblical-text` basis, confidence `moderate`, with notes
+disclosing the cross-book citation plainly and stating there is no
+archaeological corroboration for this or any comparable object. **No
+cherubim geometry renders, in any mode** — the text names them but gives no
+visual detail beyond the word itself, and inventing a specific ancient Near
+Eastern iconographic program for this exact object would be exactly the kind
+of unsourced specificity the project's anachronism discipline forbids. This
+is a real judgment call about what counts as legitimate source material for
+an object's form when the object's own narrating book says nothing about its
+construction — a different question from every prior cross-canonical
+harmonization decision, which were all about competing accounts of the same
+narrated event. **Confirm or revise at the M7 review**; if reversed, the
+fallback is an undecorated, unlabeled placeholder form with no claimed
+biblical-text basis at all, disclosed as pure `design-placeholder`.
+
+_(#21/#23/#24 closed 2026-08-25, see Resolved below; M6 released)_
 
 M6 scope note (2026-08-23, Fable world-director pass — detail for #21–#24 above).
 Opened alongside the M6 entry in `src/data/milestones.ts` and the two scene briefs

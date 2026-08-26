@@ -194,6 +194,82 @@ export const MILESTONES: Milestone[] = [
       'Atlas overlay extension: the two regions unify and the capital shifts from Hebron to Jerusalem — a `/atlas` M6 phase per ADR-011, not a 3D scene',
     ],
   },
+  {
+    id: 'M7',
+    label: 'Milestone 7 — 2 Samuel 6',
+    // 2026-08-26 Sonnet world-director scope pass (per CLAUDE.md's "Model
+    // policy — do not invoke Fable" — this pass carries the architecture/
+    // creative authority formerly routed to Fable directly). 2 Samuel 6
+    // resolves to **two scenes**, split at the chapter's own hinge (the
+    // three-month interval at Obed-edom's house, 6:11), not one scene and not
+    // three:
+    //   • 6:1–11 → `perez-uzzah`. The gathering, the new cart, Uzzah and
+    //     Ahio driving it, the music, the death of Uzzah at the threshing
+    //     floor of Nacon, the naming of Perez-uzzah, David's anger and fear,
+    //     and the diversion to Obed-edom's house. The project's first-ever
+    //     staging of the ark of the covenant as a physical object (form
+    //     sourced from Exodus 25, a new cross-book citation precedent — queue
+    //     #26) and the first working-through of ADR-013's own named "clearest
+    //     future test": Uzzah's death is depictable under ADR-009, the divine
+    //     strike the text says caused it is not — a new no-assailant template
+    //     variant, since (unlike every prior ADR-009 named killing) there is
+    //     no striker and no method to render even as elided gesture. Queue
+    //     #25 logs this as the ADR-013 test case worked through.
+    //   • 6:12–23 → `ark-into-jerusalem`. The ark brought up from Obed-edom's
+    //     house into the City of David with sacrifices, David's dance in a
+    //     linen ephod, Michal watching from the window and despising him in
+    //     her heart, the tent, the offerings, the blessing and distribution
+    //     to the whole multitude, the Michal/David confrontation, and the
+    //     closing note on her childlessness. **Reuses `jerusalem-stronghold`'s
+    //     terrain, enclosure, palette, and unfinished-house asset unchanged**
+    //     — the strongest argument for the split at 6:11 rather than one
+    //     scene: the observer who watched Uzzah die beside the ark in
+    //     `perez-uzzah` and who already walked this exact ridge in
+    //     `jerusalem-stronghold` arrives at the ark's arrival "with gladness"
+    //     on already-familiar ground, which is both the text's own
+    //     danger-then-blessing juxtaposition (6:11) made physical and the
+    //     M5-precedent reuse discipline (do not re-invent the town) applied a
+    //     second time.
+    //   Two scenes, not one: 6:1–11 and 6:12–23 are compositionally distinct
+    //   settings (a departure/procession/death sequence on a route corridor,
+    //   vs. an arrival/festival/domestic-confrontation sequence inside an
+    //   already-built city) separated by a stated three-month narrative gap —
+    //   splitting at that seam is the text's own structure, not an invented
+    //   one, unlike M6's topical-arrangement uncertainty. Not three scenes:
+    //   neither half is thin enough on its own to need further splitting, and
+    //   Michal's confrontation is compositionally inseparable from the
+    //   procession/dance beats that provoke it.
+    // Hard scope guard for the whole milestone: nothing from 2 Samuel 7
+    // onward — the Nathan oracle, the dynastic promise, Bathsheba, the
+    // temple — appears anywhere, depicted or foreshadowed, including any
+    // gloss on David's "house" or "rest from his enemies," language 7:1 reuses
+    // directly from this chapter's own close.
+    // Briefs: docs/design/perez-uzzah-brief.md,
+    // docs/design/ark-into-jerusalem-brief.md. New characters: `uzzah`,
+    // `ahio`, `obed-edom` (all new); `michal` transitions from
+    // referenced-only to staged for the first time. New location:
+    // `kiriath-jearim` (Deir el-Azhar/Tell el-Azhar, reasonably confident
+    // identification, but the project currently has no dedicated source card
+    // for the site — researcher gap). Deliberately **no** `LocationEntry` for
+    // the threshing floor of Nacon/Perez-uzzah or for Obed-edom's house
+    // (both unlocated beyond "on the way" from Kiriath-jearim; staged with
+    // disclosed placeholder positions, no atlas pin — the Baal-perazim
+    // precedent, not the Mahanaim one, since both are staged rather than
+    // left unbuilt). Queue #25 (Uzzah's no-assailant death template) and #26
+    // (citing Exodus 25 for the ark's physical form) opened as provisional
+    // calls for a later confirmation pass; neither blocks the build.
+    // `mccarter-1984-ii-samuel` needs extending to 2 Samuel 6 (currently
+    // covers only through 2 Samuel 5) — flagged for the researcher pass that
+    // will also need to open a dedicated Kiriath-jearim source card.
+    status: 'planned',
+    passageRefs: ['2 Samuel 6'],
+    goals: [
+      'The ark brought from Kiriath-jearim on a new cart; Uzzah and Ahio driving it; the death of Uzzah at the threshing floor of Nacon and the naming of Perez-uzzah (`perez-uzzah`) — the project’s first staging of the ark itself and the first working-through of ADR-013’s named future test (2 Sam 6:7)',
+      'The three months at the house of Obed-edom the Gittite, carried as the bridge between the two scenes',
+      'The ark brought up into the City of David with sacrifices, David’s dance in a linen ephod, and the tent David pitched for it (`ark-into-jerusalem`) — reusing `jerusalem-stronghold`’s terrain rather than building new Jerusalem geometry',
+      'Michal’s contempt from the window and her confrontation with David, ending on her childlessness (2 Sam 6:23) — Michal’s first staged appearance in the project',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(
