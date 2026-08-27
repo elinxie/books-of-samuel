@@ -261,7 +261,38 @@ export const MILESTONES: Milestone[] = [
     // `mccarter-1984-ii-samuel` needs extending to 2 Samuel 6 (currently
     // covers only through 2 Samuel 5) — flagged for the researcher pass that
     // will also need to open a dedicated Kiriath-jearim source card.
-    status: 'planned',
+    //
+    // M7 sign-off (2026-08-27, Sonnet, per docs/fable-review-checklist.md —
+    // no Fable, per CLAUDE.md). Both scenes built and independently
+    // re-verified (grep sweeps + full gate re-run by the orchestrating
+    // session after each build agent's pass, not just trusted from its
+    // report), with two real defects caught and fixed during
+    // ark-into-jerusalem's re-verification: a wrong 6:21-22 ESV word
+    // ("my own eyes" -> "your eyes") and a citation-integrity bug
+    // (claim-michal-confrontation citing mccarter-1984-ii-samuel despite its
+    // own notes disclosing that source doesn't cover 2 Sam 6). Queue #25
+    // (Uzzah's no-assailant death template) confirmed as built exactly per
+    // brief; the one flagged implementation question — reduced mode as a
+    // ~3s fade-from-view rather than an instant cut — is ratified as-is: an
+    // explorable 3D scene has no true film "cut," and a brief structured
+    // fade is the more restrained way to elide the aftermath without either
+    // a jarring pop or Uzzah's figure lingering visibly on the ground; every
+    // hard bar (no reach, no fall, identical captions in both modes) holds
+    // regardless. Queue #26 (Exodus 25 cross-book citation for the ark's
+    // form, no cherubim geometry) confirmed as built and held unchanged
+    // across both scenes (perez-uzzah's Ark.tsx reused verbatim by
+    // ark-into-jerusalem). Both closed — see docs/fable-review-queue.md's
+    // Resolved section. All three of 2sam-6's ESV excerpts are now
+    // live-verified (6:9/6:20 correct as entered, 6:21-22 corrected).
+    // Non-blocking researcher gaps carried forward per the M3-M6 precedent
+    // (honestly hedged scholarlyViews, no misattribution — not a release
+    // blocker): mccarter-1984-ii-samuel's extension to 2 Samuel 6, the
+    // king-stager-2001 instrument-coverage check, and a dedicated
+    // Kiriath-jearim source card. Full verify gate green throughout
+    // (format, lint, typecheck, 608 vitest, build, 19/19 e2e). Cascade:
+    // perez-uzzah/ark-into-jerusalem -> released, 2sam-6 -> released,
+    // kiriath-jearim -> released, f-2sam-6 -> done, M7 -> released.
+    status: 'released',
     passageRefs: ['2 Samuel 6'],
     goals: [
       'The ark brought from Kiriath-jearim on a new cart; Uzzah and Ahio driving it; the death of Uzzah at the threshing floor of Nacon and the naming of Perez-uzzah (`perez-uzzah`) — the project’s first staging of the ark itself and the first working-through of ADR-013’s named future test (2 Sam 6:7)',

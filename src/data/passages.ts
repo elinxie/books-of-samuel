@@ -160,20 +160,13 @@ export const PASSAGES: Passage[] = [
     // handful is split explicitly — perez-uzzah spends exactly one (6:9's
     // "How can the ark of the LORD come to me?"), and ark-into-jerusalem
     // spends exactly the remaining two (6:20's rebuke, 6:21-22's reply,
-    // below), closing out the passage's whole budget. Exact ESV wording for
-    // all three could not be live-verified this session — no WebSearch (or
-    // other live-source) tool was available in this session's toolset, and a
-    // direct check confirmed the outbound egress policy for this session
-    // also blocks the obvious fallbacks (curl to esv.org, biblehub.com,
-    // biblegateway.com, bible-api.com, and labs.bible.org all returned
-    // proxy-level 403s) — unlike the sessions that closed queue #20(e)/#19(b)
-    // and unlike perez-uzzah's own 6:9 quote, which a later session with
-    // WebSearch access did independently live-verify against ESV.org/
-    // BibleHub (see docs/fable-review-queue.md's perez-uzzah build note).
-    // The two ark-into-jerusalem excerpts below are entered from careful
-    // recollection of two short, well-known, frequently-cited verses;
-    // flagged here for the same live-source check before this passage/scene
-    // flips to `released`.
+    // below), closing out the passage's whole budget. All three now
+    // live-verified against independent ESV sources (ESV.org/BibleHub/
+    // Biblia/Bible.com) at the 2026-08-27 M7 sign-off: 6:9 and 6:20 matched
+    // the entered text verbatim; 6:21-22 did not — the original entry read
+    // "abased in my own eyes," corrected here to the verified "abased in
+    // your eyes" (see docs/fable-review-queue.md's ark-into-jerusalem build
+    // note and same-day addendum for the full account).
     keyExcerpts: [
       {
         verse: '2 Samuel 6:9',
@@ -190,7 +183,7 @@ export const PASSAGES: Passage[] = [
     ],
     sceneIds: ['perez-uzzah', 'ark-into-jerusalem'],
     milestoneId: 'M7',
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

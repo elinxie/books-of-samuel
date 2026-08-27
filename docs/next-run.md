@@ -3,7 +3,61 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-27, M7 BOTH SCENES BUILT — `ark-into-jerusalem`, branch `claude/focused-mccarthy-wooqyk`)
+## State right now (2026-08-27, M7 RELEASED — Sonnet sign-off + release cascade, branch `claude/focused-mccarthy-wooqyk`)
+
+**M7 (2 Samuel 6) is fully released.** Same session, continuing directly from
+`ark-into-jerusalem`'s merge. Ran the M7 sign-off review per
+`docs/fable-review-checklist.md` (Sonnet directly, no Fable, per `CLAUDE.md`).
+
+**Queue #25 (Uzzah's no-assailant death template) confirmed**, including
+the one flagged implementation question: reduced mode's ~3s fade-from-view
+(rather than an instant cut) is **ratified as-is** — an explorable 3D scene
+has no true film "cut," so a brief structured fade is the more restrained
+elision, and every hard bar (no reach, no fall, identical captions) holds
+regardless. Ruled the template for any future no-assailant death (2 Sam
+24's plague deaths are the likely next case) without a fresh review each
+time. **Queue #26 (Exodus 25 cross-book citation for the ark's form, no
+cherubim)** confirmed held unchanged across both scenes — grep-reconfirmed
+independently, not just trusted from either build note. Both moved to
+`docs/fable-review-queue.md`'s Resolved table.
+
+Release cascade executed per the M3–M6 precedent: `perez-uzzah`/
+`ark-into-jerusalem` → `released`; `2sam-6` → `released`; `kiriath-jearim` →
+`released`; new feature `f-2sam-6` added directly as `done` (M7 had no
+feature entry at build time, same gap M5/M6 had); `M7` milestone →
+`released`. All three of `2sam-6`'s ESV excerpts are now live-verified.
+Full gate re-run green after the flips: format, lint, typecheck, 608
+vitest, build, 19/19 e2e.
+
+**Non-blocking gaps carried forward** (same treatment as every prior
+milestone's honestly-hedged citation gaps — not release blockers):
+`mccarter-1984-ii-samuel`'s extension to 2 Samuel 6 (three disputed
+questions stay hedged, unattributed); `king-stager-2001`'s coverage of
+musical-instrument construction/form (`claim-music-instruments` stays
+`design-placeholder`); a dedicated Kiriath-jearim source card.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Scope M8 (2 Samuel 7 onward — the dynastic oracle/Nathan's prophecy)**
+   — no milestone entry, briefs, or scope decision exist yet. This is
+   Sonnet's to run directly (`world-director` agent, `model: sonnet`, per
+   `CLAUDE.md`'s Fable-retirement policy) before any M8 build work. 2 Samuel
+   7 is a markedly different kind of chapter than 1–6 (a prophetic oracle
+   and a dynastic promise, not a narrated event with physical action to
+   stage) — worth reading closely for what, if anything, has scene-scale
+   action to render versus what stays card-only.
+2. Researcher pass on the M7 gaps above (parallelizable, doesn't block M8
+   scoping): extend `mccarter-1984-ii-samuel` to 2 Samuel 6, check
+   `king-stager-2001` for instrument coverage, open a dedicated
+   Kiriath-jearim source card.
+3. (Carried forward, still open, non-blocking) Live ESV wording verification
+   for M6's three quotes (5:6b, 5:8a, 5:24) — still not checked against a
+   live source.
+4. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — long-standing,
+   carried since M3.
+
+## State before this slice (2026-08-27, M7 BOTH SCENES BUILT — `ark-into-jerusalem`, branch `claude/focused-mccarthy-wooqyk`)
 
 **`ark-into-jerusalem` (2 Sam 6:12–23) is built** — second and last of M7's
 two scenes, closing the milestone's build phase, `status: 'in-progress'`
