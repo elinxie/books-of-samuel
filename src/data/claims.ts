@@ -1652,6 +1652,114 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'This overlay’s own M6 extension of claim-divided-kingdom-atlas-overlay, added as a third page-level phase per claim-atlas-m5-phase’s precedent — cross-references, rather than re-derives, already-built M6 scene claim text: claim-all-israel-covenant (5:1–3, the covenant and anointing that is this merge’s entire textual basis), claim-jerusalem-capture (5:6–7, the site the capital marker now points to), claim-city-of-david-naming (5:7, 9, the renaming that makes the marker’s label accurate), and claim-jerusalem-terrain-form (the secure ridge identification the marker’s coordinates use). The extent dispute this claim explicitly keeps off the map is carried instead by claim-jebusite-stronghold-form — that claim’s scholarlyViews (a modest stronghold vs. a more substantial administrative center) are not summarized, previewed, or resolved here; this page only points to where they live. The capital marker itself (M6_CAPITAL_ID, DividedKingdomMap.tsx) is a ring around Jerusalem’s existing point plus a "(capital)" label suffix — no fill, no shading, no geometry of its own, deliberately the more conservative of the visual options considered (a filled capital-city icon or a distinct larger dot were set aside as reading too much like an asserted urban footprint). The merged region’s locationIds carry over the M4/M5 phases’ anchor points unchanged (mahanaim, mount-gilboa, beth-shan, jabesh-gilead, hebron, ziklag) plus jerusalem itself, added because the new capital now shares the same allegiance the shading represents; the Valley of Rephaim (valley-of-rephaim, rephaim-valley’s setting) is deliberately excluded from that shaded region — it is a contested Philistine engagement site, not a place named in any writ-list, and is instead plotted at full emphasis outside the shaded region, the same "contested ground, not a claimed side" treatment M4 gives Gibeon. This phase also carries the order-of-events disclosure 2 Samuel 5 itself requires and shares with rephaim-valley’s closing card (claim-philistine-reaction’s topical-arrangement scholarlyView, fable-review-queue #21/#23 note the same guard): plotting both Jerusalem and the Valley of Rephaim on this map does not assert that the capture of 5:6–16 precedes the campaigns of 5:17–25 or vice versa — the chapter’s arrangement may be topical rather than strictly chronological, and this map takes no position. Same dismissible-toggle/optional-visit ADR-011 discipline as the M4/M5 phases; the phase toggle defaults to M4 so a first-time visitor sees the already-reviewed 2:8–11 map unless they choose to look further. Mahanaim’s disputed-identification note (both candidate sites) and Hebron’s secure identification carry forward unchanged in this phase too, now shown for orientation only rather than as a rival capital.',
   },
+  {
+    id: 'claim-ark-procession-departure',
+    statement:
+      'The narrative states that David again gathered all the chosen men of Israel and went to Baale-judah (Kiriath-jearim) to bring up the ark of God, which is called by the name of the LORD of hosts who sits enthroned on the cherubim (6:1–2); that they set the ark on a new cart and brought it out of the house of Abinadab on the hill, with Uzzah and Ahio, sons of Abinadab, driving it — Ahio going before the ark (6:3–4); and that David and all the house of Israel were making merry before the LORD with songs and lyres and harps and tambourines and castanets and cymbals (6:5).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-cart-plain-reading',
+        label: 'The plain reading: an act and a cause, not a transport indictment',
+        summary:
+          '2 Samuel 6 itself states an act (Uzzah reached for the ark) and a cause (the LORD struck him) without connecting either to the cart as the fault — the chapter never criticizes the new cart on its own terms.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-cart-wrong-method',
+        label: 'A widely-held reading: the cart itself was the wrong method',
+        summary:
+          'Numbers 4:15 prohibits touching the ark on pain of death and specifies the Kohathites carry it by its poles; 1 Chronicles 15:2, 13 makes this connection explicit in its own retelling of this same episode, stating plainly that the ark should have been carried by the Levites and that its absence caused the LORD to break out against them. This project does not import that explicit correction into 2 Samuel 6 itself — see claim-uzzah-death’s notes and the brief’s "Resolved design calls."',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'The cart-vs-carrying-method question is disclosed, not resolved, and not imported from Chronicles: this scene stages the cart as the text’s own stated transport, without choreographing a "wrong way" being corrected on-screen (Resolved design calls, docs/design/perez-uzzah-brief.md). Named attribution for either reading awaits mccarter-1984-ii-samuel’s extension to 2 Samuel 6, currently covering only through 2 Samuel 5 — flagged as a researcher gap, same item the brief itself flags. The music (6:5) is the project’s first extended depiction of Israelite music; see claim-music-instruments for the instrument-form disclosure.',
+  },
+  {
+    id: 'claim-uzzah-death',
+    statement:
+      'The narrative states that when they came to the threshing floor of Nacon, the oxen stumbled, and Uzzah put out his hand to the ark of God and took hold of it; that the anger of the LORD was kindled against Uzzah, and God struck him down there because of his error, and he died there beside the ark of God (6:6–7); that David was angry because the LORD had broken out against Uzzah, and called the place Perez-uzzah, "to this day" (6:8).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This claim is governed by ADR-013 (docs/architecture-decisions/adr-013-narrated-supernatural-depiction.md): the death (a worldly outcome) is depictable under ADR-009; the divine strike the text says caused it is never rendered — no light, glow, wind, or camera language implying presence, in any mode, at this beat or anywhere else in this scene. Cross-references the ADR-009 no-assailant-death template variant this scene establishes (claim-uzzah-death-depiction, fable-review-queue #25) — unlike every prior ADR-009 named killing (Asahel, Abner, Rechab/Baanah), there is no human striker and no method to render even as an elided gesture. The naming "to this day" is stated as a card, matching the text’s own present-tense formula; no claim is made about the name persisting into any later period this project covers. No editorializing beyond the text’s own stated act and stated cause: this claim does not assert a reason "why" Uzzah died beyond what 6:6–7 itself states.',
+  },
+  {
+    id: 'claim-david-fear-diversion',
+    statement:
+      'The narrative states that David was afraid of the LORD that day, and said, "How can the ark of the LORD come to me?" (6:9); and that David was unwilling to bring the ark of the LORD to himself in the city of David, but took it aside to the house of Obed-edom the Gittite (6:10).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'David’s fear (6:9) and his earlier anger (6:8) are both carried as the text keeps them — two distinct reactions, not resolved into a single verdict on what David did wrong, if anything (Historical intent #4, docs/design/perez-uzzah-brief.md). The question is staged as dialogue/card, held on David’s stillness; no visual answer is supplied, and the scene’s closing card hands the question forward unresolved into the not-yet-built ark-into-jerusalem scene. This scene’s one ESV excerpt spend (of 2sam-6’s shared 3-quote budget) is 6:9’s question.',
+  },
+  {
+    id: 'claim-obed-edom-blessing',
+    statement:
+      'The narrative states that the ark of the LORD remained in the house of Obed-edom the Gittite three months, and that the LORD blessed Obed-edom and all his household (6:11).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Delivered as a card and a brief static tableau, not an extended staging — a time-passage beat, the text’s own stated bridge to the not-yet-built ark-into-jerusalem scene (a straightforward continuation, not a hedged one, since the three-month interval is the chapter’s own stated span rather than a disclosed-topical-order question like M6’s chapter 5). The chapter’s own juxtaposition — the same ark that killed Uzzah blesses Obed-edom’s household — is placed back to back without comment here, matching the text’s own restraint (Historical intent #5).',
+  },
+  {
+    id: 'claim-ark-physical-form',
+    statement:
+      'Rendered as a plain rectangular acacia-wood chest overlaid with gold, with two carrying poles visible — the general form Exodus 25:10–22 (and Deuteronomy 10:1–5) describes for the ark, cited here because 2 Samuel 6 itself gives no construction detail of its own.',
+    basis: 'biblical-text',
+    confidence: 'moderate',
+    sourceIds: ['esv-bible'],
+    notes:
+      'A genuinely new sourcing move for this project (fable-review-queue #26): citing a Torah passage for an object’s own established form, distinct from the Samuel/Chronicles same-event-retold-differently pattern used elsewhere (Joab at Jerusalem’s capture, the 4:6 MT/LXX divergence). This is a cross-book citation, not corroborated by any excavated comparandum — no Iron Age Israelite ark or comparable cultic object has been recovered archaeologically, and confidence is capped at moderate for exactly that reason. **No cherubim geometry renders, in any mode, ever**: Exodus names them on the ark’s cover but gives no visual detail beyond the word "cherubim," and rendering a specific ancient Near Eastern composite-creature iconography (winged sphinx, griffin, or otherwise) here would invent an artistic program no evidence attests for this specific object — the same restraint that keeps Jebusite/Tyrian dress undifferentiated elsewhere in this project. This object is built as a clean, independent, reusable component (src/scenes/perez-uzzah/Ark.tsx) so the not-yet-built ark-into-jerusalem scene can reuse it unchanged.',
+  },
+  {
+    id: 'claim-uzzah-death-depiction',
+    statement:
+      'This scene renders Uzzah’s death as a new ADR-009 no-assailant template variant: his own reaching gesture toward the ark (the text’s specific, non-graphic detail) shown, then a collapse/fall at documentary distance, with no wound geometry (there is none to invent) and no visual effect standing in for the divine strike (ADR-013), in either violence mode. Reduced mode elides the reach-and-fall entirely, fading Uzzah from view shortly after the oxen stumble rather than showing any part of the reach or fall.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'This is the scene’s single most load-bearing constraint (fable-review-queue #25) — the ADR-013 test case ADR-013 itself names as "the clearest future test" of the stated-never-visualized line, worked through for the first time: the death is depictable under ADR-009, the divine strike the text says caused it is not. Every prior ADR-009 named killing (Asahel/gibeon-pool, Abner/hebron-gate, Rechab and Baanah/hebron-reckoning) has a human assailant with a gesture to render (a reversed spear grip, a drawing-aside, a presented head); Uzzah’s death has none — only his own act and a stated divine cause this project cannot render. The reduced-mode treatment (fading Uzzah from view rather than showing a held fallen tableau) is an interpretive reading of the brief’s "elides the reach-and-fall entirely" language, chosen as the more conservative option between two plausible readings (fade-from-view vs. an immediate cut to a fallen-and-still pose, the gibeon-pool champions’ convention) — flagged here for confirmation at the next milestone review, since the brief itself does not fully disambiguate which reduced-mode treatment it intends. Both readings satisfy the hard bar (no reach, no fall animation, no wound geometry, identical caption text in both modes); only the specific visual treatment of Uzzah’s own figure after the stumble in reduced mode is the open interpretive call.',
+  },
+  {
+    id: 'claim-kiriath-jearim-form',
+    statement:
+      'Kiriath-jearim is rendered as a modest hill settlement — a small cluster of simple house forms comparative to the excavated four-room/pillared house plan (king-stager-2001), with no wall circuit or gate structure asserted as excavated.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'rainey-notley-2006', 'king-stager-2001'],
+    notes:
+      'rainey-notley-2006 is the interim citation for the site’s general historical-geography identification (Deir el-Azhar/Tell el-Azhar, Abu Ghosh vicinity — see the kiriath-jearim LocationEntry); the project currently has no dedicated source card for Kiriath-jearim specifically, a genuine researcher gap flagged in the brief and carried forward here. king-stager-2001’s four-room/pillared-house form (already the comparative basis for claim-hebron-town-form and similar settlement-form claims elsewhere in this project) is reused as the general house-massing reference, not a claim of excavated remains at this specific site.',
+  },
+  {
+    id: 'claim-music-instruments',
+    statement:
+      'The procession’s named instruments (6:5: songs, lyres, harps, tambourines, castanets, cymbals) render as generic, recognizable silhouette forms — a small lyre/harp-type stringed instrument, a frame drum, hand-held rattles/castanets, and small cymbals — without asserting specific construction, tuning, or decoration details no evidence supports.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    notes:
+      'king-stager-2001 was checked first per the brief’s instruction: its own cataloged table of contents lists a "culture and expressive life" chapter covering dress, music, dance, and literacy, so the book’s overall scope does at least include music as a topic — but this session had no WebSearch (or other live-source) tool available to verify whether that chapter actually covers instrument construction/form specifically (the kind of checkable page-level detail claim-feast-form’s queue #20c pass found for feasting material culture), unlike claim-anointing-rite-form, which found the book’s scope excluded investiture ritual entirely. This closes as a genuine researcher gap pending that verification pass — flagged explicitly rather than forced into a comparative-ane basis on a chapter-title-level match alone. The instrument forms themselves stay generic silhouettes on that basis: no specific ancient Near Eastern lyre/frame-drum typology is asserted.',
+  },
+  {
+    id: 'claim-ark-procession-cast-scale',
+    statement:
+      'The marching column renders as a disclosed representative gathering of roughly 150–200 figures at high quality tier — not a literal muster of "thirty thousand" (6:1) and not a fixed ratio of that number — with a visible musician subset of roughly 10–15 figures drawn from that same total (not additional), ambient Kiriath-jearim rendered as roughly 10–20 static figures, and Obed-edom’s household as roughly 5–10 static figures. High-tier total ≈ 180–235 figures.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Modeled directly on claim-judah-assembly-scale’s own explicit departure from a literal reading of "the men of Judah" for the same reasons (performance and legibility, disclosed rather than hidden) — 6:1’s "thirty thousand" is a battle-scale figure count for what this chapter narrates as a joyful procession, not a muster, and even register #7’s ~1:10 ratio (3,000) would read as an army rather than a celebration. Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s measured high-tier instance count (~330 total figure instances) while that scene’s real-hardware performance check remains open (docs/next-run.md) — measured at build time at roughly 207 figures (180 column + 16 ambient Kiriath-jearim + 7 Obed-edom household + 4 principals) at the high tier, materially cheaper per figure than gilboa-battle (procession/walk poses, no combat choreography).',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

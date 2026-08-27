@@ -34,6 +34,8 @@ import { JerusalemStrongholdScene } from '../scenes/jerusalem-stronghold/Jerusal
 import { JERUSALEM_TERRAIN } from '../scenes/jerusalem-stronghold/terrain';
 import { RephaimValleyScene } from '../scenes/rephaim-valley/RephaimValleyScene';
 import { REPHAIM_TERRAIN } from '../scenes/rephaim-valley/terrain';
+import { PerezUzzahScene } from '../scenes/perez-uzzah/PerezUzzahScene';
+import { KIRIATH_JEARIM_TERRAIN } from '../scenes/perez-uzzah/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -58,6 +60,7 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'hebron-reckoning': { component: HebronReckoningScene, terrain: HEBRON_RECKONING_TERRAIN },
   'jerusalem-stronghold': { component: JerusalemStrongholdScene, terrain: JERUSALEM_TERRAIN },
   'rephaim-valley': { component: RephaimValleyScene, terrain: REPHAIM_TERRAIN },
+  'perez-uzzah': { component: PerezUzzahScene, terrain: KIRIATH_JEARIM_TERRAIN },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

@@ -6,7 +6,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David',
     kind: 'person',
     summary:
-      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12).',
+      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12). Gathers Israel again to bring up the ark of God from Kiriath-jearim on a new cart (6:1–5); when Uzzah dies at the threshing floor of Nacon, David is both angry and afraid, asking "How can the ark of the LORD come to me?" and diverts it to the house of Obed-edom the Gittite rather than bringing it to himself (6:6–10).',
     passageRefs: [
       '1 Samuel 27',
       '1 Samuel 30',
@@ -14,6 +14,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
       '2 Samuel 3:20–21',
       '2 Samuel 3:28–35',
       '2 Samuel 5:1–12',
+      '2 Samuel 6:1–10',
     ],
     claimIds: [
       'claim-david-historical',
@@ -24,6 +25,9 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'claim-jerusalem-capture',
       'claim-city-of-david-naming',
       'claim-hiram-building',
+      'claim-ark-procession-departure',
+      'claim-uzzah-death',
+      'claim-david-fear-diversion',
     ],
   },
   {
@@ -313,6 +317,37 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'Unnamed craftsmen Hiram sends with cedar trees to build David’s house (2 Samuel 5:11) — rendered with the same undifferentiated dress as every other group in this project (claim-dress), distinguished only by the tools, timber, and stone they are shown handling, per the same no-invented-side-uniforms rule already applied at gibeon-pool.',
     passageRefs: ['2 Samuel 5:11'],
     claimIds: ['claim-hiram-building', 'claim-dress'],
+  },
+  {
+    id: 'uzzah',
+    name: 'Uzzah',
+    kind: 'person',
+    summary:
+      'Son of Abinadab, in whose house on the hill at Kiriath-jearim the ark has rested. Drives the new cart alongside his brother Ahio (2 Samuel 6:3). When the oxen stumble at the threshing floor of Nacon, he puts out his hand and takes hold of the ark; the narrative states that the anger of the LORD was kindled against him and God struck him down there for his error, and he died there beside the ark of God (6:6–7). David names the place Perez-uzzah because of this (6:8). The text gives no further detail about him — no age, no prior role, no stated intention beyond steadying the ark.',
+    passageRefs: ['2 Samuel 6:3–8'],
+    claimIds: [
+      'claim-uzzah-death',
+      'claim-uzzah-death-depiction',
+      'claim-ark-procession-departure',
+    ],
+  },
+  {
+    id: 'ahio',
+    name: 'Ahio',
+    kind: 'person',
+    summary:
+      'Son of Abinadab, brother of Uzzah. Drives the new cart with him and goes before the ark (2 Samuel 6:3–4). The text stages no further action for him — he is not named again at the threshing floor or afterward.',
+    passageRefs: ['2 Samuel 6:3–4'],
+    claimIds: ['claim-ark-procession-departure'],
+  },
+  {
+    id: 'obed-edom',
+    name: 'Obed-edom the Gittite',
+    kind: 'person',
+    summary:
+      'The man to whose house David diverts the ark after Uzzah’s death, unwilling to bring it to himself in the city of David (2 Samuel 6:10). The ark remains in his house three months, and the LORD blesses him and his whole household (6:11) — the chapter’s own juxtaposition of danger and blessing in the same object. "The Gittite" most plausibly marks an association with Gath, though the text does not explain it further. Referenced again at the opening of the ark’s arrival in Jerusalem (2 Samuel 6:12, outside this scene’s scope).',
+    passageRefs: ['2 Samuel 6:10–11'],
+    claimIds: ['claim-david-fear-diversion', 'claim-obed-edom-blessing'],
   },
 ];
 

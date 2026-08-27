@@ -698,6 +698,75 @@ export const ASSETS: AssetRecord[] = [
       'Stays a disclosed non-identification regardless of future research — the text itself does not name the species, so no future source can license asserting one.',
     replacementMilestoneId: 'M6',
   },
+  {
+    id: 'asset-terrain-kiriath-jearim',
+    name: 'Kiriath-jearim hill and route corridor terrain',
+    represents:
+      'A modest hill settlement giving onto an open route corridor toward Jerusalem — see claim-kiriath-jearim-form',
+    placeholder: true,
+    whyTemporary:
+      'Procedural heightfield (src/scenes/perez-uzzah/terrain.ts) built from fbm hill layers plus a `mound` feature for the hill, a `ramp` for the corridor’s general eastward fall, and two `flatten` features for the threshing floor and Obed-edom’s household ground — not DEM-derived, and not a survey. No Jerusalem geometry renders anywhere in this scene.',
+    historicalRequirements:
+      'A DEM-based pass for the actual Abu Ghosh/Deir el-Azhar hill and the historical road corridor toward Jerusalem, once elevation data is incorporated project-wide (ADR-012); palette/vegetation stay Judean-highland regardless of that outcome.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-kiriath-jearim-houses',
+    name: 'Kiriath-jearim house massing, including the house of Abinadab',
+    represents: 'The hill settlement’s own house cluster — see claim-kiriath-jearim-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple instanced socle/wall/roof box massing (src/scenes/perez-uzzah/KiriathJearimTown.tsx), comparative to the excavated four-room/pillared house form (king-stager-2001) rather than an excavated plan for this specific site — no dedicated Kiriath-jearim source card exists yet (researcher gap).',
+    historicalRequirements:
+      'A dedicated excavation-results source card for Deir el-Azhar/Tell el-Azhar, if one becomes available, to move this past a generic comparative form.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-obed-edom-house',
+    name: "Obed-edom's household structure",
+    represents:
+      'The modest household structure at the diversion point — see claim-obed-edom-blessing',
+    placeholder: true,
+    whyTemporary:
+      'Simple box socle/wall/roof massing (src/scenes/perez-uzzah/ObedEdomHouse.tsx) at a disclosed placeholder position — the site itself is unlocated, so the structure’s form and position are both design choices, not a claimed identification.',
+    historicalRequirements:
+      'None available in principle: the site is unlocated and unlikely ever to be independently identified, so this stays a disclosed placeholder regardless of future research.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-ark-form',
+    name: 'The ark of the covenant — chest and carrying poles',
+    represents: 'The ark as a physical object — see claim-ark-physical-form',
+    placeholder: true,
+    whyTemporary:
+      'A plain rectangular gold-toned box merged with two carrying-pole cylinders (src/scenes/perez-uzzah/Ark.tsx), sized from Exodus 25:10-22’s stated cubit dimensions — not an excavated or corroborated object; no cherubim geometry, in any mode. Built as a clean, independent, reusable component for the not-yet-built ark-into-jerusalem scene to reuse unchanged.',
+    historicalRequirements:
+      'None available in principle: no comparable Iron Age Israelite cultic object of this kind has been excavated, so the cross-book Exodus citation is the ceiling of available evidence, not a placeholder awaiting replacement.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-ark-cart',
+    name: 'The new cart and the pair of oxen',
+    represents:
+      '2 Samuel 6:3’s "new cart" and the oxen that draw it — see claim-ark-procession-departure',
+    placeholder: true,
+    whyTemporary:
+      'Simple merged-primitive cart (platform, rails, axle, two wheels) and oxen geometry (src/scenes/perez-uzzah/ArkCart.tsx) — no specific ancient Near Eastern cart or yoke typology asserted; the cart-vs-carrying-method dispute is disclosed as scholarlyViews on claim-ark-procession-departure, not resolved in this geometry.',
+    historicalRequirements:
+      'A comparative ancient Near Eastern ox-cart source (iconographic or archaeological) if one is identified, to move the form basis past design-placeholder.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-music-instruments',
+    name: 'Generic instrument silhouette forms (lyre, frame drum, rattles, cymbals)',
+    represents: '2 Samuel 6:5’s named instruments — see claim-music-instruments',
+    placeholder: true,
+    whyTemporary:
+      'Simple merged-primitive silhouettes (src/scenes/perez-uzzah/ProcessionColumn.tsx) — no specific construction, tuning, or decoration detail asserted. king-stager-2001 was checked for coverage; a genuine researcher gap (see claim-music-instruments’ notes), not forced past design-placeholder.',
+    historicalRequirements:
+      'A dedicated comparative ancient Near Eastern music-instrument source (iconographic or archaeological) to move any of these four forms past design-placeholder.',
+    replacementMilestoneId: 'M7',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

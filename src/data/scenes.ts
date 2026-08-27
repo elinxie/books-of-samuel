@@ -2152,6 +2152,168 @@ export const SCENES: SceneDef[] = [
       'asset-david-marker',
     ],
   },
+  {
+    id: 'perez-uzzah',
+    title: 'The new cart and the death of Uzzah',
+    passageIds: ['2sam-6'],
+    locationId: 'kiriath-jearim',
+    periodId: 'iron-iia',
+    milestoneId: 'M7',
+    // Built per docs/design/perez-uzzah-brief.md (Sonnet world-director
+    // pass, 2026-08-26, per CLAUDE.md's "Model policy — do not invoke
+    // Fable"). First of Milestone 7's two scenes, and the project's
+    // first-ever staging of the ark of the covenant as a physical object.
+    // The ADR-013 test case ADR-013 itself names as "the clearest future
+    // test" of the stated-never-visualized line (fable-review-queue #25),
+    // worked through for the first time: Uzzah's death is depictable under
+    // ADR-009, the divine strike the text says caused it is not.
+    status: 'in-progress',
+    synopsis:
+      'David gathers Israel again and sets out from Kiriath-jearim to bring up the ark of God on a new cart — a genuinely joyful procession, with songs and instruments. At the threshing floor of Nacon the oxen stumble; Uzzah reaches out to steady the ark and is struck down. David, angry and then afraid, names the place Perez-uzzah and diverts the ark to the house of Obed-edom the Gittite, where it remains three months and the LORD blesses his household.',
+    depictsDeath: true,
+    durationSec: 175,
+    beats: [
+      {
+        id: 'b-gathering',
+        timeSec: 0,
+        title: 'David gathers Israel again',
+        caption:
+          'David again gathers all the chosen men of Israel, thirty thousand, to bring up the ark of God. This scene renders a disclosed representative gathering, not a literal muster of that number — see claim-ark-procession-cast-scale, the same departure claim-judah-assembly-scale already established. (2 Samuel 6:1)',
+        passageRef: '2 Samuel 6:1',
+      },
+      {
+        id: 'b-departure',
+        timeSec: 14,
+        title: 'Setting out from Baale-judah',
+        caption:
+          'David and all the people with him set out from Baale-judah (Kiriath-jearim) to bring up from there the ark of God, which is called by the name of the LORD of hosts who sits enthroned on the cherubim. (2 Samuel 6:2)',
+        passageRef: '2 Samuel 6:2',
+      },
+      {
+        id: 'b-new-cart',
+        timeSec: 30,
+        title: 'A new cart',
+        caption:
+          'They set the ark of God on a new cart and carry it out of the house of Abinadab, on the hill; Uzzah and Ahio, sons of Abinadab, drive the new cart, Ahio going before the ark. 2 Samuel 6 itself does not connect the cart to what follows — that explicit reading belongs to 1 Chronicles 15:2, 13, a later retelling; this scene stages the cart without adopting either reading (claim-ark-procession-departure). (2 Samuel 6:3–4)',
+        passageRef: '2 Samuel 6:3–4',
+      },
+      {
+        id: 'b-music',
+        timeSec: 46,
+        title: 'Making merry before the LORD',
+        caption:
+          'David and all the house of Israel make merry before the LORD with songs and lyres and harps and tambourines and castanets and cymbals — the project’s first extended depiction of Israelite music, rendered as generic disclosed instrument forms (claim-music-instruments). Genuinely joyful, at a celebratory walking pace. (2 Samuel 6:5)',
+        passageRef: '2 Samuel 6:5',
+      },
+      {
+        id: 'b-stumble',
+        timeSec: 78,
+        title: 'The oxen stumble',
+        caption:
+          'They come to the threshing floor of Nacon, and the oxen stumble; Uzzah puts out his hand to the ark of God and takes hold of it — the text’s own specific, non-graphic detail, shown at documentary distance. (2 Samuel 6:6)',
+        passageRef: '2 Samuel 6:6',
+      },
+      {
+        id: 'b-strike',
+        timeSec: 92,
+        title: 'Struck down there',
+        caption:
+          'The anger of the LORD was kindled against Uzzah, and God struck him down there because of his error, and he died there beside the ark of God. Standard mode shows Uzzah collapse and fall beside the ark, at documentary distance, with no wound geometry and no visual stand-in for the divine cause; reduced mode elides the reach-and-fall entirely, cutting from the stumbling oxen to a held, still aftermath frame. Both modes state the same fact, identically. (2 Samuel 6:7)',
+        passageRef: '2 Samuel 6:7',
+      },
+      {
+        id: 'b-perez-uzzah',
+        timeSec: 106,
+        title: 'Perez-uzzah',
+        caption:
+          'David is angry because the LORD has broken out against Uzzah, and he calls that place Perez-uzzah, "to this day." The site is unlocated beyond being somewhere on the way from Kiriath-jearim — its position here is a disclosed placeholder, not a claimed identification; there is no map pin for it. (2 Samuel 6:8)',
+        passageRef: '2 Samuel 6:8',
+      },
+      {
+        id: 'b-david-afraid',
+        timeSec: 120,
+        title: 'David afraid',
+        caption:
+          'David is afraid of the LORD that day, and asks, "How can the ark of the LORD come to me?" Held on David’s stillness — the question stays a question; no visual answer is supplied, and it is handed forward unresolved. (2 Samuel 6:9, ESV)',
+        passageRef: '2 Samuel 6:9',
+      },
+      {
+        id: 'b-diversion',
+        timeSec: 136,
+        title: 'Diverted to Obed-edom',
+        caption:
+          'David is unwilling to bring the ark of the LORD to himself in the city of David; instead he takes it aside to the house of Obed-edom the Gittite. The house’s position is unlocated — a disclosed placeholder within this scene’s own terrain, not a claimed identification. (2 Samuel 6:10)',
+        passageRef: '2 Samuel 6:10',
+      },
+      {
+        id: 'b-blessing-obed-edom',
+        timeSec: 150,
+        title: 'Three months, and a blessing',
+        caption:
+          'The ark of the LORD remains three months in the house of Obed-edom the Gittite, and the LORD blesses him and all his household — the same object that killed Uzzah now blesses a household, the text placing both facts back to back without comment. (2 Samuel 6:11)',
+        passageRef: '2 Samuel 6:11',
+      },
+      {
+        id: 'b-close',
+        timeSec: 164,
+        title: 'Where the chapter continues',
+        caption:
+          '2 Samuel 6:1–11 states the gathering, the new cart, the music, Uzzah’s death and its naming, David’s anger and fear, and the diversion to Obed-edom’s house — nothing more. The three-month span is the chapter’s own stated bridge: this scene hands the ark forward, still at Obed-edom’s house, into its arrival in Jerusalem. Nothing from 2 Samuel 6:12 onward — the dance, Michal, the ark’s arrival in the city — appears here.',
+        passageRef: '2 Samuel 6:1–11',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-procession-route',
+        label: 'The procession route (default)',
+        position: [-90, 42, -110],
+        lookAt: [10, 8, -15],
+      },
+      {
+        id: 'vp-kiriath-jearim',
+        label: 'Kiriath-jearim, the house on the hill',
+        position: [-230, 32, 40],
+        lookAt: [-192, 10, -8],
+      },
+      {
+        id: 'vp-nacon',
+        label: 'The threshing floor of Nacon (documentary distance)',
+        position: [12, 16, -72],
+        lookAt: [10, 4, -15],
+      },
+      {
+        id: 'vp-obed-edom',
+        label: "Obed-edom's house",
+        position: [222, 22, 92],
+        lookAt: [165, 6, 45],
+      },
+    ],
+    claimIds: [
+      'claim-david-historical',
+      'claim-dress',
+      'claim-judah-assembly-scale',
+      'claim-ark-procession-departure',
+      'claim-uzzah-death',
+      'claim-david-fear-diversion',
+      'claim-obed-edom-blessing',
+      'claim-ark-physical-form',
+      'claim-uzzah-death-depiction',
+      'claim-kiriath-jearim-form',
+      'claim-music-instruments',
+      'claim-ark-procession-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-kiriath-jearim',
+      'asset-kiriath-jearim-houses',
+      'asset-obed-edom-house',
+      'asset-ark-form',
+      'asset-ark-cart',
+      'asset-music-instruments',
+      'asset-figure-procedural',
+      'asset-figure-fallen',
+      'asset-david-marker',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

@@ -359,6 +359,37 @@ export const LOCATIONS: LocationEntry[] = [
     claimIds: [],
     status: 'released',
   },
+  {
+    id: 'kiriath-jearim',
+    name: 'Kiriath-jearim',
+    altNames: ['Baale-judah', 'Kiriath-baal', 'Baalah'],
+    region: 'Judean hill country, on the border with Benjamin, west of Jerusalem',
+    summary:
+      'The town where the ark of the covenant rested, in the house of Abinadab on the hill, until David brought it up (2 Samuel 6:1-4; its arrival there is narrated earlier, 1 Samuel 7:1-2, outside this project’s built timeline). Identified with the hill of Deir el-Azhar/Tell el-Azhar, in the vicinity of modern Abu Ghosh — a standing identification the field treats as reasonably secure, though the project currently has no dedicated source card for this specific site (see claim-kiriath-jearim-form).',
+    identification: {
+      // Treated as reasonably secure, the same disputed:false treatment
+      // jerusalem received — but see claim-kiriath-jearim-form's notes: no
+      // dedicated source card exists yet for this site specifically, only
+      // the general historical-geography reference (rainey-notley-2006) as
+      // an interim citation. A researcher gap, flagged in
+      // docs/design/perez-uzzah-brief.md, not a disputed identification.
+      disputed: false,
+      views: [
+        {
+          id: 'loc-view-kiriath-jearim',
+          label: 'Deir el-Azhar / Tell el-Azhar (Abu Ghosh vicinity)',
+          summary:
+            'Standard identification with the prominent hill above modern Abu Ghosh, on the main historical road between the coastal plain and Jerusalem — consistent with the narrative’s own geography (a town "on the way" between Philistine territory and the highland capital).',
+          confidence: 'moderate',
+          sourceIds: ['rainey-notley-2006'],
+        },
+      ],
+    },
+    approxCoordinates: { lat: 31.806, lon: 35.108, confidence: 'moderate' },
+    sceneIds: ['perez-uzzah'],
+    claimIds: ['claim-kiriath-jearim-form'],
+    status: 'in-progress',
+  },
 ];
 
 export const LOCATIONS_BY_ID: ReadonlyMap<string, LocationEntry> = new Map(

@@ -145,6 +145,37 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M6',
     status: 'released',
   },
+  {
+    id: '2sam-6',
+    book: '2 Samuel',
+    chapter: 6,
+    reference: '2 Samuel 6',
+    translationAnchor: 'ESV',
+    summary:
+      'David again gathers all the chosen men of Israel and goes to Baale-judah (Kiriath-jearim) to bring up the ark of God on a new cart, with Uzzah and Ahio, sons of Abinadab, driving it; the procession is genuinely joyful, with songs and instruments. At the threshing floor of Nacon the oxen stumble; Uzzah reaches out and takes hold of the ark, and the LORD strikes him down there — he dies beside the ark of God. David, angry and then afraid, names the place Perez-uzzah and diverts the ark to the house of Obed-edom the Gittite rather than bringing it to Jerusalem. It remains there three months, and the LORD blesses Obed-edom’s household. David later brings the ark up into the City of David with sacrifices, dancing before it in a linen ephod; his wife Michal watches from a window and despises him in her heart. Offerings are made and food distributed to all the people; when David returns to bless his household, Michal confronts him, and the chapter ends noting she had no child to the day of her death.',
+    // Shared between perez-uzzah (6:1-11) and the not-yet-built
+    // ark-into-jerusalem (6:12-23) — see docs/design/perez-uzzah-brief.md
+    // and docs/design/ark-into-jerusalem-brief.md, and the M7 scope
+    // decision in src/data/milestones.ts. ESV excerpt budget: this
+    // passage's 3-quote handful is split explicitly — perez-uzzah spends
+    // exactly one (6:9's "How can the ark of the LORD come to me?"), and two
+    // are reserved for ark-into-jerusalem (Michal's rebuke and David's
+    // reply). Exact ESV wording could not be live-verified this session —
+    // no WebSearch (or other live-source) tool was available in this
+    // session's toolset, unlike the sessions that closed queue #20(e)/#19(b)
+    // — entered from careful recollection of a short, well-known verse,
+    // flagged here per the same precedent for a live-source check before
+    // this passage/scene flips to `released`.
+    keyExcerpts: [
+      {
+        verse: '2 Samuel 6:9',
+        text: 'How can the ark of the LORD come to me?',
+      },
+    ],
+    sceneIds: ['perez-uzzah'],
+    milestoneId: 'M7',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

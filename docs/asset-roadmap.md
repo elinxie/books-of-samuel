@@ -349,6 +349,61 @@ non-blocking, carried forward — unlike M4/M5, where the equivalent ESV
 wording check was closed as part of the citation-gate pass before the
 release flip, M6's release wasn't gated on it and it stays an open rider.
 
+## Current placeholders (perez-uzzah scene, Milestone 7, built 2026-08-27)
+
+First of M7's two scenes (docs/design/perez-uzzah-brief.md) and the
+project's first-ever staging of the ark of the covenant as a physical
+object — a plain rectangular gold-toned chest with visible carrying poles,
+**no cherubim geometry in any mode** (queue #26), built as a clean,
+independent, reusable component (`src/scenes/perez-uzzah/Ark.tsx`) for the
+not-yet-built `ark-into-jerusalem` scene to reuse unchanged. Also the first
+worked-through case of ADR-013 composing with ADR-009 (queue #25): Uzzah's
+death (6:7) has no assailant and no method to render even as an elided
+gesture — his own reach toward the ark (6:6) shown as a discrete gesture,
+then a whole-body collapse, at documentary distance; reduced mode elides the
+reach-and-fall entirely, fading Uzzah from view shortly after the oxen
+stumble rather than showing any part of the reach or fall (an interpretive
+reading of the brief's "elides the reach-and-fall entirely" language,
+flagged in `claim-uzzah-death-depiction`'s notes for confirmation at the
+next milestone review). No light/glow/wind/particle effect anywhere in this
+scene stands in for the divine strike, in any mode. A new, fresh
+Judean-highland-palette terrain (the hill/route-corridor landform is new;
+the palette values are carried directly from the established Judean-
+highland spec, not reinvented). Cast: a marching column (~150-200 at high
+tier, ~10-15 dedicated musician figures drawn from that total carrying
+generic disclosed-placeholder instrument forms — lyre/harp-type, frame drum,
+hand rattles/castanets, small cymbals), ambient Kiriath-jearim (~10-20,
+static), Obed-edom's household (~5-10, static), plus David, Uzzah, Ahio, and
+Obed-edom — measured at ~207 figures at high tier, well under
+`gilboa-battle`'s measured ~330.
+
+| Asset                          | Represents                                                                         | Why temporary                                                                                                                                                                         | Replace at |
+| ------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-terrain-kiriath-jearim` | A hill settlement giving onto an open route corridor — `claim-kiriath-jearim-form` | Procedural hills + a `mound`/`ramp`/two `flatten` features (ADR-005), not DEM-derived; palette carried directly from the Judean-highland spec                                         | M7         |
+| `asset-kiriath-jearim-houses`  | The hill settlement's own house cluster, including the house of Abinadab           | Simple instanced socle/wall/roof box massing, comparative to the four-room/pillared house form (king-stager-2001), not an excavated plan for this site (no dedicated source card yet) | M7         |
+| `asset-obed-edom-house`        | Obed-edom's modest household structure at the diversion point                      | Simple box massing at a disclosed placeholder position — the site is unlocated                                                                                                        | M7         |
+| `asset-ark-form`               | The ark itself — chest and carrying poles                                          | Merged box + pole-cylinder geometry sized from Exodus 25:10-22's cubit dimensions — cross-book citation, no excavated comparandum, no cherubim in any mode                            | M7         |
+| `asset-ark-cart`               | The new cart (6:3) and the pair of oxen                                            | Simple merged-primitive cart and oxen geometry — no specific ANE cart/yoke typology asserted                                                                                          | M7         |
+| `asset-music-instruments`      | The named instruments of 6:5 (lyre, frame drum, rattles/castanets, cymbals)        | Simple merged-primitive silhouettes — king-stager-2001 checked, a genuine researcher gap (see claim-music-instruments), not forced past design-placeholder                            | M7         |
+
+Reuses `asset-figure-procedural`, `asset-figure-fallen`, and
+`asset-david-marker` — no new records for these. No `LocationEntry`, no
+atlas pin, for the threshing floor of Nacon/Perez-uzzah or for Obed-edom's
+house — both staged with disclosed placeholder positions only within this
+scene's own terrain, the Baal-perazim precedent, not the Mahanaim one.
+`kiriath-jearim` itself gets a full `LocationEntry`
+(`identification.disputed: false`, Deir el-Azhar/Tell el-Azhar, Abu Ghosh
+vicinity, coordinates confidence `moderate`) — the project currently has no
+dedicated source card for this specific site, a genuine researcher gap
+carried forward from the brief. Its fresh passage (`2sam-6`, shared with the
+not-yet-built `ark-into-jerusalem`) spends one of its shared 3-quote ESV
+budget here (6:9's "How can the ark of the LORD come to me?"), two reserved
+for the other scene — entered from careful recollection, not a live-source
+check (no `WebSearch` or other live-source tool was available in this
+session's toolset). `mccarter-1984-ii-samuel` still covers only through 2
+Samuel 5, not yet extended to 2 Samuel 6 — flagged as a researcher item, not
+done this session.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the

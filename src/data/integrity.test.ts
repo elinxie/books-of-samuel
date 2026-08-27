@@ -31,6 +31,7 @@ import { HEBRON_GATE_ENTITIES } from '../scenes/hebron-gate/entities';
 import { HEBRON_RECKONING_ENTITIES } from '../scenes/hebron-reckoning/entities';
 import { JERUSALEM_STRONGHOLD_ENTITIES } from '../scenes/jerusalem-stronghold/entities';
 import { REPHAIM_VALLEY_ENTITIES } from '../scenes/rephaim-valley/entities';
+import { PEREZ_UZZAH_ENTITIES } from '../scenes/perez-uzzah/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -66,6 +67,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(HEBRON_RECKONING_ENTITIES);
     uniqueIds(JERUSALEM_STRONGHOLD_ENTITIES);
     uniqueIds(REPHAIM_VALLEY_ENTITIES);
+    uniqueIds(PEREZ_UZZAH_ENTITIES);
   });
 });
 
@@ -351,6 +353,14 @@ describe('features and scene entities', () => {
 
   it('Rephaim-valley entity labels resolve to claims', () => {
     for (const e of REPHAIM_VALLEY_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Perez-uzzah entity labels resolve to claims', () => {
+    for (const e of PEREZ_UZZAH_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }
