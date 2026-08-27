@@ -1915,3 +1915,32 @@ review in `docs/fable-review-queue.md` (reduced-mode fade-from-view vs. an
 instant cut — both satisfy the hard bar, brief underspecifies which).
 `docs/next-run.md` updated. Next: build `ark-into-jerusalem` (M7's second and
 last scene), then a Sonnet M7 sign-off review.
+
+**2026-08-27 — Sonnet 5 — `ark-into-jerusalem` build (M7 second/last scene)**
+Same session, continuing from `perez-uzzah`'s merge. Reset branch onto `main`
+(the merged-PR-branch convention) and dispatched `threejs-engineer` per
+`docs/design/ark-into-jerusalem-brief.md`. Built almost entirely from reuse:
+`jerusalem-stronghold`'s terrain/enclosure/palette/unfinished-house
+unchanged, `perez-uzzah`'s ark unchanged, its procession population reused
+and repositioned (not doubled). New: the tent (explicitly not the Gibeon
+tabernacle), an offering ground, Michal's window/confrontation ground.
+`michal` staged for the first time. ≈209 high-tier figures. David's dance
+stays fully clothed at every camera distance in every mode, backed by a
+structural test (`exposure.test.ts`) proving the character-rig pipeline has
+no bare-torso code path at all.
+
+Independent re-verification (this session had `WebSearch`, the build agent
+did not) caught two real defects: the 6:21–22 ESV excerpt read "abased in
+**my own** eyes" where every live ESV source reads "abased in **your**
+eyes" (Michal's) — fixed across `passages.ts`/`scenes.ts`/`claims.ts`/the
+brief itself, which had suggested the same wrong wording. Separately,
+`claim-michal-confrontation` cited `mccarter-1984-ii-samuel` in `sourceIds`
+despite its own notes correctly disclosing that source doesn't cover 2
+Samuel 6 yet — a real citation-integrity bug, not a hedge; removed. Full
+gate re-verified green after fixes: format, lint, typecheck, 608 vitest,
+build, 19/19 e2e. `docs/fable-review-queue.md` and `docs/next-run.md`
+updated. Next: a Sonnet M7 sign-off review (confirm/revise queue #25/#26),
+then the M7 release cascade if both hold. Live-source follow-up
+(`mccarter-1984-ii-samuel` → 2 Sam 6, `king-stager-2001` instrument check,
+Kiriath-jearim source card) still open, non-blocking to sign-off but gating
+`released`.

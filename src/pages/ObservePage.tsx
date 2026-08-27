@@ -36,6 +36,8 @@ import { RephaimValleyScene } from '../scenes/rephaim-valley/RephaimValleyScene'
 import { REPHAIM_TERRAIN } from '../scenes/rephaim-valley/terrain';
 import { PerezUzzahScene } from '../scenes/perez-uzzah/PerezUzzahScene';
 import { KIRIATH_JEARIM_TERRAIN } from '../scenes/perez-uzzah/terrain';
+import { ArkIntoJerusalemScene } from '../scenes/ark-into-jerusalem/ArkIntoJerusalemScene';
+import { JERUSALEM_TERRAIN as ARK_INTO_JERUSALEM_TERRAIN } from '../scenes/jerusalem-stronghold/terrain';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -61,6 +63,10 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'jerusalem-stronghold': { component: JerusalemStrongholdScene, terrain: JERUSALEM_TERRAIN },
   'rephaim-valley': { component: RephaimValleyScene, terrain: REPHAIM_TERRAIN },
   'perez-uzzah': { component: PerezUzzahScene, terrain: KIRIATH_JEARIM_TERRAIN },
+  'ark-into-jerusalem': {
+    component: ArkIntoJerusalemScene,
+    terrain: ARK_INTO_JERUSALEM_TERRAIN,
+  },
 };
 
 function PlannedScene({ scene }: { scene: SceneDef }) {

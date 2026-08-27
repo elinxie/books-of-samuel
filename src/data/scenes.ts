@@ -2314,6 +2314,160 @@ export const SCENES: SceneDef[] = [
       'asset-david-marker',
     ],
   },
+  {
+    id: 'ark-into-jerusalem',
+    title: "The ark brought up with gladness — David's dance and Michal's contempt",
+    passageIds: ['2sam-6'],
+    locationId: 'jerusalem',
+    periodId: 'iron-iia',
+    milestoneId: 'M7',
+    // Built per docs/design/ark-into-jerusalem-brief.md (Sonnet world-director
+    // pass, 2026-08-26, per CLAUDE.md's "Model policy — do not invoke
+    // Fable"). Second and last scene of Milestone 7. Picks up exactly where
+    // perez-uzzah leaves off (the ark resting at Obed-edom's house) and
+    // reuses jerusalem-stronghold's terrain, enclosure, palette, and
+    // unfinished-house asset completely unchanged — the same ground, the
+    // same object, the opposite outcome.
+    status: 'in-progress',
+    synopsis:
+      "David brings the ark up from Obed-edom's house into the city of David with gladness, sacrificing every six steps, dancing before the LORD with all his might in a linen ephod while Israel shouts and the horn sounds. Michal watches from a window and despises him in her heart. The ark is set in its tent, offerings are made, and bread, meat, and a raisin cake are distributed to the whole multitude. When David returns to bless his own household, Michal comes out to confront him over his self-abasement before the female servants; David answers that it was before the LORD who chose him over her father's house. The chapter — and the milestone — closes on Michal's childlessness, stated as the text states it, with no cause supplied.",
+    depictsDeath: false,
+    durationSec: 152,
+    beats: [
+      {
+        id: 'b-report',
+        timeSec: 0,
+        title: 'Because of the ark',
+        caption:
+          "Word reaches King David that the LORD has blessed the household of Obed-edom and all that belongs to him, because of the ark of God. Cross-references perez-uzzah's own closing beat directly — the same ark that killed Uzzah now blesses a household, three months on. (2 Samuel 6:12a)",
+        passageRef: '2 Samuel 6:12a',
+      },
+      {
+        id: 'b-departure-2',
+        timeSec: 10,
+        title: 'Brought up with gladness',
+        caption:
+          "David goes and brings up the ark of God from the house of Obed-edom to the city of David with gladness — a continuity shot from where perez-uzzah left the ark into this scene's own reused Jerusalem terrain. (2 Samuel 6:12b)",
+        passageRef: '2 Samuel 6:12b',
+      },
+      {
+        id: 'b-sacrifice-steps',
+        timeSec: 28,
+        title: 'Every six steps',
+        caption:
+          "When those who bear the ark have gone six steps, David sacrifices an ox and a fattened animal. This project's first staged sacrifice: living animals and ritual activity at a modest altar convey the offering; the act of slaughter itself is elided in every mode — no wound, blood, or carcass geometry, extending this project's existing no-gore standard to animal sacrifice by reasoned analogy. No priest or Levitical office is named at this point in the text; the officiants here are unnamed. (2 Samuel 6:13)",
+        passageRef: '2 Samuel 6:13',
+      },
+      {
+        id: 'b-dance',
+        timeSec: 46,
+        title: 'David danced before the LORD with all his might',
+        caption:
+          "David dances before the LORD with all his might, wearing a linen ephod, not royal regalia; all Israel brings up the ark with shouting and the sound of the horn. The dance stages fully and vigorously — this restraint is about visual grammar, not about withholding joy. David's figure stays fully clothed in every mode, at every camera distance; no exposure is ever modeled or suggested by framing. No royal or military triumphal grammar renders anywhere — a communal festival, not a victory procession. (2 Samuel 6:14-15)",
+        passageRef: '2 Samuel 6:14-15',
+      },
+      {
+        id: 'b-window',
+        timeSec: 68,
+        title: 'Michal watches from the window',
+        caption:
+          'As the ark comes into the city of David, Michal the daughter of Saul looks out of the window and sees King David leaping and dancing before the LORD, and she despises him in her heart — her first staged appearance anywhere in this project. Rendered as a still, distant figure at the opening; her internal reaction is carried by this caption, not by any invented gesture beyond stillness and, shortly after, withdrawal from the window. (2 Samuel 6:16)',
+        passageRef: '2 Samuel 6:16',
+      },
+      {
+        id: 'b-tent-placement',
+        timeSec: 86,
+        title: 'Set in its place, inside the tent',
+        caption:
+          'They bring in the ark of the LORD and set it in its place, inside the tent David has pitched for it — a simple, modest tent, explicitly not the tabernacle at Gibeon (1 Chronicles 16:39 keeps that structure and its altar at Gibeon at this time). David offers burnt offerings and peace offerings before the LORD, then blesses the people in the name of the LORD of hosts. (2 Samuel 6:17-18)',
+        passageRef: '2 Samuel 6:17-18',
+      },
+      {
+        id: 'b-distribution',
+        timeSec: 102,
+        title: 'To the whole multitude, both men and women',
+        caption:
+          'David distributes to each of the whole multitude of Israel, both men and women, a cake of bread, a portion of meat, and a cake of raisins, and all the people depart, each to his own house — a genuinely communal beat, not an elite banquet; no hierarchy-first framing. (2 Samuel 6:19)',
+        passageRef: '2 Samuel 6:19',
+      },
+      {
+        id: 'b-return-household',
+        timeSec: 116,
+        title: 'David returns to bless his household',
+        caption: 'David returns to bless his own household. (2 Samuel 6:20a)',
+        passageRef: '2 Samuel 6:20a',
+      },
+      {
+        id: 'b-confrontation',
+        timeSec: 128,
+        title: 'How the king of Israel honored himself',
+        caption:
+          '"How the king of Israel honored himself today, uncovering himself today before the eyes of his servants\' female servants, as one of the vulgar fellows shamelessly uncovers himself!" Michal\'s accusation is carried entirely by her own words — never enacted by any gesture, in any mode. David answers: "I will celebrate before the LORD... I will be abased in your eyes." A genuinely disputed exchange (claim-michal-confrontation): the text keeps both her contempt and his self-description in view without adjudicating between them, and so does this scene, at the household-ground vantage, conversation-scale. (2 Samuel 6:20b-22, ESV)',
+        passageRef: '2 Samuel 6:20b-22',
+      },
+      {
+        id: 'b-close',
+        timeSec: 144,
+        title: 'To the day of her death',
+        caption:
+          "Michal the daughter of Saul had no child to the day of her death — stated exactly as the text states it, with no cause asserted: not divine judgment, not an implied end to marital relations, not any other reading (see claim-michal-confrontation's scholarlyViews). Milestone 7 ends here. Nothing from 2 Samuel 7 onward — the dynastic oracle, the temple, Bathsheba, or any later language about David's household or future — is depicted, foreshadowed, or pointed at, even obliquely. (2 Samuel 6:23)",
+        passageRef: '2 Samuel 6:23',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-enclosure-tent',
+        label: 'Inside the enclosure — the tent and the dance (default)',
+        position: [18, 16, 40],
+        lookAt: [-6, 5, 72],
+      },
+      {
+        id: 'vp-offering-ground',
+        label: 'The offering ground',
+        position: [-26, 10, 50],
+        lookAt: [-10, 3, 60],
+      },
+      {
+        id: 'vp-michal-window',
+        label: "Michal's window — David below, Michal above",
+        position: [46, 24, 8],
+        lookAt: [1, 9, 62],
+      },
+      {
+        id: 'vp-household-close',
+        label: 'The household ground — the confrontation',
+        position: [22, 7, 34],
+        lookAt: [9.5, 3, 49],
+      },
+    ],
+    claimIds: [
+      'claim-david-historical',
+      'claim-dress',
+      'claim-jebusite-stronghold-form',
+      'claim-hiram-building',
+      'claim-city-of-david-naming',
+      'claim-ark-physical-form',
+      'claim-ark-procession-cast-scale',
+      'claim-ark-arrival-jerusalem',
+      'claim-ark-tent-offerings',
+      'claim-michal-confrontation',
+      'claim-ark-tent-form',
+      'claim-sacrifice-depiction',
+      'claim-dance-depiction',
+      'claim-ark-into-jerusalem-cast-scale',
+    ],
+    assetIds: [
+      'asset-terrain-jerusalem-ridge',
+      'asset-jerusalem-stronghold-form',
+      'asset-jerusalem-construction-ground',
+      'asset-ark-form',
+      'asset-ark-tent',
+      'asset-offering-ground',
+      'asset-household-window',
+      'asset-figure-procedural',
+      'asset-david-marker',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

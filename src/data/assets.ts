@@ -767,6 +767,41 @@ export const ASSETS: AssetRecord[] = [
       'A dedicated comparative ancient Near Eastern music-instrument source (iconographic or archaeological) to move any of these four forms past design-placeholder.',
     replacementMilestoneId: 'M7',
   },
+  {
+    id: 'asset-ark-tent',
+    name: 'The tent David pitched for the ark',
+    represents: '2 Samuel 6:17’s tent — see claim-ark-tent-form',
+    placeholder: true,
+    whyTemporary:
+      'Simple merged-primitive canopy/skirt/pole geometry (src/scenes/ark-into-jerusalem/Tent.tsx) — a modest, disclosed placeholder form, no specific ancient Near Eastern tent typology asserted. Explicitly not the tabernacle at Gibeon (1 Chronicles 16:39): a different structure this project never renders or implies present in Jerusalem at this time.',
+    historicalRequirements:
+      'No comparative ancient Near Eastern source specific to this exact structure is anticipated; this stays a disclosed generic placeholder unless a directly relevant comparandum is identified.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-offering-ground',
+    name: 'The offering ground — altar and living-animal placeholders',
+    represents:
+      '2 Samuel 6:13 and 6:17-19a’s sacrifices and burnt/peace offerings — see claim-sacrifice-depiction',
+    placeholder: true,
+    whyTemporary:
+      'Simple merged-primitive stacked-stone altar and generic quadruped silhouettes (src/scenes/ark-into-jerusalem/OfferingGround.tsx) — living animals and ritual activity only; the act of slaughter is elided in every mode, no wound, blood, or carcass geometry anywhere. No specific breed/species or altar plan asserted beyond the text’s own "an ox and a fattened animal."',
+    historicalRequirements:
+      'A comparative ancient Near Eastern altar-form source (iconographic or archaeological) if one is identified for this period; the no-slaughter-geometry restraint itself is a permanent policy, not awaiting a source.',
+    replacementMilestoneId: 'M7',
+  },
+  {
+    id: 'asset-household-window',
+    name: 'Michal’s household room and window',
+    represents:
+      '2 Samuel 6:16’s window and 6:20’s household ground — see claim-hiram-building, claim-michal-confrontation',
+    placeholder: true,
+    whyTemporary:
+      'A single small, modest occupied room (src/scenes/ark-into-jerusalem/Household.tsx) added beside jerusalem-stronghold’s own unchanged under-construction house (ConstructionGround.tsx), with a real geometric window opening and doorway gap — not identified with any excavated building, and never advancing the wider house past the under-construction state jerusalem-stronghold established.',
+    historicalRequirements:
+      'A comparative Iron Age IIA four-room/pillared-house window-and-doorway typology source (king-stager-2001 the first place to look) could sharpen the opening proportions; the modest-room/no-finished-palace constraint is permanent, not awaiting a source.',
+    replacementMilestoneId: 'M7',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));
