@@ -3,7 +3,99 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-27, M7 RELEASED — Sonnet sign-off + release cascade, branch `claude/focused-mccarthy-wooqyk`)
+## State right now (2026-08-27, M8 SCOPED — Sonnet world-director pass, `nathans-oracle` brief, no build yet, branch `claude/focused-mccarthy-wooqyk`)
+
+**M8 (2 Samuel 7, Nathan's oracle / the Davidic covenant) is defined and
+briefed.** Same session, continuing directly from M7's release. Dispatched
+`world-director` (`model: sonnet`, per `CLAUDE.md`'s Fable-retirement
+policy).
+
+**Scope decision: 2 Samuel 7 alone (not bundled with chapter 8), one small
+scene.** 2 Samuel 7 is unlike anything M1–M7 covered — almost no narrated
+physical action: David's wish to build a temple (7:1–3), Nathan's initial
+assent, that night's oracle to Nathan (7:4–17, the LORD's rejection of the
+temple plan and the promise of a dynasty instead), Nathan's report (7:17),
+and David's prayer (7:18–29). The pass seriously weighed a cards-only,
+no-3D-scene treatment — genuinely defensible, since a card sequence could
+carry every fact honestly — and decided instead on one small
+conversation-scale scene, `nathans-oracle` (David and Nathan only, ≈2–12
+figures, by far the project's smallest cast), on two grounds: the spatial
+callback of David's house finally shown complete (licensed by 7:1 itself,
+advancing `claim-hiram-building` off the under-construction state held
+since M6/M7) and David sitting at the same tent he danced in front of in
+`ark-into-jerusalem`; and near-zero marginal build cost, since almost every
+asset is a straight reuse of `jerusalem-stronghold`/`ark-into-jerusalem`.
+Logged as **queue #27**, deliberately reversible toward cards-only if a
+future reviewer disagrees.
+
+**The load-bearing design question — Nathan's oracle (7:4–17) itself —
+resolved as ADR-013's purest test case yet (queue #28).** Unlike 5:24
+(a natural phenomenon) or 6:7 (a resulting death), "the word of the LORD
+came to Nathan" has no physical correlate of any kind. Resolved: Nathan is
+shown in ordinary night stillness (no receptive posture, no light, no
+camera language implying presence); the oracle's full content is
+card-carried in the text's own first-person voice. Flagged to confirm
+whether ADR-013's language cleanly covers a zero-correlate case or needs a
+one-line addendum.
+
+**A genuinely new category of scholarly dispute opened as queue #29**:
+2 Samuel 7:13a is widely read by critical scholarship as a later insertion
+anticipating Solomon — a compositional-layering/redaction-critical
+question, structurally different from every prior `scholarlyViews` dispute
+type (identification/historicity/translation/causation) this project has
+carried. Decided: render the received text as one narrated event (matching
+standing practice everywhere else); disclose the redaction-critical reading
+as a hedged `scholarlyViews` entry if a named citation is found, otherwise
+as an unattributed note — never staged as a visual "layering."
+
+**Other resolved calls worth knowing:** David's house is shown complete for
+the first time (7:1's own textual license — `claim-davids-house-complete`,
+cross-referencing `claim-hiram-building`); "rest from his surrounding
+enemies" (7:1b) is stated by card only, no battle imagery (2 Samuel 8's
+specific wars are explicitly out of scope); "sits before the LORD" (7:18a)
+staged as a deliberate seated posture at the tent's entrance, not an
+invented interior; no naming or visual identification of Solomon anywhere,
+despite 5:14 already having named him among David's sons — the "offspring"
+of 7:12 stays exactly as unspecified on screen as in the text. New
+character: `nathan` the prophet — explicitly not to be conflated with the
+identically-named son of David already card-referenced at 5:14.
+
+`src/data/milestones.ts` gained the `M8` entry (`status: 'planned'`,
+`passageRefs: ['2 Samuel 7']`) with the full dated scope-decision comment.
+`src/data/scenes.ts`/`claims.ts`/`characters.ts`/`locations.ts` were **not
+touched** — per every prior milestone's convention. This scope pass had no
+shell/bash access (Read/Grep/Glob/Write only), so the orchestrating session
+independently ran the full `npm run verify` gate after review: format
+(one file needed `prettier --write`), lint, typecheck, 608 vitest
+(unchanged — docs/comment-only diff), build, 19/19 e2e — all green.
+
+**What's next (Sonnet), in priority order:**
+
+1. **Build `nathans-oracle`** per its brief (`threejs-engineer`) — sole
+   scene of M8, and by a wide margin the cheapest/smallest scene to date
+   (reuses almost everything). Read its Resolved-design-calls section
+   closely: queue #27 (the scene-vs-cards call), #28 (Nathan's stillness,
+   the zero-correlate ADR-013 case), and #29 (the redaction-critical
+   disclosure) are all load-bearing and new precedent, not routine
+   application of an existing template.
+2. `researcher` pass (parallelizable, doesn't block the build): extend
+   `mccarter-1984-ii-samuel` to 2 Samuel 7 — the cheapest route to a named
+   citation for queue #29's redaction-critical question and any named
+   treatment of the chapter's covenant-theology significance.
+3. Continue the M7 non-blocking gaps carried forward: `mccarter-1984-ii-
+samuel` → 2 Samuel 6, `king-stager-2001` instrument-coverage check, a
+   dedicated Kiriath-jearim source card.
+4. (Carried forward, still open, non-blocking) Live ESV wording
+   verification for M6's three quotes (5:6b, 5:8a, 5:24) — still not
+   checked against a live source.
+5. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — long-standing,
+   carried since M3.
+6. Then a Sonnet M8 sign-off review before any status flips past
+   `planned`/`in-progress` — confirm or revise queue #27/#28/#29 as part of
+   that review, following `docs/fable-review-checklist.md`.
+
+## State before this slice (2026-08-27, M7 RELEASED — Sonnet sign-off + release cascade, branch `claude/focused-mccarthy-wooqyk`)
 
 **M7 (2 Samuel 6) is fully released.** Same session, continuing directly from
 `ark-into-jerusalem`'s merge. Ran the M7 sign-off review per

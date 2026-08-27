@@ -301,6 +301,112 @@ export const MILESTONES: Milestone[] = [
       'Michal’s contempt from the window and her confrontation with David, ending on her childlessness (2 Sam 6:23) — Michal’s first staged appearance in the project',
     ],
   },
+  {
+    id: 'M8',
+    label: 'Milestone 8 — 2 Samuel 7',
+    // 2026-08-27 Sonnet world-director scope pass (per CLAUDE.md's "Model
+    // policy — do not invoke Fable" — this pass carries the architecture/
+    // creative authority formerly routed to Fable directly). 2 Samuel 7 is a
+    // fundamentally different kind of chapter than anything M1–M7 covered:
+    // almost no narrated physical action at all. David sits in his house and
+    // tells Nathan he wants to build a house for the ark (7:1–3); Nathan
+    // initially assents; that night the word of the LORD comes to Nathan
+    // (7:4–17) — a prophetic oracle with no physical mechanism whatsoever,
+    // rejecting the temple plan and promising instead to build David a
+    // "house" (a dynasty), an heir, and a throne established forever; Nathan
+    // reports it to David (7:17); David goes in and sits before the LORD and
+    // prays a long prayer of thanksgiving and petition (7:18–29). No crowd,
+    // no procession, no death, no battle, no journey between locations — the
+    // whole chapter could plausibly be staged as two people talking in one
+    // room, then one person praying alone in that same room.
+    //
+    // **Resolved: one small scene, not zero, and not the established crowd/
+    // procession template.** Weighed seriously against a cards-only,
+    // no-3D-scene treatment — see docs/design/nathans-oracle-brief.md's
+    // "Historical intent" section for the full ADR-011 decision-test
+    // reasoning worked through in both directions. A card sequence could
+    // honestly carry everything 7:1–29 states, with nothing lost. What tips
+    // the balance toward a (very small) scene: the spatial callback of David
+    // walking from his own house — now finally shown complete, since 7:1's
+    // "when the king lived in his house" is the chapter's own textual license
+    // to advance `claim-hiram-building` off the under-construction state
+    // `jerusalem-stronghold`/`ark-into-jerusalem` deliberately held it at —
+    // to the same ark-tent `ark-into-jerusalem` built, sitting where he
+    // danced two milestones earlier. That is an observation a spatial medium
+    // delivers and a card sequence cannot, at near-zero marginal build cost
+    // (total reuse of `jerusalem-stronghold`'s terrain/palette and
+    // `ark-into-jerusalem`'s tent, unchanged). This is a genuinely close call,
+    // deliberately reversible (nothing about it is expensive to undo), and is
+    // logged provisional as queue #27, parallel to M6's #21.
+    //
+    // The load-bearing design question is Nathan's oracle itself (7:4–17).
+    // ADR-013 already governs narrated divine/supernatural events, but every
+    // prior case had *some* physical correlate to withhold an effect from —
+    // 5:24's sound in the balsam trees is a natural phenomenon; 6:7's strike
+    // on Uzzah has a resulting death. 7:4–17 has neither: "the word of the
+    // LORD came to Nathan" is a wholly private, internal reception with no
+    // observable trace at all, no natural-phenomenon correlate, and (within
+    // this chapter itself) no physical outcome either. Resolved: ADR-013's
+    // stillness-only default extends cleanly, and applies more purely here
+    // than in either prior case — Nathan is shown settled for the night
+    // exactly as anyone would be (no receptive pose, no upward gaze, no
+    // light, no camera language implying presence), and the entire content of
+    // the oracle is carried by caption/card, not by any staged reception
+    // beat. Logged as queue #28 — the purest ADR-013 test case to date, worth
+    // a second look precisely because there is nothing at all to hold back
+    // from rendering, unlike the two prior cases.
+    // One scene: `nathans-oracle`, covering 2 Samuel 7 in full (7:1–29) —
+    // conversation-scale (David, Nathan; no crowd claim needed at all, the
+    // smallest cast of any scene to date), reusing `jerusalem-stronghold`'s
+    // terrain and `ark-into-jerusalem`'s tent unchanged. New character:
+    // `nathan` (the prophet) — note the namesake trap: a different Nathan,
+    // one of David's sons born in Jerusalem, is already named in 5:13–16's
+    // card-only list and must not be conflated with this Nathan in any
+    // caption or character record. Brief: docs/design/nathans-oracle-brief.md.
+    //
+    // A new category of scholarly dispute, also logged provisional (queue
+    // #29): whether/how to surface source-/redaction-critical readings of the
+    // oracle (e.g., 7:13a's "he shall build a house for my name" is widely
+    // read by critical scholars as a later insertion anticipating Solomon,
+    // in tension with the surrounding unconditional-sounding promise) as
+    // `scholarlyViews`. This is compositional-layering dispute, not
+    // identification/historicity/translation/causation — a genuinely new
+    // shape of uncertainty for this project's claim model. Decided for this
+    // pass: render the received text as a single narrated event, as the
+    // project already does everywhere else (it narrates the text as it
+    // stands, not a reconstructed compositional history), and surface the
+    // redaction-critical reading as an optional `scholarlyViews` entry if a
+    // named citation is found — not by fracturing the staged event into
+    // "authentic core" vs. "later addition" pieces, which would assert
+    // invented certainty about compositional history with no visual
+    // correlate to justify staging it differently in the first place.
+    //
+    // Scope bundling: 2 Samuel 7 alone, not 7 plus 8. 2 Samuel 8 (the wars
+    // against Philistia/Moab/Zobah-Aram/Edom and the officials list) is a
+    // different kind of unit again — a series of terse summary notices with
+    // no narrated blocking either, closer in shape to M4's divided-kingdom
+    // material (which became an atlas overlay, not a scene) than to anything
+    // stageable here. Likely an M9 atlas-plus-cards treatment; not decided
+    // now, and no geometry or claim commitments are made toward it here.
+    //
+    // Hard scope guard for the whole milestone: nothing from 2 Samuel 8
+    // onward — Solomon named or implied as the promised offspring, Bathsheba,
+    // the temple's eventual construction, any fulfillment or complication of
+    // the throne promise — appears anywhere, depicted or foreshadowed. The
+    // milestone renders only what 7:1–29 itself states, including the
+    // "rest from his enemies" language 7:1 uses of itself (the M6/M7 hard
+    // guards forbade earlier scenes from reaching forward to this exact
+    // phrase; here, finally, it is the text in front of the scene, not a
+    // forward gloss).
+    status: 'planned',
+    passageRefs: ['2 Samuel 7'],
+    goals: [
+      'David’s wish to build a house for the ark, and Nathan’s initial assent (7:1–3), staged in David’s house — shown complete for the first time, on 7:1’s own textual license',
+      'Nathan’s night oracle (7:4–17): the LORD’s rejection of the temple plan and the promise of a dynastic “house,” an heir, and a throne established forever — rendered per ADR-013 (stated, never visualized), the project’s first divine-communication event with no physical correlate at all (queue #28)',
+      'Nathan’s report of the oracle to David (7:17)',
+      'David’s prayer before the LORD (7:18–29), staged at `ark-into-jerusalem`’s tent, reused unchanged',
+    ],
+  },
 ];
 
 export const MILESTONES_BY_ID: ReadonlyMap<string, Milestone> = new Map(

@@ -1965,3 +1965,23 @@ per the standing precedent: `mccarter-1984-ii-samuel` → 2 Sam 6,
 `king-stager-2001` instrument-coverage check, a dedicated Kiriath-jearim
 source card. `docs/next-run.md` updated. Next: scope M8 (2 Samuel 7
 onward).
+
+**2026-08-27 — Sonnet 5 — M8 scope pass (2 Samuel 7, Nathan's oracle)**
+Same session, continuing from M7's release. Dispatched `world-director`
+(`model: sonnet`, no Fable). Scope decision: 2 Samuel 7 alone, one small
+scene (`nathans-oracle`) rather than a cards-only treatment — the pass
+seriously weighed and documented the cards-only alternative before deciding
+against it (queue #27), on the strength of a spatial callback (David's house
+finally complete, reusing `jerusalem-stronghold`/`ark-into-jerusalem`
+unchanged) at near-zero marginal cost. Nathan's oracle (7:4–17) resolved as
+ADR-013's purest test case — no physical correlate at all, unlike 5:24 or
+6:7 — Nathan shown in ordinary stillness, oracle content card-carried
+(queue #28). A genuinely new scholarlyViews category opened: 7:13a's
+redaction-critical reading, disclosed in notes only, not staged (queue #29).
+2 Samuel 8 explicitly deferred to a future M9 scoping pass (different kind
+of unit — terse summary notices, likely atlas-plus-cards). New `M8` entry
+in `milestones.ts` (`planned`); `scenes.ts`/`claims.ts`/`characters.ts`/
+`locations.ts` untouched, per convention. This pass had no shell access;
+orchestrating session independently ran the full gate after review (one
+prettier fix needed): format, lint, typecheck, 608 vitest, build, 19/19
+e2e — all green. `docs/next-run.md` updated. Next: build `nathans-oracle`.
