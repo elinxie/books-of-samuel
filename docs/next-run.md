@@ -3,7 +3,86 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-26, M7 SCOPED — Sonnet world-director pass, two ark scene briefs, no build yet, branch `claude/focused-mccarthy-yvcpud`, PR #70 draft)
+## State right now (2026-08-27, M7 first scene BUILT — `perez-uzzah`, branch `claude/focused-mccarthy-wooqyk`)
+
+**`perez-uzzah` (2 Sam 6:1–11) is built** — first of M7's two scenes, the
+project's first-ever staging of the ark of the covenant, `status:
+'in-progress'` (provisional pending M7 review). Scheduled/automated session;
+`main` (already carrying M7's scope commit, `e135d33`/PR #70) verified with a
+clean baseline (`npm install` + full `npm run verify` green) before
+dispatching `threejs-engineer` per `docs/design/perez-uzzah-brief.md`. Per
+`CLAUDE.md`'s standing "Model policy — do not invoke Fable," this ran on
+Sonnet directly, no Fable call attempted despite the scheduled prompt's offer.
+
+New scene folder `src/scenes/perez-uzzah/` (terrain, layout, poses, entities,
+`Ark.tsx` — a clean, independent, reusable ark component with no cherubim
+geometry, built to be reused unchanged by the not-yet-built
+`ark-into-jerusalem`). New passage `2sam-6` (shared with `ark-into-jerusalem`;
+this scene spends 1 of its 3-quote ESV budget — 6:9, live-verified via
+WebSearch against ESV.org/BibleHub, verbatim match). New location
+`kiriath-jearim` (`identification.disputed: false`, interim
+`rainey-notley-2006` citation, no dedicated source card yet — flagged gap).
+**No `LocationEntry`** for the threshing floor of Nacon/Perez-uzzah or
+Obed-edom's house, per the Baal-perazim precedent. New characters `uzzah`,
+`ahio`, `obed-edom`; `david` extended. 9 new claims per the brief's Required
+source basis list. `depictsDeath: true`; ADR-009 advisory wired and
+e2e-tested (both standard and reduced mode).
+
+**Uzzah's death (queue #25/ADR-013's own named test case) is built as
+specified**: the reach is shown as gesture (his own act), then a collapse/fall
+at documentary distance, no wound geometry, no visual stand-in for the divine
+strike in any mode. Grep-confirmed clean: no cherubim geometry anywhere
+outside disclaiming comments/direct-quote text, no light/glow/particle/wind
+code at the strike beat, no 2 Sam 6:12+/7+ content anywhere. One
+implementation reading flagged for the M7 review in
+`docs/fable-review-queue.md`'s 2026-08-27 build note: reduced mode was built
+as a ~3s fade-from-view after the stumble rather than an instant cut to a
+still frame — both satisfy the hard bar, the brief doesn't fully disambiguate
+which is intended.
+
+Figure count ≈207 at high tier (180 column + 16 ambient Kiriath-jearim + 7
+Obed-edom household + 4 principals) — within the brief's ≈180–235 target,
+well under `gilboa-battle`'s measured ~330 high-tier ceiling (still open on
+its real-hardware check). Full gate independently re-verified by the
+orchestrating session after the build agent's own pass (not just taken from
+its report): format, lint, typecheck, 568 vitest, build, 18/18 e2e
+(`PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+for e2e, same standing sandbox note). `sources/source-index.json` regenerated,
+byte-identical (no source-card changes this pass). Not yet committed as of
+this doc-sync edit — see next action below.
+
+**What's next (Sonnet), in priority order:**
+
+1. Commit and push this build (branch `claude/focused-mccarthy-wooqyk`),
+   open/update its PR as draft, subscribe to CI.
+2. **Build `ark-into-jerusalem`** per its brief (`threejs-engineer`) — second
+   and last of M7's two scenes, reuses `jerusalem-stronghold`'s terrain/
+   enclosure/palette and `perez-uzzah`'s ark asset and procession population
+   unchanged. Read its dance/exposure (fully clothed, no exposure rendered in
+   any mode) and sacrifice-restraint sections closely — both new kinds of
+   restrained content for the project. Spends the remaining 2 of `2sam-6`'s
+   ESV budget (6:20b, 6:21–22) — live-verify wording via WebSearch, don't
+   enter from memory.
+3. `researcher` pass on the open gaps (parallelizable, doesn't block the
+   `ark-into-jerusalem` build): a dedicated Kiriath-jearim source card
+   (currently none), extending `mccarter-1984-ii-samuel` to 2 Samuel 6 (named
+   attribution for the cart-vs-carrying-method dispute, the 6:20b
+   exposure-reading dispute, and the 6:23 causation question — the last two
+   needed by `ark-into-jerusalem`, not this scene), and confirming whether
+   `king-stager-2001` covers musical-instrument construction/form
+   specifically (currently unconfirmed, `claim-music-instruments` stays
+   `design-placeholder`).
+4. (Carried forward, still open, non-blocking) Live ESV wording verification
+   for M6's three quotes (5:6b, 5:8a, 5:24) — still not checked against a
+   live source.
+5. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — long-standing,
+   carried since M3.
+6. Then a Sonnet M7 sign-off review after both scenes are built — confirm or
+   revise queue #25/#26 (including the reduced-mode fade-vs-cut reading flagged
+   above) as part of that review, per `docs/fable-review-checklist.md`.
+
+## State before this slice (2026-08-26, M7 SCOPED — Sonnet world-director pass, two ark scene briefs, no build yet, branch `claude/focused-mccarthy-yvcpud`, PR #70 draft)
 
 **M7 (2 Samuel 6) is defined and briefed.** Scheduled/automated session;
 baseline verified clean first (`npm install` + full `npm run verify` green,

@@ -396,3 +396,75 @@ test('rephaim-valley in reduced violence mode elides the falls at both engagemen
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
+
+test("violence advisory (ADR-009) also gates perez-uzzah — M7's first scene, the project's first ark staging, standard mode", async ({
+  page,
+}) => {
+  // perez-uzzah is the first worked-through case of ADR-013 composing with
+  // ADR-009 (queue #25): Uzzah's death (2 Sam 6:7) has no assailant and no
+  // method to render even as an elided gesture — his own reach toward the
+  // ark is shown as a discrete gesture, then a collapse, at documentary
+  // distance, with no visual stand-in for the divine strike in any mode.
+  await page.goto('/#/observe/perez-uzzah');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-standard').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText('The new cart and the death of Uzzah');
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (the gathering, the departure, the
+  // new cart, the music, the stumble, the strike, the naming of
+  // Perez-uzzah, David's fear, the diversion, the blessing at Obed-edom's
+  // house, the close) checking for runtime errors at each stop — standard
+  // mode, so the reach-and-fall branch is exercised.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 14, 30, 46, 60, 78, 85, 92, 98, 106, 120, 136, 150, 164, 174]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});
+
+test('perez-uzzah in reduced violence mode elides the reach-and-fall', async ({ page }) => {
+  // Reduced mode's one behavioral difference from standard is entirely
+  // inside PrincipalFigures.tsx's per-frame pose read (uzzahPose) — this
+  // confirms the app tolerates scrubbing through the whole strike window in
+  // reduced mode without runtime errors, and that the mode persists.
+  await page.goto('/#/observe/perez-uzzah');
+  await expect(page.getByTestId('violence-advisory')).toBeVisible();
+
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.getByTestId('violence-advisory-reduced').click();
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.locator('canvas')).toBeVisible();
+
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [70, 78, 82, 92, 98, 136, 164]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+
+  // Second visit: no advisory, and the chosen mode stuck in Settings — same
+  // persistence contract as gilboa-battle/rephaim-valley's own advisory test.
+  await page.goto('/#/observe/perez-uzzah');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await page.getByTestId('open-settings').click();
+  await expect(page.getByTestId('violence-reduced')).toBeChecked();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});

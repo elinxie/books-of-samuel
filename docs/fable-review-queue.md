@@ -66,6 +66,30 @@ narrated event. **Confirm or revise at the M7 review**; if reversed, the
 fallback is an undecorated, unlabeled placeholder form with no claimed
 biblical-text basis at all, disclosed as pure `design-placeholder`.
 
+`perez-uzzah` build note (2026-08-27, Sonnet/`threejs-engineer`, independently
+re-verified). The scene is built (`src/scenes/perez-uzzah/`), gate-green
+(568 vitest, 18/18 e2e, format/lint/typecheck/build clean), ≈207 high-tier
+figures (within the brief's 180–235 target, under `gilboa-battle`'s measured
+~330 ceiling). Grep-confirmed against both #25 and #26's bars: no cherubim
+geometry anywhere outside disclaiming comments and direct-quote text, no
+light/glow/particle/wind code at the strike beat, no 2 Sam 6:12+/7+ content.
+The 6:9 ESV quote ("How can the ark of the LORD come to me?") was live-checked
+via WebSearch against ESV.org/BibleHub snippets this session — verbatim match.
+One implementation reading worth flagging alongside #25 at the M7 review: the
+brief's reduced-mode instruction ("cut from the stumbling oxen directly to a
+held, still aftermath frame") was built as Uzzah's figure fading from view
+over ~3s after the stumble, rather than an instant cut to a still frame with
+no fade transition. Both satisfy the hard bar (`reachExtend`/`fallen` held at
+0 throughout reduced mode, identical captions in both modes, no wound/strike
+visual effect), but the brief doesn't fully disambiguate the transition style
+— confirm the fade or tighten to an instant cut at the M7 review. Also carried
+forward, non-blocking: no dedicated Kiriath-jearim source card yet (interim
+`rainey-notley-2006` citation only); `claim-music-instruments` stays
+`design-placeholder` (`king-stager-2001`'s coverage of instrument
+construction/form specifically not confirmed, only its chapter-level TOC);
+`mccarter-1984-ii-samuel` still not extended to 2 Samuel 6 (cart-vs-carrying-
+method and Uzzah's-death textual detail stay unattributed).
+
 _(#21/#23/#24 closed 2026-08-25, see Resolved below; M6 released)_
 
 M6 scope note (2026-08-23, Fable world-director pass — detail for #21–#24 above).

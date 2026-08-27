@@ -1894,3 +1894,24 @@ none needed a "now released" update. `docs/model-handoff.md`,
 `docs/sonnet-continuation.md`, `docs/fable-review-checklist.md` checked for
 stale "wait for Fable" language — all three already fully reflect the
 2026-08-24 Fable retirement, nothing to fix.
+
+**2026-08-27 — Sonnet 5 — `perez-uzzah` build (M7 first scene)**
+Scheduled/automated session. Baseline verified clean on `main` (already at
+`e135d33`/PR #70, M7 scoped) before dispatching `threejs-engineer` per
+`docs/design/perez-uzzah-brief.md`. Built `src/scenes/perez-uzzah/` — the
+project's first ark staging (`Ark.tsx`, no cherubim, reusable unchanged by
+`ark-into-jerusalem`), Uzzah's death as a new no-assailant ADR-009/ADR-013
+template (queue #25 worked through: reach shown as gesture, fall at
+documentary distance, no wound geometry, no visual stand-in for the divine
+strike in any mode). New passage `2sam-6`, location `kiriath-jearim`,
+characters `uzzah`/`ahio`/`obed-edom`, 9 claims. ≈207 high-tier figures
+(within brief's 180–235 target, under `gilboa-battle`'s ~330 ceiling). 6:9
+ESV quote live-verified via WebSearch (verbatim match). Orchestrating session
+independently re-ran the full gate after the build agent's own pass: format,
+lint, typecheck, 568 vitest, build, 18/18 e2e — all green — and grepped
+independently for the brief's hard bars (cherubim, strike-visual-effects, 2
+Sam 6:12+/7+ content), all clean. Logged one implementation reading for M7
+review in `docs/fable-review-queue.md` (reduced-mode fade-from-view vs. an
+instant cut — both satisfy the hard bar, brief underspecifies which).
+`docs/next-run.md` updated. Next: build `ark-into-jerusalem` (M7's second and
+last scene), then a Sonnet M7 sign-off review.
