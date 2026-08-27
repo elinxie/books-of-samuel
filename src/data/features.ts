@@ -219,6 +219,18 @@ export const FEATURES: FeatureEntry[] = [
     milestoneId: 'M6',
   },
   {
+    id: 'f-2sam-6',
+    title: '2 Samuel 6 scenes',
+    description:
+      'The ark brought from Kiriath-jearim on a new cart, the death of Uzzah at the threshing floor of Nacon, and the diversion to Obed-edom’s house (`perez-uzzah`); the ark brought up into the City of David with sacrifices, David’s dance, and Michal’s confrontation (`ark-into-jerusalem`) — the project’s first staging of the ark of the covenant.',
+    // Added 2026-08-27, same gap as f-2sam-3-4/f-2sam-5's: M7 had no feature
+    // entry at build time. Both scenes are built and released together at
+    // the 2026-08-27 M7 sign-off/release pass (queue #25/#26 confirmed) —
+    // done from the start, per precedent.
+    status: 'done',
+    milestoneId: 'M7',
+  },
+  {
     id: 'f-dem-terrain',
     title: 'Real-elevation terrain',
     description:

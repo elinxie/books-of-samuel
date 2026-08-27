@@ -2167,7 +2167,7 @@ export const SCENES: SceneDef[] = [
     // test" of the stated-never-visualized line (fable-review-queue #25),
     // worked through for the first time: Uzzah's death is depictable under
     // ADR-009, the divine strike the text says caused it is not.
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       'David gathers Israel again and sets out from Kiriath-jearim to bring up the ark of God on a new cart — a genuinely joyful procession, with songs and instruments. At the threshing floor of Nacon the oxen stumble; Uzzah reaches out to steady the ark and is struck down. David, angry and then afraid, names the place Perez-uzzah and diverts the ark to the house of Obed-edom the Gittite, where it remains three months and the LORD blesses his household.',
     depictsDeath: true,
@@ -2328,7 +2328,7 @@ export const SCENES: SceneDef[] = [
     // reuses jerusalem-stronghold's terrain, enclosure, palette, and
     // unfinished-house asset completely unchanged — the same ground, the
     // same object, the opposite outcome.
-    status: 'in-progress',
+    status: 'released',
     synopsis:
       "David brings the ark up from Obed-edom's house into the city of David with gladness, sacrificing every six steps, dancing before the LORD with all his might in a linen ephod while Israel shouts and the horn sounds. Michal watches from a window and despises him in her heart. The ark is set in its tent, offerings are made, and bread, meat, and a raisin cake are distributed to the whole multitude. When David returns to bless his own household, Michal comes out to confront him over his self-abasement before the female servants; David answers that it was before the LORD who chose him over her father's house. The chapter — and the milestone — closes on Michal's childlessness, stated as the text states it, with no cause supplied.",
     depictsDeath: false,

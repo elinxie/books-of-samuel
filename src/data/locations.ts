@@ -388,7 +388,7 @@ export const LOCATIONS: LocationEntry[] = [
     approxCoordinates: { lat: 31.806, lon: 35.108, confidence: 'moderate' },
     sceneIds: ['perez-uzzah'],
     claimIds: ['claim-kiriath-jearim-form'],
-    status: 'in-progress',
+    status: 'released',
   },
 ];
 

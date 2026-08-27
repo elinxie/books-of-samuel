@@ -1944,3 +1944,24 @@ then the M7 release cascade if both hold. Live-source follow-up
 (`mccarter-1984-ii-samuel` → 2 Sam 6, `king-stager-2001` instrument check,
 Kiriath-jearim source card) still open, non-blocking to sign-off but gating
 `released`.
+
+**2026-08-27 — Sonnet 5 — M7 sign-off + release**
+Same session, continuing from `ark-into-jerusalem`'s merge. Ran the sign-off
+per `docs/fable-review-checklist.md`, no Fable. Queue #25 (Uzzah's
+no-assailant death template) confirmed as built, including ratifying the
+one flagged implementation question (reduced-mode fade-from-view vs. an
+instant cut) as-is — a 3D observer scene has no true film "cut," so a brief
+structured fade is the more restrained elision; every hard bar holds either
+way. Ruled as the template for future no-assailant deaths (2 Sam 24's
+plague deaths next). Queue #26 (Exodus 25 citation for the ark's form, no
+cherubim) confirmed held unchanged across both scenes, independently
+grep-reconfirmed. Both moved to the Resolved table in
+`docs/fable-review-queue.md`. Executed the release cascade:
+`perez-uzzah`/`ark-into-jerusalem` → `released`; `2sam-6` → `released`;
+`kiriath-jearim` → `released`; new `f-2sam-6` feature → `done` directly;
+`M7` → `released`. Full gate re-run green after the flips: format, lint,
+typecheck, 608 vitest, build, 19/19 e2e. Non-blocking gaps carried forward
+per the standing precedent: `mccarter-1984-ii-samuel` → 2 Sam 6,
+`king-stager-2001` instrument-coverage check, a dedicated Kiriath-jearim
+source card. `docs/next-run.md` updated. Next: scope M8 (2 Samuel 7
+onward).
