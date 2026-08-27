@@ -1760,6 +1760,110 @@ export const CLAIMS: ReconstructionClaim[] = [
     notes:
       'Modeled directly on claim-judah-assembly-scale’s own explicit departure from a literal reading of "the men of Judah" for the same reasons (performance and legibility, disclosed rather than hidden) — 6:1’s "thirty thousand" is a battle-scale figure count for what this chapter narrates as a joyful procession, not a muster, and even register #7’s ~1:10 ratio (3,000) would read as an army rather than a celebration. Hard cap: this scene’s high-tier total stays at or below gilboa-battle’s measured high-tier instance count (~330 total figure instances) while that scene’s real-hardware performance check remains open (docs/next-run.md) — measured at build time at roughly 207 figures (180 column + 16 ambient Kiriath-jearim + 7 Obed-edom household + 4 principals) at the high tier, materially cheaper per figure than gilboa-battle (procession/walk poses, no combat choreography).',
   },
+  {
+    id: 'claim-ark-arrival-jerusalem',
+    statement:
+      'The narrative states that David went and brought up the ark of God from the house of Obed-edom into the city of David with gladness (6:12); that when those who bore the ark had gone six steps, he sacrificed an ox and a fattened animal (6:13); that David danced before the LORD with all his might, wearing a linen ephod (6:14); and that David and all the house of Israel brought up the ark of the LORD with shouting and with the sound of the horn (6:15).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Cross-references perez-uzzah’s closing beat directly (6:11’s three-month bridge) — this is the same ark, the same city, the opposite outcome from the danger just narrated, placed back to back by the text without comment (Historical intent #1, docs/design/ark-into-jerusalem-brief.md). The sacrifice "every six steps" (6:13) is conveyed by claim-sacrifice-depiction’s restraint policy, not restated here. The dance and the linen ephod are conveyed by claim-dance-depiction’s restraint policy — David wears a linen ephod, not royal regalia, and no royal/military triumphal visual grammar (crowns, raised standards, conquest-parade framing) renders anywhere in this scene despite the text’s own genuinely affirmed joy (Historical intent #4). The shouting and horn (6:15) are carried by caption and crowd motion, not by new instrument geometry (contrast claim-music-instruments, perez-uzzah’s own separate design call).',
+  },
+  {
+    id: 'claim-ark-tent-offerings',
+    statement:
+      'The narrative states that they brought in the ark of the LORD and set it in its place inside the tent David had pitched for it, and David offered burnt offerings and peace offerings before the LORD (6:17); that when David finished offering, he blessed the people in the name of the LORD of hosts (6:18); and that he distributed to each one of the whole multitude of Israel, both men and women, a cake of bread, a portion of meat, and a cake of raisins, and all the people departed, each to his own house (6:19).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible', 'king-stager-2001'],
+    notes:
+      'The tent itself is claim-ark-tent-form’s own design claim, cross-referenced here rather than restated; this claim covers only the narrated act of setting the ark in it and the offerings/blessing/distribution that follow. The burnt and peace offerings (6:17) are conveyed by claim-sacrifice-depiction’s same restraint policy as 6:13’s sacrifices — no slaughter, wound, blood, or carcass geometry in any mode. The distribution (6:19b) stages as a genuinely communal beat reaching "the whole multitude of Israel, both men and women" — king-stager-2001 is cited for general household/courtyard food-distribution conventions consistent with this kind of communal event, not for a page-verified statement about this specific text. David’s blessing "in the name of the LORD of hosts" (6:18) is a spoken/caption beat, not enacted by any invented gesture beyond a standing address.',
+  },
+  {
+    id: 'claim-michal-confrontation',
+    statement:
+      'The narrative states that as the ark came into the city of David, Michal the daughter of Saul looked out of the window and saw King David leaping and dancing before the LORD, and she despised him in her heart (6:16); that David returned to bless his household, and Michal came out to meet him and said, "How the king of Israel honored himself today, uncovering himself today before the eyes of his servants’ female servants, as one of the vulgar fellows shamelessly uncovers himself!" (6:20); that David answered her that it was before the LORD, who chose him over her father’s house to appoint him prince over Israel, and that he would celebrate before the LORD and be abased in her eyes, yet held in honor by the very female servants she named (6:21–22); and that Michal the daughter of Saul had no child to the day of her death (6:23).',
+    basis: 'biblical-text',
+    confidence: 'high',
+    sourceIds: ['esv-bible'],
+    scholarlyViews: [
+      {
+        id: 'view-michal-literal-exposure',
+        label: 'A literal wardrobe malfunction from vigorous dancing',
+        summary:
+          'One reading takes Michal’s charge at face value: David’s vigorous leaping and whirling in a linen ephod (a relatively simple, apron-like garment, not full royal dress) genuinely exposed him, at least partially, in a way a king’s public dignity would not normally risk — the text’s own word "uncovered" (מִתְגַּלֶּה) read as a physical description of what actually happened, not only a figure of speech.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-michal-rhetorical-exaggeration',
+        label: 'A rhetorical, status-charged exaggeration',
+        summary:
+          'A second reading treats Michal’s words as aristocratic contempt speaking in hyperbole rather than physical description — comparing David, in her eyes, to "one of the vulgar fellows" is itself the point: a king dancing among common people in a plain garment is, to her, already a self-abasement regardless of exactly what anyone saw, and "uncovered himself" functions as a charged accusation of undignified exposure-by-association rather than a literal wardrobe report.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-childlessness-bare-fact',
+        label: 'No cause stated; a bare narrative fact',
+        summary:
+          '2 Samuel 6:23 states only that Michal had no child to the day of her death, immediately after the confrontation, without asserting any causal link between the two — the plain reading treats this as the chapter’s own closing fact, positioned but not explained, and any specific cause supplied by a reader is an import into the text, not a report of what it says.',
+        confidence: 'moderate',
+        sourceIds: ['esv-bible'],
+      },
+      {
+        id: 'view-childlessness-implied-consequence',
+        label: 'Read by some as an implied consequence of the rupture',
+        summary:
+          'Other readers, noting the verse’s placement immediately after the confrontation, read an implied (not stated) consequence into the juxtaposition — whether as narrative irony, an implied end to marital relations, or (in some older readings) an implied judgment — without the text itself asserting any of these mechanisms. This project does not adopt any specific version of this reading and stages no visual or textual assertion of a cause; it is recorded here only as a documented alternative way the verse’s placement has been read.',
+        confidence: 'low',
+        sourceIds: ['esv-bible'],
+      },
+    ],
+    notes:
+      'This is Michal’s first staged appearance in the project (Resolved design calls) — every prior reference (hebron-covenant’s transfer from Paltiel) was referenced-only by design. Both disputed questions stay hedged pending named attribution: mccarter-1984-ii-samuel has not yet been extended to 2 Samuel 6 with a page-verified statement on either the "uncovered himself" reading or the 6:23 causation question — this session had no WebSearch or other live-source tool available (the outbound egress policy for this session returned 403s for esv.org, biblehub.com, biblegateway.com, bible-api.com, and labs.bible.org when checked directly), so unlike queue #22’s researcher pass this extension could not even be attempted this session, not merely searched-and-found-thin. Both scholarlyViews above are accordingly recorded as commonly-discussed interpretive options rather than pinned to a specific named commentator’s page; flagged as a carried-forward researcher gap for the next session with live-source access, the same standing gap perez-uzzah’s build already carried forward. The scene renders neither reading as visually true: David’s figure stays fully clothed in every mode, at every camera distance (claim-dance-depiction), and 6:23 renders as a bare stated fact with no cause asserted in caption or staging (Resolved design calls; Historical intent #3). No 2 Samuel 7’s content of any kind is gestured at here, including in the closing card, even though 7:1’s opening plays directly off this chapter’s language about David’s house.',
+  },
+  {
+    id: 'claim-ark-tent-form',
+    statement:
+      'The tent David pitched for the ark (6:17) renders as a simple, modest, disclosed-placeholder woven/leather tent form at the enclosure’s own central ground — a low conical/pyramidal canopy over corner and center poles, no specific ancient Near Eastern tent typology asserted.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Explicitly not the tabernacle at Gibeon: 1 Chronicles 16:39 states the tabernacle of the LORD and its altar remained at Gibeon at this time — a different structure in a different text. This tent is never rendered as, identified with, or implied to be that structure, and no geometry anywhere in this scene stands in for the Gibeon tabernacle (Resolved design calls; Placeholder policy’s "not allowed" list). Modest and not monumental by deliberate choice, matching the same restraint this project applies to David’s own house (claim-hiram-building) at this same moment in the story.',
+  },
+  {
+    id: 'claim-sacrifice-depiction',
+    statement:
+      'This scene renders the sacrifices of 6:13 (an ox and a fattened animal, "every six steps") and the burnt/peace offerings of 6:17-19a as living animals and ritual activity at a modest stone altar, with one or two anonymous officiants — the act of slaughter itself elided or held off-camera in every mode, with no wound, blood, or carcass geometry rendered at any point.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'A reasoned extension of ADR-009’s existing restraint principle ("violence shown honestly, never gratuitously," per CLAUDE.md) to animal sacrifice by analogy, not a new ADR — this is the project’s first staged sacrificial offering, and the underlying principle already covers it without a genuinely contested judgment call (Resolved design calls). No priest or specific Levitical office is named at this point in the text; the two officiant figures render as anonymous, generic crowd/principal-tier figures distinguished only by proximity to the altar and a raised-arm offering gesture, never a distinct priestly costume or office invented from a later text (e.g. the Aaronic/Levitical material in Leviticus/Numbers, or the priesthood as it appears later in Samuel-Kings). No reduced-mode fork exists for this beat: ADR-009’s dual-mode machinery is specifically for narrated human deaths, and this project has never treated animal sacrifice as needing the same split — if a future scene needs a bloodier sacrifice depiction, that convention should be revisited then, not here.',
+  },
+  {
+    id: 'claim-dance-depiction',
+    statement:
+      'David’s dance (6:14, "with all his might," wearing a linen ephod) stages fully and vigorously — leaping, whirling motion at documentary-to-full camera distance — with his figure fully clothed in every mode, at every camera distance; no exposure, partial or implied, is ever modeled or suggested by framing. Michal’s accusation (6:20b) is carried entirely by her spoken words and the beat caption/ESV excerpt, never enacted by any invented gesture.',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'The restraint here is about visual grammar only, never about muting the dance’s own energy or the text’s genuinely affirmed joy (Historical intent #4) — the dance is realized as a whole-body rigid-group transform (bounce/spin/lean) on the same fully-clothed procedural rig every principal figure in this project uses; there is no alternate "exposed" geometry anywhere in this engine’s character pipeline to switch to (src/engine/characters/bodyGeometry.ts paints the torso and thighs exclusively in the tunic color, never the skin color, by construction). This is the same "spoken, never enacted" discipline jerusalem-stronghold used for the blind-and-lame taunt (5:6b), extended here to Michal’s accusation. See claim-michal-confrontation’s scholarlyViews for the underlying literal-vs-rhetorical reading of "uncovered himself," which this scene deliberately does not adjudicate by staging either reading as visually true.',
+  },
+  {
+    id: 'claim-ark-into-jerusalem-cast-scale',
+    statement:
+      'This scene renders the same ~150-200-figure procession perez-uzzah established (claim-ark-procession-cast-scale), reused and repositioned for its arrival in Jerusalem rather than doubled into a second crowd, plus jerusalem-stronghold’s own ~20-30-figure ambient Jerusalem population (claim-stronghold-cast-scale), reused as active onlookers/distribution recipients, plus David, Michal, and two unnamed offering-ground officiants — a high-tier total of roughly 209 figures, at or below gilboa-battle’s measured high-tier instance count (~330).',
+    basis: 'design-placeholder',
+    confidence: 'speculative',
+    sourceIds: ['esv-bible'],
+    notes:
+      'Cross-references claim-ark-procession-cast-scale and claim-stronghold-cast-scale rather than re-deriving either disclosed count — 2 Samuel 6 narrates no figure count for the procession’s arrival, the crowd at the distribution, or the household present at the confrontation, so, as at every other scene in this project, no ratio is claimed. Measured at build time at roughly 209 figures at the high tier (180 procession + 25 ambient onlookers + 4 principals), materially below gilboa-battle’s measured ~330 ceiling while that scene’s real-hardware performance check remains open (docs/next-run.md). One InstancedMesh per figure population (the procession, the ambient onlookers), matching the project’s established convention; no new instrument, standard, or crown geometry renders anywhere in this scene.',
+  },
 ];
 
 export const CLAIMS_BY_ID: ReadonlyMap<string, ReconstructionClaim> = new Map(

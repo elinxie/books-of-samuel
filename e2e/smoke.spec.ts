@@ -468,3 +468,39 @@ test('perez-uzzah in reduced violence mode elides the reach-and-fall', async ({ 
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
+
+test('ark-into-jerusalem (M7, depictsDeath: false) loads directly, lists its beats/viewpoints, and shows no violence advisory', async ({
+  page,
+}) => {
+  // Second and last scene of M7. Like jerusalem-stronghold, this scene
+  // stages no death or fighting — the dance, the sacrifice, and the
+  // confrontation are all staged with restraint but none of them is a
+  // killing — so the ADR-009 advisory must never fire here, unlike
+  // perez-uzzah immediately before it in the same chapter.
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/observe/ark-into-jerusalem');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText(
+    "The ark brought up with gladness — David's dance and Michal's contempt",
+  );
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (the report, the arrival, the
+  // sacrifice, the dance, the window, the tent placement, the distribution,
+  // the return home, the confrontation, the close) checking for runtime
+  // errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 10, 28, 46, 68, 80, 86, 102, 116, 128, 144, 150]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});

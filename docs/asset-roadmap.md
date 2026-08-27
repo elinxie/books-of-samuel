@@ -395,14 +395,69 @@ scene's own terrain, the Baal-perazim precedent, not the Mahanaim one.
 (`identification.disputed: false`, Deir el-Azhar/Tell el-Azhar, Abu Ghosh
 vicinity, coordinates confidence `moderate`) — the project currently has no
 dedicated source card for this specific site, a genuine researcher gap
-carried forward from the brief. Its fresh passage (`2sam-6`, shared with the
-not-yet-built `ark-into-jerusalem`) spends one of its shared 3-quote ESV
-budget here (6:9's "How can the ark of the LORD come to me?"), two reserved
-for the other scene — entered from careful recollection, not a live-source
-check (no `WebSearch` or other live-source tool was available in this
-session's toolset). `mccarter-1984-ii-samuel` still covers only through 2
-Samuel 5, not yet extended to 2 Samuel 6 — flagged as a researcher item, not
-done this session.
+carried forward from the brief. Its fresh passage (`2sam-6`, shared with
+`ark-into-jerusalem`) spends one of its shared 3-quote ESV budget here (6:9's
+"How can the ark of the LORD come to me?"), two reserved for the other scene
+— entered from careful recollection, not a live-source check (no `WebSearch`
+or other live-source tool was available in this session's toolset).
+`mccarter-1984-ii-samuel` still covers only through 2 Samuel 5, not yet
+extended to 2 Samuel 6 — flagged as a researcher item, not done this session.
+
+## Current placeholders (ark-into-jerusalem scene, Milestone 7, built 2026-08-27)
+
+Second and last scene of M7 (docs/design/ark-into-jerusalem-brief.md),
+picking up exactly where `perez-uzzah` leaves off (the ark resting at
+Obed-edom's house) and reusing `jerusalem-stronghold`'s terrain, enclosure,
+palette, and unfinished-house asset **completely unchanged** — imported
+directly (`GroundWorks`, `Vegetation`, `TerraceWalls`, `Stronghold`,
+`ConstructionGround`), not rebuilt. The ark itself (`perez-uzzah/Ark.tsx`) is
+also reused unchanged, exactly as that scene built it to be. New geometry is
+limited to the tent (6:17, explicitly not the Gibeon tabernacle), an
+offering ground/altar, a single small occupied room added beside the reused
+under-construction house (Michal's window and doorway), and a
+conversation-scale confrontation ground. Cast: the same disclosed
+~150-200-figure procession `perez-uzzah` established, reused and
+repositioned for its Jerusalem arrival rather than doubled (the
+rephaim-valley precedent), plus `jerusalem-stronghold`'s own ~20-30-figure
+ambient population, reused as active onlookers/distribution recipients
+rather than static background, plus David, Michal (first staged appearance
+anywhere in this project), and two unnamed offering-ground officiants —
+measured at ~209 figures at high tier, well under `gilboa-battle`'s measured
+~330. This project's first staged animal sacrifice: living animals and
+ritual activity only, slaughter elided in every mode, no wound/blood/carcass
+geometry (a reasoned extension of ADR-009's restraint principle, not a new
+ADR). David's dance stages fully and vigorously, fully clothed in every mode
+at every camera distance — no exposure is ever modeled or suggested by
+framing (a hard, unconditional bar, verified by a dedicated
+`exposure.test.ts`). No royal/military triumphal visual grammar anywhere. No
+new lights, fire, or particle systems — the smoke of the offerings is
+carried by caption text only, not by a rendered effect.
+
+| Asset                    | Represents                                                 | Why temporary                                                                                                                                                         | Replace at |
+| ------------------------ | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-ark-tent`         | The tent David pitched for the ark (6:17)                  | Simple merged-primitive canopy/skirt/pole geometry, disclosed placeholder form; explicitly not the Gibeon tabernacle                                                  | M7         |
+| `asset-offering-ground`  | The sacrifices (6:13) and burnt/peace offerings (6:17-19a) | Simple merged-primitive altar and generic quadruped placeholders; living animals and ritual activity only, slaughter elided in every mode                             | M7         |
+| `asset-household-window` | Michal's window (6:16) and the household ground (6:20)     | A single small occupied room added beside the reused under-construction house, with a real geometric window opening and doorway gap; never advances the house further | M7         |
+
+Reuses `asset-terrain-jerusalem-ridge`, `asset-jerusalem-stronghold-form`,
+`asset-jerusalem-construction-ground` (all from `jerusalem-stronghold`,
+unchanged), `asset-ark-form` (from `perez-uzzah`, unchanged), and
+`asset-figure-procedural`/`asset-david-marker` — no new records for these.
+Michal transitions from referenced-only to staged for the first time in the
+project. The two ESV excerpts this scene spends (6:20's rebuke, 6:21-22's
+reply) close out `2sam-6`'s shared 3-quote budget, alongside `perez-uzzah`'s
+one (6:9). Entered from careful recollection, not a live-source check — this
+build session had no `WebSearch`/`WebFetch` tool available, and a direct
+check confirmed the outbound egress policy also blocks the obvious
+fallbacks (curl to esv.org, biblehub.com, biblegateway.com, bible-api.com,
+and labs.bible.org all returned proxy-level 403s this session). Both
+disputed `claim-michal-confrontation` questions (the literal-vs-rhetorical
+"uncovered himself" reading, and 6:23's causation) stay hedged with generic,
+unattributed scholarlyViews — `mccarter-1984-ii-samuel`'s extension to 2
+Samuel 6 could not even be attempted this session, let alone verified;
+flagged as a carried-forward researcher item for the next session with
+live-source access, the same standing gap `perez-uzzah`'s own build already
+carried forward.
 
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 

@@ -32,6 +32,7 @@ import { HEBRON_RECKONING_ENTITIES } from '../scenes/hebron-reckoning/entities';
 import { JERUSALEM_STRONGHOLD_ENTITIES } from '../scenes/jerusalem-stronghold/entities';
 import { REPHAIM_VALLEY_ENTITIES } from '../scenes/rephaim-valley/entities';
 import { PEREZ_UZZAH_ENTITIES } from '../scenes/perez-uzzah/entities';
+import { ARK_INTO_JERUSALEM_ENTITIES } from '../scenes/ark-into-jerusalem/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
@@ -68,6 +69,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(JERUSALEM_STRONGHOLD_ENTITIES);
     uniqueIds(REPHAIM_VALLEY_ENTITIES);
     uniqueIds(PEREZ_UZZAH_ENTITIES);
+    uniqueIds(ARK_INTO_JERUSALEM_ENTITIES);
   });
 });
 
@@ -361,6 +363,14 @@ describe('features and scene entities', () => {
 
   it('Perez-uzzah entity labels resolve to claims', () => {
     for (const e of PEREZ_UZZAH_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it('Ark-into-jerusalem entity labels resolve to claims', () => {
+    for (const e of ARK_INTO_JERUSALEM_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }

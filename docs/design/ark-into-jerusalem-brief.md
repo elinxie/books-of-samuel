@@ -37,7 +37,7 @@ The observer should come away understanding four things:
    king performing an unrestrained, non-elite, cultic-adjacent role in public.
    6:16 and 6:20–23 frame Michal's aristocratic disdain directly against this;
    the text keeps both David's self-description ("I will celebrate before the
-   LORD... I will be abased in my own eyes") and Michal's contempt in view
+   LORD... I will be abased in your eyes") and Michal's contempt in view
    without adjudicating between them, and so does this scene.
 3. **The chapter closes on an unresolved domestic rupture, not a
    reconciliation — and the project renders no reconciliation that isn't

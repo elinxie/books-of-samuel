@@ -3,7 +3,76 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-27, M7 first scene BUILT — `perez-uzzah`, branch `claude/focused-mccarthy-wooqyk`)
+## State right now (2026-08-27, M7 BOTH SCENES BUILT — `ark-into-jerusalem`, branch `claude/focused-mccarthy-wooqyk`)
+
+**`ark-into-jerusalem` (2 Sam 6:12–23) is built** — second and last of M7's
+two scenes, closing the milestone's build phase, `status: 'in-progress'`
+(provisional pending M7 review). Same session, continuing directly from
+`perez-uzzah`'s merge (`main` at `d6d56fd`). Dispatched `threejs-engineer`
+per `docs/design/ark-into-jerusalem-brief.md`; built almost entirely from
+reuse per the brief's design: `jerusalem-stronghold`'s terrain/enclosure/
+palette/unfinished-house imported unchanged, `perez-uzzah`'s ark reused
+unchanged, the same disclosed procession population reused and repositioned
+(not doubled) for the Jerusalem arrival. New geometry limited to the tent
+(explicitly not the Gibeon tabernacle), an offering ground, and Michal's
+window/confrontation ground. ≈209 high-tier figures, within the 190–250
+target and under `gilboa-battle`'s ~330 ceiling. `depictsDeath: false`; new
+e2e test confirms no violence advisory. `michal` transitions from
+referenced-only to staged for the first time in the project. David's dance
+stages fully clothed at every camera distance in every mode — backed by a
+genuinely structural test (`exposure.test.ts`) proving the character-rig
+pipeline has no code path for bare-torso rendering, not just a policy
+comment.
+
+**Two real defects caught and fixed at this session's independent
+re-verification** (orchestrating session had `WebSearch`, the build agent
+did not): the 6:21–22 ESV excerpt was entered as "...I will be abased in
+**my own** eyes," but every live ESV source (ESV.org, Bible.com, Biblia,
+BibleHub) reads "abased in **your** eyes" (Michal's eyes) — fixed in
+`passages.ts`, `scenes.ts`'s caption, `claims.ts`'s paraphrase, and the
+brief itself (which had suggested the same wrong wording). Separately,
+`claim-michal-confrontation` cited `mccarter-1984-ii-samuel` in its
+top-level `sourceIds` despite its own notes correctly stating that source
+hasn't been extended to 2 Samuel 6 — a real citation-integrity
+inconsistency, not just a hedge; removed. The 6:20 quote was checked and
+was already correct. Full reasoning in `docs/fable-review-queue.md`'s
+2026-08-27 `ark-into-jerusalem` build note and same-day addendum.
+
+Full gate independently re-run after the fixes: format, lint, typecheck,
+608 vitest, build, 19/19 e2e — all green. `sources/source-index.json`
+regenerated, byte-identical (no source-card changes). Committed and pushed
+next; PR to follow the same pattern as `perez-uzzah`'s (#71): draft, CI
+subscribed, merged once green per `CLAUDE.md`'s no-human-gate policy.
+
+**What's next (Sonnet), in priority order:**
+
+1. **A Sonnet M7 sign-off review** — both scenes are now built; this is the
+   next real gate before either flips past `in-progress`. Confirm or revise
+   queue #25 (Uzzah's no-assailant death template, including the
+   fade-vs-instant-cut reduced-mode reading flagged in `perez-uzzah`'s own
+   build note) and #26 (the Exodus cross-book ark-form citation) per
+   `docs/fable-review-checklist.md`. If both hold, execute the M7 release
+   cascade: `perez-uzzah`/`ark-into-jerusalem` → `released`, `2sam-6` →
+   `released`, `kiriath-jearim` → `released`, a new `f-2sam-6` feature entry
+   → `done`, `M7` → `released` (matching the M3–M6 cascade pattern).
+2. **Live-source follow-up, non-blocking to the sign-off itself but gating
+   `released`**: extend `mccarter-1984-ii-samuel` to 2 Samuel 6 — the
+   cart-vs-carrying-method dispute (`perez-uzzah`), the "uncovered himself"
+   literal-vs-rhetorical dispute and the 6:23 causation dispute (both
+   `ark-into-jerusalem`'s `claim-michal-confrontation`) all currently carry
+   unattributed `scholarlyViews`. Also confirm whether `king-stager-2001`
+   covers musical-instrument construction/form specifically
+   (`claim-music-instruments` stays `design-placeholder` pending this). A
+   dedicated Kiriath-jearim source card is still missing too (interim
+   `rainey-notley-2006` citation only).
+3. (Carried forward, still open, non-blocking) Live ESV wording verification
+   for M6's three quotes (5:6b, 5:8a, 5:24) — still not checked against a
+   live source.
+4. (Carried forward, still open, non-blocking) Real-hardware perf check of
+   `gilboa-battle` at high tier + the Pages-live check — long-standing,
+   carried since M3.
+
+## State before this slice (2026-08-27, M7 first scene BUILT — `perez-uzzah`, branch `claude/focused-mccarthy-wooqyk`)
 
 **`perez-uzzah` (2 Sam 6:1–11) is built** — first of M7's two scenes, the
 project's first-ever staging of the ark of the covenant, `status:

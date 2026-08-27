@@ -90,6 +90,65 @@ construction/form specifically not confirmed, only its chapter-level TOC);
 `mccarter-1984-ii-samuel` still not extended to 2 Samuel 6 (cart-vs-carrying-
 method and Uzzah's-death textual detail stay unattributed).
 
+`ark-into-jerusalem` build note (2026-08-27, Sonnet/`threejs-engineer`), M7's
+second and last scene, closing the milestone. Built per the brief exactly:
+`jerusalem-stronghold`'s terrain/enclosure/palette/unfinished-house are
+imported unchanged (not rebuilt), `perez-uzzah`'s ark is reused unchanged,
+and the same disclosed procession population is reused and repositioned
+(not doubled) for its Jerusalem arrival, joined by `jerusalem-stronghold`'s
+own ambient population as active onlookers/distribution recipients — ~209
+figures at high tier, within the 190-250 target and well under
+`gilboa-battle`'s measured ~330 ceiling. David's dance stages fully clothed
+in every mode at every camera distance (grep-confirmed: no exposure-related
+field or geometry anywhere, verified by a dedicated `exposure.test.ts` that
+also checks the built rig's own vertex colors); Michal's accusation is
+carried entirely by caption/ESV excerpt, never enacted; no royal/triumphal
+visual grammar anywhere; the sacrifice beat elides slaughter in every mode
+(no wound/blood/carcass geometry); the tent is never conflated with or
+implied to be the Gibeon tabernacle; David's house never advances past
+`jerusalem-stronghold`'s own under-construction state; no 2 Samuel 7+
+content anywhere, including the closing card (one self-caught fix during
+this build: an early draft of the closing card's caption quoted 7:1's own
+"rest from his enemies" language to describe what was being avoided, which
+was itself a form of pointing at it — rewritten to describe the prohibition
+without reproducing the phrase). Like `perez-uzzah`, this build session had
+no `WebSearch`/`WebFetch` tool available, and unlike that session this one
+also directly confirmed the obvious curl fallbacks are blocked by the
+outbound egress policy (esv.org, biblehub.com, biblegateway.com,
+bible-api.com, labs.bible.org all returned proxy-level 403s) — so the two
+ESV excerpts this scene spends (6:20's rebuke, 6:21-22's reply, closing out
+`2sam-6`'s shared 3-quote budget) are entered from careful recollection of
+two short, well-known, frequently-quoted verses, not a live-source check;
+`mccarter-1984-ii-samuel`'s extension to 2 Samuel 6 could not even be
+attempted this session (both `claim-michal-confrontation` disputed questions
+— the literal-vs-rhetorical "uncovered himself" reading, and 6:23's
+causation — stay hedged with generic, unattributed scholarlyViews rather
+than named ones). **Both live-source checks (the two new ESV quotes and the
+mccarter-1984-ii-samuel extension) should be a priority for the next
+session with WebSearch/live-source access, before this scene or `2sam-6`
+flip to `released`.** Michal transitions from referenced-only to staged for
+the first time in the project. **Confirm at the M7 review.**
+
+**Live-source check done same-day (2026-08-27, orchestrating session, had
+WebSearch access this build agent lacked).** 6:20's rebuke matched verbatim
+against ESV.org/BibleHub/Biblia snippets, entered correctly from
+recollection. **6:21–22 did not**: the recollected text read "...I will be
+abased in my own eyes," but every independent ESV source checked (ESV.org,
+Bible.com, Biblia, BibleHub) reads "I will be abased in **your** eyes" —
+Michal's eyes, not David's own, a real difference in what the verse says.
+Fixed in `src/data/passages.ts`, `src/data/scenes.ts`'s `b-confrontation`
+caption, `src/data/claims.ts`'s `claim-michal-confrontation` statement
+(paraphrase adjusted to "her eyes"), and `docs/design/ark-into-jerusalem-
+brief.md`'s own Historical intent #2 (the brief's suggested wording carried
+the same error). Also fixed: `claim-michal-confrontation`'s top-level
+`sourceIds` listed `mccarter-1984-ii-samuel` despite the claim's own notes
+correctly stating that source hasn't been extended to 2 Samuel 6 — a real
+citation-integrity inconsistency, not just a hedge; removed, leaving
+`esv-bible` only (the scholarlyViews already cited only `esv-bible`, unaffected).
+The `mccarter-1984-ii-samuel` extension to 2 Samuel 6 itself remains open,
+now the sole live-source follow-up before `2sam-6`/either M7 scene flips to
+`released`. Full gate re-verified green after these fixes.
+
 _(#21/#23/#24 closed 2026-08-25, see Resolved below; M6 released)_
 
 M6 scope note (2026-08-23, Fable world-director pass — detail for #21–#24 above).
