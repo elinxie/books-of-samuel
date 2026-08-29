@@ -6,7 +6,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David',
     kind: 'person',
     summary:
-      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12). Gathers Israel again to bring up the ark of God from Kiriath-jearim on a new cart (6:1–5); when Uzzah dies at the threshing floor of Nacon, David is both angry and afraid, asking "How can the ark of the LORD come to me?" and diverts it to the house of Obed-edom the Gittite rather than bringing it to himself (6:6–10). Three months later he brings the ark up into the city of David with gladness, sacrificing repeatedly along the way and dancing before the LORD with all his might in a linen ephod (6:12–15); his wife Michal watches from a window and despises him in her heart. After the ark is set in its tent and the people fed, David returns to bless his own household; Michal confronts him over his self-abasement before the female servants, and he answers that it was before the LORD who chose him over her father’s house (6:16, 20–22).',
+      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12). Gathers Israel again to bring up the ark of God from Kiriath-jearim on a new cart (6:1–5); when Uzzah dies at the threshing floor of Nacon, David is both angry and afraid, asking "How can the ark of the LORD come to me?" and diverts it to the house of Obed-edom the Gittite rather than bringing it to himself (6:6–10). Three months later he brings the ark up into the city of David with gladness, sacrificing repeatedly along the way and dancing before the LORD with all his might in a linen ephod (6:12–15); his wife Michal watches from a window and despises him in her heart. After the ark is set in its tent and the people fed, David returns to bless his own household; Michal confronts him over his self-abasement before the female servants, and he answers that it was before the LORD who chose him over her father’s house (6:16, 20–22). Settled now in his own finished house, with rest from his surrounding enemies, David tells the prophet Nathan he wishes to build the LORD a house for the ark; Nathan first assents, but that same night the LORD corrects the plan and instead promises to build David a house — a dynasty, an heir, and a throne established forever (7:1–17). David goes to the tent, sits before the LORD, and prays a long prayer of self-examination, rehearsal, and petition, closing by asking that the word spoken be confirmed forever (7:18–29).',
     passageRefs: [
       '1 Samuel 27',
       '1 Samuel 30',
@@ -16,6 +16,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
       '2 Samuel 5:1–12',
       '2 Samuel 6:1–10',
       '2 Samuel 6:12–23',
+      '2 Samuel 7',
     ],
     claimIds: [
       'claim-david-historical',
@@ -33,6 +34,10 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'claim-ark-tent-offerings',
       'claim-michal-confrontation',
       'claim-dance-depiction',
+      'claim-nathan-oracle-house-request',
+      'claim-nathan-oracle',
+      'claim-david-prayer',
+      'claim-davids-house-complete',
     ],
   },
   {
