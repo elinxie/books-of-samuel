@@ -1,5 +1,5 @@
 {
-  "count": 42,
+  "count": 43,
   "cards": [
     {
       "id": "aubet-2001-phoenicians-and-the-west",
@@ -59,6 +59,12 @@
       "id": "finkelstein-ornan-2024-mahanaim",
       "title": "An Israelite Residency at Mahanaim in Transjordan?",
       "sourceType": "scholarly-article",
+      "copyrightStatus": "copyrighted-limited-use"
+    },
+    {
+      "id": "finkelstein-romer-2018-kiriath-jearim",
+      "title": "Excavations at Kiriath-jearim near Jerusalem, 2017: Preliminary Report",
+      "sourceType": "archaeology",
       "copyrightStatus": "copyrighted-limited-use"
     },
     {
