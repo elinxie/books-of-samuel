@@ -3,7 +3,24 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-27, M8 SCOPED — Sonnet world-director pass, `nathans-oracle` brief, no build yet, branch `claude/focused-mccarthy-wooqyk`)
+## State right now (2026-08-29, M8 scene build IN PROGRESS, checkpointed at CRITICAL context — branch `claude/focused-mccarthy-dqx1qb`, PR #75 draft)
+
+**Full detail in `docs/session-checkpoints/2026-08-29-sonnet-nathans-oracle-build.md` — read that file first, this is a compact pointer.**
+Scheduled session closed a researcher-pass slice (`mccarter-1984-ii-samuel`
+extended to 2 Sam 6/7 — landed queue #29's named citation, McCarter reads
+7:13a as a redactional "linchpin"; `king-stager-2001` instrument check
+closed thin; new Kiriath-jearim source card — commit `45b3317`, gate green)
+then dispatched a `threejs-engineer` to build `nathans-oracle` per its
+brief. That build was still running when the session hit CRITICAL context
+usage; 8 WIP scene files were committed as-is (commit `9f2b159`,
+**not yet wired into `scenes.ts`/`claims.ts`/`characters.ts`/`passages.ts`,
+`M8` still `planned`**, not yet reviewed against the brief). **Next
+session's first job: read the checkpoint note, review the WIP against
+`docs/design/nathans-oracle-brief.md`, finish the build (passage/character/
+claims/scene wiring), independently re-run the full gate, then push and
+update this file properly.**
+
+## State before this slice (2026-08-27, M8 SCOPED — Sonnet world-director pass, `nathans-oracle` brief, no build yet, branch `claude/focused-mccarthy-wooqyk`)
 
 **M8 (2 Samuel 7, Nathan's oracle / the Davidic covenant) is defined and
 briefed.** Same session, continuing directly from M7's release. Dispatched
