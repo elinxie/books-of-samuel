@@ -71,6 +71,7 @@ describe('registry id uniqueness', () => {
     uniqueIds(REPHAIM_VALLEY_ENTITIES);
     uniqueIds(PEREZ_UZZAH_ENTITIES);
     uniqueIds(ARK_INTO_JERUSALEM_ENTITIES);
+    uniqueIds(NATHANS_ORACLE_ENTITIES);
   });
 });
 
@@ -372,6 +373,14 @@ describe('features and scene entities', () => {
 
   it('Ark-into-jerusalem entity labels resolve to claims', () => {
     for (const e of ARK_INTO_JERUSALEM_ENTITIES) {
+      for (const cid of e.claimIds) {
+        expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
+      }
+    }
+  });
+
+  it("Nathan's-oracle entity labels resolve to claims", () => {
+    for (const e of NATHANS_ORACLE_ENTITIES) {
       for (const cid of e.claimIds) {
         expect(CLAIMS_BY_ID.has(cid), `entity ${e.id} claim ${cid}`).toBe(true);
       }
