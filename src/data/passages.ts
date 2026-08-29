@@ -185,6 +185,50 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M7',
     status: 'released',
   },
+  {
+    id: '2sam-7',
+    book: '2 Samuel',
+    chapter: 7,
+    reference: '2 Samuel 7',
+    translationAnchor: 'ESV',
+    summary:
+      'David, settled in his own house and given rest from his surrounding enemies, tells Nathan the prophet that he wishes to build the LORD a house, since he himself dwells in a house of cedar while the ark of God dwells in a tent. Nathan first tells him to go and do all that is in his heart, for the LORD is with him. That same night the word of the LORD comes to Nathan: the LORD has never asked for a house of cedar, and rather than David building the LORD a house, the LORD will build David a house — raising up his offspring, establishing his kingdom, and making his throne sure forever, disciplined as a father disciplines a son but never abandoned by steadfast love as it was withdrawn from Saul. Nathan reports the whole word to David. David goes in and sits before the LORD and prays: an opening question in self-examination, a rehearsal of what the LORD has done and promised, and a petition that the word spoken concerning his house be confirmed and made sure forever.',
+    // Sole passage of M8, carried entirely by nathans-oracle — see
+    // docs/design/nathans-oracle-brief.md. ESV excerpt budget: 2 of the
+    // available 3-quote handful spent (7:16, 7:18b); the brief's optional
+    // third excerpt (7:28-29) is deliberately not spent — see claim-david-
+    // prayer's notes for why. Exact ESV wording could not be live-verified
+    // this session: no WebSearch/WebFetch tool was available, and a direct
+    // check confirmed the outbound egress policy also blocks curl to
+    // esv.org, biblehub.com, biblegateway.com, and biblia.com (all
+    // proxy-level 403s) — entered from careful recollection instead, per
+    // the #19(b)/ark-into-jerusalem precedent for exactly this constraint.
+    // One specific discrepancy is flagged here rather than silently
+    // resolved: the brief's own "Timeline beats" section quotes 7:16 as
+    // ending "...before me. Your throne shall be established forever,"
+    // while its "Required source basis" section (the section explicitly
+    // devoted to exact recommended ESV wording) quotes the same verse as
+    // "...before you. Your throne shall be established forever." This build
+    // used the "before you" reading — matching this session's own
+    // recollection of the traditional/KJV-cognate phrasing ("thy throne
+    // shall be established for ever," following "before thee") and the
+    // brief's own dedicated wording section — but flags the brief's
+    // internal inconsistency explicitly for live-source confirmation at the
+    // M8 sign-off review, rather than picking silently between the two.
+    keyExcerpts: [
+      {
+        verse: '2 Samuel 7:16',
+        text: 'And your house and your kingdom shall be made sure forever before you. Your throne shall be established forever.',
+      },
+      {
+        verse: '2 Samuel 7:18b',
+        text: 'Who am I, O Lord GOD, and what is my house, that you have brought me thus far?',
+      },
+    ],
+    sceneIds: ['nathans-oracle'],
+    milestoneId: 'M8',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));
