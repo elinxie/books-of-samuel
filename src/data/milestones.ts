@@ -398,7 +398,40 @@ export const MILESTONES: Milestone[] = [
     // guards forbade earlier scenes from reaching forward to this exact
     // phrase; here, finally, it is the text in front of the scene, not a
     // forward gloss).
-    status: 'planned',
+    //
+    // Build pass (2026-08-29, threejs-engineer/Sonnet, against the brief
+    // above and docs/design/nathans-oracle-brief.md): `nathans-oracle`
+    // built — new scene folder (layout.ts/poses.ts/DavidsHouseComplete.tsx/
+    // PrincipalFigures.tsx/entities.ts/NathansOracleScene.tsx, plus
+    // layout.test.ts/poses.test.ts), new passage `2sam-7`, new character
+    // `nathan` (explicitly distinguished in its own notes from the
+    // identically named son of David at 5:13–16), `david`'s record
+    // extended, six new claims (`claim-nathan-oracle-house-request`,
+    // `claim-nathan-oracle` — consolidating 7:17's report per the brief's
+    // explicit allowance — `claim-david-prayer`, `claim-davids-house-
+    // complete`, `claim-oracle-depiction`), one new asset
+    // (`asset-davids-house-complete`), wired into `scenes.ts`/
+    // `ObservePage.tsx`/`integrity.test.ts`/`docs/asset-roadmap.md`. `M8`
+    // flips to `in-progress` here (not `released` — that gates on a
+    // sign-off review confirming/reversing queue #27/#28/#29, per the
+    // M6/M7 precedent); `nathans-oracle`/`2sam-7`/`jerusalem`'s
+    // `sceneIds` extension all also land `in-progress`/updated at this same
+    // pass. ESV excerpt budget: 2 of `2sam-7`'s 3-quote handful spent
+    // (7:16, 7:18b); the optional third (7:28–29) deliberately not spent
+    // this build (see `claim-david-prayer`'s notes). No WebSearch/WebFetch
+    // tool was available this session to live-verify wording — a direct
+    // check confirmed the outbound egress policy also blocks curl to
+    // esv.org/biblehub.com/biblegateway.com/biblia.com (proxy-level 403s),
+    // so both quotes are entered from careful recollection, flagged
+    // non-blocking per the #19(b) precedent; `2sam-7`'s own notes flag a
+    // specific internal wording inconsistency found in the brief itself
+    // (7:16 quoted two different ways in two different sections) and record
+    // which reading this build chose and why. Full `npm run verify` gate
+    // (format, lint, typecheck, vitest, build, e2e) run by the build pass
+    // itself; independent re-verification is the orchestrating session's
+    // own job before any further status flip, per every prior milestone's
+    // build/sign-off separation.
+    status: 'in-progress',
     passageRefs: ['2 Samuel 7'],
     goals: [
       'David’s wish to build a house for the ark, and Nathan’s initial assent (7:1–3), staged in David’s house — shown complete for the first time, on 7:1’s own textual license',

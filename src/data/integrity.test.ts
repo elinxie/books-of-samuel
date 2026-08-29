@@ -33,6 +33,7 @@ import { JERUSALEM_STRONGHOLD_ENTITIES } from '../scenes/jerusalem-stronghold/en
 import { REPHAIM_VALLEY_ENTITIES } from '../scenes/rephaim-valley/entities';
 import { PEREZ_UZZAH_ENTITIES } from '../scenes/perez-uzzah/entities';
 import { ARK_INTO_JERUSALEM_ENTITIES } from '../scenes/ark-into-jerusalem/entities';
+import { NATHANS_ORACLE_ENTITIES } from '../scenes/nathans-oracle/entities';
 
 /**
  * Referential integrity across the data model: every visual element must trace
