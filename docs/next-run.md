@@ -3,9 +3,72 @@
 **Read `docs/sonnet-continuation.md` first if you haven't (Sonnet), or
 `docs/model-handoff.md` for the model-routing policy.**
 
-## State right now (2026-08-29, M8 scene build IN PROGRESS, checkpointed at CRITICAL context — branch `claude/focused-mccarthy-dqx1qb`, PR #75 draft)
+## State right now (2026-08-29, M8 `nathans-oracle` scene BUILT, gate green — status `in-progress`, sign-off review still needed)
 
-**Full detail in `docs/session-checkpoints/2026-08-29-sonnet-nathans-oracle-build.md` — read that file first, this is a compact pointer.**
+`threejs-engineer`/Sonnet built `nathans-oracle` against
+`docs/design/nathans-oracle-brief.md` in full: new scene folder
+(`src/scenes/nathans-oracle/` — `layout.ts`, `poses.ts`,
+`DavidsHouseComplete.tsx`, `PrincipalFigures.tsx`, `entities.ts`,
+`NathansOracleScene.tsx`, plus `layout.test.ts`/`poses.test.ts`), new
+passage `2sam-7`, new character `nathan` (explicitly distinguished from the
+identically named son of David at 5:13-16), `david`'s record extended, six
+new claims (`claim-nathan-oracle-house-request`, `claim-nathan-oracle` —
+consolidating 7:17's report, and now citing the researcher pass's landed
+`mccarter-1984-ii-samuel` finding on 7:13a as a proper `scholarlyViews`
+entry rather than an unattributed hedge — `claim-david-prayer`,
+`claim-davids-house-complete`, `claim-oracle-depiction`), one new asset
+(`asset-davids-house-complete`), wired into `scenes.ts`/`ObservePage.tsx`/
+`integrity.test.ts`/`docs/asset-roadmap.md`/`locations.ts` (also fixed a
+pre-existing gap: `jerusalem`'s `sceneIds` was missing `ark-into-jerusalem`).
+`M8` flipped to `in-progress` (not `released`).
+
+Reuses `jerusalem-stronghold`'s terrain/enclosure/palette and
+`ark-into-jerusalem`'s tent completely unchanged (no new `TerrainSpec`); the
+only new geometry is David's house shown complete (superseding
+`ConstructionGround.tsx`/`TyrianCraftsmen.tsx`, neither renders here) and
+two named figures in seated/conversational/resting poses. First scene with
+an explicit narrated time of day (7:4's "that same night") — an ordinary
+night falls/lifts via light color+intensity lerp only (reusing
+`jabesh-burial`'s own night palette), no `<Sky>` shader in this scene in any
+mode. ADR-013 governs Nathan's reception: card-only, no visual effect, no
+receptive posture — verified by a dedicated `poses.test.ts` assertion that
+`resting` never exceeds 1 and the pose function has no upward-facing branch.
+The optional ≤10-figure ambient population the brief allowed for the house
+shot was deliberately **not** built (documented discretion, not a gap): that
+component's own slot pool sits close enough to the tent to risk reading as
+"ambient presence at the tent," which the brief disallows outright.
+
+ESV excerpt budget: 2 of `2sam-7`'s 3 quotes spent (7:16, 7:18b); the
+optional third (7:28-29) deliberately skipped (see `claim-david-prayer`'s
+notes). No WebSearch/WebFetch tool was available this session, and a direct
+`curl` check confirmed the agent proxy returns 403s for esv.org/
+biblehub.com/biblegateway.com/biblia.com — but both quotes were
+cross-checked against this repo's own `reader/` subproject's public-domain
+KJV/WEB full text (`reader/data/{kjv,web}/2-samuel.json`, already
+committed), which corroborates both quotes' structure closely and resolves
+a genuine internal inconsistency in the brief itself (7:16 quoted as
+"...before me..." in one section, "...before you..." in another) decisively
+in favor of "before you" — KJV's "before thee," WEB's "before you," both
+matching this passage's ESV wording, neither supporting "before me". See
+`2sam-7`'s own passage-entry comment (`src/data/passages.ts`) and
+`claims.ts` for the full account. This is real corroboration against
+public-domain text already in-repo, stronger than plain recollection, though
+still not an ESV-specific live source — flagged non-blocking per the
+#19(b) precedent.
+
+Gate status: `npm run typecheck`/`npm run lint`/`npm run format:check` all
+green after this pass (see the session's own final report for the full
+`npm test`/`npm run build`/e2e results). **Next session's job: independently
+re-run the full gate (do not just trust this report), then a Sonnet M8
+sign-off review confirming or reversing queue #27 (one small scene vs.
+cards-only), #28 (ADR-013 applied to a zero-physical-correlate event), and
+#29 (now carrying a real citation, not just a disclosed hedge — worth
+confirming the citation reads correctly) before any status flip past
+`in-progress`.**
+
+## State before this slice (2026-08-29, M8 scene build IN PROGRESS, checkpointed at CRITICAL context — branch `claude/focused-mccarthy-dqx1qb`, PR #75 draft)
+
+**Full detail in `docs/session-checkpoints/2026-08-29-sonnet-nathans-oracle-build.md`.**
 Scheduled session closed a researcher-pass slice (`mccarter-1984-ii-samuel`
 extended to 2 Sam 6/7 — landed queue #29's named citation, McCarter reads
 7:13a as a redactional "linchpin"; `king-stager-2001` instrument check
@@ -14,11 +77,9 @@ then dispatched a `threejs-engineer` to build `nathans-oracle` per its
 brief. That build was still running when the session hit CRITICAL context
 usage; 8 WIP scene files were committed as-is (commit `9f2b159`,
 **not yet wired into `scenes.ts`/`claims.ts`/`characters.ts`/`passages.ts`,
-`M8` still `planned`**, not yet reviewed against the brief). **Next
-session's first job: read the checkpoint note, review the WIP against
-`docs/design/nathans-oracle-brief.md`, finish the build (passage/character/
-claims/scene wiring), independently re-run the full gate, then push and
-update this file properly.**
+`M8` still `planned`**, not yet reviewed against the brief). Superseded by
+the slice above, which finished the build from scratch against the brief
+(the 8 WIP files were overwritten, not extended, by fresh versions).
 
 ## State before this slice (2026-08-27, M8 SCOPED — Sonnet world-director pass, `nathans-oracle` brief, no build yet, branch `claude/focused-mccarthy-wooqyk`)
 

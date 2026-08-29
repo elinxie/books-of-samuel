@@ -197,24 +197,32 @@ export const PASSAGES: Passage[] = [
     // docs/design/nathans-oracle-brief.md. ESV excerpt budget: 2 of the
     // available 3-quote handful spent (7:16, 7:18b); the brief's optional
     // third excerpt (7:28-29) is deliberately not spent — see claim-david-
-    // prayer's notes for why. Exact ESV wording could not be live-verified
-    // this session: no WebSearch/WebFetch tool was available, and a direct
-    // check confirmed the outbound egress policy also blocks curl to
-    // esv.org, biblehub.com, biblegateway.com, and biblia.com (all
-    // proxy-level 403s) — entered from careful recollection instead, per
-    // the #19(b)/ark-into-jerusalem precedent for exactly this constraint.
-    // One specific discrepancy is flagged here rather than silently
-    // resolved: the brief's own "Timeline beats" section quotes 7:16 as
-    // ending "...before me. Your throne shall be established forever,"
-    // while its "Required source basis" section (the section explicitly
-    // devoted to exact recommended ESV wording) quotes the same verse as
-    // "...before you. Your throne shall be established forever." This build
-    // used the "before you" reading — matching this session's own
-    // recollection of the traditional/KJV-cognate phrasing ("thy throne
-    // shall be established for ever," following "before thee") and the
-    // brief's own dedicated wording section — but flags the brief's
-    // internal inconsistency explicitly for live-source confirmation at the
-    // M8 sign-off review, rather than picking silently between the two.
+    // prayer's notes for why. No WebSearch/WebFetch tool was available this
+    // session to check a live ESV source directly, and a direct check
+    // confirmed the outbound egress policy also blocks curl to esv.org,
+    // biblehub.com, biblegateway.com, and biblia.com (all proxy-level 403s).
+    // Both quotes were instead cross-checked against this repo's own
+    // reader/ subproject (reader/data/kjv/2-samuel.json,
+    // reader/data/web/2-samuel.json — full public-domain KJV/WEB text,
+    // already committed, not entered from memory for this check): KJV 7:16
+    // reads "...established for ever before thee: thy throne shall be
+    // established for ever," and WEB 7:16 reads "...made sure forever
+    // before you. Your throne will be established forever" — both confirm
+    // "before you/thee," resolving a genuine internal inconsistency in the
+    // brief (whose "Timeline beats" section quotes this verse as ending
+    // "...before me...," while its "Required source basis" section quotes
+    // "...before you..."); this build follows the "before you" reading,
+    // corroborated against real text rather than picked from memory alone.
+    // WEB 7:18b ("Who am I, Lord Yahweh, and what is my house, that you
+    // have brought me this far?") and KJV 7:18b likewise match this
+    // passage's ESV wording closely (ESV's "thus far" for WEB's "this
+    // far," the expected register difference between the two
+    // translations). This is real cross-corroboration against public-domain
+    // text already in this repository, not a live ESV-specific source check
+    // — the exact ESV wording (as opposed to the KJV/WEB structure it
+    // matches) still carries the standard non-blocking live-verification
+    // caveat this project applies whenever no ESV-specific live source was
+    // reachable.
     keyExcerpts: [
       {
         verse: '2 Samuel 7:16',

@@ -12,7 +12,7 @@ scheduled prompt's offer.
    `mccarter-1984-ii-samuel` extended to 2 Samuel 6 (three disputes searched,
    closed checked-thin — no citable McCarter statement found) and to 2 Samuel
    7 (**landed a real named-attribution finding for queue #29**: McCarter
-   reads 7:13a as a redactional "linchpin," *II Samuel* pp. 217-24/222).
+   reads 7:13a as a redactional "linchpin," _II Samuel_ pp. 217-24/222).
    `king-stager-2001` checked for instrument-construction coverage, closed
    checked-thin. New source card `finkelstein-romer-2018-kiriath-jearim`
    closes the Kiriath-jearim dedicated-card gap. One real issue caught and
@@ -28,8 +28,8 @@ scheduled prompt's offer.
    backgrounded) per `docs/design/nathans-oracle-brief.md` — still running
    when this session hit CRITICAL context usage. WIP committed as-is
    (commit `9f2b159`): `src/scenes/nathans-oracle/{NathansOracleScene.tsx,
-   DavidsHouseComplete.tsx, PrincipalFigures.tsx, entities.ts, layout.ts,
-   layout.test.ts, poses.ts, poses.test.ts}`. **Not yet wired into
+DavidsHouseComplete.tsx, PrincipalFigures.tsx, entities.ts, layout.ts,
+layout.test.ts, poses.ts, poses.test.ts}`. **Not yet wired into
    `src/data/scenes.ts`/`claims.ts`/`characters.ts`/`passages.ts`, and
    `M8` in `src/data/milestones.ts` is still `planned`** — nothing imports
    this directory yet, confirmed via a clean `tsc --noEmit` with it present.

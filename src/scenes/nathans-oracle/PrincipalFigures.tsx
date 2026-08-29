@@ -75,10 +75,7 @@ export function PrincipalFigures({ shadows }: { shadows: boolean }) {
   const davidRef = useRef<THREE.Group>(null);
   const nathanRef = useRef<THREE.Group>(null);
   const terrain = useAppStore((s) => s.terrain);
-  const arkY = useMemo(
-    () => terrain.heightAt(TENT_POS[0], TENT_POS[1]),
-    [terrain],
-  );
+  const arkY = useMemo(() => terrain.heightAt(TENT_POS[0], TENT_POS[1]), [terrain]);
 
   useFrame(() => {
     const { timeSec: t, terrain } = useAppStore.getState();

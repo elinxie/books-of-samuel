@@ -483,9 +483,9 @@ presence, and Nathan is shown at ordinary settled rest only (a low,
 forward/downward lean — never upward, never a receptive or listening
 gesture).
 
-| Asset                          | Represents                                        | Why temporary                                                                                                                                                                                                       | Replace at |
-| ------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| `asset-davids-house-complete`  | David's own house, finished for the first time — `claim-davids-house-complete` | A single modest box-massed exterior at the exact ground `jerusalem-stronghold`'s under-construction `ConstructionGround.tsx` occupied — closed walls, a doorway gap, and a flat roof, comparative to the four-room/pillared house form (king-stager-2001); no interior is modeled | M8         |
+| Asset                         | Represents                                                                     | Why temporary                                                                                                                                                                                                                                                                     | Replace at |
+| ----------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-davids-house-complete` | David's own house, finished for the first time — `claim-davids-house-complete` | A single modest box-massed exterior at the exact ground `jerusalem-stronghold`'s under-construction `ConstructionGround.tsx` occupied — closed walls, a doorway gap, and a flat roof, comparative to the four-room/pillared house form (king-stager-2001); no interior is modeled | M8         |
 
 Reuses `asset-terrain-jerusalem-ridge`, `asset-jerusalem-stronghold-form`,
 `asset-jerusalem-terrace-walls`, `asset-gihon-spring-basin` (all from
@@ -511,24 +511,30 @@ This scene's status stays `in-progress` (built against
 build/sign-off review confirming or reversing `docs/fable-review-queue.md`
 #27 (one small scene vs. cards-only), #28 (ADR-013 applied to a
 zero-physical-correlate divine-communication event), and #29 (the
-redaction-critical reading of 7:13a, disclosed unattributed in
-`claim-nathan-oracle`'s notes — `mccarter-1984-ii-samuel` still does not
-extend to 2 Samuel 7). Its fresh passage (`2sam-7`) spends 2 of its 3-quote
-ESV budget (7:16, 7:18b); the optional third (7:28-29) was deliberately not
-spent this build (see `claim-david-prayer`'s notes). No WebSearch/WebFetch
-tool was available this session to live-verify either quote's exact
-wording — a direct check confirmed the outbound egress policy also blocks
-curl to esv.org, biblehub.com, biblegateway.com, and biblia.com (all
-proxy-level 403s) — both are entered from careful recollection, flagged
-non-blocking per the #19(b) precedent. One specific discrepancy is flagged
-explicitly rather than silently resolved: the brief itself quotes 7:16 two
-different ways in two different sections ("...before me..." in "Timeline
-beats" vs. "...before you..." in "Required source basis"); this build used
-the "before you" reading (matching this session's own recollection of the
-traditional/KJV-cognate phrasing and the brief's own dedicated wording
-section) and flags the inconsistency for live-source confirmation at the M8
-sign-off review — see `2sam-7`'s own passage-entry comment in
-`src/data/passages.ts` for the full account.
+redaction-critical reading of 7:13a — `claim-nathan-oracle` now carries a
+real, named `scholarlyViews` entry for this, not just a disclosed hedge:
+`mccarter-1984-ii-samuel` was extended to 2 Samuel 7 by a prior researcher
+pass this same day and landed a cross-corroborated citation (McCarter reads
+7:13a as a redactional "linchpin," _II Samuel_ pp. 217-24/222; confidence
+`low`, since the two secondary sources behind the finding may not be fully
+independent of each other — see that claim's notes and the source card's
+own `confidenceNotes`)). Its fresh passage (`2sam-7`) spends 2 of its
+3-quote ESV budget (7:16, 7:18b); the optional third (7:28-29) was
+deliberately not spent this build (see `claim-david-prayer`'s notes). No
+WebSearch/WebFetch tool was available this session to live-verify either
+quote against an ESV-specific source — a direct check confirmed the
+outbound egress policy also blocks curl to esv.org, biblehub.com,
+biblegateway.com, and biblia.com (all proxy-level 403s) — but both quotes
+were cross-checked against this repo's own `reader/` subproject's
+public-domain KJV/WEB text (`reader/data/{kjv,web}/2-samuel.json`, already
+committed), which corroborates both closely and resolves a genuine internal
+inconsistency in the brief itself: it quotes 7:16 two different ways in two
+different sections ("...before me..." in "Timeline beats" vs. "...before
+you..." in "Required source basis"). KJV reads "...established for ever
+before thee," WEB reads "...made sure forever before you" — both confirm
+"before you," not "before me" — so this build uses "before you," backed by
+real cross-corroboration rather than recollection alone; see `2sam-7`'s own
+passage-entry comment in `src/data/passages.ts` for the full account.
 
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 

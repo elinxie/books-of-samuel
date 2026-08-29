@@ -1,10 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  DAVID_HOUSE_POS,
-  DAVID_TENT_SIT_POS,
-  NATHAN_HOUSE_POS,
-  NIGHT_CORNER_POS,
-} from './layout';
+import { DAVID_HOUSE_POS, DAVID_TENT_SIT_POS, NATHAN_HOUSE_POS, NIGHT_CORNER_POS } from './layout';
 import {
   DURATION_SEC,
   T_ASSENT,
@@ -110,14 +105,8 @@ describe('davidPose', () => {
   it('is walking (not yet seated) partway through the walk-to-tent beat', () => {
     const pose = davidPose((T_WALK + T_SIT) / 2);
     expect(pose.seated).toBe(0);
-    const distFromHouse = Math.hypot(
-      pose.x - DAVID_HOUSE_POS[0],
-      pose.z - DAVID_HOUSE_POS[1],
-    );
-    const distFromTent = Math.hypot(
-      pose.x - DAVID_TENT_SIT_POS[0],
-      pose.z - DAVID_TENT_SIT_POS[1],
-    );
+    const distFromHouse = Math.hypot(pose.x - DAVID_HOUSE_POS[0], pose.z - DAVID_HOUSE_POS[1]);
+    const distFromTent = Math.hypot(pose.x - DAVID_TENT_SIT_POS[0], pose.z - DAVID_TENT_SIT_POS[1]);
     expect(distFromHouse).toBeGreaterThan(1);
     expect(distFromTent).toBeGreaterThan(1);
   });
@@ -135,10 +124,7 @@ describe('davidPose', () => {
     let lastDist = Infinity;
     for (let t = T_WALK; t <= T_SIT; t += 2) {
       const pose = davidPose(t);
-      const dist = Math.hypot(
-        pose.x - DAVID_TENT_SIT_POS[0],
-        pose.z - DAVID_TENT_SIT_POS[1],
-      );
+      const dist = Math.hypot(pose.x - DAVID_TENT_SIT_POS[0], pose.z - DAVID_TENT_SIT_POS[1]);
       // A small tolerance absorbs the Catmull-Rom curve's own gentle
       // curvature near control points — this guards against a real
       // backtrack, not sub-meter local wiggle.

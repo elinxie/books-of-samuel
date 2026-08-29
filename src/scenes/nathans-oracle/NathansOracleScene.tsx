@@ -198,8 +198,7 @@ export function NathansOracleScene() {
       <DavidsHouseComplete shadows={profile.shadows} />
       <Tent shadows={profile.shadows} />
       <PrincipalFigures shadows={profile.shadows} />
-      {showLabels &&
-        NATHANS_ORACLE_ENTITIES.map((e) => <EntityLabel key={e.id} entity={e} />)}
+      {showLabels && NATHANS_ORACLE_ENTITIES.map((e) => <EntityLabel key={e.id} entity={e} />)}
       <TimelineDriver durationSec={SCENE.durationSec} />
       <ObserverControls />
     </>

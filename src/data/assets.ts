@@ -805,8 +805,7 @@ export const ASSETS: AssetRecord[] = [
   {
     id: 'asset-davids-house-complete',
     name: "David's house, shown complete",
-    represents:
-      "David's own house, finished for the first time — see claim-davids-house-complete",
+    represents: "David's own house, finished for the first time — see claim-davids-house-complete",
     placeholder: true,
     whyTemporary:
       "A single modest box-massed exterior (src/scenes/nathans-oracle/DavidsHouseComplete.tsx) at the exact ground jerusalem-stronghold's under-construction ConstructionGround.tsx occupied — closed walls, a doorway gap, and a flat roof, comparative to the four-room/pillared house form (king-stager-2001), not an excavated plan or any identified structure. No interior is modeled; the reception ground stays an exterior courtyard/entrance space.",

@@ -37,10 +37,7 @@ describe('nathans-oracle layout', () => {
       NIGHT_CORNER_POS[0] - HOUSE_CENTER[0],
       NIGHT_CORNER_POS[1] - HOUSE_CENTER[1],
     );
-    const dTent = Math.hypot(
-      NIGHT_CORNER_POS[0] - TENT_POS[0],
-      NIGHT_CORNER_POS[1] - TENT_POS[1],
-    );
+    const dTent = Math.hypot(NIGHT_CORNER_POS[0] - TENT_POS[0], NIGHT_CORNER_POS[1] - TENT_POS[1]);
     expect(dHouse).toBeGreaterThan(10);
     expect(dTent).toBeGreaterThan(10);
   });
@@ -55,10 +52,7 @@ describe('nathans-oracle layout', () => {
   });
 
   it("David's tent-side seat never overlaps the tent's own footprint", () => {
-    const d = Math.hypot(
-      DAVID_TENT_SIT_POS[0] - TENT_POS[0],
-      DAVID_TENT_SIT_POS[1] - TENT_POS[1],
-    );
+    const d = Math.hypot(DAVID_TENT_SIT_POS[0] - TENT_POS[0], DAVID_TENT_SIT_POS[1] - TENT_POS[1]);
     expect(d).toBeGreaterThan(2);
   });
 });
