@@ -6,7 +6,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
     name: 'David',
     kind: 'person',
     summary:
-      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12). Gathers Israel again to bring up the ark of God from Kiriath-jearim on a new cart (6:1–5); when Uzzah dies at the threshing floor of Nacon, David is both angry and afraid, asking "How can the ark of the LORD come to me?" and diverts it to the house of Obed-edom the Gittite rather than bringing it to himself (6:6–10). Three months later he brings the ark up into the city of David with gladness, sacrificing repeatedly along the way and dancing before the LORD with all his might in a linen ephod (6:12–15); his wife Michal watches from a window and despises him in her heart. After the ark is set in its tent and the people fed, David returns to bless his own household; Michal confronts him over his self-abasement before the female servants, and he answers that it was before the LORD who chose him over her father’s house (6:16, 20–22).',
+      'Fugitive Judahite commander in Philistine service at Ziklag, soon to be king. In 1 Samuel 30 he returns to the burned town, is nearly stoned by his own men, and leads the pursuit to recover the captives. At Hebron (2 Samuel 3:20–21) he receives Abner’s overture and feasts him, statecraft over vendetta — the same Abner who killed Asahel at Gibeon. When Joab kills Abner anyway (3:26–27), David publicly disavows the act, curses Joab’s own house, and commands citywide mourning — walking behind Abner’s bier himself, lamenting, and fasting until sundown (3:28–35). Anointed king over all Israel, not Judah alone (5:1–3), he and his men take the Jebusite stronghold of Jerusalem — a city belonging to no tribe — and he makes it his own city, receiving Tyrian cedar and craftsmen to build there (5:6–12). Gathers Israel again to bring up the ark of God from Kiriath-jearim on a new cart (6:1–5); when Uzzah dies at the threshing floor of Nacon, David is both angry and afraid, asking "How can the ark of the LORD come to me?" and diverts it to the house of Obed-edom the Gittite rather than bringing it to himself (6:6–10). Three months later he brings the ark up into the city of David with gladness, sacrificing repeatedly along the way and dancing before the LORD with all his might in a linen ephod (6:12–15); his wife Michal watches from a window and despises him in her heart. After the ark is set in its tent and the people fed, David returns to bless his own household; Michal confronts him over his self-abasement before the female servants, and he answers that it was before the LORD who chose him over her father’s house (6:16, 20–22). Settled now in his own finished house, with rest from his surrounding enemies, David tells the prophet Nathan he wishes to build the LORD a house for the ark; Nathan first assents, but that same night the LORD corrects the plan and instead promises to build David a house — a dynasty, an heir, and a throne established forever (7:1–17). David goes to the tent, sits before the LORD, and prays a long prayer of self-examination, rehearsal, and petition, closing by asking that the word spoken be confirmed forever (7:18–29).',
     passageRefs: [
       '1 Samuel 27',
       '1 Samuel 30',
@@ -16,6 +16,7 @@ export const CHARACTERS: CharacterOrGroup[] = [
       '2 Samuel 5:1–12',
       '2 Samuel 6:1–10',
       '2 Samuel 6:12–23',
+      '2 Samuel 7',
     ],
     claimIds: [
       'claim-david-historical',
@@ -33,6 +34,10 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'claim-ark-tent-offerings',
       'claim-michal-confrontation',
       'claim-dance-depiction',
+      'claim-nathan-oracle-house-request',
+      'claim-nathan-oracle',
+      'claim-david-prayer',
+      'claim-davids-house-complete',
     ],
   },
   {
@@ -353,6 +358,15 @@ export const CHARACTERS: CharacterOrGroup[] = [
       'The man to whose house David diverts the ark after Uzzah’s death, unwilling to bring it to himself in the city of David (2 Samuel 6:10). The ark remains in his house three months, and the LORD blesses him and his whole household (6:11) — the chapter’s own juxtaposition of danger and blessing in the same object. "The Gittite" most plausibly marks an association with Gath, though the text does not explain it further. Referenced again at the opening of the ark’s arrival in Jerusalem (2 Samuel 6:12, outside this scene’s scope).',
     passageRefs: ['2 Samuel 6:10–11'],
     claimIds: ['claim-david-fear-diversion', 'claim-obed-edom-blessing'],
+  },
+  {
+    id: 'nathan',
+    name: 'Nathan',
+    kind: 'person',
+    summary:
+      'A prophet in David’s court. When David tells him of his wish to build a house for the ark, Nathan first tells him to go and do all that is in his heart, for the LORD is with him (2 Samuel 7:2–3) — a reasonable pastoral answer, given before Nathan has consulted the LORD. That same night the word of the LORD comes to Nathan and corrects the plan outright: not a house for the LORD from David, but a house — a dynasty — for David from the LORD, an heir, and a throne established forever (7:4–16). Nathan reports the whole oracle back to David the next day, exactly in accordance with all these words and all this vision (7:17). **This is a different person from the identically named son born to David in Jerusalem**, listed among his other sons at 2 Samuel 5:13–16 (card-only there; no character record exists for that Nathan) — the two are never conflated in any caption or record in this project.',
+    passageRefs: ['2 Samuel 7:1–17'],
+    claimIds: ['claim-nathan-oracle-house-request', 'claim-nathan-oracle'],
   },
 ];
 

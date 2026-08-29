@@ -504,3 +504,37 @@ test('ark-into-jerusalem (M7, depictsDeath: false) loads directly, lists its bea
 
   expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
 });
+
+test('nathans-oracle (M8, depictsDeath: false) loads directly, lists its beats/viewpoints, and shows no violence advisory', async ({
+  page,
+}) => {
+  // Sole scene of M8, and the smallest and least action-heavy scene the
+  // project has built to date — conversation-scale, David and Nathan alone,
+  // no crowd, procession, or death anywhere, so the ADR-009 advisory must
+  // never fire here. Scrubs through the night-stillness beat too (t=36-58),
+  // where the lighting arc dims to an ordinary night and back — this checks
+  // that transition runs without a runtime error, not any visual assertion.
+  const errors: string[] = [];
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  page.on('pageerror', (err) => errors.push(err.message));
+
+  await page.goto('/#/observe/nathans-oracle');
+  await expect(page.getByTestId('violence-advisory')).toHaveCount(0);
+  await expect(page.getByTestId('observe-root')).toBeVisible();
+  await expect(page.getByTestId('scene-title')).toHaveText("Nathan's oracle and David's prayer");
+  await expect(page.locator('canvas')).toBeVisible();
+
+  // Scrub across the whole beat timeline (open, the wish, the assent, the
+  // night word, the report, the walk to the tent, David sits, the prayer,
+  // the close) checking for runtime errors at each stop.
+  const scrub = page.getByTestId('timeline-scrub');
+  for (const t of [0, 12, 24, 36, 47, 58, 70, 84, 92, 104, 110]) {
+    await scrub.fill(String(t));
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId('beat-caption')).toBeVisible();
+
+  expect(errors, `console errors: ${errors.join('\n')}`).toEqual([]);
+});

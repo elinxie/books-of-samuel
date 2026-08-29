@@ -2468,6 +2468,147 @@ export const SCENES: SceneDef[] = [
       'asset-david-marker',
     ],
   },
+  {
+    id: 'nathans-oracle',
+    title: "Nathan's oracle and David's prayer",
+    passageIds: ['2sam-7'],
+    locationId: 'jerusalem',
+    periodId: 'iron-iia',
+    milestoneId: 'M8',
+    // Built per docs/design/nathans-oracle-brief.md (Sonnet world-director
+    // pass, 2026-08-27, per CLAUDE.md's "Model policy — do not invoke
+    // Fable"). Sole scene of Milestone 8, and the smallest and
+    // least-action-heavy scene the project has built to date — conversation
+    // -scale, David and Nathan alone, no crowd, procession, or death
+    // anywhere. Reuses jerusalem-stronghold's terrain/enclosure/palette and
+    // ark-into-jerusalem's tent completely unchanged; the only new geometry
+    // is David's house shown complete for the first time and two named
+    // figures in seated/conversational/resting poses.
+    status: 'in-progress',
+    synopsis:
+      "David, settled in his own finished house and given rest from his surrounding enemies, tells Nathan the prophet he wishes to build the LORD a house for the ark, since he himself dwells in a house of cedar while the ark dwells in a tent. Nathan first tells him to go and do all that is in his heart, for the LORD is with him — an answer given before Nathan has consulted the LORD. That same night the word of the LORD comes to Nathan, correcting the plan: not a house for the LORD from David, but a house — a dynasty — for David from the LORD, an heir, and a throne established forever. Nathan is shown settled for the night in ordinary rest; the oracle's reception itself is stated by card only, never visualized. Nathan reports the whole word to David, who walks to the tent housing the ark and sits before the LORD, praying a long prayer of self-examination, rehearsal of what the LORD has done and promised, and petition that the word spoken be confirmed forever.",
+    depictsDeath: false,
+    durationSec: 110,
+    beats: [
+      {
+        id: 'b-open',
+        timeSec: 0,
+        title: 'Rest from his surrounding enemies',
+        caption:
+          'David is settled in his own house, now finished — and the LORD has given him rest from all his surrounding enemies. The rest itself is stated exactly as the text states it, a summary claim carried by this card alone: no battle, siege, or victory imagery of any kind. 2 Samuel 8’s specific wars are a separate, not-yet-built chapter. (2 Samuel 7:1)',
+        passageRef: '2 Samuel 7:1',
+      },
+      {
+        id: 'b-david-wish',
+        timeSec: 12,
+        title: 'A house of cedar',
+        caption:
+          'David tells Nathan the prophet that he himself dwells in a house of cedar, while the ark of God dwells within tent curtains — the chapter’s own wordplay begins here: David’s plan is to build the LORD a house. Conversation-scale: the two men stand together near the house, nothing more staged. (2 Samuel 7:2)',
+        passageRef: '2 Samuel 7:2',
+      },
+      {
+        id: 'b-nathan-assent',
+        timeSec: 24,
+        title: 'Go, do all that is in your heart',
+        caption:
+          'Nathan tells David to go and do all that is in his heart, for the LORD is with him — a reasonable pastoral answer, given before Nathan has consulted the LORD. The text does not editorialize this as an error, and neither does this caption; the correction that follows addresses David’s plan, not Nathan’s judgment. (2 Samuel 7:3)',
+        passageRef: '2 Samuel 7:3',
+      },
+      {
+        id: 'b-night-word',
+        timeSec: 36,
+        title: 'That same night',
+        caption:
+          'That same night the word of the LORD comes to Nathan. Nathan is shown settled for the night, in ordinary rest — no light, gesture, or camera language stands in for the moment of reception (ADR-013; see claim-oracle-depiction). The oracle’s own content, in the LORD’s first-person voice as the text gives it: the LORD has never lived in a house and has not asked for a house of cedar; the LORD took David from the pasture to be prince over Israel, has been with him wherever he went, and will make him a great name; the LORD will appoint a place for Israel and give it rest from all its enemies. Rather than David building the LORD a house, the LORD will build David a house: raising up his offspring after him, who will build a house for the LORD’s name, and establishing his kingdom, disciplined as a father disciplines a son but never abandoned by steadfast love, as it was withdrawn from Saul. "And your house and your kingdom shall be made sure forever before you. Your throne shall be established forever." (2 Samuel 7:4-16, ESV for the closing line)',
+        passageRef: '2 Samuel 7:4-16',
+      },
+      {
+        id: 'b-report',
+        timeSec: 58,
+        title: 'In accordance with all these words',
+        caption:
+          'Nathan returns and speaks to David in accordance with all these words and all this vision — a brief exchange back at the house, not a restaging of the oracle’s own content, already carried in full at the night beat. (2 Samuel 7:17)',
+        passageRef: '2 Samuel 7:17',
+      },
+      {
+        id: 'b-walk-to-tent',
+        timeSec: 70,
+        title: 'To the tent',
+        caption:
+          'An optional, unhurried walk from the house to the tent housing the ark — the same tent David pitched and danced before, two milestones ago, reused here unchanged. An observer who prefers to hold the frame and read every card can skip this walk without missing anything.',
+        passageRef: '2 Samuel 7',
+      },
+      {
+        id: 'b-david-sits',
+        timeSec: 84,
+        title: 'Then King David went in and sat before the LORD',
+        caption:
+          'David goes in and sits before the LORD — a seated king at the tent’s entrance, not enthroned, not standing, and not entering an interior this project has never modeled. The text’s own choice of verb, distinct from standing or bowing, is preserved as a staging choice, not an interpretive claim about what being before the LORD theologically means. Camera holds. (2 Samuel 7:18a)',
+        passageRef: '2 Samuel 7:18a',
+      },
+      {
+        id: 'b-prayer',
+        timeSec: 92,
+        title: 'Who am I, O Lord GOD',
+        caption:
+          'David’s prayer, carried by card over the held shot on his seated stillness: an opening question in self-examination, "Who am I, O Lord GOD, and what is my house, that you have brought me thus far?" — then a rehearsal of what the LORD has done and has promised, astonishment rather than self-congratulation, and a petition that the word spoken concerning his house be confirmed and made sure forever, so that the LORD’s name may be magnified. No gesture is invented beyond ordinary prayer posture. (2 Samuel 7:18b-29)',
+        passageRef: '2 Samuel 7:18b-29',
+      },
+      {
+        id: 'b-close',
+        timeSec: 104,
+        title: 'Made sure forever',
+        caption:
+          'The promise made, nothing more: David’s house and kingdom, and the throne of his offspring, established forever by the LORD’s own word. Its fulfillment, complication, or any later history is not this chapter’s own content, and none of it is shown here — no Solomon named or implied, no Bathsheba, no temple built. Milestone 8 ends where 2 Samuel 7 ends. (2 Samuel 7:29)',
+        passageRef: '2 Samuel 7:29',
+      },
+    ],
+    viewpoints: [
+      {
+        id: 'vp-davids-house',
+        label: "David's house — the reception ground (default)",
+        position: [16, 5, 50],
+        lookAt: [16, 2, 62],
+      },
+      {
+        id: 'vp-night-stillness',
+        label: 'A quiet corner of the enclosure, at night',
+        position: [-9, 4, 96],
+        lookAt: [-15, 1, 90],
+      },
+      {
+        id: 'vp-tent-prayer',
+        label: "The tent — David's seated prayer",
+        position: [2, 5, 64],
+        lookAt: [-6, 3, 75],
+      },
+    ],
+    claimIds: [
+      'claim-david-historical',
+      'claim-dress',
+      'claim-jebusite-stronghold-form',
+      'claim-city-of-david-naming',
+      'claim-hiram-building',
+      'claim-davids-house-complete',
+      'claim-ark-tent-form',
+      'claim-ark-physical-form',
+      'claim-nathan-oracle-house-request',
+      'claim-nathan-oracle',
+      'claim-david-prayer',
+      'claim-oracle-depiction',
+    ],
+    assetIds: [
+      'asset-terrain-jerusalem-ridge',
+      'asset-jerusalem-stronghold-form',
+      'asset-jerusalem-terrace-walls',
+      'asset-gihon-spring-basin',
+      'asset-davids-house-complete',
+      'asset-ark-tent',
+      'asset-ark-form',
+      'asset-figure-procedural',
+      'asset-david-marker',
+    ],
+  },
 ];
 
 export const SCENES_BY_ID: ReadonlyMap<string, SceneDef> = new Map(SCENES.map((s) => [s.id, s]));

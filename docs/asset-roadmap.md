@@ -459,6 +459,83 @@ flagged as a carried-forward researcher item for the next session with
 live-source access, the same standing gap `perez-uzzah`'s own build already
 carried forward.
 
+## Current placeholders (nathans-oracle scene, Milestone 8, built 2026-08-29)
+
+The smallest and least action-heavy scene the project has built to date
+(docs/design/nathans-oracle-brief.md) — conversation-scale, David and Nathan
+alone, no crowd, procession, or death anywhere. Reuses
+`jerusalem-stronghold`'s terrain, enclosure, and palette and
+`ark-into-jerusalem`'s tent completely unchanged (no new `TerrainSpec`); the
+only new geometry is David's house shown complete for the first time
+(superseding `jerusalem-stronghold`'s `ConstructionGround.tsx`/
+`TyrianCraftsmen.tsx`, neither of which renders anywhere in this scene) and
+two named figures in seated/conversational/resting poses. The project's
+first scene beat with an explicit narrated time of day (7:4's "that same
+night") — an ordinary, unremarkable night falls and lifts across the
+`b-night-word` beat (background/fog/light color+intensity lerp only,
+reusing `jabesh-burial`'s own night-lighting technique and palette; no
+`<Sky>` shader renders anywhere in this scene, in any quality mode, since a
+bright daytime sky shader has no honest way to also read as night). ADR-013
+governs the oracle's reception itself: stated by card only, in the text's
+own first-person voice, never visualized — no light, glow, wind, particle
+effect, environmental animation, audio cue, or camera language implying a
+presence, and Nathan is shown at ordinary settled rest only (a low,
+forward/downward lean — never upward, never a receptive or listening
+gesture).
+
+| Asset                         | Represents                                                                     | Why temporary                                                                                                                                                                                                                                                                     | Replace at |
+| ----------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| `asset-davids-house-complete` | David's own house, finished for the first time — `claim-davids-house-complete` | A single modest box-massed exterior at the exact ground `jerusalem-stronghold`'s under-construction `ConstructionGround.tsx` occupied — closed walls, a doorway gap, and a flat roof, comparative to the four-room/pillared house form (king-stager-2001); no interior is modeled | M8         |
+
+Reuses `asset-terrain-jerusalem-ridge`, `asset-jerusalem-stronghold-form`,
+`asset-jerusalem-terrace-walls`, `asset-gihon-spring-basin` (all from
+`jerusalem-stronghold`, unchanged), `asset-ark-tent`, `asset-ark-form` (from
+`ark-into-jerusalem`/`perez-uzzah`, unchanged, the ark held static at the
+tent since it is already settled in place well before this chapter opens),
+and `asset-figure-procedural`/`asset-david-marker` — no new records for
+these. New character `nathan` (the prophet) — explicitly distinguished in
+its own notes from the identically named son of David at 2 Samuel 5:13-16
+(card-only there, no character record of its own). No ambient population
+renders anywhere in this scene: the brief's optional ≤10-figure reused
+`jerusalem-stronghold` ambient household population for the house
+establishing shot was deliberately not built this pass, since that
+component's own slot pool sits close enough to the tent (`TENT_POS`) to
+risk reading as "ambient presence at the tent," which the brief explicitly
+disallows — omitting it entirely is fully compliant (the population was
+always optional) and keeps this the smallest cast of any scene in the
+project, by a wide margin.
+
+This scene's status stays `in-progress` (built against
+`docs/design/nathans-oracle-brief.md`, a Sonnet world-director pass per
+`CLAUDE.md`'s "Model policy — do not invoke Fable") pending an M8
+build/sign-off review confirming or reversing `docs/fable-review-queue.md`
+#27 (one small scene vs. cards-only), #28 (ADR-013 applied to a
+zero-physical-correlate divine-communication event), and #29 (the
+redaction-critical reading of 7:13a — `claim-nathan-oracle` now carries a
+real, named `scholarlyViews` entry for this, not just a disclosed hedge:
+`mccarter-1984-ii-samuel` was extended to 2 Samuel 7 by a prior researcher
+pass this same day and landed a cross-corroborated citation (McCarter reads
+7:13a as a redactional "linchpin," _II Samuel_ pp. 217-24/222; confidence
+`low`, since the two secondary sources behind the finding may not be fully
+independent of each other — see that claim's notes and the source card's
+own `confidenceNotes`)). Its fresh passage (`2sam-7`) spends 2 of its
+3-quote ESV budget (7:16, 7:18b); the optional third (7:28-29) was
+deliberately not spent this build (see `claim-david-prayer`'s notes). No
+WebSearch/WebFetch tool was available this session to live-verify either
+quote against an ESV-specific source — a direct check confirmed the
+outbound egress policy also blocks curl to esv.org, biblehub.com,
+biblegateway.com, and biblia.com (all proxy-level 403s) — but both quotes
+were cross-checked against this repo's own `reader/` subproject's
+public-domain KJV/WEB text (`reader/data/{kjv,web}/2-samuel.json`, already
+committed), which corroborates both closely and resolves a genuine internal
+inconsistency in the brief itself: it quotes 7:16 two different ways in two
+different sections ("...before me..." in "Timeline beats" vs. "...before
+you..." in "Required source basis"). KJV reads "...established for ever
+before thee," WEB reads "...made sure forever before you" — both confirm
+"before you," not "before me" — so this build uses "before you," backed by
+real cross-corroboration rather than recollection alone; see `2sam-7`'s own
+passage-entry comment in `src/data/passages.ts` for the full account.
+
 ## Divided-kingdom atlas overlay (`/atlas`, Milestone 4, built 2026-08-02)
 
 Not a 3D-scene asset, so it has no `AssetRecord` in `src/data/assets.ts` — the

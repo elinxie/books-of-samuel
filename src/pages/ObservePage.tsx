@@ -37,7 +37,11 @@ import { REPHAIM_TERRAIN } from '../scenes/rephaim-valley/terrain';
 import { PerezUzzahScene } from '../scenes/perez-uzzah/PerezUzzahScene';
 import { KIRIATH_JEARIM_TERRAIN } from '../scenes/perez-uzzah/terrain';
 import { ArkIntoJerusalemScene } from '../scenes/ark-into-jerusalem/ArkIntoJerusalemScene';
-import { JERUSALEM_TERRAIN as ARK_INTO_JERUSALEM_TERRAIN } from '../scenes/jerusalem-stronghold/terrain';
+import {
+  JERUSALEM_TERRAIN as ARK_INTO_JERUSALEM_TERRAIN,
+  JERUSALEM_TERRAIN as NATHANS_ORACLE_TERRAIN,
+} from '../scenes/jerusalem-stronghold/terrain';
+import { NathansOracleScene } from '../scenes/nathans-oracle/NathansOracleScene';
 import { Hud } from '../ui/hud/Hud';
 import { Page } from '../ui/SiteChrome';
 import { ViolenceAdvisory } from '../ui/ViolenceAdvisory';
@@ -66,6 +70,10 @@ const SCENE_REGISTRY: Record<string, SceneRegistryEntry> = {
   'ark-into-jerusalem': {
     component: ArkIntoJerusalemScene,
     terrain: ARK_INTO_JERUSALEM_TERRAIN,
+  },
+  'nathans-oracle': {
+    component: NathansOracleScene,
+    terrain: NATHANS_ORACLE_TERRAIN,
   },
 };
 

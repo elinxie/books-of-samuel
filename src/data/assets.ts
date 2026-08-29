@@ -802,6 +802,17 @@ export const ASSETS: AssetRecord[] = [
       'A comparative Iron Age IIA four-room/pillared-house window-and-doorway typology source (king-stager-2001 the first place to look) could sharpen the opening proportions; the modest-room/no-finished-palace constraint is permanent, not awaiting a source.',
     replacementMilestoneId: 'M7',
   },
+  {
+    id: 'asset-davids-house-complete',
+    name: "David's house, shown complete",
+    represents: "David's own house, finished for the first time — see claim-davids-house-complete",
+    placeholder: true,
+    whyTemporary:
+      "A single modest box-massed exterior (src/scenes/nathans-oracle/DavidsHouseComplete.tsx) at the exact ground jerusalem-stronghold's under-construction ConstructionGround.tsx occupied — closed walls, a doorway gap, and a flat roof, comparative to the four-room/pillared house form (king-stager-2001), not an excavated plan or any identified structure. No interior is modeled; the reception ground stays an exterior courtyard/entrance space.",
+    historicalRequirements:
+      "None beyond what jerusalem-stronghold's own asset-jerusalem-construction-ground already disclosed as a researcher gap (Phoenician cedar/timber construction technique, queue #22(e)) — the exterior-finish/no-interior constraint is a permanent design choice (7:1 licenses only the fact of completion, not any interior detail), not awaiting a source.",
+    replacementMilestoneId: 'M8',
+  },
 ];
 
 export const ASSETS_BY_ID: ReadonlyMap<string, AssetRecord> = new Map(ASSETS.map((a) => [a.id, a]));

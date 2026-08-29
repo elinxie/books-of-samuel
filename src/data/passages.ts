@@ -185,6 +185,58 @@ export const PASSAGES: Passage[] = [
     milestoneId: 'M7',
     status: 'released',
   },
+  {
+    id: '2sam-7',
+    book: '2 Samuel',
+    chapter: 7,
+    reference: '2 Samuel 7',
+    translationAnchor: 'ESV',
+    summary:
+      'David, settled in his own house and given rest from his surrounding enemies, tells Nathan the prophet that he wishes to build the LORD a house, since he himself dwells in a house of cedar while the ark of God dwells in a tent. Nathan first tells him to go and do all that is in his heart, for the LORD is with him. That same night the word of the LORD comes to Nathan: the LORD has never asked for a house of cedar, and rather than David building the LORD a house, the LORD will build David a house — raising up his offspring, establishing his kingdom, and making his throne sure forever, disciplined as a father disciplines a son but never abandoned by steadfast love as it was withdrawn from Saul. Nathan reports the whole word to David. David goes in and sits before the LORD and prays: an opening question in self-examination, a rehearsal of what the LORD has done and promised, and a petition that the word spoken concerning his house be confirmed and made sure forever.',
+    // Sole passage of M8, carried entirely by nathans-oracle — see
+    // docs/design/nathans-oracle-brief.md. ESV excerpt budget: 2 of the
+    // available 3-quote handful spent (7:16, 7:18b); the brief's optional
+    // third excerpt (7:28-29) is deliberately not spent — see claim-david-
+    // prayer's notes for why. No WebSearch/WebFetch tool was available this
+    // session to check a live ESV source directly, and a direct check
+    // confirmed the outbound egress policy also blocks curl to esv.org,
+    // biblehub.com, biblegateway.com, and biblia.com (all proxy-level 403s).
+    // Both quotes were instead cross-checked against this repo's own
+    // reader/ subproject (reader/data/kjv/2-samuel.json,
+    // reader/data/web/2-samuel.json — full public-domain KJV/WEB text,
+    // already committed, not entered from memory for this check): KJV 7:16
+    // reads "...established for ever before thee: thy throne shall be
+    // established for ever," and WEB 7:16 reads "...made sure forever
+    // before you. Your throne will be established forever" — both confirm
+    // "before you/thee," resolving a genuine internal inconsistency in the
+    // brief (whose "Timeline beats" section quotes this verse as ending
+    // "...before me...," while its "Required source basis" section quotes
+    // "...before you..."); this build follows the "before you" reading,
+    // corroborated against real text rather than picked from memory alone.
+    // WEB 7:18b ("Who am I, Lord Yahweh, and what is my house, that you
+    // have brought me this far?") and KJV 7:18b likewise match this
+    // passage's ESV wording closely (ESV's "thus far" for WEB's "this
+    // far," the expected register difference between the two
+    // translations). This is real cross-corroboration against public-domain
+    // text already in this repository, not a live ESV-specific source check
+    // — the exact ESV wording (as opposed to the KJV/WEB structure it
+    // matches) still carries the standard non-blocking live-verification
+    // caveat this project applies whenever no ESV-specific live source was
+    // reachable.
+    keyExcerpts: [
+      {
+        verse: '2 Samuel 7:16',
+        text: 'And your house and your kingdom shall be made sure forever before you. Your throne shall be established forever.',
+      },
+      {
+        verse: '2 Samuel 7:18b',
+        text: 'Who am I, O Lord GOD, and what is my house, that you have brought me thus far?',
+      },
+    ],
+    sceneIds: ['nathans-oracle'],
+    milestoneId: 'M8',
+    status: 'in-progress',
+  },
 ];
 
 export const PASSAGES_BY_ID: ReadonlyMap<string, Passage> = new Map(PASSAGES.map((p) => [p.id, p]));

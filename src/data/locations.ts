@@ -312,7 +312,7 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.7739, lon: 35.2358, confidence: 'high' },
-    sceneIds: ['jerusalem-stronghold'],
+    sceneIds: ['jerusalem-stronghold', 'ark-into-jerusalem', 'nathans-oracle'],
     claimIds: [],
     status: 'released',
   },
@@ -365,23 +365,24 @@ export const LOCATIONS: LocationEntry[] = [
     altNames: ['Baale-judah', 'Kiriath-baal', 'Baalah'],
     region: 'Judean hill country, on the border with Benjamin, west of Jerusalem',
     summary:
-      'The town where the ark of the covenant rested, in the house of Abinadab on the hill, until David brought it up (2 Samuel 6:1-4; its arrival there is narrated earlier, 1 Samuel 7:1-2, outside this project’s built timeline). Identified with the hill of Deir el-Azhar/Tell el-Azhar, in the vicinity of modern Abu Ghosh — a standing identification the field treats as reasonably secure, though the project currently has no dedicated source card for this specific site (see claim-kiriath-jearim-form).',
+      'The town where the ark of the covenant rested, in the house of Abinadab on the hill, until David brought it up (2 Samuel 6:1-4; its arrival there is narrated earlier, 1 Samuel 7:1-2, outside this project’s built timeline). Identified with the hill of Deir el-Azhar/Tell el-Azhar, in the vicinity of modern Abu Ghosh — a standing identification the field treats as reasonably secure, now also documented by a dedicated excavation-report source card (finkelstein-romer-2018-kiriath-jearim) alongside the general historical-geography reference (see claim-kiriath-jearim-form).',
     identification: {
       // Treated as reasonably secure, the same disputed:false treatment
-      // jerusalem received — but see claim-kiriath-jearim-form's notes: no
-      // dedicated source card exists yet for this site specifically, only
-      // the general historical-geography reference (rainey-notley-2006) as
-      // an interim citation. A researcher gap, flagged in
-      // docs/design/perez-uzzah-brief.md, not a disputed identification.
+      // jerusalem received. A dedicated source card (2026-08-29 researcher
+      // pass) now exists for this site specifically
+      // (finkelstein-romer-2018-kiriath-jearim, the 2017-season excavation
+      // preliminary report), alongside the general historical-geography
+      // reference (rainey-notley-2006). See claim-kiriath-jearim-form's
+      // notes for what the excavation does and does not corroborate.
       disputed: false,
       views: [
         {
           id: 'loc-view-kiriath-jearim',
           label: 'Deir el-Azhar / Tell el-Azhar (Abu Ghosh vicinity)',
           summary:
-            'Standard identification with the prominent hill above modern Abu Ghosh, on the main historical road between the coastal plain and Jerusalem — consistent with the narrative’s own geography (a town "on the way" between Philistine territory and the highland capital).',
+            'Standard identification with the prominent hill above modern Abu Ghosh, on the main historical road between the coastal plain and Jerusalem — consistent with the narrative’s own geography (a town "on the way" between Philistine territory and the highland capital). First proposed by L.-H. Vincent in 1907 on the strength of two preserved place-names, and treated as effectively settled by the site’s own 2017-season excavators.',
           confidence: 'moderate',
-          sourceIds: ['rainey-notley-2006'],
+          sourceIds: ['rainey-notley-2006', 'finkelstein-romer-2018-kiriath-jearim'],
         },
       ],
     },
