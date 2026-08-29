@@ -312,7 +312,7 @@ export const LOCATIONS: LocationEntry[] = [
       ],
     },
     approxCoordinates: { lat: 31.7739, lon: 35.2358, confidence: 'high' },
-    sceneIds: ['jerusalem-stronghold'],
+    sceneIds: ['jerusalem-stronghold', 'ark-into-jerusalem', 'nathans-oracle'],
     claimIds: [],
     status: 'released',
   },
