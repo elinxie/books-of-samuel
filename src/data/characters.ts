@@ -354,6 +354,15 @@ export const CHARACTERS: CharacterOrGroup[] = [
     passageRefs: ['2 Samuel 6:10–11'],
     claimIds: ['claim-david-fear-diversion', 'claim-obed-edom-blessing'],
   },
+  {
+    id: 'nathan',
+    name: 'Nathan',
+    kind: 'person',
+    summary:
+      'A prophet in David’s court. When David tells him of his wish to build a house for the ark, Nathan first tells him to go and do all that is in his heart, for the LORD is with him (2 Samuel 7:2–3) — a reasonable pastoral answer, given before Nathan has consulted the LORD. That same night the word of the LORD comes to Nathan and corrects the plan outright: not a house for the LORD from David, but a house — a dynasty — for David from the LORD, an heir, and a throne established forever (7:4–16). Nathan reports the whole oracle back to David the next day, exactly in accordance with all these words and all this vision (7:17). **This is a different person from the identically named son born to David in Jerusalem**, listed among his other sons at 2 Samuel 5:13–16 (card-only there; no character record exists for that Nathan) — the two are never conflated in any caption or record in this project.',
+    passageRefs: ['2 Samuel 7:1–17'],
+    claimIds: ['claim-nathan-oracle-house-request', 'claim-nathan-oracle'],
+  },
 ];
 
 export const CHARACTERS_BY_ID: ReadonlyMap<string, CharacterOrGroup> = new Map(

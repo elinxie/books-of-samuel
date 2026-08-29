@@ -151,7 +151,6 @@ function SceneEnvironment({
 
   return (
     <>
-      <fog attach="fog" args={[DAY.bg, 55, 900]} />
       <hemisphereLight ref={hemiRef} args={[DAY.sky, DAY.ground, DAY.hemi]} />
       <directionalLight
         ref={sunRef}
@@ -181,6 +180,7 @@ export function NathansOracleScene() {
 
   return (
     <>
+      <fog attach="fog" args={[DAY.bg, profile.fogNear, profile.fogFar]} />
       <SceneEnvironment
         shadows={profile.shadows}
         shadowMapSize={profile.shadowMapSize}
